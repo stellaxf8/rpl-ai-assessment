@@ -45,24 +45,9 @@ export default function Home() {
               </div>
               <h1 className="text-xl font-semibold text-slate-900">AI Readiness Assessment</h1>
             </div>
-            <nav className="hidden md:flex space-x-8">
-              {navigationItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => setCurrentSection(item.id)}
-                  className={`transition-colors ${
-                    currentSection === item.id
-                      ? 'text-primary font-semibold'
-                      : 'text-slate-600 hover:text-primary'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
-            <button className="md:hidden text-slate-600">
-              <Menu className="w-5 h-5" />
-            </button>
+            <div>
+              {/* Navigation hidden for cleaner demo experience */}
+            </div>
           </div>
         </div>
       </header>

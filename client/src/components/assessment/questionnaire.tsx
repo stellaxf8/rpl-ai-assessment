@@ -177,15 +177,22 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
           <Progress value={progress} className="mb-4" />
           
           <div className="flex flex-wrap gap-2">
-            {['Technology Infrastructure', 'Data Quality', 'Team Literacy', 'System Integration', 'Budget', 'Security'].map((dimension) => {
-              const isCurrentDimension = currentQuestionData.dimension === dimension.toLowerCase().replace(/\s+/g, '');
-              const dimensionQuestions = questions.filter(q => q.dimension === dimension.toLowerCase().replace(/\s+/g, ''));
+            {[
+              { label: 'Technology Infrastructure', key: 'technologyInfrastructure' },
+              { label: 'Data Quality', key: 'dataQuality' }, 
+              { label: 'Team Literacy', key: 'teamLiteracy' },
+              { label: 'System Integration', key: 'systemIntegration' },
+              { label: 'Budget', key: 'budget' },
+              { label: 'Security', key: 'security' }
+            ].map((dimension) => {
+              const isCurrentDimension = currentQuestionData.dimension === dimension.key;
+              const dimensionQuestions = questions.filter(q => q.dimension === dimension.key);
               const dimensionResponses = dimensionQuestions.filter(q => responses[q.id]);
               const progress = `${dimensionResponses.length}/${dimensionQuestions.length}`;
               
               return (
                 <span
-                  key={dimension}
+                  key={dimension.key}
                   className={`px-3 py-1 rounded-full text-xs font-medium ${
                     isCurrentDimension
                       ? 'bg-blue-100 text-blue-800'
@@ -194,7 +201,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                       : 'bg-slate-100 text-slate-600'
                   }`}
                 >
-                  {dimension} ({progress})
+                  {dimension.label} ({progress})
                 </span>
               );
             })}
@@ -233,9 +240,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                   <div className="font-medium text-slate-900">{option.text}</div>
                   <div className="text-sm text-slate-600">{option.description}</div>
                 </Label>
-                <div className="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">
-                  {option.value} point{option.value !== 1 ? 's' : ''}
-                </div>
               </div>
             ))}
           </RadioGroup>
