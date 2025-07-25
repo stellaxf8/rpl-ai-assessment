@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, Server, Database, Users, Puzzle, DollarSign, Shield } from "lucide-react";
+import { ArrowLeft, ArrowRight, Server, Database, Users, Puzzle, DollarSign, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -105,6 +105,35 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     });
   };
 
+  const generateDemoSample = () => {
+    const demoResponses: Record<string, number> = {};
+    
+    // Generate realistic demo responses that create a moderate to good readiness score
+    questions.forEach((question) => {
+      // Create a realistic distribution with slight bias toward positive responses
+      const randomValue = Math.random();
+      let response: number;
+      
+      if (randomValue < 0.1) response = 1; // 10% - Poor
+      else if (randomValue < 0.25) response = 2; // 15% - Below Average
+      else if (randomValue < 0.5) response = 3; // 25% - Average
+      else if (randomValue < 0.8) response = 4; // 30% - Good
+      else response = 5; // 20% - Excellent
+      
+      demoResponses[question.id] = response;
+    });
+
+    setResponses(demoResponses);
+    setOrganizationName("Demo Technology Solutions Inc.");
+    setContactEmail("demo@example.com");
+    setShowContactForm(true);
+    
+    toast({
+      title: "Demo Sample Generated",
+      description: "Random responses have been generated for demonstration purposes.",
+    });
+  };
+
   const getDimensionProgress = () => {
     const dimensionQuestions = questions.filter(q => q.dimension === currentQuestionData.dimension);
     const dimensionResponses = dimensionQuestions.filter(q => responses[q.id]);
@@ -170,9 +199,20 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-2xl font-bold text-slate-900">AI Readiness Assessment</h2>
-            <span className="text-sm text-slate-500">
-              Question {currentQuestion + 1} of {questions.length}
-            </span>
+            <div className="flex items-center gap-4">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={generateDemoSample}
+                className="text-xs"
+              >
+                <Zap className="mr-1 h-3 w-3" />
+                Demo Sample
+              </Button>
+              <span className="text-sm text-slate-500">
+                Question {currentQuestion + 1} of {questions.length}
+              </span>
+            </div>
           </div>
           
           <Progress value={progress} className="mb-4" />
