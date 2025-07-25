@@ -4,6 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Assessment } from "@shared/schema";
 import ScoreChart from "@/components/charts/score-chart";
 import RadarChart from "@/components/charts/radar-chart";
+import IndustryBenchmark from "@/components/enhanced/industry-benchmark";
+import IntegrationReadiness from "@/components/enhanced/integration-readiness";
+import ComplianceAssessment from "@/components/enhanced/compliance-assessment";
+import BusinessDevelopment from "@/components/enhanced/business-development";
+import KnowledgeBase from "@/components/enhanced/knowledge-base";
 
 interface ResultsProps {
   assessment: Assessment;
@@ -104,6 +109,34 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           </div>
         </CardContent>
       </Card>
+
+      {/* Industry Benchmark Analysis */}
+      <div className="mb-8">
+        <IndustryBenchmark 
+          userScore={overallScore} 
+          industry="Technology"
+        />
+      </div>
+
+      {/* Integration Readiness Assessment */}
+      <div className="mb-8">
+        <IntegrationReadiness 
+          scores={{
+            technologyInfrastructure: scores.technologyInfrastructure,
+            systemIntegration: scores.systemIntegration
+          }}
+        />
+      </div>
+
+      {/* Compliance Assessment */}
+      <div className="mb-8">
+        <ComplianceAssessment 
+          scores={{
+            security: scores.security,
+            dataQuality: scores.dataQuality
+          }}
+        />
+      </div>
 
       {/* Dimension Breakdown */}
       <div className="grid lg:grid-cols-2 gap-8 mb-8">
@@ -217,6 +250,26 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           </div>
         </CardContent>
       </Card>
+
+      {/* Business Development Section */}
+      <div className="mb-8">
+        <BusinessDevelopment 
+          scores={{
+            overallScore: overallScore,
+            technologyInfrastructure: scores.technologyInfrastructure,
+            dataQuality: scores.dataQuality,
+            teamLiteracy: scores.teamLiteracy,
+            systemIntegration: scores.systemIntegration,
+            budget: scores.budget,
+            security: scores.security
+          }}
+        />
+      </div>
+
+      {/* Knowledge Base Section */}
+      <div className="mb-8">
+        <KnowledgeBase userScore={overallScore} />
+      </div>
 
       {/* Action Buttons */}
       <div className="text-center space-x-4">
