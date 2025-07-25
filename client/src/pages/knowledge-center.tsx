@@ -134,6 +134,7 @@ const caseStudies = [
 ];
 
 const implementationGuides = [
+  // Beginner Level
   {
     title: "AI Implementation Checklist",
     description: "Step-by-step guide to planning your AI initiative",
@@ -141,11 +142,19 @@ const implementationGuides = [
     duration: "15 min read",
     level: "Beginner"
   },
+  // Intermediate Level
   {
     title: "Data Preparation Best Practices",
     description: "How to organize and clean your data for AI success",
     type: "Best Practices",
     duration: "20 min read",
+    level: "Intermediate"
+  },
+  {
+    title: "Vendor Selection Guide",
+    description: "How to evaluate and choose AI solution providers",
+    type: "Guide",
+    duration: "22 min read",
     level: "Intermediate"
   },
   {
@@ -155,6 +164,7 @@ const implementationGuides = [
     duration: "25 min read",
     level: "Intermediate"
   },
+  // Advanced Level
   {
     title: "ROI Measurement Framework",
     description: "How to measure and prove the value of AI investments",
@@ -168,13 +178,6 @@ const implementationGuides = [
     type: "Governance",
     duration: "35 min read",
     level: "Advanced"
-  },
-  {
-    title: "Vendor Selection Guide",
-    description: "How to evaluate and choose AI solution providers",
-    type: "Guide",
-    duration: "22 min read",
-    level: "Intermediate"
   }
 ];
 
