@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Brain, Menu } from "lucide-react";
+import { Brain, Menu, BookOpen } from "lucide-react";
+import { Link } from "wouter";
 import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
@@ -45,8 +46,13 @@ export default function Home() {
               </div>
               <h1 className="text-xl font-semibold text-slate-900">AI Readiness Assessment</h1>
             </div>
-            <div>
-              {/* Navigation hidden for cleaner demo experience */}
+            <div className="flex items-center space-x-4">
+              <Link href="/knowledge-center">
+                <button className="flex items-center px-4 py-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
+                  <BookOpen className="mr-2 h-4 w-4" />
+                  Knowledge Center
+                </button>
+              </Link>
             </div>
           </div>
         </div>

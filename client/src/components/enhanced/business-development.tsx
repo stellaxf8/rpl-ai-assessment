@@ -180,68 +180,21 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
         </div>
 
         {/* Business Development Actions */}
-        <div className="space-y-4">
-          <h4 className="font-semibold text-slate-900">Next Steps</h4>
-          
-          <div className="grid md:grid-cols-2 gap-4">
-            <Button 
-              variant="default" 
-              className="w-full h-auto p-4 flex items-start justify-start"
-              onClick={handleScheduleConsultation}
-            >
-              <div className="mr-3">
-                <MessageSquare className="h-5 w-5" />
-              </div>
-              <div className="text-left">
-                <div className="font-medium">Schedule Free Consultation</div>
-                <div className="text-sm opacity-90">30-minute strategy session with our AI specialists</div>
-              </div>
-            </Button>
-
-            <Button 
-              variant="outline" 
-              className="w-full h-auto p-4 flex items-start justify-start"
-              onClick={handleRequestProposal}
-            >
-              <div className="mr-3">
-                <FileText className="h-5 w-5" />
-              </div>
-              <div className="text-left">
-                <div className="font-medium">Request Detailed Proposal</div>
-                <div className="text-sm opacity-90">Customized implementation plan and pricing</div>
-              </div>
-            </Button>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            <Button 
-              variant="outline" 
-              className="w-full h-auto p-4 flex items-start justify-start"
-              onClick={handleDownloadRoadmap}
-            >
-              <div className="mr-3">
-                <Calendar className="h-5 w-5" />
-              </div>
-              <div className="text-left">
-                <div className="font-medium">Download Implementation Roadmap</div>
-                <div className="text-sm opacity-90">Step-by-step plan tailored to your results</div>
-              </div>
-            </Button>
-
-            <Button 
-              variant="outline" 
-              className="w-full h-auto p-4 flex items-start justify-start"
-              onClick={() => window.open('mailto:ai-experts@yourcompany.com?subject=AI Implementation Inquiry')}
-            >
-              <div className="mr-3">
-                <Users className="h-5 w-5" />
-              </div>
-              <div className="text-left">
-                <div className="font-medium">Connect with AI Experts</div>
-                <div className="text-sm opacity-90">Direct access to our implementation team</div>
-              </div>
-            </Button>
-          </div>
+        <div className="text-center">
+          <Button 
+            variant="default" 
+            size="lg"
+            className="h-auto p-6 flex items-center justify-center"
+            onClick={handleScheduleConsultation}
+          >
+            <div className="mr-3">
+              <MessageSquare className="h-6 w-6" />
+            </div>
+            <div className="text-left">
+              <div className="font-semibold text-lg">Schedule Free Consultation</div>
+              <div className="text-sm opacity-90">30-minute strategy session with our AI specialists</div>
+            </div>
+          </Button>
         </div>
 
         {/* Trust Indicators */}

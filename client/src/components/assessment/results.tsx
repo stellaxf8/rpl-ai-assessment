@@ -8,7 +8,6 @@ import IndustryBenchmark from "@/components/enhanced/industry-benchmark";
 import IntegrationReadiness from "@/components/enhanced/integration-readiness";
 import ComplianceAssessment from "@/components/enhanced/compliance-assessment";
 import BusinessDevelopment from "@/components/enhanced/business-development";
-import KnowledgeBase from "@/components/enhanced/knowledge-base";
 
 interface ResultsProps {
   assessment: Assessment;
@@ -266,10 +265,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
         />
       </div>
 
-      {/* Knowledge Base Section */}
-      <div className="mb-8">
-        <KnowledgeBase userScore={overallScore} />
-      </div>
+
 
       {/* Action Buttons */}
       <div className="text-center space-x-4">
