@@ -85,6 +85,9 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     }
   };
 
+  const canGoNext = responses[currentQuestionData?.id];
+  const canGoPrevious = currentQuestion > 0;
+
   const handleSubmit = () => {
     if (!organizationName || !contactEmail) {
       toast({
@@ -107,8 +110,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     const dimensionResponses = dimensionQuestions.filter(q => responses[q.id]);
     return `${dimensionResponses.length}/${dimensionQuestions.length}`;
   };
-
-  const isCurrentQuestionAnswered = responses[currentQuestionData?.id];
 
   if (showContactForm) {
     return (
@@ -250,15 +251,20 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               onClick={handlePrevious}
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
-              {currentQuestion === 0 ? 'Back to Overview' : 'Previous'}
+              {currentQuestion === 0 ? 'Back to Overview' : 'Previous Question'}
             </Button>
-            <Button 
-              onClick={handleNext}
-              disabled={!isCurrentQuestionAnswered}
-            >
-              {currentQuestion === questions.length - 1 ? 'Complete Assessment' : 'Next Question'}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <div className="flex items-center gap-3">
+              {!canGoNext && (
+                <span className="text-sm text-slate-500">Please select an answer to continue</span>
+              )}
+              <Button 
+                onClick={handleNext}
+                disabled={!canGoNext}
+              >
+                {currentQuestion === questions.length - 1 ? 'Complete Assessment' : 'Next Question'}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>
