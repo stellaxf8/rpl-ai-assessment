@@ -67,3 +67,118 @@ export const complianceAssessmentSchema = z.object({
 });
 
 export type ComplianceAssessment = z.infer<typeof complianceAssessmentSchema>;
+
+// AI Maturity Roadmap schema
+export const aiMaturityRoadmapSchema = z.object({
+  currentLevel: z.enum(['Beginner', 'Developing', 'Advancing', 'Leading']),
+  targetLevel: z.enum(['Developing', 'Advancing', 'Leading', 'Transformative']),
+  timeline: z.object({
+    phase1: z.object({
+      name: z.string(),
+      duration: z.string(),
+      milestones: z.array(z.string()),
+      resources: z.array(z.string())
+    }),
+    phase2: z.object({
+      name: z.string(),
+      duration: z.string(),
+      milestones: z.array(z.string()),
+      resources: z.array(z.string())
+    }),
+    phase3: z.object({
+      name: z.string(),
+      duration: z.string(),
+      milestones: z.array(z.string()),
+      resources: z.array(z.string())
+    })
+  }),
+  totalDuration: z.string(),
+  estimatedCost: z.object({
+    low: z.number(),
+    high: z.number()
+  })
+});
+
+export type AIMaturityRoadmap = z.infer<typeof aiMaturityRoadmapSchema>;
+
+// Industry-specific questions schema
+export const industryQuestionSetSchema = z.object({
+  industry: z.enum(['Healthcare', 'Manufacturing', 'Retail', 'Finance', 'Technology', 'Education', 'Government', 'Non-profit']),
+  questions: z.array(z.object({
+    id: z.string(),
+    question: z.string(),
+    dimension: z.string(),
+    industrySpecific: z.boolean()
+  }))
+});
+
+export type IndustryQuestionSet = z.infer<typeof industryQuestionSetSchema>;
+
+// Smart recommendations schema
+export const smartRecommendationsSchema = z.object({
+  organizationSize: z.enum(['Small (1-50)', 'Medium (51-250)', 'Large (251-1000)', 'Enterprise (1000+)']),
+  budget: z.enum(['Under $50K', '$50K-$250K', '$250K-$1M', '$1M+']),
+  recommendations: z.array(z.object({
+    category: z.string(),
+    priority: z.enum(['High', 'Medium', 'Low']),
+    title: z.string(),
+    description: z.string(),
+    estimatedCost: z.string(),
+    timeline: z.string(),
+    prerequisites: z.array(z.string())
+  }))
+});
+
+export type SmartRecommendations = z.infer<typeof smartRecommendationsSchema>;
+
+// Learning path schema
+export const learningPathSchema = z.object({
+  userId: z.string(),
+  currentLevel: z.enum(['Beginner', 'Intermediate', 'Advanced']),
+  completedModules: z.array(z.string()),
+  recommendedNext: z.array(z.object({
+    moduleId: z.string(),
+    title: z.string(),
+    difficulty: z.enum(['Beginner', 'Intermediate', 'Advanced']),
+    estimatedTime: z.string(),
+    type: z.enum(['Concept', 'Guide', 'Case Study', 'Interactive'])
+  })),
+  progressPercentage: z.number().min(0).max(100)
+});
+
+export type LearningPath = z.infer<typeof learningPathSchema>;
+
+// Trend analysis schema
+export const trendAnalysisSchema = z.object({
+  trends: z.array(z.object({
+    id: z.string(),
+    title: z.string(),
+    category: z.enum(['Technology', 'Market', 'Regulation', 'Application']),
+    impact: z.enum(['High', 'Medium', 'Low']),
+    timeframe: z.enum(['Immediate', '6 months', '1 year', '2+ years']),
+    description: z.string(),
+    relevanceScore: z.number().min(0).max(100),
+    industries: z.array(z.string())
+  })),
+  lastUpdated: z.string()
+});
+
+export type TrendAnalysis = z.infer<typeof trendAnalysisSchema>;
+
+// Regulatory compliance tracker schema
+export const regulatoryComplianceTrackerSchema = z.object({
+  regulations: z.array(z.object({
+    id: z.string(),
+    name: z.string(),
+    region: z.string(),
+    status: z.enum(['Active', 'Proposed', 'Under Review', 'Upcoming']),
+    effectiveDate: z.string(),
+    description: z.string(),
+    requirements: z.array(z.string()),
+    relevantIndustries: z.array(z.string()),
+    complianceLevel: z.enum(['Critical', 'Important', 'Recommended'])
+  })),
+  lastUpdated: z.string()
+});
+
+export type RegulatoryComplianceTracker = z.infer<typeof regulatoryComplianceTrackerSchema>;
