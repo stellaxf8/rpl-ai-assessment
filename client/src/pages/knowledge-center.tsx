@@ -52,6 +52,12 @@ const aiConcepts = [
     definition: "Process of discovering patterns and insights from large datasets using AI and statistical methods.",
     relevance: "Uncovers business insights and opportunities from existing data",
     difficulty: "Intermediate"
+  },
+  {
+    term: "Large Language Models (LLMs)",
+    definition: "Advanced AI systems trained on vast amounts of text data to understand and generate human-like language responses.",
+    relevance: "Powers conversational AI, content generation, and intelligent document processing",
+    difficulty: "Advanced"
   }
 ];
 
