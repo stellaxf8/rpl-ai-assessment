@@ -55,6 +55,35 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         </p>
       </div>
 
+      {/* Why AI Readiness Assessment is Crucial */}
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 mb-12">
+        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Why AI Readiness Assessment is Crucial</h3>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 className="text-lg font-semibold text-slate-900 mb-3">Avoid Costly Mistakes</h4>
+            <p className="text-slate-700 mb-4">
+              Organizations that rush into AI implementation without proper assessment face a 67% failure rate. Understanding your readiness prevents wasted resources and ensures successful AI adoption.
+            </p>
+            
+            <h4 className="text-lg font-semibold text-slate-900 mb-3">Maximize ROI</h4>
+            <p className="text-slate-700">
+              Companies with high AI readiness see 3x better returns on their AI investments. A thorough assessment identifies the most impactful AI opportunities for your specific situation.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-slate-900 mb-3">Strategic Planning</h4>
+            <p className="text-slate-700 mb-4">
+              Gain clear insights into what needs to be addressed before implementing AI solutions. Create a roadmap that aligns with your organizational capabilities and goals.
+            </p>
+            
+            <h4 className="text-lg font-semibold text-slate-900 mb-3">Competitive Advantage</h4>
+            <p className="text-slate-700">
+              Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
