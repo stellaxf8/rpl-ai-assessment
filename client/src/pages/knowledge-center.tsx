@@ -5,17 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 
 const aiConcepts = [
+  // Beginner Level
   {
     term: "Machine Learning",
     definition: "A method of teaching computers to learn and make decisions from data without being explicitly programmed for every task.",
     relevance: "Foundation for most AI applications in business",
     difficulty: "Beginner"
-  },
-  {
-    term: "Natural Language Processing",
-    definition: "Technology that helps computers understand, interpret, and respond to human language in a valuable way.",
-    relevance: "Powers chatbots, document analysis, and customer service automation",
-    difficulty: "Intermediate"
   },
   {
     term: "Predictive Analytics",
@@ -24,22 +19,17 @@ const aiConcepts = [
     difficulty: "Beginner"
   },
   {
-    term: "Computer Vision",
-    definition: "AI technology that enables computers to interpret and understand visual information from images and videos.",
-    relevance: "Useful for quality control, security, and automation",
-    difficulty: "Advanced"
-  },
-  {
     term: "Robotic Process Automation (RPA)",
     definition: "Software robots that automate repetitive, rule-based tasks typically performed by humans.",
     relevance: "Immediate productivity gains through task automation",
     difficulty: "Beginner"
   },
+  // Intermediate Level
   {
-    term: "Deep Learning",
-    definition: "Advanced machine learning using artificial neural networks with multiple layers to model complex patterns.",
-    relevance: "Powers image recognition, speech processing, and complex decision-making",
-    difficulty: "Advanced"
+    term: "Natural Language Processing",
+    definition: "Technology that helps computers understand, interpret, and respond to human language in a valuable way.",
+    relevance: "Powers chatbots, document analysis, and customer service automation",
+    difficulty: "Intermediate"
   },
   {
     term: "Artificial Neural Networks",
@@ -52,6 +42,19 @@ const aiConcepts = [
     definition: "Process of discovering patterns and insights from large datasets using AI and statistical methods.",
     relevance: "Uncovers business insights and opportunities from existing data",
     difficulty: "Intermediate"
+  },
+  // Advanced Level
+  {
+    term: "Computer Vision",
+    definition: "AI technology that enables computers to interpret and understand visual information from images and videos.",
+    relevance: "Useful for quality control, security, and automation",
+    difficulty: "Advanced"
+  },
+  {
+    term: "Deep Learning",
+    definition: "Advanced machine learning using artificial neural networks with multiple layers to model complex patterns.",
+    relevance: "Powers image recognition, speech processing, and complex decision-making",
+    difficulty: "Advanced"
   },
   {
     term: "Large Language Models (LLMs)",
