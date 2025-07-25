@@ -180,19 +180,19 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
         </div>
 
         {/* Business Development Actions */}
-        <div className="text-center">
+        <div className="flex justify-center">
           <Button 
             variant="default" 
             size="lg"
-            className="h-auto p-6 flex items-center justify-center"
+            className="h-auto p-6"
             onClick={handleScheduleConsultation}
           >
-            <div className="mr-3">
-              <MessageSquare className="h-6 w-6" />
-            </div>
-            <div className="text-left">
-              <div className="font-semibold text-lg">Schedule Free Consultation</div>
-              <div className="text-sm opacity-90">30-minute strategy session with our AI specialists</div>
+            <div className="flex items-center">
+              <MessageSquare className="mr-3 h-6 w-6" />
+              <div>
+                <div className="font-semibold text-lg">Schedule Free Consultation</div>
+                <div className="text-sm opacity-90">30-minute strategy session with our AI specialists</div>
+              </div>
             </div>
           </Button>
         </div>
