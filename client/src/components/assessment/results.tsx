@@ -118,44 +118,74 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
 
       {/* Main Tabbed Interface for Advanced Features */}
       <Tabs defaultValue="overview" className="w-full">
-        <TabsList className="grid w-full grid-cols-5 lg:grid-cols-10 mb-6">
-          <TabsTrigger value="overview" className="flex items-center gap-1">
+        <TabsList className="grid w-full grid-cols-5 lg:grid-cols-10 mb-6 bg-slate-100 p-2 rounded-xl border shadow-sm h-auto">
+          <TabsTrigger 
+            value="overview" 
+            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
+          >
             <Target className="h-4 w-4" />
             Overview
           </TabsTrigger>
-          <TabsTrigger value="roadmap" className="flex items-center gap-1">
+          <TabsTrigger 
+            value="roadmap" 
+            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
+          >
             <Calendar className="h-4 w-4" />
             Roadmap
           </TabsTrigger>
-          <TabsTrigger value="simulator" className="flex items-center gap-1">
+          <TabsTrigger 
+            value="simulator" 
+            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
+          >
             <Brain className="h-4 w-4" />
             Simulator
           </TabsTrigger>
-          <TabsTrigger value="timeline" className="flex items-center gap-1">
+          <TabsTrigger 
+            value="timeline" 
+            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
+          >
             <Calendar className="h-4 w-4" />
             Timeline
           </TabsTrigger>
-          <TabsTrigger value="industry" className="flex items-center gap-1">
+          <TabsTrigger 
+            value="industry" 
+            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
+          >
             <Filter className="h-4 w-4" />
             Industry
           </TabsTrigger>
-          <TabsTrigger value="recommendations" className="flex items-center gap-1">
+          <TabsTrigger 
+            value="recommendations" 
+            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
+          >
             <Brain className="h-4 w-4" />
             Smart Recs
           </TabsTrigger>
-          <TabsTrigger value="learning" className="flex items-center gap-1">
+          <TabsTrigger 
+            value="learning" 
+            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
+          >
             <BookOpen className="h-4 w-4" />
             Learning
           </TabsTrigger>
-          <TabsTrigger value="trends" className="flex items-center gap-1">
+          <TabsTrigger 
+            value="trends" 
+            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
+          >
             <TrendingUp className="h-4 w-4" />
             Trends
           </TabsTrigger>
-          <TabsTrigger value="compliance" className="flex items-center gap-1">
+          <TabsTrigger 
+            value="compliance" 
+            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
+          >
             <Scale className="h-4 w-4" />
             Compliance
           </TabsTrigger>
-          <TabsTrigger value="api" className="flex items-center gap-1">
+          <TabsTrigger 
+            value="api" 
+            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
+          >
             <Code className="h-4 w-4" />
             API
           </TabsTrigger>
