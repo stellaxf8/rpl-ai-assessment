@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Brain, Menu, BookOpen } from "lucide-react";
+import { Brain, Menu, BookOpen, BarChart3, Phone } from "lucide-react";
 import { Link } from "wouter";
 import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
 import Report from "@/components/assessment/report";
+import Dashboard from "@/components/dashboard/dashboard";
+import Contact from "@/components/contact/contact";
 import { Assessment } from "@shared/schema";
 
-type Section = 'overview' | 'assessment' | 'results' | 'report';
+type Section = 'overview' | 'assessment' | 'results' | 'report' | 'dashboard' | 'contact';
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<Section>('overview');
@@ -15,9 +17,8 @@ export default function Home() {
 
   const navigationItems = [
     { id: 'overview' as Section, label: 'Overview' },
-    { id: 'assessment' as Section, label: 'Assessment' },
-    { id: 'results' as Section, label: 'Results' },
-    { id: 'report' as Section, label: 'Report' },
+    { id: 'dashboard' as Section, label: 'Dashboard' },
+    { id: 'contact' as Section, label: 'Contact' },
   ];
 
   const handleAssessmentComplete = (assessment: Assessment) => {
@@ -49,14 +50,30 @@ export default function Home() {
               </div>
               <h1 className="text-xl font-semibold text-slate-900">AI Readiness Assessment</h1>
             </div>
-            <div className="flex items-center space-x-4">
+            <nav className="flex items-center space-x-1">
+              {navigationItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => setCurrentSection(item.id)}
+                  className={`flex items-center px-4 py-2 rounded-md transition-colors ${
+                    currentSection === item.id
+                      ? 'bg-primary text-white'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  {item.id === 'overview' && <BookOpen className="mr-2 h-4 w-4" />}
+                  {item.id === 'dashboard' && <BarChart3 className="mr-2 h-4 w-4" />}
+                  {item.id === 'contact' && <Phone className="mr-2 h-4 w-4" />}
+                  {item.label}
+                </button>
+              ))}
               <Link href="/knowledge-center">
                 <button className="flex items-center px-4 py-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
                   <BookOpen className="mr-2 h-4 w-4" />
                   Knowledge Center
                 </button>
               </Link>
-            </div>
+            </nav>
           </div>
         </div>
       </header>
@@ -65,6 +82,17 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {currentSection === 'overview' && (
           <Overview onStartAssessment={handleStartAssessment} />
+        )}
+        
+        {currentSection === 'dashboard' && (
+          <Dashboard 
+            completedAssessment={completedAssessment}
+            onStartAssessment={handleStartAssessment}
+          />
+        )}
+        
+        {currentSection === 'contact' && (
+          <Contact />
         )}
         
         {currentSection === 'assessment' && (

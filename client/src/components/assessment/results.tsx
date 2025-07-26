@@ -2,7 +2,7 @@ import { CheckCircle, CircleAlert, Share, FileText, RotateCcw, Brain, Target, Bo
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Assessment } from "@shared/schema";
+import { Assessment, DimensionScores } from "@shared/schema";
 import ScoreChart from "@/components/charts/score-chart";
 import RadarChart from "@/components/charts/radar-chart";
 import IndustryBenchmark from "@/components/enhanced/industry-benchmark";
@@ -23,8 +23,9 @@ import { RegulatoryComplianceTrackerComponent } from "@/components/advanced/regu
 
 interface ResultsProps {
   assessment: Assessment;
-  onGenerateReport: () => void;
-  onRetakeAssessment: () => void;
+  onGenerateReport?: () => void;
+  onRetakeAssessment?: () => void;
+  showRetakeButton?: boolean;
 }
 
 const dimensionConfig = {
@@ -66,8 +67,9 @@ const dimensionConfig = {
   },
 };
 
-export default function Results({ assessment, onGenerateReport, onRetakeAssessment }: ResultsProps) {
+export default function Results({ assessment, onGenerateReport, onRetakeAssessment, showRetakeButton = true }: ResultsProps) {
   const { overallScore, scores, organizationName, contactEmail } = assessment;
+  const typedScores = scores as DimensionScores;
 
   const getReadinessLevel = (score: number) => {
     if (score >= 80) return { label: "Excellent", color: "bg-green-100 text-green-800" };
@@ -79,9 +81,9 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
   const readinessLevel = getReadinessLevel(overallScore);
 
   const getRecommendations = () => {
-    const dimensionEntries = Object.entries(scores as any);
-    const lowScoring = dimensionEntries.filter(([_, score]) => (score as number) < 3.5);
-    const highScoring = dimensionEntries.filter(([_, score]) => (score as number) >= 4.0);
+    const dimensionEntries = Object.entries(typedScores);
+    const lowScoring = dimensionEntries.filter(([_, score]) => score < 3.5);
+    const highScoring = dimensionEntries.filter(([_, score]) => score >= 4.0);
 
     return { lowScoring, highScoring };
   };
@@ -220,23 +222,23 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
 
           {/* Enhanced Analytics */}
           <IndustryBenchmark userScore={overallScore} industry="Technology" />
-          <IntegrationReadiness scores={{ technologyInfrastructure: scores.technologyInfrastructure, systemIntegration: scores.systemIntegration }} />
-          <ComplianceAssessment scores={{ security: scores.security, dataQuality: scores.dataQuality }} />
+          <IntegrationReadiness scores={{ technologyInfrastructure: typedScores.technologyInfrastructure, systemIntegration: typedScores.systemIntegration }} />
+          <ComplianceAssessment scores={{ security: typedScores.security, dataQuality: typedScores.dataQuality }} />
           <BusinessDevelopment scores={{
             overallScore: overallScore,
-            technologyInfrastructure: scores.technologyInfrastructure,
-            dataQuality: scores.dataQuality,
-            teamLiteracy: scores.teamLiteracy,
-            systemIntegration: scores.systemIntegration,
-            budget: scores.budget,
-            security: scores.security
+            technologyInfrastructure: typedScores.technologyInfrastructure,
+            dataQuality: typedScores.dataQuality,
+            teamLiteracy: typedScores.teamLiteracy,
+            systemIntegration: typedScores.systemIntegration,
+            budget: typedScores.budget,
+            security: typedScores.security
           }} />
         </TabsContent>
 
         {/* AI Maturity Roadmap */}
         <TabsContent value="roadmap" className="space-y-6">
           <AIMaturityRoadmap 
-            scores={scores} 
+            scores={typedScores} 
             currentLevel={readinessLevel.label} 
           />
         </TabsContent>
@@ -244,7 +246,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
         {/* AI Readiness Simulator */}
         <TabsContent value="simulator" className="space-y-6">
           <AIReadinessSimulator 
-            currentScores={scores}
+            currentScores={typedScores}
             organizationSize="Medium Enterprise"
           />
         </TabsContent>
@@ -252,7 +254,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
         {/* Implementation Timeline */}
         <TabsContent value="timeline" className="space-y-6">
           <ImplementationTimeline 
-            scores={scores}
+            scores={typedScores}
             organizationSize="Medium Enterprise"
             budget="$250K - $1M"
           />
@@ -266,7 +268,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
         {/* Smart Recommendations */}
         <TabsContent value="recommendations" className="space-y-6">
           <SmartRecommendationsComponent 
-            scores={scores}
+            scores={typedScores}
             organizationSize="Medium Enterprise"
             budget="$250K - $1M"
           />
@@ -275,7 +277,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
         {/* Personalized Learning Path */}
         <TabsContent value="learning" className="space-y-6">
           <PersonalizedLearningPath 
-            scores={scores}
+            scores={typedScores}
             organizationSize="Medium Enterprise"
           />
         </TabsContent>
@@ -304,18 +306,22 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
 
       {/* Action Buttons */}
       <div className="text-center space-x-4 mt-8">
-        <Button onClick={onGenerateReport} size="lg">
-          <FileText className="mr-2 h-5 w-5" />
-          Generate Full Report
-        </Button>
+        {onGenerateReport && (
+          <Button onClick={onGenerateReport} size="lg">
+            <FileText className="mr-2 h-5 w-5" />
+            Generate Full Report
+          </Button>
+        )}
         <Button variant="outline" size="lg">
           <Share className="mr-2 h-5 w-5" />
           Share Results
         </Button>
-        <Button variant="ghost" onClick={onRetakeAssessment}>
-          <RotateCcw className="mr-2 h-4 w-4" />
-          Retake Assessment
-        </Button>
+        {showRetakeButton && onRetakeAssessment && (
+          <Button variant="ghost" onClick={onRetakeAssessment}>
+            <RotateCcw className="mr-2 h-4 w-4" />
+            Retake Assessment
+          </Button>
+        )}
       </div>
     </section>
   );
