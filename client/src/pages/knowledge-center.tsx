@@ -1,8 +1,7 @@
-import { BookOpen, Brain, Lightbulb, TrendingUp, ExternalLink, Download, ArrowLeft } from "lucide-react";
+import { BookOpen, Brain, Lightbulb, TrendingUp, ExternalLink, Download } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "wouter";
 
 const aiConcepts = [
   // Beginner Level
@@ -186,12 +185,6 @@ export default function KnowledgeCenter() {
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       {/* Header */}
       <div className="mb-8">
-        <Link href="/">
-          <Button variant="ghost" className="mb-4">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Assessment
-          </Button>
-        </Link>
         <h1 className="text-4xl font-bold text-slate-900 mb-3 flex items-center">
           <BookOpen className="mr-3 h-8 w-8 text-primary" />
           AI Knowledge Center
