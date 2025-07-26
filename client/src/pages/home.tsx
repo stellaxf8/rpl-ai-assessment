@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Brain, Menu, BookOpen, BarChart3, Phone } from "lucide-react";
-import { Link } from "wouter";
 import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
 import Report from "@/components/assessment/report";
 import Dashboard from "@/components/dashboard/dashboard";
 import Contact from "@/components/contact/contact";
+import KnowledgeCenter from "@/pages/knowledge-center";
 import { Assessment } from "@shared/schema";
 
-type Section = 'overview' | 'assessment' | 'results' | 'report' | 'dashboard' | 'contact';
+type Section = 'overview' | 'assessment' | 'results' | 'report' | 'dashboard' | 'knowledge' | 'contact';
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<Section>('overview');
@@ -18,6 +18,7 @@ export default function Home() {
   const navigationItems = [
     { id: 'overview' as Section, label: 'Overview' },
     { id: 'dashboard' as Section, label: 'Dashboard' },
+    { id: 'knowledge' as Section, label: 'Knowledge Center' },
     { id: 'contact' as Section, label: 'Contact' },
   ];
 
@@ -63,16 +64,12 @@ export default function Home() {
                 >
                   {item.id === 'overview' && <BookOpen className="mr-2 h-4 w-4" />}
                   {item.id === 'dashboard' && <BarChart3 className="mr-2 h-4 w-4" />}
+                  {item.id === 'knowledge' && <BookOpen className="mr-2 h-4 w-4" />}
                   {item.id === 'contact' && <Phone className="mr-2 h-4 w-4" />}
                   {item.label}
                 </button>
               ))}
-              <Link href="/knowledge-center">
-                <button className="flex items-center px-4 py-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
-                  <BookOpen className="mr-2 h-4 w-4" />
-                  Knowledge Center
-                </button>
-              </Link>
+
             </nav>
           </div>
         </div>
@@ -89,6 +86,10 @@ export default function Home() {
             completedAssessment={completedAssessment}
             onStartAssessment={handleStartAssessment}
           />
+        )}
+        
+        {currentSection === 'knowledge' && (
+          <KnowledgeCenter />
         )}
         
         {currentSection === 'contact' && (
