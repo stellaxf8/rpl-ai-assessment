@@ -207,11 +207,14 @@ export default function KnowledgeCenter() {
                 <div key={index} className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="font-semibold text-slate-900">{concept.term}</h3>
-                    <Badge variant={
-                      concept.difficulty === "Beginner" ? "secondary" :
-                      concept.difficulty === "Intermediate" ? "default" : "destructive"
-                    }>
-                      {concept.difficulty}
+                    <Badge 
+                      variant={
+                        concept.difficulty === "Beginner" ? "secondary" :
+                        concept.difficulty === "Intermediate" ? "default" : "destructive"
+                      }
+                      className="shrink-0"
+                    >
+                      {concept.difficulty || "Beginner"}
                     </Badge>
                   </div>
                   <p className="text-sm text-slate-600 mb-3 leading-relaxed">{concept.definition}</p>
