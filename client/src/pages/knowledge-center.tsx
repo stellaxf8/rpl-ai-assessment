@@ -209,10 +209,12 @@ export default function KnowledgeCenter() {
                     <h3 className="font-semibold text-slate-900">{concept.term}</h3>
                     <Badge 
                       variant={
-                        concept.difficulty === "Beginner" ? "secondary" :
+                        concept.difficulty === "Beginner" ? "outline" :
                         concept.difficulty === "Intermediate" ? "default" : "destructive"
                       }
-                      className="shrink-0"
+                      className={`shrink-0 ${
+                        concept.difficulty === "Beginner" ? "bg-green-100 text-green-800 border-green-200" : ""
+                      }`}
                     >
                       {concept.difficulty || "Beginner"}
                     </Badge>
