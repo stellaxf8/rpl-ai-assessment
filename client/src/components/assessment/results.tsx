@@ -33,7 +33,7 @@ const dimensionConfig = {
     label: "Technology Infrastructure",
     icon: "🖥️",
     color: "bg-blue-100 text-primary",
-    barColor: "bg-primary",
+    barColor: "bg-blue-500",
   },
   dataQuality: {
     label: "Data Quality & Access",
@@ -45,7 +45,7 @@ const dimensionConfig = {
     label: "Team AI Literacy",
     icon: "👥",
     color: "bg-purple-100 text-secondary",
-    barColor: "bg-secondary",
+    barColor: "bg-green-500",
   },
   systemIntegration: {
     label: "System Integration",
@@ -57,7 +57,7 @@ const dimensionConfig = {
     label: "Budget & Resources",
     icon: "💰",
     color: "bg-yellow-100 text-yellow-600",
-    barColor: "bg-yellow-600",
+    barColor: "bg-yellow-500",
   },
   security: {
     label: "Security & Privacy",

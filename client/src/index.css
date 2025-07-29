@@ -88,4 +88,12 @@
   .text-error {
     color: hsl(var(--error));
   }
+  
+  .bg-secondary {
+    background-color: hsl(var(--secondary));
+  }
+  
+  .text-secondary {
+    color: hsl(var(--secondary));
+  }
 }
