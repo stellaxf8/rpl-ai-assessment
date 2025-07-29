@@ -7,6 +7,7 @@ export const assessments = pgTable("assessments", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   organizationName: text("organization_name").notNull(),
   contactEmail: text("contact_email").notNull(),
+  industry: text("industry").notNull(),
   responses: jsonb("responses").notNull(),
   scores: jsonb("scores").notNull(),
   overallScore: integer("overall_score").notNull(),
@@ -32,6 +33,27 @@ export const dimensionScoresSchema = z.object({
 });
 
 export type DimensionScores = z.infer<typeof dimensionScoresSchema>;
+
+// Industry options
+export const industryEnum = z.enum([
+  'Healthcare',
+  'Manufacturing', 
+  'Retail',
+  'Finance',
+  'Technology',
+  'Education',
+  'Government',
+  'Non-profit',
+  'Consulting',
+  'Media',
+  'Real Estate',
+  'Transportation',
+  'Energy',
+  'Agriculture',
+  'Other'
+]);
+
+export type Industry = z.infer<typeof industryEnum>;
 
 // Assessment responses schema
 export const assessmentResponsesSchema = z.record(z.string(), z.number().min(1).max(5));

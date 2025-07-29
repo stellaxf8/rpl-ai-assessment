@@ -50,10 +50,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const requestSchema = z.object({
         organizationName: z.string().min(1),
         contactEmail: z.string().email(),
+        industry: z.string().min(1),
         responses: assessmentResponsesSchema,
       });
 
-      const { organizationName, contactEmail, responses } = requestSchema.parse(req.body);
+      const { organizationName, contactEmail, industry, responses } = requestSchema.parse(req.body);
       
       // Calculate dimension scores
       const scores = calculateDimensionScores(responses);
@@ -64,6 +65,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const assessment = await storage.createAssessment({
         organizationName,
         contactEmail,
+        industry,
         responses,
         scores,
         overallScore,

@@ -9,6 +9,7 @@ import IndustryBenchmark from "@/components/enhanced/industry-benchmark";
 import IntegrationReadiness from "@/components/enhanced/integration-readiness";
 import ComplianceAssessment from "@/components/enhanced/compliance-assessment";
 import BusinessDevelopment from "@/components/enhanced/business-development";
+import IndustryInsights from "@/components/assessment/industry-insights";
 
 // Import all 9 new advanced features
 import { AIMaturityRoadmap } from "@/components/advanced/ai-maturity-roadmap";
@@ -151,8 +152,8 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
             value="industry" 
             className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
           >
-            <Filter className="h-4 w-4" />
-            Industry
+            <Target className="h-4 w-4" />
+            Insights
           </TabsTrigger>
           <TabsTrigger 
             value="recommendations" 
@@ -301,9 +302,13 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           />
         </TabsContent>
 
-        {/* Industry-Specific Questions */}
+        {/* Industry-Specific Insights */}
         <TabsContent value="industry" className="space-y-6">
-          <IndustryQuestions />
+          <IndustryInsights 
+            industry={assessment.industry || "Technology"}
+            scores={typedScores}
+            overallScore={overallScore}
+          />
         </TabsContent>
 
         {/* Smart Recommendations */}

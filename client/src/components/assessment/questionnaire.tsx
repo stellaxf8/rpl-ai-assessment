@@ -9,7 +9,9 @@ import { Input } from "@/components/ui/input";
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { questions } from "@/lib/assessment-data";
+import { questions, Question } from "@/lib/assessment-data";
+import { getIndustryQuestionVariation, hasIndustryVariations } from "@/lib/industry-questions";
+import IndustrySelection from "@/components/assessment/industry-selection";
 import { Assessment } from "@shared/schema";
 
 interface QuestionnaireProps {
@@ -31,12 +33,36 @@ const getIconComponent = (iconName: string) => {
 };
 
 export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps) {
+  const [selectedIndustry, setSelectedIndustry] = useState<string>("");
+  const [showIndustrySelection, setShowIndustrySelection] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [responses, setResponses] = useState<Record<string, number>>({});
   const [organizationName, setOrganizationName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [showContactForm, setShowContactForm] = useState(false);
   const { toast } = useToast();
+
+  // Get industry-tailored questions
+  const getQuestionsForIndustry = (): Question[] => {
+    if (!selectedIndustry || !hasIndustryVariations(selectedIndustry)) {
+      return questions;
+    }
+
+    return questions.map(question => {
+      const industryVariation = getIndustryQuestionVariation(selectedIndustry, question.id);
+      if (industryVariation) {
+        return {
+          ...question,
+          question: industryVariation.question,
+          description: industryVariation.description,
+          options: industryVariation.options
+        };
+      }
+      return question;
+    });
+  };
+
+  const industryQuestions = getQuestionsForIndustry();
 
   const submitAssessment = useMutation({
     mutationFn: async (data: any) => {
@@ -59,8 +85,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     },
   });
 
-  const currentQuestionData = questions[currentQuestion];
-  const progress = ((currentQuestion + 1) / questions.length) * 100;
+  const currentQuestionData = industryQuestions[currentQuestion];
+  const progress = ((currentQuestion + 1) / industryQuestions.length) * 100;
 
   const handleAnswerSelect = (value: string) => {
     setResponses({
@@ -70,7 +96,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   };
 
   const handleNext = () => {
-    if (currentQuestion < questions.length - 1) {
+    if (currentQuestion < industryQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setShowContactForm(true);
@@ -80,8 +106,11 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const handlePrevious = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
-    } else {
+    } else if (showIndustrySelection) {
       onBack();
+    } else {
+      setShowIndustrySelection(true);
+      setCurrentQuestion(0);
     }
   };
 
@@ -101,6 +130,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     submitAssessment.mutate({
       organizationName,
       contactEmail,
+      industry: selectedIndustry,
       responses,
     });
   };
@@ -109,7 +139,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     const demoResponses: Record<string, number> = {};
     
     // Generate realistic demo responses that create a moderate to good readiness score
-    questions.forEach((question) => {
+    industryQuestions.forEach((question) => {
       // Create a realistic distribution with slight bias toward positive responses
       const randomValue = Math.random();
       let response: number;
@@ -135,9 +165,16 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   };
 
   const getDimensionProgress = () => {
-    const dimensionQuestions = questions.filter(q => q.dimension === currentQuestionData.dimension);
+    const dimensionQuestions = industryQuestions.filter(q => q.dimension === currentQuestionData.dimension);
     const dimensionResponses = dimensionQuestions.filter(q => responses[q.id]);
     return `${dimensionResponses.length}/${dimensionQuestions.length}`;
+  };
+
+  const handleIndustrySelect = (industry: string) => {
+    setSelectedIndustry(industry);
+    setShowIndustrySelection(false);
+    setCurrentQuestion(0);
+    setResponses({}); // Reset responses when changing industry
   };
 
   if (showContactForm) {
@@ -192,13 +229,47 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     );
   }
 
+  // Show industry selection first
+  if (showIndustrySelection) {
+    return (
+      <section>
+        <IndustrySelection 
+          onIndustrySelect={handleIndustrySelect}
+          selectedIndustry={selectedIndustry}
+        />
+        
+        <div className="text-center mt-8">
+          <Button 
+            variant="outline" 
+            onClick={onBack}
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Overview
+          </Button>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section>
       {/* Progress Header */}
       <Card className="mb-8">
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-slate-900">AI Readiness Assessment</h2>
+            <div className="flex flex-col">
+              <h2 className="text-2xl font-bold text-slate-900">AI Readiness Assessment</h2>
+              {selectedIndustry && hasIndustryVariations(selectedIndustry) && (
+                <p className="text-sm text-primary font-medium">
+                  {selectedIndustry} Industry - Specialized Questions
+                </p>
+              )}
+              {selectedIndustry && !hasIndustryVariations(selectedIndustry) && (
+                <p className="text-sm text-slate-600">
+                  {selectedIndustry} - General Assessment
+                </p>
+              )}
+            </div>
             <div className="flex items-center gap-4">
               <Button 
                 variant="outline" 
@@ -210,7 +281,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 Demo Sample
               </Button>
               <span className="text-sm text-slate-500">
-                Question {currentQuestion + 1} of {questions.length}
+                Question {currentQuestion + 1} of {industryQuestions.length}
               </span>
             </div>
           </div>
@@ -227,7 +298,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               { label: 'Security', key: 'security' }
             ].map((dimension) => {
               const isCurrentDimension = currentQuestionData.dimension === dimension.key;
-              const dimensionQuestions = questions.filter(q => q.dimension === dimension.key);
+              const dimensionQuestions = industryQuestions.filter(q => q.dimension === dimension.key);
               const dimensionResponses = dimensionQuestions.filter(q => responses[q.id]);
               const progress = `${dimensionResponses.length}/${dimensionQuestions.length}`;
               
