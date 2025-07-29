@@ -213,14 +213,23 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
                     const scoreValue = score as number;
                     const percentage = (scoreValue / 5) * 100;
 
+                    // Determine bar color based on dimension
+                    let barColorClass = 'bg-primary';
+                    if (dimension === 'technologyInfrastructure') barColorClass = 'bg-blue-500';
+                    else if (dimension === 'dataQuality') barColorClass = 'bg-purple-500';
+                    else if (dimension === 'teamLiteracy') barColorClass = 'bg-green-500';
+                    else if (dimension === 'systemIntegration') barColorClass = 'bg-orange-500';
+                    else if (dimension === 'budget') barColorClass = 'bg-yellow-500';
+                    else if (dimension === 'security') barColorClass = 'bg-red-500';
+
                     return (
                       <div key={dimension} className="flex items-center justify-between">
                         <div className="flex items-center flex-1">
-                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 ${config.color}`}>
-                            <span className="text-sm">{config.icon}</span>
+                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 ${config?.color || 'bg-gray-100'}`}>
+                            <span className="text-sm">{config?.icon || '❓'}</span>
                           </div>
                           <div className="flex-1">
-                            <div className="font-medium text-slate-900">{config.label}</div>
+                            <div className="font-medium text-slate-900">{config?.label || dimension}</div>
                             <div className="text-sm text-slate-600">
                               {scoreValue >= 4.0 
                                 ? "Strong performance" 
@@ -232,10 +241,12 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
                           </div>
                         </div>
                         <div className="flex items-center ml-4">
-                          <div className="w-16 h-2 bg-slate-200 rounded-full mr-3">
+                          <div className="w-16 h-2 bg-slate-200 rounded-full mr-3 overflow-hidden">
                             <div 
-                              className={`h-2 rounded-full ${config.barColor}`} 
-                              style={{ width: `${percentage}%` }}
+                              className={`h-2 rounded-full transition-all duration-300 ${barColorClass}`} 
+                              style={{ 
+                                width: `${Math.max(0, Math.min(100, percentage))}%`
+                              }}
                             />
                           </div>
                           <span className="font-semibold text-slate-900 min-w-[2rem]">
