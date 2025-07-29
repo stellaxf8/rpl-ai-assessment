@@ -302,10 +302,15 @@ export default function KnowledgeCenter() {
                   <div className="flex items-center justify-between">
                     <div className="flex gap-2">
                       <Badge variant="outline">{guide.type}</Badge>
-                      <Badge variant={
-                        guide.level === "Beginner" ? "secondary" :
-                        guide.level === "Intermediate" ? "default" : "destructive"
-                      }>
+                      <Badge 
+                        variant={
+                          guide.level === "Beginner" ? "outline" :
+                          guide.level === "Intermediate" ? "default" : "destructive"
+                        }
+                        className={`${
+                          guide.level === "Beginner" ? "bg-green-500 text-white border-green-500" : ""
+                        }`}
+                      >
                         {guide.level}
                       </Badge>
                     </div>
