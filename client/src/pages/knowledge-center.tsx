@@ -213,7 +213,7 @@ export default function KnowledgeCenter() {
                         concept.difficulty === "Intermediate" ? "default" : "destructive"
                       }
                       className={`shrink-0 ${
-                        concept.difficulty === "Beginner" ? "bg-green-100 text-green-800 border-green-200" : ""
+                        concept.difficulty === "Beginner" ? "bg-green-500 text-white border-green-500" : ""
                       }`}
                     >
                       {concept.difficulty || "Beginner"}
