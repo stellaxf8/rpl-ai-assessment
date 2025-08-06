@@ -85,7 +85,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
         <CardContent className="p-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-slate-900 mb-2">AI Readiness Score</h2>
-            <p className="text-slate-600">Complete AI readiness assessment and strategic planning suite for {organizationName}</p>
+            <p className="text-slate-600">Complete AI readiness assessment for {organizationName}</p>
           </div>
           
           <div className="flex items-center justify-center mb-8">
