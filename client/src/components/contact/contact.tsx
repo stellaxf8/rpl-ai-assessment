@@ -87,8 +87,8 @@ export default function Contact() {
                 <div>
                   <p className="font-medium">Red Pill Labs - Head Office</p>
                   <p className="text-sm text-slate-600">
-                    123 Innovation Drive<br />
-                    Tech City, TC 12345
+                    Suite 1220 - 1055 West Hastings St.<br />
+                    Vancouver, BC V6E 2E9
                   </p>
                 </div>
               </div>
