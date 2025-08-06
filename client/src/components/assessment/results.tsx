@@ -84,7 +84,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
       <Card className="mb-8">
         <CardContent className="p-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">AI Strategy Platform</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-2">AI Readiness Score</h2>
             <p className="text-slate-600">Complete AI readiness assessment and strategic planning suite for {organizationName}</p>
           </div>
           
@@ -103,7 +103,6 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           </div>
         </CardContent>
       </Card>
-
       {/* Assessment Results Overview */}
       <div className="space-y-8">
           {/* Dimension Breakdown */}
@@ -188,7 +187,6 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
             security: typedScores.security
           }} />
       </div>
-
       {/* Action Buttons */}
       <div className="text-center space-x-4 mt-8">
         {onGenerateReport && (
