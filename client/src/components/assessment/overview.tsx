@@ -54,13 +54,12 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           Comprehensive evaluation across 6 key dimensions to determine your organization's readiness for AI implementation
         </p>
       </div>
-
       {/* Why AI Readiness Assessment is Crucial */}
       <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-8 mb-12">
         <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Why AI Readiness Assessment is <span style={{ color: '#cd0000' }}>Crucial</span></h3>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <h4 className="text-lg font-semibold text-slate-900 mb-3">Avoid Costly Mistakes</h4>
+            <h4 className="text-lg font-semibold mb-3 text-[#cd0000]">Avoid Costly Mistakes</h4>
             <p className="text-slate-700 mb-4">
               Organizations that rush into AI implementation without proper assessment face a 67% failure rate. Understanding your readiness prevents wasted resources and ensures successful AI adoption.
             </p>
@@ -83,7 +82,6 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           </div>
         </div>
       </div>
-
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
@@ -102,7 +100,6 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           );
         })}
       </div>
-
       <div className="text-center">
         <Button 
           onClick={onStartAssessment}
