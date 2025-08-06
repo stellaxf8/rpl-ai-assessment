@@ -207,13 +207,7 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
           </Button>
         </div>
       )}
-      <div className="text-center text-sm text-slate-500">
-        <p>
-          Industries marked as "Specialized" include tailored questions specific to your sector.
-          <br />
-          Don't see your industry? Choose "Other Industry" for a general assessment.
-        </p>
-      </div>
+      
     </div>
   );
 }
