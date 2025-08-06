@@ -70,9 +70,9 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-3 text-[#cd0000]">Strategic Planning</h4>
+            <h4 className="text-lg font-semibold mb-3 text-[#cd0000]">Security & Compliance</h4>
             <p className="text-slate-700 mb-4">
-              Gain clear insights into what needs to be addressed before implementing AI solutions. Create a roadmap that aligns with your organizational capabilities and goals.
+              AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.
             </p>
             
             <h4 className="text-lg font-semibold mb-3 text-[#cd0000]">Competitive Advantage</h4>
