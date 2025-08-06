@@ -23,12 +23,12 @@ const complianceFrameworks = [
   
   // US Regulations
   {
-    name: "CCPA",
-    fullName: "California Consumer Privacy Act",
-    description: "US data privacy law protecting California residents",
-    requirements: ["Consumer rights disclosure", "Data deletion rights", "Opt-out mechanisms", "Data mapping"],
+    name: "NIST AI RMF",
+    fullName: "NIST AI Risk Management Framework",
+    description: "US federal framework for managing AI risks and governance",
+    requirements: ["AI risk assessment", "Bias monitoring", "Transparency documentation", "Human oversight"],
     icon: "🇺🇸",
-    industries: ["all"] // Applies to all businesses serving California residents
+    industries: ["all"] // Applies to all organizations implementing AI systems
   },
   {
     name: "HIPAA",
