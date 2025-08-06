@@ -125,7 +125,7 @@ export default function Contact() {
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-4 w-4 text-primary" />
-                <span className="text-sm">Team Training & Support</span>
+                <span className="text-sm">Software Selection</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
@@ -181,7 +181,7 @@ export default function Contact() {
                       id="company"
                       value={formData.company}
                       onChange={(e) => handleInputChange('company', e.target.value)}
-                      placeholder="Acme Corporation"
+                      placeholder="Your Company Name"
                     />
                   </div>
                   
