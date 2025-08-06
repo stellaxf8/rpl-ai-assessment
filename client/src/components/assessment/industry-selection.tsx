@@ -177,19 +177,6 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">
                       {industry.description}
                     </p>
-                    
-                    {isSelected && (
-                      <div className="space-y-2">
-                        <div className="text-xs font-medium text-slate-700">AI Applications:</div>
-                        <div className="flex flex-wrap gap-1">
-                          {industry.aiApplications.map((app, index) => (
-                            <Badge key={index} variant="outline" className="text-xs">
-                              {app}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </div>
               </CardContent>
