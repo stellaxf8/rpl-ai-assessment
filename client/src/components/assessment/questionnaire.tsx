@@ -358,10 +358,10 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                     isCurrentDimension
                       ? 'text-white'
                       : dimensionQuestions.length === 0
-                      ? 'bg-gray-100 text-gray-600'
+                      ? 'bg-gray-300 text-gray-700'
                       : dimensionResponses.length === dimensionQuestions.length
                       ? 'bg-green-100 text-green-600'
-                      : 'bg-red-50 text-red-600'
+                      : 'bg-gray-100 text-gray-500'
                   }`}
                   style={isCurrentDimension ? { backgroundColor: '#cd0000' } : {}}
                 >
