@@ -4,12 +4,12 @@ import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
 import Report from "@/components/assessment/report";
-import Dashboard from "@/components/dashboard/dashboard";
+
 import Contact from "@/components/contact/contact";
 import KnowledgeCenter from "@/pages/knowledge-center";
 import { Assessment } from "@shared/schema";
 
-type Section = 'overview' | 'assessment' | 'results' | 'report' | 'dashboard' | 'knowledge' | 'contact';
+type Section = 'overview' | 'assessment' | 'results' | 'report' | 'knowledge' | 'contact';
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<Section>('overview');
@@ -17,7 +17,6 @@ export default function Home() {
 
   const navigationItems = [
     { id: 'overview' as Section, label: 'Overview' },
-    { id: 'dashboard' as Section, label: 'Dashboard' },
     { id: 'knowledge' as Section, label: 'Knowledge Center' },
     { id: 'contact' as Section, label: 'Contact' },
   ];
@@ -63,7 +62,6 @@ export default function Home() {
                   }`}
                 >
                   {item.id === 'overview' && <BookOpen className="mr-2 h-4 w-4" />}
-                  {item.id === 'dashboard' && <BarChart3 className="mr-2 h-4 w-4" />}
                   {item.id === 'knowledge' && <BookOpen className="mr-2 h-4 w-4" />}
                   {item.id === 'contact' && <Phone className="mr-2 h-4 w-4" />}
                   {item.label}
@@ -79,13 +77,6 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {currentSection === 'overview' && (
           <Overview onStartAssessment={handleStartAssessment} />
-        )}
-        
-        {currentSection === 'dashboard' && (
-          <Dashboard 
-            completedAssessment={completedAssessment}
-            onStartAssessment={handleStartAssessment}
-          />
         )}
         
         {currentSection === 'knowledge' && (
