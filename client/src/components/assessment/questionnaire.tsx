@@ -357,11 +357,12 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                   key={dimension.key}
                   className={`px-3 py-1 rounded-full text-xs font-medium ${
                     isCurrentDimension
-                      ? 'bg-blue-100 text-blue-800'
+                      ? 'text-white'
                       : dimensionResponses.length === dimensionQuestions.length
-                      ? 'bg-green-100 text-green-800'
-                      : 'bg-slate-100 text-slate-600'
+                      ? 'bg-gray-100 text-gray-600'
+                      : 'bg-red-50 text-red-600'
                   }`}
+                  style={isCurrentDimension ? { backgroundColor: '#cd0000' } : {}}
                 >
                   {dimension.label} ({progress})
                 </span>
@@ -376,10 +377,10 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         <CardContent className="p-8">
           <div className="mb-6">
             <div className="flex items-center mb-4">
-              <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: '#cd0000' }}>
                 {getIconComponent(currentQuestionData.icon)}
               </div>
-              <span className="text-sm font-medium text-blue-800 bg-blue-100 px-3 py-1 rounded-full">
+              <span className="text-sm font-medium text-white px-3 py-1 rounded-full" style={{ backgroundColor: '#cd0000' }}>
                 {currentQuestionData.dimensionLabel}
               </span>
             </div>
