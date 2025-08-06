@@ -1,7 +1,6 @@
-import { CheckCircle, CircleAlert, Share, FileText, RotateCcw, Brain, Target, BookOpen, TrendingUp, Scale, Code, Calendar, Users, Filter } from "lucide-react";
+import { CheckCircle, Share, FileText, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Assessment, DimensionScores } from "@shared/schema";
 import ScoreChart from "@/components/charts/score-chart";
 import RadarChart from "@/components/charts/radar-chart";
@@ -9,14 +8,6 @@ import IndustryBenchmark from "@/components/enhanced/industry-benchmark";
 import IntegrationReadiness from "@/components/enhanced/integration-readiness";
 import ComplianceAssessment from "@/components/enhanced/compliance-assessment";
 import BusinessDevelopment from "@/components/enhanced/business-development";
-
-
-// Import remaining advanced features
-import { AIMaturityRoadmap } from "@/components/advanced/ai-maturity-roadmap";
-import { ImplementationTimeline } from "@/components/advanced/implementation-timeline";
-import { SmartRecommendationsComponent } from "@/components/advanced/smart-recommendations";
-import { TrendAnalysisComponent } from "@/components/advanced/trend-analysis";
-import { RegulatoryComplianceTrackerComponent } from "@/components/advanced/regulatory-compliance";
 
 interface ResultsProps {
   assessment: Assessment;
@@ -113,55 +104,8 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
         </CardContent>
       </Card>
 
-      {/* Main Tabbed Interface for Advanced Features */}
-      <Tabs defaultValue="overview" className="w-full">
-        <TabsList className="grid w-full grid-cols-5 lg:grid-cols-6 mb-6 bg-slate-100 p-2 rounded-xl border shadow-sm h-auto">
-          <TabsTrigger 
-            value="overview" 
-            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
-          >
-            <Target className="h-4 w-4" />
-            Overview
-          </TabsTrigger>
-          <TabsTrigger 
-            value="roadmap" 
-            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
-          >
-            <Calendar className="h-4 w-4" />
-            Roadmap
-          </TabsTrigger>
-          <TabsTrigger 
-            value="timeline" 
-            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
-          >
-            <Calendar className="h-4 w-4" />
-            Timeline
-          </TabsTrigger>
-          <TabsTrigger 
-            value="recommendations" 
-            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
-          >
-            <Brain className="h-4 w-4" />
-            Smart Recs
-          </TabsTrigger>
-          <TabsTrigger 
-            value="trends" 
-            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
-          >
-            <TrendingUp className="h-4 w-4" />
-            Trends
-          </TabsTrigger>
-          <TabsTrigger 
-            value="compliance" 
-            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
-          >
-            <Scale className="h-4 w-4" />
-            Compliance
-          </TabsTrigger>
-        </TabsList>
-
-        {/* Overview Tab - Original Assessment Results */}
-        <TabsContent value="overview" className="space-y-8">
+      {/* Assessment Results Overview */}
+      <div className="space-y-8">
           {/* Dimension Breakdown */}
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Radar Chart */}
@@ -243,50 +187,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
             budget: typedScores.budget,
             security: typedScores.security
           }} />
-        </TabsContent>
-
-        {/* AI Maturity Roadmap */}
-        <TabsContent value="roadmap" className="space-y-6">
-          <AIMaturityRoadmap 
-            overallScore={overallScore}
-            organizationSize="Medium Enterprise"
-            budget="$250K - $1M"
-          />
-        </TabsContent>
-
-        {/* Implementation Timeline */}
-        <TabsContent value="timeline" className="space-y-6">
-          <ImplementationTimeline 
-            scores={typedScores}
-            organizationSize="Medium Enterprise"
-            budget="$250K - $1M"
-          />
-        </TabsContent>
-
-        {/* Smart Recommendations */}
-        <TabsContent value="recommendations" className="space-y-6">
-          <SmartRecommendationsComponent 
-            scores={typedScores}
-            organizationSize="Medium Enterprise"
-            budget="$250K - $1M"
-          />
-        </TabsContent>
-
-        {/* Trend Analysis */}
-        <TabsContent value="trends" className="space-y-6">
-          <TrendAnalysisComponent industry="Technology" />
-        </TabsContent>
-
-        {/* Regulatory Compliance */}
-        <TabsContent value="compliance" className="space-y-6">
-          <RegulatoryComplianceTrackerComponent 
-            industry="Technology"
-            region="United States"
-          />
-        </TabsContent>
-
-
-      </Tabs>
+      </div>
 
       {/* Action Buttons */}
       <div className="text-center space-x-4 mt-8">
