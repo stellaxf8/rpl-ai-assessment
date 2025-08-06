@@ -46,6 +46,19 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const [showContactForm, setShowContactForm] = useState(false);
   const { toast } = useToast();
 
+  // Reset function to clear all assessment state
+  const resetAssessment = () => {
+    setAssessmentType("");
+    setSelectedIndustry("");
+    setShowAssessmentTypeSelection(true);
+    setShowIndustrySelection(false);
+    setCurrentQuestion(0);
+    setResponses({});
+    setOrganizationName("");
+    setContactEmail("");
+    setShowContactForm(false);
+  };
+
   // Get questions based on assessment type and industry
   const getQuestionsForAssessment = (): Question[] => {
     // For quick assessment, use quick questions (no industry customization)
@@ -124,6 +137,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       setShowAssessmentTypeSelection(true);
       setShowIndustrySelection(false);
     } else if (showAssessmentTypeSelection) {
+      resetAssessment();
       onBack();
     } else {
       if (assessmentType === 'detailed') {
@@ -136,6 +150,13 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   };
 
   const handleAssessmentTypeSelect = (type: 'detailed' | 'quick') => {
+    // Reset previous assessment data when selecting a new type
+    setResponses({});
+    setCurrentQuestion(0);
+    setOrganizationName("");
+    setContactEmail("");
+    setShowContactForm(false);
+    
     setAssessmentType(type);
     setShowAssessmentTypeSelection(false);
     
@@ -143,8 +164,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       setShowIndustrySelection(true);
     } else {
       // For quick assessment, skip industry selection and go straight to questions
+      setSelectedIndustry("");
       setShowIndustrySelection(false);
-      setCurrentQuestion(0);
     }
   };
 
@@ -209,6 +230,9 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     setShowIndustrySelection(false);
     setCurrentQuestion(0);
     setResponses({}); // Reset responses when changing industry
+    setOrganizationName("");
+    setContactEmail("");
+    setShowContactForm(false);
   };
 
   if (showContactForm) {
@@ -290,6 +314,9 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             onClick={() => {
               setShowAssessmentTypeSelection(true);
               setShowIndustrySelection(false);
+              setSelectedIndustry("");
+              setResponses({});
+              setCurrentQuestion(0);
             }}
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
