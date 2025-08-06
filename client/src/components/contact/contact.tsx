@@ -58,7 +58,7 @@ export default function Contact() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Phone className="h-5 w-5" />
+                <Phone className="h-5 w-5" style={{ color: '#cd0000' }} />
                 Get In Touch
               </CardTitle>
               <CardDescription>
@@ -67,7 +67,7 @@ export default function Contact() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-slate-500" />
+                <Phone className="h-4 w-4" style={{ color: '#cd0000' }} />
                 <div>
                   <p className="font-medium">Phone</p>
                   <p className="text-sm text-slate-600">+1 (866) 745-5733</p>
@@ -75,7 +75,7 @@ export default function Contact() {
               </div>
               
               <div className="flex items-center gap-3">
-                <Mail className="h-4 w-4 text-slate-500" />
+                <Mail className="h-4 w-4" style={{ color: '#cd0000' }} />
                 <div>
                   <p className="font-medium">Email</p>
                   <p className="text-sm text-slate-600">info@redpilllabs.com</p>
@@ -83,7 +83,7 @@ export default function Contact() {
               </div>
               
               <div className="flex items-center gap-3">
-                <MapPin className="h-4 w-4 text-slate-500" />
+                <MapPin className="h-4 w-4" style={{ color: '#cd0000' }} />
                 <div>
                   <p className="font-medium">Red Pill Labs - Head Office</p>
                   <p className="text-sm text-slate-600">
@@ -94,7 +94,7 @@ export default function Contact() {
               </div>
               
               <div className="flex items-center gap-3">
-                <Clock className="h-4 w-4 text-slate-500" />
+                <Clock className="h-4 w-4" style={{ color: '#cd0000' }} />
                 <div>
                   <p className="font-medium">Business Hours</p>
                   <p className="text-sm text-slate-600">
@@ -110,7 +110,7 @@ export default function Contact() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Users className="h-5 w-5" />
+                <Users className="h-5 w-5" style={{ color: '#cd0000' }} />
                 Our Services
               </CardTitle>
             </CardHeader>
@@ -140,7 +140,7 @@ export default function Contact() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Send className="h-5 w-5" />
+                <Send className="h-5 w-5" style={{ color: '#cd0000' }} />
                 Send Us a Message
               </CardTitle>
               <CardDescription>
