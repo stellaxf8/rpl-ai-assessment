@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Brain, Menu, BookOpen, BarChart3, Phone } from "lucide-react";
+import logoPath from "@assets/RPL Logo_1754506008197.png";
 import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
@@ -41,13 +42,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div 
-              className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
+              className="flex items-center cursor-pointer hover:opacity-80 transition-opacity"
               onClick={() => setCurrentSection('overview')}
             >
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Brain className="text-white text-sm" />
-              </div>
-              <h1 className="text-xl font-semibold text-slate-900">AI Readiness Assessment</h1>
+              <img 
+                src={logoPath} 
+                alt="Red Pill Labs" 
+                className="h-8 w-auto"
+              />
             </div>
             <nav className="flex items-center space-x-1">
               {navigationItems.map((item) => (
