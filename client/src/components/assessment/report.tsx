@@ -158,28 +158,7 @@ Best regards`);
     }).format(new Date(date));
   };
 
-  const roadmapPhases = [
-    {
-      phase: 1,
-      title: "Foundation (0-3 months)",
-      description: "Implement data governance framework and quality controls",
-    },
-    {
-      phase: 2,
-      title: "Infrastructure (3-6 months)", 
-      description: "Optimize cloud infrastructure and implement AI-ready compute resources",
-    },
-    {
-      phase: 3,
-      title: "Pilot Projects (6-9 months)",
-      description: "Launch pilot AI projects leveraging existing team expertise",
-    },
-    {
-      phase: 4,
-      title: "Scale (9-12 months)",
-      description: "Expand successful AI implementations across the organization",
-    },
-  ];
+
 
   return (
     <section>
@@ -280,23 +259,7 @@ Best regards`);
             </div>
           </div>
 
-          {/* Implementation Roadmap */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold text-slate-900 mb-6">Recommended Implementation Roadmap</h3>
-            <div className="space-y-4">
-              {roadmapPhases.map((phase) => (
-                <div key={phase.phase} className="flex items-start">
-                  <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-sm mr-4 mt-1">
-                    {phase.phase}
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-slate-900">Phase {phase.phase}: {phase.title}</h4>
-                    <p className="text-slate-600">{phase.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+
 
           {/* Contact Information */}
           <div className="border-t border-slate-200 pt-6">
