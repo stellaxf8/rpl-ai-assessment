@@ -185,7 +185,7 @@ Best regards`);
     <section>
       <Card className="overflow-hidden" data-report-content>
         {/* Report Header */}
-        <div className="bg-gradient-to-r from-primary to-secondary p-8 text-white">
+        <div className="p-8 text-white" style={{ backgroundColor: '#cd0000' }}>
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-3xl font-bold mb-2">AI Readiness Assessment Report</h2>
