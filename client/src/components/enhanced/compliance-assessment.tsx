@@ -158,7 +158,7 @@ export default function ComplianceAssessment({ scores }: ComplianceAssessmentPro
                 
                 <div className="flex items-center mb-3">
                   <div className="flex-1 mr-3">
-                    <Progress value={(frameworkScore / 5) * 100} className="h-2" />
+                    <Progress value={(frameworkScore / 5) * 100} className="h-2 bg-gray-200" />
                   </div>
                   <span className="text-sm text-slate-600">{frameworkScore.toFixed(1)}/5</span>
                 </div>

@@ -151,7 +151,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
                           </div>
                         </div>
                         <div className="flex items-center ml-4">
-                          <div className="w-16 h-2 bg-slate-200 rounded-full mr-3 overflow-hidden">
+                          <div className="w-16 h-2 bg-gray-200 rounded-full mr-3 overflow-hidden">
                             <div 
                               className={`h-2 rounded-full transition-all duration-300 ${barColorClass}`} 
                               style={{ 
