@@ -57,12 +57,12 @@ const complianceFrameworks = [
   
   // EU Regulations
   {
-    name: "GDPR",
-    fullName: "General Data Protection Regulation",
-    description: "EU data protection and privacy regulation",
-    requirements: ["Data encryption", "Consent management", "Right to deletion", "Data breach notification"],
+    name: "EU AI Act",
+    fullName: "European Union Artificial Intelligence Act",
+    description: "EU comprehensive regulation for AI systems and governance",
+    requirements: ["AI risk classification", "Conformity assessments", "Human oversight", "Transparency obligations"],
     icon: "🇪🇺",
-    industries: ["all"] // Applies to all industries that handle EU data
+    industries: ["all"] // Applies to all AI systems used in or affecting the EU
   },
   
   // International Standards
