@@ -56,11 +56,7 @@ export default function Home() {
                 <button
                   key={item.id}
                   onClick={() => setCurrentSection(item.id)}
-                  className={`flex items-center px-4 py-2 rounded-md transition-colors ${
-                    currentSection === item.id
-                      ? 'bg-primary text-white'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-                  }`}
+                  className="flex items-center px-4 py-2 rounded-md transition-colors text-white bg-[#cd0000]"
                 >
                   {item.id === 'overview' && <BookOpen className="mr-2 h-4 w-4" />}
                   {item.id === 'contact' && <Phone className="mr-2 h-4 w-4" />}
