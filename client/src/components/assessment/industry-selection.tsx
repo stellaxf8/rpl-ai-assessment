@@ -143,7 +143,6 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
           Choose your primary industry to receive a tailored AI readiness assessment with industry-specific questions and benchmarks.
         </p>
       </div>
-
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {industries.map((industry) => {
           const Icon = industry.icon;
@@ -164,11 +163,7 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
             >
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center ${
-                    isSelected 
-                      ? 'bg-primary text-white' 
-                      : 'bg-slate-100 text-slate-600'
-                  }`}>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center bg-[#2a2c3700] text-[#cd0000]">
                     <Icon className="h-6 w-6" />
                   </div>
                   
@@ -205,7 +200,6 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
           );
         })}
       </div>
-
       {selectedIndustry && (
         <div className="text-center">
           <Button 
@@ -217,7 +211,6 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
           </Button>
         </div>
       )}
-
       <div className="text-center text-sm text-slate-500">
         <p>
           Industries marked as "Specialized" include tailored questions specific to your sector.
