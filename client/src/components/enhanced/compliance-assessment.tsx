@@ -112,7 +112,7 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
       icon: CheckCircle,
       description: "Meets most regulatory requirements with minimal gaps"
     };
-    if (score >= 3.0) return { 
+    if (score >= 2.5) return { 
       level: "Partially Compliant", 
       color: "text-yellow-600", 
       bgColor: "bg-yellow-50", 

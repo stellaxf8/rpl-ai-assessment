@@ -9,10 +9,8 @@ import { cn } from "@/lib/utils"
 const getScoreColor = (value: number, maxValue: number = 100) => {
   const percentage = (value / maxValue) * 100;
   if (percentage >= 80) return 'bg-green-600'; // High score: green (4.0+/5)
-  if (percentage >= 70) return 'bg-green-400'; // Good score: light green (3.5+/5)
-  if (percentage >= 60) return 'bg-yellow-500'; // Medium score: yellow (3.0+/5)
-  if (percentage >= 30) return 'bg-orange-500'; // Low-medium score: orange (1.5+/5)
-  return 'bg-red-500'; // Low score: red (0-1.5/5)
+  if (percentage >= 50) return 'bg-yellow-500'; // Medium score: yellow (2.5-3.9/5)
+  return 'bg-red-500'; // Low score: red (0.0-2.4/5)
 };
 
 interface ProgressProps extends React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> {

@@ -132,7 +132,7 @@ export default function Report({ assessment }: ReportProps) {
 
   const getScoreLevel = (score: number): 'high' | 'medium' | 'low' => {
     if (score >= 4.0) return 'high';
-    if (score >= 3.0) return 'medium';
+    if (score >= 2.5) return 'medium';
     return 'low';
   };
 

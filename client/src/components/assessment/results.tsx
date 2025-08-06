@@ -127,15 +127,11 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
                     // Determine bar color based on score value (dynamic)
                     let barColorClass = 'bg-red-500'; // Default to red for low scores
                     if (scoreValue >= 4.0) {
-                      barColorClass = 'bg-green-600'; // High score: green (4.0-5.0)
-                    } else if (scoreValue >= 3.5) {
-                      barColorClass = 'bg-green-400'; // Good score: light green (3.5-4.0)
+                      barColorClass = 'bg-green-600'; // High score: green (4.0+)
                     } else if (scoreValue >= 2.5) {
-                      barColorClass = 'bg-yellow-500'; // Medium score: yellow (2.5-3.5)
-                    } else if (scoreValue >= 1.5) {
-                      barColorClass = 'bg-orange-500'; // Low-medium score: orange (1.5-2.5)
+                      barColorClass = 'bg-yellow-500'; // Medium score: yellow (2.5-3.9)
                     } else {
-                      barColorClass = 'bg-red-500'; // Low score: red (0-1.5)
+                      barColorClass = 'bg-red-500'; // Low score: red (0.0-2.4)
                     }
 
                     return (
