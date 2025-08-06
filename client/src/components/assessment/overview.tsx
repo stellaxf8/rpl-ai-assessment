@@ -54,6 +54,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           Comprehensive evaluation across 6 key dimensions to determine your organization's readiness for AI implementation
         </p>
       </div>
+
       {/* Why AI Readiness Assessment is Crucial */}
       <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-8 mb-12">
         <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Why AI Readiness Assessment is Crucial</h3>
@@ -82,6 +83,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           </div>
         </div>
       </div>
+
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
@@ -89,7 +91,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             <Card key={index} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-yellow-100 text-[#262c34]">
+                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 ${dimension.color}`}>
                     <IconComponent className="text-xl" />
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900">{dimension.title}</h3>
@@ -100,6 +102,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           );
         })}
       </div>
+
       <div className="text-center">
         <Button 
           onClick={onStartAssessment}
