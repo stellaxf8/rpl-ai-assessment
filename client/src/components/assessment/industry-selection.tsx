@@ -133,7 +133,6 @@ const industries = [
 ];
 
 export default function IndustrySelection({ onIndustrySelect, selectedIndustry }: IndustrySelectionProps) {
-  const [hoveredIndustry, setHoveredIndustry] = useState<string | null>(null);
 
   return (
     <div className="space-y-6">
@@ -147,7 +146,6 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
         {industries.map((industry) => {
           const Icon = industry.icon;
           const isSelected = selectedIndustry === industry.id;
-          const isHovered = hoveredIndustry === industry.id;
 
           return (
             <Card
@@ -158,8 +156,6 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
                   : 'hover:bg-slate-50'
               }`}
               onClick={() => onIndustrySelect(industry.id)}
-              onMouseEnter={() => setHoveredIndustry(industry.id)}
-              onMouseLeave={() => setHoveredIndustry(null)}
             >
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
@@ -181,7 +177,7 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
                       {industry.description}
                     </p>
                     
-                    {(isHovered || isSelected) && (
+                    {isSelected && (
                       <div className="space-y-2">
                         <div className="text-xs font-medium text-slate-700">AI Applications:</div>
                         <div className="flex flex-wrap gap-1">
@@ -205,9 +201,9 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
           <Button 
             onClick={() => onIndustrySelect(selectedIndustry)}
             size="lg"
-            className="px-8"
+            className="px-8 bg-[#cd0000] text-white hover:bg-[#b30000]"
           >
-            Continue with {industries.find(i => i.id === selectedIndustry)?.name} Assessment
+            Start Detailed Assessment
           </Button>
         </div>
       )}
