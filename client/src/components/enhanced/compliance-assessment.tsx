@@ -11,13 +11,24 @@ interface ComplianceAssessmentProps {
 }
 
 const complianceFrameworks = [
+  // Canadian Regulations
   {
-    name: "GDPR",
-    fullName: "General Data Protection Regulation",
-    description: "EU data protection and privacy regulation",
-    requirements: ["Data encryption", "Consent management", "Right to deletion", "Data breach notification"],
-    icon: "🇪🇺",
-    industries: ["all"] // Applies to all industries that handle EU data
+    name: "PIPEDA",
+    fullName: "Personal Information Protection and Electronic Documents Act",
+    description: "Canadian federal privacy law governing personal information",
+    requirements: ["Privacy policies", "Consent mechanisms", "Breach notifications", "Data minimization"],
+    icon: "🇨🇦",
+    industries: ["all"] // Applies to all Canadian organizations
+  },
+  
+  // US Regulations
+  {
+    name: "CCPA",
+    fullName: "California Consumer Privacy Act",
+    description: "US data privacy law protecting California residents",
+    requirements: ["Consumer rights disclosure", "Data deletion rights", "Opt-out mechanisms", "Data mapping"],
+    icon: "🇺🇸",
+    industries: ["all"] // Applies to all businesses serving California residents
   },
   {
     name: "HIPAA",
@@ -30,27 +41,10 @@ const complianceFrameworks = [
   {
     name: "SOX",
     fullName: "Sarbanes-Oxley Act",
-    description: "Financial reporting and data integrity requirements",
+    description: "US financial reporting and data integrity requirements",
     requirements: ["Financial data controls", "Audit trails", "Change management", "Access controls"],
     icon: "💼",
     industries: ["Finance", "Financial Services"]
-  },
-  {
-    name: "PIPEDA",
-    fullName: "Personal Information Protection and Electronic Documents Act",
-    description: "Canadian federal privacy law governing personal information",
-    requirements: ["Privacy policies", "Consent mechanisms", "Breach notifications", "Data minimization"],
-    icon: "🇨🇦",
-    industries: ["all"] // Applies to all Canadian organizations
-  },
-
-  {
-    name: "PCI DSS",
-    fullName: "Payment Card Industry Data Security Standard",
-    description: "Security standard for organizations handling credit card data",
-    requirements: ["Secure network", "Cardholder data protection", "Access controls", "Regular monitoring"],
-    icon: "💳",
-    industries: ["Retail", "Finance", "Financial Services", "E-commerce"]
   },
   {
     name: "FERPA",
@@ -60,6 +54,18 @@ const complianceFrameworks = [
     icon: "🎓",
     industries: ["Education"]
   },
+  
+  // EU Regulations
+  {
+    name: "GDPR",
+    fullName: "General Data Protection Regulation",
+    description: "EU data protection and privacy regulation",
+    requirements: ["Data encryption", "Consent management", "Right to deletion", "Data breach notification"],
+    icon: "🇪🇺",
+    industries: ["all"] // Applies to all industries that handle EU data
+  },
+  
+  // International Standards
   {
     name: "ISO 27001",
     fullName: "Information Security Management",
@@ -67,6 +73,14 @@ const complianceFrameworks = [
     requirements: ["Risk assessment", "Security policies", "Incident response", "Regular audits"],
     icon: "🔒",
     industries: ["all"] // Universal security standard
+  },
+  {
+    name: "PCI DSS",
+    fullName: "Payment Card Industry Data Security Standard",
+    description: "International standard for organizations handling credit card data",
+    requirements: ["Secure network", "Cardholder data protection", "Access controls", "Regular monitoring"],
+    icon: "💳",
+    industries: ["Retail", "Finance", "Financial Services", "E-commerce"]
   }
 ];
 
