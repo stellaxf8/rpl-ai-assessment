@@ -414,7 +414,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               onClick={handlePrevious}
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
-              {currentQuestion === 0 ? 'Back to Overview' : 'Previous Question'}
+              {currentQuestion === 0 ? 'Back' : 'Previous Question'}
             </Button>
             <div className="flex items-center gap-3">
               {!canGoNext && (
