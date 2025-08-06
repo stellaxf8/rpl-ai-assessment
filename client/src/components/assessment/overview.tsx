@@ -70,7 +70,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-slate-900 mb-3">Strategic Planning</h4>
+            <h4 className="text-lg font-semibold mb-3 text-[#cd0000]">Strategic Planning</h4>
             <p className="text-slate-700 mb-4">
               Gain clear insights into what needs to be addressed before implementing AI solutions. Create a roadmap that aligns with your organizational capabilities and goals.
             </p>
