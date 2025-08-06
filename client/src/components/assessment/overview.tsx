@@ -104,7 +104,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         <Button 
           onClick={onStartAssessment}
           size="lg"
-          className="text-lg px-8 py-4"
+          className="text-xl px-12 py-6 shadow-lg"
         >
           Start Assessment
           <ArrowRight className="ml-2 h-5 w-5" />
