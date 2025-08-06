@@ -98,8 +98,8 @@ export default function Contact() {
                 <div>
                   <p className="font-medium">Business Hours</p>
                   <p className="text-sm text-slate-600">
-                    Mon-Fri: 9:00 AM - 6:00 PM EST<br />
-                    Response within 24 hours
+                    Mon-Fri: 9:00 AM - 5:00 PM PST<br />
+                    Response within 1-2 business days
                   </p>
                 </div>
               </div>
