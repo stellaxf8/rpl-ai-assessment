@@ -1,9 +1,10 @@
-import { Download, Calendar } from "lucide-react";
+import { Download, Calendar, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Assessment } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "wouter";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
@@ -169,10 +170,21 @@ export default function Report({ assessment }: ReportProps) {
         {/* Report Header */}
         <div className="p-8 text-white" style={{ backgroundColor: '#cd0000' }}>
           <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-3xl font-bold mb-2">AI Readiness Assessment Report</h2>
-              <p className="text-blue-100">Comprehensive analysis and recommendations</p>
-              <p className="text-blue-100 mt-1">Organization: {organizationName}</p>
+            <div className="flex items-center">
+              <Link href="/results">
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  className="text-white hover:bg-red-700 mr-4 p-2"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                </Button>
+              </Link>
+              <div>
+                <h2 className="text-3xl font-bold mb-2">AI Readiness Assessment Report</h2>
+                <p className="text-blue-100">Comprehensive analysis and recommendations</p>
+                <p className="text-blue-100 mt-1">Organization: {organizationName}</p>
+              </div>
             </div>
             <div className="text-right">
               <div className="text-2xl font-bold">{formatDate(createdAt)}</div>
