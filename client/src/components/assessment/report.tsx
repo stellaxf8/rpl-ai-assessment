@@ -1,8 +1,10 @@
-import { Download, Mail, Calendar } from "lucide-react";
+import { Download, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Assessment } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 interface ReportProps {
   assessment: Assessment;
@@ -69,66 +71,57 @@ export default function Report({ assessment }: ReportProps) {
   const { organizationName, overallScore, scores, createdAt } = assessment;
   const { toast } = useToast();
 
-  const handleDownloadPDF = () => {
-    // Create a clean version of the report for printing
-    const printContent = document.querySelector('[data-report-content]');
-    if (printContent) {
-      const printWindow = window.open('', '_blank');
-      if (printWindow) {
-        printWindow.document.write(`
-          <!DOCTYPE html>
-          <html>
-            <head>
-              <title>AI Readiness Assessment Report - ${organizationName}</title>
-              <style>
-                body { font-family: Arial, sans-serif; margin: 20px; color: #333; }
-                .header { background: linear-gradient(to right, #3b82f6, #8b5cf6); color: white; padding: 20px; margin-bottom: 20px; }
-                .section { margin-bottom: 30px; }
-                .dimension { border: 1px solid #e5e7eb; padding: 15px; margin-bottom: 15px; border-radius: 8px; }
-                .score-bar { background: #e5e7eb; height: 8px; border-radius: 4px; overflow: hidden; }
-                .score-fill { background: #3b82f6; height: 100%; }
-                .roadmap-item { display: flex; margin-bottom: 15px; }
-                .roadmap-number { background: #3b82f6; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; }
-                @media print { body { margin: 0; } }
-              </style>
-            </head>
-            <body>
-              ${printContent.innerHTML}
-            </body>
-          </html>
-        `);
-        printWindow.document.close();
-        printWindow.print();
-      }
+  const handleDownloadPDF = async () => {
+    try {
+      toast({
+        title: "Generating PDF",
+        description: "Please wait while we generate your report...",
+      });
+
+      const reportElement = document.querySelector('[data-report-content]') as HTMLElement;
+      if (!reportElement) return;
+
+      // Create canvas from the report element
+      const canvas = await html2canvas(reportElement, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: '#ffffff'
+      });
+
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      
+      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+      const imgX = (pdfWidth - imgWidth * ratio) / 2;
+      const imgY = 0;
+
+      // Add image to PDF
+      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+      
+      // Download the PDF
+      pdf.save(`AI-Readiness-Report-${organizationName.replace(/[^a-zA-Z0-9]/g, '-')}.pdf`);
+      
+      toast({
+        title: "PDF Downloaded",
+        description: "Your AI Readiness Assessment Report has been downloaded successfully.",
+      });
+    } catch (error) {
+      console.error('PDF generation error:', error);
+      toast({
+        title: "PDF Generation Failed",
+        description: "There was an error generating the PDF. Please try again.",
+        variant: "destructive"
+      });
     }
-    
-    toast({
-      title: "PDF Generation",
-      description: "Print dialog opened. Select 'Save as PDF' to download your report.",
-    });
   };
 
-  const handleEmailReport = () => {
-    const subject = encodeURIComponent(`AI Readiness Assessment Report - ${organizationName}`);
-    const body = encodeURIComponent(`Please find attached the AI Readiness Assessment Report for ${organizationName}.
 
-Overall Score: ${overallScore}/100
-Assessment Date: ${formatDate(createdAt)}
-
-This comprehensive report includes:
-- Detailed dimension analysis
-- Specific recommendations
-- Implementation roadmap
-
-Best regards`);
-    
-    window.open(`mailto:?subject=${subject}&body=${body}`);
-    
-    toast({
-      title: "Email Client Opened",
-      description: "Your default email client has been opened with the report details.",
-    });
-  };
 
   const handleScheduleConsultation = () => {
     toast({
@@ -157,6 +150,8 @@ Best regards`);
       day: 'numeric'
     }).format(new Date(date));
   };
+
+
 
 
 
@@ -285,14 +280,7 @@ Best regards`);
           <Download className="mr-2 h-5 w-5" />
           Download PDF
         </Button>
-        <Button 
-          variant="outline" 
-          size="lg"
-          onClick={handleEmailReport}
-        >
-          <Mail className="mr-2 h-5 w-5" />
-          Email Report
-        </Button>
+
       </div>
     </section>
   );
