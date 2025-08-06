@@ -15,6 +15,7 @@ type Section = 'overview' | 'assessment' | 'results' | 'report' | 'contact';
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<Section>('overview');
   const [completedAssessment, setCompletedAssessment] = useState<Assessment | null>(null);
+  const [assessmentKey, setAssessmentKey] = useState(0);
 
   const navigationItems = [
     { id: 'overview' as Section, label: 'Assessment' },
@@ -32,7 +33,8 @@ export default function Home() {
 
   const handleRetakeAssessment = () => {
     setCompletedAssessment(null);
-    setCurrentSection('overview');
+    setAssessmentKey(prev => prev + 1); // Force component remount
+    setCurrentSection('assessment');
   };
 
   return (
@@ -92,6 +94,7 @@ export default function Home() {
         
         {currentSection === 'assessment' && (
           <Questionnaire 
+            key={assessmentKey}
             onComplete={handleAssessmentComplete}
             onBack={() => setCurrentSection('overview')}
           />
