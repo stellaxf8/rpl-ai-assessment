@@ -97,9 +97,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
               <CheckCircle className="mr-2 h-4 w-4" />
               {readinessLevel.label} AI Readiness Level
             </div>
-            <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
-              Your comprehensive AI strategy platform with 9 advanced features to guide your AI transformation journey.
-            </p>
+            
           </div>
         </CardContent>
       </Card>
