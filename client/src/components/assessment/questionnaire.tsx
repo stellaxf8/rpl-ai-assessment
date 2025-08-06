@@ -325,7 +325,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 variant="outline" 
                 size="sm"
                 onClick={generateDemoSample}
-                className="text-xs"
+                className="text-xs bg-[#cd0000] text-[#f5f5f4] border-[#cd0000] hover:bg-[#b30000] hover:text-[#f5f5f4]"
               >
                 <Zap className="mr-1 h-3 w-3" />
                 Demo Sample
