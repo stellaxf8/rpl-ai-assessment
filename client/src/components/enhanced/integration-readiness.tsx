@@ -23,7 +23,7 @@ export default function IntegrationReadiness({ scores }: IntegrationReadinessPro
   
   const getReadinessLevel = (score: number) => {
     if (score >= 4.0) return { level: "High", color: "text-green-600", bgColor: "bg-green-50", icon: CheckCircle };
-    if (score >= 3.0) return { level: "Medium", color: "text-yellow-600", bgColor: "bg-yellow-50", icon: Clock };
+    if (score >= 2.5) return { level: "Medium", color: "text-yellow-600", bgColor: "bg-yellow-50", icon: Clock };
     return { level: "Low", color: "text-red-600", bgColor: "bg-red-50", icon: AlertCircle };
   };
 
