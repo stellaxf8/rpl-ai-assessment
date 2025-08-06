@@ -78,7 +78,7 @@ export default function Contact() {
                 <Mail className="h-4 w-4 text-slate-500" />
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-sm text-slate-600">ai-consulting@company.com</p>
+                  <p className="text-sm text-slate-600">info@redpilllabs.com</p>
                 </div>
               </div>
               
