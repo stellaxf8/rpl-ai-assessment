@@ -43,14 +43,7 @@ const complianceFrameworks = [
     icon: "🇨🇦",
     industries: ["all"] // Applies to all Canadian organizations
   },
-  {
-    name: "AIDA",
-    fullName: "Artificial Intelligence and Data Act",
-    description: "Canadian AI regulation framework (proposed)",
-    requirements: ["AI impact assessments", "Risk mitigation", "Transparency requirements", "Algorithmic accountability"],
-    icon: "🇨🇦",
-    industries: ["all"] // Will apply to all AI implementations
-  },
+
   {
     name: "PCI DSS",
     fullName: "Payment Card Industry Data Security Standard",
@@ -129,7 +122,6 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
       "HIPAA": baseScore * 0.9,      // Lower due to healthcare-specific requirements
       "SOX": baseScore * 1.05,       // Slightly higher as more focused on financial controls
       "PIPEDA": baseScore * 0.97,    // Canadian privacy law, moderate requirements
-      "AIDA": baseScore * 0.85,      // Emerging AI regulation, stringent requirements
       "PCI DSS": baseScore * 0.92,   // Payment security, moderate requirements
       "FERPA": baseScore * 0.94,     // Education privacy, moderate requirements
       "ISO 27001": baseScore         // Standard baseline
