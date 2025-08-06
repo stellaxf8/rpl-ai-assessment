@@ -152,23 +152,23 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
         </div>
 
         {/* ROI Projection */}
-        <div className="bg-gradient-to-r from-red-50 to-pink-50 p-6 rounded-lg mb-6">
+        <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg mb-6">
           <h4 className="font-semibold text-slate-900 mb-4">Projected Return on Investment</h4>
           <div className="grid grid-cols-3 gap-4 text-center">
             <div>
-              <div className="text-2xl font-bold text-red-600">
+              <div className="text-2xl font-bold text-green-600">
                 ${roiProjection.yearOne.toLocaleString()}
               </div>
               <div className="text-sm text-slate-600">Year 1 Savings</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-red-600">
+              <div className="text-2xl font-bold text-green-600">
                 ${roiProjection.yearTwo.toLocaleString()}
               </div>
               <div className="text-sm text-slate-600">Year 2 Savings</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-red-600">
+              <div className="text-2xl font-bold text-green-600">
                 ${roiProjection.yearThree.toLocaleString()}
               </div>
               <div className="text-sm text-slate-600">Year 3 Savings</div>
