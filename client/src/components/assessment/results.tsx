@@ -56,7 +56,7 @@ const dimensionConfig = {
 };
 
 export default function Results({ assessment, onGenerateReport, onRetakeAssessment, showRetakeButton = true }: ResultsProps) {
-  const { overallScore, scores, organizationName, contactEmail } = assessment;
+  const { overallScore, scores, organizationName, contactEmail, industry } = assessment;
   const typedScores = scores as DimensionScores;
 
   const getReadinessLevel = (score: number) => {
@@ -172,9 +172,9 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           </div>
 
           {/* Enhanced Analytics */}
-          <IndustryBenchmark userScore={overallScore} industry="Technology" />
+          <IndustryBenchmark userScore={overallScore} industry={industry || "Technology"} />
           <IntegrationReadiness scores={{ technologyInfrastructure: typedScores.technologyInfrastructure, systemIntegration: typedScores.systemIntegration }} />
-          <ComplianceAssessment scores={{ security: typedScores.security, dataQuality: typedScores.dataQuality }} />
+          <ComplianceAssessment scores={{ security: typedScores.security, dataQuality: typedScores.dataQuality }} industry={industry} />
           <BusinessDevelopment scores={{
             overallScore: overallScore,
             technologyInfrastructure: typedScores.technologyInfrastructure,

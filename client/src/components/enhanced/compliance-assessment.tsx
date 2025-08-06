@@ -7,6 +7,7 @@ interface ComplianceAssessmentProps {
     security: number;
     dataQuality: number;
   };
+  industry?: string;
 }
 
 const complianceFrameworks = [
@@ -15,47 +16,86 @@ const complianceFrameworks = [
     fullName: "General Data Protection Regulation",
     description: "EU data protection and privacy regulation",
     requirements: ["Data encryption", "Consent management", "Right to deletion", "Data breach notification"],
-    icon: "🇪🇺"
+    icon: "🇪🇺",
+    industries: ["all"] // Applies to all industries that handle EU data
   },
   {
     name: "HIPAA",
     fullName: "Health Insurance Portability and Accountability Act",
     description: "US healthcare data protection standard",
     requirements: ["PHI encryption", "Access controls", "Audit trails", "Business associate agreements"],
-    icon: "🏥"
+    icon: "🏥",
+    industries: ["Healthcare"]
   },
   {
     name: "SOX",
     fullName: "Sarbanes-Oxley Act",
     description: "Financial reporting and data integrity requirements",
     requirements: ["Financial data controls", "Audit trails", "Change management", "Access controls"],
-    icon: "💼"
+    icon: "💼",
+    industries: ["Finance", "Financial Services"]
   },
   {
     name: "PIPEDA",
     fullName: "Personal Information Protection and Electronic Documents Act",
     description: "Canadian federal privacy law governing personal information",
     requirements: ["Privacy policies", "Consent mechanisms", "Breach notifications", "Data minimization"],
-    icon: "🇨🇦"
+    icon: "🇨🇦",
+    industries: ["all"] // Applies to all Canadian organizations
   },
   {
     name: "AIDA",
     fullName: "Artificial Intelligence and Data Act",
     description: "Canadian AI regulation framework (proposed)",
     requirements: ["AI impact assessments", "Risk mitigation", "Transparency requirements", "Algorithmic accountability"],
-    icon: "🇨🇦"
+    icon: "🇨🇦",
+    industries: ["all"] // Will apply to all AI implementations
+  },
+  {
+    name: "PCI DSS",
+    fullName: "Payment Card Industry Data Security Standard",
+    description: "Security standard for organizations handling credit card data",
+    requirements: ["Secure network", "Cardholder data protection", "Access controls", "Regular monitoring"],
+    icon: "💳",
+    industries: ["Retail", "Finance", "Financial Services", "E-commerce"]
+  },
+  {
+    name: "FERPA",
+    fullName: "Family Educational Rights and Privacy Act",
+    description: "US federal law protecting student education records",
+    requirements: ["Student data privacy", "Consent management", "Access controls", "Audit trails"],
+    icon: "🎓",
+    industries: ["Education"]
   },
   {
     name: "ISO 27001",
     fullName: "Information Security Management",
     description: "International security management standard",
     requirements: ["Risk assessment", "Security policies", "Incident response", "Regular audits"],
-    icon: "🔒"
+    icon: "🔒",
+    industries: ["all"] // Universal security standard
   }
 ];
 
-export default function ComplianceAssessment({ scores }: ComplianceAssessmentProps) {
+// Function to filter frameworks based on industry
+const getRelevantFrameworks = (industry?: string) => {
+  if (!industry) {
+    // If no industry specified, return universal frameworks
+    return complianceFrameworks.filter(framework => 
+      framework.industries.includes("all")
+    );
+  }
+
+  return complianceFrameworks.filter(framework => 
+    framework.industries.includes("all") || 
+    framework.industries.includes(industry) ||
+    framework.industries.some(ind => industry.toLowerCase().includes(ind.toLowerCase()))
+  );
+};
+
+export default function ComplianceAssessment({ scores, industry }: ComplianceAssessmentProps) {
   const avgComplianceScore = (scores.security + scores.dataQuality) / 2;
+  const relevantFrameworks = getRelevantFrameworks(industry);
   
   const getComplianceLevel = (score: number) => {
     if (score >= 4.0) return { 
@@ -85,12 +125,14 @@ export default function ComplianceAssessment({ scores }: ComplianceAssessmentPro
     // Calculate framework-specific scores based on security and data quality
     const baseScore = avgComplianceScore;
     const variations = {
-      "GDPR": baseScore * 0.95,    // Slightly lower due to strict data requirements
-      "HIPAA": baseScore * 0.9,    // Lower due to healthcare-specific requirements
-      "SOX": baseScore * 1.05,     // Slightly higher as more focused on financial controls
-      "PIPEDA": baseScore * 0.97,  // Canadian privacy law, moderate requirements
-      "AIDA": baseScore * 0.85,    // Emerging AI regulation, stringent requirements
-      "ISO 27001": baseScore       // Standard baseline
+      "GDPR": baseScore * 0.95,      // Slightly lower due to strict data requirements
+      "HIPAA": baseScore * 0.9,      // Lower due to healthcare-specific requirements
+      "SOX": baseScore * 1.05,       // Slightly higher as more focused on financial controls
+      "PIPEDA": baseScore * 0.97,    // Canadian privacy law, moderate requirements
+      "AIDA": baseScore * 0.85,      // Emerging AI regulation, stringent requirements
+      "PCI DSS": baseScore * 0.92,   // Payment security, moderate requirements
+      "FERPA": baseScore * 0.94,     // Education privacy, moderate requirements
+      "ISO 27001": baseScore         // Standard baseline
     };
     
     return Math.min(5, variations[framework as keyof typeof variations] || baseScore);
@@ -133,7 +175,7 @@ export default function ComplianceAssessment({ scores }: ComplianceAssessmentPro
         {/* Framework-Specific Assessment */}
         <div className="space-y-4">
           <h4 className="font-semibold text-slate-900">Regulatory Framework Readiness:</h4>
-          {complianceFrameworks.map((framework, index) => {
+          {relevantFrameworks.map((framework, index) => {
             const frameworkScore = getFrameworkScore(framework.name);
             const frameworkCompliance = getComplianceLevel(frameworkScore);
             const FrameworkIcon = frameworkCompliance.icon;
