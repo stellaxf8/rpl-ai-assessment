@@ -52,7 +52,6 @@ export default function Contact() {
           tailored AI solutions that drive real business value.
         </p>
       </div>
-
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Contact Information */}
         <div className="lg:col-span-1 space-y-6">
@@ -71,7 +70,7 @@ export default function Contact() {
                 <Phone className="h-4 w-4 text-slate-500" />
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-sm text-slate-600">+1 (555) 123-4567</p>
+                  <p className="text-sm text-slate-600">+1 (866) 745-5733</p>
                 </div>
               </div>
               
