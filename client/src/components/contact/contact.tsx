@@ -46,7 +46,7 @@ export default function Contact() {
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-slate-900 mb-4">Contact Our AI Consulting Team</h1>
+        <h1 className="text-3xl font-bold text-slate-900 mb-4">Contact Our <span style={{ color: '#cd0000' }}>AI Consulting</span> Team</h1>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
           Ready to accelerate your AI journey? Our expert consultants are here to help you implement 
           tailored AI solutions that drive real business value.
