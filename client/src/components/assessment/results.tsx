@@ -1,4 +1,4 @@
-import { CheckCircle, Share, FileText, RotateCcw } from "lucide-react";
+import { CheckCircle, FileText, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Assessment, DimensionScores } from "@shared/schema";
@@ -193,10 +193,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
             Generate Full Report
           </Button>
         )}
-        <Button variant="outline" size="lg">
-          <Share className="mr-2 h-5 w-5" />
-          Share Results
-        </Button>
+
         {showRetakeButton && onRetakeAssessment && (
           <Button variant="ghost" onClick={onRetakeAssessment}>
             <RotateCcw className="mr-2 h-4 w-4" />
