@@ -124,14 +124,19 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
                     const scoreValue = score as number;
                     const percentage = (scoreValue / 5) * 100;
 
-                    // Determine bar color based on dimension
-                    let barColorClass = 'bg-primary';
-                    if (dimension === 'technologyInfrastructure') barColorClass = 'bg-blue-500';
-                    else if (dimension === 'dataQuality') barColorClass = 'bg-purple-500';
-                    else if (dimension === 'teamLiteracy') barColorClass = 'bg-green-500';
-                    else if (dimension === 'systemIntegration') barColorClass = 'bg-orange-500';
-                    else if (dimension === 'budget') barColorClass = 'bg-yellow-500';
-                    else if (dimension === 'security') barColorClass = 'bg-red-500';
+                    // Determine bar color based on score value (dynamic)
+                    let barColorClass = 'bg-red-500'; // Default to red for low scores
+                    if (scoreValue >= 4.0) {
+                      barColorClass = 'bg-green-600'; // High score: green (4.0-5.0)
+                    } else if (scoreValue >= 3.5) {
+                      barColorClass = 'bg-green-400'; // Good score: light green (3.5-4.0)
+                    } else if (scoreValue >= 2.5) {
+                      barColorClass = 'bg-yellow-500'; // Medium score: yellow (2.5-3.5)
+                    } else if (scoreValue >= 1.5) {
+                      barColorClass = 'bg-orange-500'; // Low-medium score: orange (1.5-2.5)
+                    } else {
+                      barColorClass = 'bg-red-500'; // Low score: red (0-1.5)
+                    }
 
                     return (
                       <div key={dimension} className="flex items-center justify-between">

@@ -109,7 +109,11 @@ export default function IntegrationReadiness({ scores }: IntegrationReadinessPro
                 </div>
                 <div className="flex items-center">
                   <div className="flex-1 mr-3">
-                    <Progress value={(systemScore / 5) * 100} className="h-2 bg-gray-200" />
+                    <Progress 
+                      value={(systemScore / 5) * 100} 
+                      className="h-2 bg-gray-200"
+                      dynamicColor={true}
+                    />
                   </div>
                   <span className="text-sm text-slate-600">{systemScore.toFixed(1)}/5</span>
                 </div>
