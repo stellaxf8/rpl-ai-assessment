@@ -1,4 +1,4 @@
-import { Clock, Zap } from "lucide-react";
+import { Clock, Zap, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -11,7 +11,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">Choose Your Assessment Type</h2>
+        <h2 className="text-3xl font-bold text-slate-900 mb-4">Choose Your Assessment <span style={{ color: '#cd0000' }}>Type</span></h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
           Select the assessment type that best fits your time and requirements
         </p>
@@ -77,7 +77,8 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
 
       <div className="text-center">
         <Button variant="outline" onClick={onBack}>
-          Back to Overview
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Back
         </Button>
       </div>
     </div>
