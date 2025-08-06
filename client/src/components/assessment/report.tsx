@@ -67,6 +67,13 @@ const dimensionConfig = {
   },
 };
 
+// Helper function to get dynamic color based on score
+const getScoreColor = (score: number) => {
+  if (score >= 80) return 'text-green-600'; // High (Green): 4.0+/5
+  if (score >= 50) return 'text-yellow-600'; // Medium (Yellow): 2.5-3.9/5
+  return 'text-red-600'; // Low (Red): 0.0-2.4/5
+};
+
 export default function Report({ assessment }: ReportProps) {
   const { organizationName, overallScore, scores, createdAt } = assessment;
   const { toast } = useToast();
@@ -181,7 +188,7 @@ export default function Report({ assessment }: ReportProps) {
             <div className="bg-slate-50 p-6 rounded-lg">
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">{overallScore}/100</div>
+                  <div className={`text-3xl font-bold mb-1 ${getScoreColor(overallScore)}`}>{overallScore}/100</div>
                   <div className="text-sm text-slate-600">Overall Score</div>
                 </div>
                 <div className="text-center">
