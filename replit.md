@@ -16,7 +16,7 @@ Successfully implemented all 9 high-priority advanced features (completed Decemb
 - **Industry-Specific Assessment Variations** - Added 15 industry options with specialized questions for Healthcare, Manufacturing, Finance, Retail, and Education
 - **Industry Selection Interface** - Beautiful card-based selection with AI application previews and specialization badges
 - **Industry Insights Component** - Comprehensive benchmarking, performance comparisons, and industry-specific recommendations
-- **Navigation Simplification** - Temporarily hidden Dashboard page to focus on MVP features
+- **Navigation Simplification** - Temporarily hidden Dashboard and Knowledge Center pages to focus on MVP features
 
 ### ✅ Completed Advanced Features:
 1. **AI Maturity Roadmap** - Interactive roadmap with milestones, timelines, and strategic goals
