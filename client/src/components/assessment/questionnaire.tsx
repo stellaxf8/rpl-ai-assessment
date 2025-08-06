@@ -29,7 +29,8 @@ const getIconComponent = (iconName: string) => {
     Shield: Shield,
   };
   const IconComponent = iconMap[iconName as keyof typeof iconMap] || Server;
-  return <IconComponent className="text-primary" />;
+  const iconClass = iconName === 'Server' ? "text-slate-900" : "text-primary";
+  return <IconComponent className={iconClass} />;
 };
 
 export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps) {

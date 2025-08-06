@@ -11,7 +11,7 @@ const dimensions = [
     icon: Server,
     title: "Technology Infrastructure",
     description: "Evaluate your current tech stack, cloud readiness, and computational capabilities.",
-    color: "bg-blue-100 text-primary",
+    color: "bg-slate-100 text-slate-900",
   },
   {
     icon: Database,
@@ -56,7 +56,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       </div>
 
       {/* Why AI Readiness Assessment is Crucial */}
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 mb-12">
+      <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-8 mb-12">
         <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Why AI Readiness Assessment is Crucial</h3>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
