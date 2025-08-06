@@ -1,4 +1,4 @@
-import { CheckCircle, FileText, RotateCcw } from "lucide-react";
+import { CheckCircle, FileText, RotateCcw, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Assessment, DimensionScores } from "@shared/schema";
@@ -13,6 +13,7 @@ interface ResultsProps {
   assessment: Assessment;
   onGenerateReport?: () => void;
   onRetakeAssessment?: () => void;
+  onContactUs?: () => void;
   showRetakeButton?: boolean;
 }
 
@@ -55,7 +56,7 @@ const dimensionConfig = {
   },
 };
 
-export default function Results({ assessment, onGenerateReport, onRetakeAssessment, showRetakeButton = true }: ResultsProps) {
+export default function Results({ assessment, onGenerateReport, onRetakeAssessment, onContactUs, showRetakeButton = true }: ResultsProps) {
   const { overallScore, scores, organizationName, contactEmail, industry } = assessment;
   const typedScores = scores as DimensionScores;
 
@@ -191,6 +192,13 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           <Button onClick={onGenerateReport} size="lg">
             <FileText className="mr-2 h-5 w-5" />
             Generate Full Report
+          </Button>
+        )}
+
+        {onContactUs && (
+          <Button onClick={onContactUs} size="lg" variant="outline">
+            <Phone className="mr-2 h-5 w-5" />
+            Contact Us
           </Button>
         )}
 

@@ -105,6 +105,7 @@ export default function Home() {
             assessment={completedAssessment}
             onGenerateReport={() => setCurrentSection('report')}
             onRetakeAssessment={handleRetakeAssessment}
+            onContactUs={() => setCurrentSection('contact')}
           />
         )}
         
