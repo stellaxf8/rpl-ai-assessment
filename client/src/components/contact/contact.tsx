@@ -151,7 +151,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Full Name *</Label>
+                    <Label htmlFor="name">Full Name <span style={{ color: '#cd0000' }}>*</span></Label>
                     <Input 
                       id="name"
                       value={formData.name}
@@ -162,7 +162,7 @@ export default function Contact() {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email">Email Address <span style={{ color: '#cd0000' }}>*</span></Label>
                     <Input 
                       id="email"
                       type="email"
@@ -215,7 +215,7 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message *</Label>
+                  <Label htmlFor="message">Message <span style={{ color: '#cd0000' }}>*</span></Label>
                   <Textarea 
                     id="message"
                     value={formData.message}
