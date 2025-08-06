@@ -89,7 +89,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             <Card key={index} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 ${dimension.color}`}>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000]">
                     <IconComponent className="text-xl" />
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900">{dimension.title}</h3>
