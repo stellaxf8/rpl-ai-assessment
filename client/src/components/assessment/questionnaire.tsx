@@ -31,8 +31,7 @@ const getIconComponent = (iconName: string) => {
     Shield: Shield,
   };
   const IconComponent = iconMap[iconName as keyof typeof iconMap] || Server;
-  const iconClass = iconName === 'Server' ? "text-slate-900" : "text-primary";
-  return <IconComponent className={iconClass} />;
+  return <IconComponent className="text-[#cd0000]" />;
 };
 
 export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps) {
@@ -377,7 +376,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         <CardContent className="p-8">
           <div className="mb-6">
             <div className="flex items-center mb-4">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: '#cd0000' }}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3 bg-transparent">
                 {getIconComponent(currentQuestionData.icon)}
               </div>
               <span className="text-sm font-medium text-white px-3 py-1 rounded-full" style={{ backgroundColor: '#cd0000' }}>
