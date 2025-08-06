@@ -16,7 +16,7 @@ export default function Home() {
   const [completedAssessment, setCompletedAssessment] = useState<Assessment | null>(null);
 
   const navigationItems = [
-    { id: 'overview' as Section, label: 'Overview' },
+    { id: 'overview' as Section, label: 'Assessment' },
     { id: 'contact' as Section, label: 'Contact' },
   ];
 
