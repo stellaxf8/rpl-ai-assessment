@@ -64,7 +64,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               Organizations that rush into AI implementation without proper assessment face a 67% failure rate. Understanding your readiness prevents wasted resources and ensures successful AI adoption.
             </p>
             
-            <h4 className="text-lg font-semibold text-slate-900 mb-3">Maximize ROI</h4>
+            <h4 className="text-lg font-semibold mb-3 text-[#cd0000]">Maximize ROI</h4>
             <p className="text-slate-700">
               Companies with high AI readiness see 3x better returns on their AI investments. A thorough assessment identifies the most impactful AI opportunities for your specific situation.
             </p>
