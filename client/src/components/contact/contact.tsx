@@ -77,7 +77,7 @@ export default function Contact() {
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-slate-500" />
                 <div>
-                  <p className="font-medium">Red Pill Labs - Head Office</p>
+                  <p className="font-medium">Email</p>
                   <p className="text-sm text-slate-600">info@redpilllabs.com</p>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function Contact() {
               <div className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 text-slate-500" />
                 <div>
-                  <p className="font-medium">Office</p>
+                  <p className="font-medium">Red Pill Labs - Head Office</p>
                   <p className="text-sm text-slate-600">
                     123 Innovation Drive<br />
                     Tech City, TC 12345
