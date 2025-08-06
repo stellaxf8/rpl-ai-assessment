@@ -209,8 +209,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     });
 
     setResponses(demoResponses);
-    setOrganizationName("Demo Technology Solutions Inc.");
-    setContactEmail("demo@example.com");
+    setOrganizationName("Technology Solutions, Inc.");
+    setContactEmail("contact@example.com");
     setShowContactForm(true);
     
     toast({

@@ -9,16 +9,12 @@ import IndustryBenchmark from "@/components/enhanced/industry-benchmark";
 import IntegrationReadiness from "@/components/enhanced/integration-readiness";
 import ComplianceAssessment from "@/components/enhanced/compliance-assessment";
 import BusinessDevelopment from "@/components/enhanced/business-development";
-import IndustryInsights from "@/components/assessment/industry-insights";
 
-// Import all 9 new advanced features
+
+// Import remaining advanced features
 import { AIMaturityRoadmap } from "@/components/advanced/ai-maturity-roadmap";
-import { AIReadinessSimulator } from "@/components/advanced/ai-readiness-simulator";
 import { ImplementationTimeline } from "@/components/advanced/implementation-timeline";
-import { IndustryQuestions } from "@/components/advanced/industry-questions";
 import { SmartRecommendationsComponent } from "@/components/advanced/smart-recommendations";
-import { PersonalizedLearningPath } from "@/components/advanced/learning-path";
-import { APIIntegration } from "@/components/advanced/api-integration";
 import { TrendAnalysisComponent } from "@/components/advanced/trend-analysis";
 import { RegulatoryComplianceTrackerComponent } from "@/components/advanced/regulatory-compliance";
 
@@ -119,7 +115,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
 
       {/* Main Tabbed Interface for Advanced Features */}
       <Tabs defaultValue="overview" className="w-full">
-        <TabsList className="grid w-full grid-cols-5 lg:grid-cols-10 mb-6 bg-slate-100 p-2 rounded-xl border shadow-sm h-auto">
+        <TabsList className="grid w-full grid-cols-5 lg:grid-cols-6 mb-6 bg-slate-100 p-2 rounded-xl border shadow-sm h-auto">
           <TabsTrigger 
             value="overview" 
             className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
@@ -135,13 +131,6 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
             Roadmap
           </TabsTrigger>
           <TabsTrigger 
-            value="simulator" 
-            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
-          >
-            <Brain className="h-4 w-4" />
-            Simulator
-          </TabsTrigger>
-          <TabsTrigger 
             value="timeline" 
             className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
           >
@@ -149,25 +138,11 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
             Timeline
           </TabsTrigger>
           <TabsTrigger 
-            value="industry" 
-            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
-          >
-            <Target className="h-4 w-4" />
-            Insights
-          </TabsTrigger>
-          <TabsTrigger 
             value="recommendations" 
             className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
           >
             <Brain className="h-4 w-4" />
             Smart Recs
-          </TabsTrigger>
-          <TabsTrigger 
-            value="learning" 
-            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
-          >
-            <BookOpen className="h-4 w-4" />
-            Learning
           </TabsTrigger>
           <TabsTrigger 
             value="trends" 
@@ -182,13 +157,6 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           >
             <Scale className="h-4 w-4" />
             Compliance
-          </TabsTrigger>
-          <TabsTrigger 
-            value="api" 
-            className="flex items-center gap-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md hover:bg-slate-200 data-[state=active]:hover:bg-primary/90"
-          >
-            <Code className="h-4 w-4" />
-            API
           </TabsTrigger>
         </TabsList>
 
@@ -280,16 +248,9 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
         {/* AI Maturity Roadmap */}
         <TabsContent value="roadmap" className="space-y-6">
           <AIMaturityRoadmap 
-            scores={typedScores} 
-            currentLevel={readinessLevel.label} 
-          />
-        </TabsContent>
-
-        {/* AI Readiness Simulator */}
-        <TabsContent value="simulator" className="space-y-6">
-          <AIReadinessSimulator 
-            currentScores={typedScores}
+            overallScore={overallScore}
             organizationSize="Medium Enterprise"
+            budget="$250K - $1M"
           />
         </TabsContent>
 
@@ -302,29 +263,12 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           />
         </TabsContent>
 
-        {/* Industry-Specific Insights */}
-        <TabsContent value="industry" className="space-y-6">
-          <IndustryInsights 
-            industry={assessment.industry || "Technology"}
-            scores={typedScores}
-            overallScore={overallScore}
-          />
-        </TabsContent>
-
         {/* Smart Recommendations */}
         <TabsContent value="recommendations" className="space-y-6">
           <SmartRecommendationsComponent 
             scores={typedScores}
             organizationSize="Medium Enterprise"
             budget="$250K - $1M"
-          />
-        </TabsContent>
-
-        {/* Personalized Learning Path */}
-        <TabsContent value="learning" className="space-y-6">
-          <PersonalizedLearningPath 
-            scores={typedScores}
-            organizationSize="Medium Enterprise"
           />
         </TabsContent>
 
@@ -341,13 +285,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           />
         </TabsContent>
 
-        {/* API Integration */}
-        <TabsContent value="api" className="space-y-6">
-          <APIIntegration 
-            organizationName={organizationName || "Your Organization"}
-            assessmentId={`assessment-${Date.now()}`}
-          />
-        </TabsContent>
+
       </Tabs>
 
       {/* Action Buttons */}
