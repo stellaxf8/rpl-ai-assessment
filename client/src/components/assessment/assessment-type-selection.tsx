@@ -1,0 +1,85 @@
+import { Clock, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+interface AssessmentTypeSelectionProps {
+  onSelectType: (type: 'detailed' | 'quick') => void;
+  onBack: () => void;
+}
+
+export default function AssessmentTypeSelection({ onSelectType, onBack }: AssessmentTypeSelectionProps) {
+  return (
+    <div className="space-y-8">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold text-slate-900 mb-4">Choose Your Assessment Type</h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          Select the assessment type that best fits your time and requirements
+        </p>
+      </div>
+      
+      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {/* Quick Assessment */}
+        <Card className="hover:shadow-lg transition-shadow cursor-pointer border-2 hover:border-primary/20">
+          <CardHeader className="text-center pb-4">
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Zap style={{ color: '#cd0000' }} className="h-8 w-8" />
+            </div>
+            <CardTitle className="text-xl">Quick Assessment</CardTitle>
+            <CardDescription className="text-base">
+              Essential evaluation for immediate insights
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-center space-y-4">
+            <div className="space-y-2 text-sm text-slate-600">
+              <p>• 15 core questions</p>
+              <p>• 5-7 minutes to complete</p>
+              <p>• General AI readiness overview</p>
+              <p>• Basic recommendations</p>
+            </div>
+            <Button 
+              onClick={() => onSelectType('quick')}
+              className="w-full"
+              size="lg"
+            >
+              Start Quick Assessment
+            </Button>
+          </CardContent>
+        </Card>
+
+        {/* Detailed Assessment */}
+        <Card className="hover:shadow-lg transition-shadow cursor-pointer border-2 hover:border-primary/20">
+          <CardHeader className="text-center pb-4">
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Clock style={{ color: '#cd0000' }} className="h-8 w-8" />
+            </div>
+            <CardTitle className="text-xl">Detailed Assessment</CardTitle>
+            <CardDescription className="text-base">
+              Comprehensive industry-specific analysis
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-center space-y-4">
+            <div className="space-y-2 text-sm text-slate-600">
+              <p>• 30 industry-tailored questions</p>
+              <p>• 10-15 minutes to complete</p>
+              <p>• Industry-specific insights</p>
+              <p>• Detailed recommendations & benchmarks</p>
+            </div>
+            <Button 
+              onClick={() => onSelectType('detailed')}
+              className="w-full"
+              size="lg"
+            >
+              Start Detailed Assessment
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="text-center">
+        <Button variant="outline" onClick={onBack}>
+          Back to Overview
+        </Button>
+      </div>
+    </div>
+  );
+}

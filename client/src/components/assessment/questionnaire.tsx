@@ -10,8 +10,10 @@ import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { questions, Question } from "@/lib/assessment-data";
+import { quickQuestions } from "@/lib/quick-assessment-data";
 import { getIndustryQuestionVariation, hasIndustryVariations } from "@/lib/industry-questions";
 import IndustrySelection from "@/components/assessment/industry-selection";
+import AssessmentTypeSelection from "@/components/assessment/assessment-type-selection";
 import { Assessment } from "@shared/schema";
 
 interface QuestionnaireProps {
@@ -34,8 +36,10 @@ const getIconComponent = (iconName: string) => {
 };
 
 export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps) {
+  const [assessmentType, setAssessmentType] = useState<'detailed' | 'quick' | ''>("");
   const [selectedIndustry, setSelectedIndustry] = useState<string>("");
-  const [showIndustrySelection, setShowIndustrySelection] = useState(true);
+  const [showAssessmentTypeSelection, setShowAssessmentTypeSelection] = useState(true);
+  const [showIndustrySelection, setShowIndustrySelection] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [responses, setResponses] = useState<Record<string, number>>({});
   const [organizationName, setOrganizationName] = useState("");
@@ -43,27 +47,37 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const [showContactForm, setShowContactForm] = useState(false);
   const { toast } = useToast();
 
-  // Get industry-tailored questions
-  const getQuestionsForIndustry = (): Question[] => {
-    if (!selectedIndustry || !hasIndustryVariations(selectedIndustry)) {
-      return questions;
+  // Get questions based on assessment type and industry
+  const getQuestionsForAssessment = (): Question[] => {
+    // For quick assessment, use quick questions (no industry customization)
+    if (assessmentType === 'quick') {
+      return quickQuestions;
     }
-
-    return questions.map(question => {
-      const industryVariation = getIndustryQuestionVariation(selectedIndustry, question.id);
-      if (industryVariation) {
-        return {
-          ...question,
-          question: industryVariation.question,
-          description: industryVariation.description,
-          options: industryVariation.options
-        };
+    
+    // For detailed assessment, use full questions with industry customization
+    if (assessmentType === 'detailed') {
+      if (!selectedIndustry || !hasIndustryVariations(selectedIndustry)) {
+        return questions;
       }
-      return question;
-    });
+
+      return questions.map(question => {
+        const industryVariation = getIndustryQuestionVariation(selectedIndustry, question.id);
+        if (industryVariation) {
+          return {
+            ...question,
+            question: industryVariation.question,
+            description: industryVariation.description,
+            options: industryVariation.options
+          };
+        }
+        return question;
+      });
+    }
+    
+    return [];
   };
 
-  const industryQuestions = getQuestionsForIndustry();
+  const assessmentQuestions = getQuestionsForAssessment();
 
   const submitAssessment = useMutation({
     mutationFn: async (data: any) => {
@@ -86,8 +100,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     },
   });
 
-  const currentQuestionData = industryQuestions[currentQuestion];
-  const progress = ((currentQuestion + 1) / industryQuestions.length) * 100;
+  const currentQuestionData = assessmentQuestions[currentQuestion];
+  const progress = ((currentQuestion + 1) / assessmentQuestions.length) * 100;
 
   const handleAnswerSelect = (value: string) => {
     setResponses({
@@ -97,7 +111,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   };
 
   const handleNext = () => {
-    if (currentQuestion < industryQuestions.length - 1) {
+    if (currentQuestion < assessmentQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setShowContactForm(true);
@@ -108,9 +122,29 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
     } else if (showIndustrySelection) {
+      setShowAssessmentTypeSelection(true);
+      setShowIndustrySelection(false);
+    } else if (showAssessmentTypeSelection) {
       onBack();
     } else {
+      if (assessmentType === 'detailed') {
+        setShowIndustrySelection(true);
+      } else {
+        setShowAssessmentTypeSelection(true);
+      }
+      setCurrentQuestion(0);
+    }
+  };
+
+  const handleAssessmentTypeSelect = (type: 'detailed' | 'quick') => {
+    setAssessmentType(type);
+    setShowAssessmentTypeSelection(false);
+    
+    if (type === 'detailed') {
       setShowIndustrySelection(true);
+    } else {
+      // For quick assessment, skip industry selection and go straight to questions
+      setShowIndustrySelection(false);
       setCurrentQuestion(0);
     }
   };
@@ -140,7 +174,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     const demoResponses: Record<string, number> = {};
     
     // Generate realistic demo responses that create a moderate to good readiness score
-    industryQuestions.forEach((question) => {
+    assessmentQuestions.forEach((question: Question) => {
       // Create a realistic distribution with slight bias toward positive responses
       const randomValue = Math.random();
       let response: number;
@@ -166,7 +200,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   };
 
   const getDimensionProgress = () => {
-    const dimensionQuestions = industryQuestions.filter(q => q.dimension === currentQuestionData.dimension);
+    const dimensionQuestions = assessmentQuestions.filter((q: Question) => q.dimension === currentQuestionData.dimension);
     const dimensionResponses = dimensionQuestions.filter(q => responses[q.id]);
     return `${dimensionResponses.length}/${dimensionQuestions.length}`;
   };
@@ -230,7 +264,19 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     );
   }
 
-  // Show industry selection first
+  // Show assessment type selection first
+  if (showAssessmentTypeSelection) {
+    return (
+      <section>
+        <AssessmentTypeSelection 
+          onSelectType={handleAssessmentTypeSelect}
+          onBack={onBack}
+        />
+      </section>
+    );
+  }
+
+  // Show industry selection for detailed assessments
   if (showIndustrySelection) {
     return (
       <section>
@@ -242,10 +288,13 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         <div className="text-center mt-8">
           <Button 
             variant="outline" 
-            onClick={onBack}
+            onClick={() => {
+              setShowAssessmentTypeSelection(true);
+              setShowIndustrySelection(false);
+            }}
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Overview
+            Back to Assessment Type
           </Button>
         </div>
       </section>
@@ -282,7 +331,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 Demo Sample
               </Button>
               <span className="text-sm text-slate-500">
-                Question {currentQuestion + 1} of {industryQuestions.length}
+                Question {currentQuestion + 1} of {assessmentQuestions.length}
               </span>
             </div>
           </div>
@@ -299,8 +348,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               { label: 'Security', key: 'security' }
             ].map((dimension) => {
               const isCurrentDimension = currentQuestionData.dimension === dimension.key;
-              const dimensionQuestions = industryQuestions.filter(q => q.dimension === dimension.key);
-              const dimensionResponses = dimensionQuestions.filter(q => responses[q.id]);
+              const dimensionQuestions = assessmentQuestions.filter((q: Question) => q.dimension === dimension.key);
+              const dimensionResponses = dimensionQuestions.filter((q: Question) => responses[q.id]);
               const progress = `${dimensionResponses.length}/${dimensionQuestions.length}`;
               
               return (
