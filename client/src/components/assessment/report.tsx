@@ -1,6 +1,7 @@
 import { Download, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import { Assessment } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
 import jsPDF from 'jspdf';
@@ -230,10 +231,11 @@ export default function Report({ assessment }: ReportProps) {
                         <h4 className="text-lg font-semibold text-slate-900">{config.label}</h4>
                       </div>
                       <div className="flex items-center">
-                        <div className="w-20 h-3 bg-slate-200 rounded-full mr-3">
-                          <div 
-                            className="h-3 bg-primary rounded-full" 
-                            style={{ width: `${percentage}%` }}
+                        <div className="w-20 mr-3">
+                          <Progress 
+                            value={percentage} 
+                            className="h-3 bg-slate-200" 
+                            dynamicColor={true}
                           />
                         </div>
                         <span className="font-bold text-slate-900">{scoreValue.toFixed(1)}/5</span>
