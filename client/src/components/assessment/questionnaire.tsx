@@ -357,8 +357,10 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                   className={`px-3 py-1 rounded-full text-xs font-medium ${
                     isCurrentDimension
                       ? 'text-white'
-                      : dimensionResponses.length === dimensionQuestions.length
+                      : dimensionQuestions.length === 0
                       ? 'bg-gray-100 text-gray-600'
+                      : dimensionResponses.length === dimensionQuestions.length
+                      ? 'bg-green-100 text-green-600'
                       : 'bg-red-50 text-red-600'
                   }`}
                   style={isCurrentDimension ? { backgroundColor: '#cd0000' } : {}}
