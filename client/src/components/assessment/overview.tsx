@@ -35,7 +35,7 @@ const dimensions = [
     icon: DollarSign,
     title: "Budget & Resources",
     description: "Evaluate financial readiness and resource allocation for AI initiatives.",
-    color: "bg-slate-100 text-slate-900",
+    color: "bg-yellow-100 text-slate-900",
   },
   {
     icon: Shield,
