@@ -197,27 +197,7 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
           </Button>
         </div>
 
-        {/* Trust Indicators */}
-        <div className="mt-6 pt-6 border-t border-slate-200">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm text-slate-600">
-            <div>
-              <div className="font-semibold text-slate-900">500+</div>
-              <div>Successful Implementations</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900">95%</div>
-              <div>Client Satisfaction Rate</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900">$2.5M</div>
-              <div>Average Annual Savings</div>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-900">15 Years</div>
-              <div>AI Implementation Experience</div>
-            </div>
-          </div>
-        </div>
+
       </CardContent>
     </Card>
   );
