@@ -72,7 +72,7 @@ export default function IndustryBenchmark({ userScore, industry }: IndustryBench
               <span className="text-sm font-medium text-slate-900">Progress to Top Performer</span>
               <span className="text-sm text-slate-600">{percentile}%</span>
             </div>
-            <Progress value={percentile} className="h-2 bg-gray-200" />
+            <Progress value={percentile} className="h-2 bg-gray-200" dynamicColor={true} />
           </div>
 
           {/* Common Industry Challenges */}
