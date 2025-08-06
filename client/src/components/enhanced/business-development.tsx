@@ -191,7 +191,7 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
               <MessageSquare className="mr-3 h-6 w-6" />
               <div>
                 <div className="font-semibold text-lg">Schedule Free Consultation</div>
-                <div className="text-sm opacity-90">30-minute strategy session with our AI specialists</div>
+                <div className="text-sm opacity-90">Our AI specialist team will contact you to setup a meeting</div>
               </div>
             </div>
           </Button>
