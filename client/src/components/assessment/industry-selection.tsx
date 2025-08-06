@@ -132,7 +132,8 @@ const industries = [
   }
 ];
 
-export default function IndustrySelection({ onIndustrySelect, selectedIndustry }: IndustrySelectionProps) {
+export default function IndustrySelection({ onIndustrySelect }: IndustrySelectionProps) {
+  const [localSelectedIndustry, setLocalSelectedIndustry] = useState<string>("");
 
   return (
     <div className="space-y-6">
@@ -145,7 +146,7 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {industries.map((industry) => {
           const Icon = industry.icon;
-          const isSelected = selectedIndustry === industry.id;
+          const isSelected = localSelectedIndustry === industry.id;
 
           return (
             <Card
@@ -155,7 +156,7 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
                   ? 'ring-2 ring-primary bg-primary/5' 
                   : 'hover:bg-slate-50'
               }`}
-              onClick={() => onIndustrySelect(industry.id)}
+              onClick={() => setLocalSelectedIndustry(industry.id)}
             >
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
@@ -196,12 +197,12 @@ export default function IndustrySelection({ onIndustrySelect, selectedIndustry }
           );
         })}
       </div>
-      {selectedIndustry && (
+      {localSelectedIndustry && (
         <div className="text-center">
           <Button 
-            onClick={() => onIndustrySelect(selectedIndustry)}
+            onClick={() => onIndustrySelect(localSelectedIndustry)}
             size="lg"
-            className="px-8 bg-[#cd0000] text-white hover:bg-[#b30000]"
+            className="px-12 py-4 text-lg bg-[#cd0000] text-white hover:bg-[#b30000] shadow-lg"
           >
             Start Detailed Assessment
           </Button>
