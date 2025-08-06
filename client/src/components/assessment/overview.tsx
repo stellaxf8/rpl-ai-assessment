@@ -109,7 +109,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           Start Assessment
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
-        <p className="text-slate-500 mt-3">Takes approximately 10-15 minutes</p>
+        
       </div>
     </section>
   );
