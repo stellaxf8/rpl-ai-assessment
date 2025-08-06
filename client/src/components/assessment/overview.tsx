@@ -49,7 +49,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
   return (
     <section>
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">Assess Your AI Readiness</h2>
+        <h2 className="text-4xl font-bold text-slate-900 mb-4">Assess Your <span style={{ color: '#cd0000' }}>AI Readiness</span></h2>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto">
           Comprehensive evaluation across 6 key dimensions to determine your organization's readiness for AI implementation
         </p>
