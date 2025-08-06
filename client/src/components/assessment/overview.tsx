@@ -75,7 +75,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               Gain clear insights into what needs to be addressed before implementing AI solutions. Create a roadmap that aligns with your organizational capabilities and goals.
             </p>
             
-            <h4 className="text-lg font-semibold text-slate-900 mb-3">Competitive Advantage</h4>
+            <h4 className="text-lg font-semibold mb-3 text-[#cd0000]">Competitive Advantage</h4>
             <p className="text-slate-700">
               Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.
             </p>
@@ -92,7 +92,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
                   <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 ${dimension.color}`}>
                     <IconComponent className="text-xl" />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900">{dimension.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#cd0000]">{dimension.title}</h3>
                 </div>
                 <p className="text-slate-600">{dimension.description}</p>
               </CardContent>
