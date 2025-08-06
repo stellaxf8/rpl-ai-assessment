@@ -4,13 +4,22 @@ interface ScoreChartProps {
   score: number;
 }
 
+// Helper function to get dynamic color based on score
+const getScoreColor = (score: number) => {
+  if (score >= 80) return 'hsl(134, 61%, 41%)'; // Green for high scores
+  if (score >= 70) return 'hsl(142, 71%, 45%)'; // Light green for good scores
+  if (score >= 50) return 'hsl(48, 96%, 53%)'; // Yellow for medium scores
+  if (score >= 30) return 'hsl(25, 95%, 53%)'; // Orange for low-medium scores
+  return 'hsl(0, 84%, 60%)'; // Red for low scores
+};
+
 export default function ScoreChart({ score }: ScoreChartProps) {
   const data = [
     { name: 'Score', value: score },
     { name: 'Remaining', value: 100 - score }
   ];
 
-  const COLORS = ['hsl(207, 90%, 54%)', 'hsl(20, 5.9%, 90%)'];
+  const COLORS = [getScoreColor(score), 'hsl(20, 5.9%, 90%)'];
 
   return (
     <div className="relative w-48 h-48">
