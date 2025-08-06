@@ -77,7 +77,7 @@ export default function Contact() {
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-slate-500" />
                 <div>
-                  <p className="font-medium">Email</p>
+                  <p className="font-medium">Red Pill Labs - Head Office</p>
                   <p className="text-sm text-slate-600">info@redpilllabs.com</p>
                 </div>
               </div>
