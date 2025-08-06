@@ -335,7 +335,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             </div>
           </div>
           
-          <Progress value={progress} className="mb-4" />
+          <Progress value={progress} className="mb-4 bg-gray-200" />
           
           <div className="flex flex-wrap gap-2">
             {[
