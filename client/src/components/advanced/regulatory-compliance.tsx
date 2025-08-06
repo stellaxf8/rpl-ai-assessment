@@ -72,6 +72,24 @@ export function RegulatoryComplianceTrackerComponent({ industry, region }: Regul
         complianceLevel: 'Important' as const
       },
       {
+        id: 'canada-pipeda',
+        name: 'Personal Information Protection and Electronic Documents Act (PIPEDA)',
+        region: 'Canada',
+        status: 'Active' as const,
+        effectiveDate: '2001-01-01',
+        description: 'Federal privacy law governing collection, use, and disclosure of personal information in commercial activities, with specific considerations for AI systems.',
+        requirements: [
+          'Consent for personal information collection and use',
+          'Privacy policy transparency and accessibility',
+          'Data breach notification requirements',
+          'Individual access and correction rights',
+          'Privacy impact assessments for AI systems',
+          'Data minimization and purpose limitation'
+        ],
+        relevantIndustries: ['Technology', 'Finance', 'Healthcare', 'Retail', 'Education'],
+        complianceLevel: 'Critical' as const
+      },
+      {
         id: 'uk-ai-white-paper',
         name: 'UK AI Regulation Framework',
         region: 'United Kingdom',
@@ -206,7 +224,7 @@ export function RegulatoryComplianceTrackerComponent({ industry, region }: Regul
   };
 
   const complianceTracker = generateComplianceTracker();
-  const regions = ['all', ...new Set(complianceTracker.regulations.map(r => r.region))];
+  const regions = ['all', ...Array.from(new Set(complianceTracker.regulations.map(r => r.region)))];
   const statuses = ['all', 'Active', 'Proposed', 'Under Review', 'Upcoming'];
 
   const filteredRegulations = complianceTracker.regulations.filter(regulation => {

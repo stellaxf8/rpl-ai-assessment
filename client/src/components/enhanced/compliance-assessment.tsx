@@ -32,6 +32,20 @@ const complianceFrameworks = [
     icon: "💼"
   },
   {
+    name: "PIPEDA",
+    fullName: "Personal Information Protection and Electronic Documents Act",
+    description: "Canadian federal privacy law governing personal information",
+    requirements: ["Privacy policies", "Consent mechanisms", "Breach notifications", "Data minimization"],
+    icon: "🇨🇦"
+  },
+  {
+    name: "AIDA",
+    fullName: "Artificial Intelligence and Data Act",
+    description: "Canadian AI regulation framework (proposed)",
+    requirements: ["AI impact assessments", "Risk mitigation", "Transparency requirements", "Algorithmic accountability"],
+    icon: "🇨🇦"
+  },
+  {
     name: "ISO 27001",
     fullName: "Information Security Management",
     description: "International security management standard",
@@ -71,10 +85,12 @@ export default function ComplianceAssessment({ scores }: ComplianceAssessmentPro
     // Calculate framework-specific scores based on security and data quality
     const baseScore = avgComplianceScore;
     const variations = {
-      "GDPR": baseScore * 0.95, // Slightly lower due to strict data requirements
-      "HIPAA": baseScore * 0.9,  // Lower due to healthcare-specific requirements
-      "SOX": baseScore * 1.05,   // Slightly higher as more focused on financial controls
-      "ISO 27001": baseScore     // Standard baseline
+      "GDPR": baseScore * 0.95,    // Slightly lower due to strict data requirements
+      "HIPAA": baseScore * 0.9,    // Lower due to healthcare-specific requirements
+      "SOX": baseScore * 1.05,     // Slightly higher as more focused on financial controls
+      "PIPEDA": baseScore * 0.97,  // Canadian privacy law, moderate requirements
+      "AIDA": baseScore * 0.85,    // Emerging AI regulation, stringent requirements
+      "ISO 27001": baseScore       // Standard baseline
     };
     
     return Math.min(5, variations[framework as keyof typeof variations] || baseScore);
