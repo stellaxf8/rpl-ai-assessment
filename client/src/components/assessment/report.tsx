@@ -4,12 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Assessment } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
-import { Link } from "wouter";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 interface ReportProps {
   assessment: Assessment;
+  onBack?: () => void;
 }
 
 const dimensionConfig = {
@@ -76,7 +76,7 @@ const getScoreColor = (score: number) => {
   return 'text-red-600'; // Low (Red): 0.0-2.4/5
 };
 
-export default function Report({ assessment }: ReportProps) {
+export default function Report({ assessment, onBack }: ReportProps) {
   const { organizationName, overallScore, scores, createdAt } = assessment;
   const { toast } = useToast();
 
@@ -171,15 +171,14 @@ export default function Report({ assessment }: ReportProps) {
         <div className="p-8 text-white" style={{ backgroundColor: '#cd0000' }}>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <Link href="/results">
-                <Button 
-                  variant="ghost" 
-                  size="sm"
-                  className="text-white hover:bg-red-700 mr-4 p-2"
-                >
-                  <ArrowLeft className="h-4 w-4" />
-                </Button>
-              </Link>
+              <Button 
+                variant="ghost" 
+                size="sm"
+                className="text-white hover:bg-red-700 mr-4 p-2"
+                onClick={onBack}
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </Button>
               <div>
                 <h2 className="text-3xl font-bold mb-2">AI Readiness Assessment Report</h2>
                 <p className="text-blue-100">Comprehensive analysis and recommendations</p>

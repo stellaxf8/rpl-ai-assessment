@@ -110,7 +110,10 @@ export default function Home() {
         )}
         
         {currentSection === 'report' && completedAssessment && (
-          <Report assessment={completedAssessment} />
+          <Report 
+            assessment={completedAssessment} 
+            onBack={() => setCurrentSection('results')}
+          />
         )}
       </main>
     </div>
