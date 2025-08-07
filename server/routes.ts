@@ -3,7 +3,6 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertAssessmentSchema, assessmentResponsesSchema, dimensionScoresSchema } from "@shared/schema";
 import { z } from "zod";
-import { crmService, CRMConfig } from "./crm-integration";
 
 function calculateOverallScore(scores: any): number {
   const values = Object.values(scores) as number[];
