@@ -47,10 +47,14 @@ export default function IntegrationReadiness({ scores }: IntegrationReadinessPro
   return (
     <Card>
       <CardContent className="p-6">
-        <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
+        <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
           <Puzzle className="mr-2 h-5 w-5 text-primary" />
           Integration Readiness Assessment
         </h3>
+
+        <p className="text-slate-600 mb-6">
+          This section shows how well your current systems can "talk to" AI tools and how easily integration would be.
+        </p>
 
         {/* Overall Readiness */}
         <div className={`${readiness.bgColor} p-4 rounded-lg mb-6`}>
