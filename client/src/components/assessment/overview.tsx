@@ -91,8 +91,13 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
+          // Apply special styling for AI Governance to center it
+          const cardClasses = dimension.title === "AI Governance & Ethics" 
+            ? "hover:shadow-md transition-shadow lg:col-start-2" 
+            : "hover:shadow-md transition-shadow";
+          
           return (
-            <Card key={index} className="hover:shadow-md transition-shadow">
+            <Card key={index} className={cardClasses}>
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000]">
