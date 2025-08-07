@@ -81,14 +81,6 @@ const complianceFrameworks = [
     requirements: ["Secure network", "Cardholder data protection", "Access controls", "Regular monitoring"],
     icon: "💳",
     industries: ["Retail", "Finance", "Financial Services", "E-commerce"]
-  },
-  {
-    name: "CCPA",
-    fullName: "California Consumer Privacy Act",
-    description: "California state privacy law protecting consumer personal information",
-    requirements: ["Consumer privacy rights", "Data disclosure", "Opt-out mechanisms", "Data deletion rights"],
-    icon: "🌎",
-    industries: ["all"] // Applies to businesses serving California residents
   }
 ];
 
@@ -146,7 +138,7 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
       "PIPEDA": baseScore * 0.97,                      // Canadian privacy law, moderate requirements
       "PCI DSS": baseScore * 0.92,                     // Payment security, moderate requirements
       "FERPA": baseScore * 0.94,                       // Education privacy, moderate requirements
-      "CCPA": baseScore * 0.96,                        // California privacy law, similar to GDPR
+
       "NIST Cybersecurity Framework": baseScore * 1.02, // Cybersecurity framework, slightly above baseline
       "ISO 27001": baseScore                           // Standard baseline
     };
