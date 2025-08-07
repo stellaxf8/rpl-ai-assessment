@@ -144,7 +144,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           <Card className="mb-8">
             <CardContent className="p-6">
               <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">Readiness Dimensions</h3>
-              <div className="flex justify-center">
+              <div className="w-full h-96">
                 <RadarChart scores={scores as any} />
               </div>
             </CardContent>
