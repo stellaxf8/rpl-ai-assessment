@@ -89,7 +89,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         </div>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        {/* First row - 3 cards */}
+        {/* First row - positions 1, 2, 3 */}
         {dimensions.slice(0, 3).map((dimension, index) => {
           const IconComponent = dimension.icon;
           return (
@@ -107,26 +107,11 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           );
         })}
         
-        {/* Second row - AI Governance centered */}
-        <div className="lg:col-start-2 md:col-span-2 lg:col-span-1">
-          <Card className="hover:shadow-md transition-shadow">
-            <CardContent className="p-6">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000]">
-                  <Brain className="text-xl" />
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">AI Governance & Ethics</h3>
-              </div>
-              <p className="text-slate-600">Evaluate AI ethics frameworks, bias prevention, and regulatory compliance.</p>
-            </CardContent>
-          </Card>
-        </div>
-        
-        {/* Third row - remaining 3 cards */}
-        {dimensions.slice(3).filter(d => d.title !== "AI Governance & Ethics").map((dimension, index) => {
+        {/* Second row - positions 4, 5, 6 */}
+        {dimensions.slice(3, 6).map((dimension, index) => {
           const IconComponent = dimension.icon;
           return (
-            <Card key={index + 10} className="hover:shadow-md transition-shadow">
+            <Card key={index + 3} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000]">
@@ -139,6 +124,21 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </Card>
           );
         })}
+        
+        {/* Third row - position 7 (invisible spacer), 8 (AI Governance centered), 9 (empty) */}
+        <div className="invisible"></div>
+        
+        <Card className="hover:shadow-md transition-shadow">
+          <CardContent className="p-6">
+            <div className="flex items-center mb-4">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000]">
+                <Brain className="text-xl" />
+              </div>
+              <h3 className="text-lg font-semibold text-slate-900">AI Governance & Ethics</h3>
+            </div>
+            <p className="text-slate-600">Evaluate AI ethics frameworks, bias prevention, and regulatory compliance.</p>
+          </CardContent>
+        </Card>
       </div>
       <div className="text-center">
         <Button 
