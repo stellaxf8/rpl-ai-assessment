@@ -83,7 +83,15 @@ export default function Report({ assessment, onBack }: ReportProps) {
 
   // Scroll to top when component mounts
   useEffect(() => {
+    // Immediate scroll to top
     window.scrollTo(0, 0);
+    
+    // Also scroll after a brief delay to ensure all content is rendered
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   const handleDownloadPDF = async () => {
