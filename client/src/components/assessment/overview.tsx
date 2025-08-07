@@ -32,12 +32,6 @@ const dimensions = [
     color: "bg-orange-100 text-warning",
   },
   {
-    icon: Brain,
-    title: "AI Governance & Ethics",
-    description: "Evaluate AI ethics frameworks, bias prevention, and regulatory compliance.",
-    color: "bg-indigo-100 text-indigo-900",
-  },
-  {
     icon: DollarSign,
     title: "Budget & Resources",
     description: "Evaluate financial readiness and resource allocation for AI initiatives.",
