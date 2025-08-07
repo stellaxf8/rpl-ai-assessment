@@ -101,19 +101,23 @@ export default function Home() {
         )}
         
         {currentSection === 'results' && completedAssessment && (
-          <Results 
-            assessment={completedAssessment}
-            onGenerateReport={() => setCurrentSection('report')}
-            onRetakeAssessment={handleRetakeAssessment}
-            onContactUs={() => setCurrentSection('contact')}
-          />
+          <div key="results-section">
+            <Results 
+              assessment={completedAssessment}
+              onGenerateReport={() => setCurrentSection('report')}
+              onRetakeAssessment={handleRetakeAssessment}
+              onContactUs={() => setCurrentSection('contact')}
+            />
+          </div>
         )}
         
         {currentSection === 'report' && completedAssessment && (
-          <Report 
-            assessment={completedAssessment} 
-            onBack={() => setCurrentSection('results')}
-          />
+          <div key="report-section">
+            <Report 
+              assessment={completedAssessment} 
+              onBack={() => setCurrentSection('results')}
+            />
+          </div>
         )}
       </main>
     </div>

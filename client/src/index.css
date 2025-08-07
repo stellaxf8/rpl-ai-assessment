@@ -61,6 +61,12 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    overflow-x: hidden;
+  }
+  
+  main {
+    position: relative;
+    isolation: isolate;
   }
 }
 
