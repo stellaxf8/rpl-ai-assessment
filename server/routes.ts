@@ -13,30 +13,35 @@ function calculateOverallScore(scores: any): number {
 function calculateDimensionScores(responses: any): any {
   const scores: any = {};
   
-  // Group questions by dimension (assuming 5 questions per dimension)
-  const dimensions = [
-    'technologyInfrastructure',
-    'dataQuality', 
-    'teamLiteracy',
-    'systemIntegration',
-    'budget',
-    'security'
+  // Group questions by dimension - support both naming conventions
+  const dimensionMappings = [
+    { name: 'technologyInfrastructure', aliases: ['technologyInfrastructure'] },
+    { name: 'dataQuality', aliases: ['dataQuality'] },
+    { name: 'teamLiteracy', aliases: ['teamLiteracy'] },
+    { name: 'systemIntegration', aliases: ['systemIntegration'] },
+    { name: 'budget', aliases: ['budget', 'budgetResources'] },
+    { name: 'security', aliases: ['security', 'securityPrivacy'] }
   ];
 
-  dimensions.forEach((dimension, dimIndex) => {
+  dimensionMappings.forEach((dimensionMapping) => {
     let totalScore = 0;
     let questionCount = 0;
     
-    // Calculate average for this dimension's questions
-    for (let i = 1; i <= 5; i++) {
-      const questionId = `${dimension}_${i}`;
-      if (responses[questionId]) {
-        totalScore += responses[questionId];
-        questionCount++;
+    // Try all aliases for this dimension
+    dimensionMapping.aliases.forEach(alias => {
+      for (let i = 1; i <= 5; i++) {
+        const questionId = `${alias}_${i}`;
+        if (responses[questionId]) {
+          totalScore += responses[questionId];
+          questionCount++;
+        }
       }
-    }
+    });
     
-    scores[dimension] = questionCount > 0 ? totalScore / questionCount : 0;
+    // Only include dimension in scores if we have questions for it
+    if (questionCount > 0) {
+      scores[dimensionMapping.name] = totalScore / questionCount;
+    }
   });
 
   return scores;
