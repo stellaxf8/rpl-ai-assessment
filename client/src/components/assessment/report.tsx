@@ -68,15 +68,6 @@ const dimensionConfig = {
       low: "Implement comprehensive data security framework before AI deployment."
     }
   },
-  aiGovernance: {
-    label: "AI Governance & Ethics",
-    icon: "🧠",
-    recommendations: {
-      high: "Excellent AI governance foundation for responsible AI deployment.",
-      medium: "Develop AI ethics framework and bias detection processes.",
-      low: "Establish AI governance policies and regulatory compliance framework."
-    }
-  },
 };
 
 // Helper function to get dynamic color based on score

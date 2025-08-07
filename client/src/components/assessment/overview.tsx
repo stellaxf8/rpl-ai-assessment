@@ -119,20 +119,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           );
         })}
         
-        {/* Third row - position 7 (invisible spacer), 8 (AI Governance centered), 9 (empty) */}
-        <div className="invisible"></div>
-        
-        <Card className="hover:shadow-md transition-shadow">
-          <CardContent className="p-6">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000]">
-                <Brain className="text-xl" />
-              </div>
-              <h3 className="text-lg font-semibold text-slate-900">AI Governance & Ethics</h3>
-            </div>
-            <p className="text-slate-600">Evaluate AI ethics frameworks, bias prevention, and regulatory compliance.</p>
-          </CardContent>
-        </Card>
+
       </div>
       <div className="text-center">
         <Button 

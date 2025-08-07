@@ -20,8 +20,7 @@ function calculateDimensionScores(responses: any): any {
     { name: 'teamLiteracy', aliases: ['teamLiteracy'] },
     { name: 'systemIntegration', aliases: ['systemIntegration'] },
     { name: 'budget', aliases: ['budget', 'budgetResources'] },
-    { name: 'dataSecurity', aliases: ['dataSecurity', 'security'] },
-    { name: 'aiGovernance', aliases: ['aiGovernance', 'securityPrivacy'] }
+    { name: 'dataSecurity', aliases: ['dataSecurity', 'security', 'securityPrivacy'] }
   ];
 
   dimensionMappings.forEach((dimensionMapping) => {

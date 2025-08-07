@@ -22,7 +22,7 @@ export const insertAssessmentSchema = createInsertSchema(assessments).omit({
 export type InsertAssessment = z.infer<typeof insertAssessmentSchema>;
 export type Assessment = typeof assessments.$inferSelect;
 
-// Dimension scores schema - updated to separate data security and AI governance
+// Dimension scores schema - 6 core dimensions for MVP
 export const dimensionScoresSchema = z.object({
   technologyInfrastructure: z.number().min(0).max(5),
   dataQuality: z.number().min(0).max(5),
@@ -30,7 +30,6 @@ export const dimensionScoresSchema = z.object({
   systemIntegration: z.number().min(0).max(5),
   budget: z.number().min(0).max(5),
   dataSecurity: z.number().min(0).max(5),
-  aiGovernance: z.number().min(0).max(5),
 });
 
 export type DimensionScores = z.infer<typeof dimensionScoresSchema>;

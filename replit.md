@@ -17,6 +17,7 @@ Successfully implemented all 9 high-priority advanced features (completed Decemb
 - **Industry Selection Interface** - Beautiful card-based selection with AI application previews and specialization badges
 - **Industry Insights Component** - Comprehensive benchmarking, performance comparisons, and industry-specific recommendations
 - **Navigation Simplification** - Temporarily hidden Dashboard and Knowledge Center pages to focus on MVP features
+- **AI Governance Removal for MVP** - Removed AI Governance & Ethics dimension to focus on 6 core dimensions for organizations not yet using AI
 
 ### ✅ Completed Advanced Features:
 1. **AI Maturity Roadmap** - Interactive roadmap with milestones, timelines, and strategic goals
@@ -65,9 +66,10 @@ The application follows a modern full-stack architecture with clear separation b
 ## Key Components
 
 ### Assessment System
-- **Six Evaluation Dimensions**: Technology Infrastructure, Data Quality, Team Literacy, System Integration, Budget, Security
+- **Six Evaluation Dimensions**: Technology Infrastructure, Data Quality & Access, Team AI Literacy, System Integration, Budget & Resources, Data Security & Privacy
 - **Scoring Algorithm**: 5-point Likert scale questions converted to 100-point overall score
 - **Question Flow**: Progressive questionnaire with 30 total questions (5 per dimension)
+- **MVP Focus**: Concentrated on core readiness factors for organizations not yet implementing AI
 
 ### Enhanced Analytics & Insights
 - **Industry Benchmarking**: Compare user scores against industry averages and top performers

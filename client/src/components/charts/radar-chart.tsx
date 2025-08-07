@@ -13,7 +13,6 @@ export default function RadarChart({ scores }: RadarChartProps) {
     { dimension: 'Integration', score: scores.systemIntegration },
     { dimension: 'Budget', score: scores.budget },
     { dimension: 'Data Security', score: scores.dataSecurity },
-    { dimension: 'AI Governance', score: scores.aiGovernance },
   ];
 
   return (

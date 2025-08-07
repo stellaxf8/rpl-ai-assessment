@@ -54,12 +54,6 @@ const dimensionConfig = {
     color: "bg-red-100 text-error",
     barColor: "bg-error",
   },
-  aiGovernance: {
-    label: "AI Governance & Ethics",
-    icon: "🧠",
-    color: "bg-indigo-100 text-indigo-900",
-    barColor: "bg-indigo-500",
-  },
 };
 
 export default function Results({ assessment, onGenerateReport, onRetakeAssessment, onContactUs, showRetakeButton = true }: ResultsProps) {
@@ -182,7 +176,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           {/* Enhanced Analytics */}
           <IndustryBenchmark userScore={overallScore} industry={industry || "Technology"} />
           <IntegrationReadiness scores={{ technologyInfrastructure: typedScores.technologyInfrastructure, systemIntegration: typedScores.systemIntegration }} />
-          <ComplianceAssessment scores={{ security: typedScores.dataSecurity, aiGovernance: typedScores.aiGovernance, dataQuality: typedScores.dataQuality }} industry={industry} />
+          <ComplianceAssessment scores={{ security: typedScores.dataSecurity, dataQuality: typedScores.dataQuality }} industry={industry} />
           <BusinessDevelopment scores={{
             overallScore: overallScore,
             technologyInfrastructure: typedScores.technologyInfrastructure,
@@ -190,8 +184,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
             teamLiteracy: typedScores.teamLiteracy,
             systemIntegration: typedScores.systemIntegration,
             budget: typedScores.budget,
-            dataSecurity: typedScores.dataSecurity,
-            aiGovernance: typedScores.aiGovernance
+            dataSecurity: typedScores.dataSecurity
           }} />
       </div>
       {/* Action Buttons */}

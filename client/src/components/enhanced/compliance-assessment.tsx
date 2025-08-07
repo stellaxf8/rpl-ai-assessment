@@ -5,7 +5,6 @@ import { Progress } from "@/components/ui/progress";
 interface ComplianceAssessmentProps {
   scores: {
     security: number;
-    aiGovernance: number;
     dataQuality: number;
   };
   industry?: string;
