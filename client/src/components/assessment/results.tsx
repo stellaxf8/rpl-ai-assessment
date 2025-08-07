@@ -225,7 +225,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
         {onGenerateReport && (
           <Button onClick={onGenerateReport} size="lg">
             <FileText className="mr-2 h-5 w-5" />
-            Generate Full Report
+            Generate Report
           </Button>
         )}
 
