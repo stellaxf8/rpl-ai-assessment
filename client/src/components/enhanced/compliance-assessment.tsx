@@ -23,12 +23,12 @@ const complianceFrameworks = [
   
   // US Regulations
   {
-    name: "NIST AI RMF",
-    fullName: "NIST AI Risk Management Framework",
-    description: "US federal framework for managing AI risks and governance",
-    requirements: ["AI risk assessment", "Bias monitoring", "Transparency documentation", "Human oversight"],
+    name: "NIST Cybersecurity Framework",
+    fullName: "NIST Framework for Improving Critical Infrastructure Cybersecurity",
+    description: "US federal cybersecurity framework for managing and reducing cybersecurity risk",
+    requirements: ["Identify assets", "Protect systems", "Detect threats", "Respond to incidents", "Recover operations"],
     icon: "🇺🇸",
-    industries: ["all"] // Applies to all organizations implementing AI systems
+    industries: ["all"] // Applies to all organizations managing cybersecurity risk
   },
   {
     name: "HIPAA",
@@ -57,12 +57,12 @@ const complianceFrameworks = [
   
   // EU Regulations
   {
-    name: "EU AI Act",
-    fullName: "European Union Artificial Intelligence Act",
-    description: "EU comprehensive regulation for AI systems and governance",
-    requirements: ["AI risk classification", "Conformity assessments", "Human oversight", "Transparency obligations"],
+    name: "GDPR",
+    fullName: "General Data Protection Regulation",
+    description: "EU data protection and privacy regulation for all individuals within EU",
+    requirements: ["Data subject consent", "Data portability", "Right to be forgotten", "Privacy by design", "Breach notification"],
     icon: "🇪🇺",
-    industries: ["all"] // Applies to all AI systems used in or affecting the EU
+    industries: ["all"] // Applies to all organizations processing EU personal data
   },
   
   // International Standards
@@ -81,6 +81,14 @@ const complianceFrameworks = [
     requirements: ["Secure network", "Cardholder data protection", "Access controls", "Regular monitoring"],
     icon: "💳",
     industries: ["Retail", "Finance", "Financial Services", "E-commerce"]
+  },
+  {
+    name: "CCPA",
+    fullName: "California Consumer Privacy Act",
+    description: "California state privacy law protecting consumer personal information",
+    requirements: ["Consumer privacy rights", "Data disclosure", "Opt-out mechanisms", "Data deletion rights"],
+    icon: "🌎",
+    industries: ["all"] // Applies to businesses serving California residents
   }
 ];
 
@@ -132,13 +140,15 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
     // Calculate framework-specific scores based on security and data quality
     const baseScore = avgComplianceScore;
     const variations = {
-      "GDPR": baseScore * 0.95,      // Slightly lower due to strict data requirements
-      "HIPAA": baseScore * 0.9,      // Lower due to healthcare-specific requirements
-      "SOX": baseScore * 1.05,       // Slightly higher as more focused on financial controls
-      "PIPEDA": baseScore * 0.97,    // Canadian privacy law, moderate requirements
-      "PCI DSS": baseScore * 0.92,   // Payment security, moderate requirements
-      "FERPA": baseScore * 0.94,     // Education privacy, moderate requirements
-      "ISO 27001": baseScore         // Standard baseline
+      "GDPR": baseScore * 0.95,                        // Slightly lower due to strict data requirements
+      "HIPAA": baseScore * 0.9,                        // Lower due to healthcare-specific requirements
+      "SOX": baseScore * 1.05,                         // Slightly higher as more focused on financial controls
+      "PIPEDA": baseScore * 0.97,                      // Canadian privacy law, moderate requirements
+      "PCI DSS": baseScore * 0.92,                     // Payment security, moderate requirements
+      "FERPA": baseScore * 0.94,                       // Education privacy, moderate requirements
+      "CCPA": baseScore * 0.96,                        // California privacy law, similar to GDPR
+      "NIST Cybersecurity Framework": baseScore * 1.02, // Cybersecurity framework, slightly above baseline
+      "ISO 27001": baseScore                           // Standard baseline
     };
     
     return Math.min(5, variations[framework as keyof typeof variations] || baseScore);
@@ -152,7 +162,7 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
       <CardContent className="p-6">
         <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
           <Shield className="mr-2 h-5 w-5 text-primary" />
-          Regulatory Compliance Assessment
+          Data Security & Privacy Compliance Assessment
         </h3>
 
         {/* Overall Compliance Status */}
