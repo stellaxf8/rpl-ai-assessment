@@ -80,7 +80,16 @@ const getScoreColor = (score: number) => {
 export default function Report({ assessment, onBack }: ReportProps) {
   const { organizationName, overallScore, scores, createdAt } = assessment;
   const { toast } = useToast();
-  const [consultationRequested, setConsultationRequested] = useState(false);
+  
+  // Use localStorage to persist consultation request status per assessment
+  const consultationKey = `consultation-requested-${assessment.id || 'current'}`;
+  const [consultationRequested, setConsultationRequested] = useState(() => {
+    try {
+      return localStorage.getItem(consultationKey) === 'true';
+    } catch {
+      return false;
+    }
+  });
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -151,6 +160,12 @@ export default function Report({ assessment, onBack }: ReportProps) {
     if (consultationRequested) return;
     
     setConsultationRequested(true);
+    try {
+      localStorage.setItem(consultationKey, 'true');
+    } catch {
+      // localStorage not available, continue anyway
+    }
+    
     toast({
       title: "Consultation Request Received",
       description: "Our AI specialists will contact you within 1-2 business days to schedule your free consultation.",

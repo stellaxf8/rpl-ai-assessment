@@ -14,11 +14,21 @@ interface BusinessDevelopmentProps {
     budget: number;
     dataSecurity: number;
   };
+  assessmentId?: string;
 }
 
-export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps) {
+export default function BusinessDevelopment({ scores, assessmentId }: BusinessDevelopmentProps) {
   const { toast } = useToast();
-  const [consultationRequested, setConsultationRequested] = useState(false);
+  
+  // Use localStorage to persist consultation request status per assessment
+  const consultationKey = `consultation-requested-${assessmentId || 'current'}`;
+  const [consultationRequested, setConsultationRequested] = useState(() => {
+    try {
+      return localStorage.getItem(consultationKey) === 'true';
+    } catch {
+      return false;
+    }
+  });
 
   const calculateImplementationCost = () => {
     const { overallScore, teamLiteracy, technologyInfrastructure } = scores;
@@ -60,6 +70,12 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
     if (consultationRequested) return;
     
     setConsultationRequested(true);
+    try {
+      localStorage.setItem(consultationKey, 'true');
+    } catch {
+      // localStorage not available, continue anyway
+    }
+    
     toast({
       title: "Consultation Request Received",
       description: "Our AI specialists will contact you within 1-2 business days to schedule your free consultation.",
