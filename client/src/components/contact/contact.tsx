@@ -25,7 +25,7 @@ export default function Contact() {
     // Simulate form submission
     toast({
       title: "Message Sent",
-      description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+      description: "Our AI specialists will contact you within 1-2 business days to schedule your free consultation.",
     });
     
     // Reset form
