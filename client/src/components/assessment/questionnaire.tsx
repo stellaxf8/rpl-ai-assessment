@@ -7,7 +7,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { useMutation } from "@tanstack/react-query";
-import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { questions, Question } from "@/lib/assessment-data";
 import { quickQuestions } from "@/lib/quick-assessment-data";
@@ -44,7 +43,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const [organizationName, setOrganizationName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [showContactForm, setShowContactForm] = useState(false);
-  const { toast } = useToast();
 
   // Reset function to clear all assessment state
   const resetAssessment = () => {
@@ -97,18 +95,10 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       return response.json();
     },
     onSuccess: (assessment: Assessment) => {
-      toast({
-        title: "Assessment Complete!",
-        description: "Your AI readiness assessment has been submitted successfully.",
-      });
       onComplete(assessment);
     },
     onError: (error: Error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to submit assessment. Please try again.",
-        variant: "destructive",
-      });
+      console.error('Assessment submission failed:', error.message || "Failed to submit assessment. Please try again.");
     },
   });
 
@@ -174,11 +164,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
   const handleSubmit = () => {
     if (!organizationName || !contactEmail) {
-      toast({
-        title: "Missing Information",
-        description: "Please provide your organization name and contact email.",
-        variant: "destructive",
-      });
+      alert("Please provide your organization name and contact email.");
       return;
     }
 
@@ -213,10 +199,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     setContactEmail("contact@example.com");
     setShowContactForm(true);
     
-    toast({
-      title: "Demo Sample Generated",
-      description: "Random responses have been generated for demonstration purposes.",
-    });
+    // Demo sample generated
   };
 
   const getDimensionProgress = () => {

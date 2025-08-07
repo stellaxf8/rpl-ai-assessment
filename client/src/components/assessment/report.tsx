@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Assessment } from "@shared/schema";
-import { useToast } from "@/hooks/use-toast";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
@@ -79,7 +78,6 @@ const getScoreColor = (score: number) => {
 
 export default function Report({ assessment, onBack }: ReportProps) {
   const { organizationName, overallScore, scores, createdAt } = assessment;
-  const { toast } = useToast();
   const [isConsultationRequested, setIsConsultationRequested] = useState(false);
 
   // Scroll to top when component mounts
@@ -97,10 +95,7 @@ export default function Report({ assessment, onBack }: ReportProps) {
 
   const handleDownloadPDF = async () => {
     try {
-      toast({
-        title: "Generating PDF",
-        description: "Please wait while we generate your report...",
-      });
+      // Generating PDF
 
       const reportElement = document.querySelector('[data-report-content]') as HTMLElement;
       if (!reportElement) return;
@@ -131,17 +126,10 @@ export default function Report({ assessment, onBack }: ReportProps) {
       // Download the PDF
       pdf.save(`AI-Readiness-Report-${organizationName.replace(/[^a-zA-Z0-9]/g, '-')}.pdf`);
       
-      toast({
-        title: "PDF Downloaded",
-        description: "Your AI Readiness Assessment Report has been downloaded successfully.",
-      });
+      // PDF downloaded successfully
     } catch (error) {
       console.error('PDF generation error:', error);
-      toast({
-        title: "PDF Generation Failed",
-        description: "There was an error generating the PDF. Please try again.",
-        variant: "destructive"
-      });
+      console.error('PDF generation failed: There was an error generating the PDF. Please try again.');
     }
   };
 

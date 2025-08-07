@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Code, Database, Zap, CheckCircle, AlertCircle, Copy, ExternalLink } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 interface APIIntegrationProps {
   organizationName: string;
@@ -19,7 +18,6 @@ export function APIIntegration({ organizationName, assessmentId }: APIIntegratio
   const [apiKey, setApiKey] = useState<string>("");
   const [testResponse, setTestResponse] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
 
   const apiEndpoints = [
     {
@@ -81,18 +79,12 @@ export function APIIntegration({ organizationName, assessmentId }: APIIntegratio
   const generateApiKey = () => {
     const key = `ai-readiness-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     setApiKey(key);
-    toast({
-      title: "API Key Generated",
-      description: "Your new API key has been generated successfully."
-    });
+    // API key generated
   };
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-    toast({
-      title: "Copied to Clipboard",
-      description: "Code example copied successfully."
-    });
+    // Code copied to clipboard
   };
 
   const testApiEndpoint = async () => {
@@ -139,16 +131,9 @@ export function APIIntegration({ organizationName, assessmentId }: APIIntegratio
       };
 
       setTestResponse(mockResponses[selectedEndpoint as keyof typeof mockResponses]);
-      toast({
-        title: "API Test Successful",
-        description: "Endpoint responded successfully with mock data."
-      });
+      // API test successful
     } catch (error) {
-      toast({
-        title: "API Test Failed",
-        description: "Unable to connect to the endpoint.",
-        variant: "destructive"
-      });
+      console.error('API test failed: Unable to connect to the endpoint.');
     } finally {
       setIsLoading(false);
     }

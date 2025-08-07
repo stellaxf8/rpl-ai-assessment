@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -17,16 +16,11 @@ export default function Contact() {
     inquiryType: '',
     message: ''
   });
-  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simulate form submission
-    toast({
-      title: "Message Sent",
-      description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
-    });
+    // Form submission handled
     
     // Reset form
     setFormData({
