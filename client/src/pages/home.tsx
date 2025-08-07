@@ -113,6 +113,7 @@ export default function Home() {
           <Report 
             assessment={completedAssessment} 
             onBack={() => setCurrentSection('results')}
+            onContactUs={() => setCurrentSection('contact')}
           />
         )}
       </main>
