@@ -163,8 +163,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     if (type === 'detailed') {
       setShowIndustrySelection(true);
     } else {
-      // For quick assessment, skip industry selection and go straight to questions
-      setSelectedIndustry("");
+      // For quick assessment, skip industry selection and use default
+      setSelectedIndustry("Other");
       setShowIndustrySelection(false);
     }
   };
