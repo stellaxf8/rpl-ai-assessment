@@ -11,7 +11,6 @@ import html2canvas from 'html2canvas';
 interface ReportProps {
   assessment: Assessment;
   onBack?: () => void;
-  onContactUs?: () => void;
 }
 
 const dimensionConfig = {
@@ -78,7 +77,7 @@ const getScoreColor = (score: number) => {
   return 'text-red-600'; // Low (Red): 0.0-2.4/5
 };
 
-export default function Report({ assessment, onBack, onContactUs }: ReportProps) {
+export default function Report({ assessment, onBack }: ReportProps) {
   const { organizationName, overallScore, scores, createdAt } = assessment;
   const { toast } = useToast();
 
@@ -148,14 +147,10 @@ export default function Report({ assessment, onBack, onContactUs }: ReportProps)
 
 
   const handleScheduleConsultation = () => {
-    if (onContactUs) {
-      onContactUs();
-    } else {
-      toast({
-        title: "Schedule Consultation",
-        description: "Contact your consultant to schedule a follow-up meeting to discuss these results.",
-      });
-    }
+    toast({
+      title: "Schedule Consultation",
+      description: "Contact your consultant to schedule a follow-up meeting to discuss these results.",
+    });
   };
 
   const getScoreLevel = (score: number): 'high' | 'medium' | 'low' => {
