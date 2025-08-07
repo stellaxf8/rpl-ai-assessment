@@ -51,12 +51,11 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
                 <div className="font-semibold text-lg">
                   {isConsultationRequested ? "Consultation Requested" : "Schedule Free Consultation"}
                 </div>
-                <div className="text-sm opacity-90">
-                  {isConsultationRequested 
-                    ? "We'll contact you within 1-2 business days" 
-                    : "Our AI specialist team will contact you to setup a meeting"
-                  }
-                </div>
+                {isConsultationRequested && (
+                  <div className="text-sm opacity-90">
+                    We'll contact you within 1-2 business days
+                  </div>
+                )}
               </div>
             </div>
           </Button>
