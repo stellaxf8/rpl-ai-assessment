@@ -266,7 +266,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             </div>
           </div>
 
-          <div className="flex justify-between items-center mt-8">
+          {/* Contact form navigation buttons hidden per user request */}
+          <div className="flex justify-between items-center mt-8" style={{display: 'none'}}>
             <Button 
               variant="outline" 
               onClick={() => setShowContactForm(false)}
@@ -308,7 +309,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
           selectedIndustry={selectedIndustry}
         />
         
-        <div className="text-center mt-8">
+        {/* Industry selection navigation hidden per user request */}
+        <div className="text-center mt-8" style={{display: 'none'}}>
           <Button 
             variant="outline" 
             onClick={() => {
@@ -438,7 +440,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             ))}
           </RadioGroup>
 
-          <div className="flex justify-between items-center mt-8">
+          {/* Assessment navigation buttons hidden per user request */}
+          <div className="flex justify-between items-center mt-8" style={{display: 'none'}}>
             <Button 
               variant="outline" 
               onClick={handlePrevious}
