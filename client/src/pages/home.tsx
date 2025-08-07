@@ -53,7 +53,16 @@ export default function Home() {
                 className="h-8 w-auto"
               />
             </div>
-            <nav className="flex items-center space-x-1">
+            <nav className="flex items-center space-x-4">
+              <a 
+                href="https://www.redpilllabs.com/contact-us" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-slate-700 hover:text-slate-900 font-medium transition-colors flex items-center"
+              >
+                <Phone className="mr-1 h-4 w-4" />
+                Contact Us
+              </a>
               <a 
                 href="https://www.redpilllabs.com/" 
                 target="_blank" 
