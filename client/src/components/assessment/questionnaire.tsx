@@ -371,7 +371,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               { label: 'Team Literacy', keys: ['teamLiteracy'] },
               { label: 'System Integration', keys: ['systemIntegration'] },
               { label: 'Budget', keys: ['budget', 'budgetResources'] },
-              { label: 'Security', keys: ['security', 'securityPrivacy'] }
+              { label: 'Security', keys: ['dataSecurity', 'security', 'securityPrivacy'] }
             ].map((dimension, index) => {
               // Check all possible keys for this dimension
               const isCurrentDimension = dimension.keys.includes(currentQuestionData.dimension);

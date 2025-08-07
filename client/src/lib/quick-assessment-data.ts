@@ -501,5 +501,42 @@ export const quickQuestions: Question[] = [
         description: "Industry-leading compliance with proactive measures"
       }
     ]
+  },
+
+  // Additional Data Security question to reach 15 total
+  {
+    id: "dataSecurity_3",
+    dimension: "dataSecurity",
+    dimensionLabel: "Data Security & Privacy",
+    icon: "Shield",
+    question: "How do you currently handle data backup and disaster recovery?",
+    description: "Consider your backup frequency, recovery procedures, and business continuity planning.",
+    options: [
+      {
+        value: 1,
+        text: "No formal backup strategy",
+        description: "Limited or inconsistent data backup procedures"
+      },
+      {
+        value: 2,
+        text: "Basic backup processes",
+        description: "Some backup procedures but limited disaster recovery planning"
+      },
+      {
+        value: 3,
+        text: "Good backup and recovery",
+        description: "Regular backups with documented recovery procedures"
+      },
+      {
+        value: 4,
+        text: "Comprehensive disaster recovery",
+        description: "Robust backup system with tested recovery procedures"
+      },
+      {
+        value: 5,
+        text: "Enterprise-grade resilience",
+        description: "Advanced backup, disaster recovery, and business continuity planning"
+      }
+    ]
   }
 ];
