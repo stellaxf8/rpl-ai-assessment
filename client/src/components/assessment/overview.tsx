@@ -89,15 +89,44 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         </div>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        {dimensions.map((dimension, index) => {
+        {/* First row - 3 cards */}
+        {dimensions.slice(0, 3).map((dimension, index) => {
           const IconComponent = dimension.icon;
-          // Apply special styling for AI Governance to center it
-          const cardClasses = dimension.title === "AI Governance & Ethics" 
-            ? "hover:shadow-md transition-shadow lg:col-start-2" 
-            : "hover:shadow-md transition-shadow";
-          
           return (
-            <Card key={index} className={cardClasses}>
+            <Card key={index} className="hover:shadow-md transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000]">
+                    <IconComponent className="text-xl" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-slate-900">{dimension.title}</h3>
+                </div>
+                <p className="text-slate-600">{dimension.description}</p>
+              </CardContent>
+            </Card>
+          );
+        })}
+        
+        {/* Second row - AI Governance centered */}
+        <div className="lg:col-start-2 md:col-span-2 lg:col-span-1">
+          <Card className="hover:shadow-md transition-shadow">
+            <CardContent className="p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000]">
+                  <Brain className="text-xl" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900">AI Governance & Ethics</h3>
+              </div>
+              <p className="text-slate-600">Evaluate AI ethics frameworks, bias prevention, and regulatory compliance.</p>
+            </CardContent>
+          </Card>
+        </div>
+        
+        {/* Third row - remaining 3 cards */}
+        {dimensions.slice(3).filter(d => d.title !== "AI Governance & Ethics").map((dimension, index) => {
+          const IconComponent = dimension.icon;
+          return (
+            <Card key={index + 10} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000]">
