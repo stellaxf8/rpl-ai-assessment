@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Download, Calendar, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -79,6 +80,11 @@ const getScoreColor = (score: number) => {
 export default function Report({ assessment, onBack }: ReportProps) {
   const { organizationName, overallScore, scores, createdAt } = assessment;
   const { toast } = useToast();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleDownloadPDF = async () => {
     try {
