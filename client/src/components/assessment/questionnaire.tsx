@@ -366,21 +366,24 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
           
           <div className="flex flex-wrap gap-2">
             {[
-              { label: 'Technology Infrastructure', key: 'technologyInfrastructure' },
-              { label: 'Data Quality', key: 'dataQuality' }, 
-              { label: 'Team Literacy', key: 'teamLiteracy' },
-              { label: 'System Integration', key: 'systemIntegration' },
-              { label: 'Budget', key: 'budget' },
-              { label: 'Security', key: 'security' }
-            ].map((dimension) => {
-              const isCurrentDimension = currentQuestionData.dimension === dimension.key;
-              const dimensionQuestions = assessmentQuestions.filter((q: Question) => q.dimension === dimension.key);
+              { label: 'Technology Infrastructure', keys: ['technologyInfrastructure'] },
+              { label: 'Data Quality', keys: ['dataQuality'] }, 
+              { label: 'Team Literacy', keys: ['teamLiteracy'] },
+              { label: 'System Integration', keys: ['systemIntegration'] },
+              { label: 'Budget', keys: ['budget', 'budgetResources'] },
+              { label: 'Security', keys: ['security', 'securityPrivacy'] }
+            ].map((dimension, index) => {
+              // Check all possible keys for this dimension
+              const isCurrentDimension = dimension.keys.includes(currentQuestionData.dimension);
+              const dimensionQuestions = assessmentQuestions.filter((q: Question) => 
+                dimension.keys.includes(q.dimension)
+              );
               const dimensionResponses = dimensionQuestions.filter((q: Question) => responses[q.id]);
               const progress = `${dimensionResponses.length}/${dimensionQuestions.length}`;
               
               return (
                 <span
-                  key={dimension.key}
+                  key={`${dimension.label}-${index}`}
                   className={`px-3 py-1 rounded-full text-xs font-medium ${
                     isCurrentDimension
                       ? 'text-white'
