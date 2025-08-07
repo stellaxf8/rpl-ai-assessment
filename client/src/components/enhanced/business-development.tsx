@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Calculator, Calendar, MessageSquare, FileText, Users, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -17,6 +18,7 @@ interface BusinessDevelopmentProps {
 
 export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps) {
   const { toast } = useToast();
+  const [isConsultationRequested, setIsConsultationRequested] = useState(false);
 
   const calculateImplementationCost = () => {
     const { overallScore, teamLiteracy, technologyInfrastructure } = scores;
@@ -55,6 +57,7 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
   };
 
   const handleScheduleConsultation = () => {
+    setIsConsultationRequested(true);
     toast({
       title: "Consultation Request Received",
       description: "Our AI specialists will contact you within 1-2 business days to schedule your free consultation.",
@@ -187,12 +190,20 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
             size="lg"
             className="h-auto p-6"
             onClick={handleScheduleConsultation}
+            disabled={isConsultationRequested}
           >
             <div className="flex items-center">
               <MessageSquare className="mr-3 h-6 w-6" />
               <div>
-                <div className="font-semibold text-lg">Schedule Free Consultation</div>
-                <div className="text-sm opacity-90">Our AI specialist team will contact you to setup a meeting</div>
+                <div className="font-semibold text-lg">
+                  {isConsultationRequested ? "Consultation Requested" : "Schedule Free Consultation"}
+                </div>
+                <div className="text-sm opacity-90">
+                  {isConsultationRequested 
+                    ? "We'll contact you within 1-2 business days" 
+                    : "Our AI specialist team will contact you to setup a meeting"
+                  }
+                </div>
               </div>
             </div>
           </Button>

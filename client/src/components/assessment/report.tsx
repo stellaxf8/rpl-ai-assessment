@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Download, Calendar, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -80,6 +80,7 @@ const getScoreColor = (score: number) => {
 export default function Report({ assessment, onBack }: ReportProps) {
   const { organizationName, overallScore, scores, createdAt } = assessment;
   const { toast } = useToast();
+  const [isConsultationRequested, setIsConsultationRequested] = useState(false);
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -147,6 +148,7 @@ export default function Report({ assessment, onBack }: ReportProps) {
 
 
   const handleScheduleConsultation = () => {
+    setIsConsultationRequested(true);
     toast({
       title: "Consultation Request Received",
       description: "Our AI specialists will contact you within 1-2 business days to schedule your free consultation.",
@@ -294,8 +296,11 @@ export default function Report({ assessment, onBack }: ReportProps) {
           <div className="border-t border-slate-200 pt-6">
             <div className="text-center">
               <p className="text-slate-600 mb-4">Need help implementing these recommendations?</p>
-              <Button onClick={handleScheduleConsultation}>
-                Schedule a Consultation
+              <Button 
+                onClick={handleScheduleConsultation}
+                disabled={isConsultationRequested}
+              >
+                {isConsultationRequested ? "Consultation Requested" : "Schedule a Consultation"}
                 <Calendar className="ml-2 h-4 w-4" />
               </Button>
             </div>
