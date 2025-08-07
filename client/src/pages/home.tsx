@@ -53,8 +53,7 @@ export default function Home() {
                 className="h-8 w-auto"
               />
             </div>
-            {/* Navigation hidden per user request */}
-            <nav className="flex items-center space-x-1" style={{display: 'none'}}>
+            <nav className="flex items-center space-x-1">
               <a 
                 href="https://www.redpilllabs.com/" 
                 target="_blank" 
