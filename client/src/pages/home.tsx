@@ -113,7 +113,6 @@ export default function Home() {
           <Report 
             assessment={completedAssessment} 
             onBack={() => setCurrentSection('results')}
-            onNavigateToDashboard={() => setCurrentSection('overview')}
           />
         )}
       </main>
