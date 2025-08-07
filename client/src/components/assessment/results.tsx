@@ -141,14 +141,75 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
       {/* Assessment Results Overview */}
       <div className="space-y-8">
           {/* Dimension Breakdown */}
-          <Card className="mb-8">
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">Readiness Dimensions</h3>
-              <div className="w-full h-96">
-                <RadarChart scores={scores as any} />
-              </div>
-            </CardContent>
-          </Card>
+          <div className="grid lg:grid-cols-2 gap-8 mb-8">
+            {/* Radar Chart */}
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6">Readiness Dimensions</h3>
+                <div className="h-80">
+                  <RadarChart scores={scores as any} />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Brief Scores Overview */}
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6">Quick Overview</h3>
+                <div className="space-y-4">
+                  {Object.entries(scores as any).map(([dimension, score]) => {
+                    const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
+                    const scoreValue = score as number;
+                    const percentage = (scoreValue / 5) * 100;
+
+                    // Determine bar color based on score value (dynamic)
+                    let barColorClass = 'bg-red-500'; // Default to red for low scores
+                    if (scoreValue >= 4.0) {
+                      barColorClass = 'bg-green-600'; // High score: green (4.0+)
+                    } else if (scoreValue >= 2.5) {
+                      barColorClass = 'bg-yellow-500'; // Medium score: yellow (2.5-3.9)
+                    } else {
+                      barColorClass = 'bg-red-500'; // Low score: red (0.0-2.4)
+                    }
+
+                    return (
+                      <div key={dimension} className="flex items-center justify-between">
+                        <div className="flex items-center flex-1">
+                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 ${config?.color || 'bg-gray-100'}`}>
+                            <span className="text-sm">{config?.icon || '❓'}</span>
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-medium text-slate-900">{config?.label || dimension}</div>
+                            <div className="text-sm text-slate-600">
+                              {scoreValue >= 4.0 
+                                ? "Strong performance" 
+                                : scoreValue >= 3.0 
+                                ? "Room for improvement" 
+                                : "Needs attention"
+                              }
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex items-center ml-4">
+                          <div className="w-16 h-2 bg-gray-200 rounded-full mr-3 overflow-hidden">
+                            <div 
+                              className={`h-2 rounded-full transition-all duration-300 ${barColorClass}`} 
+                              style={{ 
+                                width: `${Math.max(0, Math.min(100, percentage))}%`
+                              }}
+                            />
+                          </div>
+                          <span className="font-semibold text-slate-900 min-w-[2rem]">
+                            {scoreValue.toFixed(1)}
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
           {/* Detailed Dimension Analysis */}
           <div className="mb-8">
