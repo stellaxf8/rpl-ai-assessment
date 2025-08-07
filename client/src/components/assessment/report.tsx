@@ -148,8 +148,8 @@ export default function Report({ assessment, onBack }: ReportProps) {
 
   const handleScheduleConsultation = () => {
     toast({
-      title: "Schedule Consultation",
-      description: "Contact your consultant to schedule a follow-up meeting to discuss these results.",
+      title: "Consultation Request Received",
+      description: "Our AI specialists will contact you within 1-2 business days to schedule your free consultation.",
     });
   };
 

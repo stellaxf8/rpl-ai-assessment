@@ -57,7 +57,7 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
   const handleScheduleConsultation = () => {
     toast({
       title: "Consultation Request Received",
-      description: "Our AI specialists will contact you within 24 hours to schedule your free consultation.",
+      description: "Our AI specialists will contact you within 1-2 business days to schedule your free consultation.",
     });
   };
 
