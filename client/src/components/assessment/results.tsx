@@ -141,68 +141,67 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
       {/* Assessment Results Overview */}
       <div className="space-y-8">
           {/* Dimension Breakdown */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Radar Chart */}
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6">Readiness Dimensions</h3>
+          <Card className="mb-8">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">Readiness Dimensions</h3>
+              <div className="flex justify-center">
                 <RadarChart scores={scores as any} />
-              </CardContent>
-            </Card>
+              </div>
+            </CardContent>
+          </Card>
 
-            {/* Detailed Dimension Analysis */}
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6">Detailed Dimension Analysis</h3>
-                <div className="space-y-6">
-                  {Object.entries(scores as any).map(([dimension, score]) => {
-                    const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
-                    const scoreValue = score as number;
-                    const level = getScoreLevel(scoreValue);
-                    const percentage = (scoreValue / 5) * 100;
+          {/* Detailed Dimension Analysis */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">Detailed Dimension Analysis</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {Object.entries(scores as any).map(([dimension, score]) => {
+                const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
+                const scoreValue = score as number;
+                const level = getScoreLevel(scoreValue);
+                const percentage = (scoreValue / 5) * 100;
 
-                    return (
-                      <div key={dimension} className="border border-slate-200 rounded-lg p-6">
-                        <div className="flex items-center justify-between mb-4">
-                          <div className="flex items-center">
-                            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
-                              <span>{config.icon}</span>
-                            </div>
-                            <h4 className="text-lg font-semibold text-slate-900">{config.label}</h4>
+                return (
+                  <Card key={dimension} className="border border-slate-200">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center">
+                          <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                            <span>{config.icon}</span>
                           </div>
-                          <div className="flex items-center">
-                            <div className="w-20 mr-3">
-                              <Progress 
-                                value={percentage} 
-                                className="h-3 bg-slate-200" 
-                                dynamicColor={true}
-                              />
-                            </div>
-                            <span className="font-bold text-slate-900">{scoreValue.toFixed(1)}/5</span>
-                          </div>
+                          <h4 className="text-lg font-semibold text-slate-900">{config.label}</h4>
                         </div>
-                        <p className="text-slate-600 mb-3">
-                          {level === 'high' 
-                            ? "Strong performance in this area with good foundation for AI implementation."
-                            : level === 'medium'
-                            ? "Moderate performance with room for improvement before AI implementation."
-                            : "Significant improvement needed in this area before AI implementation."
-                          }
-                        </p>
-                        <div className={`p-3 rounded border-l-4 ${
-                          level === 'high' ? 'border-green-500 bg-green-50' :
-                          level === 'medium' ? 'border-yellow-500 bg-yellow-50' :
-                          'border-red-500 bg-red-50'
-                        }`}>
-                          <div className="font-medium text-slate-900">Recommendation:</div>
-                          <div className="text-slate-700">{config.recommendations[level]}</div>
+                        <div className="flex items-center">
+                          <div className="w-20 mr-3">
+                            <Progress 
+                              value={percentage} 
+                              className="h-3 bg-slate-200" 
+                              dynamicColor={true}
+                            />
+                          </div>
+                          <span className="font-bold text-slate-900">{scoreValue.toFixed(1)}/5</span>
                         </div>
                       </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
+                      <p className="text-slate-600 mb-3">
+                        {level === 'high' 
+                          ? "Strong performance in this area with good foundation for AI implementation."
+                          : level === 'medium'
+                          ? "Moderate performance with room for improvement before AI implementation."
+                          : "Significant improvement needed in this area before AI implementation."
+                        }
+                      </p>
+                      <div className={`p-3 rounded border-l-4 ${
+                        level === 'high' ? 'border-green-500 bg-green-50' :
+                        level === 'medium' ? 'border-yellow-500 bg-yellow-50' :
+                        'border-red-500 bg-red-50'
+                      }`}>
+                        <div className="font-medium text-slate-900">Recommendation:</div>
+                        <div className="text-slate-700">{config.recommendations[level]}</div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
 
           {/* Enhanced Analytics */}
