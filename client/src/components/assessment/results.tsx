@@ -48,11 +48,17 @@ const dimensionConfig = {
     color: "bg-yellow-100 text-yellow-600",
     barColor: "bg-yellow-500",
   },
-  security: {
-    label: "Security & Privacy",
+  dataSecurity: {
+    label: "Data Security & Privacy",
     icon: "🔒",
     color: "bg-red-100 text-error",
     barColor: "bg-error",
+  },
+  aiGovernance: {
+    label: "AI Governance & Ethics",
+    icon: "🧠",
+    color: "bg-indigo-100 text-indigo-900",
+    barColor: "bg-indigo-500",
   },
 };
 
@@ -176,7 +182,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           {/* Enhanced Analytics */}
           <IndustryBenchmark userScore={overallScore} industry={industry || "Technology"} />
           <IntegrationReadiness scores={{ technologyInfrastructure: typedScores.technologyInfrastructure, systemIntegration: typedScores.systemIntegration }} />
-          <ComplianceAssessment scores={{ security: typedScores.security, dataQuality: typedScores.dataQuality }} industry={industry} />
+          <ComplianceAssessment scores={{ security: typedScores.dataSecurity, aiGovernance: typedScores.aiGovernance, dataQuality: typedScores.dataQuality }} industry={industry} />
           <BusinessDevelopment scores={{
             overallScore: overallScore,
             technologyInfrastructure: typedScores.technologyInfrastructure,
@@ -184,7 +190,8 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
             teamLiteracy: typedScores.teamLiteracy,
             systemIntegration: typedScores.systemIntegration,
             budget: typedScores.budget,
-            security: typedScores.security
+            dataSecurity: typedScores.dataSecurity,
+            aiGovernance: typedScores.aiGovernance
           }} />
       </div>
       {/* Action Buttons */}

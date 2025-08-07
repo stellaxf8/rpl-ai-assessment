@@ -13,14 +13,15 @@ function calculateOverallScore(scores: any): number {
 function calculateDimensionScores(responses: any): any {
   const scores: any = {};
   
-  // Group questions by dimension - support both naming conventions
+  // Group questions by dimension - support both naming conventions and new structure
   const dimensionMappings = [
     { name: 'technologyInfrastructure', aliases: ['technologyInfrastructure'] },
     { name: 'dataQuality', aliases: ['dataQuality'] },
     { name: 'teamLiteracy', aliases: ['teamLiteracy'] },
     { name: 'systemIntegration', aliases: ['systemIntegration'] },
     { name: 'budget', aliases: ['budget', 'budgetResources'] },
-    { name: 'security', aliases: ['security', 'securityPrivacy'] }
+    { name: 'dataSecurity', aliases: ['dataSecurity', 'security'] },
+    { name: 'aiGovernance', aliases: ['aiGovernance', 'securityPrivacy'] }
   ];
 
   dimensionMappings.forEach((dimensionMapping) => {

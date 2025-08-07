@@ -115,7 +115,7 @@ export const healthcareVariations: IndustryQuestionVariation[] = [
   },
   {
     industry: 'Healthcare',
-    questionId: 'security_1',
+    questionId: 'dataSecurity_1',
     question: 'How robust are your HIPAA compliance and patient data security measures?',
     description: 'Assess your organization\'s ability to protect patient health information and meet regulatory requirements.',
     options: [
@@ -387,7 +387,7 @@ export const financeVariations: IndustryQuestionVariation[] = [
   },
   {
     industry: 'Finance',
-    questionId: 'security_1',
+    questionId: 'dataSecurity_1',
     question: 'How comprehensive are your financial data security and regulatory compliance measures?',
     description: 'Assess compliance with regulations like SOX, PCI DSS, and other financial security requirements.',
     options: [

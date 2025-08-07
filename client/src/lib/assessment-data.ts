@@ -898,11 +898,11 @@ export const questions: Question[] = [
     ]
   },
 
-  // Security & Privacy Questions
+  // Data Security & Privacy Questions
   {
-    id: "security_1",
-    dimension: "security",
-    dimensionLabel: "Security & Privacy",
+    id: "dataSecurity_1",
+    dimension: "dataSecurity",
+    dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "How mature is your organization's cybersecurity framework?",
     description: "Assess current security policies, procedures, and infrastructure.",
@@ -935,9 +935,9 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: "security_2",
-    dimension: "security",
-    dimensionLabel: "Security & Privacy",
+    id: "dataSecurity_2",
+    dimension: "dataSecurity",
+    dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "What is your approach to data privacy and protection?",
     description: "Consider privacy policies, data handling, and regulatory compliance.",
@@ -970,27 +970,27 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: "security_3",
-    dimension: "security",
-    dimensionLabel: "Security & Privacy",
+    id: "dataSecurity_3",
+    dimension: "dataSecurity",
+    dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
-    question: "How well do you handle regulatory compliance requirements?",
-    description: "Assess ability to meet industry regulations and standards.",
+    question: "How well do you handle data protection regulatory compliance?",
+    description: "Assess ability to meet GDPR, CCPA, and other data protection regulations.",
     options: [
       {
         value: 1,
         text: "Limited compliance capability",
-        description: "Struggle to meet regulatory requirements"
+        description: "Struggle to meet data protection requirements"
       },
       {
         value: 2,
         text: "Basic compliance measures",
-        description: "Meet minimum regulatory requirements"
+        description: "Meet minimum data protection requirements"
       },
       {
         value: 3,
         text: "Good compliance framework",
-        description: "Generally compliant with established processes"
+        description: "Generally compliant with data protection regulations"
       },
       {
         value: 4,
@@ -1005,47 +1005,47 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: "security_4",
-    dimension: "security",
-    dimensionLabel: "Security & Privacy",
+    id: "dataSecurity_4",
+    dimension: "dataSecurity",
+    dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
-    question: "What is your capability for secure AI model deployment?",
-    description: "Consider security controls for AI systems and model protection.",
+    question: "What encryption and access control measures do you have in place?",
+    description: "Evaluate data encryption, identity management, and access controls.",
     options: [
       {
         value: 1,
-        text: "No specific AI security measures",
-        description: "No specialized controls for AI systems"
+        text: "Basic access controls",
+        description: "Simple password protection with minimal encryption"
       },
       {
         value: 2,
-        text: "Basic AI security awareness",
-        description: "Some understanding of AI security needs"
+        text: "Standard security controls",
+        description: "Basic encryption and role-based access controls"
       },
       {
         value: 3,
-        text: "Developing AI security controls",
-        description: "Working on AI-specific security measures"
+        text: "Good security controls",
+        description: "Strong encryption with comprehensive access management"
       },
       {
         value: 4,
-        text: "Good AI security framework",
-        description: "Established controls for AI system security"
+        text: "Advanced security controls",
+        description: "Multi-factor authentication with zero-trust principles"
       },
       {
         value: 5,
-        text: "Advanced AI security practices",
-        description: "Leading AI security with comprehensive protection"
+        text: "Enterprise-grade controls",
+        description: "Industry-leading encryption and identity management"
       }
     ]
   },
   {
-    id: "security_5",
-    dimension: "security",
-    dimensionLabel: "Security & Privacy",
+    id: "dataSecurity_5",
+    dimension: "dataSecurity",
+    dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
-    question: "How do you handle third-party AI service security?",
-    description: "Assess approach to vendor security and external AI services.",
+    question: "How do you handle third-party vendor security assessments?",
+    description: "Assess approach to vendor security evaluation and management.",
     options: [
       {
         value: 1,
@@ -1071,6 +1071,183 @@ export const questions: Question[] = [
         value: 5,
         text: "Advanced vendor security",
         description: "Leading practices for vendor and service security"
+      }
+    ]
+  },
+
+  // AI Governance & Ethics Questions
+  {
+    id: "aiGovernance_1",
+    dimension: "aiGovernance",
+    dimensionLabel: "AI Governance & Ethics",
+    icon: "Brain",
+    question: "Does your organization have an AI ethics framework or responsible AI policy?",
+    description: "Evaluate established principles for ethical AI development and deployment.",
+    options: [
+      {
+        value: 1,
+        text: "No AI ethics framework",
+        description: "No established principles for responsible AI use"
+      },
+      {
+        value: 2,
+        text: "Basic AI awareness",
+        description: "Some understanding of AI ethics but no formal framework"
+      },
+      {
+        value: 3,
+        text: "Developing AI ethics policy",
+        description: "Working on establishing responsible AI principles"
+      },
+      {
+        value: 4,
+        text: "Good AI governance framework",
+        description: "Established AI ethics policy with implementation guidelines"
+      },
+      {
+        value: 5,
+        text: "Comprehensive AI governance",
+        description: "Industry-leading responsible AI framework with regular review"
+      }
+    ]
+  },
+  {
+    id: "aiGovernance_2",
+    dimension: "aiGovernance",
+    dimensionLabel: "AI Governance & Ethics",
+    icon: "Brain",
+    question: "How do you approach AI bias detection and mitigation?",
+    description: "Assess capabilities for identifying and addressing algorithmic bias.",
+    options: [
+      {
+        value: 1,
+        text: "No bias detection measures",
+        description: "No processes for identifying or addressing AI bias"
+      },
+      {
+        value: 2,
+        text: "Basic bias awareness",
+        description: "Some understanding of bias issues but limited testing"
+      },
+      {
+        value: 3,
+        text: "Developing bias testing",
+        description: "Working on implementing bias detection processes"
+      },
+      {
+        value: 4,
+        text: "Good bias mitigation framework",
+        description: "Established processes for bias testing and remediation"
+      },
+      {
+        value: 5,
+        text: "Advanced bias prevention",
+        description: "Comprehensive bias detection with proactive mitigation strategies"
+      }
+    ]
+  },
+  {
+    id: "aiGovernance_3",
+    dimension: "aiGovernance",
+    dimensionLabel: "AI Governance & Ethics",
+    icon: "Brain",
+    question: "What is your approach to AI model transparency and explainability?",
+    description: "Evaluate ability to explain AI decisions and model behavior.",
+    options: [
+      {
+        value: 1,
+        text: "No transparency requirements",
+        description: "AI models operate as 'black boxes' without explanation"
+      },
+      {
+        value: 2,
+        text: "Basic model documentation",
+        description: "Some documentation but limited explainability"
+      },
+      {
+        value: 3,
+        text: "Developing explainable AI",
+        description: "Working on implementing model transparency measures"
+      },
+      {
+        value: 4,
+        text: "Good transparency framework",
+        description: "Established processes for model explainability"
+      },
+      {
+        value: 5,
+        text: "Advanced explainable AI",
+        description: "Comprehensive transparency with user-friendly explanations"
+      }
+    ]
+  },
+  {
+    id: "aiGovernance_4",
+    dimension: "aiGovernance",
+    dimensionLabel: "AI Governance & Ethics",
+    icon: "Brain",
+    question: "How do you ensure AI regulatory compliance (NIST AI RMF, EU AI Act)?",
+    description: "Assess readiness for AI-specific regulatory requirements.",
+    options: [
+      {
+        value: 1,
+        text: "No AI regulatory preparation",
+        description: "Unaware of or unprepared for AI regulations"
+      },
+      {
+        value: 2,
+        text: "Basic regulatory awareness",
+        description: "Some knowledge of AI regulations but limited preparation"
+      },
+      {
+        value: 3,
+        text: "Developing compliance program",
+        description: "Working on AI regulatory compliance framework"
+      },
+      {
+        value: 4,
+        text: "Good regulatory compliance",
+        description: "Well-prepared for current and emerging AI regulations"
+      },
+      {
+        value: 5,
+        text: "Leading AI compliance",
+        description: "Exceed regulatory requirements with proactive compliance"
+      }
+    ]
+  },
+  {
+    id: "aiGovernance_5",
+    dimension: "aiGovernance",
+    dimensionLabel: "AI Governance & Ethics",
+    icon: "Brain",
+    question: "What governance processes do you have for AI model lifecycle management?",
+    description: "Evaluate oversight for AI model development, deployment, and monitoring.",
+    options: [
+      {
+        value: 1,
+        text: "No AI governance processes",
+        description: "No formal oversight of AI model lifecycle"
+      },
+      {
+        value: 2,
+        text: "Basic AI oversight",
+        description: "Some informal processes for AI model management"
+      },
+      {
+        value: 3,
+        text: "Developing AI governance",
+        description: "Working on formal AI model lifecycle processes"
+      },
+      {
+        value: 4,
+        text: "Good AI governance framework",
+        description: "Established processes for AI model oversight"
+      },
+      {
+        value: 5,
+        text: "Advanced AI governance",
+        description: "Comprehensive AI lifecycle management with continuous monitoring"
       }
     ]
   }

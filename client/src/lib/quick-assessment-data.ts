@@ -431,11 +431,11 @@ export const quickQuestions: Question[] = [
     ]
   },
   
-  // Security & Privacy - 3 questions
+  // Data Security - 2 questions
   {
-    id: "securityPrivacy_1",
-    dimension: "securityPrivacy",
-    dimensionLabel: "Security & Privacy",
+    id: "dataSecurity_1",
+    dimension: "dataSecurity",
+    dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "How robust are your current data security and privacy protection measures?",
     description: "Consider encryption, access controls, compliance frameworks, and data protection policies.",
@@ -468,11 +468,11 @@ export const quickQuestions: Question[] = [
     ]
   },
   {
-    id: "securityPrivacy_2",
-    dimension: "securityPrivacy",
-    dimensionLabel: "Security & Privacy",
+    id: "dataSecurity_2",
+    dimension: "dataSecurity",
+    dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
-    question: "What is your organization's compliance status with relevant data protection regulations?",
+    question: "What is your organization's compliance status with data protection regulations?",
     description: "Consider GDPR, CCPA, HIPAA, or other applicable privacy and data protection requirements.",
     options: [
       {
@@ -502,38 +502,75 @@ export const quickQuestions: Question[] = [
       }
     ]
   },
+
+  // AI Governance - 2 questions
   {
-    id: "securityPrivacy_3",
-    dimension: "securityPrivacy",
-    dimensionLabel: "Security & Privacy",
-    icon: "Shield",
-    question: "How prepared is your organization to handle AI-specific security risks?",
-    description: "Consider model security, data poisoning protection, adversarial attacks, and AI governance.",
+    id: "aiGovernance_1",
+    dimension: "aiGovernance",
+    dimensionLabel: "AI Governance & Ethics",
+    icon: "Brain",
+    question: "Does your organization have policies for responsible AI development and deployment?",
+    description: "Consider AI ethics frameworks, bias prevention, and responsible AI practices.",
     options: [
       {
         value: 1,
-        text: "Not prepared for AI security",
-        description: "Limited awareness of AI-specific security challenges"
+        text: "No AI governance policies",
+        description: "No established frameworks for responsible AI use"
       },
       {
         value: 2,
-        text: "Basic AI security awareness",
-        description: "Some understanding but minimal protective measures"
+        text: "Basic AI awareness",
+        description: "Some understanding of AI ethics but no formal policies"
       },
       {
         value: 3,
-        text: "Moderate AI security preparedness",
-        description: "Good awareness with some protective measures in place"
+        text: "Developing AI governance",
+        description: "Working on establishing responsible AI practices"
       },
       {
         value: 4,
-        text: "Strong AI security posture",
-        description: "Well-prepared with comprehensive AI security measures"
+        text: "Good AI governance framework",
+        description: "Established policies for responsible AI development"
       },
       {
         value: 5,
-        text: "Advanced AI security framework",
-        description: "Industry-leading AI security practices and governance"
+        text: "Advanced AI governance",
+        description: "Comprehensive responsible AI framework with regular review"
+      }
+    ]
+  },
+  {
+    id: "aiGovernance_2",
+    dimension: "aiGovernance",
+    dimensionLabel: "AI Governance & Ethics",
+    icon: "Brain",
+    question: "How prepared is your organization for AI regulatory compliance (NIST AI RMF, EU AI Act)?",
+    description: "Assess readiness for emerging AI-specific regulatory requirements and governance standards.",
+    options: [
+      {
+        value: 1,
+        text: "Not prepared for AI regulations",
+        description: "Limited awareness of AI-specific regulatory requirements"
+      },
+      {
+        value: 2,
+        text: "Basic regulatory awareness",
+        description: "Some understanding but minimal preparation for compliance"
+      },
+      {
+        value: 3,
+        text: "Moderate regulatory preparedness",
+        description: "Good awareness with some preparation for AI regulations"
+      },
+      {
+        value: 4,
+        text: "Strong regulatory framework",
+        description: "Well-prepared for current and emerging AI regulations"
+      },
+      {
+        value: 5,
+        text: "Leading AI compliance",
+        description: "Industry-leading AI governance and regulatory compliance"
       }
     ]
   }

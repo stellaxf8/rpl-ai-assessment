@@ -22,14 +22,15 @@ export const insertAssessmentSchema = createInsertSchema(assessments).omit({
 export type InsertAssessment = z.infer<typeof insertAssessmentSchema>;
 export type Assessment = typeof assessments.$inferSelect;
 
-// Dimension scores schema
+// Dimension scores schema - updated to separate data security and AI governance
 export const dimensionScoresSchema = z.object({
   technologyInfrastructure: z.number().min(0).max(5),
   dataQuality: z.number().min(0).max(5),
   teamLiteracy: z.number().min(0).max(5),
   systemIntegration: z.number().min(0).max(5),
   budget: z.number().min(0).max(5),
-  security: z.number().min(0).max(5),
+  dataSecurity: z.number().min(0).max(5),
+  aiGovernance: z.number().min(0).max(5),
 });
 
 export type DimensionScores = z.infer<typeof dimensionScoresSchema>;

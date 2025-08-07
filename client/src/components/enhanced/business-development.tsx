@@ -11,7 +11,8 @@ interface BusinessDevelopmentProps {
     teamLiteracy: number;
     systemIntegration: number;
     budget: number;
-    security: number;
+    dataSecurity: number;
+    aiGovernance: number;
   };
 }
 
@@ -27,7 +28,8 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
     // Adjust based on infrastructure needs
     if (technologyInfrastructure < 3.0) baseCost += 75000; // Infrastructure upgrade
     if (teamLiteracy < 3.0) baseCost += 30000; // Training costs
-    if (scores.security < 3.0) baseCost += 40000; // Security improvements
+    if (scores.dataSecurity < 3.0) baseCost += 40000; // Security improvements
+    if (scores.aiGovernance < 3.0) baseCost += 25000; // AI governance setup
     
     // Complexity multiplier
     const complexityMultiplier = overallScore < 60 ? 1.5 : overallScore < 75 ? 1.2 : 1.0;
@@ -117,10 +119,16 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
                   <span className="text-slate-900">$30,000</span>
                 </div>
               )}
-              {scores.security < 3.0 && (
+              {scores.dataSecurity < 3.0 && (
                 <div className="flex justify-between">
                   <span className="text-slate-600">Security enhancements:</span>
                   <span className="text-slate-900">$40,000</span>
+                </div>
+              )}
+              {scores.aiGovernance < 3.0 && (
+                <div className="flex justify-between">
+                  <span className="text-slate-600">AI governance setup:</span>
+                  <span className="text-slate-900">$25,000</span>
                 </div>
               )}
             </div>

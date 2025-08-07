@@ -59,13 +59,22 @@ const dimensionConfig = {
       low: "Develop comprehensive budget plan for AI implementation."
     }
   },
-  security: {
-    label: "Security & Privacy",
+  dataSecurity: {
+    label: "Data Security & Privacy",
     icon: "🔒",
     recommendations: {
-      high: "Strong security framework ready for AI data protection needs.",
-      medium: "Enhance security protocols for AI-specific requirements.",
-      low: "Implement comprehensive security framework before AI deployment."
+      high: "Strong data security framework ready for AI data protection needs.",
+      medium: "Enhance data protection protocols for AI-specific requirements.",
+      low: "Implement comprehensive data security framework before AI deployment."
+    }
+  },
+  aiGovernance: {
+    label: "AI Governance & Ethics",
+    icon: "🧠",
+    recommendations: {
+      high: "Excellent AI governance foundation for responsible AI deployment.",
+      medium: "Develop AI ethics framework and bias detection processes.",
+      low: "Establish AI governance policies and regulatory compliance framework."
     }
   },
 };
