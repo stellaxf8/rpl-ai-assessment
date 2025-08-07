@@ -177,17 +177,15 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           <IndustryBenchmark userScore={overallScore} industry={industry || "Technology"} />
           <IntegrationReadiness scores={{ technologyInfrastructure: typedScores.technologyInfrastructure, systemIntegration: typedScores.systemIntegration }} />
           <ComplianceAssessment scores={{ security: typedScores.dataSecurity, dataQuality: typedScores.dataQuality }} industry={industry} />
-          <BusinessDevelopment 
-            assessmentId={assessment.id}
-            scores={{
-              overallScore: overallScore,
-              technologyInfrastructure: typedScores.technologyInfrastructure,
-              dataQuality: typedScores.dataQuality,
-              teamLiteracy: typedScores.teamLiteracy,
-              systemIntegration: typedScores.systemIntegration,
-              budget: typedScores.budget,
-              dataSecurity: typedScores.dataSecurity
-            }} />
+          <BusinessDevelopment scores={{
+            overallScore: overallScore,
+            technologyInfrastructure: typedScores.technologyInfrastructure,
+            dataQuality: typedScores.dataQuality,
+            teamLiteracy: typedScores.teamLiteracy,
+            systemIntegration: typedScores.systemIntegration,
+            budget: typedScores.budget,
+            dataSecurity: typedScores.dataSecurity
+          }} />
       </div>
       {/* Action Buttons */}
       <div className="text-center space-x-4 mt-8">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Download, Calendar, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -80,16 +80,6 @@ const getScoreColor = (score: number) => {
 export default function Report({ assessment, onBack }: ReportProps) {
   const { organizationName, overallScore, scores, createdAt } = assessment;
   const { toast } = useToast();
-  
-  // Use localStorage to persist consultation request status per assessment
-  const consultationKey = `consultation-requested-${assessment.id || 'current'}`;
-  const [consultationRequested, setConsultationRequested] = useState(() => {
-    try {
-      return localStorage.getItem(consultationKey) === 'true';
-    } catch {
-      return false;
-    }
-  });
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -157,15 +147,6 @@ export default function Report({ assessment, onBack }: ReportProps) {
 
 
   const handleScheduleConsultation = () => {
-    if (consultationRequested) return;
-    
-    setConsultationRequested(true);
-    try {
-      localStorage.setItem(consultationKey, 'true');
-    } catch {
-      // localStorage not available, continue anyway
-    }
-    
     toast({
       title: "Consultation Request Received",
       description: "Our AI specialists will contact you within 1-2 business days to schedule your free consultation.",
@@ -313,13 +294,8 @@ export default function Report({ assessment, onBack }: ReportProps) {
           <div className="border-t border-slate-200 pt-6">
             <div className="text-center">
               <p className="text-slate-600 mb-4">Need help implementing these recommendations?</p>
-              <Button 
-                onClick={handleScheduleConsultation}
-                disabled={consultationRequested}
-                variant={consultationRequested ? "secondary" : "default"}
-                className={consultationRequested ? "opacity-60 cursor-not-allowed" : ""}
-              >
-                {consultationRequested ? "Consultation Requested" : "Schedule a Consultation"}
+              <Button onClick={handleScheduleConsultation}>
+                Schedule a Consultation
                 <Calendar className="ml-2 h-4 w-4" />
               </Button>
             </div>
