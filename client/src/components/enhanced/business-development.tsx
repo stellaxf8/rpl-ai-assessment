@@ -22,11 +22,7 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
 
 
   const handleScheduleConsultation = () => {
-    setIsConsultationRequested(true);
-    toast({
-      title: "Consultation Request Received",
-      description: "Our AI specialists will contact you within 1-2 business days to schedule your free consultation.",
-    });
+    window.open('https://www.redpilllabs.com/contact-us', '_blank');
   };
 
 
@@ -43,19 +39,16 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
             size="lg"
             className="h-auto p-6"
             onClick={handleScheduleConsultation}
-            disabled={isConsultationRequested}
           >
             <div className="flex items-center">
               <MessageSquare className="mr-3 h-6 w-6" />
               <div>
                 <div className="font-semibold text-lg">
-                  {isConsultationRequested ? "Consultation Requested" : "Schedule Free Consultation"}
+                  Schedule Free Consultation
                 </div>
-                {isConsultationRequested && (
-                  <div className="text-sm opacity-90">
-                    We'll contact you within 1-2 business days
-                  </div>
-                )}
+                <div className="text-sm opacity-90">
+                  Our AI specialist team will contact you to setup a meeting
+                </div>
               </div>
             </div>
           </Button>

@@ -148,11 +148,7 @@ export default function Report({ assessment, onBack }: ReportProps) {
 
 
   const handleScheduleConsultation = () => {
-    setIsConsultationRequested(true);
-    toast({
-      title: "Consultation Request Received",
-      description: "Our AI specialists will contact you within 1-2 business days to schedule your free consultation.",
-    });
+    window.open('https://www.redpilllabs.com/contact-us', '_blank');
   };
 
   const getScoreLevel = (score: number): 'high' | 'medium' | 'low' => {
@@ -298,9 +294,8 @@ export default function Report({ assessment, onBack }: ReportProps) {
               <p className="text-slate-600 mb-4">Need help implementing these recommendations?</p>
               <Button 
                 onClick={handleScheduleConsultation}
-                disabled={isConsultationRequested}
               >
-                {isConsultationRequested ? "Consultation Requested" : "Schedule a Consultation"}
+                Schedule a Consultation
                 <Calendar className="ml-2 h-4 w-4" />
               </Button>
             </div>
