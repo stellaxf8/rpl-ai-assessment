@@ -190,7 +190,7 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
           <Button 
             variant={consultationRequested ? "secondary" : "default"}
             size="lg"
-            className="h-auto p-6"
+            className={`h-auto p-6 ${consultationRequested ? "opacity-60 cursor-not-allowed" : ""}`}
             onClick={handleScheduleConsultation}
             disabled={consultationRequested}
           >

@@ -302,6 +302,7 @@ export default function Report({ assessment, onBack }: ReportProps) {
                 onClick={handleScheduleConsultation}
                 disabled={consultationRequested}
                 variant={consultationRequested ? "secondary" : "default"}
+                className={consultationRequested ? "opacity-60 cursor-not-allowed" : ""}
               >
                 {consultationRequested ? "Consultation Requested" : "Schedule a Consultation"}
                 <Calendar className="ml-2 h-4 w-4" />
