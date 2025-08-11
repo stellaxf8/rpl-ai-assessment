@@ -144,8 +144,8 @@ export const questions: Question[] = [
       },
       {
         value: 4,
-        text: "Advanced observability",
-        description: "Full stack monitoring with analytics capabilities"
+        text: "Advanced performance tracking",
+        description: "Comprehensive monitoring with detailed business insights"
       },
       {
         value: 5,
@@ -169,8 +169,8 @@ export const questions: Question[] = [
       },
       {
         value: 2,
-        text: "Adequate network infrastructure",
-        description: "Meets current needs but limited headroom"
+        text: "Adequate internet connectivity",
+        description: "Meets current needs but limited capacity for growth"
       },
       {
         value: 3,
@@ -184,8 +184,8 @@ export const questions: Question[] = [
       },
       {
         value: 5,
-        text: "Enterprise-grade network",
-        description: "Ultra-high bandwidth with redundancy and optimization"
+        text: "Enterprise-level connectivity",
+        description: "Extremely fast, reliable internet with backup systems"
       }
     ]
   },
@@ -585,33 +585,33 @@ export const questions: Question[] = [
     dimension: "systemIntegration",
     dimensionLabel: "System Integration",
     icon: "Puzzle",
-    question: "How compatible are your systems with modern AI/ML platforms?",
-    description: "Assess the technical compatibility for AI integration.",
+    question: "How easily can your current systems work with new automated business tools?",
+    description: "Consider how well your existing systems can connect with modern automation solutions.",
     options: [
       {
         value: 1,
-        text: "Legacy systems incompatible",
-        description: "Current systems cannot integrate with AI platforms"
+        text: "Older systems cannot connect",
+        description: "Current systems cannot work with modern automation tools"
       },
       {
         value: 2,
-        text: "Limited compatibility",
-        description: "Some systems can integrate but with significant effort"
+        text: "Limited ability to connect",
+        description: "Some systems can connect but requires significant work"
       },
       {
         value: 3,
-        text: "Moderate compatibility",
-        description: "Most systems can integrate with some modification"
+        text: "Moderate ability to connect",
+        description: "Most systems can connect with some adjustments"
       },
       {
         value: 4,
-        text: "High compatibility",
-        description: "Systems are well-suited for AI integration"
+        text: "Easy to connect new tools",
+        description: "Systems work well with modern automation solutions"
       },
       {
         value: 5,
-        text: "AI-native architecture",
-        description: "Systems are designed for seamless AI integration"
+        text: "Built for modern automation",
+        description: "Systems are designed to easily work with any new business tools"
       }
     ]
   },
@@ -710,8 +710,8 @@ export const questions: Question[] = [
       },
       {
         value: 4,
-        text: "Strong real-time infrastructure",
-        description: "Excellent real-time processing capabilities"
+        text: "Strong real-time processing systems",
+        description: "Excellent real-time data processing capabilities"
       },
       {
         value: 5,
@@ -832,33 +832,33 @@ export const questions: Question[] = [
     dimension: "budget",
     dimensionLabel: "Budget & Resources",
     icon: "DollarSign",
-    question: "How much can you invest in AI infrastructure and tools?",
-    description: "Assess budget for AI platforms, software, and infrastructure.",
+    question: "How much can you invest in automation technology and tools?",
+    description: "Consider budget for automation platforms, software, and technology systems.",
     options: [
       {
         value: 1,
-        text: "Very limited infrastructure budget",
-        description: "Cannot invest in AI-specific infrastructure"
+        text: "Very limited technology budget",
+        description: "Cannot invest in automation-specific technology"
       },
       {
         value: 2,
-        text: "Basic infrastructure investment",
-        description: "Can afford basic AI tools and platforms"
+        text: "Basic technology investment",
+        description: "Can afford basic automation tools and platforms"
       },
       {
         value: 3,
-        text: "Moderate infrastructure budget",
-        description: "Good budget for standard AI infrastructure"
+        text: "Moderate technology budget",
+        description: "Good budget for standard automation technology"
       },
       {
         value: 4,
-        text: "Substantial infrastructure investment",
-        description: "Can invest in advanced AI platforms and tools"
+        text: "Substantial technology investment",
+        description: "Can invest in advanced automation platforms and tools"
       },
       {
         value: 5,
-        text: "Enterprise-grade AI investment",
-        description: "Budget for cutting-edge AI infrastructure"
+        text: "Enterprise-level automation investment",
+        description: "Budget for cutting-edge automation technology"
       }
     ]
   },
@@ -905,7 +905,7 @@ export const questions: Question[] = [
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "How mature is your organization's cybersecurity framework?",
-    description: "Assess current security policies, procedures, and infrastructure.",
+    description: "Consider current security policies, procedures, and protection systems.",
     options: [
       {
         value: 1,
@@ -924,7 +924,7 @@ export const questions: Question[] = [
       },
       {
         value: 4,
-        text: "Advanced security infrastructure",
+        text: "Advanced security systems",
         description: "Comprehensive security with advanced controls"
       },
       {

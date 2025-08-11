@@ -17,7 +17,7 @@ export const healthcareVariations: IndustryQuestionVariation[] = [
   {
     industry: 'Healthcare',
     questionId: 'technologyInfrastructure_1',
-    question: 'How would you describe your healthcare IT infrastructure and EHR system integration?',
+    question: 'How would you describe your healthcare technology systems and patient record integration?',
     description: 'Consider your electronic health records, medical device connectivity, and healthcare-specific IT systems.',
     options: [
       {
@@ -42,7 +42,7 @@ export const healthcareVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 5,
-        text: 'AI-ready healthcare infrastructure',
+        text: 'AI-ready healthcare technology',
         description: 'Fully integrated platform optimized for AI-powered clinical analytics'
       }
     ]
@@ -153,7 +153,7 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
   {
     industry: 'Manufacturing',
     questionId: 'technologyInfrastructure_1',
-    question: 'How would you describe your manufacturing IT infrastructure and Industry 4.0 readiness?',
+    question: 'How would you describe your manufacturing technology systems and smart factory readiness?',
     description: 'Consider your industrial networks, edge computing capabilities, and smart manufacturing systems.',
     options: [
       {
@@ -164,7 +164,7 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
       {
         value: 2,
         text: 'Emerging Industry 4.0 adoption',
-        description: 'Some connected equipment with developing digital infrastructure'
+        description: 'Some connected equipment with developing digital systems'
       },
       {
         value: 3,
@@ -191,7 +191,7 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
     options: [
       {
         value: 1,
-        text: 'Limited IoT infrastructure',
+        text: 'Limited connected devices',
         description: 'Few connected devices with basic data collection'
       },
       {
@@ -322,13 +322,13 @@ export const financeVariations: IndustryQuestionVariation[] = [
   {
     industry: 'Finance',
     questionId: 'technologyInfrastructure_1',
-    question: 'How would you describe your financial technology infrastructure and real-time processing capabilities?',
+    question: 'How would you describe your financial technology systems and real-time processing capabilities?',
     description: 'Consider your core banking systems, trading platforms, and real-time transaction processing capacity.',
     options: [
       {
         value: 1,
         text: 'Legacy financial systems',
-        description: 'Traditional banking infrastructure with limited real-time capabilities'
+        description: 'Traditional banking systems with limited real-time capabilities'
       },
       {
         value: 2,
@@ -342,13 +342,13 @@ export const financeVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 4,
-        text: 'Advanced fintech infrastructure',
+        text: 'Advanced fintech systems',
         description: 'High-performance systems with comprehensive real-time capabilities'
       },
       {
         value: 5,
         text: 'AI-native financial platform',
-        description: 'Next-generation infrastructure optimized for AI-driven financial services'
+        description: 'Next-generation systems optimized for AI-driven financial services'
       }
     ]
   },
@@ -458,7 +458,7 @@ export const retailVariations: IndustryQuestionVariation[] = [
   {
     industry: 'Retail',
     questionId: 'technologyInfrastructure_1',
-    question: 'How would you describe your omnichannel retail technology infrastructure?',
+    question: 'How would you describe your retail technology systems across all sales channels?',
     description: 'Consider your e-commerce platform, POS systems, inventory management, and customer data integration.',
     options: [
       {
@@ -594,7 +594,7 @@ export const educationVariations: IndustryQuestionVariation[] = [
   {
     industry: 'Education',
     questionId: 'technologyInfrastructure_1',
-    question: 'How would you describe your educational technology infrastructure and learning management systems?',
+    question: 'How would you describe your educational technology systems and learning platforms?',
     description: 'Consider your LMS, student information systems, and digital learning platform capabilities.',
     options: [
       {
@@ -614,7 +614,7 @@ export const educationVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 4,
-        text: 'Advanced EdTech infrastructure',
+        text: 'Advanced EdTech systems',
         description: 'Sophisticated learning platforms with analytics and personalization capabilities'
       },
       {
@@ -779,8 +779,8 @@ export const technologyVariations: IndustryQuestionVariation[] = [
   {
     industry: 'Technology',
     questionId: 'technologyInfrastructure_1',
-    question: 'How would you describe your software development and deployment infrastructure?',
-    description: 'Consider your cloud-native architecture, CI/CD pipelines, and microservices readiness.',
+    question: 'How would you describe your software development and deployment processes?',
+    description: 'Consider how modern and automated your software development and release processes are.',
     options: [
       {
         value: 1,
@@ -795,17 +795,17 @@ export const technologyVariations: IndustryQuestionVariation[] = [
       {
         value: 3,
         text: 'Cloud-native architecture',
-        description: 'Good microservices foundation with automated deployment'
+        description: 'Good modern software architecture with automated deployment'
       },
       {
         value: 4,
         text: 'Advanced DevOps ecosystem',
-        description: 'Comprehensive CI/CD with container orchestration and monitoring'
+        description: 'Comprehensive automated development with advanced deployment and monitoring'
       },
       {
         value: 5,
         text: 'AI-enhanced development platform',
-        description: 'Next-generation infrastructure with AI-powered development tools'
+        description: 'Next-generation systems with intelligent development tools'
       }
     ]
   },
@@ -865,7 +865,7 @@ export const technologyVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 4,
-        text: 'Advanced data infrastructure',
+        text: 'Advanced data systems',
         description: 'Real-time data pipeline with high-quality, structured data'
       },
       {
