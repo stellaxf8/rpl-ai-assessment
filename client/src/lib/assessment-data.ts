@@ -19,33 +19,33 @@ export const questions: Question[] = [
     dimension: "technologyInfrastructure",
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
-    question: "How would you describe your organization's current cloud infrastructure?",
-    description: "Consider your cloud adoption level, scalability, and computing resources available for AI workloads.",
+    question: "How would you describe your organization's current technology setup?",
+    description: "Consider whether your systems are modern, flexible, and can handle increased workloads.",
     options: [
       {
         value: 1,
-        text: "Minimal or no cloud infrastructure",
-        description: "Primarily on-premises systems with limited scalability"
+        text: "Mostly legacy systems",
+        description: "Older technology systems that may limit future growth"
       },
       {
         value: 2,
-        text: "Basic cloud adoption",
-        description: "Some cloud services in use, but limited AI-ready infrastructure"
+        text: "Some modern systems",
+        description: "Mix of older and newer systems with basic flexibility"
       },
       {
         value: 3,
-        text: "Moderate cloud infrastructure",
-        description: "Good cloud foundation with some scalable computing resources"
+        text: "Mostly modern systems",
+        description: "Good technology foundation with ability to handle growth"
       },
       {
         value: 4,
-        text: "Advanced cloud infrastructure",
-        description: "Robust cloud setup with high-performance computing capabilities"
+        text: "Advanced modern systems",
+        description: "Strong technology setup with high performance capabilities"
       },
       {
         value: 5,
-        text: "Enterprise-grade AI-ready infrastructure",
-        description: "Fully optimized cloud infrastructure with AI/ML specific resources"
+        text: "Cutting-edge technology platform",
+        description: "State-of-the-art systems optimized for innovation and scalability"
       }
     ]
   },
@@ -54,33 +54,33 @@ export const questions: Question[] = [
     dimension: "technologyInfrastructure",
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
-    question: "What is your current data storage and processing capacity?",
-    description: "Evaluate your ability to handle large datasets and computational workloads.",
+    question: "How well can your organization handle large amounts of business data?",
+    description: "Consider your systems' ability to store and process significant volumes of business information.",
     options: [
       {
         value: 1,
-        text: "Limited storage and processing power",
-        description: "Struggles with current data volumes"
+        text: "Struggles with large data volumes",
+        description: "Current systems have difficulty handling substantial business data"
       },
       {
         value: 2,
-        text: "Adequate for current needs",
-        description: "Meets existing requirements but limited headroom"
+        text: "Handles current business needs",
+        description: "Adequate for daily operations but limited for expansion"
       },
       {
         value: 3,
         text: "Good capacity with room for growth",
-        description: "Can handle moderate increases in data and processing"
+        description: "Can handle moderate increases in business data and processing"
       },
       {
         value: 4,
-        text: "High capacity infrastructure",
-        description: "Significant headroom for data growth and processing"
+        text: "High capacity for business growth",
+        description: "Significant capacity for data growth and business expansion"
       },
       {
         value: 5,
-        text: "Enterprise-scale capacity",
-        description: "Massive storage and processing capabilities"
+        text: "Enterprise-scale data capabilities",
+        description: "Extensive capacity to handle massive business data volumes"
       }
     ]
   },
@@ -89,33 +89,33 @@ export const questions: Question[] = [
     dimension: "technologyInfrastructure",
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
-    question: "How mature is your organization's API infrastructure?",
-    description: "Consider your ability to integrate AI services and expose data through APIs.",
+    question: "How easily can your systems connect and share data with new business tools?",
+    description: "Consider your ability to integrate new services and connect different business applications.",
     options: [
       {
         value: 1,
-        text: "No API infrastructure",
-        description: "Limited or no API endpoints available"
+        text: "Very difficult to connect new tools",
+        description: "Systems operate independently with minimal connection options"
       },
       {
         value: 2,
-        text: "Basic APIs for internal use",
-        description: "Some internal APIs but limited functionality"
+        text: "Basic connection capabilities",
+        description: "Some ability to connect tools but with limited functionality"
       },
       {
         value: 3,
-        text: "Well-developed API ecosystem",
-        description: "Good API coverage for most systems"
+        text: "Good connection options",
+        description: "Solid ability to integrate most business applications"
       },
       {
         value: 4,
-        text: "Comprehensive API strategy",
-        description: "Extensive APIs with good documentation and management"
+        text: "Excellent integration capabilities",
+        description: "Strong ability to connect and manage multiple business tools"
       },
       {
         value: 5,
-        text: "Enterprise API platform",
-        description: "Full API lifecycle management with security and monitoring"
+        text: "Seamless integration platform",
+        description: "Advanced capability to easily connect any business application"
       }
     ]
   },
@@ -124,8 +124,8 @@ export const questions: Question[] = [
     dimension: "technologyInfrastructure",
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
-    question: "What is your organization's monitoring and observability capability?",
-    description: "Assess your ability to monitor AI systems and detect issues.",
+    question: "How well can your organization monitor and track system performance?",
+    description: "Consider your ability to monitor business systems and quickly detect issues.",
     options: [
       {
         value: 1,
@@ -159,8 +159,8 @@ export const questions: Question[] = [
     dimension: "technologyInfrastructure",
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
-    question: "How would you rate your organization's network infrastructure?",
-    description: "Consider bandwidth, latency, and reliability for AI workloads.",
+    question: "How would you rate your organization's internet and network connectivity?",
+    description: "Consider connection speed, reliability, and capacity for business operations.",
     options: [
       {
         value: 1,

@@ -7,33 +7,33 @@ export const quickQuestions: Question[] = [
     dimension: "technologyInfrastructure",
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
-    question: "How would you describe your organization's current cloud infrastructure?",
-    description: "Consider your cloud adoption level, scalability, and computing resources available for AI workloads.",
+    question: "How would you describe your organization's current technology setup?",
+    description: "Consider whether your systems are modern, flexible, and can handle increased workloads.",
     options: [
       {
         value: 1,
-        text: "Minimal or no cloud infrastructure",
-        description: "Primarily on-premises systems with limited scalability"
+        text: "Mostly legacy systems",
+        description: "Older technology systems that may limit future growth"
       },
       {
         value: 2,
-        text: "Basic cloud adoption",
-        description: "Some cloud services in use, but limited AI-ready infrastructure"
+        text: "Some modern systems",
+        description: "Mix of older and newer systems with basic flexibility"
       },
       {
         value: 3,
-        text: "Moderate cloud infrastructure",
-        description: "Good cloud foundation with some scalable computing resources"
+        text: "Mostly modern systems",
+        description: "Good technology foundation with ability to handle growth"
       },
       {
         value: 4,
-        text: "Advanced cloud infrastructure",
-        description: "Robust cloud setup with high-performance computing capabilities"
+        text: "Advanced modern systems",
+        description: "Strong technology setup with high performance capabilities"
       },
       {
         value: 5,
-        text: "Enterprise-grade AI-ready infrastructure",
-        description: "Fully optimized cloud infrastructure with AI/ML specific resources"
+        text: "Cutting-edge technology platform",
+        description: "State-of-the-art systems optimized for innovation and scalability"
       }
     ]
   },
@@ -42,33 +42,33 @@ export const quickQuestions: Question[] = [
     dimension: "technologyInfrastructure",
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
-    question: "What is your organization's current data processing capability?",
-    description: "Evaluate your systems' ability to handle large datasets and complex computations.",
+    question: "How well can your organization handle large amounts of business data?",
+    description: "Consider your systems' ability to process and analyze significant volumes of information.",
     options: [
       {
         value: 1,
-        text: "Limited processing power",
-        description: "Basic systems that struggle with large datasets"
+        text: "Struggles with large data volumes",
+        description: "Current systems have difficulty processing substantial amounts of data"
       },
       {
         value: 2,
-        text: "Standard business processing",
-        description: "Adequate for normal operations but limited for AI workloads"
+        text: "Handles current business needs",
+        description: "Adequate for day-to-day operations but limited for advanced analytics"
       },
       {
         value: 3,
-        text: "Enhanced processing capabilities",
-        description: "Good performance with some capacity for AI tasks"
+        text: "Good data processing capabilities",
+        description: "Strong performance with capacity for business intelligence projects"
       },
       {
         value: 4,
-        text: "High-performance computing",
-        description: "Strong processing power suitable for most AI applications"
+        text: "Advanced data processing power",
+        description: "Excellent capability for complex analytics and automation projects"
       },
       {
         value: 5,
-        text: "Enterprise-grade processing",
-        description: "Advanced computing infrastructure optimized for AI/ML workloads"
+        text: "Enterprise-scale data processing",
+        description: "Sophisticated systems capable of handling massive data volumes efficiently"
       }
     ]
   },
@@ -77,33 +77,33 @@ export const quickQuestions: Question[] = [
     dimension: "technologyInfrastructure",
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
-    question: "How would you rate your IT infrastructure's scalability and flexibility?",
-    description: "Consider your ability to scale resources up or down based on AI project requirements.",
+    question: "How easily can your organization expand or adapt its technology systems?",
+    description: "Consider your ability to adjust technology resources based on changing business needs.",
     options: [
       {
         value: 1,
-        text: "Very limited scalability",
-        description: "Fixed infrastructure with minimal flexibility"
+        text: "Very difficult to expand",
+        description: "Systems are fixed with minimal ability to grow or change"
       },
       {
         value: 2,
-        text: "Some scalability options",
-        description: "Basic ability to adjust resources with significant limitations"
+        text: "Some expansion possible",
+        description: "Basic ability to grow systems but with significant limitations"
       },
       {
         value: 3,
-        text: "Moderate scalability",
-        description: "Good flexibility with some constraints on rapid scaling"
+        text: "Moderate expansion capability",
+        description: "Good flexibility with some constraints on rapid growth"
       },
       {
         value: 4,
-        text: "High scalability",
-        description: "Strong ability to scale resources quickly and efficiently"
+        text: "Easy to expand and adapt",
+        description: "Strong ability to grow and modify systems quickly"
       },
       {
         value: 5,
-        text: "Dynamic auto-scaling",
-        description: "Fully automated, elastic infrastructure that scales seamlessly"
+        text: "Highly flexible and adaptive",
+        description: "Systems automatically adjust to changing business demands"
       }
     ]
   },
@@ -184,33 +184,33 @@ export const quickQuestions: Question[] = [
     dimension: "dataQuality",
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
-    question: "What percentage of your data is currently structured and ready for analysis?",
-    description: "Consider how much of your data is organized, labeled, and suitable for AI/ML processing.",
+    question: "What percentage of your business data is well-organized and ready for analysis?",
+    description: "Consider how much of your data is properly organized and suitable for business intelligence.",
     options: [
       {
         value: 1,
-        text: "Less than 20% structured",
-        description: "Most data is unstructured or poorly organized"
+        text: "Less than 20% well-organized",
+        description: "Most data is disorganized or difficult to access for analysis"
       },
       {
         value: 2,
-        text: "20-40% structured",
-        description: "Some structured data but significant organization needed"
+        text: "20-40% well-organized",
+        description: "Some organized data but significant cleanup needed"
       },
       {
         value: 3,
-        text: "40-60% structured",
-        description: "Moderate amount of well-organized, analysis-ready data"
+        text: "40-60% well-organized",
+        description: "Moderate amount of clean, analysis-ready business data"
       },
       {
         value: 4,
-        text: "60-80% structured",
-        description: "Most data is well-structured and suitable for analysis"
+        text: "60-80% well-organized",
+        description: "Most data is properly organized and suitable for analysis"
       },
       {
         value: 5,
-        text: "Over 80% structured",
-        description: "Comprehensive data organization with excellent structure"
+        text: "Over 80% well-organized",
+        description: "Comprehensive data organization with excellent accessibility"
       }
     ]
   },
@@ -293,8 +293,8 @@ export const quickQuestions: Question[] = [
     dimension: "systemIntegration",
     dimensionLabel: "System Integration",
     icon: "Puzzle",
-    question: "How well do your current business systems communicate with each other?",
-    description: "Evaluate the integration level between your CRM, ERP, databases, and other core systems.",
+    question: "How well do your business systems work together and share information?",
+    description: "Consider how easily information flows between your customer management, accounting, and other key business systems.",
     options: [
       {
         value: 1,
@@ -328,33 +328,33 @@ export const quickQuestions: Question[] = [
     dimension: "systemIntegration",
     dimensionLabel: "System Integration",
     icon: "Puzzle",
-    question: "How flexible are your current systems for adding new AI-powered features?",
-    description: "Consider API availability, system architecture, and ease of implementing new integrations.",
+    question: "How easily can you add new automated features to your current systems?",
+    description: "Consider how simple it would be to connect new tools or add automation to your existing business systems.",
     options: [
       {
         value: 1,
-        text: "Very inflexible",
-        description: "Legacy systems with limited API access or integration options"
+        text: "Very difficult to modify",
+        description: "Older systems with limited ability to connect new tools"
       },
       {
         value: 2,
-        text: "Somewhat inflexible",
-        description: "Some integration possibilities but with significant limitations"
+        text: "Somewhat difficult to modify",
+        description: "Some connection possibilities but with significant limitations"
       },
       {
         value: 3,
-        text: "Moderately flexible",
-        description: "Good integration capabilities with some constraints"
+        text: "Moderately easy to modify",
+        description: "Good ability to add new features with some constraints"
       },
       {
         value: 4,
-        text: "Highly flexible",
-        description: "Modern architecture with strong API support and integration options"
+        text: "Easy to modify and expand",
+        description: "Modern systems with strong ability to connect new tools"
       },
       {
         value: 5,
-        text: "Extremely flexible",
-        description: "Microservices architecture with extensive API ecosystem"
+        text: "Extremely flexible and adaptable",
+        description: "Advanced system design that easily accommodates new features"
       }
     ]
   },
@@ -437,8 +437,8 @@ export const quickQuestions: Question[] = [
     dimension: "dataSecurity",
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
-    question: "How robust are your current data security and privacy protection measures?",
-    description: "Consider encryption, access controls, compliance frameworks, and data protection policies.",
+    question: "How strong are your organization's data security and privacy protections?",
+    description: "Consider your safeguards for protecting sensitive business and customer information.",
     options: [
       {
         value: 1,
@@ -472,8 +472,8 @@ export const quickQuestions: Question[] = [
     dimension: "dataSecurity",
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
-    question: "What is your organization's compliance status with data protection regulations?",
-    description: "Consider GDPR, CCPA, HIPAA, or other applicable privacy and data protection requirements.",
+    question: "How well does your organization comply with data protection and privacy laws?",
+    description: "Consider your compliance with relevant privacy regulations that apply to your industry and location.",
     options: [
       {
         value: 1,
