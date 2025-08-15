@@ -873,22 +873,22 @@ export const questions: Question[] = [
       {
         value: 1,
         text: "Immediate ROI expected",
-        description: "Must show returns within 3-6 months"
+        description: "Must show returns very quickly"
       },
       {
         value: 2,
-        text: "Short-term ROI (6-12 months)",
-        description: "Expected returns within one year"
+        text: "Short-term ROI",
+        description: "Expected returns within the near term"
       },
       {
         value: 3,
-        text: "Medium-term ROI (1-2 years)",
-        description: "Reasonable timeline for AI returns"
+        text: "Medium-term ROI",
+        description: "Reasonable timeline for automation returns"
       },
       {
         value: 4,
-        text: "Long-term investment view (2-3 years)",
-        description: "Patient approach to AI investment returns"
+        text: "Long-term investment view",
+        description: "Patient approach to automation investment returns"
       },
       {
         value: 5,
