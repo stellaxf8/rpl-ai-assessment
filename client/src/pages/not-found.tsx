@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
-import backgroundImage from "@assets/BG AI 3_1755629963846.png";
+import backgroundImage from "@assets/BG 1_1755624813166.png";
 
 export default function NotFound() {
   return (
