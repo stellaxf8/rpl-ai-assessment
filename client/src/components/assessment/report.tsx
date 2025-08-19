@@ -272,7 +272,7 @@ export default function Report({ assessment, onBack }: ReportProps) {
               <p className="text-slate-600 mb-4">Need help implementing these recommendations?</p>
               <Button 
                 onClick={handleScheduleConsultation}
-                className="hover-glow hover-lift button-press"
+                className="hover-lift button-press"
               >
                 Schedule a Consultation
                 <Calendar className="ml-2 h-4 w-4" />
@@ -288,7 +288,7 @@ export default function Report({ assessment, onBack }: ReportProps) {
           <Button 
             variant="default" 
             size="lg" 
-            className="bg-slate-900 hover:bg-slate-800 hover-glow hover-lift button-press"
+            className="bg-slate-900 hover:bg-slate-800 hover-lift button-press"
             onClick={handleDownloadPDF}
           >
             <Download className="mr-2 h-5 w-5" />

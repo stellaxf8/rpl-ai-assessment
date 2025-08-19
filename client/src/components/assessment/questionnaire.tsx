@@ -263,7 +263,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             <Button 
               onClick={handleSubmit}
               disabled={submitAssessment.isPending}
-              className="hover-glow hover-lift button-press animate-pulse-gentle w-full sm:w-auto order-1 sm:order-2"
+              className="hover-lift button-press animate-pulse-gentle w-full sm:w-auto order-1 sm:order-2"
             >
               {submitAssessment.isPending ? "Submitting..." : "Submit Assessment"}
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -447,7 +447,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               <Button 
                 onClick={handleNext}
                 disabled={!canGoNext}
-                className={`hover-lift button-press w-full sm:w-auto ${canGoNext ? 'hover-glow animate-pulse-gentle' : ''}`}
+                className={`hover-lift button-press w-full sm:w-auto ${canGoNext ? 'animate-pulse-gentle' : ''}`}
               >
                 <span className="hidden sm:inline">{currentQuestion === questions.length - 1 ? 'Complete Assessment' : 'Next Question'}</span>
                 <span className="sm:hidden">{currentQuestion === questions.length - 1 ? 'Complete' : 'Next'}</span>

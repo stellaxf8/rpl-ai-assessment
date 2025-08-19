@@ -38,7 +38,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
             </div>
             <Button 
               onClick={() => onSelectType('quick')}
-              className="w-full hover-glow hover-lift button-press"
+              className="w-full hover-lift button-press"
               size="lg"
             >
               Start Quick Assessment
@@ -66,7 +66,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
             </div>
             <Button 
               onClick={() => onSelectType('detailed')}
-              className="w-full hover-glow hover-lift button-press"
+              className="w-full hover-lift button-press"
               size="lg"
             >
               Start Detailed Assessment

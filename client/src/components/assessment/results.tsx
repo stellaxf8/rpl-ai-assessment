@@ -281,7 +281,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in animate-slide-up">
         {onGenerateReport && (
-          <Button onClick={onGenerateReport} size="lg" className="hover-glow hover-lift button-press animate-pulse-gentle w-full sm:w-auto">
+          <Button onClick={onGenerateReport} size="lg" className="hover-lift button-press w-full sm:w-auto">
             <FileText className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
             Generate Report
           </Button>
