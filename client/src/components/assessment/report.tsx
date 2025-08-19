@@ -170,20 +170,10 @@ export default function Report({ assessment, onBack }: ReportProps) {
         {/* Report Header */}
         <div className="p-8 text-white" style={{ backgroundColor: '#cd0000' }}>
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <Button 
-                variant="ghost" 
-                size="sm"
-                className="text-white hover:bg-red-700 mr-4 p-2"
-                onClick={onBack}
-              >
-                <ArrowLeft className="h-4 w-4" />
-              </Button>
-              <div>
-                <h2 className="text-3xl font-bold mb-2">AI Readiness Assessment Report</h2>
-                <p className="text-blue-100">Comprehensive analysis and recommendations</p>
-                <p className="text-blue-100 mt-1">Organization: {organizationName}</p>
-              </div>
+            <div>
+              <h2 className="text-3xl font-bold mb-2">AI Readiness Assessment Report</h2>
+              <p className="text-blue-100">Comprehensive analysis and recommendations</p>
+              <p className="text-blue-100 mt-1">Organization: {organizationName}</p>
             </div>
             <div className="text-right">
               <div className="text-2xl font-bold">{formatDate(createdAt)}</div>
@@ -292,17 +282,30 @@ export default function Report({ assessment, onBack }: ReportProps) {
       </Card>
 
       {/* Report Actions */}
-      <div className="mt-8 text-center space-x-4">
-        <Button 
-          variant="default" 
-          size="lg" 
-          className="bg-slate-900 hover:bg-slate-800"
-          onClick={handleDownloadPDF}
-        >
-          <Download className="mr-2 h-5 w-5" />
-          Download PDF
-        </Button>
-
+      <div className="mt-8 text-center">
+        <div className="space-y-4">
+          <Button 
+            variant="default" 
+            size="lg" 
+            className="bg-slate-900 hover:bg-slate-800"
+            onClick={handleDownloadPDF}
+          >
+            <Download className="mr-2 h-5 w-5" />
+            Download PDF
+          </Button>
+          
+          {onBack && (
+            <div>
+              <Button 
+                variant="outline" 
+                onClick={onBack}
+                className="hover-lift button-press"
+              >
+                Back
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
