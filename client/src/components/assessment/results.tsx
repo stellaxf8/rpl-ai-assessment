@@ -119,10 +119,10 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
     <section>
       {/* Overall Score Card */}
       <Card className="mb-8 animate-slide-up">
-        <CardContent className="p-8">
-          <div className="text-center mb-8 animate-fade-in">
-            <h2 className="text-3xl font-bold text-slate-900 mb-2 animate-slide-up">AI Readiness Score</h2>
-            <p className="text-slate-600 animate-slide-up stagger-delay-1">Complete AI readiness assessment for {organizationName}</p>
+        <CardContent className="p-4 sm:p-6 lg:p-8">
+          <div className="text-center mb-6 sm:mb-8 animate-fade-in">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 animate-slide-up">AI Readiness Score</h2>
+            <p className="text-sm sm:text-base text-slate-600 animate-slide-up stagger-delay-1">Complete AI readiness assessment for {organizationName}</p>
           </div>
           
           <div className="flex items-center justify-center mb-8 animate-bounce-subtle stagger-delay-2">
@@ -140,12 +140,12 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
       {/* Assessment Results Overview */}
       <div className="space-y-8">
           {/* Dimension Breakdown */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
             {/* Radar Chart */}
             <Card className="animate-slide-in-left stagger-delay-1">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6 animate-slide-up">Readiness Dimensions</h3>
-                <div className="h-80 animate-fade-in stagger-delay-2">
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up">Readiness Dimensions</h3>
+                <div className="h-60 sm:h-80 animate-fade-in stagger-delay-2">
                   <RadarChart scores={scores as any} />
                 </div>
               </CardContent>
@@ -153,8 +153,8 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
 
             {/* Brief Scores Overview */}
             <Card className="animate-slide-in-right stagger-delay-1">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6 animate-slide-up">Quick Overview</h3>
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up">Quick Overview</h3>
                 <div className="space-y-4 animate-slide-up stagger-delay-2">
                   {Object.entries(scores as any).map(([dimension, score], index) => {
                     const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
@@ -211,9 +211,9 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           </div>
 
           {/* Detailed Dimension Analysis */}
-          <div className="mb-8 animate-slide-up stagger-delay-3">
-            <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center animate-slide-up stagger-delay-3">Detailed Dimension Analysis</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mb-6 sm:mb-8 animate-slide-up stagger-delay-3">
+            <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 text-center animate-slide-up stagger-delay-3">Detailed Dimension Analysis</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {Object.entries(scores as any).map(([dimension, score], index) => {
                 const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
                 const scoreValue = score as number;
@@ -222,13 +222,13 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
 
                 return (
                   <Card key={dimension} className={`border border-slate-200 animate-slide-up stagger-delay-${Math.min(index + 4, 6)}`}>
-                    <CardContent className="p-6">
+                    <CardContent className="p-4 sm:p-6">
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center">
                           <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
                             <span>{config.icon}</span>
                           </div>
-                          <h4 className="text-lg font-semibold text-slate-900">{config.label}</h4>
+                          <h4 className="text-base sm:text-lg font-semibold text-slate-900">{config.label}</h4>
                         </div>
                         <div className="flex items-center">
                           <div className="w-20 mr-3">
@@ -238,10 +238,10 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
                               dynamicColor={true}
                             />
                           </div>
-                          <span className="font-bold text-slate-900">{scoreValue.toFixed(1)}/5</span>
+                          <span className="font-bold text-slate-900 text-sm sm:text-base">{scoreValue.toFixed(1)}/5</span>
                         </div>
                       </div>
-                      <p className="text-slate-600 mb-3">
+                      <p className="text-sm sm:text-base text-slate-600 mb-3">
                         {level === 'high' 
                           ? "Strong performance in this area with good foundation for AI implementation."
                           : level === 'medium'
@@ -254,8 +254,8 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
                         level === 'medium' ? 'border-yellow-500 bg-yellow-50' :
                         'border-red-500 bg-red-50'
                       }`}>
-                        <div className="font-medium text-slate-900">Recommendation:</div>
-                        <div className="text-slate-700">{config.recommendations[level]}</div>
+                        <div className="font-medium text-slate-900 text-sm sm:text-base">Recommendation:</div>
+                        <div className="text-slate-700 text-sm sm:text-base">{config.recommendations[level]}</div>
                       </div>
                     </CardContent>
                   </Card>
@@ -279,16 +279,16 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           }} />
       </div>
       {/* Action Buttons */}
-      <div className="text-center space-x-4 mt-8 animate-fade-in stagger-delay-6">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in stagger-delay-6">
         {onGenerateReport && (
-          <Button onClick={onGenerateReport} size="lg" className="hover-glow hover-lift button-press animate-pulse-gentle">
-            <FileText className="mr-2 h-5 w-5" />
+          <Button onClick={onGenerateReport} size="lg" className="hover-glow hover-lift button-press animate-pulse-gentle w-full sm:w-auto">
+            <FileText className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
             Generate Report
           </Button>
         )}
 
         {showRetakeButton && onRetakeAssessment && (
-          <Button variant="ghost" onClick={onRetakeAssessment} className="hover-lift button-press">
+          <Button variant="ghost" onClick={onRetakeAssessment} className="hover-lift button-press w-full sm:w-auto">
             <RotateCcw className="mr-2 h-4 w-4" />
             Retake Assessment
           </Button>

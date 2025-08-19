@@ -221,13 +221,13 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   if (showContactForm) {
     return (
       <Card className="max-w-2xl mx-auto animate-slide-up">
-        <CardContent className="p-8">
-          <div className="text-center mb-6 animate-fade-in">
-            <h2 className="text-2xl font-bold text-slate-900 mb-2 animate-slide-up">Almost Done!</h2>
-            <p className="text-slate-600 animate-slide-up stagger-delay-1">Please provide your contact information to receive your results.</p>
+        <CardContent className="p-4 sm:p-6 lg:p-8">
+          <div className="text-center mb-4 sm:mb-6 animate-fade-in">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 animate-slide-up">Almost Done!</h2>
+            <p className="text-sm sm:text-base text-slate-600 animate-slide-up stagger-delay-1">Please provide your contact information to receive your results.</p>
           </div>
 
-          <div className="space-y-4 animate-slide-up stagger-delay-2">
+          <div className="space-y-3 sm:space-y-4 animate-slide-up stagger-delay-2">
             <div className="animate-slide-in-left stagger-delay-2">
               <Label htmlFor="organizationName">Organization Name</Label>
               <Input
@@ -251,11 +251,11 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             </div>
           </div>
 
-          <div className="flex justify-between items-center mt-8 animate-fade-in stagger-delay-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 mt-6 sm:mt-8 animate-fade-in stagger-delay-4">
             <Button 
               variant="outline" 
               onClick={() => setShowContactForm(false)}
-              className="hover-lift button-press"
+              className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Questions
@@ -263,7 +263,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             <Button 
               onClick={handleSubmit}
               disabled={submitAssessment.isPending}
-              className="hover-glow hover-lift button-press animate-pulse-gentle"
+              className="hover-glow hover-lift button-press animate-pulse-gentle w-full sm:w-auto order-1 sm:order-2"
             >
               {submitAssessment.isPending ? "Submitting..." : "Submit Assessment"}
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -318,10 +318,10 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     <section>
       {/* Progress Header */}
       <Card className="mb-8 animate-slide-up">
-        <CardContent className="p-6">
-          <div className="flex items-center justify-between mb-4 animate-fade-in">
+        <CardContent className="p-4 sm:p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 animate-fade-in gap-2 sm:gap-0">
             <div className="flex flex-col animate-slide-in-left">
-              <h2 className="text-2xl font-bold text-slate-900">AI Readiness Assessment</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900">AI Readiness Assessment</h2>
               {selectedIndustry && hasIndustryVariations(selectedIndustry) && (
                 <p className="text-sm text-primary font-medium animate-slide-up stagger-delay-1">
                   {selectedIndustry} Industry - Specialized Questions
@@ -333,17 +333,17 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 </p>
               )}
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
               <Button 
                 variant="outline" 
                 size="sm"
                 onClick={generateDemoSample}
-                className="text-xs bg-[#cd0000] text-[#f5f5f4] border-[#cd0000] hover:bg-[#b30000] hover:text-[#f5f5f4]"
+                className="text-xs bg-[#cd0000] text-[#f5f5f4] border-[#cd0000] hover:bg-[#b30000] hover:text-[#f5f5f4] w-full sm:w-auto"
               >
                 <Zap className="mr-1 h-3 w-3" />
                 Demo Sample
               </Button>
-              <span className="text-sm text-slate-500">
+              <span className="text-sm text-slate-500 text-center sm:text-left">
                 Question {currentQuestion + 1} of {assessmentQuestions.length}
               </span>
             </div>
@@ -392,20 +392,22 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
       {/* Question Card */}
       <Card className="animate-slide-up stagger-delay-1">
-        <CardContent className="p-8">
-          <div className="mb-6 animate-fade-in">
-            <div className="flex items-center mb-4 animate-slide-in-left">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3 bg-transparent animate-bounce-subtle stagger-delay-1">
-                {getIconComponent(currentQuestionData.icon)}
+        <CardContent className="p-4 sm:p-6 lg:p-8">
+          <div className="mb-4 sm:mb-6 animate-fade-in">
+            <div className="flex flex-col sm:flex-row sm:items-center mb-4 gap-2 sm:gap-0 animate-slide-in-left">
+              <div className="flex items-center">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center mr-3 bg-transparent animate-bounce-subtle stagger-delay-1">
+                  {getIconComponent(currentQuestionData.icon)}
+                </div>
+                <span className="text-xs sm:text-sm font-medium text-white px-2 sm:px-3 py-1 rounded-full animate-slide-in-right stagger-delay-1" style={{ backgroundColor: '#cd0000' }}>
+                  {currentQuestionData.dimensionLabel}
+                </span>
               </div>
-              <span className="text-sm font-medium text-white px-3 py-1 rounded-full animate-slide-in-right stagger-delay-1" style={{ backgroundColor: '#cd0000' }}>
-                {currentQuestionData.dimensionLabel}
-              </span>
             </div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-3 animate-slide-up stagger-delay-2">
+            <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3 animate-slide-up stagger-delay-2">
               {currentQuestionData.question}
             </h3>
-            <p className="text-slate-600 animate-slide-up stagger-delay-3">
+            <p className="text-sm sm:text-base text-slate-600 animate-slide-up stagger-delay-3">
               {currentQuestionData.description}
             </p>
           </div>
@@ -418,36 +420,37 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             {currentQuestionData.options.map((option, index) => (
               <div 
                 key={index} 
-                className={`flex items-center space-x-4 p-4 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors animate-slide-in-left stagger-delay-${Math.min(index + 1, 6)}`}
+                className={`flex items-start sm:items-center space-x-3 sm:space-x-4 p-3 sm:p-4 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors animate-slide-in-left stagger-delay-${Math.min(index + 1, 6)}`}
               >
                 <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="hover-scale" />
                 <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">
-                  <div className="font-medium text-slate-900">{option.text}</div>
-                  <div className="text-sm text-slate-600">{option.description}</div>
+                  <div className="text-sm sm:text-base font-medium text-slate-900">{option.text}</div>
+                  <div className="text-xs sm:text-sm text-slate-600 mt-1">{option.description}</div>
                 </Label>
               </div>
             ))}
           </RadioGroup>
 
-          <div className="flex justify-between items-center mt-8 animate-fade-in stagger-delay-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 sm:mt-8 animate-fade-in stagger-delay-6">
             <Button 
               variant="outline" 
               onClick={handlePrevious}
-              className="hover-lift button-press"
+              className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               {currentQuestion === 0 ? 'Back' : 'Previous Question'}
             </Button>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-center gap-3 order-1 sm:order-2">
               {!canGoNext && (
-                <span className="text-sm text-slate-500 animate-pulse-gentle">Please select an answer to continue</span>
+                <span className="text-xs sm:text-sm text-slate-500 animate-pulse-gentle text-center">Please select an answer to continue</span>
               )}
               <Button 
                 onClick={handleNext}
                 disabled={!canGoNext}
-                className={`hover-lift button-press ${canGoNext ? 'hover-glow animate-pulse-gentle' : ''}`}
+                className={`hover-lift button-press w-full sm:w-auto ${canGoNext ? 'hover-glow animate-pulse-gentle' : ''}`}
               >
-                {currentQuestion === questions.length - 1 ? 'Complete Assessment' : 'Next Question'}
+                <span className="hidden sm:inline">{currentQuestion === questions.length - 1 ? 'Complete Assessment' : 'Next Question'}</span>
+                <span className="sm:hidden">{currentQuestion === questions.length - 1 ? 'Complete' : 'Next'}</span>
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>

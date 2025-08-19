@@ -48,41 +48,41 @@ const dimensions = [
 export default function Overview({ onStartAssessment }: OverviewProps) {
   return (
     <section>
-      <div className="text-center mb-12 animate-fade-in">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4 animate-slide-up"><span style={{ color: '#cd0000' }}>AI Readiness</span> Assessment</h2>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up stagger-delay-1">
+      <div className="text-center mb-8 sm:mb-12 animate-fade-in">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 animate-slide-up"><span style={{ color: '#cd0000' }}>AI Readiness</span> Assessment</h2>
+        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up stagger-delay-1 px-4">
           Comprehensive evaluation across 6 key dimensions to determine your organization's readiness for AI implementation
         </p>
       </div>
       {/* Why AI Readiness Assessment is Crucial */}
-      <div className="bg-transparent border-2 rounded-xl p-8 mb-12 shadow-lg animate-slide-up stagger-delay-2" style={{ borderColor: '#cd0000' }}>
-        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Why AI Readiness Assessment is <span style={{ color: '#cd0000', fontFamily: 'Arial Black' }}>Crucial</span></h3>
-        <div className="grid md:grid-cols-2 gap-8">
+      <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up stagger-delay-2" style={{ borderColor: '#cd0000' }}>
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">Why AI Readiness Assessment is <span style={{ color: '#cd0000', fontFamily: 'Arial Black' }}>Crucial</span></h3>
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           <div>
-            <h4 className="text-lg font-semibold mb-3 text-[#cd0000]">Avoid Costly Mistakes</h4>
-            <p className="text-slate-700 mb-4">
+            <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-[#cd0000]">Avoid Costly Mistakes</h4>
+            <p className="text-sm sm:text-base text-slate-700 mb-4">
               Organizations that rush into AI implementation without proper assessment face a 67% failure rate. Understanding your readiness prevents wasted resources and ensures successful AI adoption.
             </p>
             
-            <h4 className="text-lg font-semibold mb-3 text-[#cd0000]">Maximize ROI</h4>
-            <p className="text-slate-700">
+            <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-[#cd0000]">Maximize ROI</h4>
+            <p className="text-sm sm:text-base text-slate-700">
               Companies with high AI readiness see 3x better returns on their AI investments. A thorough assessment identifies the most impactful AI opportunities for your specific situation.
             </p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-3 text-[#cd0000]">Security & Compliance</h4>
-            <p className="text-slate-700 mb-4">
+            <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-[#cd0000]">Security & Compliance</h4>
+            <p className="text-sm sm:text-base text-slate-700 mb-4">
               AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.
             </p>
             
-            <h4 className="text-lg font-semibold mb-3 text-[#cd0000]">Competitive Advantage</h4>
-            <p className="text-slate-700">
+            <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-[#cd0000]">Competitive Advantage</h4>
+            <p className="text-sm sm:text-base text-slate-700">
               Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.
             </p>
           </div>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
           const staggerClass = `stagger-delay-${Math.min(index + 3, 6)}`;
@@ -91,14 +91,14 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               key={index} 
               className={`hover:shadow-md transition-shadow animate-slide-up ${staggerClass}`}
             >
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000] animate-bounce-subtle stagger-delay-${Math.min(index + 4, 6)}`}>
-                    <IconComponent className="text-xl" />
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-center mb-3 sm:mb-4">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center mr-3 sm:mr-4 bg-[#f1f5f900] text-[#cd0000] animate-bounce-subtle stagger-delay-${Math.min(index + 4, 6)}`}>
+                    <IconComponent className="text-lg sm:text-xl" />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900">{dimension.title}</h3>
+                  <h3 className="text-base sm:text-lg font-semibold text-slate-900">{dimension.title}</h3>
                 </div>
-                <p className="text-slate-600">{dimension.description}</p>
+                <p className="text-sm sm:text-base text-slate-600">{dimension.description}</p>
               </CardContent>
             </Card>
           );
@@ -108,10 +108,10 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         <Button 
           onClick={onStartAssessment}
           size="lg"
-          className="text-xl px-12 py-6 shadow-lg hover-glow hover-lift button-press animate-pulse-gentle"
+          className="text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 shadow-lg hover-glow hover-lift button-press animate-pulse-gentle w-full sm:w-auto"
         >
           Start Assessment
-          <ArrowRight className="ml-2 h-5 w-5" />
+          <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
         </Button>
       </div>
     </section>
