@@ -197,7 +197,7 @@ export const questions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "How would you describe the quality of your organization's data?",
-    description: "Consider data accuracy, completeness, consistency, and reliability. For example: Are customer contact details up-to-date and complete, or do you often find missing phone numbers, duplicate records, and outdated addresses in your system?",
+    description: "Consider data accuracy, completeness, consistency, and reliability. For Example: Are customer contact details up-to-date and complete, or do you often find missing phone numbers, duplicate records, and outdated addresses in your system?",
     options: [
       {
         value: 1,
@@ -232,7 +232,7 @@ export const questions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "How accessible is your data for analysis and AI projects?",
-    description: "Evaluate how easily teams can access and work with organizational data. For example: Can your marketing team quickly get sales data to create reports, or do they need to submit requests to IT and wait weeks to get the information they need?",
+    description: "Evaluate how easily teams can access and work with organizational data. For Example: Can your marketing team quickly get sales data to create reports, or do they need to submit requests to IT and wait weeks to get the information they need?",
     options: [
       {
         value: 1,

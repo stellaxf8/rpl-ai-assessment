@@ -33,6 +33,34 @@ const getIconComponent = (iconName: string) => {
   return <IconComponent className="text-[#cd0000]" />;
 };
 
+const formatQuestionDescription = (description: string) => {
+  // Split description at "For example:" (case insensitive)
+  const parts = description.split(/For example:/i);
+  
+  if (parts.length === 2) {
+    const mainDescription = parts[0].trim();
+    const example = parts[1].trim();
+    
+    return (
+      <div>
+        <p className="text-sm sm:text-base text-slate-600 mb-3">
+          {mainDescription}
+        </p>
+        <p className="text-sm sm:text-base text-slate-600">
+          <span className="font-bold">For Example:</span> {example}
+        </p>
+      </div>
+    );
+  }
+  
+  // If no "For example:" found, return original text
+  return (
+    <p className="text-sm sm:text-base text-slate-600">
+      {description}
+    </p>
+  );
+};
+
 export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps) {
   const [assessmentType, setAssessmentType] = useState<'detailed' | 'quick' | ''>("");
   const [selectedIndustry, setSelectedIndustry] = useState<string>("");
@@ -430,9 +458,9 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3 animate-slide-up animate-fade-in">
               {currentQuestionData.question}
             </h3>
-            <p className="text-sm sm:text-base text-slate-600 animate-slide-up animate-fade-in">
-              {currentQuestionData.description}
-            </p>
+            <div className="animate-slide-up animate-fade-in">
+              {formatQuestionDescription(currentQuestionData.description)}
+            </div>
           </div>
 
           <RadioGroup
