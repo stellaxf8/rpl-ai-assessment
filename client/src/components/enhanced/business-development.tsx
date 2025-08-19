@@ -37,7 +37,7 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
           <Button 
             variant="default" 
             size="lg"
-            className="h-auto p-6"
+            className="h-auto p-6 hover-lift button-press"
             onClick={handleScheduleConsultation}
           >
             <div className="flex items-center">
