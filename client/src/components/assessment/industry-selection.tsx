@@ -135,6 +135,17 @@ const industries = [
 export default function IndustrySelection({ onIndustrySelect }: IndustrySelectionProps) {
   const [localSelectedIndustry, setLocalSelectedIndustry] = useState<string>("");
 
+  const handleIndustryClick = (industryId: string) => {
+    setLocalSelectedIndustry(industryId);
+    // Auto-scroll to bottom to show the "Start Detailed Assessment" button
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });
+    }, 100);
+  };
+
   return (
     <div className="space-y-6">
       <div className="text-center">
@@ -156,7 +167,7 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
                   ? 'ring-2 ring-primary bg-primary/5' 
                   : 'hover:bg-slate-50'
               }`}
-              onClick={() => setLocalSelectedIndustry(industry.id)}
+              onClick={() => handleIndustryClick(industry.id)}
             >
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
