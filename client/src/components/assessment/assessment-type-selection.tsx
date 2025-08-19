@@ -19,7 +19,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
       
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {/* Quick Assessment */}
-        <Card className="cursor-pointer border-2 border-slate-300">
+        <Card className="cursor-pointer border-2 border-slate-300 hover:shadow-lg hover:border-slate-400 transition-all duration-300 hover:-translate-y-1">
           <CardHeader className="text-center pb-4">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Zap style={{ color: '#cd0000' }} className="h-8 w-8" />
@@ -47,7 +47,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
         </Card>
 
         {/* Detailed Assessment */}
-        <Card className="cursor-pointer border-2 border-slate-300">
+        <Card className="cursor-pointer border-2 border-slate-300 hover:shadow-lg hover:border-slate-400 transition-all duration-300 hover:-translate-y-1">
           <CardHeader className="text-center pb-4">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock style={{ color: '#cd0000' }} className="h-8 w-8" />
