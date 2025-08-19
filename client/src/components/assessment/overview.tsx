@@ -93,7 +93,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             >
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center mb-3 sm:mb-4">
-                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center mr-3 sm:mr-4 bg-[#f1f5f900] text-[#cd0000] animate-bounce-subtle stagger-delay-${Math.min(index + 4, 6)}`}>
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center mr-3 sm:mr-4 bg-[#f1f5f900] text-[#cd0000]`}>
                     <IconComponent className="text-lg sm:text-xl" />
                   </div>
                   <h3 className="text-base sm:text-lg font-semibold text-slate-900">{dimension.title}</h3>
