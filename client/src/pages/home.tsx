@@ -80,42 +80,40 @@ export default function Home() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white/90 backdrop-blur-sm rounded-lg mt-4 mb-4 shadow-lg hover-lift animate-slide-up stagger-delay-1">
-        {currentSection === 'overview' && (
-          <Overview onStartAssessment={handleStartAssessment} />
-        )}
-        
-        {currentSection === 'contact' && (
-          <Contact />
-        )}
-        
-        {currentSection === 'assessment' && (
-          <Questionnaire 
-            key={assessmentKey}
-            onComplete={handleAssessmentComplete}
-            onBack={() => setCurrentSection('overview')}
+      {currentSection === 'overview' && (
+        <Overview onStartAssessment={handleStartAssessment} />
+      )}
+      
+      {currentSection === 'contact' && (
+        <Contact />
+      )}
+      
+      {currentSection === 'assessment' && (
+        <Questionnaire 
+          key={assessmentKey}
+          onComplete={handleAssessmentComplete}
+          onBack={() => setCurrentSection('overview')}
+        />
+      )}
+      
+      {currentSection === 'results' && completedAssessment && (
+        <div key="results-section">
+          <Results 
+            assessment={completedAssessment}
+            onGenerateReport={() => setCurrentSection('report')}
+            onRetakeAssessment={handleRetakeAssessment}
           />
-        )}
-        
-        {currentSection === 'results' && completedAssessment && (
-          <div key="results-section">
-            <Results 
-              assessment={completedAssessment}
-              onGenerateReport={() => setCurrentSection('report')}
-              onRetakeAssessment={handleRetakeAssessment}
-            />
-          </div>
-        )}
-        
-        {currentSection === 'report' && completedAssessment && (
-          <div key="report-section">
-            <Report 
-              assessment={completedAssessment} 
-              onBack={() => setCurrentSection('results')}
-            />
-          </div>
-        )}
-      </main>
+        </div>
+      )}
+      
+      {currentSection === 'report' && completedAssessment && (
+        <div key="report-section">
+          <Report 
+            assessment={completedAssessment} 
+            onBack={() => setCurrentSection('results')}
+          />
+        </div>
+      )}
       {/* Footnote Disclaimer */}
       <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 mt-4">
         <div className="text-center bg-white/80 backdrop-blur-sm rounded-lg py-2 px-4">
