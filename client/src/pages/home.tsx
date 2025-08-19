@@ -44,25 +44,25 @@ export default function Home() {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* Header */}
-      <header className="bg-white shadow-lg border-b border-slate-200 relative z-10">
+      <header className="bg-white shadow-lg border-b border-slate-200 relative z-10 animate-slide-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-16 animate-fade-in">
             <div 
-              className="flex items-center cursor-pointer hover:opacity-80 transition-opacity"
+              className="flex items-center cursor-pointer hover:opacity-80 transition-all hover-scale animate-slide-in-left"
               onClick={() => setCurrentSection('overview')}
             >
               <img 
                 src={logoPath} 
                 alt="Red Pill Labs" 
-                className="h-8 w-auto"
+                className="h-8 w-auto hover-lift"
               />
             </div>
-            <nav className="flex items-center space-x-4">
+            <nav className="flex items-center space-x-4 animate-slide-in-right">
               <a 
                 href="https://www.redpilllabs.com/contact-us" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-sm text-slate-700 hover:text-slate-900 font-medium transition-colors flex items-center"
+                className="text-sm text-slate-700 hover:text-slate-900 font-medium transition-all flex items-center hover-lift button-press"
               >
                 <Phone className="mr-1 h-4 w-4" />
                 Contact Us
@@ -71,7 +71,7 @@ export default function Home() {
                 href="https://www.redpilllabs.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                className="text-xs text-gray-400 hover:text-gray-600 transition-all hover-lift"
               >
                 visit main site
               </a>
@@ -80,7 +80,7 @@ export default function Home() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white/90 backdrop-blur-sm rounded-lg mt-4 mb-4 shadow-lg">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white/90 backdrop-blur-sm rounded-lg mt-4 mb-4 shadow-lg hover-lift animate-slide-up stagger-delay-1">
         {currentSection === 'overview' && (
           <Overview onStartAssessment={handleStartAssessment} />
         )}

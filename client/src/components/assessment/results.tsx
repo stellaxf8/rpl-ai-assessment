@@ -118,23 +118,22 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
   return (
     <section>
       {/* Overall Score Card */}
-      <Card className="mb-8">
+      <Card className="mb-8 hover-lift animate-slide-up">
         <CardContent className="p-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">AI Readiness Score</h2>
-            <p className="text-slate-600">Complete AI readiness assessment for {organizationName}</p>
+          <div className="text-center mb-8 animate-fade-in">
+            <h2 className="text-3xl font-bold text-slate-900 mb-2 animate-slide-up">AI Readiness Score</h2>
+            <p className="text-slate-600 animate-slide-up stagger-delay-1">Complete AI readiness assessment for {organizationName}</p>
           </div>
           
-          <div className="flex items-center justify-center mb-8">
+          <div className="flex items-center justify-center mb-8 animate-bounce-subtle stagger-delay-2">
             <ScoreChart score={overallScore} />
           </div>
 
-          <div className="text-center">
-            <div className={`inline-flex items-center px-4 py-2 rounded-full font-medium ${readinessLevel.color}`}>
+          <div className="text-center animate-slide-up stagger-delay-3">
+            <div className={`inline-flex items-center px-4 py-2 rounded-full font-medium hover-scale ${readinessLevel.color}`}>
               <CheckCircle className="mr-2 h-4 w-4" />
               {readinessLevel.label} AI Readiness Level
             </div>
-            
           </div>
         </CardContent>
       </Card>
@@ -143,21 +142,21 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           {/* Dimension Breakdown */}
           <div className="grid lg:grid-cols-2 gap-8 mb-8">
             {/* Radar Chart */}
-            <Card>
+            <Card className="hover-lift animate-slide-in-left stagger-delay-1">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6">Readiness Dimensions</h3>
-                <div className="h-80">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6 animate-slide-up">Readiness Dimensions</h3>
+                <div className="h-80 animate-fade-in stagger-delay-2">
                   <RadarChart scores={scores as any} />
                 </div>
               </CardContent>
             </Card>
 
             {/* Brief Scores Overview */}
-            <Card>
+            <Card className="hover-lift animate-slide-in-right stagger-delay-1">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6">Quick Overview</h3>
-                <div className="space-y-4">
-                  {Object.entries(scores as any).map(([dimension, score]) => {
+                <h3 className="text-xl font-semibold text-slate-900 mb-6 animate-slide-up">Quick Overview</h3>
+                <div className="space-y-4 animate-slide-up stagger-delay-2">
+                  {Object.entries(scores as any).map(([dimension, score], index) => {
                     const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
                     const scoreValue = score as number;
                     const percentage = (scoreValue / 5) * 100;
@@ -173,7 +172,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
                     }
 
                     return (
-                      <div key={dimension} className="flex items-center justify-between">
+                      <div key={dimension} className={`flex items-center justify-between hover-lift animate-slide-in-left stagger-delay-${Math.min(index + 3, 6)}`}>
                         <div className="flex items-center flex-1">
                           <div className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 ${config?.color || 'bg-gray-100'}`}>
                             <span className="text-sm">{config?.icon || '❓'}</span>
@@ -212,17 +211,17 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           </div>
 
           {/* Detailed Dimension Analysis */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">Detailed Dimension Analysis</h3>
+          <div className="mb-8 animate-slide-up stagger-delay-3">
+            <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center animate-slide-up stagger-delay-3">Detailed Dimension Analysis</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {Object.entries(scores as any).map(([dimension, score]) => {
+              {Object.entries(scores as any).map(([dimension, score], index) => {
                 const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
                 const scoreValue = score as number;
                 const level = getScoreLevel(scoreValue);
                 const percentage = (scoreValue / 5) * 100;
 
                 return (
-                  <Card key={dimension} className="border border-slate-200">
+                  <Card key={dimension} className={`border border-slate-200 hover-lift hover-scale animate-slide-up stagger-delay-${Math.min(index + 4, 6)}`}>
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center">
@@ -280,18 +279,16 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           }} />
       </div>
       {/* Action Buttons */}
-      <div className="text-center space-x-4 mt-8">
+      <div className="text-center space-x-4 mt-8 animate-fade-in stagger-delay-6">
         {onGenerateReport && (
-          <Button onClick={onGenerateReport} size="lg">
+          <Button onClick={onGenerateReport} size="lg" className="hover-glow hover-lift button-press animate-pulse-gentle">
             <FileText className="mr-2 h-5 w-5" />
             Generate Report
           </Button>
         )}
 
-        
-
         {showRetakeButton && onRetakeAssessment && (
-          <Button variant="ghost" onClick={onRetakeAssessment}>
+          <Button variant="ghost" onClick={onRetakeAssessment} className="hover-lift button-press">
             <RotateCcw className="mr-2 h-4 w-4" />
             Retake Assessment
           </Button>

@@ -220,24 +220,25 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
   if (showContactForm) {
     return (
-      <Card className="max-w-2xl mx-auto">
+      <Card className="max-w-2xl mx-auto animate-slide-up hover-lift">
         <CardContent className="p-8">
-          <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-slate-900 mb-2">Almost Done!</h2>
-            <p className="text-slate-600">Please provide your contact information to receive your results.</p>
+          <div className="text-center mb-6 animate-fade-in">
+            <h2 className="text-2xl font-bold text-slate-900 mb-2 animate-slide-up">Almost Done!</h2>
+            <p className="text-slate-600 animate-slide-up stagger-delay-1">Please provide your contact information to receive your results.</p>
           </div>
 
-          <div className="space-y-4">
-            <div>
+          <div className="space-y-4 animate-slide-up stagger-delay-2">
+            <div className="animate-slide-in-left stagger-delay-2">
               <Label htmlFor="organizationName">Organization Name</Label>
               <Input
                 id="organizationName"
                 value={organizationName}
                 onChange={(e) => setOrganizationName(e.target.value)}
                 placeholder="Enter your organization name"
+                className="transition-all focus:scale-105 hover-lift"
               />
             </div>
-            <div>
+            <div className="animate-slide-in-right stagger-delay-3">
               <Label htmlFor="contactEmail">Contact Email</Label>
               <Input
                 id="contactEmail"
@@ -245,14 +246,16 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 value={contactEmail}
                 onChange={(e) => setContactEmail(e.target.value)}
                 placeholder="Enter your email address"
+                className="transition-all focus:scale-105 hover-lift"
               />
             </div>
           </div>
 
-          <div className="flex justify-between items-center mt-8">
+          <div className="flex justify-between items-center mt-8 animate-fade-in stagger-delay-4">
             <Button 
               variant="outline" 
               onClick={() => setShowContactForm(false)}
+              className="hover-lift button-press"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Questions
@@ -260,6 +263,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             <Button 
               onClick={handleSubmit}
               disabled={submitAssessment.isPending}
+              className="hover-glow hover-lift button-press animate-pulse-gentle"
             >
               {submitAssessment.isPending ? "Submitting..." : "Submit Assessment"}
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -313,13 +317,13 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   return (
     <section>
       {/* Progress Header */}
-      <Card className="mb-8">
+      <Card className="mb-8 animate-slide-up hover-lift">
         <CardContent className="p-6">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex flex-col">
+          <div className="flex items-center justify-between mb-4 animate-fade-in">
+            <div className="flex flex-col animate-slide-in-left">
               <h2 className="text-2xl font-bold text-slate-900">AI Readiness Assessment</h2>
               {selectedIndustry && hasIndustryVariations(selectedIndustry) && (
-                <p className="text-sm text-primary font-medium">
+                <p className="text-sm text-primary font-medium animate-slide-up stagger-delay-1">
                   {selectedIndustry} Industry - Specialized Questions
                 </p>
               )}
@@ -387,21 +391,21 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       </Card>
 
       {/* Question Card */}
-      <Card>
+      <Card className="hover-lift animate-slide-up stagger-delay-1">
         <CardContent className="p-8">
-          <div className="mb-6">
-            <div className="flex items-center mb-4">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3 bg-transparent">
+          <div className="mb-6 animate-fade-in">
+            <div className="flex items-center mb-4 animate-slide-in-left">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3 bg-transparent animate-bounce-subtle stagger-delay-1">
                 {getIconComponent(currentQuestionData.icon)}
               </div>
-              <span className="text-sm font-medium text-white px-3 py-1 rounded-full" style={{ backgroundColor: '#cd0000' }}>
+              <span className="text-sm font-medium text-white px-3 py-1 rounded-full animate-slide-in-right stagger-delay-1" style={{ backgroundColor: '#cd0000' }}>
                 {currentQuestionData.dimensionLabel}
               </span>
             </div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-3">
+            <h3 className="text-xl font-semibold text-slate-900 mb-3 animate-slide-up stagger-delay-2">
               {currentQuestionData.question}
             </h3>
-            <p className="text-slate-600">
+            <p className="text-slate-600 animate-slide-up stagger-delay-3">
               {currentQuestionData.description}
             </p>
           </div>
@@ -409,10 +413,14 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
           <RadioGroup
             value={responses[currentQuestionData.id]?.toString() || ""}
             onValueChange={handleAnswerSelect}
+            className="animate-slide-up stagger-delay-4"
           >
             {currentQuestionData.options.map((option, index) => (
-              <div key={index} className="flex items-center space-x-4 p-4 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
-                <RadioGroupItem value={option.value.toString()} id={`option-${index}`} />
+              <div 
+                key={index} 
+                className={`flex items-center space-x-4 p-4 border border-slate-200 rounded-lg hover:bg-slate-50 transition-all hover-lift hover-scale animate-slide-in-left stagger-delay-${Math.min(index + 1, 6)}`}
+              >
+                <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="hover-scale" />
                 <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">
                   <div className="font-medium text-slate-900">{option.text}</div>
                   <div className="text-sm text-slate-600">{option.description}</div>
@@ -421,21 +429,23 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             ))}
           </RadioGroup>
 
-          <div className="flex justify-between items-center mt-8">
+          <div className="flex justify-between items-center mt-8 animate-fade-in stagger-delay-6">
             <Button 
               variant="outline" 
               onClick={handlePrevious}
+              className="hover-lift button-press"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               {currentQuestion === 0 ? 'Back' : 'Previous Question'}
             </Button>
             <div className="flex items-center gap-3">
               {!canGoNext && (
-                <span className="text-sm text-slate-500">Please select an answer to continue</span>
+                <span className="text-sm text-slate-500 animate-pulse-gentle">Please select an answer to continue</span>
               )}
               <Button 
                 onClick={handleNext}
                 disabled={!canGoNext}
+                className={`hover-lift button-press ${canGoNext ? 'hover-glow animate-pulse-gentle' : ''}`}
               >
                 {currentQuestion === questions.length - 1 ? 'Complete Assessment' : 'Next Question'}
                 <ArrowRight className="ml-2 h-4 w-4" />

@@ -48,14 +48,14 @@ const dimensions = [
 export default function Overview({ onStartAssessment }: OverviewProps) {
   return (
     <section>
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4"><span style={{ color: '#cd0000' }}>AI Readiness</span> Assessment</h2>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+      <div className="text-center mb-12 animate-fade-in">
+        <h2 className="text-4xl font-bold text-slate-900 mb-4 animate-slide-up"><span style={{ color: '#cd0000' }}>AI Readiness</span> Assessment</h2>
+        <p className="text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up stagger-delay-1">
           Comprehensive evaluation across 6 key dimensions to determine your organization's readiness for AI implementation
         </p>
       </div>
       {/* Why AI Readiness Assessment is Crucial */}
-      <div className="bg-transparent border-2 rounded-xl p-8 mb-12 shadow-lg" style={{ borderColor: '#cd0000' }}>
+      <div className="bg-transparent border-2 rounded-xl p-8 mb-12 shadow-lg hover-lift animate-slide-up stagger-delay-2" style={{ borderColor: '#cd0000' }}>
         <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Why AI Readiness Assessment is <span style={{ color: '#cd0000' }}>Crucial</span></h3>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
@@ -83,14 +83,17 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         </div>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        {/* First row - positions 1, 2, 3 */}
-        {dimensions.slice(0, 3).map((dimension, index) => {
+        {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
+          const staggerClass = `stagger-delay-${Math.min(index + 3, 6)}`;
           return (
-            <Card key={index} className="hover:shadow-md transition-shadow">
+            <Card 
+              key={index} 
+              className={`hover:shadow-md transition-all hover-lift hover-scale animate-slide-up ${staggerClass}`}
+            >
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000]">
+                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000] animate-bounce-subtle stagger-delay-${Math.min(index + 4, 6)}`}>
                     <IconComponent className="text-xl" />
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900">{dimension.title}</h3>
@@ -100,37 +103,16 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </Card>
           );
         })}
-        
-        {/* Second row - positions 4, 5, 6 */}
-        {dimensions.slice(3, 6).map((dimension, index) => {
-          const IconComponent = dimension.icon;
-          return (
-            <Card key={index + 3} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[#f1f5f900] text-[#cd0000]">
-                    <IconComponent className="text-xl" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-slate-900">{dimension.title}</h3>
-                </div>
-                <p className="text-slate-600">{dimension.description}</p>
-              </CardContent>
-            </Card>
-          );
-        })}
-        
-
       </div>
-      <div className="text-center">
+      <div className="text-center animate-fade-in stagger-delay-6">
         <Button 
           onClick={onStartAssessment}
           size="lg"
-          className="text-xl px-12 py-6 shadow-lg"
+          className="text-xl px-12 py-6 shadow-lg hover-glow hover-lift button-press animate-pulse-gentle"
         >
           Start Assessment
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
-        
       </div>
     </section>
   );
