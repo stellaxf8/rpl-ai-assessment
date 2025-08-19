@@ -30,7 +30,7 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
   return (
     <Card>
       <CardContent className="p-6">
-        <h3 className="text-xl font-semibold text-slate-900 mb-6">Get Started with AI Implementation</h3>
+        <h3 className="text-xl font-semibold text-slate-900 mb-6 text-center">Get Started with AI Implementation</h3>
 
         {/* Consultation Scheduling */}
         <div className="flex justify-center">
