@@ -396,7 +396,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
           <div className="mb-4 sm:mb-6 animate-fade-in">
             <div className="flex flex-col sm:flex-row sm:items-center mb-4 gap-2 sm:gap-0 animate-slide-in-left">
               <div className="flex items-center">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center mr-3 bg-transparent animate-bounce-subtle stagger-delay-1">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center mr-3 bg-transparent">
                   {getIconComponent(currentQuestionData.icon)}
                 </div>
                 <span className="text-xs sm:text-sm font-medium text-white px-2 sm:px-3 py-1 rounded-full animate-slide-in-right stagger-delay-1" style={{ backgroundColor: '#cd0000' }}>
