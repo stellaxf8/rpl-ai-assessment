@@ -60,9 +60,21 @@
   }
 
   body {
-    @apply font-sans antialiased text-foreground;
+    @apply antialiased text-foreground;
+    font-family: "Arial Nova Light", Arial, sans-serif;
     overflow-x: hidden;
     min-height: 100vh;
+  }
+  
+  /* Headers use Arial Black */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-weight: 900;
+  }
+  
+  /* Ensure buttons and other text elements use Arial Nova Light */
+  p, span, div, button, input, textarea, label {
+    font-family: "Arial Nova Light", Arial, sans-serif;
   }
   
   main {
