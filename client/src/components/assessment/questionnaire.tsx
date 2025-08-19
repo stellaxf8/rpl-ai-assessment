@@ -317,7 +317,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   return (
     <section>
       {/* Progress Header */}
-      <Card className="mb-8 animate-slide-up hover-lift">
+      <Card className="mb-8 animate-slide-up">
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4 animate-fade-in">
             <div className="flex flex-col animate-slide-in-left">
@@ -391,7 +391,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       </Card>
 
       {/* Question Card */}
-      <Card className="hover-lift animate-slide-up stagger-delay-1">
+      <Card className="animate-slide-up stagger-delay-1">
         <CardContent className="p-8">
           <div className="mb-6 animate-fade-in">
             <div className="flex items-center mb-4 animate-slide-in-left">
@@ -418,7 +418,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             {currentQuestionData.options.map((option, index) => (
               <div 
                 key={index} 
-                className={`flex items-center space-x-4 p-4 border border-slate-200 rounded-lg hover:bg-slate-50 transition-all hover-lift hover-scale animate-slide-in-left stagger-delay-${Math.min(index + 1, 6)}`}
+                className={`flex items-center space-x-4 p-4 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors animate-slide-in-left stagger-delay-${Math.min(index + 1, 6)}`}
               >
                 <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="hover-scale" />
                 <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">

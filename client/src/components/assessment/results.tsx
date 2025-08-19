@@ -118,7 +118,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
   return (
     <section>
       {/* Overall Score Card */}
-      <Card className="mb-8 hover-lift animate-slide-up">
+      <Card className="mb-8 animate-slide-up">
         <CardContent className="p-8">
           <div className="text-center mb-8 animate-fade-in">
             <h2 className="text-3xl font-bold text-slate-900 mb-2 animate-slide-up">AI Readiness Score</h2>
@@ -142,7 +142,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           {/* Dimension Breakdown */}
           <div className="grid lg:grid-cols-2 gap-8 mb-8">
             {/* Radar Chart */}
-            <Card className="hover-lift animate-slide-in-left stagger-delay-1">
+            <Card className="animate-slide-in-left stagger-delay-1">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-slate-900 mb-6 animate-slide-up">Readiness Dimensions</h3>
                 <div className="h-80 animate-fade-in stagger-delay-2">
@@ -152,7 +152,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
             </Card>
 
             {/* Brief Scores Overview */}
-            <Card className="hover-lift animate-slide-in-right stagger-delay-1">
+            <Card className="animate-slide-in-right stagger-delay-1">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-slate-900 mb-6 animate-slide-up">Quick Overview</h3>
                 <div className="space-y-4 animate-slide-up stagger-delay-2">
@@ -172,7 +172,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
                     }
 
                     return (
-                      <div key={dimension} className={`flex items-center justify-between hover-lift animate-slide-in-left stagger-delay-${Math.min(index + 3, 6)}`}>
+                      <div key={dimension} className={`flex items-center justify-between animate-slide-in-left stagger-delay-${Math.min(index + 3, 6)}`}>
                         <div className="flex items-center flex-1">
                           <div className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 ${config?.color || 'bg-gray-100'}`}>
                             <span className="text-sm">{config?.icon || '❓'}</span>
@@ -221,7 +221,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
                 const percentage = (scoreValue / 5) * 100;
 
                 return (
-                  <Card key={dimension} className={`border border-slate-200 hover-lift hover-scale animate-slide-up stagger-delay-${Math.min(index + 4, 6)}`}>
+                  <Card key={dimension} className={`border border-slate-200 animate-slide-up stagger-delay-${Math.min(index + 4, 6)}`}>
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center">
