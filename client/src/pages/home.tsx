@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Brain, Menu, BookOpen, BarChart3, Phone } from "lucide-react";
 import logoPath from "@assets/RPL Logo_1754506008197.png";
 import backgroundImage from "@assets/BG 1_1755624813166.png";
@@ -18,6 +18,11 @@ export default function Home() {
   const [completedAssessment, setCompletedAssessment] = useState<Assessment | null>(null);
   const [assessmentKey, setAssessmentKey] = useState(0);
 
+  // Scroll to top when section changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentSection]);
+
   const navigationItems = [
     { id: 'overview' as Section, label: 'Assessment' },
     { id: 'contact' as Section, label: 'Contact' },
@@ -26,16 +31,19 @@ export default function Home() {
   const handleAssessmentComplete = (assessment: Assessment) => {
     setCompletedAssessment(assessment);
     setCurrentSection('results');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleStartAssessment = () => {
     setCurrentSection('assessment');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleRetakeAssessment = () => {
     setCompletedAssessment(null);
     setAssessmentKey(prev => prev + 1); // Force component remount
     setCurrentSection('assessment');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

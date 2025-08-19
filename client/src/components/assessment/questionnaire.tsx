@@ -115,17 +115,25 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const handleNext = () => {
     if (currentQuestion < assessmentQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
+      // Scroll to top when advancing to next question
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       setShowContactForm(true);
+      // Scroll to top when showing contact form
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   const handlePrevious = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
+      // Scroll to top when going to previous question
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (showIndustrySelection) {
       setShowAssessmentTypeSelection(true);
       setShowIndustrySelection(false);
+      // Scroll to top when going back to assessment type selection
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (showAssessmentTypeSelection) {
       resetAssessment();
       onBack();
@@ -136,6 +144,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         setShowAssessmentTypeSelection(true);
       }
       setCurrentQuestion(0);
+      // Scroll to top when navigating back
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -157,6 +167,9 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       setSelectedIndustry("Other");
       setShowIndustrySelection(false);
     }
+    
+    // Scroll to top when transitioning to next step
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const canGoNext = responses[currentQuestionData?.id];
@@ -216,6 +229,9 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     setOrganizationName("");
     setContactEmail("");
     setShowContactForm(false);
+    
+    // Scroll to top when starting questions
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   if (showContactForm) {
@@ -254,7 +270,11 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 mt-6 sm:mt-8 animate-fade-in animate-slide-up">
             <Button 
               variant="outline" 
-              onClick={() => setShowContactForm(false)}
+              onClick={() => {
+                setShowContactForm(false);
+                // Scroll to top when going back to questions
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -304,6 +324,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               setSelectedIndustry("");
               setResponses({});
               setCurrentQuestion(0);
+              // Scroll to top when going back to assessment type
+              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             className="hover-lift button-press"
           >
