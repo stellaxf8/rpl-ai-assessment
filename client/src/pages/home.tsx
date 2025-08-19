@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Brain, Menu, BookOpen, BarChart3, Phone } from "lucide-react";
 import logoPath from "@assets/RPL Logo_1754506008197.png";
-import backgroundImage from "@assets/BG 3_1755625743666.png";
+import backgroundImage from "@assets/BG 1_1755624813166.png";
 import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <div 
-      className="min-h-screen bg-contain bg-center bg-no-repeat bg-fixed"
+      className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* Header */}
@@ -80,7 +80,7 @@ export default function Home() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white rounded-lg mt-4 mb-4 shadow-lg">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white/90 backdrop-blur-sm rounded-lg mt-4 mb-4 shadow-lg">
         {currentSection === 'overview' && (
           <Overview onStartAssessment={handleStartAssessment} />
         )}
@@ -118,7 +118,7 @@ export default function Home() {
       </main>
       {/* Footnote Disclaimer */}
       <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 mt-4">
-        <div className="text-center bg-white rounded-lg py-2 px-4">
+        <div className="text-center bg-white/80 backdrop-blur-sm rounded-lg py-2 px-4">
           <p className="text-xs text-gray-500">* Assessment results are for informational purposes only. We recommend using results alongside professional consultation.</p>
         </div>
       </footer>
