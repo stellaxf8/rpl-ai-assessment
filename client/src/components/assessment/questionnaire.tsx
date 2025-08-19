@@ -115,25 +115,25 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const handleNext = () => {
     if (currentQuestion < assessmentQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
-      // Scroll to top when advancing to next question
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Jump to top when advancing to next question
+      window.scrollTo(0, 0);
     } else {
       setShowContactForm(true);
-      // Scroll to top when showing contact form
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Jump to top when showing contact form
+      window.scrollTo(0, 0);
     }
   };
 
   const handlePrevious = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
-      // Scroll to top when going to previous question
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Jump to top when going to previous question
+      window.scrollTo(0, 0);
     } else if (showIndustrySelection) {
       setShowAssessmentTypeSelection(true);
       setShowIndustrySelection(false);
-      // Scroll to top when going back to assessment type selection
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Jump to top when going back to assessment type selection
+      window.scrollTo(0, 0);
     } else if (showAssessmentTypeSelection) {
       resetAssessment();
       onBack();
@@ -144,8 +144,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         setShowAssessmentTypeSelection(true);
       }
       setCurrentQuestion(0);
-      // Scroll to top when navigating back
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Jump to top when navigating back
+      window.scrollTo(0, 0);
     }
   };
 
@@ -168,8 +168,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       setShowIndustrySelection(false);
     }
     
-    // Scroll to top when transitioning to next step
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Jump to top when transitioning to next step
+    window.scrollTo(0, 0);
   };
 
   const canGoNext = responses[currentQuestionData?.id];
@@ -230,8 +230,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     setContactEmail("");
     setShowContactForm(false);
     
-    // Scroll to top when starting questions
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Jump to top when starting questions
+    window.scrollTo(0, 0);
   };
 
   if (showContactForm) {
@@ -272,8 +272,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               variant="outline" 
               onClick={() => {
                 setShowContactForm(false);
-                // Scroll to top when going back to questions
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Jump to top when going back to questions
+                window.scrollTo(0, 0);
               }}
               className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1"
             >
@@ -324,8 +324,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               setSelectedIndustry("");
               setResponses({});
               setCurrentQuestion(0);
-              // Scroll to top when going back to assessment type
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              // Jump to top when going back to assessment type
+              window.scrollTo(0, 0);
             }}
             className="hover-lift button-press"
           >

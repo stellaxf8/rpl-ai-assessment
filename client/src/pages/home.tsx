@@ -18,9 +18,9 @@ export default function Home() {
   const [completedAssessment, setCompletedAssessment] = useState<Assessment | null>(null);
   const [assessmentKey, setAssessmentKey] = useState(0);
 
-  // Scroll to top when section changes
+  // Jump to top when section changes
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   }, [currentSection]);
 
   const navigationItems = [
@@ -31,19 +31,19 @@ export default function Home() {
   const handleAssessmentComplete = (assessment: Assessment) => {
     setCompletedAssessment(assessment);
     setCurrentSection('results');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   };
 
   const handleStartAssessment = () => {
     setCurrentSection('assessment');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   };
 
   const handleRetakeAssessment = () => {
     setCompletedAssessment(null);
     setAssessmentKey(prev => prev + 1); // Force component remount
     setCurrentSection('assessment');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   };
 
   return (
