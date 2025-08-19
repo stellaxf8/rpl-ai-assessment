@@ -420,7 +420,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             {currentQuestionData.options.map((option, index) => (
               <div 
                 key={index} 
-                className={`flex items-start sm:items-center space-x-3 sm:space-x-4 p-3 sm:p-4 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors animate-slide-in-left stagger-delay-${Math.min(index + 1, 6)}`}
+                className={`flex items-start sm:items-center space-x-3 sm:space-x-4 p-3 sm:p-4 border border-slate-200 rounded-lg hover:bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all duration-200 animate-slide-in-left stagger-delay-${Math.min(index + 1, 6)}`}
               >
                 <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="hover-scale" />
                 <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">
