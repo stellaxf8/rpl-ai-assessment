@@ -18,40 +18,40 @@ export const healthcareVariations: IndustryQuestionVariation[] = [
     industry: 'Healthcare',
     questionId: 'technologyInfrastructure_1',
     question: 'How would you describe your healthcare technology systems and patient record integration?',
-    description: 'Consider your electronic health records, medical device connectivity, and healthcare-specific IT systems.',
+    description: 'Consider your patient record systems, medical device connectivity, and healthcare technology platforms.',
     options: [
       {
         value: 1,
-        text: 'Basic EHR with limited integration',
-        description: 'Standalone electronic health record system with minimal device connectivity'
+        text: 'Basic patient records with limited integration',
+        description: 'Standalone patient record system with minimal device connectivity'
       },
       {
         value: 2,
-        text: 'Moderate EHR with some device integration',
-        description: 'Good EHR foundation with basic medical device connectivity'
+        text: 'Moderate patient records with some device integration',
+        description: 'Good patient record foundation with basic medical device connectivity'
       },
       {
         value: 3,
-        text: 'Integrated healthcare IT platform',
-        description: 'Well-connected EHR with most medical devices and systems integrated'
+        text: 'Integrated healthcare technology platform',
+        description: 'Well-connected patient records with most medical devices and systems integrated'
       },
       {
         value: 4,
-        text: 'Advanced healthcare IT ecosystem',
-        description: 'Comprehensive integration of EHR, medical devices, and clinical systems'
+        text: 'Advanced healthcare technology ecosystem',
+        description: 'Comprehensive integration of patient records, medical devices, and care systems'
       },
       {
         value: 5,
         text: 'AI-ready healthcare technology',
-        description: 'Fully integrated platform optimized for AI-powered clinical analytics'
+        description: 'Fully integrated platform optimized for AI-powered patient care analytics'
       }
     ]
   },
   {
     industry: 'Healthcare',
     questionId: 'dataQuality_1',
-    question: 'How would you describe the quality of your patient data and clinical records?',
-    description: 'Consider data accuracy, completeness, and compliance with healthcare standards like HL7 FHIR.',
+    question: 'How would you describe the quality of your patient data and medical records?',
+    description: 'Consider data accuracy, completeness, and compliance with healthcare privacy regulations.',
     options: [
       {
         value: 1,
@@ -60,23 +60,23 @@ export const healthcareVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 2,
-        text: 'Inconsistent clinical data quality',
-        description: 'Some clinical data is good, but quality varies across departments'
+        text: 'Inconsistent patient data quality',
+        description: 'Some patient data is good, but quality varies across departments'
       },
       {
         value: 3,
-        text: 'HIPAA-compliant with moderate quality',
-        description: 'Generally reliable clinical data with basic compliance measures'
+        text: 'Privacy-compliant with moderate quality',
+        description: 'Generally reliable patient data with basic compliance measures'
       },
       {
         value: 4,
-        text: 'High-quality EHR with strong governance',
-        description: 'Well-structured electronic health records with established standards'
+        text: 'High-quality patient records with strong governance',
+        description: 'Well-structured patient records with established standards'
       },
       {
         value: 5,
-        text: 'Excellent clinical data with advanced analytics',
-        description: 'Consistently high-quality patient data optimized for clinical insights'
+        text: 'Excellent patient data with advanced analytics',
+        description: 'Consistently high-quality patient data optimized for healthcare insights'
       }
     ]
   },
@@ -116,23 +116,23 @@ export const healthcareVariations: IndustryQuestionVariation[] = [
   {
     industry: 'Healthcare',
     questionId: 'dataSecurity_1',
-    question: 'How robust are your HIPAA compliance and patient data security measures?',
+    question: 'How robust are your patient privacy and data security measures?',
     description: 'Assess your organization\'s ability to protect patient health information and meet regulatory requirements.',
     options: [
       {
         value: 1,
-        text: 'Basic HIPAA compliance',
+        text: 'Basic privacy compliance',
         description: 'Minimal security measures with potential compliance gaps'
       },
       {
         value: 2,
         text: 'Standard healthcare security',
-        description: 'Basic HIPAA compliance but limited advanced security measures'
+        description: 'Basic privacy compliance but limited advanced security measures'
       },
       {
         value: 3,
         text: 'Good healthcare security framework',
-        description: 'Solid HIPAA compliance with established security protocols'
+        description: 'Solid privacy compliance with established security protocols'
       },
       {
         value: 4,
@@ -186,8 +186,8 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
   {
     industry: 'Manufacturing',
     questionId: 'technologyInfrastructure_2',
-    question: 'What is your current industrial IoT and sensor data processing capacity?',
-    description: 'Evaluate your ability to handle real-time manufacturing data and sensor feeds.',
+    question: 'What is your current connected device and sensor data processing capacity?',
+    description: 'Evaluate your ability to handle real-time manufacturing data and equipment sensor feeds.',
     options: [
       {
         value: 1,
@@ -196,18 +196,18 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 2,
-        text: 'Basic IoT deployment',
+        text: 'Basic connected equipment deployment',
         description: 'Some connected equipment but limited data processing'
       },
       {
         value: 3,
-        text: 'Moderate Industry 4.0 adoption',
+        text: 'Moderate smart manufacturing adoption',
         description: 'Good sensor coverage with developing analytics capabilities'
       },
       {
         value: 4,
         text: 'Advanced smart manufacturing',
-        description: 'Comprehensive IoT with real-time analytics and automation'
+        description: 'Comprehensive connected equipment with real-time analytics and automation'
       },
       {
         value: 5,
@@ -219,8 +219,8 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
   {
     industry: 'Manufacturing',
     questionId: 'teamLiteracy_1',
-    question: 'What is the level of Industry 4.0 and manufacturing AI knowledge among your operations and engineering teams?',
-    description: 'Assess understanding of smart manufacturing, predictive maintenance, and AI-driven production optimization.',
+    question: 'What is the level of smart manufacturing and AI knowledge among your operations and engineering teams?',
+    description: 'Assess understanding of automated manufacturing, predictive maintenance, and AI-driven production optimization.',
     options: [
       {
         value: 1,
@@ -230,12 +230,12 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
       {
         value: 2,
         text: 'Basic automation experience',
-        description: 'Familiar with PLCs and basic automation but limited AI understanding'
+        description: 'Familiar with basic automation controls but limited AI understanding'
       },
       {
         value: 3,
-        text: 'Moderate Industry 4.0 awareness',
-        description: 'Good understanding of smart manufacturing concepts with some practical experience'
+        text: 'Moderate smart manufacturing awareness',
+        description: 'Good understanding of automated manufacturing concepts with some practical experience'
       },
       {
         value: 4,
@@ -253,7 +253,7 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
     industry: 'Manufacturing',
     questionId: 'systemIntegration_1',
     question: 'How well integrated are your production systems, quality control, and supply chain management?',
-    description: 'Evaluate integration between MES, ERP, quality systems, and supplier networks.',
+    description: 'Evaluate integration between production management systems, business systems, quality systems, and supplier networks.',
     options: [
       {
         value: 1,
@@ -355,27 +355,27 @@ export const financeVariations: IndustryQuestionVariation[] = [
   {
     industry: 'Finance',
     questionId: 'teamLiteracy_1',
-    question: 'What is the level of fintech and financial AI knowledge among your teams?',
-    description: 'Assess understanding of algorithmic trading, robo-advisors, and AI-powered risk management.',
+    question: 'What is the level of digital finance and financial AI knowledge among your teams?',
+    description: 'Assess understanding of automated trading, digital advisory services, and AI-powered risk management.',
     options: [
       {
         value: 1,
         text: 'Traditional finance skills',
-        description: 'Strong financial knowledge but limited fintech or AI understanding'
+        description: 'Strong financial knowledge but limited digital finance or AI understanding'
       },
       {
         value: 2,
-        text: 'Basic fintech awareness',
+        text: 'Basic digital banking awareness',
         description: 'Familiar with digital banking but limited AI applications knowledge'
       },
       {
         value: 3,
         text: 'Moderate financial technology literacy',
-        description: 'Good understanding of fintech with growing AI interest'
+        description: 'Good understanding of digital finance with growing AI interest'
       },
       {
         value: 4,
-        text: 'Advanced fintech skills',
+        text: 'Advanced digital finance skills',
         description: 'Strong financial technology background with AI implementation experience'
       },
       {
@@ -389,7 +389,7 @@ export const financeVariations: IndustryQuestionVariation[] = [
     industry: 'Finance',
     questionId: 'dataSecurity_1',
     question: 'How comprehensive are your financial data security and regulatory compliance measures?',
-    description: 'Assess compliance with regulations like SOX, PCI DSS, and other financial security requirements.',
+    description: 'Assess compliance with financial regulations and data security requirements for financial institutions.',
     options: [
       {
         value: 1,
@@ -595,7 +595,7 @@ export const educationVariations: IndustryQuestionVariation[] = [
     industry: 'Education',
     questionId: 'technologyInfrastructure_1',
     question: 'How would you describe your educational technology systems and learning platforms?',
-    description: 'Consider your LMS, student information systems, and digital learning platform capabilities.',
+    description: 'Consider your learning management systems, student information systems, and digital learning platform capabilities.',
     options: [
       {
         value: 1,
@@ -604,8 +604,8 @@ export const educationVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 2,
-        text: 'Developing EdTech platform',
-        description: 'Good LMS foundation with emerging digital learning tools'
+        text: 'Developing educational technology platform',
+        description: 'Good learning management foundation with emerging digital learning tools'
       },
       {
         value: 3,
@@ -614,7 +614,7 @@ export const educationVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 4,
-        text: 'Advanced EdTech systems',
+        text: 'Advanced educational technology systems',
         description: 'Sophisticated learning platforms with analytics and personalization capabilities'
       },
       {
@@ -628,7 +628,7 @@ export const educationVariations: IndustryQuestionVariation[] = [
     industry: 'Education',
     questionId: 'systemIntegration_1',
     question: 'How well integrated are your student information systems, learning management, and assessment platforms?',
-    description: 'Evaluate integration between SIS, LMS, assessment tools, and communication systems.',
+    description: 'Evaluate integration between student information systems, learning management systems, assessment tools, and communication systems.',
     options: [
       {
         value: 1,
@@ -665,12 +665,12 @@ export const educationVariations: IndustryQuestionVariation[] = [
     options: [
       {
         value: 1,
-        text: 'No specific EdTech AI budget',
+        text: 'No specific educational technology AI budget',
         description: 'Educational technology would need to be funded from general IT budget'
       },
       {
         value: 2,
-        text: 'Limited EdTech budget available',
+        text: 'Limited educational technology budget available',
         description: 'Small budget for basic educational AI tools or pilot programs'
       },
       {
@@ -737,17 +737,17 @@ export const educationVariations: IndustryQuestionVariation[] = [
       {
         value: 2,
         text: 'Basic digital learning tools usage',
-        description: 'Comfortable with LMS but limited AI understanding'
+        description: 'Comfortable with learning management systems but limited AI understanding'
       },
       {
         value: 3,
-        text: 'Moderate edtech proficiency',
+        text: 'Moderate educational technology proficiency',
         description: 'Good digital tools usage with growing AI interest'
       },
       {
         value: 4,
         text: 'Advanced educational technology skills',
-        description: 'Strong edtech background with AI implementation experience'
+        description: 'Strong educational technology background with AI implementation experience'
       },
       {
         value: 5,
@@ -789,17 +789,17 @@ export const technologyVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 2,
-        text: 'Modernizing tech stack',
-        description: 'Transitioning to cloud with developing DevOps practices'
+        text: 'Modernizing technology platform',
+        description: 'Transitioning to cloud-based systems with developing automation practices'
       },
       {
         value: 3,
-        text: 'Cloud-native architecture',
-        description: 'Good modern software architecture with automated deployment'
+        text: 'Modern cloud-based systems',
+        description: 'Good modern software systems with automated deployment'
       },
       {
         value: 4,
-        text: 'Advanced DevOps ecosystem',
+        text: 'Advanced automated development ecosystem',
         description: 'Comprehensive automated development with advanced deployment and monitoring'
       },
       {
@@ -813,7 +813,7 @@ export const technologyVariations: IndustryQuestionVariation[] = [
     industry: 'Technology',
     questionId: 'teamLiteracy_1',
     question: 'What is the level of AI and machine learning expertise among your development teams?',
-    description: 'Assess understanding of ML frameworks, AI model deployment, and data science practices.',
+    description: 'Assess understanding of machine learning frameworks, AI system deployment, and data science practices.',
     options: [
       {
         value: 1,
@@ -827,7 +827,7 @@ export const technologyVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 3,
-        text: 'Moderate ML proficiency',
+        text: 'Moderate machine learning proficiency',
         description: 'Good understanding of machine learning with some project experience'
       },
       {
