@@ -220,15 +220,15 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
   if (showContactForm) {
     return (
-      <Card className="max-w-2xl mx-auto animate-slide-up">
+      <Card className="max-w-2xl mx-auto animate-slide-up animate-fade-in">
         <CardContent className="p-4 sm:p-6 lg:p-8">
           <div className="text-center mb-4 sm:mb-6 animate-fade-in">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 animate-slide-up">Almost Done!</h2>
-            <p className="text-sm sm:text-base text-slate-600 animate-slide-up stagger-delay-1">Please provide your contact information to receive your results.</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 animate-slide-up animate-fade-in">Almost Done!</h2>
+            <p className="text-sm sm:text-base text-slate-600 animate-slide-up animate-fade-in">Please provide your contact information to receive your results.</p>
           </div>
 
-          <div className="space-y-3 sm:space-y-4 animate-slide-up stagger-delay-2">
-            <div className="animate-slide-in-left stagger-delay-2">
+          <div className="space-y-3 sm:space-y-4 animate-slide-up animate-fade-in">
+            <div className="animate-slide-in-left animate-fade-in">
               <Label htmlFor="organizationName">Organization Name</Label>
               <Input
                 id="organizationName"
@@ -238,7 +238,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 className="transition-colors"
               />
             </div>
-            <div className="animate-slide-in-right stagger-delay-3">
+            <div className="animate-slide-in-right animate-fade-in">
               <Label htmlFor="contactEmail">Contact Email</Label>
               <Input
                 id="contactEmail"
@@ -251,7 +251,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 mt-6 sm:mt-8 animate-fade-in stagger-delay-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 mt-6 sm:mt-8 animate-fade-in animate-slide-up">
             <Button 
               variant="outline" 
               onClick={() => setShowContactForm(false)}
@@ -317,7 +317,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   return (
     <section>
       {/* Progress Header */}
-      <Card className="mb-8 animate-slide-up">
+      <Card className="mb-8 animate-slide-up animate-fade-in">
         <CardContent className="p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 animate-fade-in gap-2 sm:gap-0">
             <div className="flex flex-col animate-slide-in-left">
@@ -391,23 +391,23 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       </Card>
 
       {/* Question Card */}
-      <Card className="animate-slide-up stagger-delay-1">
+      <Card className="animate-slide-up animate-fade-in">
         <CardContent className="p-4 sm:p-6 lg:p-8">
           <div className="mb-4 sm:mb-6 animate-fade-in">
-            <div className="flex flex-col sm:flex-row sm:items-center mb-4 gap-2 sm:gap-0 animate-slide-in-left">
+            <div className="flex flex-col sm:flex-row sm:items-center mb-4 gap-2 sm:gap-0 animate-slide-in-left animate-fade-in">
               <div className="flex items-center">
                 <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center mr-3 bg-transparent">
                   {getIconComponent(currentQuestionData.icon)}
                 </div>
-                <span className="text-xs sm:text-sm font-medium text-white px-2 sm:px-3 py-1 rounded-full animate-slide-in-right stagger-delay-1" style={{ backgroundColor: '#cd0000' }}>
+                <span className="text-xs sm:text-sm font-medium text-white px-2 sm:px-3 py-1 rounded-full animate-slide-in-right animate-fade-in" style={{ backgroundColor: '#cd0000' }}>
                   {currentQuestionData.dimensionLabel}
                 </span>
               </div>
             </div>
-            <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3 animate-slide-up stagger-delay-2">
+            <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3 animate-slide-up animate-fade-in">
               {currentQuestionData.question}
             </h3>
-            <p className="text-sm sm:text-base text-slate-600 animate-slide-up stagger-delay-3">
+            <p className="text-sm sm:text-base text-slate-600 animate-slide-up animate-fade-in">
               {currentQuestionData.description}
             </p>
           </div>
@@ -415,12 +415,12 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
           <RadioGroup
             value={responses[currentQuestionData.id]?.toString() || ""}
             onValueChange={handleAnswerSelect}
-            className="animate-slide-up stagger-delay-4"
+            className="animate-slide-up animate-fade-in"
           >
             {currentQuestionData.options.map((option, index) => (
               <div 
                 key={index} 
-                className={`flex items-start sm:items-center space-x-3 sm:space-x-4 p-3 sm:p-4 border border-slate-200 rounded-lg hover:bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all duration-200 animate-slide-in-left stagger-delay-${Math.min(index + 1, 6)}`}
+                className={`flex items-start sm:items-center space-x-3 sm:space-x-4 p-3 sm:p-4 border border-slate-200 rounded-lg hover:bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all duration-200 animate-slide-in-left animate-fade-in`}
               >
                 <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="hover-scale" />
                 <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">
@@ -431,7 +431,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             ))}
           </RadioGroup>
 
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 sm:mt-8 animate-fade-in stagger-delay-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 sm:mt-8 animate-fade-in animate-slide-up">
             <Button 
               variant="outline" 
               onClick={handlePrevious}

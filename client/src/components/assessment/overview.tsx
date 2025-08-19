@@ -49,13 +49,13 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
   return (
     <section>
       <div className="text-center mb-8 sm:mb-12 animate-fade-in">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 animate-slide-up"><span style={{ color: '#cd0000' }}>AI Readiness</span> Assessment</h2>
-        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up stagger-delay-1 px-4">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 animate-slide-up animate-fade-in"><span style={{ color: '#cd0000' }}>AI Readiness</span> Assessment</h2>
+        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up animate-fade-in px-4">
           Comprehensive evaluation across 6 key dimensions to determine your organization's readiness for AI implementation
         </p>
       </div>
       {/* Why AI Readiness Assessment is Crucial */}
-      <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up stagger-delay-2" style={{ borderColor: '#cd0000' }}>
+      <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up animate-fade-in" style={{ borderColor: '#cd0000' }}>
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">Why AI Readiness Assessment is <span style={{ color: '#cd0000', fontFamily: 'Arial Black' }}>Crucial</span></h3>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           <div>
@@ -103,7 +103,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           );
         })}
       </div>
-      <div className="text-center animate-fade-in stagger-delay-6">
+      <div className="text-center animate-fade-in animate-slide-up">
         <Button 
           onClick={onStartAssessment}
           size="lg"

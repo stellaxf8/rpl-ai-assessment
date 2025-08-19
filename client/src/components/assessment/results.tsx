@@ -118,14 +118,14 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
   return (
     <section>
       {/* Overall Score Card */}
-      <Card className="mb-8 animate-slide-up">
+      <Card className="mb-8 animate-slide-up animate-fade-in">
         <CardContent className="p-4 sm:p-6 lg:p-8">
           <div className="text-center mb-6 sm:mb-8 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 animate-slide-up">AI Readiness Score</h2>
-            <p className="text-sm sm:text-base text-slate-600 animate-slide-up stagger-delay-1">Complete AI readiness assessment for {organizationName}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 animate-slide-up animate-fade-in">AI Readiness Score</h2>
+            <p className="text-sm sm:text-base text-slate-600 animate-slide-up animate-fade-in">Complete AI readiness assessment for {organizationName}</p>
           </div>
           
-          <div className="flex items-center justify-center mb-8 animate-bounce-subtle stagger-delay-2">
+          <div className="flex items-center justify-center mb-8 animate-bounce-subtle animate-fade-in">
             <ScoreChart score={overallScore} />
           </div>
 
@@ -142,19 +142,19 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           {/* Dimension Breakdown */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
             {/* Radar Chart */}
-            <Card className="animate-slide-in-left stagger-delay-1">
+            <Card className="animate-slide-in-left animate-fade-in">
               <CardContent className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up">Readiness Dimensions</h3>
-                <div className="h-60 sm:h-80 animate-fade-in stagger-delay-2">
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up animate-fade-in">Readiness Dimensions</h3>
+                <div className="h-60 sm:h-80 animate-fade-in">
                   <RadarChart scores={scores as any} />
                 </div>
               </CardContent>
             </Card>
 
             {/* Brief Scores Overview */}
-            <Card className="animate-slide-in-right stagger-delay-1">
+            <Card className="animate-slide-in-right animate-fade-in">
               <CardContent className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up">Quick Overview</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up animate-fade-in">Quick Overview</h3>
                 <div className="space-y-4 animate-slide-up stagger-delay-2">
                   {Object.entries(scores as any).map(([dimension, score], index) => {
                     const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
@@ -211,8 +211,8 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           </div>
 
           {/* Detailed Dimension Analysis */}
-          <div className="mb-6 sm:mb-8 animate-slide-up stagger-delay-3">
-            <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 text-center animate-slide-up stagger-delay-3">Detailed Dimension Analysis</h3>
+          <div className="mb-6 sm:mb-8 animate-slide-up animate-fade-in">
+            <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 text-center animate-slide-up animate-fade-in">Detailed Dimension Analysis</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {Object.entries(scores as any).map(([dimension, score], index) => {
                 const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
@@ -221,7 +221,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
                 const percentage = (scoreValue / 5) * 100;
 
                 return (
-                  <Card key={dimension} className={`border border-slate-200 animate-slide-up stagger-delay-${Math.min(index + 4, 6)}`}>
+                  <Card key={dimension} className={`border border-slate-200 animate-slide-up animate-fade-in`}>
                     <CardContent className="p-4 sm:p-6">
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center">
@@ -279,7 +279,7 @@ export default function Results({ assessment, onGenerateReport, onRetakeAssessme
           }} />
       </div>
       {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in stagger-delay-6">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in animate-slide-up">
         {onGenerateReport && (
           <Button onClick={onGenerateReport} size="lg" className="hover-glow hover-lift button-press animate-pulse-gentle w-full sm:w-auto">
             <FileText className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
