@@ -5,7 +5,7 @@ import backgroundImage from "@assets/BG 3_1755625743666.png";
 export default function NotFound() {
   return (
     <div 
-      className="min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed"
+      className="min-h-screen w-full flex items-center justify-center bg-contain bg-center bg-no-repeat bg-fixed"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <Card className="w-full max-w-md mx-4">
