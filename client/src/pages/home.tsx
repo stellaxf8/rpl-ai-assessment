@@ -80,7 +80,7 @@ export default function Home() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white/95 backdrop-blur-sm rounded-lg mt-4 mb-4 shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {currentSection === 'overview' && (
           <Overview onStartAssessment={handleStartAssessment} />
         )}
@@ -115,7 +115,7 @@ export default function Home() {
             />
           </div>
         )}
-      </main>
+      </div>
       {/* Footnote Disclaimer */}
       <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 mt-4">
         <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg py-2 px-4">
