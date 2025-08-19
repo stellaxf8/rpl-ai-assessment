@@ -2,7 +2,7 @@ import { BookOpen, Brain, Lightbulb, TrendingUp, ExternalLink, Download } from "
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import backgroundImage from "@assets/BG 5_1755625568508.png";
+import backgroundImage from "@assets/BG 3_1755625743666.png";
 
 const aiConcepts = [
   // Beginner Level
