@@ -115,8 +115,7 @@ export default function Home() {
       {/* Footnote Disclaimer */}
       <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
         <div className="text-center">
-          <p className="text-xs text-gray-500">* Assessment results are for informational purposes only. We recommend using them alongside professional consultation.
-</p>
+          <p className="text-xs text-gray-500">* Assessment results are for informational purposes only. We recommend using results alongside professional consultation.</p>
         </div>
       </footer>
     </div>
