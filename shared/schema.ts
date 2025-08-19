@@ -70,41 +70,6 @@ export const industryBenchmarkSchema = z.object({
 
 export type IndustryBenchmark = z.infer<typeof industryBenchmarkSchema>;
 
-// CRM Integration schemas
-export const crmProviderEnum = z.enum([
-  'salesforce',
-  'hubspot',
-  'pipedrive',
-  'zoho',
-  'none'
-]);
-
-export const crmContactSchema = z.object({
-  id: z.string(),
-  provider: crmProviderEnum,
-  firstName: z.string().optional(),
-  lastName: z.string().optional(),
-  email: z.string().email(),
-  company: z.string(),
-  industry: z.string(),
-  assessmentScore: z.number(),
-  readinessLevel: z.string(),
-  createdAt: z.date(),
-  notes: z.string().optional(),
-});
-
-export const crmConfigSchema = z.object({
-  provider: crmProviderEnum,
-  apiKey: z.string().optional(),
-  apiUrl: z.string().optional(),
-  enabled: z.boolean().default(false),
-  webhookUrl: z.string().optional(),
-});
-
-export type CrmProvider = z.infer<typeof crmProviderEnum>;
-export type CrmContact = z.infer<typeof crmContactSchema>;
-export type CrmConfig = z.infer<typeof crmConfigSchema>;
-
 // Integration readiness schema
 export const integrationReadinessSchema = z.object({
   crmSystems: z.number().min(0).max(5),
