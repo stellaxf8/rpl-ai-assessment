@@ -220,7 +220,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
   if (showContactForm) {
     return (
-      <Card className="max-w-2xl mx-auto animate-slide-up hover-lift">
+      <Card className="max-w-2xl mx-auto animate-slide-up">
         <CardContent className="p-8">
           <div className="text-center mb-6 animate-fade-in">
             <h2 className="text-2xl font-bold text-slate-900 mb-2 animate-slide-up">Almost Done!</h2>
@@ -235,7 +235,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 value={organizationName}
                 onChange={(e) => setOrganizationName(e.target.value)}
                 placeholder="Enter your organization name"
-                className="transition-all focus:scale-105 hover-lift"
+                className="transition-colors"
               />
             </div>
             <div className="animate-slide-in-right stagger-delay-3">
@@ -246,7 +246,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 value={contactEmail}
                 onChange={(e) => setContactEmail(e.target.value)}
                 placeholder="Enter your email address"
-                className="transition-all focus:scale-105 hover-lift"
+                className="transition-colors"
               />
             </div>
           </div>

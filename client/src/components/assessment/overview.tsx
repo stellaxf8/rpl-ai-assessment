@@ -55,7 +55,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         </p>
       </div>
       {/* Why AI Readiness Assessment is Crucial */}
-      <div className="bg-transparent border-2 rounded-xl p-8 mb-12 shadow-lg hover-lift animate-slide-up stagger-delay-2" style={{ borderColor: '#cd0000' }}>
+      <div className="bg-transparent border-2 rounded-xl p-8 mb-12 shadow-lg animate-slide-up stagger-delay-2" style={{ borderColor: '#cd0000' }}>
         <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Why AI Readiness Assessment is <span style={{ color: '#cd0000' }}>Crucial</span></h3>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
@@ -89,7 +89,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           return (
             <Card 
               key={index} 
-              className={`hover:shadow-md transition-all hover-lift hover-scale animate-slide-up ${staggerClass}`}
+              className={`hover:shadow-md transition-shadow animate-slide-up ${staggerClass}`}
             >
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
