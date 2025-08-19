@@ -189,7 +189,7 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
           <Button 
             onClick={() => onIndustrySelect(localSelectedIndustry)}
             size="lg"
-            className="px-12 py-4 text-lg bg-[#cd0000] text-white hover:bg-[#b30000] shadow-lg"
+            className="px-12 py-4 text-lg bg-[#cd0000] text-white hover:bg-[#b30000] shadow-lg hover-lift button-press"
           >
             Start Detailed Assessment
           </Button>

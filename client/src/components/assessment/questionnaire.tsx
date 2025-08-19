@@ -305,6 +305,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               setResponses({});
               setCurrentQuestion(0);
             }}
+            className="hover-lift button-press"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Assessment Type
