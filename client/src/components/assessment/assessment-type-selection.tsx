@@ -19,7 +19,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
       
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {/* Quick Assessment */}
-        <Card className="hover:shadow-lg transition-shadow cursor-pointer border-2 hover:border-primary/20">
+        <Card className="cursor-pointer border-2 border-slate-300">
           <CardHeader className="text-center pb-4">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Zap style={{ color: '#cd0000' }} className="h-8 w-8" />
@@ -38,7 +38,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
             </div>
             <Button 
               onClick={() => onSelectType('quick')}
-              className="w-full"
+              className="w-full hover-glow hover-lift button-press"
               size="lg"
             >
               Start Quick Assessment
@@ -47,7 +47,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
         </Card>
 
         {/* Detailed Assessment */}
-        <Card className="hover:shadow-lg transition-shadow cursor-pointer border-2 hover:border-primary/20">
+        <Card className="cursor-pointer border-2 border-slate-300">
           <CardHeader className="text-center pb-4">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock style={{ color: '#cd0000' }} className="h-8 w-8" />
@@ -66,7 +66,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
             </div>
             <Button 
               onClick={() => onSelectType('detailed')}
-              className="w-full"
+              className="w-full hover-glow hover-lift button-press"
               size="lg"
             >
               Start Detailed Assessment
