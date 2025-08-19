@@ -8,7 +8,9 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How would you describe your organization's current technology setup?",
-    description: "Consider whether your systems are modern, flexible, and can handle increased workloads. For example: Do you use cloud services like Microsoft 365 or Google Workspace, or do you still rely on older desktop software and local servers?",
+    description: "Consider whether your systems are modern, flexible, and can handle increased workloads. 
+
+**For example:** Do you use cloud services like Microsoft 365 or Google Workspace, or do you still rely on older desktop software and local servers?",
     options: [
       {
         value: 1,
@@ -43,7 +45,9 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How well can your organization handle large amounts of business data?",
-    description: "Consider your systems' ability to process and analyze significant volumes of information. For example: Can you easily generate reports from years of customer data, or do large data exports crash your systems and take hours to complete?",
+    description: "Consider your systems' ability to process and analyze significant volumes of information. 
+
+**For example:** Can you easily generate reports from years of customer data, or do large data exports crash your systems and take hours to complete?",
     options: [
       {
         value: 1,
