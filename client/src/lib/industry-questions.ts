@@ -93,22 +93,22 @@ export const healthcareVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 2,
-        text: 'Limited budget ($25K - $100K)',
+        text: 'Limited healthcare AI budget',
         description: 'Small budget for basic clinical AI tools or pilot programs'
       },
       {
         value: 3,
-        text: 'Moderate healthcare AI budget ($100K - $500K)',
+        text: 'Moderate healthcare AI budget',
         description: 'Adequate funding for meaningful clinical AI implementation'
       },
       {
         value: 4,
-        text: 'Substantial healthcare investment ($500K - $2M)',
+        text: 'Substantial healthcare investment',
         description: 'Strong budget for comprehensive clinical AI initiatives'
       },
       {
         value: 5,
-        text: 'Major digital health transformation ($2M+)',
+        text: 'Major digital health transformation budget',
         description: 'Significant investment for extensive healthcare AI and digital health transformation'
       }
     ]
@@ -670,22 +670,22 @@ export const educationVariations: IndustryQuestionVariation[] = [
       },
       {
         value: 2,
-        text: 'Limited EdTech budget ($15K - $75K)',
+        text: 'Limited EdTech budget available',
         description: 'Small budget for basic educational AI tools or pilot programs'
       },
       {
         value: 3,
-        text: 'Moderate learning technology budget ($75K - $300K)',
+        text: 'Moderate learning technology budget',
         description: 'Adequate funding for meaningful educational AI implementation'
       },
       {
         value: 4,
-        text: 'Substantial educational investment ($300K - $1M)',
+        text: 'Substantial educational investment',
         description: 'Strong budget for comprehensive learning analytics and AI initiatives'
       },
       {
         value: 5,
-        text: 'Major digital learning transformation ($1M+)',
+        text: 'Major digital learning transformation budget',
         description: 'Significant investment for extensive educational AI and adaptive learning systems'
       }
     ]

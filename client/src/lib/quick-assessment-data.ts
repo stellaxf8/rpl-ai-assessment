@@ -375,22 +375,22 @@ export const quickQuestions: Question[] = [
       },
       {
         value: 2,
-        text: "Limited budget ($10K - $50K)",
+        text: "Limited budget available",
         description: "Small budget for basic AI exploration or pilot projects"
       },
       {
         value: 3,
-        text: "Moderate budget ($50K - $200K)",
+        text: "Moderate budget allocated",
         description: "Adequate funding for meaningful AI implementation"
       },
       {
         value: 4,
-        text: "Substantial budget ($200K - $500K)",
+        text: "Substantial budget committed",
         description: "Strong budget allocation for comprehensive AI initiatives"
       },
       {
         value: 5,
-        text: "Significant budget ($500K+)",
+        text: "Significant investment planned",
         description: "Major investment planned for extensive AI transformation"
       }
     ]
