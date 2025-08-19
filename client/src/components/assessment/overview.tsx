@@ -89,7 +89,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           return (
             <Card 
               key={index} 
-              className={`hover:shadow-md transition-shadow animate-slide-up ${staggerClass}`}
+              className={`border-slate-300 animate-slide-up ${staggerClass}`}
             >
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center mb-3 sm:mb-4">
