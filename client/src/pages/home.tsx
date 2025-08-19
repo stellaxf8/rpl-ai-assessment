@@ -48,13 +48,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 animate-fade-in">
             <div 
-              className="flex items-center cursor-pointer hover:opacity-80 transition-all hover-scale animate-slide-in-left"
+              className="flex items-center cursor-pointer hover:opacity-80 transition-opacity animate-slide-in-left"
               onClick={() => setCurrentSection('overview')}
             >
               <img 
                 src={logoPath} 
                 alt="Red Pill Labs" 
-                className="h-8 w-auto hover-lift"
+                className="h-8 w-auto"
               />
             </div>
             <nav className="flex items-center space-x-4 animate-slide-in-right">
@@ -62,7 +62,7 @@ export default function Home() {
                 href="https://www.redpilllabs.com/contact-us" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-sm text-slate-700 hover:text-slate-900 font-medium transition-all flex items-center hover-lift button-press"
+                className="bg-[#cd0000] text-white px-4 py-2 rounded-md text-sm font-medium transition-all hover:bg-[#b30000] flex items-center hover-lift button-press"
               >
                 <Phone className="mr-1 h-4 w-4" />
                 Contact Us
