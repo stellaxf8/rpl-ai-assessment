@@ -18,7 +18,7 @@ export const healthcareVariations: IndustryQuestionVariation[] = [
     industry: 'Healthcare',
     questionId: 'technologyInfrastructure_1',
     question: 'How would you describe your healthcare technology systems and patient record integration?',
-    description: 'Consider your patient record systems, medical device connectivity, and healthcare technology platforms.',
+    description: 'Consider your patient record systems, medical device connectivity, and healthcare technology platforms. For Example: Can your patient records automatically receive updates from medical devices like heart monitors or lab equipment, or do staff have to manually enter this information into separate systems?',
     options: [
       {
         value: 1,
@@ -51,7 +51,7 @@ export const healthcareVariations: IndustryQuestionVariation[] = [
     industry: 'Healthcare',
     questionId: 'dataQuality_1',
     question: 'How would you describe the quality of your patient data and medical records?',
-    description: 'Consider data accuracy, completeness, and compliance with healthcare privacy regulations.',
+    description: 'Consider data accuracy, completeness, and compliance with healthcare privacy regulations. For Example: Are your patient records complete and up-to-date across all departments, or do you often find missing information, duplicate entries, and inconsistent data between different medical systems?',
     options: [
       {
         value: 1,
@@ -117,7 +117,7 @@ export const healthcareVariations: IndustryQuestionVariation[] = [
     industry: 'Healthcare',
     questionId: 'dataSecurity_1',
     question: 'How robust are your patient privacy and data security measures?',
-    description: 'Assess your organization\'s ability to protect patient health information and meet regulatory requirements.',
+    description: 'Assess your organization\'s ability to protect patient health information and meet regulatory requirements. For Example: Do you have secure systems that restrict access to patient data based on job roles, regular security training for staff, and clear procedures for handling data breaches to maintain privacy compliance?',
     options: [
       {
         value: 1,
@@ -154,7 +154,7 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
     industry: 'Manufacturing',
     questionId: 'technologyInfrastructure_1',
     question: 'How would you describe your manufacturing technology systems and smart factory readiness?',
-    description: 'Consider your industrial networks, edge computing capabilities, and smart manufacturing systems.',
+    description: 'Consider your industrial networks, edge computing capabilities, and smart manufacturing systems. For Example: Can your production equipment automatically communicate with your business systems to update inventory and scheduling, or do you rely on manual processes to track what happens on the factory floor?',
     options: [
       {
         value: 1,
@@ -187,7 +187,7 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
     industry: 'Manufacturing',
     questionId: 'technologyInfrastructure_2',
     question: 'What is your current connected device and sensor data processing capacity?',
-    description: 'Evaluate your ability to handle real-time manufacturing data and equipment sensor feeds.',
+    description: 'Evaluate your ability to handle real-time manufacturing data and equipment sensor feeds. For Example: Can you monitor machine performance, temperature, and production quality in real-time across your factory, or do you only get this information through periodic manual checks and reports?',
     options: [
       {
         value: 1,
@@ -220,7 +220,7 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
     industry: 'Manufacturing',
     questionId: 'teamLiteracy_1',
     question: 'What is the level of smart manufacturing and AI knowledge among your operations and engineering teams?',
-    description: 'Assess understanding of automated manufacturing, predictive maintenance, and AI-driven production optimization.',
+    description: 'Assess understanding of automated manufacturing, predictive maintenance, and AI-driven production optimization. For Example: Do your teams understand how AI could predict when machines need maintenance or optimize production schedules, or is their experience mainly with traditional manufacturing approaches?',
     options: [
       {
         value: 1,
@@ -253,7 +253,7 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
     industry: 'Manufacturing',
     questionId: 'systemIntegration_1',
     question: 'How well integrated are your production systems, quality control, and supply chain management?',
-    description: 'Evaluate integration between production management systems, business systems, quality systems, and supplier networks.',
+    description: 'Evaluate integration between production management systems, business systems, quality systems, and supplier networks. For Example: When you receive a new order, does it automatically flow through to production planning, inventory management, and supplier orders, or do different departments handle these processes separately?',
     options: [
       {
         value: 1,
@@ -286,7 +286,7 @@ export const manufacturingVariations: IndustryQuestionVariation[] = [
     industry: 'Manufacturing',
     questionId: 'dataQuality_5',
     question: 'How prepared is your manufacturing data for predictive maintenance and quality control AI?',
-    description: 'Consider production data, sensor readings, and quality metrics readiness for AI analysis.',
+    description: 'Consider production data, sensor readings, and quality metrics readiness for AI analysis. For Example: Do you have organized data from your production line showing machine performance, product quality, and maintenance history that could be used to predict problems before they happen?',
     options: [
       {
         value: 1,
@@ -323,7 +323,7 @@ export const financeVariations: IndustryQuestionVariation[] = [
     industry: 'Finance',
     questionId: 'technologyInfrastructure_1',
     question: 'How would you describe your financial technology systems and real-time processing capabilities?',
-    description: 'Consider your core banking systems, trading platforms, and real-time transaction processing capacity.',
+    description: 'Consider your core banking systems, trading platforms, and real-time transaction processing capacity. For Example: Can your systems instantly process transactions, detect fraud in real-time, and provide immediate account updates to customers, or do these processes take significant time and manual intervention?',
     options: [
       {
         value: 1,
@@ -356,7 +356,7 @@ export const financeVariations: IndustryQuestionVariation[] = [
     industry: 'Finance',
     questionId: 'teamLiteracy_1',
     question: 'What is the level of digital finance and financial AI knowledge among your teams?',
-    description: 'Assess understanding of automated trading, digital advisory services, and AI-powered risk management.',
+    description: 'Assess understanding of automated trading, digital advisory services, and AI-powered risk management. For Example: Do your teams understand how AI could automate investment advice, detect suspicious transactions, or assess loan risks, or is their expertise mainly in traditional banking and finance methods?',
     options: [
       {
         value: 1,
@@ -389,7 +389,7 @@ export const financeVariations: IndustryQuestionVariation[] = [
     industry: 'Finance',
     questionId: 'dataSecurity_1',
     question: 'How comprehensive are your financial data security and regulatory compliance measures?',
-    description: 'Assess compliance with financial regulations and data security requirements for financial institutions.',
+    description: 'Assess compliance with financial regulations and data security requirements for financial institutions. For Example: Do you have systems that automatically detect suspicious transactions, maintain detailed audit trails, and ensure compliance with banking regulations like PCI DSS and SOX requirements?',
     options: [
       {
         value: 1,
@@ -422,7 +422,7 @@ export const financeVariations: IndustryQuestionVariation[] = [
     industry: 'Finance',
     questionId: 'dataQuality_5',
     question: 'How prepared is your financial data for AI-driven risk assessment and fraud detection?',
-    description: 'Consider transaction data, customer information, and risk metrics readiness for AI analysis.',
+    description: 'Consider transaction data, customer information, and risk metrics readiness for AI analysis. For Example: Do you have clean, organized data about customer transactions, credit history, and financial behavior that could be used to automatically detect fraud or assess loan risks?',
     options: [
       {
         value: 1,
@@ -459,7 +459,7 @@ export const retailVariations: IndustryQuestionVariation[] = [
     industry: 'Retail',
     questionId: 'technologyInfrastructure_1',
     question: 'How would you describe your retail technology systems across all sales channels?',
-    description: 'Consider your e-commerce platform, POS systems, inventory management, and customer data integration.',
+    description: 'Consider your e-commerce platform, POS systems, inventory management, and customer data integration. For Example: When a customer shops both online and in-store, can you see their complete purchase history and preferences across all channels, or are these systems separate and disconnected?',
     options: [
       {
         value: 1,
@@ -492,7 +492,7 @@ export const retailVariations: IndustryQuestionVariation[] = [
     industry: 'Retail',
     questionId: 'teamLiteracy_1',
     question: 'What is the level of retail technology and e-commerce AI knowledge among your teams?',
-    description: 'Assess understanding of personalization engines, demand forecasting, and customer analytics.',
+    description: 'Assess understanding of personalization engines, demand forecasting, and customer analytics. For Example: Do your teams understand how AI could automatically recommend products to customers, predict which items will sell well, or analyze shopping patterns to improve store layouts?',
     options: [
       {
         value: 1,
@@ -525,7 +525,7 @@ export const retailVariations: IndustryQuestionVariation[] = [
     industry: 'Retail',
     questionId: 'dataQuality_5',
     question: 'How prepared is your customer and sales data for AI-driven personalization and demand forecasting?',
-    description: 'Consider customer behavior data, inventory data, and sales metrics readiness for AI analysis.',
+    description: 'Consider customer behavior data, inventory data, and sales metrics readiness for AI analysis. For Example: Do you have detailed information about what customers buy, when they shop, and how they browse that could be used to personalize their experience and predict future demand?',
     options: [
       {
         value: 1,
@@ -558,7 +558,7 @@ export const retailVariations: IndustryQuestionVariation[] = [
     industry: 'Retail',
     questionId: 'systemIntegration_1',
     question: 'How well integrated are your e-commerce, inventory, and customer systems for AI implementation?',
-    description: 'Assess the integration between online/offline channels, inventory management, and customer data systems.',
+    description: 'Assess the integration between online/offline channels, inventory management, and customer data systems. For Example: When inventory changes in one location, does it automatically update across all sales channels, and can you track a customer\'s complete shopping journey from website visits to in-store purchases?',
     options: [
       {
         value: 1,
@@ -595,7 +595,7 @@ export const educationVariations: IndustryQuestionVariation[] = [
     industry: 'Education',
     questionId: 'technologyInfrastructure_1',
     question: 'How would you describe your educational technology systems and learning platforms?',
-    description: 'Consider your learning management systems, student information systems, and digital learning platform capabilities.',
+    description: 'Consider your learning management systems, student information systems, and digital learning platform capabilities. For Example: Can students access all their courses, assignments, and grades in one integrated platform, or do they need to use multiple separate systems for different aspects of their education?',
     options: [
       {
         value: 1,
@@ -628,7 +628,7 @@ export const educationVariations: IndustryQuestionVariation[] = [
     industry: 'Education',
     questionId: 'systemIntegration_1',
     question: 'How well integrated are your student information systems, learning management, and assessment platforms?',
-    description: 'Evaluate integration between student information systems, learning management systems, assessment tools, and communication systems.',
+    description: 'Evaluate integration between student information systems, learning management systems, assessment tools, and communication systems. For Example: When a student submits an assignment, does it automatically update their grades, notify parents, and track their progress across all courses, or do faculty need to manually update multiple systems?',
     options: [
       {
         value: 1,
@@ -661,7 +661,7 @@ export const educationVariations: IndustryQuestionVariation[] = [
     industry: 'Education',
     questionId: 'budgetResources_1',
     question: 'What budget range has been allocated for educational AI and learning technology over the next 12 months?',
-    description: 'Consider investments in adaptive learning, student analytics, and educational AI tools.',
+    description: 'Consider investments in adaptive learning, student analytics, and educational AI tools. For Example: Has your institution set aside specific funding for AI-powered learning tools, personalized education platforms, and student success analytics, or would these initiatives compete with other technology priorities?',
     options: [
       {
         value: 1,
@@ -694,7 +694,7 @@ export const educationVariations: IndustryQuestionVariation[] = [
     industry: 'Education',
     questionId: 'dataQuality_1',
     question: 'How would you describe the quality of your student data and learning analytics?',
-    description: 'Consider student information systems, learning management data, and academic performance metrics.',
+    description: 'Consider student information systems, learning management data, and academic performance metrics. For Example: Do you have comprehensive data about student engagement, learning patterns, and academic progress that could be used to identify at-risk students and personalize their educational experience?',
     options: [
       {
         value: 1,
@@ -727,7 +727,7 @@ export const educationVariations: IndustryQuestionVariation[] = [
     industry: 'Education',
     questionId: 'teamLiteracy_1',
     question: 'What is the level of AI and educational technology knowledge among faculty and staff?',
-    description: 'Assess understanding of AI applications in education and digital learning tools.',
+    description: 'Assess understanding of AI applications in education and digital learning tools. For Example: Do your faculty and staff understand how AI could personalize learning for each student, automate grading, or identify students who need additional support, or are they mainly familiar with traditional teaching methods?',
     options: [
       {
         value: 1,
@@ -780,7 +780,7 @@ export const technologyVariations: IndustryQuestionVariation[] = [
     industry: 'Technology',
     questionId: 'technologyInfrastructure_1',
     question: 'How would you describe your software development and deployment processes?',
-    description: 'Consider how modern and automated your software development and release processes are.',
+    description: 'Consider how modern and automated your software development and release processes are. For Example: Can your development team automatically deploy code changes with testing and rollback capabilities, or do releases require manual processes and significant downtime?',
     options: [
       {
         value: 1,
@@ -813,7 +813,7 @@ export const technologyVariations: IndustryQuestionVariation[] = [
     industry: 'Technology',
     questionId: 'teamLiteracy_1',
     question: 'What is the level of AI and machine learning expertise among your development teams?',
-    description: 'Assess understanding of machine learning frameworks, AI system deployment, and data science practices.',
+    description: 'Assess understanding of machine learning frameworks, AI system deployment, and data science practices. For Example: Can your development teams build and deploy machine learning models, work with frameworks like TensorFlow or PyTorch, and implement AI features in your products, or do they mainly work with traditional software development?',
     options: [
       {
         value: 1,
@@ -846,7 +846,7 @@ export const technologyVariations: IndustryQuestionVariation[] = [
     industry: 'Technology',
     questionId: 'dataQuality_1',
     question: 'How would you describe the quality and structure of your user and product data?',
-    description: 'Consider data from user interactions, product analytics, system logs, and business metrics.',
+    description: 'Consider data from user interactions, product analytics, system logs, and business metrics. For Example: Do you have comprehensive, clean data about how users interact with your product, system performance metrics, and business outcomes that could be used to build AI features and improve your platform?',
     options: [
       {
         value: 1,
