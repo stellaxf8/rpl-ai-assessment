@@ -85,11 +85,10 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
-          const staggerClass = `stagger-delay-${Math.min(index + 3, 6)}`;
           return (
             <Card 
               key={index} 
-              className={`border-slate-300 animate-slide-up ${staggerClass}`}
+              className={`border-slate-300 animate-slide-up`}
             >
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center mb-3 sm:mb-4">
