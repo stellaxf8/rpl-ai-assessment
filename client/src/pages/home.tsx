@@ -38,9 +38,9 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-50">
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-sm shadow-lg border-b border-slate-200 relative z-10">
+      <header className="bg-white shadow-lg border-b border-slate-200 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div 
@@ -76,7 +76,7 @@ export default function Home() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg my-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-[#ffffff]">
         {currentSection === 'overview' && (
           <Overview onStartAssessment={handleStartAssessment} />
         )}
@@ -114,7 +114,7 @@ export default function Home() {
       </main>
       {/* Footnote Disclaimer */}
       <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
-        <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-2 mt-4">
+        <div className="text-center">
           <p className="text-xs text-gray-500">* Assessment results are for informational purposes only. We recommend using results alongside professional consultation.</p>
         </div>
       </footer>
