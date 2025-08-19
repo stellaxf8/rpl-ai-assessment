@@ -20,7 +20,7 @@ export const questions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How would you describe your organization's current technology setup?",
-    description: "Consider whether your systems are modern, flexible, and can handle increased workloads. For example: Do you use cloud services like Microsoft 365 or Google Workspace, or do you still rely on older desktop software and local servers?",
+    description: "Consider whether your systems are modern, flexible, and can handle increased workloads. For Example: Do you use cloud services like Microsoft 365 or Google Workspace, or do you still rely on older desktop software and local servers?",
     options: [
       {
         value: 1,
@@ -55,7 +55,7 @@ export const questions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How well can your organization handle large amounts of business data?",
-    description: "Consider your systems' ability to store and process significant volumes of business information. For example: Can you easily generate reports from years of customer data, or do large data exports crash your systems and take hours to complete?",
+    description: "Consider your systems' ability to store and process significant volumes of business information. For Example: Can you easily generate reports from years of customer data, or do large data exports crash your systems and take hours to complete?",
     options: [
       {
         value: 1,
@@ -90,7 +90,7 @@ export const questions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How easily can your systems connect and share data with new business tools?",
-    description: "Consider your ability to integrate new services and connect different business applications. For example: When you add a new customer management tool, does it automatically sync with your existing email and accounting software, or do you have to manually copy data between systems?",
+    description: "Consider your ability to integrate new services and connect different business applications. For Example: When you add a new customer management tool, does it automatically sync with your existing email and accounting software, or do you have to manually copy data between systems?",
     options: [
       {
         value: 1,
@@ -125,7 +125,7 @@ export const questions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How well can your organization monitor and track system performance?",
-    description: "Consider your ability to monitor business systems and quickly detect issues. For example: Do you get alerts when your website is slow or when your email server is down, or do you only find out when employees complain that something isn't working?",
+    description: "Consider your ability to monitor business systems and quickly detect issues. For Example: Do you get alerts when your website is slow or when your email server is down, or do you only find out when employees complain that something isn't working?",
     options: [
       {
         value: 1,
@@ -160,7 +160,7 @@ export const questions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How would you rate your organization's internet and network connectivity?",
-    description: "Consider connection speed, reliability, and capacity for business operations. For example: Can multiple employees video conference simultaneously without issues, or does internet slow down when several people are working online at the same time?",
+    description: "Consider connection speed, reliability, and capacity for business operations. For Example: Can multiple employees video conference simultaneously without issues, or does internet slow down when several people are working online at the same time?",
     options: [
       {
         value: 1,
@@ -267,7 +267,7 @@ export const questions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "What is the state of your data governance framework?",
-    description: "Consider data policies, ownership, and management processes. For example: Do you have clear rules about who can access customer data and how it should be used, or can anyone in the company access any data without restrictions or oversight?",
+    description: "Consider data policies, ownership, and management processes. For Example: Do you have clear rules about who can access customer data and how it should be used, or can anyone in the company access any data without restrictions or oversight?",
     options: [
       {
         value: 1,
@@ -302,7 +302,7 @@ export const questions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "How well is your data documented and cataloged?",
-    description: "Assess the availability of data dictionaries, metadata, and documentation. For example: When a new employee needs to understand your sales data, can they find clear explanations of what each field means, or do they have to ask around to figure out how the data is organized?",
+    description: "Assess the availability of data dictionaries, metadata, and documentation. For Example: When a new employee needs to understand your sales data, can they find clear explanations of what each field means, or do they have to ask around to figure out how the data is organized?",
     options: [
       {
         value: 1,
@@ -337,7 +337,7 @@ export const questions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "How prepared is your data for machine learning and AI use cases?",
-    description: "Consider data format, structure, and readiness for analysis. For example: Is your data organized in spreadsheets and databases that can be easily analyzed, or is most of your business information stored in emails, paper documents, and unstructured formats?",
+    description: "Consider data format, structure, and readiness for analysis. For Example: Is your data organized in spreadsheets and databases that can be easily analyzed, or is most of your business information stored in emails, paper documents, and unstructured formats?",
     options: [
       {
         value: 1,
@@ -374,7 +374,7 @@ export const questions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "What is the general level of AI knowledge within your organization?",
-    description: "Assess the overall understanding of AI concepts and applications. For example: Can your team explain what AI could do for your business and give specific examples, or do most people think AI is just science fiction and have no idea how it might help your company?",
+    description: "Assess the overall understanding of AI concepts and applications. For Example: Can your team explain what AI could do for your business and give specific examples, or do most people think AI is just science fiction and have no idea how it might help your company?",
     options: [
       {
         value: 1,
@@ -409,7 +409,7 @@ export const questions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "How many team members have hands-on experience with AI/ML tools?",
-    description: "Consider practical experience with AI platforms, frameworks, or tools. For example: Has anyone on your team actually used AI tools like ChatGPT for business tasks, built automated reports, or worked with data analysis software to find patterns in your business data?",
+    description: "Consider practical experience with AI platforms, frameworks, or tools. For Example: Has anyone on your team actually used AI tools like ChatGPT for business tasks, built automated reports, or worked with data analysis software to find patterns in your business data?",
     options: [
       {
         value: 1,
@@ -444,7 +444,7 @@ export const questions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "How enthusiastic is your team about adopting AI technologies?",
-    description: "Gauge the team's attitude and willingness to embrace AI. For example: When AI tools are mentioned, does your team get excited about the possibilities and ask lots of questions, or do they worry about job security and prefer to stick with current manual processes?",
+    description: "Gauge the team's attitude and willingness to embrace AI. For Example: When AI tools are mentioned, does your team get excited about the possibilities and ask lots of questions, or do they worry about job security and prefer to stick with current manual processes?",
     options: [
       {
         value: 1,
@@ -479,7 +479,7 @@ export const questions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "What is your organization's approach to AI training and education?",
-    description: "Evaluate current and planned AI learning initiatives. For example: Do you provide courses or workshops where employees can learn about AI and practice using AI tools, or do people have to figure out AI on their own time without company support?",
+    description: "Evaluate current and planned AI learning initiatives. For Example: Do you provide courses or workshops where employees can learn about AI and practice using AI tools, or do people have to figure out AI on their own time without company support?",
     options: [
       {
         value: 1,
@@ -514,7 +514,7 @@ export const questions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "How well does your team understand data science and analytics?",
-    description: "Assess foundational skills in data analysis and statistical thinking. For example: Can your team create charts and graphs from business data to spot trends and make decisions, or do they struggle with anything beyond basic spreadsheet calculations?",
+    description: "Assess foundational skills in data analysis and statistical thinking. For Example: Can your team create charts and graphs from business data to spot trends and make decisions, or do they struggle with anything beyond basic spreadsheet calculations?",
     options: [
       {
         value: 1,
@@ -551,7 +551,7 @@ export const questions: Question[] = [
     dimensionLabel: "System Integration",
     icon: "Puzzle",
     question: "How well integrated are your current software systems?",
-    description: "Consider the connectivity and data flow between existing systems. For example: When a customer makes a purchase, does the information automatically update in your inventory, accounting, and customer service systems, or do you have to manually enter the same data in multiple places?",
+    description: "Consider the connectivity and data flow between existing systems. For Example: When a customer makes a purchase, does the information automatically update in your inventory, accounting, and customer service systems, or do you have to manually enter the same data in multiple places?",
     options: [
       {
         value: 1,
