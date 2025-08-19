@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Brain, Menu, BookOpen, BarChart3, Phone } from "lucide-react";
 import logoPath from "@assets/RPL Logo_1754506008197.png";
+import backgroundImage from "@assets/BG (Site)_1755623248753.png";
 import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
@@ -38,7 +39,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div 
+      className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       {/* Header */}
       <header className="bg-white shadow-lg border-b border-slate-200 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -62,11 +62,6 @@
   body {
     @apply font-sans antialiased text-foreground;
     overflow-x: hidden;
-    background-image: url('@assets/BG (Site)_1755623248753.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     min-height: 100vh;
   }
   
