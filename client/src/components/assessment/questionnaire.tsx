@@ -385,27 +385,27 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
           <div className="flex flex-col gap-2 sm:gap-3 mb-3 sm:mb-4 animate-fade-in">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0">
               <div className="flex flex-col animate-slide-in-left">
-                <h2 className="text-base sm:text-lg lg:text-2xl font-bold text-slate-900"><span style={{ color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
+                <h2 className="text-lg sm:text-2xl font-bold text-slate-900"><span style={{ color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
                 {selectedIndustry && hasIndustryVariations(selectedIndustry) && (
-                  <p className="text-xs sm:text-sm lg:text-base text-primary font-medium animate-slide-up stagger-delay-1">
+                  <p className="text-xs sm:text-sm text-primary font-medium animate-slide-up stagger-delay-1">
                     {selectedIndustry} Industry - Specialized Questions
                   </p>
                 )}
                 {selectedIndustry && !hasIndustryVariations(selectedIndustry) && (
-                  <p className="text-xs sm:text-sm lg:text-base text-slate-600">
+                  <p className="text-xs sm:text-sm text-slate-600">
                     {selectedIndustry} - General Assessment
                   </p>
                 )}
               </div>
               <div className="flex flex-row items-center justify-between sm:flex-col sm:items-end gap-2 sm:gap-2">
-                <span className="text-xs sm:text-sm lg:text-base text-slate-500 order-2 sm:order-1">
+                <span className="text-xs sm:text-sm text-slate-500 order-2 sm:order-1">
                   Question {currentQuestion + 1} of {assessmentQuestions.length}
                 </span>
                 <Button 
                   variant="outline" 
                   size="sm"
                   onClick={generateDemoSample}
-                  className="text-xs sm:text-sm bg-[#cd0000] text-[#f5f5f4] border-[#cd0000] hover:bg-[#b30000] hover:text-[#f5f5f4] order-1 sm:order-2 px-2 py-1"
+                  className="text-xs bg-[#cd0000] text-[#f5f5f4] border-[#cd0000] hover:bg-[#b30000] hover:text-[#f5f5f4] order-1 sm:order-2 px-2 py-1"
                 >
                   <Zap className="mr-1 h-3 w-3" />
                   <span className="hidden sm:inline">Demo Sample</span>
@@ -436,7 +436,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               return (
                 <span
                   key={`${dimension.label}-${index}`}
-                  className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
+                  className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium ${
                     isCurrentDimension
                       ? 'text-white'
                       : dimensionQuestions.length === 0
@@ -463,11 +463,11 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center mr-2 sm:mr-3 bg-transparent">
                 {getIconComponent(currentQuestionData.icon)}
               </div>
-              <span className="text-xs sm:text-sm font-medium text-white px-2 py-1 rounded-full animate-slide-in-right animate-fade-in" style={{ backgroundColor: '#cd0000' }}>
+              <span className="text-xs font-medium text-white px-2 py-1 rounded-full animate-slide-in-right animate-fade-in" style={{ backgroundColor: '#cd0000' }}>
                 {currentQuestionData.dimensionLabel}
               </span>
             </div>
-            <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-slate-900 mb-3 sm:mb-4 animate-slide-up animate-fade-in leading-tight">
+            <h3 className="text-xs sm:text-xl font-semibold text-slate-900 mb-3 sm:mb-4 animate-slide-up animate-fade-in leading-tight">
               {currentQuestionData.question}
             </h3>
           </div>
@@ -484,8 +484,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               >
                 <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="hover-scale flex-shrink-0" />
                 <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">
-                  <div className="text-sm sm:text-base lg:text-lg font-medium text-slate-900 leading-tight">{option.text}</div>
-                  <div className="text-xs sm:text-sm lg:text-base text-slate-600 mt-1 leading-snug">{option.description}</div>
+                  <div className="text-sm sm:text-base font-medium text-slate-900 leading-tight">{option.text}</div>
+                  <div className="text-xs sm:text-sm text-slate-600 mt-1 leading-snug">{option.description}</div>
                 </Label>
               </div>
             ))}
@@ -495,7 +495,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             <Button 
               variant="outline" 
               onClick={handlePrevious}
-              className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1 text-sm sm:text-base lg:text-lg"
+              className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1 text-sm sm:text-base"
             >
               <ArrowLeft className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
               <span className="sm:hidden">{currentQuestion === 0 ? 'Back' : 'Previous'}</span>
@@ -503,12 +503,12 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             </Button>
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 order-1 sm:order-2">
               {!canGoNext && (
-                <span className="text-xs sm:text-sm text-slate-500 text-center">Please select an answer to continue</span>
+                <span className="text-xs text-slate-500 text-center">Please select an answer to continue</span>
               )}
               <Button 
                 onClick={handleNext}
                 disabled={!canGoNext}
-                className="hover-lift button-press w-full sm:w-auto text-sm sm:text-base lg:text-lg"
+                className="hover-lift button-press w-full sm:w-auto text-sm sm:text-base"
                 data-next-button
               >
                 <span className="sm:hidden">{currentQuestion === assessmentQuestions.length - 1 ? 'Complete' : 'Next'}</span>

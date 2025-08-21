@@ -200,47 +200,6 @@
     animation-delay: 0.6s;
   }
 
-  /* Responsive typography scaling */
-  .responsive-h1 {
-    @apply text-2xl sm:text-3xl lg:text-4xl font-bold;
-  }
-  
-  .responsive-h2 {
-    @apply text-xl sm:text-2xl lg:text-3xl font-bold;
-  }
-  
-  .responsive-h3 {
-    @apply text-lg sm:text-xl lg:text-2xl font-semibold;
-  }
-  
-  .responsive-h4 {
-    @apply text-base sm:text-lg lg:text-xl font-semibold;
-  }
-  
-  .responsive-h5 {
-    @apply text-sm sm:text-base lg:text-lg font-medium;
-  }
-  
-  .responsive-h6 {
-    @apply text-sm sm:text-base font-medium;
-  }
-  
-  .responsive-body {
-    @apply text-sm sm:text-base;
-  }
-  
-  .responsive-body-small {
-    @apply text-xs sm:text-sm;
-  }
-  
-  .responsive-caption {
-    @apply text-xs;
-  }
-  
-  .responsive-button {
-    @apply text-sm sm:text-base;
-  }
-
   /* Mobile-specific improvements */
   @media (max-width: 640px) {
     /* Better touch targets */
@@ -264,34 +223,12 @@
       margin-top: 1rem !important;
     }
     
-    /* Enhanced responsive typography for mobile */
-    h1 {
-      font-size: 1.5rem; /* 24px */
+    /* Better text readability */
+    h1, h2, h3, h4, h5, h6 {
       line-height: 1.3;
     }
     
-    h2 {
-      font-size: 1.375rem; /* 22px */
-      line-height: 1.3;
-    }
-    
-    h3 {
-      font-size: 1.25rem; /* 20px */
-      line-height: 1.3;
-    }
-    
-    h4 {
-      font-size: 1.125rem; /* 18px */
-      line-height: 1.3;
-    }
-    
-    h5, h6 {
-      font-size: 1rem; /* 16px */
-      line-height: 1.3;
-    }
-    
-    p, span, div {
-      font-size: 0.875rem; /* 14px */
+    p {
       line-height: 1.5;
     }
     
@@ -303,13 +240,6 @@
     .xs\:inline {
       display: inline;
     }
-    
-    /* Responsive utility classes for mobile */
-    .mobile\:text-xs { font-size: 0.75rem; }
-    .mobile\:text-sm { font-size: 0.875rem; }
-    .mobile\:text-base { font-size: 1rem; }
-    .mobile\:text-lg { font-size: 1.125rem; }
-    .mobile\:text-xl { font-size: 1.25rem; }
   }
 
   /* Add xs breakpoint for extra small screens */
