@@ -160,15 +160,16 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
           const isSelected = localSelectedIndustry === industry.id;
 
           return (
-            <Card
-              key={industry.id}
-              className={`cursor-pointer transition-all duration-200 hover:shadow-lg aspect-square ${
-                isSelected 
-                  ? 'ring-2 ring-primary bg-primary/5' 
-                  : 'hover:bg-slate-50'
-              }`}
-              onClick={() => handleIndustryClick(industry.id)}
-            >
+            <div className="aspect-square">
+              <Card
+                key={industry.id}
+                className={`cursor-pointer transition-all duration-200 hover:shadow-lg h-full w-full ${
+                  isSelected 
+                    ? 'ring-2 ring-primary bg-primary/5' 
+                    : 'hover:bg-slate-50'
+                }`}
+                onClick={() => handleIndustryClick(industry.id)}
+              >
               <CardContent className="p-3 h-full">
                 <div className="flex flex-col items-center text-center space-y-2 h-full justify-center">
                   <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-[#2a2c3700] text-[#cd0000]">
@@ -187,7 +188,8 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
                   </div>
                 </div>
               </CardContent>
-            </Card>
+              </Card>
+            </div>
           );
         })}
       </div>
