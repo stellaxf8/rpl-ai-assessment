@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Brain, Menu, BookOpen, BarChart3, Phone } from "lucide-react";
+import { Brain, Menu, BookOpen, BarChart3, Phone, Home as HomeIcon } from "lucide-react";
 import logoPath from "@assets/RPL Logo_1754506008197.png";
 import backgroundImage from "@assets/BG 1_1755624813166.png";
 import Overview from "@/components/assessment/overview";
@@ -63,6 +63,14 @@ export default function Home() {
               />
             </a>
             <nav className="flex items-center space-x-2 sm:space-x-4 animate-slide-in-right">
+              <button 
+                onClick={() => setCurrentSection('overview')}
+                className="bg-slate-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm font-medium transition-all hover:bg-slate-700 flex items-center hover-lift button-press"
+              >
+                <HomeIcon className="mr-1 h-3 w-3 sm:h-4 sm:w-4" />
+                <span className="hidden xs:inline">Overview</span>
+                <span className="xs:hidden">Home</span>
+              </button>
               <a 
                 href="https://www.redpilllabs.com/contact-us" 
                 target="_blank" 
