@@ -381,47 +381,49 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     <section>
       {/* Progress Header */}
       <Card className="mb-0 animate-slide-up animate-fade-in">
-        <CardContent className="p-4 sm:p-6 pt-[6px] pb-[6px]">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 animate-fade-in gap-2 sm:gap-0">
-            <div className="flex flex-col animate-slide-in-left">
-              <h2 className="text-xl sm:text-2xl font-bold text-slate-900"><span style={{ color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
-              {selectedIndustry && hasIndustryVariations(selectedIndustry) && (
-                <p className="text-sm text-primary font-medium animate-slide-up stagger-delay-1">
-                  {selectedIndustry} Industry - Specialized Questions
-                </p>
-              )}
-              {selectedIndustry && !hasIndustryVariations(selectedIndustry) && (
-                <p className="text-sm text-slate-600">
-                  {selectedIndustry} - General Assessment
-                </p>
-              )}
+        <CardContent className="p-3 sm:p-6 pt-3 pb-3">
+          <div className="flex flex-col gap-2 sm:gap-3 mb-3 sm:mb-4 animate-fade-in">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0">
+              <div className="flex flex-col animate-slide-in-left">
+                <h2 className="text-lg sm:text-2xl font-bold text-slate-900"><span style={{ color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
+                {selectedIndustry && hasIndustryVariations(selectedIndustry) && (
+                  <p className="text-xs sm:text-sm text-primary font-medium animate-slide-up stagger-delay-1">
+                    {selectedIndustry} Industry - Specialized Questions
+                  </p>
+                )}
+                {selectedIndustry && !hasIndustryVariations(selectedIndustry) && (
+                  <p className="text-xs sm:text-sm text-slate-600">
+                    {selectedIndustry} - General Assessment
+                  </p>
+                )}
+              </div>
+              <div className="flex flex-row items-center justify-between sm:flex-col sm:items-end gap-2 sm:gap-2">
+                <span className="text-xs sm:text-sm text-slate-500 order-2 sm:order-1">
+                  Question {currentQuestion + 1} of {assessmentQuestions.length}
+                </span>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={generateDemoSample}
+                  className="text-xs bg-[#cd0000] text-[#f5f5f4] border-[#cd0000] hover:bg-[#b30000] hover:text-[#f5f5f4] order-1 sm:order-2 px-2 py-1"
+                >
+                  <Zap className="mr-1 h-3 w-3" />
+                  <span className="hidden sm:inline">Demo Sample</span>
+                  <span className="sm:hidden">Demo</span>
+                </Button>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={generateDemoSample}
-                className="text-xs bg-[#cd0000] text-[#f5f5f4] border-[#cd0000] hover:bg-[#b30000] hover:text-[#f5f5f4] w-full sm:w-auto"
-              >
-                <Zap className="mr-1 h-3 w-3" />
-                Demo Sample
-              </Button>
-              <span className="text-sm text-slate-500 text-center sm:text-left">
-                Question {currentQuestion + 1} of {assessmentQuestions.length}
-              </span>
-            </div>
+            <Progress value={progress} className="bg-gray-200" />
           </div>
           
-          <Progress value={progress} className="mb-4 bg-gray-200" />
-          
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1 sm:gap-2">
             {[
-              { label: 'Technology Infrastructure', keys: ['technologyInfrastructure'] },
-              { label: 'Data Quality', keys: ['dataQuality'] }, 
-              { label: 'Team Literacy', keys: ['teamLiteracy'] },
-              { label: 'System Integration', keys: ['systemIntegration'] },
-              { label: 'Budget', keys: ['budget', 'budgetResources'] },
-              { label: 'Security', keys: ['dataSecurity', 'security', 'securityPrivacy'] }
+              { label: 'Technology Infrastructure', short: 'Tech', keys: ['technologyInfrastructure'] },
+              { label: 'Data Quality', short: 'Data', keys: ['dataQuality'] }, 
+              { label: 'Team Literacy', short: 'Team', keys: ['teamLiteracy'] },
+              { label: 'System Integration', short: 'Systems', keys: ['systemIntegration'] },
+              { label: 'Budget', short: 'Budget', keys: ['budget', 'budgetResources'] },
+              { label: 'Security', short: 'Security', keys: ['dataSecurity', 'security', 'securityPrivacy'] }
             ].map((dimension, index) => {
               // Check all possible keys for this dimension
               const isCurrentDimension = dimension.keys.includes(currentQuestionData.dimension);
@@ -434,7 +436,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               return (
                 <span
                   key={`${dimension.label}-${index}`}
-                  className={`px-3 py-1 rounded-full text-xs font-medium ${
+                  className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium ${
                     isCurrentDimension
                       ? 'text-white'
                       : dimensionQuestions.length === 0
@@ -445,7 +447,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                   }`}
                   style={isCurrentDimension ? { backgroundColor: '#cd0000' } : {}}
                 >
-                  {dimension.label} ({progress})
+                  <span className="sm:hidden">{dimension.short} ({progress})</span>
+                  <span className="hidden sm:inline">{dimension.label} ({progress})</span>
                 </span>
               );
             })}
@@ -454,19 +457,17 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       </Card>
       {/* Question Card */}
       <Card className="animate-slide-up animate-fade-in border-0 mt-0">
-        <CardContent className="p-4 sm:p-6 lg:p-8 pt-[5px] pb-[5px]">
-          <div className="mb-1 sm:mb-2 animate-fade-in">
-            <div className="flex flex-col sm:flex-row sm:items-center mb-2 gap-2 sm:gap-0 animate-slide-in-left animate-fade-in">
-              <div className="flex items-center">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center mr-3 bg-transparent">
-                  {getIconComponent(currentQuestionData.icon)}
-                </div>
-                <span className="text-xs sm:text-sm font-medium text-white px-2 sm:px-3 py-1 rounded-full animate-slide-in-right animate-fade-in" style={{ backgroundColor: '#cd0000' }}>
-                  {currentQuestionData.dimensionLabel}
-                </span>
+        <CardContent className="p-3 sm:p-6 lg:p-8 pt-3 pb-3">
+          <div className="mb-2 sm:mb-3 animate-fade-in">
+            <div className="flex items-center mb-2 sm:mb-3 animate-slide-in-left animate-fade-in">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center mr-2 sm:mr-3 bg-transparent">
+                {getIconComponent(currentQuestionData.icon)}
               </div>
+              <span className="text-xs font-medium text-white px-2 py-1 rounded-full animate-slide-in-right animate-fade-in" style={{ backgroundColor: '#cd0000' }}>
+                {currentQuestionData.dimensionLabel}
+              </span>
             </div>
-            <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3 animate-slide-up animate-fade-in">
+            <h3 className="text-base sm:text-xl font-semibold text-slate-900 mb-3 sm:mb-4 animate-slide-up animate-fade-in leading-tight">
               {currentQuestionData.question}
             </h3>
           </div>
@@ -479,39 +480,40 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             {currentQuestionData.options.map((option, index) => (
               <div 
                 key={index} 
-                className={`flex items-start sm:items-center space-x-3 sm:space-x-4 p-3 sm:p-4 border border-slate-200 rounded-lg hover:bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all duration-200 animate-slide-in-left animate-fade-in`}
+                className={`flex items-start space-x-2 sm:space-x-4 p-2 sm:p-4 border border-slate-200 rounded-lg hover:bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all duration-200 animate-slide-in-left animate-fade-in`}
               >
-                <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="hover-scale" />
+                <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="hover-scale mt-1 sm:mt-0" />
                 <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">
-                  <div className="text-sm sm:text-base font-medium text-slate-900">{option.text}</div>
-                  <div className="text-xs sm:text-sm text-slate-600 mt-1">{option.description}</div>
+                  <div className="text-sm sm:text-base font-medium text-slate-900 leading-tight">{option.text}</div>
+                  <div className="text-xs sm:text-sm text-slate-600 mt-1 leading-snug">{option.description}</div>
                 </Label>
               </div>
             ))}
           </RadioGroup>
 
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 sm:mt-8 animate-fade-in animate-slide-up">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 mt-4 sm:mt-8 animate-fade-in animate-slide-up">
             <Button 
               variant="outline" 
               onClick={handlePrevious}
-              className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1"
+              className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1 text-sm sm:text-base"
             >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              {currentQuestion === 0 ? 'Back' : 'Previous Question'}
+              <ArrowLeft className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+              <span className="sm:hidden">{currentQuestion === 0 ? 'Back' : 'Previous'}</span>
+              <span className="hidden sm:inline">{currentQuestion === 0 ? 'Back' : 'Previous Question'}</span>
             </Button>
-            <div className="flex flex-col sm:flex-row items-center gap-3 order-1 sm:order-2">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 order-1 sm:order-2">
               {!canGoNext && (
-                <span className="text-xs sm:text-sm text-slate-500 text-center">Please select an answer to continue</span>
+                <span className="text-xs text-slate-500 text-center">Please select an answer to continue</span>
               )}
               <Button 
                 onClick={handleNext}
                 disabled={!canGoNext}
-                className="hover-lift button-press w-full sm:w-auto"
+                className="hover-lift button-press w-full sm:w-auto text-sm sm:text-base"
                 data-next-button
               >
-                <span className="hidden sm:inline">{currentQuestion === assessmentQuestions.length - 1 ? 'Complete Assessment' : 'Next Question'}</span>
                 <span className="sm:hidden">{currentQuestion === assessmentQuestions.length - 1 ? 'Complete' : 'Next'}</span>
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <span className="hidden sm:inline">{currentQuestion === assessmentQuestions.length - 1 ? 'Complete Assessment' : 'Next Question'}</span>
+                <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4" />
               </Button>
             </div>
           </div>
