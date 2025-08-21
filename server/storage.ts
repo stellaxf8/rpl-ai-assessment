@@ -55,8 +55,8 @@ export class DatabaseStorage implements IStorage {
   }
 }
 
-// Use database by default since we have PostgreSQL available
-const useDatabase = process.env.USE_MEMORY_STORAGE !== 'true';
+// Use in-memory storage for development, database for production
+const useDatabase = process.env.NODE_ENV === 'production' && process.env.USE_MEMORY_STORAGE !== 'true';
 
 console.log(`[Storage] Using ${useDatabase ? 'PostgreSQL Database' : 'In-Memory'} storage`);
 
