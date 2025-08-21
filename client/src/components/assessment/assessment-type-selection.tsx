@@ -16,23 +16,23 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
           Select the assessment type that best fits your time and requirements
         </p>
       </div>
-      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
         {/* Quick Assessment */}
         <Card 
           className="cursor-pointer border-2 border-slate-300 animate-slide-up animate-fade-in hover:border-[#cd0000] hover:shadow-lg transition-all duration-200 hover-lift"
           onClick={() => onSelectType('quick')}
         >
-          <CardHeader className="text-center pb-4">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Zap style={{ color: '#cd0000' }} className="h-8 w-8" />
+          <CardHeader className="text-center pb-2 md:pb-4">
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-4">
+              <Zap style={{ color: '#cd0000' }} className="h-6 w-6 md:h-8 md:w-8" />
             </div>
-            <CardTitle className="text-xl">Quick Assessment</CardTitle>
-            <CardDescription className="text-base">
+            <CardTitle className="text-lg md:text-xl">Quick Assessment</CardTitle>
+            <CardDescription className="text-sm md:text-base">
               Essential evaluation for immediate insights
             </CardDescription>
           </CardHeader>
-          <CardContent className="text-center space-y-4">
-            <div className="space-y-2 text-sm text-slate-600">
+          <CardContent className="text-center space-y-2 md:space-y-4">
+            <div className="space-y-1 md:space-y-2 text-xs md:text-sm text-slate-600">
               <p>• 15 core questions</p>
               <p>• 5-7 minutes to complete</p>
               <p>• General AI readiness overview</p>
@@ -46,15 +46,15 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
           className="cursor-pointer border-2 border-slate-300 animate-slide-up animate-fade-in hover:border-[#cd0000] hover:shadow-lg transition-all duration-200 hover-lift"
           onClick={() => onSelectType('detailed')}
         >
-          <CardHeader className="text-center pb-4">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Clock style={{ color: '#cd0000' }} className="h-8 w-8" />
+          <CardHeader className="text-center pb-2 md:pb-4">
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-4">
+              <Clock style={{ color: '#cd0000' }} className="h-6 w-6 md:h-8 md:w-8" />
             </div>
-            <CardTitle className="text-xl">Detailed Assessment</CardTitle>
-            <CardDescription className="text-base">In-depth industry-specific analysis</CardDescription>
+            <CardTitle className="text-lg md:text-xl">Detailed Assessment</CardTitle>
+            <CardDescription className="text-sm md:text-base">In-depth industry-specific analysis</CardDescription>
           </CardHeader>
-          <CardContent className="text-center space-y-4">
-            <div className="space-y-2 text-sm text-slate-600">
+          <CardContent className="text-center space-y-2 md:space-y-4">
+            <div className="space-y-1 md:space-y-2 text-xs md:text-sm text-slate-600">
               <p>• 30 industry-tailored questions</p>
               <p>• 10-15 minutes to complete</p>
               <p>• Industry-specific insights</p>
