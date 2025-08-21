@@ -80,16 +80,16 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </div>
             
             <div className="md:hidden">
-              <h4 className="text-sm font-semibold mb-1 text-[#cd0000]" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>Security & Compliance</h4>
+              <h4 className="text-sm font-semibold mb-1 text-[#cd0000]">Competitive Advantage</h4>
               <p className="text-xs text-slate-700">
-                AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.
+                Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.
               </p>
             </div>
             
             <div className="hidden md:block">
-              <h4 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 text-[#cd0000]">Competitive Advantage</h4>
+              <h4 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 text-[#cd0000]" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>Security & Compliance</h4>
               <p className="text-sm lg:text-base text-slate-700">
-                Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.
+                AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.
               </p>
             </div>
           </div>
@@ -97,12 +97,12 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           <div className="space-y-3 md:space-y-6">
             <div>
               <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000]">
-                <span className="md:hidden">Competitive Advantage</span>
-                <span className="hidden md:inline" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>Security & Compliance</span>
+                <span className="md:hidden" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>Security & Compliance</span>
+                <span className="hidden md:inline">Competitive Advantage</span>
               </h4>
               <p className="text-xs md:text-sm lg:text-base text-slate-700 md:mb-4">
-                <span className="md:hidden">Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.</span>
-                <span className="hidden md:inline">AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.</span>
+                <span className="md:hidden">AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.</span>
+                <span className="hidden md:inline">Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.</span>
               </p>
             </div>
             
