@@ -80,9 +80,9 @@ const dimensionConfig = {
     color: "bg-red-100 text-error",
     barColor: "bg-error",
     recommendations: {
-      high: "Strong data security framework ready for AI data protection needs.",
-      medium: "Enhance data protection protocols for AI-specific requirements.",
-      low: "Implement comprehensive data security framework before AI deployment."
+      high: "Excellent security posture with robust incident response and breach prevention capabilities.",
+      medium: "Strengthen incident response procedures and enhance breach prevention measures.",
+      low: "Establish comprehensive security framework with incident response and breach prevention protocols."
     }
   },
 };

@@ -106,25 +106,25 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
   
   const getComplianceLevel = (score: number) => {
     if (score >= 4.0) return { 
-      level: "Compliant", 
+      level: "Strong Security Posture", 
       color: "text-green-600", 
       bgColor: "bg-green-50", 
       icon: CheckCircle,
-      description: "Meets most regulatory requirements with minimal gaps"
+      description: "Robust security practices with strong data protection capabilities"
     };
     if (score >= 2.5) return { 
-      level: "Partially Compliant", 
+      level: "Moderate Security Level", 
       color: "text-yellow-600", 
       bgColor: "bg-yellow-50", 
       icon: AlertTriangle,
-      description: "Some compliance gaps that need addressing"
+      description: "Good security foundation with areas for improvement"
     };
     return { 
-      level: "Non-Compliant", 
+      level: "Security Improvement Needed", 
       color: "text-red-600", 
       bgColor: "bg-red-50", 
       icon: XCircle,
-      description: "Significant compliance gaps requiring immediate attention"
+      description: "Significant security enhancements required for AI implementation"
     };
   };
 
@@ -154,7 +154,7 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
       <CardContent className="p-6">
         <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
           <Shield className="mr-2 h-5 w-5 text-primary" />
-          Data Security & Privacy Compliance Assessment
+          Data Security & Privacy Readiness Assessment
         </h3>
 
         {/* Overall Compliance Status */}
@@ -260,7 +260,7 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
               <>
                 <div className="flex items-start">
                   <AlertTriangle className="text-yellow-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Conduct comprehensive compliance gap analysis</span>
+                  <span className="text-sm text-slate-700">Conduct comprehensive security gap analysis</span>
                 </div>
                 <div className="flex items-start">
                   <AlertTriangle className="text-yellow-600 mr-2 h-4 w-4 mt-0.5" />
@@ -268,18 +268,18 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
                 </div>
                 <div className="flex items-start">
                   <AlertTriangle className="text-yellow-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Establish compliance training program for staff</span>
+                  <span className="text-sm text-slate-700">Establish security awareness training program for staff</span>
                 </div>
               </>
             ) : (
               <>
                 <div className="flex items-start">
                   <XCircle className="text-red-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Immediate compliance assessment and remediation required</span>
+                  <span className="text-sm text-slate-700">Immediate security assessment and remediation required</span>
                 </div>
                 <div className="flex items-start">
                   <XCircle className="text-red-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Engage compliance specialists before AI implementation</span>
+                  <span className="text-sm text-slate-700">Engage security specialists before AI implementation</span>
                 </div>
                 <div className="flex items-start">
                   <XCircle className="text-red-600 mr-2 h-4 w-4 mt-0.5" />
@@ -296,10 +296,10 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
             <div className="flex items-start">
               <XCircle className="text-red-600 mr-2 h-5 w-5 mt-0.5" />
               <div className="text-sm">
-                <div className="font-medium text-red-800 mb-1">Compliance Risk Warning</div>
+                <div className="font-medium text-red-800 mb-1">Security Risk Warning</div>
                 <div className="text-red-700">
-                  AI implementation with current compliance posture may result in regulatory violations, 
-                  financial penalties, and reputational damage. Address compliance gaps before proceeding.
+                  AI implementation with current security posture may result in data breaches, 
+                  privacy violations, and reputational damage. Strengthen security measures before proceeding.
                 </div>
               </div>
             </div>
