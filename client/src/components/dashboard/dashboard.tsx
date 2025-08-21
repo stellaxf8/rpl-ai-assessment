@@ -45,7 +45,7 @@ export default function Dashboard({ completedAssessment, onStartAssessment }: Da
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TrendingUp className="h-5 w-5" />
-                <span style={{color: '#cd0000'}}>AI Readiness</span> Score
+                <span style={{color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold'}}>AI Readiness</span> Score
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -90,7 +90,7 @@ export default function Dashboard({ completedAssessment, onStartAssessment }: Da
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-slate-900 mb-4"><span style={{color: '#cd0000'}}>AI Readiness</span> Dashboard</h1>
+        <h1 className="text-3xl font-bold text-slate-900 mb-4"><span style={{color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold'}}>AI Readiness</span> Dashboard</h1>
         <p className="text-lg text-slate-600 mb-2">
           Organization: {completedAssessment.organizationName}
         </p>
