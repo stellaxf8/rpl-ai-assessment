@@ -111,7 +111,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             
             <div className="hidden md:block">
               <h4 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 text-[#cd0000]">Security & Compliance</h4>
-              <p className="text-sm lg:text-base text-slate-700">
+              <p className="text-sm lg:text-base text-slate-700 mb-4">
                 AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.
               </p>
             </div>
