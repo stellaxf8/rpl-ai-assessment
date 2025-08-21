@@ -97,7 +97,7 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
   return (
     <Card>
       <CardContent className="p-6">
-        <h3 className="text-xl font-semibold text-slate-900 mb-6 flex items-center">
+        <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-slate-900 mb-6 flex items-center">
           <Shield className="mr-2 h-5 w-5 text-primary" />
           Data Security & Privacy Readiness Assessment
         </h3>
@@ -127,7 +127,7 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
 
         {/* Security Category Assessment */}
         <div className="space-y-4">
-          <h4 className="font-semibold text-slate-900">Security Assessment Categories:</h4>
+          <h4 className="text-base sm:text-lg font-semibold text-slate-900">Security Assessment Categories:</h4>
           {securityAssessmentCategories.map((category, index) => {
             const categoryScore = getCategoryScore(category.name);
             const categoryCompliance = getComplianceLevel(categoryScore);
@@ -139,8 +139,8 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
                   <div className="flex items-center">
                     <span className="text-xl mr-3">{category.icon}</span>
                     <div>
-                      <div className="font-medium text-slate-900">{category.fullName}</div>
-                      <div className="text-sm text-slate-600">{category.description}</div>
+                      <div className="text-sm sm:text-base font-medium text-slate-900">{category.fullName}</div>
+                      <div className="text-xs sm:text-sm text-slate-600">{category.description}</div>
                     </div>
                   </div>
                   <div className="flex items-center">
@@ -164,10 +164,10 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
 
                 {/* Key Requirements */}
                 <div className="space-y-1">
-                  <div className="text-sm font-medium text-slate-900">Key Areas:</div>
+                  <div className="text-xs sm:text-sm font-medium text-slate-900">Key Areas:</div>
                   <div className="grid grid-cols-2 gap-2">
                     {category.requirements.map((req, reqIndex) => (
-                      <div key={reqIndex} className="flex items-center text-sm text-slate-600">
+                      <div key={reqIndex} className="flex items-center text-xs sm:text-sm text-slate-600">
                         <div className={`w-2 h-2 rounded-full mr-2 ${
                           categoryScore >= 4.0 ? 'bg-green-500' : 
                           categoryScore >= 3.0 ? 'bg-yellow-500' : 'bg-red-500'
@@ -184,51 +184,51 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
 
         {/* Compliance Action Plan */}
         <div className="mt-6 border-t border-slate-200 pt-6">
-          <h4 className="font-semibold text-slate-900 mb-3">Security Action Plan:</h4>
+          <h4 className="text-base sm:text-lg font-semibold text-slate-900 mb-3">Security Action Plan:</h4>
           <div className="space-y-3">
             {avgSecurityScore >= 4.0 ? (
               <>
                 <div className="flex items-start">
                   <CheckCircle className="text-green-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Maintain current security standards through regular assessments</span>
+                  <span className="text-xs sm:text-sm text-slate-700">Maintain current security standards through regular assessments</span>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="text-green-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Implement continuous monitoring for security posture</span>
+                  <span className="text-xs sm:text-sm text-slate-700">Implement continuous monitoring for security posture</span>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="text-green-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Consider advanced security automation tools</span>
+                  <span className="text-xs sm:text-sm text-slate-700">Consider advanced security automation tools</span>
                 </div>
               </>
             ) : avgSecurityScore >= 3.0 ? (
               <>
                 <div className="flex items-start">
                   <AlertTriangle className="text-yellow-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Conduct comprehensive security gap analysis</span>
+                  <span className="text-xs sm:text-sm text-slate-700">Conduct comprehensive security gap analysis</span>
                 </div>
                 <div className="flex items-start">
                   <AlertTriangle className="text-yellow-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Implement missing security controls and policies</span>
+                  <span className="text-xs sm:text-sm text-slate-700">Implement missing security controls and policies</span>
                 </div>
                 <div className="flex items-start">
                   <AlertTriangle className="text-yellow-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Establish security awareness training program for staff</span>
+                  <span className="text-xs sm:text-sm text-slate-700">Establish security awareness training program for staff</span>
                 </div>
               </>
             ) : (
               <>
                 <div className="flex items-start">
                   <XCircle className="text-red-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Immediate security assessment and remediation required</span>
+                  <span className="text-xs sm:text-sm text-slate-700">Immediate security assessment and remediation required</span>
                 </div>
                 <div className="flex items-start">
                   <XCircle className="text-red-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Engage security specialists before AI implementation</span>
+                  <span className="text-xs sm:text-sm text-slate-700">Engage security specialists before AI implementation</span>
                 </div>
                 <div className="flex items-start">
                   <XCircle className="text-red-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Implement foundational security and data governance</span>
+                  <span className="text-xs sm:text-sm text-slate-700">Implement foundational security and data governance</span>
                 </div>
               </>
             )}

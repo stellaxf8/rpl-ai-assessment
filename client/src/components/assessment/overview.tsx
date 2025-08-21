@@ -50,7 +50,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
     <section>
       <div className="text-center mb-8 sm:mb-12 animate-fade-in">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 animate-slide-up animate-fade-in"><span style={{ color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
-        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up animate-fade-in px-4">
+        <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up animate-fade-in px-4">
           Comprehensive evaluation across 6 key dimensions to determine your organization's readiness for AI implementation
         </p>
       </div>
@@ -60,7 +60,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         <Button 
           onClick={onStartAssessment}
           size="lg"
-          className="text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 shadow-lg hover-lift button-press w-full sm:w-auto"
+          className="text-base sm:text-lg lg:text-xl px-8 sm:px-12 py-4 sm:py-6 shadow-lg hover-lift button-press w-full sm:w-auto"
         >
           Start Assessment
           <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
