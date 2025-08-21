@@ -19,7 +19,7 @@ export const questions: Question[] = [
     dimension: "technologyInfrastructure",
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
-    question: "How would you describe your organization's current technology setup?",
+    question: "How would you describe your organization's current technology stack?",
     description: "Consider whether your systems are modern, flexible, and can handle increased workloads. For Example: Do you use cloud services like Microsoft 365 or Google Workspace, or do you still rely on older desktop software and local servers?",
     options: [
       {
