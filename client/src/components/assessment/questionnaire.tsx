@@ -155,8 +155,24 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const handleNext = () => {
     if (currentQuestion < assessmentQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
-      // Jump to top when advancing to next question
-      window.scrollTo(0, 0);
+      
+      // Desktop-only: scroll to question area instead of top
+      setTimeout(() => {
+        const isDesktop = window.innerWidth >= 768; // md breakpoint
+        if (isDesktop) {
+          const questionArea = document.getElementById('question-area');
+          if (questionArea) {
+            questionArea.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'start',
+              inline: 'nearest'
+            });
+          }
+        } else {
+          // Mobile: jump to top as before
+          window.scrollTo(0, 0);
+        }
+      }, 100);
     } else {
       setShowContactForm(true);
       // Jump to top when showing contact form
@@ -458,7 +474,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       {/* Question Card */}
       <Card className="animate-slide-up animate-fade-in border-0 mt-0">
         <CardContent className="p-3 sm:p-6 lg:p-8 pt-3 pb-3">
-          <div className="mb-2 sm:mb-3 animate-fade-in">
+          <div className="mb-2 sm:mb-3 animate-fade-in" id="question-area">
             <div className="flex items-center mb-2 sm:mb-3 animate-slide-in-left animate-fade-in">
               <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center mr-2 sm:mr-3 bg-transparent">
                 {getIconComponent(currentQuestionData.icon)}
