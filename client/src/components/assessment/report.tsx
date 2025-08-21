@@ -6,9 +6,6 @@ import { Progress } from "@/components/ui/progress";
 import { Assessment, DimensionScores } from "@shared/schema";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import IndustryBenchmark from "@/components/enhanced/industry-benchmark";
-import IntegrationReadiness from "@/components/enhanced/integration-readiness";
-import ComplianceAssessment from "@/components/enhanced/compliance-assessment";
 import BusinessDevelopment from "@/components/enhanced/business-development";
 import RadarChart from "@/components/charts/radar-chart";
 
@@ -279,19 +276,10 @@ export default function Report({ assessment, onBack }: ReportProps) {
             </div>
           </div>
 
-          {/* Enhanced Analytics */}
+          {/* Business Development */}
           <div className="mb-8">
-            <h3 className="text-xl font-semibold text-slate-900 mb-6">Industry Analysis & Advanced Insights</h3>
+            <h3 className="text-xl font-semibold text-slate-900 mb-6">Implementation Planning</h3>
             <div className="space-y-6">
-              <IndustryBenchmark userScore={overallScore} industry={assessment.industry || "Technology"} />
-              <IntegrationReadiness scores={{ 
-                technologyInfrastructure: (scores as DimensionScores).technologyInfrastructure, 
-                systemIntegration: (scores as DimensionScores).systemIntegration 
-              }} />
-              <ComplianceAssessment scores={{ 
-                security: (scores as DimensionScores).dataSecurity, 
-                dataQuality: (scores as DimensionScores).dataQuality 
-              }} industry={assessment.industry} />
               <BusinessDevelopment scores={{
                 overallScore: overallScore,
                 technologyInfrastructure: (scores as DimensionScores).technologyInfrastructure,

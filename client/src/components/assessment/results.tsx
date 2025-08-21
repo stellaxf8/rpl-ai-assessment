@@ -5,9 +5,6 @@ import { Progress } from "@/components/ui/progress";
 import { Assessment, DimensionScores } from "@shared/schema";
 import ScoreChart from "@/components/charts/score-chart";
 import RadarChart from "@/components/charts/radar-chart";
-import IndustryBenchmark from "@/components/enhanced/industry-benchmark";
-import IntegrationReadiness from "@/components/enhanced/integration-readiness";
-import ComplianceAssessment from "@/components/enhanced/compliance-assessment";
 import BusinessDevelopment from "@/components/enhanced/business-development";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -412,10 +409,6 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             </div>
           </div>
 
-          {/* Enhanced Analytics */}
-          <IndustryBenchmark userScore={overallScore} industry={industry || "Technology"} />
-          <IntegrationReadiness scores={{ technologyInfrastructure: typedScores.technologyInfrastructure, systemIntegration: typedScores.systemIntegration }} />
-          <ComplianceAssessment scores={{ security: typedScores.dataSecurity, dataQuality: typedScores.dataQuality }} industry={industry} />
           <BusinessDevelopment scores={{
             overallScore: overallScore,
             technologyInfrastructure: typedScores.technologyInfrastructure,
