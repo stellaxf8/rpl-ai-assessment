@@ -442,7 +442,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       </Card>
       {/* Question Card */}
       <Card className="animate-slide-up animate-fade-in border-0 mt-0">
-        <CardContent className="p-4 sm:p-6 lg:p-8 pt-0 pb-[0px]">
+        <CardContent className="p-4 sm:p-6 lg:p-8 pt-[0px] pb-[0px]">
           <div className="mb-1 sm:mb-2 animate-fade-in">
             <div className="flex flex-col sm:flex-row sm:items-center mb-2 gap-2 sm:gap-0 animate-slide-in-left animate-fade-in">
               <div className="flex items-center">
