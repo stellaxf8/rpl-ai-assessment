@@ -946,32 +946,32 @@ export const questions: Question[] = [
     dimension: "dataSecurity",
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
-    question: "How well do you handle data protection regulatory compliance?",
+    question: "How robust are your data breach prevention and incident response procedures?",
     options: [
       {
         value: 1,
-        text: "Limited compliance capability",
-        description: "Struggle to meet data protection requirements"
+        text: "Limited incident response",
+        description: "Minimal procedures for handling security incidents"
       },
       {
         value: 2,
-        text: "Basic compliance measures",
-        description: "Meet minimum data protection requirements"
+        text: "Basic incident response plan",
+        description: "Basic procedures with some response capabilities"
       },
       {
         value: 3,
-        text: "Good compliance framework",
-        description: "Generally compliant with data protection regulations"
+        text: "Good incident response framework",
+        description: "Well-defined procedures with regular testing"
       },
       {
         value: 4,
-        text: "Strong compliance program",
-        description: "Comprehensive compliance with regular auditing"
+        text: "Advanced incident response program",
+        description: "Comprehensive response with proactive threat detection"
       },
       {
         value: 5,
-        text: "Leading compliance practices",
-        description: "Exceed compliance requirements with proactive approach"
+        text: "Leading incident response practices",
+        description: "Industry-leading prevention and response capabilities"
       }
     ]
   },
