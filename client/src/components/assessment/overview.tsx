@@ -54,7 +54,6 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           Comprehensive evaluation across 6 key dimensions to determine your organization's readiness for AI implementation
         </p>
       </div>
-      
       {/* Start Assessment Button */}
       <div className="text-center mb-8 sm:mb-12 animate-fade-in animate-slide-up">
         <Button 
@@ -66,10 +65,9 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
         </Button>
       </div>
-      
       {/* Why AI Readiness Assessment is Crucial */}
       <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up animate-fade-in" style={{ borderColor: '#cd0000' }}>
-        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">Why AI Readiness Assessment is <span style={{ color: '#cd0000', fontFamily: 'Arial Black' }}>Crucial</span></h3>
+        <h3 className="text-[#0f172a] font-bold">Why AI Readiness Assessment is <span style={{ color: '#cd0000', fontFamily: 'Arial Black' }}>Crucial</span></h3>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-[#cd0000]">Avoid Costly Mistakes</h4>
