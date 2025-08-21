@@ -57,8 +57,6 @@ export default function Home() {
           <div className="flex justify-between items-center h-16 sm:h-20 animate-fade-in">
             <a 
               href="https://www.redpilllabs.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
               className="flex items-center cursor-pointer hover:opacity-80 transition-opacity animate-slide-in-left"
             >
               <img 
