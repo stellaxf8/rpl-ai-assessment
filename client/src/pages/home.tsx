@@ -68,8 +68,7 @@ export default function Home() {
                 className="bg-[#cd0000] text-white px-2 py-1 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm font-medium transition-all hover:bg-[#b30000] flex items-center justify-center hover-lift button-press min-h-[2rem] sm:min-h-0 sm:h-auto"
               >
                 <HomeIcon className="mr-1 h-3 w-3 sm:h-4 sm:w-4" />
-                <span className="hidden sm:inline">Overview</span>
-                <span className="sm:hidden">Home</span>
+                Home
               </button>
               <a 
                 href="https://www.redpilllabs.com/contact-us" 
