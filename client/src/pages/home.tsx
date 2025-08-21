@@ -59,7 +59,7 @@ export default function Home() {
               <img 
                 src={logoPath} 
                 alt="Red Pill Labs" 
-                className="h-5 sm:h-8 w-auto"
+                className="h-4 sm:h-8 w-auto"
               />
             </a>
             <nav className="flex items-center space-x-2 sm:space-x-4 animate-slide-in-right">
