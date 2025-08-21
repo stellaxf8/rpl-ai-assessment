@@ -524,7 +524,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             <Button 
               variant="outline" 
               onClick={handlePrevious}
-              className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1 text-sm sm:text-base"
+              className="hover-lift button-press w-24 sm:w-auto order-2 sm:order-1 text-sm sm:text-base"
             >
               <ArrowLeft className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
               <span className="sm:hidden">{currentQuestion === 0 ? 'Back' : 'Previous'}</span>
@@ -539,7 +539,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               <Button 
                 onClick={handleNext}
                 disabled={!canGoNext}
-                className="hover-lift button-press w-full sm:w-auto text-sm sm:text-base min-w-[100px] sm:min-w-0"
+                className="hover-lift button-press w-24 sm:w-auto text-sm sm:text-base"
                 data-next-button
               >
                 <span className="sm:hidden">{currentQuestion === assessmentQuestions.length - 1 ? 'Complete' : 'Next'}</span>
