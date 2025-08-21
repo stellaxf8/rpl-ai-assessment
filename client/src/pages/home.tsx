@@ -118,12 +118,6 @@ export default function Home() {
           </div>
         )}
       </main>
-      {/* Footnote Disclaimer */}
-      <footer className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 pb-2 sm:pb-4 mt-2 sm:mt-4">
-        <div className="text-center bg-white rounded-lg py-2 px-4">
-          <p className="text-xs text-gray-500">* Assessment results are for informational purposes only. We recommend using results alongside professional consultation.</p>
-        </div>
-      </footer>
     </div>
   );
 }
