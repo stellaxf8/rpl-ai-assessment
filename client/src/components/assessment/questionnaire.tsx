@@ -139,15 +139,28 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       [currentQuestionData.id]: parseInt(value),
     });
     
-    // Auto-scroll to next button after selection
+    // Desktop-only: scroll to question area after selection
     setTimeout(() => {
-      const nextButton = document.querySelector('[data-next-button]');
-      if (nextButton) {
-        nextButton.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'center',
-          inline: 'nearest'
-        });
+      const isDesktop = window.innerWidth >= 768; // md breakpoint
+      if (isDesktop) {
+        const questionArea = document.getElementById('question-area');
+        if (questionArea) {
+          questionArea.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start',
+            inline: 'nearest'
+          });
+        }
+      } else {
+        // Mobile: scroll to next button as before
+        const nextButton = document.querySelector('[data-next-button]');
+        if (nextButton) {
+          nextButton.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center',
+            inline: 'nearest'
+          });
+        }
       }
     }, 200);
   };
