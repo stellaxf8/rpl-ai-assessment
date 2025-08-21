@@ -368,7 +368,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   return (
     <section>
       {/* Progress Header */}
-      <Card className="mb-2 animate-slide-up animate-fade-in">
+      <Card className="mb-0 animate-slide-up animate-fade-in">
         <CardContent className="p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 animate-fade-in gap-2 sm:gap-0">
             <div className="flex flex-col animate-slide-in-left">
@@ -441,10 +441,10 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         </CardContent>
       </Card>
       {/* Question Card */}
-      <Card className="animate-slide-up animate-fade-in border-0">
-        <CardContent className="p-4 sm:p-6 lg:p-8 pt-2 pb-[0px]">
-          <div className="mb-2 sm:mb-3 animate-fade-in">
-            <div className="flex flex-col sm:flex-row sm:items-center mb-4 gap-2 sm:gap-0 animate-slide-in-left animate-fade-in">
+      <Card className="animate-slide-up animate-fade-in border-0 mt-0">
+        <CardContent className="p-4 sm:p-6 lg:p-8 pt-0 pb-[0px]">
+          <div className="mb-1 sm:mb-2 animate-fade-in">
+            <div className="flex flex-col sm:flex-row sm:items-center mb-2 gap-2 sm:gap-0 animate-slide-in-left animate-fade-in">
               <div className="flex items-center">
                 <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center mr-3 bg-transparent">
                   {getIconComponent(currentQuestionData.icon)}
