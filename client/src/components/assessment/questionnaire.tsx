@@ -372,7 +372,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         <CardContent className="p-4 sm:p-6 pt-[6px] pb-[6px]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 animate-fade-in gap-2 sm:gap-0">
             <div className="flex flex-col animate-slide-in-left">
-              <h2 className="text-xl sm:text-2xl font-bold text-slate-900">AI Readiness Assessment</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900"><span style={{ color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
               {selectedIndustry && hasIndustryVariations(selectedIndustry) && (
                 <p className="text-sm text-primary font-medium animate-slide-up stagger-delay-1">
                   {selectedIndustry} Industry - Specialized Questions
