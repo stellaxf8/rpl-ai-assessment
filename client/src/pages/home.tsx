@@ -5,13 +5,10 @@ import backgroundImage from "@assets/BG 1_1755624813166.png";
 import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
-import Report from "@/components/assessment/report";
-
 import Contact from "@/components/contact/contact";
-
 import { Assessment } from "@shared/schema";
 
-type Section = 'overview' | 'assessment' | 'results' | 'report' | 'contact';
+type Section = 'overview' | 'assessment' | 'results' | 'contact';
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<Section>('overview');
@@ -103,17 +100,7 @@ export default function Home() {
           <div key="results-section">
             <Results 
               assessment={completedAssessment}
-              onGenerateReport={() => setCurrentSection('report')}
               onRetakeAssessment={handleRetakeAssessment}
-            />
-          </div>
-        )}
-        
-        {currentSection === 'report' && completedAssessment && (
-          <div key="report-section">
-            <Report 
-              assessment={completedAssessment} 
-              onBack={() => setCurrentSection('results')}
             />
           </div>
         )}
