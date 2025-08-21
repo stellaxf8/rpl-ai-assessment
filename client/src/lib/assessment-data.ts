@@ -4,7 +4,6 @@ export interface Question {
   dimensionLabel: string;
   icon: string;
   question: string;
-  description: string;
   options: {
     value: number;
     text: string;
@@ -20,7 +19,6 @@ export const questions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How would you describe your organization's current technology stack?",
-    description: "Consider whether your systems are modern, flexible, and can handle increased workloads. For Example: Do you use cloud services like Microsoft 365 or Google Workspace, or do you still rely on older desktop software and local servers?",
     options: [
       {
         value: 1,
@@ -55,7 +53,6 @@ export const questions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How well can your organization handle large amounts of business data?",
-    description: "Consider your systems' ability to store and process significant volumes of business information. For Example: Can you easily generate reports from years of customer data, or do large data exports crash your systems and take hours to complete?",
     options: [
       {
         value: 1,
@@ -90,7 +87,6 @@ export const questions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How easily can your systems connect and share data with new business tools?",
-    description: "Consider your ability to integrate new services and connect different business applications. For Example: When you add a new customer management tool, does it automatically sync with your existing email and accounting software, or do you have to manually copy data between systems?",
     options: [
       {
         value: 1,
@@ -125,7 +121,6 @@ export const questions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How well can your organization monitor and track system performance?",
-    description: "Consider your ability to monitor business systems and quickly detect issues. For Example: Do you get alerts when your website is slow or when your email server is down, or do you only find out when employees complain that something isn't working?",
     options: [
       {
         value: 1,
@@ -160,7 +155,6 @@ export const questions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How would you rate your organization's internet and network connectivity?",
-    description: "Consider connection speed, reliability, and capacity for business operations. For Example: Can multiple employees video conference simultaneously without issues, or does internet slow down when several people are working online at the same time?",
     options: [
       {
         value: 1,
@@ -197,7 +191,6 @@ export const questions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "How would you describe the quality of your organization's data?",
-    description: "Consider data accuracy, completeness, consistency, and reliability. For Example: Are customer contact details up-to-date and complete, or do you often find missing phone numbers, duplicate records, and outdated addresses in your system?",
     options: [
       {
         value: 1,
@@ -232,7 +225,6 @@ export const questions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "How accessible is your data for analysis and AI projects?",
-    description: "Evaluate how easily teams can access and work with organizational data. For Example: Can your marketing team quickly get sales data to create reports, or do they need to submit requests to IT and wait weeks to get the information they need?",
     options: [
       {
         value: 1,
@@ -267,7 +259,6 @@ export const questions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "What is the state of your data governance framework?",
-    description: "Consider data policies, ownership, and management processes. For Example: Do you have clear rules about who can access customer data and how it should be used, or can anyone in the company access any data without restrictions or oversight?",
     options: [
       {
         value: 1,
@@ -302,7 +293,6 @@ export const questions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "How well is your data documented and cataloged?",
-    description: "Assess the availability of data dictionaries, metadata, and documentation. For Example: When a new employee needs to understand your sales data, can they find clear explanations of what each field means, or do they have to ask around to figure out how the data is organized?",
     options: [
       {
         value: 1,
@@ -337,7 +327,6 @@ export const questions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "How prepared is your data for machine learning and AI use cases?",
-    description: "Consider data format, structure, and readiness for analysis. For Example: Is your data organized in spreadsheets and databases that can be easily analyzed, or is most of your business information stored in emails, paper documents, and unstructured formats?",
     options: [
       {
         value: 1,
@@ -374,7 +363,6 @@ export const questions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "What is the general level of AI knowledge within your organization?",
-    description: "Assess the overall understanding of AI concepts and applications. For Example: Can your team explain what AI could do for your business and give specific examples, or do most people think AI is just science fiction and have no idea how it might help your company?",
     options: [
       {
         value: 1,
@@ -409,7 +397,6 @@ export const questions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "How many team members have hands-on experience with AI/ML tools?",
-    description: "Consider practical experience with AI platforms, frameworks, or tools. For Example: Has anyone on your team actually used AI tools like ChatGPT for business tasks, built automated reports, or worked with data analysis software to find patterns in your business data?",
     options: [
       {
         value: 1,
@@ -444,7 +431,6 @@ export const questions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "How enthusiastic is your team about adopting AI technologies?",
-    description: "Gauge the team's attitude and willingness to embrace AI. For Example: When AI tools are mentioned, does your team get excited about the possibilities and ask lots of questions, or do they worry about job security and prefer to stick with current manual processes?",
     options: [
       {
         value: 1,
@@ -479,7 +465,6 @@ export const questions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "What is your organization's approach to AI training and education?",
-    description: "Evaluate current and planned AI learning initiatives. For Example: Do you provide courses or workshops where employees can learn about AI and practice using AI tools, or do people have to figure out AI on their own time without company support?",
     options: [
       {
         value: 1,
@@ -514,7 +499,6 @@ export const questions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "How well does your team understand data science and analytics?",
-    description: "Assess foundational skills in data analysis and statistical thinking. For Example: Can your team create charts and graphs from business data to spot trends and make decisions, or do they struggle with anything beyond basic spreadsheet calculations?",
     options: [
       {
         value: 1,
@@ -551,7 +535,6 @@ export const questions: Question[] = [
     dimensionLabel: "System Integration",
     icon: "Puzzle",
     question: "How well integrated are your current software systems?",
-    description: "Consider the connectivity and data flow between existing systems. For Example: When a customer makes a purchase, does the information automatically update in your inventory, accounting, and customer service systems, or do you have to manually enter the same data in multiple places?",
     options: [
       {
         value: 1,
@@ -586,7 +569,6 @@ export const questions: Question[] = [
     dimensionLabel: "System Integration",
     icon: "Puzzle",
     question: "How easily can your current systems work with new automated business tools?",
-    description: "Consider how well your existing systems can connect with modern automation solutions. For Example: If you wanted to add a chatbot to your website that could check order status, could it easily access your order database, or would you need to completely rebuild your systems to make this work?",
     options: [
       {
         value: 1,
@@ -621,7 +603,6 @@ export const questions: Question[] = [
     dimensionLabel: "System Integration",
     icon: "Puzzle",
     question: "What is your experience with implementing new technology solutions?",
-    description: "Consider your track record with technology adoption and integration. For Example: When you've added new software like accounting systems or customer management tools, did the implementation go smoothly and on time, or did it take much longer than expected with lots of problems?",
     options: [
       {
         value: 1,
@@ -656,7 +637,6 @@ export const questions: Question[] = [
     dimensionLabel: "System Integration",
     icon: "Puzzle",
     question: "How flexible is your current IT architecture?",
-    description: "Evaluate the adaptability of your systems to new requirements. For Example: If you needed to add a new feature like mobile access to your business data, would this be a simple update, or would you need to rebuild major parts of your technology setup?",
     options: [
       {
         value: 1,
@@ -691,7 +671,6 @@ export const questions: Question[] = [
     dimensionLabel: "System Integration",
     icon: "Puzzle",
     question: "How well do your systems handle real-time data processing?",
-    description: "Assess capability for real-time AI applications and responses. For Example: Can your systems immediately update inventory levels when a sale happens and instantly notify customers about shipping updates, or do these updates only happen once a day when reports are run?",
     options: [
       {
         value: 1,
@@ -728,7 +707,6 @@ export const questions: Question[] = [
     dimensionLabel: "Budget & Resources",
     icon: "DollarSign",
     question: "What budget has been allocated for AI initiatives?",
-    description: "Consider current and planned budget for AI technology and implementation. For Example: Has your company set aside specific money for exploring AI tools and hiring specialists, or are AI projects expected to come out of the general IT budget with no dedicated funding?",
     options: [
       {
         value: 1,
@@ -763,7 +741,6 @@ export const questions: Question[] = [
     dimensionLabel: "Budget & Resources",
     icon: "DollarSign",
     question: "How willing is leadership to invest in AI training and education?",
-    description: "Assess commitment to developing internal AI capabilities. For Example: Would your company pay for employees to attend AI workshops or online courses, or do leaders expect staff to learn about AI on their own time without company support?",
     options: [
       {
         value: 1,
@@ -798,7 +775,6 @@ export const questions: Question[] = [
     dimensionLabel: "Budget & Resources",
     icon: "DollarSign",
     question: "What resources are available for hiring AI talent?",
-    description: "Consider budget and plans for bringing in AI expertise. For Example: Could your company afford to hire a data scientist or AI specialist with competitive salary and benefits, or are you limited to using existing employees who would learn AI skills alongside their current jobs?",
     options: [
       {
         value: 1,
@@ -833,7 +809,6 @@ export const questions: Question[] = [
     dimensionLabel: "Budget & Resources",
     icon: "DollarSign",
     question: "How much can you invest in automation technology and tools?",
-    description: "Consider budget for automation platforms, software, and technology systems. For Example: Could your company purchase AI software licenses, cloud computing services, and automation platforms that might cost thousands of dollars monthly, or are you limited to free or very low-cost tools?",
     options: [
       {
         value: 1,
@@ -868,7 +843,6 @@ export const questions: Question[] = [
     dimensionLabel: "Budget & Resources",
     icon: "DollarSign",
     question: "What is the expected ROI timeline for AI investments?",
-    description: "Consider leadership expectations for return on AI investment. For Example: Does leadership expect AI projects to save money or increase revenue within a few months, or are they willing to wait 1-2 years to see significant returns on AI investments?",
     options: [
       {
         value: 1,
@@ -905,7 +879,6 @@ export const questions: Question[] = [
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "How mature is your organization's cybersecurity framework?",
-    description: "Consider current security policies, procedures, and protection systems. For Example: Do you have firewalls, regular security updates, employee training about phishing emails, and incident response plans, or do you mainly rely on basic antivirus software and hope for the best?",
     options: [
       {
         value: 1,
@@ -940,7 +913,6 @@ export const questions: Question[] = [
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "What is your approach to data privacy and protection?",
-    description: "Consider privacy policies, data handling, and regulatory compliance. For Example: Do you have clear rules about who can access customer information, how long you keep personal data, and what you do if there's a data breach, or do you handle customer data without formal privacy policies?",
     options: [
       {
         value: 1,
@@ -975,7 +947,6 @@ export const questions: Question[] = [
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "How well do you handle data protection regulatory compliance?",
-    description: "Assess ability to meet GDPR, CCPA, and other data protection regulations. For Example: Can you quickly provide customers with all the personal data you have about them if they request it, delete their information when asked, and document how you handle their privacy, or would these requests create major challenges?",
     options: [
       {
         value: 1,
@@ -1010,7 +981,6 @@ export const questions: Question[] = [
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "What encryption and access control measures do you have in place?",
-    description: "Evaluate data encryption, identity management, and access controls. For Example: Do employees need special permission and secure passwords to access sensitive business data, and is that data scrambled (encrypted) so it can't be read if stolen, or can anyone in your company access any data with basic passwords?",
     options: [
       {
         value: 1,
@@ -1045,7 +1015,6 @@ export const questions: Question[] = [
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "How do you handle third-party vendor security assessments?",
-    description: "Assess approach to vendor security evaluation and management. For Example: Before using software from other companies or cloud services, do you check their security practices and require them to meet your security standards, or do you simply trust that external vendors are secure without verification?",
     options: [
       {
         value: 1,

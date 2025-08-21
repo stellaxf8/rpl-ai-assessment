@@ -8,7 +8,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How would you describe your organization's current technology stack?",
-    description: "Consider whether your systems are modern, flexible, and can handle increased workloads. For Example: Do you use cloud services like Microsoft 365 or Google Workspace, or do you still rely on older desktop software and local servers?",
     options: [
       {
         value: 1,
@@ -43,7 +42,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How well can your organization handle large amounts of business data?",
-    description: "Consider your systems' ability to process and analyze significant volumes of information. For Example: Can you easily generate reports from years of customer data, or do large data exports crash your systems and take hours to complete?",
     options: [
       {
         value: 1,
@@ -78,7 +76,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Technology Infrastructure",
     icon: "Server",
     question: "How easily can your organization expand or adapt its technology systems?",
-    description: "Consider your ability to adjust technology resources based on changing business needs. For Example: If your business suddenly needed to support remote work for all employees, could your systems handle the increased load and new requirements, or would you need major upgrades?",
     options: [
       {
         value: 1,
@@ -115,7 +112,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "How would you describe the overall quality of your organization's data?",
-    description: "Consider data accuracy, completeness, consistency, and timeliness across your systems. For Example: When you look at customer information in your database, is it up-to-date and complete, or do you often find missing details, duplicate entries, and outdated contact information?",
     options: [
       {
         value: 1,
@@ -150,7 +146,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "How easily can your organization access and integrate data from different sources?",
-    description: "Evaluate your data accessibility, integration capabilities, and cross-system data flow. For Example: Can you easily create a report that combines sales data, customer information, and inventory levels, or would this require manually collecting data from multiple separate systems?",
     options: [
       {
         value: 1,
@@ -185,7 +180,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
     question: "What percentage of your business data is well-organized and ready for analysis?",
-    description: "Consider how much of your data is properly organized and suitable for business intelligence. For Example: What percentage of your business data could you use right now to create meaningful reports and insights without major cleanup or reorganization work?",
     options: [
       {
         value: 1,
@@ -222,7 +216,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "What is the general level of AI knowledge among your key team members?",
-    description: "Consider understanding of AI concepts, capabilities, and limitations across your organization. For Example: Can your key team members explain how AI might help your business and what it cannot do, or do most people have little understanding of what AI actually is?",
     options: [
       {
         value: 1,
@@ -257,7 +250,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
     question: "How comfortable is your team with adopting new technologies and workflows?",
-    description: "Assess your organization's change management capabilities and technology adoption rate. For Example: When you introduced new software or changed processes in the past, did your team adapt quickly and embrace the changes, or was there significant resistance and slow adoption?",
     options: [
       {
         value: 1,
@@ -294,7 +286,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "System Integration",
     icon: "Puzzle",
     question: "How well do your business systems work together and share information?",
-    description: "Consider how easily information flows between your customer management, accounting, and other key business systems. For Example: When a customer places an order, does it automatically update your inventory and accounting systems, or do you have to manually enter the same information in multiple places?",
     options: [
       {
         value: 1,
@@ -329,7 +320,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "System Integration",
     icon: "Puzzle",
     question: "How easily can you add new automated features to your current systems?",
-    description: "Consider how simple it would be to connect new tools or add automation to your existing business systems. For Example: If you wanted to add an automated email system that sends follow-up messages based on customer actions, would this be easy to implement with your current systems?",
     options: [
       {
         value: 1,
@@ -366,7 +356,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Budget & Resources",
     icon: "DollarSign",
     question: "What budget range has been allocated for AI initiatives over the next 12 months?",
-    description: "Consider both direct technology costs and related expenses like training and consulting. For Example: Has your company set aside specific money for AI projects, including software costs, training, and expert help, or would AI initiatives need to compete with other priorities for funding?",
     options: [
       {
         value: 1,
@@ -401,7 +390,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Budget & Resources",
     icon: "DollarSign",
     question: "How much dedicated time can your team allocate to AI implementation projects?",
-    description: "Consider the availability of team members to focus on AI initiatives alongside current responsibilities. For Example: Could key employees spend significant time learning about and implementing AI tools, or are they too busy with daily operations to take on additional projects?",
     options: [
       {
         value: 1,
@@ -438,7 +426,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "How strong are your organization's data security and privacy protections?",
-    description: "Consider your safeguards for protecting sensitive business and customer information. For Example: Do you have strong passwords, secure access controls, regular backups, and employee training about cybersecurity, or do you rely mainly on basic security measures?",
     options: [
       {
         value: 1,
@@ -473,7 +460,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "How well does your organization comply with data protection and privacy laws?",
-    description: "Consider your compliance with relevant privacy regulations that apply to your industry and location. For Example: If a customer asked to see all the personal information you have about them or requested to delete their data, could you easily fulfill this request, or would it be complicated to find and manage their information across your systems?",
     options: [
       {
         value: 1,
@@ -510,7 +496,6 @@ export const quickQuestions: Question[] = [
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
     question: "How do you currently handle data backup and disaster recovery?",
-    description: "Consider your backup frequency, recovery procedures, and business continuity planning. For Example: If your main systems crashed tomorrow, could you quickly restore all your business data and get back to normal operations, or would you lose important information and face significant downtime?",
     options: [
       {
         value: 1,

@@ -457,9 +457,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3 animate-slide-up animate-fade-in">
               {currentQuestionData.question}
             </h3>
-            <div className="animate-slide-up animate-fade-in">
-              {formatQuestionDescription(currentQuestionData.description)}
-            </div>
           </div>
 
           <RadioGroup
