@@ -16,11 +16,11 @@ export default function RadarChart({ scores }: RadarChartProps) {
   ];
 
   return (
-    <div className="h-80 flex items-center justify-center">
+    <div className="w-full h-full flex items-center justify-center overflow-hidden">
       <ResponsiveContainer width="100%" height="100%">
-        <RechartsRadarChart data={data}>
+        <RechartsRadarChart data={data} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
           <PolarGrid />
-          <PolarAngleAxis dataKey="dimension" />
+          <PolarAngleAxis dataKey="dimension" className="text-xs sm:text-sm" />
           <PolarRadiusAxis 
             angle={90} 
             domain={[0, 5]} 
