@@ -531,13 +531,15 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               <span className="hidden sm:inline">{currentQuestion === 0 ? 'Back' : 'Previous Question'}</span>
             </Button>
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 order-1 sm:order-2">
-              {!canGoNext && (
-                <span className="text-xs text-slate-500 text-center">Please select an answer to continue</span>
-              )}
+              <div className="h-4 sm:h-0">
+                {!canGoNext && (
+                  <span className="text-xs text-slate-500 text-center">Please select an answer to continue</span>
+                )}
+              </div>
               <Button 
                 onClick={handleNext}
                 disabled={!canGoNext}
-                className="hover-lift button-press w-full sm:w-auto text-sm sm:text-base"
+                className="hover-lift button-press w-full sm:w-auto text-sm sm:text-base min-w-[100px] sm:min-w-0"
                 data-next-button
               >
                 <span className="sm:hidden">{currentQuestion === assessmentQuestions.length - 1 ? 'Complete' : 'Next'}</span>
