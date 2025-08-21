@@ -76,14 +76,7 @@ export default function Home() {
                 <span className="hidden xs:inline">Contact Us</span>
                 <span className="xs:hidden">Contact</span>
               </a>
-              <a 
-                href="https://www.redpilllabs.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-xs text-gray-400 hover:text-gray-600 transition-all hover-lift hidden sm:block"
-              >
-                visit main site
-              </a>
+              
             </nav>
           </div>
         </div>
