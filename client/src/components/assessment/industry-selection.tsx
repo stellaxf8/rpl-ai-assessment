@@ -162,32 +162,28 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
           return (
             <Card
               key={industry.id}
-              className={`cursor-pointer transition-all duration-200 hover:shadow-lg h-20 sm:h-32 ${
+              className={`cursor-pointer transition-all duration-200 hover:shadow-lg h-24 ${
                 isSelected 
                   ? 'ring-2 ring-primary bg-primary/5' 
                   : 'hover:bg-slate-50'
               }`}
               onClick={() => handleIndustryClick(industry.id)}
             >
-              <CardContent className="p-2 sm:p-3 h-full">
-                <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left space-y-1 sm:space-y-0 sm:space-x-3 h-full justify-center sm:justify-start">
-                  <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center bg-[#2a2c3700] text-[#cd0000]">
-                    <Icon className="h-3 w-3 sm:h-4 sm:w-4" />
+              <CardContent className="p-3 h-full">
+                <div className="flex flex-col items-center text-center space-y-2 h-full justify-center">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-[#2a2c3700] text-[#cd0000]">
+                    <Icon className="h-4 w-4" />
                   </div>
                   
                   <div className="flex-1 min-w-0">
-                    <div className="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between mb-1">
-                      <h3 className="font-semibold text-xs sm:text-sm text-slate-900 leading-tight">{industry.name}</h3>
+                    <div className="flex flex-col items-center">
+                      <h3 className="font-semibold text-sm text-slate-900 leading-tight mb-1">{industry.name}</h3>
                       {industry.hasSpecializations && (
-                        <Badge variant="secondary" className="text-xs mt-1 sm:mt-0">
+                        <Badge variant="secondary" className="text-xs">
                           Specialized
                         </Badge>
                       )}
                     </div>
-                    
-                    <p className="hidden sm:block text-xs text-slate-600 mb-2 leading-snug">
-                      {industry.description}
-                    </p>
                   </div>
                 </div>
               </CardContent>
