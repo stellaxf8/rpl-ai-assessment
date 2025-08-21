@@ -42,9 +42,7 @@ export default function BusinessDevelopment({ scores }: BusinessDevelopmentProps
           >
             <div className="flex items-center">
               <MessageSquare className="mr-3 h-6 w-6" />
-              <div className="font-semibold text-lg">
-                Schedule Free Consultation
-              </div>
+              <div className="font-semibold text-lg">Schedule a Consultation</div>
             </div>
           </Button>
         </div>
