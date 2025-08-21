@@ -369,7 +369,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     <section>
       {/* Progress Header */}
       <Card className="mb-8 animate-slide-up animate-fade-in">
-        <CardContent className="p-4 sm:p-6">
+        <CardContent className="p-4 sm:p-6 pt-[5px] pb-[5px] pl-[24px] pr-[24px]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 animate-fade-in gap-2 sm:gap-0">
             <div className="flex flex-col animate-slide-in-left">
               <h2 className="text-xl sm:text-2xl font-bold text-slate-900">AI Readiness Assessment</h2>
