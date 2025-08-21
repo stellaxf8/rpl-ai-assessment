@@ -18,7 +18,10 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
       </div>
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {/* Quick Assessment */}
-        <Card className="cursor-pointer border-2 border-slate-300 animate-slide-up animate-fade-in">
+        <Card 
+          className="cursor-pointer border-2 border-slate-300 animate-slide-up animate-fade-in hover:border-[#cd0000] hover:shadow-lg transition-all duration-200 hover-lift"
+          onClick={() => onSelectType('quick')}
+        >
           <CardHeader className="text-center pb-4">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Zap style={{ color: '#cd0000' }} className="h-8 w-8" />
@@ -35,18 +38,14 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
               <p>• General AI readiness overview</p>
               <p>• Basic recommendations</p>
             </div>
-            <Button 
-              onClick={() => onSelectType('quick')}
-              className="w-full hover-lift button-press"
-              size="lg"
-            >
-              Start Quick Assessment
-            </Button>
           </CardContent>
         </Card>
 
         {/* Detailed Assessment */}
-        <Card className="cursor-pointer border-2 border-slate-300 animate-slide-up animate-fade-in">
+        <Card 
+          className="cursor-pointer border-2 border-slate-300 animate-slide-up animate-fade-in hover:border-[#cd0000] hover:shadow-lg transition-all duration-200 hover-lift"
+          onClick={() => onSelectType('detailed')}
+        >
           <CardHeader className="text-center pb-4">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock style={{ color: '#cd0000' }} className="h-8 w-8" />
@@ -61,13 +60,6 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
               <p>• Industry-specific insights</p>
               <p>• Detailed recommendations & benchmarks</p>
             </div>
-            <Button 
-              onClick={() => onSelectType('detailed')}
-              className="w-full hover-lift button-press"
-              size="lg"
-            >
-              Start Detailed Assessment
-            </Button>
           </CardContent>
         </Card>
       </div>
