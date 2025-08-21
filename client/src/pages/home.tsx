@@ -55,16 +55,18 @@ export default function Home() {
       <header className="bg-white shadow-lg border-b border-slate-200 relative z-10 animate-slide-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 sm:h-20 animate-fade-in">
-            <div 
+            <a 
+              href="https://www.redpilllabs.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
               className="flex items-center cursor-pointer hover:opacity-80 transition-opacity animate-slide-in-left"
-              onClick={() => setCurrentSection('overview')}
             >
               <img 
                 src={logoPath} 
                 alt="Red Pill Labs" 
                 className="h-6 sm:h-8 w-auto"
               />
-            </div>
+            </a>
             <nav className="flex items-center space-x-2 sm:space-x-4 animate-slide-in-right">
               <a 
                 href="https://www.redpilllabs.com/contact-us" 
