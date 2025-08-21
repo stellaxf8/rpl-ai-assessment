@@ -115,7 +115,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-12">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
           return (
@@ -123,14 +123,14 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               key={index} 
               className={`border-slate-300 animate-slide-up animate-fade-in`}
             >
-              <CardContent className="p-4 sm:p-6">
-                <div className="flex items-center mb-3 sm:mb-4">
-                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center mr-3 sm:mr-4 bg-[#f1f5f900] text-[#cd0000]`}>
-                    <IconComponent className="text-lg sm:text-xl" />
+              <CardContent className="p-3 sm:p-4 lg:p-6">
+                <div className="flex items-center mb-2 sm:mb-3 lg:mb-4">
+                  <div className={`w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg flex items-center justify-center mr-2 sm:mr-3 lg:mr-4 bg-[#f1f5f900] text-[#cd0000]`}>
+                    <IconComponent className="text-base sm:text-lg lg:text-xl" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-slate-900">{dimension.title}</h3>
+                  <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-slate-900">{dimension.title}</h3>
                 </div>
-                <p className="text-sm sm:text-base text-slate-600">{dimension.description}</p>
+                <p className="text-xs sm:text-sm lg:text-base text-slate-600">{dimension.description}</p>
               </CardContent>
             </Card>
           );
