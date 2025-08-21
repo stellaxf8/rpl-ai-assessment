@@ -482,10 +482,10 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 key={index} 
                 className={`flex items-start space-x-2 sm:space-x-4 p-2 sm:p-4 border border-slate-200 rounded-lg hover:bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all duration-200 animate-slide-in-left animate-fade-in`}
               >
-                <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="hover-scale mt-0.5 sm:mt-0 flex-shrink-0" />
+                <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="hover-scale mt-1 sm:mt-0" />
                 <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">
                   <div className="text-sm sm:text-base font-medium text-slate-900 leading-tight">{option.text}</div>
-                  <div className="text-xs sm:text-sm text-slate-600 mt-0.5 sm:mt-1 leading-tight">{option.description}</div>
+                  <div className="text-xs sm:text-sm text-slate-600 mt-1 leading-snug">{option.description}</div>
                 </Label>
               </div>
             ))}
