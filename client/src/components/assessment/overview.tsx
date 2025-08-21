@@ -54,6 +54,19 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           Comprehensive evaluation across 6 key dimensions to determine your organization's readiness for AI implementation
         </p>
       </div>
+      
+      {/* Start Assessment Button */}
+      <div className="text-center mb-8 sm:mb-12 animate-fade-in animate-slide-up">
+        <Button 
+          onClick={onStartAssessment}
+          size="lg"
+          className="text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 shadow-lg hover-lift button-press w-full sm:w-auto"
+        >
+          Start Assessment
+          <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+        </Button>
+      </div>
+      
       {/* Why AI Readiness Assessment is Crucial */}
       <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up animate-fade-in" style={{ borderColor: '#cd0000' }}>
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">Why AI Readiness Assessment is <span style={{ color: '#cd0000', fontFamily: 'Arial Black' }}>Crucial</span></h3>
@@ -102,16 +115,6 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </Card>
           );
         })}
-      </div>
-      <div className="text-center animate-fade-in animate-slide-up">
-        <Button 
-          onClick={onStartAssessment}
-          size="lg"
-          className="text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 shadow-lg hover-lift button-press w-full sm:w-auto"
-        >
-          Start Assessment
-          <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-        </Button>
       </div>
     </section>
   );
