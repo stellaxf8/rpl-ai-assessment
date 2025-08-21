@@ -80,7 +80,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </div>
             
             <div className="md:hidden">
-              <h4 className="text-sm font-semibold mb-1 text-[#cd0000]">Security & Compliance</h4>
+              <h4 className="text-sm font-semibold mb-1 text-[#cd0000]" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>Security & Compliance</h4>
               <p className="text-xs text-slate-700">
                 AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.
               </p>
@@ -98,7 +98,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             <div>
               <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000]">
                 <span className="md:hidden">Maximize ROI</span>
-                <span className="hidden md:inline">Security & Compliance</span>
+                <span className="hidden md:inline" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>Security & Compliance</span>
               </h4>
               <p className="text-xs md:text-sm lg:text-base text-slate-700 md:mb-4">
                 <span className="md:hidden">Companies with high AI readiness see 3x better returns on their AI investments. A thorough assessment identifies the most impactful AI opportunities for your specific situation.</span>
