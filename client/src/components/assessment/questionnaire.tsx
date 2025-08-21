@@ -138,6 +138,18 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       ...responses,
       [currentQuestionData.id]: parseInt(value),
     });
+    
+    // Auto-scroll to next button after selection
+    setTimeout(() => {
+      const nextButton = document.querySelector('[data-next-button]');
+      if (nextButton) {
+        nextButton.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center',
+          inline: 'nearest'
+        });
+      }
+    }, 200);
   };
 
   const handleNext = () => {
@@ -495,9 +507,10 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 onClick={handleNext}
                 disabled={!canGoNext}
                 className="hover-lift button-press w-full sm:w-auto"
+                data-next-button
               >
-                <span className="hidden sm:inline">{currentQuestion === questions.length - 1 ? 'Complete Assessment' : 'Next Question'}</span>
-                <span className="sm:hidden">{currentQuestion === questions.length - 1 ? 'Complete' : 'Next'}</span>
+                <span className="hidden sm:inline">{currentQuestion === assessmentQuestions.length - 1 ? 'Complete Assessment' : 'Next Question'}</span>
+                <span className="sm:hidden">{currentQuestion === assessmentQuestions.length - 1 ? 'Complete' : 'Next'}</span>
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
