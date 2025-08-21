@@ -467,7 +467,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 {currentQuestionData.dimensionLabel}
               </span>
             </div>
-            <h3 className="text-sm sm:text-xl font-semibold text-slate-900 mb-3 sm:mb-4 animate-slide-up animate-fade-in leading-tight">
+            <h3 className="text-xs sm:text-xl font-semibold text-slate-900 mb-3 sm:mb-4 animate-slide-up animate-fade-in leading-tight">
               {currentQuestionData.question}
             </h3>
           </div>
