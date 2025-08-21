@@ -70,28 +70,58 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       {/* Why AI Readiness Assessment is Crucial */}
       <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up animate-fade-in" style={{ borderColor: '#cd0000' }}>
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">Why <span style={{ color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment is <span style={{ color: 'black', fontFamily: 'Arial Black' }}>Crucial</span></h3>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-[#cd0000]">Avoid Costly Mistakes</h4>
-            <p className="text-sm sm:text-base text-slate-700 mb-4">
-              Organizations that rush into AI implementation without proper assessment face a 67% failure rate. Understanding your readiness prevents wasted resources and ensures successful AI adoption.
-            </p>
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+          <div className="space-y-3 md:space-y-6">
+            <div>
+              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000]">Avoid Costly Mistakes</h4>
+              <p className="text-xs md:text-sm lg:text-base text-slate-700">
+                Organizations that rush into AI implementation without proper assessment face a 67% failure rate. Understanding your readiness prevents wasted resources and ensures successful AI adoption.
+              </p>
+            </div>
             
-            <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-[#cd0000]">Maximize ROI</h4>
-            <p className="text-sm sm:text-base text-slate-700">
-              Companies with high AI readiness see 3x better returns on their AI investments. A thorough assessment identifies the most impactful AI opportunities for your specific situation.
-            </p>
+            <div className="md:hidden">
+              <h4 className="text-sm font-semibold mb-1 text-[#cd0000]">Security & Compliance</h4>
+              <p className="text-xs text-slate-700">
+                AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.
+              </p>
+            </div>
+            
+            <div className="hidden md:block">
+              <h4 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 text-[#cd0000]">Maximize ROI</h4>
+              <p className="text-sm lg:text-base text-slate-700">
+                Companies with high AI readiness see 3x better returns on their AI investments. A thorough assessment identifies the most impactful AI opportunities for your specific situation.
+              </p>
+            </div>
           </div>
-          <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-[#cd0000]">Security & Compliance</h4>
-            <p className="text-sm sm:text-base text-slate-700 mb-4">
-              AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.
-            </p>
+          
+          <div className="space-y-3 md:space-y-6">
+            <div>
+              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000]">Maximize ROI</h4>
+              <p className="text-xs md:text-sm lg:text-base text-slate-700">
+                Companies with high AI readiness see 3x better returns on their AI investments. A thorough assessment identifies the most impactful AI opportunities for your specific situation.
+              </p>
+            </div>
             
-            <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-[#cd0000]">Competitive Advantage</h4>
-            <p className="text-sm sm:text-base text-slate-700">
-              Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.
-            </p>
+            <div className="md:hidden">
+              <h4 className="text-sm font-semibold mb-1 text-[#cd0000]">Competitive Advantage</h4>
+              <p className="text-xs text-slate-700">
+                Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.
+              </p>
+            </div>
+            
+            <div className="hidden md:block">
+              <h4 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 text-[#cd0000]">Security & Compliance</h4>
+              <p className="text-sm lg:text-base text-slate-700">
+                AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.
+              </p>
+            </div>
+            
+            <div className="hidden md:block">
+              <h4 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 text-[#cd0000]">Competitive Advantage</h4>
+              <p className="text-sm lg:text-base text-slate-700">
+                Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.
+              </p>
+            </div>
           </div>
         </div>
       </div>
