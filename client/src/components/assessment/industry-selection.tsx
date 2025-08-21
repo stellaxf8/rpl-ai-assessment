@@ -154,7 +154,7 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
           Choose your primary industry to receive a tailored AI readiness assessment with industry-specific questions and benchmarks.
         </p>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+      <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
         {industries.map((industry) => {
           const Icon = industry.icon;
           const isSelected = localSelectedIndustry === industry.id;
