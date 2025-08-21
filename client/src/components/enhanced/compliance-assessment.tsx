@@ -10,99 +10,49 @@ interface ComplianceAssessmentProps {
   industry?: string;
 }
 
-const complianceFrameworks = [
-  // Canadian Regulations
+const securityCategories = [
   {
-    name: "PIPEDA",
-    fullName: "Personal Information Protection and Electronic Documents Act",
-    description: "Canadian federal privacy law governing personal information",
-    requirements: ["Privacy policies", "Consent mechanisms", "Breach notifications", "Data minimization"],
-    icon: "🇨🇦",
-    industries: ["all"] // Applies to all Canadian organizations
-  },
-  
-  // US Regulations
-  {
-    name: "NIST Cybersecurity Framework",
-    fullName: "NIST Framework for Improving Critical Infrastructure Cybersecurity",
-    description: "US federal cybersecurity framework for managing and reducing cybersecurity risk",
-    requirements: ["Identify assets", "Protect systems", "Detect threats", "Respond to incidents", "Recover operations"],
-    icon: "🇺🇸",
-    industries: ["all"] // Applies to all organizations managing cybersecurity risk
+    name: "Data Protection & Privacy",
+    fullName: "Data Protection & Privacy Management",
+    description: "Comprehensive data privacy and protection practices",
+    requirements: ["Data classification", "Privacy controls", "Data minimization", "Breach response"],
+    icon: "🛡️",
+    industries: ["all"]
   },
   {
-    name: "HIPAA",
-    fullName: "Health Insurance Portability and Accountability Act",
-    description: "US healthcare data protection standard",
-    requirements: ["PHI encryption", "Access controls", "Audit trails", "Business associate agreements"],
-    icon: "🏥",
-    industries: ["Healthcare"]
+    name: "Access Control & Authentication",
+    fullName: "Access Control & Identity Management",
+    description: "Secure access controls and identity management systems",
+    requirements: ["Multi-factor authentication", "Role-based access", "Identity verification", "Session management"],
+    icon: "🔐",
+    industries: ["all"]
   },
   {
-    name: "SOX",
-    fullName: "Sarbanes-Oxley Act",
-    description: "US financial reporting and data integrity requirements",
-    requirements: ["Financial data controls", "Audit trails", "Change management", "Access controls"],
-    icon: "💼",
-    industries: ["Finance", "Financial Services"]
+    name: "Security Monitoring & Incident Response",
+    fullName: "Security Monitoring & Incident Response",
+    description: "Continuous monitoring and rapid incident response capabilities",
+    requirements: ["Threat detection", "Incident response plan", "Security logging", "Monitoring tools"],
+    icon: "🔍",
+    industries: ["all"]
   },
   {
-    name: "FERPA",
-    fullName: "Family Educational Rights and Privacy Act",
-    description: "US federal law protecting student education records",
-    requirements: ["Student data privacy", "Consent management", "Access controls", "Audit trails"],
-    icon: "🎓",
-    industries: ["Education"]
-  },
-  
-  // EU Regulations
-  {
-    name: "GDPR",
-    fullName: "General Data Protection Regulation",
-    description: "EU data protection and privacy regulation for all individuals within EU",
-    requirements: ["Data subject consent", "Data portability", "Right to be forgotten", "Privacy by design", "Breach notification"],
-    icon: "🇪🇺",
-    industries: ["all"] // Applies to all organizations processing EU personal data
-  },
-  
-  // International Standards
-  {
-    name: "ISO 27001",
-    fullName: "Information Security Management",
-    description: "International security management standard",
-    requirements: ["Risk assessment", "Security policies", "Incident response", "Regular audits"],
+    name: "Data Encryption & Security",
+    fullName: "Data Encryption & Security Controls",
+    description: "Comprehensive data encryption and security controls",
+    requirements: ["Data encryption", "Secure communications", "Key management", "Security protocols"],
     icon: "🔒",
-    industries: ["all"] // Universal security standard
-  },
-  {
-    name: "PCI DSS",
-    fullName: "Payment Card Industry Data Security Standard",
-    description: "International standard for organizations handling credit card data",
-    requirements: ["Secure network", "Cardholder data protection", "Access controls", "Regular monitoring"],
-    icon: "💳",
-    industries: ["Retail", "Finance", "Financial Services", "E-commerce"]
+    industries: ["all"]
   }
 ];
 
-// Function to filter frameworks based on industry
-const getRelevantFrameworks = (industry?: string) => {
-  if (!industry) {
-    // If no industry specified, return universal frameworks
-    return complianceFrameworks.filter(framework => 
-      framework.industries.includes("all")
-    );
-  }
-
-  return complianceFrameworks.filter(framework => 
-    framework.industries.includes("all") || 
-    framework.industries.includes(industry) ||
-    framework.industries.some(ind => industry.toLowerCase().includes(ind.toLowerCase()))
-  );
+// Function to get security categories (all categories are universal)
+const getSecurityCategories = () => {
+  return securityCategories;
 };
 
 export default function ComplianceAssessment({ scores, industry }: ComplianceAssessmentProps) {
-  const avgComplianceScore = (scores.security + scores.dataQuality) / 2;
-  const relevantFrameworks = getRelevantFrameworks(industry);
+  const avgSecurityScore = (scores.security + scores.dataQuality) / 2;
+  const securityAssessmentCategories = getSecurityCategories();
   
   const getComplianceLevel = (score: number) => {
     if (score >= 4.0) return { 
@@ -128,25 +78,20 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
     };
   };
 
-  const getFrameworkScore = (framework: string) => {
-    // Calculate framework-specific scores based on security and data quality
-    const baseScore = avgComplianceScore;
+  const getCategoryScore = (category: string) => {
+    // Calculate category-specific scores based on security and data quality
+    const baseScore = avgSecurityScore;
     const variations = {
-      "GDPR": baseScore * 0.95,                        // Slightly lower due to strict data requirements
-      "HIPAA": baseScore * 0.9,                        // Lower due to healthcare-specific requirements
-      "SOX": baseScore * 1.05,                         // Slightly higher as more focused on financial controls
-      "PIPEDA": baseScore * 0.97,                      // Canadian privacy law, moderate requirements
-      "PCI DSS": baseScore * 0.92,                     // Payment security, moderate requirements
-      "FERPA": baseScore * 0.94,                       // Education privacy, moderate requirements
-
-      "NIST Cybersecurity Framework": baseScore * 1.02, // Cybersecurity framework, slightly above baseline
-      "ISO 27001": baseScore                           // Standard baseline
+      "Data Protection & Privacy": baseScore * 1.0,           // Standard baseline for privacy
+      "Access Control & Authentication": baseScore * 0.98,    // Slightly lower due to complexity
+      "Security Monitoring & Incident Response": baseScore * 1.05,  // Slightly higher if good security practices
+      "Data Encryption & Security": baseScore * 0.96         // Slightly lower due to technical requirements
     };
     
-    return Math.min(5, variations[framework as keyof typeof variations] || baseScore);
+    return Math.min(5, variations[category as keyof typeof variations] || baseScore);
   };
 
-  const overallCompliance = getComplianceLevel(avgComplianceScore);
+  const overallCompliance = getComplianceLevel(avgSecurityScore);
   const OverallIcon = overallCompliance.icon;
 
   return (
@@ -173,35 +118,35 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
             </div>
             <div className="text-right">
               <div className="text-2xl font-bold text-slate-900">
-                {avgComplianceScore.toFixed(1)}/5
+                {avgSecurityScore.toFixed(1)}/5
               </div>
-              <div className="text-sm text-slate-600">Compliance Score</div>
+              <div className="text-sm text-slate-600">Security Score</div>
             </div>
           </div>
         </div>
 
-        {/* Framework-Specific Assessment */}
+        {/* Security Category Assessment */}
         <div className="space-y-4">
-          <h4 className="font-semibold text-slate-900">Regulatory Framework Readiness:</h4>
-          {relevantFrameworks.map((framework, index) => {
-            const frameworkScore = getFrameworkScore(framework.name);
-            const frameworkCompliance = getComplianceLevel(frameworkScore);
-            const FrameworkIcon = frameworkCompliance.icon;
+          <h4 className="font-semibold text-slate-900">Security Assessment Categories:</h4>
+          {securityAssessmentCategories.map((category, index) => {
+            const categoryScore = getCategoryScore(category.name);
+            const categoryCompliance = getComplianceLevel(categoryScore);
+            const CategoryIcon = categoryCompliance.icon;
             
             return (
               <div key={index} className="border border-slate-200 rounded-lg p-4">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center">
-                    <span className="text-xl mr-3">{framework.icon}</span>
+                    <span className="text-xl mr-3">{category.icon}</span>
                     <div>
-                      <div className="font-medium text-slate-900">{framework.fullName}</div>
-                      <div className="text-sm text-slate-600">{framework.description}</div>
+                      <div className="font-medium text-slate-900">{category.fullName}</div>
+                      <div className="text-sm text-slate-600">{category.description}</div>
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <FrameworkIcon className={`${frameworkCompliance.color} mr-2 h-4 w-4`} />
-                    <span className={`text-sm font-medium ${frameworkCompliance.color}`}>
-                      {frameworkCompliance.level}
+                    <CategoryIcon className={`${categoryCompliance.color} mr-2 h-4 w-4`} />
+                    <span className={`text-sm font-medium ${categoryCompliance.color}`}>
+                      {categoryCompliance.level}
                     </span>
                   </div>
                 </div>
@@ -209,23 +154,23 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
                 <div className="flex items-center mb-3">
                   <div className="flex-1 mr-3">
                     <Progress 
-                      value={(frameworkScore / 5) * 100} 
+                      value={(categoryScore / 5) * 100} 
                       className="h-2 bg-gray-200" 
                       dynamicColor={true}
                     />
                   </div>
-                  <span className="text-sm text-slate-600">{frameworkScore.toFixed(1)}/5</span>
+                  <span className="text-sm text-slate-600">{categoryScore.toFixed(1)}/5</span>
                 </div>
 
                 {/* Key Requirements */}
                 <div className="space-y-1">
-                  <div className="text-sm font-medium text-slate-900">Key Requirements:</div>
+                  <div className="text-sm font-medium text-slate-900">Key Areas:</div>
                   <div className="grid grid-cols-2 gap-2">
-                    {framework.requirements.map((req, reqIndex) => (
+                    {category.requirements.map((req, reqIndex) => (
                       <div key={reqIndex} className="flex items-center text-sm text-slate-600">
                         <div className={`w-2 h-2 rounded-full mr-2 ${
-                          frameworkScore >= 4.0 ? 'bg-green-500' : 
-                          frameworkScore >= 3.0 ? 'bg-yellow-500' : 'bg-red-500'
+                          categoryScore >= 4.0 ? 'bg-green-500' : 
+                          categoryScore >= 3.0 ? 'bg-yellow-500' : 'bg-red-500'
                         }`}></div>
                         {req}
                       </div>
@@ -239,24 +184,24 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
 
         {/* Compliance Action Plan */}
         <div className="mt-6 border-t border-slate-200 pt-6">
-          <h4 className="font-semibold text-slate-900 mb-3">Compliance Action Plan:</h4>
+          <h4 className="font-semibold text-slate-900 mb-3">Security Action Plan:</h4>
           <div className="space-y-3">
-            {avgComplianceScore >= 4.0 ? (
+            {avgSecurityScore >= 4.0 ? (
               <>
                 <div className="flex items-start">
                   <CheckCircle className="text-green-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Maintain current compliance standards through regular audits</span>
+                  <span className="text-sm text-slate-700">Maintain current security standards through regular assessments</span>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="text-green-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Implement continuous monitoring for compliance drift</span>
+                  <span className="text-sm text-slate-700">Implement continuous monitoring for security posture</span>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="text-green-600 mr-2 h-4 w-4 mt-0.5" />
-                  <span className="text-sm text-slate-700">Consider advanced compliance automation tools</span>
+                  <span className="text-sm text-slate-700">Consider advanced security automation tools</span>
                 </div>
               </>
-            ) : avgComplianceScore >= 3.0 ? (
+            ) : avgSecurityScore >= 3.0 ? (
               <>
                 <div className="flex items-start">
                   <AlertTriangle className="text-yellow-600 mr-2 h-4 w-4 mt-0.5" />
@@ -291,7 +236,7 @@ export default function ComplianceAssessment({ scores, industry }: ComplianceAss
         </div>
 
         {/* Risk Warning */}
-        {avgComplianceScore < 3.0 && (
+        {avgSecurityScore < 3.0 && (
           <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
             <div className="flex items-start">
               <XCircle className="text-red-600 mr-2 h-5 w-5 mt-0.5" />
