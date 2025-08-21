@@ -170,16 +170,16 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
               onClick={() => handleIndustryClick(industry.id)}
             >
               <CardContent className="p-2 sm:p-3">
-                <div className="flex items-center sm:items-start space-x-2 sm:space-x-3">
+                <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left space-y-2 sm:space-y-0 sm:space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center bg-[#2a2c3700] text-[#cd0000]">
                     <Icon className="h-3 w-3 sm:h-4 sm:w-4" />
                   </div>
                   
                   <div className="flex-1 min-w-0">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                    <div className="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between mb-1">
                       <h3 className="font-semibold text-xs sm:text-sm text-slate-900 leading-tight">{industry.name}</h3>
                       {industry.hasSpecializations && (
-                        <Badge variant="secondary" className="text-xs mt-1 sm:mt-0 self-start">
+                        <Badge variant="secondary" className="text-xs mt-1 sm:mt-0">
                           Specialized
                         </Badge>
                       )}
