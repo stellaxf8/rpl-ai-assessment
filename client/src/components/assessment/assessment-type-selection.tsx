@@ -16,7 +16,6 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
           Select the assessment type that best fits your time and requirements
         </p>
       </div>
-      
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {/* Quick Assessment */}
         <Card className="cursor-pointer border-2 border-slate-300 animate-slide-up animate-fade-in">
@@ -53,9 +52,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
               <Clock style={{ color: '#cd0000' }} className="h-8 w-8" />
             </div>
             <CardTitle className="text-xl">Detailed Assessment</CardTitle>
-            <CardDescription className="text-base">
-              Comprehensive industry-specific analysis
-            </CardDescription>
+            <CardDescription className="text-base">In-depth industry-specific analysis</CardDescription>
           </CardHeader>
           <CardContent className="text-center space-y-4">
             <div className="space-y-2 text-sm text-slate-600">
@@ -74,7 +71,6 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
           </CardContent>
         </Card>
       </div>
-
       <div className="text-center">
         <Button variant="outline" onClick={onBack}>
           <ArrowLeft className="mr-2 h-4 w-4" />
