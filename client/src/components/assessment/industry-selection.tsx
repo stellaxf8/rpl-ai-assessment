@@ -162,15 +162,15 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
           return (
             <Card
               key={industry.id}
-              className={`cursor-pointer transition-all duration-200 hover:shadow-lg ${
+              className={`cursor-pointer transition-all duration-200 hover:shadow-lg h-20 sm:h-auto ${
                 isSelected 
                   ? 'ring-2 ring-primary bg-primary/5' 
                   : 'hover:bg-slate-50'
               }`}
               onClick={() => handleIndustryClick(industry.id)}
             >
-              <CardContent className="p-2 sm:p-3">
-                <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left space-y-2 sm:space-y-0 sm:space-x-3">
+              <CardContent className="p-2 sm:p-3 h-full">
+                <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left space-y-1 sm:space-y-0 sm:space-x-3 h-full justify-center sm:justify-start">
                   <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center bg-[#2a2c3700] text-[#cd0000]">
                     <Icon className="h-3 w-3 sm:h-4 sm:w-4" />
                   </div>
