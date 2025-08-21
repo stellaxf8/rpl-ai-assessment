@@ -3,9 +3,14 @@ import { Download, Calendar, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Assessment } from "@shared/schema";
+import { Assessment, DimensionScores } from "@shared/schema";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import IndustryBenchmark from "@/components/enhanced/industry-benchmark";
+import IntegrationReadiness from "@/components/enhanced/integration-readiness";
+import ComplianceAssessment from "@/components/enhanced/compliance-assessment";
+import BusinessDevelopment from "@/components/enhanced/business-development";
+import RadarChart from "@/components/charts/radar-chart";
 
 interface ReportProps {
   assessment: Assessment;
@@ -212,6 +217,16 @@ export default function Report({ assessment, onBack }: ReportProps) {
             </div>
           </div>
 
+          {/* Visual Score Analysis */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-slate-900 mb-6">Visual Score Analysis</h3>
+            <div className="flex justify-center mb-8">
+              <div className="w-full max-w-md">
+                <RadarChart scores={scores as DimensionScores} />
+              </div>
+            </div>
+          </div>
+
           {/* Detailed Analysis */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold text-slate-900 mb-6">Detailed Dimension Analysis</h3>
@@ -264,7 +279,30 @@ export default function Report({ assessment, onBack }: ReportProps) {
             </div>
           </div>
 
-
+          {/* Enhanced Analytics */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-slate-900 mb-6">Industry Analysis & Advanced Insights</h3>
+            <div className="space-y-6">
+              <IndustryBenchmark userScore={overallScore} industry={assessment.industry || "Technology"} />
+              <IntegrationReadiness scores={{ 
+                technologyInfrastructure: (scores as DimensionScores).technologyInfrastructure, 
+                systemIntegration: (scores as DimensionScores).systemIntegration 
+              }} />
+              <ComplianceAssessment scores={{ 
+                security: (scores as DimensionScores).dataSecurity, 
+                dataQuality: (scores as DimensionScores).dataQuality 
+              }} industry={assessment.industry} />
+              <BusinessDevelopment scores={{
+                overallScore: overallScore,
+                technologyInfrastructure: (scores as DimensionScores).technologyInfrastructure,
+                dataQuality: (scores as DimensionScores).dataQuality,
+                teamLiteracy: (scores as DimensionScores).teamLiteracy,
+                systemIntegration: (scores as DimensionScores).systemIntegration,
+                budget: (scores as DimensionScores).budget,
+                dataSecurity: (scores as DimensionScores).dataSecurity
+              }} />
+            </div>
+          </div>
 
           {/* Contact Information */}
           <div className="border-t border-slate-200 pt-6">
