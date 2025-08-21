@@ -160,36 +160,32 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
           const isSelected = localSelectedIndustry === industry.id;
 
           return (
-            <div className="aspect-square">
-              <Card
-                key={industry.id}
-                className={`cursor-pointer transition-all duration-200 hover:shadow-lg h-full w-full ${
-                  isSelected 
-                    ? 'ring-2 ring-primary bg-primary/5' 
-                    : 'hover:bg-slate-50'
-                }`}
-                onClick={() => handleIndustryClick(industry.id)}
-              >
-              <CardContent className="p-3 h-full">
-                <div className="flex flex-col items-center text-center space-y-2 h-full justify-center">
+            <Card
+              key={industry.id}
+              className={`cursor-pointer transition-all duration-200 hover:shadow-lg ${
+                isSelected 
+                  ? 'ring-2 ring-primary bg-primary/5' 
+                  : 'hover:bg-slate-50'
+              }`}
+              onClick={() => handleIndustryClick(industry.id)}
+            >
+              <CardContent className="p-2">
+                <div className="flex flex-col items-center text-center space-y-1">
                   <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-[#2a2c3700] text-[#cd0000]">
                     <Icon className="h-4 w-4" />
                   </div>
                   
-                  <div className="flex-1 min-w-0">
-                    <div className="flex flex-col items-center">
-                      <h3 className="font-semibold text-sm text-slate-900 leading-tight mb-1">{industry.name}</h3>
-                      {industry.hasSpecializations && (
-                        <Badge variant="secondary" className="text-xs">
-                          Specialized
-                        </Badge>
-                      )}
-                    </div>
+                  <div>
+                    <h3 className="font-semibold text-sm text-slate-900 leading-tight">{industry.name}</h3>
+                    {industry.hasSpecializations && (
+                      <Badge variant="secondary" className="text-xs mt-1">
+                        Specialized
+                      </Badge>
+                    )}
                   </div>
                 </div>
               </CardContent>
-              </Card>
-            </div>
+            </Card>
           );
         })}
       </div>
