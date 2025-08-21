@@ -264,7 +264,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
   if (showContactForm) {
     return (
-      <Card className="max-w-2xl mx-auto animate-slide-up animate-fade-in">
+      <Card className="max-w-2xl mx-auto animate-slide-up animate-fade-in border-0">
         <CardContent className="p-4 sm:p-6 lg:p-8">
           <div className="text-center mb-4 sm:mb-6 animate-fade-in">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 animate-slide-up animate-fade-in">Almost Done!</h2>
@@ -368,7 +368,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   return (
     <section>
       {/* Progress Header */}
-      <Card className="mb-8 animate-slide-up animate-fade-in">
+      <Card className="mb-8 animate-slide-up animate-fade-in border-0">
         <CardContent className="p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 animate-fade-in gap-2 sm:gap-0">
             <div className="flex flex-col animate-slide-in-left">
@@ -442,7 +442,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       </Card>
 
       {/* Question Card */}
-      <Card className="animate-slide-up animate-fade-in">
+      <Card className="animate-slide-up animate-fade-in border-0">
         <CardContent className="p-4 sm:p-6 lg:p-8">
           <div className="mb-4 sm:mb-6 animate-fade-in">
             <div className="flex flex-col sm:flex-row sm:items-center mb-4 gap-2 sm:gap-0 animate-slide-in-left animate-fade-in">
