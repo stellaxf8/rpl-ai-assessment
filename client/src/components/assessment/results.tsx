@@ -563,7 +563,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center">
                           <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
-                            <span>{config.icon}</span>
+                            {renderIcon(config.icon, "w-5 h-5")}
                           </div>
                           <h4 className="text-base sm:text-lg font-semibold text-slate-900">{config.label}</h4>
                         </div>
