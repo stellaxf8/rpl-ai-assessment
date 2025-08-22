@@ -77,9 +77,9 @@ const dimensionConfig = {
     color: "bg-red-100 text-error",
     barColor: "bg-error",
     recommendations: {
-      high: "Strong privacy governance with excellent regulatory compliance and advanced data anonymization for AI.",
-      medium: "Improve privacy regulation compliance and implement data anonymization frameworks for AI projects.",
-      low: "Establish privacy compliance program and develop data anonymization capabilities for AI datasets."
+      high: "Excellent security posture with strong cybersecurity framework, privacy governance, and data anonymization capabilities for AI.",
+      medium: "Strengthen cybersecurity controls, improve privacy compliance, and implement data anonymization frameworks for AI projects.",
+      low: "Establish comprehensive security framework, privacy compliance program, and data anonymization capabilities for AI datasets."
     }
   },
 };
@@ -158,9 +158,9 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           low: "Develop business case and seek approval for AI investment funding"
         },
         dataSecurity: {
-          high: "Develop AI-specific privacy governance and advanced anonymization techniques",
-          medium: "Implement privacy compliance framework and data anonymization processes",
-          low: "Establish privacy regulation compliance and basic data anonymization capabilities"
+          high: "Enhance AI-specific security controls and advanced privacy-preserving techniques",
+          medium: "Strengthen cybersecurity framework and implement privacy compliance with data anonymization",
+          low: "Establish foundational security controls, privacy compliance, and data protection capabilities"
         }
       };
 
