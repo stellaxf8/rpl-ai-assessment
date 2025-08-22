@@ -324,17 +324,8 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           </div>
           
           <!-- Contact Information -->
-          <div style="border-top: 2px solid #e2e8f0; padding-top: 24px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); margin: -24px; margin-top: 24px; padding: 32px;">
-            <div style="max-width: 600px; margin: 0 auto;">
-              <h3 style="font-size: 18px; font-weight: 700; color: #1e293b; margin-bottom: 12px;">Ready to Accelerate Your AI Journey?</h3>
-              <p style="color: #64748b; margin-bottom: 16px; font-size: 14px; line-height: 1.6;">
-                Transform your AI readiness assessment into actionable results. Our experts can help you implement these recommendations and fast-track your AI transformation.
-              </p>
-              <div style="background: white; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0; display: inline-block;">
-                <p style="color: #374151; margin: 0; font-size: 14px; font-weight: 600;">Contact Red Pill Labs</p>
-                <p style="color: #cd0000; margin: 4px 0 0 0; font-size: 14px; font-weight: 700;">www.redpilllabs.com/contact-us</p>
-              </div>
-            </div>
+          <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; text-align: center;">
+            <p style="color: #64748b; margin: 0; font-size: 12px;">Need help implementing these recommendations? Contact Red Pill Labs: www.redpilllabs.com/contact-us</p>
           </div>
         </div>
       `;
