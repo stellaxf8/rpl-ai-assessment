@@ -269,9 +269,17 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     index === 0 ? '#ef4444' : index === 1 ? '#f59e0b' : '#3b82f6'
                   };"></div>
                   <div style="display: flex; align-items: center; margin-bottom: 12px;">
-                    <span style="font-size: 16px; font-weight: bold; margin-right: 12px; color: ${
+                    <span style="font-size: 16px; font-weight: bold; margin-right: 8px; color: ${
                       index === 0 ? '#ef4444' : index === 1 ? '#f59e0b' : '#3b82f6'
                     };">${item.priority}.</span>
+                    <span style="margin-right: 12px; color: #374151; display: inline-flex; align-items: center; justify-content: center;">${
+                      item.icon === 'Server' ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>' :
+                      item.icon === 'Database' ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="m3 5 v14 a9 3 0 0 0 18 0 v-14"/><path d="m3 12a9 3 0 0 0 18 0"/></svg>' :
+                      item.icon === 'Users' ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 21v-2a4 4 0 0 0-3-3.87"/><path d="m16 3.13a4 4 0 0 1 0 7.75"/></svg>' :
+                      item.icon === 'Network' ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13.5 6 7.5 7.5-7.5 7.5"/><path d="m21 12H3"/><path d="m3 6 7.5 7.5L3 21"/></svg>' :
+                      item.icon === 'DollarSign' ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>' :
+                      item.icon === 'Shield' ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 7.5s-8-2.5-8-7.5c0-1.3.3-2.5.8-3.5L12 3l7.2 6.5c.5 1 .8 2.2 .8 3.5z"/></svg>' : item.icon
+                    }</span>
                     <div style="flex: 1;">
                       <span style="font-weight: 700; font-size: 16px; color: #1e293b;">${item.title}</span>
                       <div style="display: flex; align-items: center; margin-top: 4px;">
