@@ -183,86 +183,99 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       const reportContent = document.createElement('div');
       reportContent.setAttribute('data-report-content', 'true');
       reportContent.innerHTML = `
-        <div style="padding: 16px; background: white; font-family: Arial, sans-serif; font-size: 12px;">
+        <div style="padding: 24px; background: white; font-family: Arial, sans-serif; min-height: 100vh;">
           <!-- Report Header -->
-          <div style="padding: 16px; color: white; background-color: #cd0000; margin-bottom: 12px; border-radius: 6px;">
+          <div style="padding: 24px; color: white; background: linear-gradient(135deg, #cd0000 0%, #a50000 100%); margin-bottom: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <div>
-                <h2 style="font-size: 20px; font-weight: bold; margin-bottom: 4px; margin-top: 0;">AI Readiness Assessment Report</h2>
-                <p style="margin: 2px 0; opacity: 0.9; font-size: 11px;">Organization: ${organizationName}</p>
+                <h1 style="font-size: 28px; font-weight: bold; margin-bottom: 8px; margin-top: 0; letter-spacing: -0.5px;">AI Readiness Assessment Report</h1>
+                <p style="margin: 4px 0; opacity: 0.9; font-size: 14px;">Comprehensive analysis and strategic recommendations</p>
+                <p style="margin: 4px 0; opacity: 0.9; font-size: 14px; font-weight: 500;">Organization: ${organizationName}</p>
               </div>
               <div style="text-align: right;">
-                <div style="font-size: 14px; font-weight: bold;">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
-                <div style="opacity: 0.9; font-size: 10px;">Assessment Date</div>
+                <div style="font-size: 18px; font-weight: bold;">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                <div style="opacity: 0.9; font-size: 12px;">Assessment Date</div>
               </div>
             </div>
           </div>
           
-          <!-- Executive Summary & Top Action Items Row -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
-            <!-- Executive Summary -->
-            <div>
-              <h3 style="font-size: 14px; font-weight: 600; color: #1e293b; margin-bottom: 8px;">Executive Summary</h3>
-              <div style="background: #f8fafc; padding: 12px; border-radius: 6px;">
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 8px; text-align: center;">
-                  <div>
-                    <div style="font-size: 18px; font-weight: bold; margin-bottom: 2px; color: ${overallScore >= 80 ? '#16a34a' : overallScore >= 50 ? '#ca8a04' : '#dc2626'};">${overallScore}/100</div>
-                    <div style="font-size: 10px; color: #64748b;">Overall Score</div>
-                  </div>
-                  <div>
-                    <div style="font-size: 18px; font-weight: bold; margin-bottom: 2px; color: #16a34a;">
-                      ${overallScore >= 80 ? "Excellent" : overallScore >= 65 ? "Good" : overallScore >= 50 ? "Fair" : "Poor"}
-                    </div>
-                    <div style="font-size: 10px; color: #64748b;">Readiness Level</div>
-                  </div>
-                  <div>
-                    <div style="font-size: 18px; font-weight: bold; margin-bottom: 2px; color: #ca8a04;">
-                      ${Object.values(typedScores).filter((score: any) => score < 3.5).length}
-                    </div>
-                    <div style="font-size: 10px; color: #64748b;">Areas to Improve</div>
-                  </div>
+          <!-- Executive Summary Section -->
+          <div style="margin-bottom: 32px;">
+            <h2 style="font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 16px; border-bottom: 3px solid #cd0000; padding-bottom: 8px;">Executive Summary</h2>
+            <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px;">
+                <div style="text-align: center; padding: 16px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                  <div style="font-size: 32px; font-weight: bold; margin-bottom: 8px; color: ${overallScore >= 80 ? '#16a34a' : overallScore >= 50 ? '#ca8a04' : '#dc2626'};">${overallScore}</div>
+                  <div style="font-size: 12px; color: #64748b; font-weight: 600;">OVERALL SCORE</div>
+                  <div style="font-size: 10px; color: #94a3b8;">out of 100</div>
                 </div>
-                <p style="color: #374151; line-height: 1.4; margin: 0; font-size: 10px;">
-                  ${overallScore >= 80 ? "Excellent AI readiness with strong capabilities." : 
-                    overallScore >= 65 ? "Good AI readiness with strong potential." :
-                    overallScore >= 50 ? "Fair AI readiness with foundation in place." :
-                    "Limited AI readiness requiring preparation."}
-                </p>
-              </div>
-            </div>
-
-            <!-- Top 3 Action Items -->
-            <div>
-              <h3 style="font-size: 14px; font-weight: 600; color: #1e293b; margin-bottom: 8px;">Top 3 Action Items</h3>
-              <div style="space-y: 4px;">
-                ${topActionItems.map((item, index) => `
-                  <div style="border: 1px solid ${
-                    index === 0 ? '#fecaca' : index === 1 ? '#fef3c7' : '#dbeafe'
-                  }; border-radius: 4px; padding: 8px; margin-bottom: 4px; background: ${
-                    index === 0 ? '#fef2f2' : index === 1 ? '#fffbeb' : '#eff6ff'
-                  };">
-                    <div style="display: flex; align-items: center; margin-bottom: 4px;">
-                      <div style="width: 16px; height: 16px; border-radius: 50%; background: ${
-                        index === 0 ? '#ef4444' : index === 1 ? '#f59e0b' : '#3b82f6'
-                      }; color: white; font-size: 10px; font-weight: bold; display: flex; align-items: center; justify-content: center; margin-right: 6px;">
-                        ${item.priority}
-                      </div>
-                      <span style="font-weight: 600; font-size: 11px;">${item.title}</span>
-                      <span style="margin-left: auto; font-size: 9px; color: #64748b;">${item.score.toFixed(1)}/5</span>
-                    </div>
-                    <p style="font-size: 9px; color: #374151; margin: 0; line-height: 1.3;">
-                      ${item.action}
-                    </p>
+                <div style="text-align: center; padding: 16px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                  <div style="font-size: 24px; font-weight: bold; margin-bottom: 8px; color: ${overallScore >= 80 ? '#16a34a' : overallScore >= 65 ? '#ca8a04' : '#dc2626'};">
+                    ${overallScore >= 80 ? "Excellent" : overallScore >= 65 ? "Good" : overallScore >= 50 ? "Fair" : "Poor"}
                   </div>
-                `).join('')}
+                  <div style="font-size: 12px; color: #64748b; font-weight: 600;">READINESS LEVEL</div>
+                  <div style="font-size: 10px; color: #94a3b8;">AI implementation readiness</div>
+                </div>
+                <div style="text-align: center; padding: 16px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                  <div style="font-size: 32px; font-weight: bold; margin-bottom: 8px; color: #ca8a04;">
+                    ${Object.values(typedScores).filter((score: any) => score < 3.5).length}
+                  </div>
+                  <div style="font-size: 12px; color: #64748b; font-weight: 600;">AREAS TO IMPROVE</div>
+                  <div style="font-size: 10px; color: #94a3b8;">requiring attention</div>
+                </div>
+              </div>
+              <div style="background: white; padding: 16px; border-radius: 8px; border-left: 4px solid #cd0000;">
+                <p style="color: #374151; line-height: 1.6; margin: 0; font-size: 14px; font-weight: 500;">
+                  ${overallScore >= 80 ? "Your organization demonstrates excellent AI readiness with strong capabilities across all dimensions. You're well-positioned for successful AI implementation with minimal preparation required." : 
+                    overallScore >= 65 ? "Your organization shows good AI readiness with strong potential for successful implementation. Focus on addressing the identified improvement areas to maximize your AI initiative's success." :
+                    overallScore >= 50 ? "Your organization has a fair foundation for AI implementation. While basic capabilities are in place, significant improvement in several areas will be needed before proceeding with AI initiatives." :
+                    "Your organization currently has limited AI readiness. Substantial preparation and capability building will be required across multiple dimensions before AI implementation can be successful."}
+                </p>
               </div>
             </div>
           </div>
 
-          <!-- Dimension Scores Grid -->
-          <div style="margin-bottom: 12px;">
-            <h3 style="font-size: 14px; font-weight: 600; color: #1e293b; margin-bottom: 8px;">Dimension Analysis</h3>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;">
+          <!-- Top 3 Action Items Section -->
+          <div style="margin-bottom: 32px;">
+            <h2 style="font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 16px; border-bottom: 3px solid #cd0000; padding-bottom: 8px;">Priority Action Items</h2>
+            <div style="display: grid; gap: 16px;">
+              ${topActionItems.map((item, index) => `
+                <div style="border: 2px solid ${
+                  index === 0 ? '#ef4444' : index === 1 ? '#f59e0b' : '#3b82f6'
+                }; border-radius: 12px; padding: 20px; background: ${
+                  index === 0 ? '#fef2f2' : index === 1 ? '#fffbeb' : '#eff6ff'
+                }; position: relative; overflow: hidden;">
+                  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: ${
+                    index === 0 ? '#ef4444' : index === 1 ? '#f59e0b' : '#3b82f6'
+                  };"></div>
+                  <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: ${
+                      index === 0 ? '#ef4444' : index === 1 ? '#f59e0b' : '#3b82f6'
+                    }; color: white; font-size: 14px; font-weight: bold; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                      ${item.priority}
+                    </div>
+                    <div style="flex: 1;">
+                      <span style="font-weight: 700; font-size: 16px; color: #1e293b;">${item.title}</span>
+                      <div style="display: flex; align-items: center; margin-top: 4px;">
+                        <span style="font-size: 12px; color: #64748b; margin-right: 8px;">Current Score:</span>
+                        <span style="font-weight: 600; font-size: 14px; color: ${
+                          item.score >= 4.0 ? '#16a34a' : item.score >= 2.5 ? '#ca8a04' : '#dc2626'
+                        };">${item.score.toFixed(1)}/5</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p style="font-size: 13px; color: #374151; margin: 0; line-height: 1.5; padding-left: 40px;">
+                    ${item.action}
+                  </p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Dimension Analysis Section -->
+          <div style="margin-bottom: 32px;">
+            <h2 style="font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 16px; border-bottom: 3px solid #cd0000; padding-bottom: 8px;">Detailed Dimension Analysis</h2>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
               ${Object.entries(typedScores).map(([dimension, score]) => {
                 const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
                 const scoreValue = score as number;
@@ -270,25 +283,39 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                 const percentage = (scoreValue / 5) * 100;
                 
                 return `
-                  <div style="border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <div style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                       <div style="display: flex; align-items: center;">
-                        <span style="margin-right: 6px; font-size: 14px;">${config.icon}</span>
-                        <h4 style="font-size: 11px; font-weight: 600; color: #1e293b; margin: 0;">${config.label}</h4>
-                      </div>
-                      <div style="display: flex; align-items: center;">
-                        <div style="width: 40px; height: 6px; background: #e2e8f0; border-radius: 3px; margin-right: 6px; overflow: hidden;">
-                          <div style="height: 6px; background: ${level === 'high' ? '#16a34a' : level === 'medium' ? '#ca8a04' : '#dc2626'}; border-radius: 3px; width: ${percentage}%;"></div>
+                        <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);">
+                          <span style="font-size: 20px;">${config.icon}</span>
                         </div>
-                        <span style="font-weight: bold; color: #1e293b; font-size: 10px;">${scoreValue.toFixed(1)}</span>
+                        <h3 style="font-size: 14px; font-weight: 700; color: #1e293b; margin: 0; line-height: 1.3;">${config.label}</h3>
+                      </div>
+                      <div style="text-align: right;">
+                        <div style="font-size: 18px; font-weight: bold; color: ${level === 'high' ? '#16a34a' : level === 'medium' ? '#ca8a04' : '#dc2626'}; margin-bottom: 4px;">${scoreValue.toFixed(1)}/5</div>
+                        <div style="width: 60px; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+                          <div style="height: 8px; background: ${level === 'high' ? '#16a34a' : level === 'medium' ? '#ca8a04' : '#dc2626'}; border-radius: 4px; width: ${percentage}%; transition: width 0.3s ease;"></div>
+                        </div>
                       </div>
                     </div>
-                    <div style="padding: 6px; border-radius: 3px; border-left: 3px solid ${
+                    <div style="margin-bottom: 12px;">
+                      <div style="font-size: 12px; color: #64748b; margin-bottom: 8px; font-weight: 600;">ASSESSMENT:</div>
+                      <p style="font-size: 12px; color: #475569; margin: 0; line-height: 1.4;">
+                        ${level === 'high' 
+                          ? "Strong performance with excellent foundation for AI implementation. This dimension shows readiness for advanced AI initiatives."
+                          : level === 'medium'
+                          ? "Moderate performance with good potential. Some improvements needed to optimize AI implementation success."
+                          : "Significant improvement opportunities identified. Focus on building capabilities in this area before AI implementation."
+                        }
+                      </p>
+                    </div>
+                    <div style="padding: 12px; border-radius: 8px; border-left: 4px solid ${
                       level === 'high' ? '#16a34a' : level === 'medium' ? '#ca8a04' : '#dc2626'
                     }; background: ${
                       level === 'high' ? '#f0fdf4' : level === 'medium' ? '#fefce8' : '#fef2f2'
                     };">
-                      <div style="font-size: 9px; color: #374151; line-height: 1.3;">${config.recommendations[level]}</div>
+                      <div style="font-weight: 600; color: #1e293b; margin-bottom: 6px; font-size: 11px;">RECOMMENDATION:</div>
+                      <div style="color: #374151; font-size: 11px; line-height: 1.4;">${config.recommendations[level]}</div>
                     </div>
                   </div>
                 `;
@@ -297,8 +324,17 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           </div>
           
           <!-- Contact Information -->
-          <div style="border-top: 1px solid #e2e8f0; padding-top: 8px; text-align: center;">
-            <p style="color: #64748b; margin: 0; font-size: 10px;">Need help implementing these recommendations? Contact Red Pill Labs: www.redpilllabs.com/contact-us</p>
+          <div style="border-top: 2px solid #e2e8f0; padding-top: 24px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); margin: -24px; margin-top: 24px; padding: 32px;">
+            <div style="max-width: 600px; margin: 0 auto;">
+              <h3 style="font-size: 18px; font-weight: 700; color: #1e293b; margin-bottom: 12px;">Ready to Accelerate Your AI Journey?</h3>
+              <p style="color: #64748b; margin-bottom: 16px; font-size: 14px; line-height: 1.6;">
+                Transform your AI readiness assessment into actionable results. Our experts can help you implement these recommendations and fast-track your AI transformation.
+              </p>
+              <div style="background: white; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0; display: inline-block;">
+                <p style="color: #374151; margin: 0; font-size: 14px; font-weight: 600;">Contact Red Pill Labs</p>
+                <p style="color: #cd0000; margin: 4px 0 0 0; font-size: 14px; font-weight: 700;">www.redpilllabs.com/contact-us</p>
+              </div>
+            </div>
           </div>
         </div>
       `;
