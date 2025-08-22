@@ -206,18 +206,18 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       const reportContent = document.createElement('div');
       reportContent.setAttribute('data-report-content', 'true');
       reportContent.innerHTML = `
-        <div style="padding: ${isMobile ? '20px' : '40px'}; background: white; font-family: Arial, sans-serif; min-height: 100vh; ${isMobile ? 'font-size: 12px;' : ''}">
+        <div style="padding: 40px; background: white; font-family: Arial, sans-serif; min-height: 100vh;">
           <!-- Report Header -->
-          <div style="padding: ${isMobile ? '20px' : '32px'}; color: white; background: #cd0000; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
-            <div style="display: ${isMobile ? 'block' : 'flex'}; ${!isMobile ? 'justify-content: space-between; align-items: center;' : ''}">
+          <div style="padding: 32px; color: white; background: #cd0000; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
               <div>
-                <h1 style="font-size: ${isMobile ? '18px' : '28px'}; font-weight: bold; margin-bottom: 8px; margin-top: 0; letter-spacing: -0.5px;">AI Readiness Assessment Report</h1>
-                <p style="margin: 4px 0; opacity: 0.9; font-size: ${isMobile ? '11px' : '14px'};">Comprehensive analysis and strategic recommendations</p>
-                <p style="margin: 4px 0; opacity: 0.9; font-size: ${isMobile ? '11px' : '14px'}; font-weight: 500;">Organization: ${organizationName}</p>
+                <h1 style="font-size: 28px; font-weight: bold; margin-bottom: 8px; margin-top: 0; letter-spacing: -0.5px;">AI Readiness Assessment Report</h1>
+                <p style="margin: 4px 0; opacity: 0.9; font-size: 14px;">Comprehensive analysis and strategic recommendations</p>
+                <p style="margin: 4px 0; opacity: 0.9; font-size: 14px; font-weight: 500;">Organization: ${organizationName}</p>
               </div>
-              <div style="text-align: ${isMobile ? 'left' : 'right'}; ${isMobile ? 'margin-top: 12px;' : ''}">
-                <div style="font-size: ${isMobile ? '14px' : '18px'}; font-weight: bold;">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
-                <div style="opacity: 0.9; font-size: ${isMobile ? '10px' : '12px'};">Assessment Date</div>
+              <div style="text-align: right;">
+                <div style="font-size: 18px; font-weight: bold;">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                <div style="opacity: 0.9; font-size: 12px;">Assessment Date</div>
               </div>
             </div>
           </div>
@@ -226,25 +226,25 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           <div style="margin-bottom: 40px;">
             <h2 style="font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 16px; border-bottom: 3px solid #cd0000; padding-bottom: 8px;">Executive Summary</h2>
             <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
-              <div style="display: flex; gap: ${isMobile ? '10px' : '20px'}; margin-bottom: 20px; flex-direction: row; justify-content: space-between; ${isMobile ? 'flex-wrap: wrap;' : ''}">
-                <div style="text-align: center; padding: ${isMobile ? '10px' : '16px'}; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); ${isMobile ? 'flex: 0 0 calc(50% - 5px); margin-bottom: 10px;' : 'flex: 0 0 calc(33.333% - 14px);'}">
-                  <div style="font-size: ${isMobile ? '20px' : '32px'}; font-weight: bold; margin-bottom: 8px; color: ${overallScore >= 80 ? '#16a34a' : overallScore >= 50 ? '#ca8a04' : '#dc2626'};">${overallScore}</div>
-                  <div style="font-size: ${isMobile ? '9px' : '12px'}; color: #64748b; font-weight: 600;">OVERALL SCORE</div>
-                  <div style="font-size: ${isMobile ? '8px' : '10px'}; color: #94a3b8;">out of 100</div>
+              <div style="display: flex; gap: 20px; margin-bottom: 20px; flex-direction: row; justify-content: space-between;">
+                <div style="text-align: center; padding: 16px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex: 0 0 calc(33.333% - 14px);">
+                  <div style="font-size: 32px; font-weight: bold; margin-bottom: 8px; color: ${overallScore >= 80 ? '#16a34a' : overallScore >= 50 ? '#ca8a04' : '#dc2626'};">${overallScore}</div>
+                  <div style="font-size: 12px; color: #64748b; font-weight: 600;">OVERALL SCORE</div>
+                  <div style="font-size: 10px; color: #94a3b8;">out of 100</div>
                 </div>
-                <div style="text-align: center; padding: ${isMobile ? '10px' : '16px'}; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); ${isMobile ? 'flex: 0 0 calc(50% - 5px); margin-bottom: 10px;' : 'flex: 0 0 calc(33.333% - 14px);'}">
-                  <div style="font-size: ${isMobile ? '16px' : '24px'}; font-weight: bold; margin-bottom: 8px; color: ${overallScore >= 80 ? '#16a34a' : overallScore >= 65 ? '#ca8a04' : '#dc2626'};">
+                <div style="text-align: center; padding: 16px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex: 0 0 calc(33.333% - 14px);">
+                  <div style="font-size: 24px; font-weight: bold; margin-bottom: 8px; color: ${overallScore >= 80 ? '#16a34a' : overallScore >= 65 ? '#ca8a04' : '#dc2626'};">
                     ${overallScore >= 80 ? "Excellent" : overallScore >= 65 ? "Good" : overallScore >= 50 ? "Fair" : "Poor"}
                   </div>
-                  <div style="font-size: ${isMobile ? '9px' : '12px'}; color: #64748b; font-weight: 600;">READINESS LEVEL</div>
-                  <div style="font-size: ${isMobile ? '8px' : '10px'}; color: #94a3b8;">AI implementation readiness</div>
+                  <div style="font-size: 12px; color: #64748b; font-weight: 600;">READINESS LEVEL</div>
+                  <div style="font-size: 10px; color: #94a3b8;">AI implementation readiness</div>
                 </div>
-                <div style="text-align: center; padding: ${isMobile ? '10px' : '16px'}; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); ${isMobile ? 'flex: 0 0 100%; margin-top: 10px;' : 'flex: 0 0 calc(33.333% - 14px);'}">
-                  <div style="font-size: ${isMobile ? '20px' : '32px'}; font-weight: bold; margin-bottom: 8px; color: #ca8a04;">
+                <div style="text-align: center; padding: 16px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex: 0 0 calc(33.333% - 14px);">
+                  <div style="font-size: 32px; font-weight: bold; margin-bottom: 8px; color: #ca8a04;">
                     ${Math.max(Object.values(typedScores).filter((score: any) => score < 3.9).length, 1)}
                   </div>
-                  <div style="font-size: ${isMobile ? '9px' : '12px'}; color: #64748b; font-weight: 600;">GROWTH OPPORTUNITIES</div>
-                  <div style="font-size: ${isMobile ? '8px' : '10px'}; color: #94a3b8;">for acceleration</div>
+                  <div style="font-size: 12px; color: #64748b; font-weight: 600;">GROWTH OPPORTUNITIES</div>
+                  <div style="font-size: 10px; color: #94a3b8;">for acceleration</div>
                 </div>
               </div>
               <div style="background: white; padding: 16px; border-radius: 8px; border-left: 4px solid #cd0000;">
@@ -304,7 +304,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           <!-- Dimension Analysis Section -->
           <div style="margin-bottom: 40px;">
             <h2 style="font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 16px; border-bottom: 3px solid #cd0000; padding-bottom: 8px;">Detailed Dimension Analysis</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: ${isMobile ? '10px' : '20px'}; justify-content: space-between;">
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
               ${Object.entries(typedScores).map(([dimension, score]) => {
                 const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
                 const scoreValue = score as number;
@@ -312,7 +312,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                 const percentage = (scoreValue / 5) * 100;
                 
                 return `
-                  <div style="border: 1px solid #e2e8f0; border-radius: 12px; padding: ${isMobile ? '12px' : '20px'}; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); ${isMobile ? 'flex: 0 0 calc(50% - 5px); margin-bottom: 10px;' : 'flex: 0 0 calc(50% - 10px);'}">
+                  <div style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex: 0 0 calc(50% - 10px);">
                     <div style="margin-bottom: 16px;">
                       <div style="display: flex; align-items: center; margin-bottom: 12px;">
                         <span style="font-size: 20px; margin-right: 10px; color: black; display: inline-flex; align-items: center; justify-content: center;">${
