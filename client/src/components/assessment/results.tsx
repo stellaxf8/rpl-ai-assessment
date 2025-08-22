@@ -77,9 +77,9 @@ const dimensionConfig = {
     color: "bg-red-100 text-error",
     barColor: "bg-error",
     recommendations: {
-      high: "Excellent security posture with robust incident response and breach prevention capabilities.",
-      medium: "Strengthen incident response procedures and enhance breach prevention measures.",
-      low: "Establish comprehensive security framework with incident response and breach prevention protocols."
+      high: "Strong privacy governance with excellent GDPR/CCPA compliance and advanced data anonymization for AI.",
+      medium: "Improve global privacy regulation compliance and implement data anonymization frameworks for AI projects.",
+      low: "Establish privacy compliance program for GDPR/CCPA and develop data anonymization capabilities for AI datasets."
     }
   },
 };
@@ -158,9 +158,9 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           low: "Develop business case and seek approval for AI investment funding"
         },
         dataSecurity: {
-          high: "Implement AI-specific security frameworks and governance policies",
-          medium: "Strengthen data encryption and establish incident response procedures",
-          low: "Create fundamental security policies and compliance framework"
+          high: "Develop AI-specific privacy governance and advanced anonymization techniques",
+          medium: "Implement GDPR/CCPA compliance framework and data anonymization processes",
+          low: "Establish privacy regulation compliance and basic data anonymization capabilities"
         }
       };
 
