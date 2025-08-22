@@ -555,7 +555,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           {/* Detailed Dimension Analysis */}
           <div className="mb-6 sm:mb-8 animate-slide-up animate-fade-in">
             <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 text-center animate-slide-up animate-fade-in">Detailed Dimension Analysis</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 sm:gap-6">
               {Object.entries(scores as any).map(([dimension, score], index) => {
                 const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
                 const scoreValue = score as number;
