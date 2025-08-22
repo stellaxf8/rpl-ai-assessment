@@ -1,4 +1,4 @@
-import { CheckCircle, Download, RotateCcw } from "lucide-react";
+import { CheckCircle, Download, RotateCcw, Target, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -112,6 +112,70 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
   };
 
   const { lowScoring, highScoring } = getRecommendations();
+
+  const getTopActionItems = () => {
+    // Get all dimensions with their scores and sort by lowest score first
+    const allDimensions = Object.entries(typedScores)
+      .map(([dimension, score]) => ({
+        dimension: dimension as keyof typeof dimensionConfig,
+        score: score as number,
+        config: dimensionConfig[dimension as keyof typeof dimensionConfig]
+      }))
+      .sort((a, b) => a.score - b.score);
+
+    // Take the top 3 lowest scoring dimensions
+    const top3Lowest = allDimensions.slice(0, 3);
+
+    return top3Lowest.map((item, index) => {
+      const level = getScoreLevel(item.score);
+      const urgency = index === 0 ? "Critical" : index === 1 ? "High" : "Medium";
+      
+      // Generate specific action items based on dimension and score level
+      const actionItems = {
+        technologyInfrastructure: {
+          high: "Upgrade to AI-optimized cloud instances and implement GPU computing",
+          medium: "Audit current infrastructure and plan scalable AI computing resources",
+          low: "Establish foundational cloud infrastructure with AI-ready capabilities"
+        },
+        dataQuality: {
+          high: "Implement advanced data governance policies and automated quality monitoring",
+          medium: "Create data quality framework and establish data access protocols",
+          low: "Start with basic data inventory and implement data cleansing processes"
+        },
+        teamLiteracy: {
+          high: "Develop AI leadership program and establish centers of excellence",
+          medium: "Launch comprehensive AI training program for key staff members",
+          low: "Begin with AI fundamentals training and hire AI-experienced personnel"
+        },
+        systemIntegration: {
+          high: "Design sophisticated AI integration architecture with existing systems",
+          medium: "Evaluate current system APIs and plan integration roadmap",
+          low: "Modernize legacy systems and establish API-first architecture"
+        },
+        budget: {
+          high: "Allocate dedicated AI transformation budget with multi-year planning",
+          medium: "Secure additional budget for AI infrastructure and training",
+          low: "Develop business case and seek approval for AI investment funding"
+        },
+        dataSecurity: {
+          high: "Implement AI-specific security frameworks and governance policies",
+          medium: "Strengthen data encryption and establish incident response procedures",
+          low: "Create fundamental security policies and compliance framework"
+        }
+      };
+
+      return {
+        title: item.config.label,
+        action: actionItems[item.dimension][level],
+        urgency,
+        score: item.score,
+        icon: item.config.icon,
+        priority: index + 1
+      };
+    });
+  };
+
+  const topActionItems = getTopActionItems();
 
   const handleDownloadPDF = async () => {
     try {
@@ -282,6 +346,74 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           </div>
         </CardContent>
       </Card>
+
+      {/* Top 3 Action Items */}
+      <Card className="mb-8 animate-slide-up animate-fade-in">
+        <CardContent className="p-4 sm:p-6 lg:p-8">
+          <div className="text-center mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center justify-center">
+              <Target className="mr-3 h-6 w-6 text-[#cd0000]" />
+              <span style={{color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold'}}>Top 3 Action Items</span>
+            </h3>
+            <p className="text-sm sm:text-base text-slate-600">Prioritized recommendations to improve your AI readiness</p>
+          </div>
+
+          <div className="space-y-4">
+            {topActionItems.map((item, index) => (
+              <div key={item.title} className={`border rounded-lg p-4 sm:p-6 ${
+                index === 0 ? 'border-red-200 bg-red-50' :
+                index === 1 ? 'border-yellow-200 bg-yellow-50' :
+                'border-blue-200 bg-blue-50'
+              } animate-slide-up animate-fade-in`}>
+                <div className="flex items-start space-x-4">
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold ${
+                    index === 0 ? 'bg-red-500' :
+                    index === 1 ? 'bg-yellow-500' :
+                    'bg-blue-500'
+                  }`}>
+                    {item.priority}
+                  </div>
+                  
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center">
+                        <span className="text-lg mr-2">{item.icon}</span>
+                        <h4 className="font-semibold text-slate-900">{item.title}</h4>
+                      </div>
+                      <div className="flex items-center">
+                        <span className={`px-2 py-1 text-xs font-medium rounded ${
+                          item.urgency === 'Critical' ? 'bg-red-100 text-red-800' :
+                          item.urgency === 'High' ? 'bg-yellow-100 text-yellow-800' :
+                          'bg-blue-100 text-blue-800'
+                        }`}>
+                          {item.urgency} Priority
+                        </span>
+                        <span className="ml-2 text-sm text-slate-600">
+                          Score: {item.score.toFixed(1)}/5
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-slate-700 text-sm sm:text-base">
+                      {item.action}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 text-center">
+            <div className="inline-flex items-center px-4 py-2 bg-slate-100 rounded-lg">
+              <AlertTriangle className="mr-2 h-4 w-4 text-slate-600" />
+              <span className="text-sm text-slate-600">
+                Focus on Priority 1 and 2 items for maximum impact on your AI readiness
+              </span>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Assessment Results Overview */}
       <div className="space-y-8">
           {/* Dimension Breakdown */}
