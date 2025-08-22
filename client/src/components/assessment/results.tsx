@@ -339,7 +339,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           </div>
 
           <div className="text-center animate-slide-up stagger-delay-3">
-            <div className={`inline-flex items-center px-4 py-2 rounded-full font-medium hover-scale ${readinessLevel.color}`}>
+            <div className={`inline-flex items-center px-4 py-2 rounded-full font-medium ${readinessLevel.color}`}>
               <CheckCircle className="mr-2 h-4 w-4" />
               {readinessLevel.label} AI Readiness Level
             </div>
