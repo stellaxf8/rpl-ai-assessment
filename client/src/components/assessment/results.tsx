@@ -18,7 +18,7 @@ interface ResultsProps {
 const dimensionConfig = {
   technologyInfrastructure: {
     label: "Technology Infrastructure",
-    icon: "🖥️",
+    icon: "⚙",
     color: "bg-blue-100 text-primary",
     barColor: "bg-blue-500",
     recommendations: {
@@ -29,7 +29,7 @@ const dimensionConfig = {
   },
   dataQuality: {
     label: "Data Quality & Access",
-    icon: "🗄️",
+    icon: "◗",
     color: "bg-green-100 text-success",
     barColor: "bg-success",
     recommendations: {
@@ -40,7 +40,7 @@ const dimensionConfig = {
   },
   teamLiteracy: {
     label: "Team AI Literacy",
-    icon: "👥",
+    icon: "◉",
     color: "bg-purple-100 text-secondary",
     barColor: "bg-green-500",
     recommendations: {
@@ -51,7 +51,7 @@ const dimensionConfig = {
   },
   systemIntegration: {
     label: "System Integration",
-    icon: "🧩",
+    icon: "⟐",
     color: "bg-orange-100 text-warning",
     barColor: "bg-warning",
     recommendations: {
@@ -62,7 +62,7 @@ const dimensionConfig = {
   },
   budget: {
     label: "Budget & Resources",
-    icon: "💰",
+    icon: "◆",
     color: "bg-yellow-100 text-yellow-600",
     barColor: "bg-yellow-500",
     recommendations: {
@@ -73,7 +73,7 @@ const dimensionConfig = {
   },
   dataSecurity: {
     label: "Data Security & Privacy",
-    icon: "🔒",
+    icon: "▲",
     color: "bg-red-100 text-error",
     barColor: "bg-error",
     recommendations: {
