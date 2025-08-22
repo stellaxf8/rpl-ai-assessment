@@ -94,8 +94,13 @@ const renderIcon = (iconName: string, className: string = "w-4 h-4") => {
     Shield
   };
   
+  // Make specific icons black
+  const blackIcons = ['Server', 'DollarSign'];
+  const iconColor = blackIcons.includes(iconName) ? 'text-black' : '';
+  const combinedClassName = `${className} ${iconColor}`.trim();
+  
   const IconComponent = iconMap[iconName];
-  return IconComponent ? <IconComponent className={className} /> : <span>{iconName}</span>;
+  return IconComponent ? <IconComponent className={combinedClassName} /> : <span>{iconName}</span>;
 };
 
 export default function Results({ assessment, onRetakeAssessment, showRetakeButton = true }: ResultsProps) {
