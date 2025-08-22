@@ -304,12 +304,12 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                       <div style="display: flex; align-items: center;">
                         <span style="font-size: 24px; margin-right: 12px; color: black;">${
-                          config.icon === 'Server' ? '🖥' :
-                          config.icon === 'Database' ? '💾' :
-                          config.icon === 'Users' ? '👥' :
-                          config.icon === 'Network' ? '🔗' :
-                          config.icon === 'DollarSign' ? '💰' :
-                          config.icon === 'Shield' ? '🛡' : config.icon
+                          config.icon === 'Server' ? '⚙' :
+                          config.icon === 'Database' ? '⬡' :
+                          config.icon === 'Users' ? '◉' :
+                          config.icon === 'Network' ? '⧈' :
+                          config.icon === 'DollarSign' ? '$' :
+                          config.icon === 'Shield' ? '⬢' : config.icon
                         }</span>
                         <h3 style="font-size: 14px; font-weight: 700; color: #1e293b; margin: 0; line-height: 1.3;">${config.label}</h3>
                       </div>
