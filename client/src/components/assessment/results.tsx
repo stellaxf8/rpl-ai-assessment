@@ -486,7 +486,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             {/* Radar Chart */}
             <Card className="animate-slide-in-left animate-fade-in">
               <CardContent className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up animate-fade-in text-center sm:text-left">Readiness Dimensions</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up animate-fade-in text-center">Readiness Dimensions</h3>
                 <div className="h-60 sm:h-80 animate-fade-in">
                   <RadarChart scores={scores as any} />
                 </div>
@@ -496,7 +496,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             {/* Brief Scores Overview */}
             <Card className="animate-slide-in-right animate-fade-in">
               <CardContent className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up animate-fade-in text-center sm:text-left">Quick Overview</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up animate-fade-in text-center">Quick Overview</h3>
                 <div className="space-y-4 animate-slide-up stagger-delay-2">
                   {Object.entries(scores as any).map(([dimension, score], index) => {
                     const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
