@@ -417,8 +417,8 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
         <CardContent className="p-4 sm:p-6 lg:p-8">
           <div className="text-center mb-6">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center justify-center">
-              <Target className="mr-3 h-6 w-6 text-[#cd0000]" />
-              <span style={{color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold'}}>Top 3 Action Items</span>
+              <CheckCircle className="mr-3 h-6 w-6 text-slate-900" />
+              <span style={{color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold'}}>Top 3 Action Items</span>
             </h3>
             <p className="text-sm sm:text-base text-slate-600">Prioritized recommendations to improve your AI readiness</p>
           </div>
