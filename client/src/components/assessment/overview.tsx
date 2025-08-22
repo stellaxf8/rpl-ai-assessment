@@ -133,6 +133,17 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           </div>
         </div>
       </div>
+      
+      {/* 6 Key Dimensions Section */}
+      <div className="text-center mb-6 sm:mb-8 animate-fade-in animate-slide-up">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
+          <span style={{ color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold' }}>6 Key</span> Dimensions
+        </h3>
+        <p className="text-sm sm:text-base text-slate-600 mt-2">
+          Comprehensive evaluation across all critical areas of AI readiness
+        </p>
+      </div>
+      
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-12">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
