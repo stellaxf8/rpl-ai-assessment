@@ -1,4 +1,4 @@
-import { CheckCircle, Download, RotateCcw, Target, AlertTriangle } from "lucide-react";
+import { CheckCircle, Download, RotateCcw, Target, AlertTriangle, Server, Database, Users, Network, DollarSign, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -18,7 +18,7 @@ interface ResultsProps {
 const dimensionConfig = {
   technologyInfrastructure: {
     label: "Technology Infrastructure",
-    icon: "⚙",
+    icon: "Server",
     color: "bg-blue-100 text-primary",
     barColor: "bg-blue-500",
     recommendations: {
@@ -29,7 +29,7 @@ const dimensionConfig = {
   },
   dataQuality: {
     label: "Data Quality & Access",
-    icon: "◗",
+    icon: "Database",
     color: "bg-green-100 text-success",
     barColor: "bg-success",
     recommendations: {
@@ -40,7 +40,7 @@ const dimensionConfig = {
   },
   teamLiteracy: {
     label: "Team AI Literacy",
-    icon: "◉",
+    icon: "Users",
     color: "bg-purple-100 text-secondary",
     barColor: "bg-green-500",
     recommendations: {
@@ -51,7 +51,7 @@ const dimensionConfig = {
   },
   systemIntegration: {
     label: "System Integration",
-    icon: "⟐",
+    icon: "Network",
     color: "bg-orange-100 text-warning",
     barColor: "bg-warning",
     recommendations: {
@@ -62,7 +62,7 @@ const dimensionConfig = {
   },
   budget: {
     label: "Budget & Resources",
-    icon: "◆",
+    icon: "DollarSign",
     color: "bg-yellow-100 text-yellow-600",
     barColor: "bg-yellow-500",
     recommendations: {
@@ -73,7 +73,7 @@ const dimensionConfig = {
   },
   dataSecurity: {
     label: "Data Security & Privacy",
-    icon: "▲",
+    icon: "Shield",
     color: "bg-red-100 text-error",
     barColor: "bg-error",
     recommendations: {
@@ -82,6 +82,20 @@ const dimensionConfig = {
       low: "Establish comprehensive security framework, privacy compliance program, and data anonymization capabilities for AI datasets."
     }
   },
+};
+
+const renderIcon = (iconName: string, className: string = "w-4 h-4") => {
+  const iconMap: { [key: string]: React.ComponentType<any> } = {
+    Server,
+    Database,
+    Users,
+    Network,
+    DollarSign,
+    Shield
+  };
+  
+  const IconComponent = iconMap[iconName];
+  return IconComponent ? <IconComponent className={className} /> : <span>{iconName}</span>;
 };
 
 export default function Results({ assessment, onRetakeAssessment, showRetakeButton = true }: ResultsProps) {
@@ -284,7 +298,14 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                   <div style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                       <div style="display: flex; align-items: center;">
-                        <span style="font-size: 24px; margin-right: 12px;">${config.icon}</span>
+                        <span style="font-size: 24px; margin-right: 12px;">${
+                          config.icon === 'Server' ? '⚙' :
+                          config.icon === 'Database' ? '⬡' :
+                          config.icon === 'Users' ? '◉' :
+                          config.icon === 'Network' ? '⧈' :
+                          config.icon === 'DollarSign' ? '$' :
+                          config.icon === 'Shield' ? '⬢' : config.icon
+                        }</span>
                         <h3 style="font-size: 14px; font-weight: 700; color: #1e293b; margin: 0; line-height: 1.3;">${config.label}</h3>
                       </div>
                       <div style="text-align: right;">
@@ -416,7 +437,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center">
-                        <span className="text-lg mr-2">{item.icon}</span>
+                        <span className="mr-2">{renderIcon(item.icon, "w-5 h-5")}</span>
                         <h4 className="font-semibold text-slate-900">{item.title}</h4>
                       </div>
                       <div className="flex items-center">
@@ -491,7 +512,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                       <div key={dimension} className={`flex items-center justify-between animate-slide-in-left stagger-delay-${Math.min(index + 3, 6)}`}>
                         <div className="flex items-center flex-1">
                           <div className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 ${config?.color || 'bg-gray-100'}`}>
-                            <span className="text-sm">{config?.icon || '❓'}</span>
+                            {renderIcon(config?.icon || 'Server', "w-4 h-4")}
                           </div>
                           <div className="flex-1">
                             <div className="font-medium text-slate-900">{config?.label || dimension}</div>
