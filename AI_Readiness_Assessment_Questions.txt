@@ -1,0 +1,596 @@
+AI READINESS ASSESSMENT QUESTIONNAIRE
+========================================
+
+This document contains all 30 questions used in the AI Readiness Assessment tool, organized by the 6 evaluation dimensions. Each question includes all response options and descriptions.
+
+================================================================================
+DIMENSION 1: TECHNOLOGY INFRASTRUCTURE
+================================================================================
+
+Question 1: How would you describe your organization's current technology stack?
+
+1. Mostly legacy systems
+   - Older technology systems that may limit future growth
+
+2. Some modern systems
+   - Mix of older and newer systems with basic flexibility
+
+3. Mostly modern systems
+   - Good technology foundation with ability to handle growth
+
+4. Advanced modern systems
+   - Strong technology setup with high performance capabilities
+
+5. Cutting-edge technology platform
+   - State-of-the-art systems optimized for innovation and scalability
+
+------------------------------------------------------------
+
+Question 2: How well can your organization handle large amounts of business data?
+
+1. Struggles with large data volumes
+   - Current systems have difficulty handling substantial business data
+
+2. Handles current business needs
+   - Adequate for daily operations but limited for expansion
+
+3. Good capacity with room for growth
+   - Can handle moderate increases in business data and processing
+
+4. High capacity for business growth
+   - Significant capacity for data growth and business expansion
+
+5. Enterprise-scale data capabilities
+   - Extensive capacity to handle massive business data volumes
+
+------------------------------------------------------------
+
+Question 3: How easily can your systems connect and share data with new business tools?
+
+1. Very difficult to connect new tools
+   - Systems operate independently with minimal connection options
+
+2. Basic connection capabilities
+   - Some ability to connect tools but with limited functionality
+
+3. Good connection options
+   - Solid ability to integrate most business applications
+
+4. Excellent integration capabilities
+   - Strong ability to connect and manage multiple business tools
+
+5. Seamless integration platform
+   - Advanced capability to easily connect any business application
+
+------------------------------------------------------------
+
+Question 4: How well can your organization monitor and track system performance?
+
+1. Basic or no monitoring
+   - Limited visibility into system performance
+
+2. Standard monitoring tools
+   - Basic metrics and alerting in place
+
+3. Good monitoring coverage
+   - Comprehensive monitoring across most systems
+
+4. Advanced performance tracking
+   - Comprehensive monitoring with detailed business insights
+
+5. AI-powered monitoring
+   - Intelligent monitoring with predictive capabilities
+
+------------------------------------------------------------
+
+Question 5: How would you rate your organization's internet and network connectivity?
+
+1. Limited network capacity
+   - Frequent bottlenecks and connectivity issues
+
+2. Adequate internet connectivity
+   - Meets current needs but limited capacity for growth
+
+3. Good network performance
+   - Reliable connectivity with good bandwidth
+
+4. High-performance network
+   - Excellent bandwidth and low latency
+
+5. Enterprise-level connectivity
+   - Extremely fast, reliable internet with backup systems
+
+================================================================================
+DIMENSION 2: DATA QUALITY & ACCESS
+================================================================================
+
+Question 6: How would you describe the quality of your organization's data?
+
+1. Poor data quality
+   - Significant issues with accuracy and completeness
+
+2. Inconsistent data quality
+   - Some data is good, but quality varies significantly
+
+3. Acceptable data quality
+   - Generally reliable with some quality issues
+
+4. Good data quality
+   - High quality data with established standards
+
+5. Excellent data quality
+   - Consistently high-quality data with robust governance
+
+------------------------------------------------------------
+
+Question 7: How accessible is your data for analysis and AI projects?
+
+1. Very difficult to access
+   - Data is siloed and hard to obtain
+
+2. Limited access
+   - Some data available but with restrictions
+
+3. Moderate accessibility
+   - Data is available with some effort required
+
+4. Good data accessibility
+   - Most data is easily accessible to authorized users
+
+5. Excellent data accessibility
+   - Self-service data access with proper governance
+
+------------------------------------------------------------
+
+Question 8: What is the state of your data governance framework?
+
+1. No formal data governance
+   - Ad-hoc data management without clear policies
+
+2. Basic data governance
+   - Some policies exist but not consistently enforced
+
+3. Developing governance framework
+   - Governance structure is being established
+
+4. Mature data governance
+   - Well-established policies and procedures
+
+5. Advanced data governance
+   - Comprehensive governance with automated compliance
+
+------------------------------------------------------------
+
+Question 9: How well is your data documented and cataloged?
+
+1. Minimal documentation
+   - Little to no data documentation available
+
+2. Basic documentation
+   - Some documentation exists but is incomplete
+
+3. Adequate documentation
+   - Most data sources are documented
+
+4. Comprehensive documentation
+   - Well-documented with metadata and lineage
+
+5. Automated data catalog
+   - Dynamic documentation with discovery capabilities
+
+------------------------------------------------------------
+
+Question 10: How prepared is your data for machine learning and AI use cases?
+
+1. Not prepared for AI
+   - Significant preprocessing and cleaning required
+
+2. Requires substantial preparation
+   - Data exists but needs significant work for AI use
+
+3. Moderately prepared
+   - Some data is AI-ready with preparation needed
+
+4. Well-prepared for AI
+   - Most data is structured and analysis-ready
+
+5. AI-optimized data
+   - Data is specifically prepared and optimized for AI/ML
+
+================================================================================
+DIMENSION 3: TEAM AI LITERACY
+================================================================================
+
+Question 11: What is the general level of AI knowledge within your organization?
+
+1. Very limited AI knowledge
+   - Little to no understanding of AI concepts
+
+2. Basic AI awareness
+   - General awareness but limited practical knowledge
+
+3. Moderate AI understanding
+   - Good conceptual understanding with some practical experience
+
+4. Strong AI knowledge
+   - Deep understanding with practical implementation experience
+
+5. Expert-level AI expertise
+   - Advanced AI practitioners and thought leaders
+
+------------------------------------------------------------
+
+Question 12: How many team members have hands-on experience with AI/ML tools?
+
+1. No team members
+   - No one has practical AI/ML experience
+
+2. 1-2 team members
+   - Very limited hands-on experience
+
+3. Small group (3-5)
+   - Some team members have practical experience
+
+4. Significant portion (25%+)
+   - Good number of experienced practitioners
+
+5. Most of the team
+   - Majority have hands-on AI/ML experience
+
+------------------------------------------------------------
+
+Question 13: How enthusiastic is your team about adopting AI technologies?
+
+1. Resistant to AI adoption
+   - Team is skeptical or opposed to AI implementation
+
+2. Cautiously interested
+   - Some interest but with significant reservations
+
+3. Moderately enthusiastic
+   - Generally positive but with some concerns
+
+4. Very enthusiastic
+   - High interest and eagerness to adopt AI
+
+5. Extremely enthusiastic
+   - Team is actively pushing for AI adoption
+
+------------------------------------------------------------
+
+Question 14: What is your organization's approach to AI training and education?
+
+1. No formal AI training
+   - No structured learning programs in place
+
+2. Ad-hoc learning
+   - Individual learning without organizational support
+
+3. Some training initiatives
+   - Basic training programs or resources available
+
+4. Comprehensive training program
+   - Well-structured AI education initiatives
+
+5. Advanced learning culture
+   - Continuous learning with expert mentorship
+
+------------------------------------------------------------
+
+Question 15: How well does your team understand data science and analytics?
+
+1. Very limited understanding
+   - Little experience with data analysis
+
+2. Basic data skills
+   - Some experience with spreadsheets and basic analysis
+
+3. Moderate analytics capability
+   - Good understanding of data analysis concepts
+
+4. Strong data science skills
+   - Advanced analytics and statistical knowledge
+
+5. Expert data practitioners
+   - Deep expertise in data science and advanced analytics
+
+================================================================================
+DIMENSION 4: SYSTEM INTEGRATION
+================================================================================
+
+Question 16: How well integrated are your current software systems?
+
+1. Highly siloed systems
+   - Systems operate independently with minimal integration
+
+2. Limited integration
+   - Some connections exist but integration is basic
+
+3. Moderate integration
+   - Good connectivity between key systems
+
+4. Well-integrated ecosystem
+   - Strong integration across most systems
+
+5. Fully integrated platform
+   - Seamless integration with unified data flow
+
+------------------------------------------------------------
+
+Question 17: How easily can your current systems work with new automated business tools?
+
+1. Older systems cannot connect
+   - Current systems cannot work with modern automation tools
+
+2. Limited ability to connect
+   - Some systems can connect but requires significant work
+
+3. Moderate ability to connect
+   - Most systems can connect with some adjustments
+
+4. Easy to connect new tools
+   - Systems work well with modern automation solutions
+
+5. Built for modern automation
+   - Systems are designed to easily work with any new business tools
+
+------------------------------------------------------------
+
+Question 18: What is your experience with implementing new technology solutions?
+
+1. Very limited experience
+   - Rarely implement new technology solutions
+
+2. Basic implementation capability
+   - Some experience but often challenging
+
+3. Moderate implementation skills
+   - Generally successful with new technology adoption
+
+4. Strong implementation track record
+   - Consistently successful with technology integration
+
+5. Expert implementation capability
+   - Highly skilled at rapid technology adoption
+
+------------------------------------------------------------
+
+Question 19: How flexible is your current IT architecture?
+
+1. Rigid, inflexible architecture
+   - Very difficult to make changes or additions
+
+2. Limited flexibility
+   - Changes are possible but require significant effort
+
+3. Moderately flexible
+   - Can adapt to new requirements with reasonable effort
+
+4. Highly flexible architecture
+   - Easy to modify and extend systems
+
+5. Fully modular and adaptable
+   - Architecture designed for rapid change and integration
+
+------------------------------------------------------------
+
+Question 20: How well do your systems handle real-time data processing?
+
+1. Batch processing only
+   - Systems only handle scheduled, batch operations
+
+2. Limited real-time capability
+   - Some real-time processing but very basic
+
+3. Moderate real-time processing
+   - Good real-time capabilities for most use cases
+
+4. Strong real-time processing systems
+   - Excellent real-time data processing capabilities
+
+5. Advanced streaming platform
+   - Enterprise-grade real-time data streaming
+
+================================================================================
+DIMENSION 5: BUDGET & RESOURCES
+================================================================================
+
+Question 21: What budget has been allocated for AI initiatives?
+
+1. No dedicated AI budget
+   - No specific funding allocated for AI projects
+
+2. Limited budget allocation
+   - Small budget for exploring AI opportunities
+
+3. Moderate budget for AI
+   - Reasonable budget for pilot projects and basic implementation
+
+4. Substantial AI investment
+   - Significant budget allocated for comprehensive AI adoption
+
+5. Major AI investment commitment
+   - Large budget with multi-year AI transformation plan
+
+------------------------------------------------------------
+
+Question 22: How willing is leadership to invest in AI training and education?
+
+1. No training investment
+   - Leadership won't fund AI education initiatives
+
+2. Minimal training budget
+   - Very limited resources for AI learning
+
+3. Moderate training investment
+   - Good support for team AI education
+
+4. Strong training commitment
+   - Significant investment in AI skill development
+
+5. Comprehensive learning investment
+   - Major commitment to building AI expertise
+
+------------------------------------------------------------
+
+Question 23: What level of external AI expertise is your organization prepared to engage?
+
+1. No external support planned
+   - Planning to handle AI initiatives internally only
+
+2. Limited consulting budget
+   - Small budget for occasional expert guidance
+
+3. Moderate expert engagement
+   - Budget for consultants during key project phases
+
+4. Substantial expert support
+   - Significant investment in external AI expertise
+
+5. Comprehensive expert partnership
+   - Major investment in long-term AI consulting relationships
+
+------------------------------------------------------------
+
+Question 24: How ready is your organization to invest in AI infrastructure and tools?
+
+1. No infrastructure budget
+   - No funds allocated for AI-specific technology
+
+2. Basic infrastructure budget
+   - Limited funds for essential AI tools only
+
+3. Moderate infrastructure investment
+   - Good budget for necessary AI technology
+
+4. Substantial infrastructure funding
+   - Significant investment in AI platforms and tools
+
+5. Comprehensive infrastructure commitment
+   - Major investment in enterprise-grade AI infrastructure
+
+------------------------------------------------------------
+
+Question 25: What is your timeline expectation for seeing AI implementation results?
+
+1. Immediate results expected
+   - Expecting quick returns within weeks or months
+
+2. Short-term results (6-12 months)
+   - Looking for results within the first year
+
+3. Medium-term results (1-2 years)
+   - Realistic timeline for meaningful AI impact
+
+4. Long-term strategic investment (2-3 years)
+   - Patient approach focused on sustainable AI adoption
+
+5. Multi-year transformation commitment
+   - Long-term vision with staged implementation approach
+
+================================================================================
+DIMENSION 6: DATA SECURITY & PRIVACY
+================================================================================
+
+Question 26: How mature are your current data privacy and compliance practices?
+
+1. Basic privacy measures
+   - Minimal data protection with limited compliance
+
+2. Standard privacy practices
+   - Basic compliance with common privacy regulations
+
+3. Good privacy governance
+   - Well-established privacy policies and procedures
+
+4. Advanced privacy framework
+   - Comprehensive privacy program with regular audits
+
+5. Industry-leading privacy practices
+   - Cutting-edge privacy protection and compliance
+
+------------------------------------------------------------
+
+Question 27: What is your organization's approach to handling sensitive business and customer data?
+
+1. Basic data handling
+   - Simple data storage with minimal protection measures
+
+2. Standard data protection
+   - Basic security measures for sensitive information
+
+3. Good data security practices
+   - Comprehensive protection for sensitive business data
+
+4. Advanced data security framework
+   - Sophisticated security measures for all data types
+
+5. Enterprise-grade data protection
+   - Industry-leading security for sensitive and customer data
+
+------------------------------------------------------------
+
+Question 28: How well does your organization understand AI-related privacy regulations and requirements?
+
+1. Limited regulatory knowledge
+   - Minimal understanding of AI privacy requirements
+
+2. Basic compliance awareness
+   - Some knowledge of key privacy regulations
+
+3. Good regulatory understanding
+   - Solid grasp of privacy requirements for AI
+
+4. Advanced compliance knowledge
+   - Deep understanding of AI privacy regulations
+
+5. Expert-level compliance expertise
+   - Comprehensive knowledge of global AI privacy requirements
+
+------------------------------------------------------------
+
+Question 29: What encryption and access control measures do you have in place?
+
+1. Basic access controls
+   - Simple password protection with minimal encryption
+
+2. Standard security controls
+   - Basic encryption and role-based access controls
+
+3. Good security controls
+   - Strong encryption with comprehensive access management
+
+4. Advanced security controls
+   - Multi-factor authentication with zero-trust principles
+
+5. Enterprise-grade controls
+   - Industry-leading encryption and identity management
+
+------------------------------------------------------------
+
+Question 30: How is data anonymization handled in your organization to maintain user privacy in AI datasets?
+
+1. No formal anonymization
+   - Limited or no data anonymization practices
+
+2. Basic anonymization techniques
+   - Simple data masking or removal of identifiers
+
+3. Standard anonymization methods
+   - Established practices for data de-identification
+
+4. Advanced anonymization framework
+   - Sophisticated techniques including differential privacy
+
+5. Leading anonymization practices
+   - State-of-the-art privacy-preserving AI methodologies
+
+================================================================================
+END OF ASSESSMENT QUESTIONS
+================================================================================
+
+Total Questions: 30 (5 questions per dimension)
+Assessment Scale: 1-5 point scale per question
+Overall Score Range: 30-150 points (converted to 0-100 percentage)
+
+This assessment evaluates organizational AI readiness across six critical dimensions to provide comprehensive insights into implementation capabilities and growth opportunities.
