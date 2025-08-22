@@ -199,12 +199,23 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
 
   const handleDownloadPDF = async () => {
     try {
+      // Detect if user is on mobile device
+      const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
       // Create a temporary container with the report content
       const reportContent = document.createElement('div');
       reportContent.setAttribute('data-report-content', 'true');
-      reportContent.style.cssText = 'position: fixed; top: 0; left: -9999px; width: 794px; height: auto; z-index: -1;'; // A4 width in pixels at 96 DPI
+      
+      if (isMobile) {
+        // Mobile: use fixed width for consistent margins
+        reportContent.style.cssText = 'position: fixed; top: 0; left: -9999px; width: 794px; height: auto; z-index: -1;';
+      } else {
+        // Desktop: use default behavior for wider margins
+        reportContent.style.cssText = 'position: fixed; top: 0; left: -9999px; height: auto; z-index: -1;';
+      }
+      
       reportContent.innerHTML = `
-        <div style="padding: 60px; background: white; font-family: Arial, sans-serif; min-height: 100vh; width: 100%; box-sizing: border-box;">
+        <div style="padding: 60px; background: white; font-family: Arial, sans-serif; min-height: 100vh; ${isMobile ? 'width: 100%; box-sizing: border-box;' : ''}">
           <!-- Report Header -->
           <div style="padding: 32px; color: white; background: #cd0000; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
             <div style="display: flex; justify-content: space-between; align-items: center;">
