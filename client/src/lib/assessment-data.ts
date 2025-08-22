@@ -912,32 +912,32 @@ export const questions: Question[] = [
     dimension: "dataSecurity",
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
-    question: "What is your approach to data privacy and protection?",
+    question: "How well does your organization understand global data privacy standards (e.g., GDPR, CCPA) and apply them to AI projects?",
     options: [
       {
         value: 1,
-        text: "Basic data privacy measures",
-        description: "Minimal privacy controls and policies"
+        text: "Limited understanding",
+        description: "Minimal knowledge of global privacy regulations"
       },
       {
         value: 2,
-        text: "Standard privacy practices",
-        description: "Basic privacy framework with some protections"
+        text: "Basic compliance awareness",
+        description: "Some understanding but limited application to AI"
       },
       {
         value: 3,
-        text: "Good privacy controls",
-        description: "Well-established privacy policies and procedures"
+        text: "Good regulatory knowledge",
+        description: "Well-informed about privacy laws with basic AI application"
       },
       {
         value: 4,
-        text: "Advanced privacy framework",
-        description: "Comprehensive privacy controls and monitoring"
+        text: "Strong compliance program",
+        description: "Comprehensive understanding with systematic AI application"
       },
       {
         value: 5,
-        text: "Privacy-by-design approach",
-        description: "Leading privacy practices with proactive controls"
+        text: "Expert privacy governance",
+        description: "Leading expertise in privacy regulations for AI projects"
       }
     ]
   },
@@ -1014,32 +1014,32 @@ export const questions: Question[] = [
     dimension: "dataSecurity",
     dimensionLabel: "Data Security & Privacy",
     icon: "Shield",
-    question: "How do you handle third-party vendor security assessments?",
+    question: "How is data anonymization handled in your organization to maintain user privacy in AI datasets?",
     options: [
       {
         value: 1,
-        text: "No vendor security program",
-        description: "Limited oversight of third-party security"
+        text: "No formal anonymization",
+        description: "Limited or no data anonymization practices"
       },
       {
         value: 2,
-        text: "Basic vendor assessments",
-        description: "Some security evaluation of vendors"
+        text: "Basic anonymization techniques",
+        description: "Simple data masking or removal of identifiers"
       },
       {
         value: 3,
-        text: "Standard vendor security process",
-        description: "Established vendor security evaluation"
+        text: "Standard anonymization methods",
+        description: "Established practices for data de-identification"
       },
       {
         value: 4,
-        text: "Comprehensive vendor program",
-        description: "Thorough vendor security management"
+        text: "Advanced anonymization framework",
+        description: "Sophisticated techniques including differential privacy"
       },
       {
         value: 5,
-        text: "Advanced vendor security",
-        description: "Leading practices for vendor and service security"
+        text: "Leading anonymization practices",
+        description: "State-of-the-art privacy-preserving AI methodologies"
       }
     ]
   }
