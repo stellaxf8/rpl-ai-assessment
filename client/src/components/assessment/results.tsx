@@ -565,15 +565,15 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                 return (
                   <Card key={dimension} className={`border border-slate-200 animate-slide-up animate-fade-in`}>
                     <CardContent className="p-4 sm:p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center">
+                      <div className="mb-4">
+                        <div className="flex items-center mb-3">
                           <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
                             {renderIcon(config.icon, "w-5 h-5")}
                           </div>
                           <h4 className="text-base sm:text-lg font-semibold text-slate-900">{config.label}</h4>
                         </div>
                         <div className="flex items-center">
-                          <div className="w-20 mr-3">
+                          <div className="flex-1 mr-3">
                             <Progress 
                               value={percentage} 
                               className="h-3 bg-slate-200" 
