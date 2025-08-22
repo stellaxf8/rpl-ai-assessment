@@ -249,11 +249,9 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     index === 0 ? '#ef4444' : index === 1 ? '#f59e0b' : '#3b82f6'
                   };"></div>
                   <div style="display: flex; align-items: center; margin-bottom: 12px;">
-                    <div style="width: 28px; height: 28px; border-radius: 50%; background: ${
+                    <span style="font-size: 16px; font-weight: bold; margin-right: 12px; color: ${
                       index === 0 ? '#ef4444' : index === 1 ? '#f59e0b' : '#3b82f6'
-                    }; color: white; font-size: 14px; font-weight: bold; margin-right: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); position: relative;">
-                      <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">${item.priority}</span>
-                    </div>
+                    };">${item.priority}.</span>
                     <div style="flex: 1;">
                       <span style="font-weight: 700; font-size: 16px; color: #1e293b;">${item.title}</span>
                       <div style="display: flex; align-items: center; margin-top: 4px;">
@@ -286,9 +284,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                   <div style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                       <div style="display: flex; align-items: center;">
-                        <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 12px; margin-right: 12px; box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2); position: relative;">
-                          <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px;">${config.icon}</span>
-                        </div>
+                        <span style="font-size: 24px; margin-right: 12px;">${config.icon}</span>
                         <h3 style="font-size: 14px; font-weight: 700; color: #1e293b; margin: 0; line-height: 1.3;">${config.label}</h3>
                       </div>
                       <div style="text-align: right;">
