@@ -149,14 +149,14 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               key={index} 
               className={`border-slate-300 animate-slide-up animate-fade-in`}
             >
-              <CardContent className="p-3 sm:p-4 lg:p-6">
-                <div className="flex items-center mb-2 sm:mb-3 lg:mb-4">
-                  <div className={`w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg flex items-center justify-center mr-2 sm:mr-3 lg:mr-4 bg-[#f1f5f900] text-[#cd0000]`}>
-                    <IconComponent className="text-base sm:text-lg lg:text-xl" />
+              <CardContent className="p-2 sm:p-3 lg:p-4">
+                <div className="flex items-center mb-1 sm:mb-2 lg:mb-3">
+                  <div className={`w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center mr-2 sm:mr-2 lg:mr-3 bg-[#f1f5f900] text-[#cd0000]`}>
+                    <IconComponent className="text-sm sm:text-base lg:text-lg" />
                   </div>
-                  <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-slate-900">{dimension.title}</h3>
+                  <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-slate-900">{dimension.title}</h3>
                 </div>
-                <p className="text-xs sm:text-sm lg:text-base text-slate-600">{dimension.description}</p>
+                <p className="text-xs sm:text-xs lg:text-sm text-slate-600">{dimension.description}</p>
               </CardContent>
             </Card>
           );
