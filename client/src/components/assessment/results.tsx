@@ -77,9 +77,9 @@ const dimensionConfig = {
     color: "bg-red-100 text-error",
     barColor: "bg-error",
     recommendations: {
-      high: "Strong privacy governance with excellent GDPR/CCPA compliance and advanced data anonymization for AI.",
-      medium: "Improve global privacy regulation compliance and implement data anonymization frameworks for AI projects.",
-      low: "Establish privacy compliance program for GDPR/CCPA and develop data anonymization capabilities for AI datasets."
+      high: "Strong privacy governance with excellent regulatory compliance and advanced data anonymization for AI.",
+      medium: "Improve privacy regulation compliance and implement data anonymization frameworks for AI projects.",
+      low: "Establish privacy compliance program and develop data anonymization capabilities for AI datasets."
     }
   },
 };
@@ -159,7 +159,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
         },
         dataSecurity: {
           high: "Develop AI-specific privacy governance and advanced anonymization techniques",
-          medium: "Implement GDPR/CCPA compliance framework and data anonymization processes",
+          medium: "Implement privacy compliance framework and data anonymization processes",
           low: "Establish privacy regulation compliance and basic data anonymization capabilities"
         }
       };
