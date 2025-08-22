@@ -1,4 +1,4 @@
-import { Server, Database, Users, Puzzle, DollarSign, Shield, Brain, ArrowRight } from "lucide-react";
+import { Server, Database, Users, Puzzle, DollarSign, Shield, Brain, ArrowRight, AlertTriangle, Trophy, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -73,21 +73,30 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
           <div className="space-y-3 md:space-y-6">
             <div>
-              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000]">Avoid Costly Mistakes</h4>
+              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000] flex items-center">
+                <AlertTriangle className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-2" />
+                Avoid Costly Mistakes
+              </h4>
               <p className="text-xs md:text-sm lg:text-base text-slate-700 md:mb-4">
                 Organizations that rush into AI implementation without proper assessment face a 67% failure rate. Understanding your readiness prevents wasted resources and ensures successful AI adoption.
               </p>
             </div>
             
             <div className="md:hidden">
-              <h4 className="text-sm font-semibold mb-1 text-[#cd0000]" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>Competitive Advantage</h4>
+              <h4 className="text-sm font-semibold mb-1 text-[#cd0000] flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
+                <Trophy className="w-4 h-4 mr-2" />
+                Competitive Advantage
+              </h4>
               <p className="text-xs text-slate-700">
                 Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.
               </p>
             </div>
             
             <div className="hidden md:block">
-              <h4 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 text-[#cd0000]" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>Security & Compliance</h4>
+              <h4 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 text-[#cd0000] flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
+                <Shield className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
+                Security & Compliance
+              </h4>
               <p className="text-sm lg:text-base text-slate-700">
                 AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.
               </p>
@@ -96,9 +105,15 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           
           <div className="space-y-3 md:space-y-6">
             <div>
-              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000]">
-                <span className="md:hidden" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>Security & Compliance</span>
-                <span className="hidden md:inline" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>Competitive Advantage</span>
+              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000] flex items-center">
+                <span className="md:hidden flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
+                  <Shield className="w-4 h-4 mr-2" />
+                  Security & Compliance
+                </span>
+                <span className="hidden md:flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
+                  <Trophy className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
+                  Competitive Advantage
+                </span>
               </h4>
               <p className="text-xs md:text-sm lg:text-base text-slate-700 md:mb-4">
                 <span className="md:hidden">AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.</span>
@@ -107,7 +122,10 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </div>
             
             <div>
-              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000]">Maximize ROI</h4>
+              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000] flex items-center">
+                <TrendingUp className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-2" />
+                Maximize ROI
+              </h4>
               <p className="text-xs md:text-sm lg:text-base text-slate-700">
                 Companies with high AI readiness see 3x better returns on their AI investments. A thorough assessment identifies the most impactful AI opportunities for your specific situation.
               </p>
