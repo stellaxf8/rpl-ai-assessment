@@ -183,7 +183,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       const reportContent = document.createElement('div');
       reportContent.setAttribute('data-report-content', 'true');
       reportContent.innerHTML = `
-        <div style="padding: 40px; background: white; font-family: Arial, sans-serif; min-height: 100vh;">
+        <div style="padding: 60px; background: white; font-family: Arial, sans-serif; min-height: 100vh;">
           <!-- Report Header -->
           <div style="padding: 32px; color: white; background: linear-gradient(135deg, #cd0000 0%, #a50000 100%); margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
             <div style="display: flex; justify-content: space-between; align-items: center;">
