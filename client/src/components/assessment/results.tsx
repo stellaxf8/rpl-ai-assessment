@@ -218,7 +218,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                 </div>
                 <div style="text-align: center; padding: 16px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                   <div style="font-size: 32px; font-weight: bold; margin-bottom: 8px; color: #ca8a04;">
-                    ${Math.max(Object.values(typedScores).filter((score: any) => score < 4.0).length, 2)}
+                    ${Math.max(Object.values(typedScores).filter((score: any) => score < 3.9).length, 1)}
                   </div>
                   <div style="font-size: 12px; color: #64748b; font-weight: 600;">GROWTH OPPORTUNITIES</div>
                   <div style="font-size: 10px; color: #94a3b8;">for acceleration</div>
