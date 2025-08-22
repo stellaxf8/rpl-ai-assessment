@@ -1,3 +1,4 @@
+import React from "react";
 import { CheckCircle, Download, RotateCcw, Target, AlertTriangle, Server, Database, Users, Network, DollarSign, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -303,13 +304,13 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                   <div style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                       <div style="display: flex; align-items: center;">
-                        <span style="font-size: 24px; margin-right: 12px; color: black;">${
-                          config.icon === 'Server' ? '⚙' :
-                          config.icon === 'Database' ? '⬡' :
-                          config.icon === 'Users' ? '◉' :
-                          config.icon === 'Network' ? '⧈' :
-                          config.icon === 'DollarSign' ? '$' :
-                          config.icon === 'Shield' ? '⬢' : config.icon
+                        <span style="font-size: 24px; margin-right: 12px; color: black; display: inline-flex; align-items: center;">${
+                          config.icon === 'Server' ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>' :
+                          config.icon === 'Database' ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="m3 5 v14 a9 3 0 0 0 18 0 v-14"/><path d="m3 12a9 3 0 0 0 18 0"/></svg>' :
+                          config.icon === 'Users' ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 21v-2a4 4 0 0 0-3-3.87"/><path d="m16 3.13a4 4 0 0 1 0 7.75"/></svg>' :
+                          config.icon === 'Network' ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13.5 6 7.5 7.5-7.5 7.5"/><path d="m21 12H3"/><path d="m3 6 7.5 7.5L3 21"/></svg>' :
+                          config.icon === 'DollarSign' ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>' :
+                          config.icon === 'Shield' ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 7.5s-8-2.5-8-7.5c0-1.3.3-2.5.8-3.5L12 3l7.2 6.5c.5 1 .8 2.2 .8 3.5z"/></svg>' : config.icon
                         }</span>
                         <h3 style="font-size: 14px; font-weight: 700; color: #1e293b; margin: 0; line-height: 1.3;">${config.label}</h3>
                       </div>
