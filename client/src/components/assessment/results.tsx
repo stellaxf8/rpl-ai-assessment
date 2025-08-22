@@ -204,7 +204,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       reportContent.innerHTML = `
         <div style="padding: 60px; background: white; font-family: Arial, sans-serif; min-height: 100vh;">
           <!-- Report Header -->
-          <div style="padding: 32px; color: white; background: linear-gradient(135deg, #cd0000 0%, #a50000 100%); margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
+          <div style="padding: 32px; color: white; background: #cd0000; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <div>
                 <h1 style="font-size: 28px; font-weight: bold; margin-bottom: 8px; margin-top: 0; letter-spacing: -0.5px;">AI Readiness Assessment Report</h1>
@@ -303,13 +303,13 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                   <div style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                       <div style="display: flex; align-items: center;">
-                        <span style="font-size: 24px; margin-right: 12px;">${
-                          config.icon === 'Server' ? '⚙' :
-                          config.icon === 'Database' ? '⬡' :
-                          config.icon === 'Users' ? '◉' :
-                          config.icon === 'Network' ? '⧈' :
-                          config.icon === 'DollarSign' ? '$' :
-                          config.icon === 'Shield' ? '⬢' : config.icon
+                        <span style="font-size: 24px; margin-right: 12px; color: black;">${
+                          config.icon === 'Server' ? '🖥' :
+                          config.icon === 'Database' ? '💾' :
+                          config.icon === 'Users' ? '👥' :
+                          config.icon === 'Network' ? '🔗' :
+                          config.icon === 'DollarSign' ? '💰' :
+                          config.icon === 'Shield' ? '🛡' : config.icon
                         }</span>
                         <h3 style="font-size: 14px; font-weight: 700; color: #1e293b; margin: 0; line-height: 1.3;">${config.label}</h3>
                       </div>
