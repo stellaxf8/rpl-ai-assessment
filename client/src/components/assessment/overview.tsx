@@ -60,10 +60,10 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         <Button 
           onClick={onStartAssessment}
           size="lg"
-          className="text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 shadow-lg hover-lift button-press w-full sm:w-auto"
+          className="text-xl sm:text-2xl px-10 sm:px-16 py-6 sm:py-8 shadow-lg hover-lift button-press w-full sm:w-auto"
         >
           Start Assessment
-          <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+          <ArrowRight className="ml-3 h-5 w-5 sm:h-6 sm:w-6" />
         </Button>
       </div>
       
