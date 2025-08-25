@@ -83,7 +83,7 @@ export default function Home() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 bg-white rounded-lg mt-4 sm:mt-6 mb-4 sm:mb-6 shadow-lg border-2 border-[#cd0000] animate-slide-up stagger-delay-1">
+      <main className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4 sm:py-6 lg:py-8 bg-white rounded-lg mt-2 sm:mt-3 mb-2 sm:mb-3 shadow-lg border-2 border-[#cd0000] animate-slide-up stagger-delay-1">
         {currentSection === 'overview' && (
           <Overview onStartAssessment={handleStartAssessment} />
         )}
