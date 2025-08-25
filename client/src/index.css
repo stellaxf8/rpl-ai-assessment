@@ -84,6 +84,14 @@
 }
 
 @layer utilities {
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-subtle {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(205, 0, 0, 0.1); }
+    50% { box-shadow: 0 0 0 10px rgba(205, 0, 0, 0.05); }
+  }
   .bg-success {
     background-color: hsl(var(--success));
   }
