@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Brain, Menu, BookOpen, BarChart3, Phone, Home as HomeIcon } from "lucide-react";
 import logoPath from "@assets/RPL Logo_1754506008197.png";
-import backgroundImage from "@assets/background-pattern.png";
+import backgroundImage from "@assets/BG3_1756165500684.png";
 import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
@@ -48,9 +48,9 @@ export default function Home() {
       className="min-h-screen relative"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'auto',
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'repeat'
+        backgroundRepeat: 'no-repeat'
       }}
     >
       <div 
