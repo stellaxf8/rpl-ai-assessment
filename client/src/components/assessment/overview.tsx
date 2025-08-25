@@ -1,6 +1,7 @@
 import { Server, Database, Users, Puzzle, DollarSign, Shield, Brain, ArrowRight, AlertTriangle, Trophy, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import backgroundImage from "@assets/BG_1756165033231.png";
 
 interface OverviewProps {
   onStartAssessment: () => void;
@@ -47,7 +48,20 @@ const dimensions = [
 
 export default function Overview({ onStartAssessment }: OverviewProps) {
   return (
-    <section>
+    <section 
+      className="relative"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div 
+        className="absolute inset-0 bg-white" 
+        style={{ opacity: 0.85 }}
+      ></div>
+      <div className="relative z-10">
       <div className="text-center mb-8 sm:mb-12 animate-fade-in">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 animate-slide-up animate-fade-in"><span style={{ color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
         <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up animate-fade-in px-4">
@@ -147,6 +161,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </Card>
           );
         })}
+      </div>
       </div>
     </section>
   );
