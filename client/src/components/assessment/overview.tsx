@@ -57,18 +57,14 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       
       {/* Start Assessment Button */}
       <div className="text-center mb-8 sm:mb-12 animate-fade-in animate-slide-up">
-        <div className="bg-gradient-to-r from-red-50 to-red-100 border-2 border-[#cd0000] rounded-2xl p-6 sm:p-8 mb-6 animate-pulse-subtle">
-          <h3 className="text-xl sm:text-2xl font-bold text-[#cd0000] mb-4">Ready to Get Started?</h3>
-          <Button 
-            onClick={onStartAssessment}
-            size="lg"
-            className="text-2xl sm:text-3xl px-16 sm:px-24 py-8 sm:py-10 shadow-2xl hover-lift button-press w-full sm:w-auto bg-[#cd0000] hover:bg-[#b30000] font-bold transform hover:scale-105 transition-all duration-300"
-          >
-            🚀 Start Assessment
-            <ArrowRight className="ml-4 h-8 w-8 sm:h-10 sm:w-10" />
-          </Button>
-          <p className="text-sm sm:text-base text-gray-600 mt-4">Takes only 5-10 minutes • Get instant results</p>
-        </div>
+        <Button 
+          onClick={onStartAssessment}
+          size="lg"
+          className="text-2xl sm:text-3xl px-16 sm:px-24 py-8 sm:py-10 shadow-2xl hover-lift button-press w-full sm:w-auto bg-[#cd0000] hover:bg-[#b30000] font-bold transform hover:scale-105 transition-all duration-300"
+        >
+          Start Assessment
+          <ArrowRight className="ml-4 h-8 w-8 sm:h-10 sm:w-10" />
+        </Button>
       </div>
       
       {/* Why AI Readiness Assessment is Crucial */}
