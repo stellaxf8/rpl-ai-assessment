@@ -70,66 +70,49 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       {/* Why AI Readiness Assessment is Crucial */}
       <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up animate-fade-in" style={{ borderColor: '#cd0000' }}>
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">Why <span style={{ color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment is <span style={{ color: 'black', fontFamily: 'Arial Black' }}>Crucial</span></h3>
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
-          <div className="space-y-3 md:space-y-6">
-            <div>
-              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-black flex items-center">
-                <AlertTriangle className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-2 text-[#cd0000]" />
-                Avoid Costly Mistakes
-              </h4>
-              <p className="text-xs md:text-sm lg:text-base text-slate-700 md:mb-4">
-                Organizations that rush into AI implementation without proper assessment face a 67% failure rate. Understanding your readiness prevents wasted resources and ensures successful AI adoption.
-              </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-3">
+              <AlertTriangle className="w-6 h-6 mr-3 text-[#cd0000]" />
+              <h4 className="text-lg font-semibold text-black">Avoid Costly Mistakes</h4>
             </div>
-            
-            <div className="md:hidden">
-              <h4 className="text-sm font-semibold mb-1 text-black flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
-                <Trophy className="w-4 h-4 mr-2 text-[#cd0000]" />
-                Competitive Advantage
-              </h4>
-              <p className="text-xs text-slate-700">
-                Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.
-              </p>
-            </div>
-            
-            <div className="hidden md:block">
-              <h4 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 text-black flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
-                <Shield className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-[#cd0000]" />
-                Security & Compliance
-              </h4>
-              <p className="text-sm lg:text-base text-slate-700">
-                AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.
-              </p>
-            </div>
+            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">67%</div>
+            <p className="text-sm md:text-base text-slate-700">
+              failure rate for organizations that rush into AI without proper assessment.
+            </p>
           </div>
           
-          <div className="space-y-3 md:space-y-6">
-            <div>
-              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-black flex items-center">
-                <span className="md:hidden flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
-                  <Shield className="w-4 h-4 mr-2 text-[#cd0000]" />
-                  Security & Compliance
-                </span>
-                <span className="hidden md:flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
-                  <Trophy className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-[#cd0000]" />
-                  Competitive Advantage
-                </span>
-              </h4>
-              <p className="text-xs md:text-sm lg:text-base text-slate-700 md:mb-4">
-                <span className="md:hidden">AI systems introduce unique security risks and compliance challenges. Our assessment evaluates your security frameworks, data privacy measures, and regulatory readiness to ensure safe AI deployment.</span>
-                <span className="hidden md:inline">Organizations that properly assess and prepare for AI adoption are 5x more likely to achieve competitive advantages through AI implementation within 18 months.</span>
-              </p>
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-3">
+              <Trophy className="w-6 h-6 mr-3 text-[#cd0000]" />
+              <h4 className="text-lg font-semibold text-black">Competitive Advantage</h4>
             </div>
-            
-            <div>
-              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-black flex items-center">
-                <TrendingUp className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-2 text-[#cd0000]" />
-                Maximize ROI
-              </h4>
-              <p className="text-xs md:text-sm lg:text-base text-slate-700">
-                Companies with high AI readiness see 3x better returns on their AI investments. A thorough assessment identifies the most impactful AI opportunities for your specific situation.
-              </p>
+            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">5x</div>
+            <p className="text-sm md:text-base text-slate-700">
+              more likely to achieve competitive advantages with proper AI readiness preparation.
+            </p>
+          </div>
+          
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-3">
+              <Shield className="w-6 h-6 mr-3 text-[#cd0000]" />
+              <h4 className="text-lg font-semibold text-black">Security & Compliance</h4>
             </div>
+            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">78%</div>
+            <p className="text-sm md:text-base text-slate-700">
+              of AI security breaches occur due to inadequate readiness assessment.
+            </p>
+          </div>
+          
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-3">
+              <TrendingUp className="w-6 h-6 mr-3 text-[#cd0000]" />
+              <h4 className="text-lg font-semibold text-black">Maximize ROI</h4>
+            </div>
+            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">3x</div>
+            <p className="text-sm md:text-base text-slate-700">
+              better returns on AI investments for companies with high readiness scores.
+            </p>
           </div>
         </div>
       </div>
