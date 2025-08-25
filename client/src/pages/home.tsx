@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Brain, Menu, BookOpen, BarChart3, Phone, Home as HomeIcon } from "lucide-react";
 import logoPath from "@assets/RPL Logo_1754506008197.png";
-import backgroundImage from "@assets/BG 1_1755624813166.png";
+import backgroundImage from "@assets/BG_1756165033231.png";
 import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
@@ -44,7 +44,20 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div 
+      className="min-h-screen relative"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div 
+        className="absolute inset-0 bg-white" 
+        style={{ opacity: 0.9 }}
+      ></div>
+      <div className="relative z-10">
       {/* Header */}
       <header className="bg-white shadow-lg border-b border-slate-200 relative z-10 animate-slide-up">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,6 +122,7 @@ export default function Home() {
           </div>
         )}
       </main>
+      </div>
     </div>
   );
 }
