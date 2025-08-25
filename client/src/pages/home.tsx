@@ -55,7 +55,7 @@ export default function Home() {
     >
       <div 
         className="absolute inset-0 bg-white" 
-        style={{ opacity: 0.9 }}
+        style={{ opacity: 0.5 }}
       ></div>
       <div className="relative z-10">
       {/* Header */}
