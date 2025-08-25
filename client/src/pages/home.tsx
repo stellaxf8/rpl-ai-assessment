@@ -50,7 +50,7 @@ export default function Home() {
     >
       {/* Header */}
       <header className="bg-white shadow-lg border-b border-slate-200 relative z-10 animate-slide-up">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 sm:h-20 animate-fade-in">
             <a 
               href="https://www.redpilllabs.com/" 
@@ -86,7 +86,7 @@ export default function Home() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8 bg-white rounded-lg mt-2 sm:mt-4 mb-2 sm:mb-4 shadow-lg animate-slide-up stagger-delay-1">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 bg-white rounded-lg mt-4 sm:mt-6 mb-4 sm:mb-6 shadow-lg animate-slide-up stagger-delay-1">
         {currentSection === 'overview' && (
           <Overview onStartAssessment={handleStartAssessment} />
         )}
