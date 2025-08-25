@@ -68,7 +68,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       </div>
       
       {/* Why AI Readiness Assessment is Crucial */}
-      <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up animate-fade-in" style={{ borderColor: '#cd0000' }}>
+      <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up animate-fade-in border-gray-300">
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">Why <span style={{ color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment is <span style={{ color: 'black', fontFamily: 'Arial Black' }}>Crucial</span></h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <div className="text-center">
