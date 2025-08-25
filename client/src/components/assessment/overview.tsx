@@ -73,8 +73,8 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
           <div className="space-y-3 md:space-y-6">
             <div>
-              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000] flex items-center">
-                <AlertTriangle className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-2" />
+              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-black flex items-center">
+                <AlertTriangle className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-2 text-[#cd0000]" />
                 Avoid Costly Mistakes
               </h4>
               <p className="text-xs md:text-sm lg:text-base text-slate-700 md:mb-4">
@@ -83,8 +83,8 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </div>
             
             <div className="md:hidden">
-              <h4 className="text-sm font-semibold mb-1 text-[#cd0000] flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
-                <Trophy className="w-4 h-4 mr-2" />
+              <h4 className="text-sm font-semibold mb-1 text-black flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
+                <Trophy className="w-4 h-4 mr-2 text-[#cd0000]" />
                 Competitive Advantage
               </h4>
               <p className="text-xs text-slate-700">
@@ -93,8 +93,8 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </div>
             
             <div className="hidden md:block">
-              <h4 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 text-[#cd0000] flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
-                <Shield className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
+              <h4 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 text-black flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
+                <Shield className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-[#cd0000]" />
                 Security & Compliance
               </h4>
               <p className="text-sm lg:text-base text-slate-700">
@@ -105,13 +105,13 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           
           <div className="space-y-3 md:space-y-6">
             <div>
-              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000] flex items-center">
+              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-black flex items-center">
                 <span className="md:hidden flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
-                  <Shield className="w-4 h-4 mr-2" />
+                  <Shield className="w-4 h-4 mr-2 text-[#cd0000]" />
                   Security & Compliance
                 </span>
                 <span className="hidden md:flex items-center" style={{ fontFamily: 'Arial Black', fontWeight: 'bold' }}>
-                  <Trophy className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
+                  <Trophy className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-[#cd0000]" />
                   Competitive Advantage
                 </span>
               </h4>
@@ -122,8 +122,8 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </div>
             
             <div>
-              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-[#cd0000] flex items-center">
-                <TrendingUp className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-2" />
+              <h4 className="text-sm md:text-base lg:text-lg font-semibold mb-1 md:mb-2 lg:mb-3 text-black flex items-center">
+                <TrendingUp className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-2 text-[#cd0000]" />
                 Maximize ROI
               </h4>
               <p className="text-xs md:text-sm lg:text-base text-slate-700">
