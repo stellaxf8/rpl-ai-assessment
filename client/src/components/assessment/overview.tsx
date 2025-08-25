@@ -57,7 +57,6 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       
       {/* Start Assessment Button */}
       <div className="text-center mb-8 sm:mb-12 animate-fade-in animate-slide-up">
-        <p className="text-xl sm:text-2xl font-bold text-[#cd0000] mb-6">Find Out Now</p>
         <Button 
           onClick={onStartAssessment}
           size="lg"
