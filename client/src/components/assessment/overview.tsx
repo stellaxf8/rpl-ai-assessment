@@ -150,13 +150,12 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               className={`border-slate-300 animate-slide-up animate-fade-in`}
             >
               <CardContent className="p-2 sm:p-3 lg:p-4">
-                <div className="flex items-center mb-1 sm:mb-2 lg:mb-3">
+                <div className="flex items-center">
                   <div className={`w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center mr-2 sm:mr-2 lg:mr-3 bg-[#f1f5f900] text-[#cd0000]`}>
                     <IconComponent className="text-sm sm:text-base lg:text-lg" />
                   </div>
                   <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-slate-900">{dimension.title}</h3>
                 </div>
-                <p className="text-xs sm:text-xs lg:text-sm text-slate-600">{dimension.description}</p>
               </CardContent>
             </Card>
           );
