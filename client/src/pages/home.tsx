@@ -48,11 +48,15 @@ export default function Home() {
       className="min-h-screen relative"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
+        backgroundSize: 'auto',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'repeat'
       }}
     >
+      <div 
+        className="absolute inset-0 bg-white" 
+        style={{ opacity: 0.75 }}
+      ></div>
       <div className="relative z-10">
       {/* Header */}
       <header className="bg-white shadow-lg border-b border-slate-200 relative z-10 animate-slide-up">
