@@ -76,10 +76,11 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <AlertTriangle className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-black">Avoid Costly Mistakes</h4>
             </div>
-            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">67%</div>
+            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">52%</div>
             <p className="text-sm md:text-base text-slate-700">
-              failure rate for organizations that rush into AI without proper assessment.
+              of AI projects fail to reach production due to inadequate planning.
             </p>
+            <p className="text-xs text-slate-500 mt-1">Source: Gartner 2024</p>
           </div>
           
           <div className="text-center">
@@ -87,10 +88,11 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <Trophy className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-black">Competitive Advantage</h4>
             </div>
-            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">5x</div>
+            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">80%</div>
             <p className="text-sm md:text-base text-slate-700">
-              more likely to achieve competitive advantages with proper AI readiness preparation.
+              more effective at managing uncertainty when combining organizational and AI learning.
             </p>
+            <p className="text-xs text-slate-500 mt-1">Source: MIT Sloan 2024</p>
           </div>
           
           <div className="text-center">
@@ -98,10 +100,11 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <Shield className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-black">Security & Compliance</h4>
             </div>
-            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">78%</div>
+            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">77%</div>
             <p className="text-sm md:text-base text-slate-700">
-              of AI security breaches occur due to inadequate readiness assessment.
+              of companies experienced security breaches in their AI systems this year.
             </p>
+            <p className="text-xs text-slate-500 mt-1">Source: Cisco 2024</p>
           </div>
           
           <div className="text-center">
@@ -109,10 +112,11 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <TrendingUp className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-black">Maximize ROI</h4>
             </div>
-            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">3x</div>
+            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">23%</div>
             <p className="text-sm md:text-base text-slate-700">
-              better returns on AI investments for companies with high readiness scores.
+              of organizations see significant revenue increases (&gt;5%) from AI investments.
             </p>
+            <p className="text-xs text-slate-500 mt-1">Source: McKinsey 2024</p>
           </div>
         </div>
       </div>
