@@ -134,10 +134,10 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         </div>
       </div>
       
-      {/* 6 Key Dimensions Section */}
+      {/* 6 Key Evaluation Dimensions Section */}
       <div className="text-center mb-6 sm:mb-8 animate-fade-in animate-slide-up">
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-          Key Dimensions
+          Key Evaluation Dimensions
         </h3>
       </div>
       
