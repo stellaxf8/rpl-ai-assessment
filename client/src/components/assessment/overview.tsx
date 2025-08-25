@@ -49,8 +49,8 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
   return (
     <section>
       <div className="text-center mb-8 sm:mb-12 animate-fade-in">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-3 animate-slide-up animate-fade-in"><span style={{ color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
-        <p className="text-base sm:text-lg text-slate-600 max-w-4xl mx-auto animate-slide-up animate-fade-in px-2">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 animate-slide-up animate-fade-in"><span style={{ color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
+        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up animate-fade-in px-4">
           Comprehensive evaluation across 6 key dimensions to determine your organization's readiness for AI implementation
         </p>
       </div>
@@ -60,7 +60,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         <Button 
           onClick={onStartAssessment}
           size="lg"
-          className="text-base sm:text-lg px-8 sm:px-12 py-3 sm:py-4 shadow-lg hover-lift button-press w-full sm:w-auto"
+          className="text-lg sm:text-xl px-12 sm:px-16 py-4 sm:py-6 shadow-lg hover-lift button-press w-full sm:w-auto"
         >
           Start Assessment
           <ArrowRight className="ml-3 h-5 w-5 sm:h-6 sm:w-6" />
@@ -69,7 +69,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       
       {/* Why AI Readiness Assessment is Crucial */}
       <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up animate-fade-in" style={{ borderColor: '#cd0000' }}>
-        <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4 text-center">Why <span style={{ color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment is <span style={{ color: 'black', fontFamily: 'Arial Black' }}>Crucial</span></h3>
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">Why <span style={{ color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment is <span style={{ color: 'black', fontFamily: 'Arial Black' }}>Crucial</span></h3>
         <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
           <div className="space-y-3 md:space-y-6">
             <div>
@@ -136,7 +136,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       
       {/* 6 Key Dimensions Section */}
       <div className="text-center mb-6 sm:mb-8 animate-fade-in animate-slide-up">
-        <h3 className="text-lg sm:text-xl font-bold text-slate-900">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
           Key Dimensions
         </h3>
       </div>
