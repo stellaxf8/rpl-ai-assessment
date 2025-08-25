@@ -44,10 +44,7 @@ export default function Home() {
   };
 
   return (
-    <div 
-      className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-lg border-b border-slate-200 relative z-10 animate-slide-up">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,7 +83,7 @@ export default function Home() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 bg-white rounded-lg mt-4 sm:mt-6 mb-4 sm:mb-6 shadow-lg animate-slide-up stagger-delay-1">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 bg-white rounded-lg mt-4 sm:mt-6 mb-4 sm:mb-6 shadow-lg border-2 border-[#cd0000] animate-slide-up stagger-delay-1">
         {currentSection === 'overview' && (
           <Overview onStartAssessment={handleStartAssessment} />
         )}
