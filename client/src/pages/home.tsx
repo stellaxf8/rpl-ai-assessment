@@ -83,7 +83,7 @@ export default function Home() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 bg-white rounded-lg mt-4 sm:mt-6 mb-4 sm:mb-6 shadow-xl border-2 border-[#cd0000] animate-slide-up stagger-delay-1" style={{ boxShadow: '0 20px 40px -15px rgba(205, 0, 0, 0.15), 0 0 0 1px rgba(205, 0, 0, 0.05)' }}>
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 bg-white rounded-lg mt-4 sm:mt-6 mb-4 sm:mb-6 shadow-xl border-2 border-[#cd0000] animate-slide-up stagger-delay-1" style={{ boxShadow: '0 22px 44px -15px rgba(205, 0, 0, 0.165), 0 0 0 1px rgba(205, 0, 0, 0.055)' }}>
         {currentSection === 'overview' && (
           <Overview onStartAssessment={handleStartAssessment} />
         )}
