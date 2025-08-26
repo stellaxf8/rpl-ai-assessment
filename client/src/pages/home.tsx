@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Brain, Menu, BookOpen, BarChart3, Phone, Home as HomeIcon } from "lucide-react";
 import logoPath from "@assets/RPL Logo_1754506008197.png";
-import backgroundImage from "@assets/BG_1756166354642.png";
+import backgroundImage from "@assets/BG2_1756166640178.png";
 import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
