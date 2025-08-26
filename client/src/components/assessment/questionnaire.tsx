@@ -414,7 +414,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
           <div className="flex flex-col gap-2 sm:gap-3 mb-3 sm:mb-4 animate-fade-in">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0">
               <div className="flex flex-col animate-slide-in-left">
-                <h2 className="text-lg sm:text-2xl font-bold text-slate-900"><span style={{ color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
+                <h2 className="text-lg sm:text-2xl font-bold text-slate-900"><span style={{ color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
                 {selectedIndustry && hasIndustryVariations(selectedIndustry) && (
                   <p className="text-xs sm:text-sm text-primary font-medium animate-slide-up stagger-delay-1">
                     {selectedIndustry} Industry - Specialized Questions
