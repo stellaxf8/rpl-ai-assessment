@@ -129,7 +129,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         </h3>
       </div>
       
-      <div className="grid grid-cols-2 grid-rows-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 max-w-lg mx-auto">
+      <div className="grid grid-cols-2 grid-rows-3 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12 max-w-xl mx-auto">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
           return (
