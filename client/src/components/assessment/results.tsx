@@ -446,11 +446,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
 
           <div className="space-y-4">
             {topActionItems.map((item, index) => (
-              <div key={item.title} className={`border rounded-lg p-4 sm:p-6 ${
-                index === 0 ? 'border-red-200 bg-red-50' :
-                index === 1 ? 'border-yellow-200 bg-yellow-50' :
-                'border-blue-200 bg-blue-50'
-              } animate-slide-up animate-fade-in`}>
+              <div key={item.title} className={`border rounded-lg p-4 sm:p-6 border-slate-200 bg-slate-50 animate-slide-up animate-fade-in`}>
                 <div className="flex items-start space-x-4">
                   <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold ${
                     index === 0 ? 'bg-red-500' :
