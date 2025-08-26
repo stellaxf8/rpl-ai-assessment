@@ -95,10 +95,8 @@ const renderIcon = (iconName: string, className: string = "w-4 h-4") => {
     Shield
   };
   
-  // Make specific icons black
-  const blackIcons = ['Server', 'DollarSign'];
-  const iconColor = blackIcons.includes(iconName) ? 'text-black' : '';
-  const combinedClassName = `${className} ${iconColor}`.trim();
+  // Make ALL icons black
+  const combinedClassName = `${className} text-black`.trim();
   
   const IconComponent = iconMap[iconName];
   return IconComponent ? <IconComponent className={combinedClassName} /> : <span>{iconName}</span>;
