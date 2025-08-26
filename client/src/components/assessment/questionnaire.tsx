@@ -327,7 +327,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
           <div className="space-y-3 sm:space-y-4 animate-slide-up animate-fade-in">
             <div className="animate-slide-in-left animate-fade-in">
-              <Label htmlFor="organizationName">Organization Name</Label>
+              <Label htmlFor="organizationName" className="font-bold">Organization Name</Label>
               <Input
                 id="organizationName"
                 value={organizationName}
