@@ -11,7 +11,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">Choose Your Assessment <span style={{ color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold' }}>Type</span></h2>
+        <h2 className="text-[#0f172a]">Choose Your Assessment <span style={{ color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold' }}>Type</span></h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
           Select the assessment type that best fits your time and requirements
         </p>
