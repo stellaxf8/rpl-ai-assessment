@@ -599,14 +599,6 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                           <span className="font-bold text-slate-900 text-sm sm:text-base">{scoreValue.toFixed(1)}/5</span>
                         </div>
                       </div>
-                      <p className="text-sm sm:text-base text-slate-600 mb-3">
-                        {level === 'high' 
-                          ? "Strong performance in this area with good foundation for AI implementation."
-                          : level === 'medium'
-                          ? "Moderate performance with room for improvement before AI implementation."
-                          : "Significant improvement needed in this area before AI implementation."
-                        }
-                      </p>
                       <div className={`p-3 rounded border-l-4 ${
                         level === 'high' ? 'border-green-500 bg-green-50' :
                         level === 'medium' ? 'border-yellow-500 bg-yellow-50' :
