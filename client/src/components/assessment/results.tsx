@@ -416,7 +416,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       <Card className="mb-8 animate-slide-up animate-fade-in">
         <CardContent className="p-4 sm:p-6 lg:p-8">
           <div className="text-center mb-6 sm:mb-8 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 animate-slide-up animate-fade-in"><span style={{color: '#cd0000', fontFamily: 'Arial Black', fontWeight: 'bold'}}>AI Readiness</span> Score</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 animate-slide-up animate-fade-in"><span style={{color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold'}}>AI Readiness</span> Score</h2>
             <p className="text-sm sm:text-base text-slate-600 animate-slide-up animate-fade-in">Complete AI readiness assessment for {organizationName}</p>
           </div>
           
