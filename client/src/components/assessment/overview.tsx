@@ -142,7 +142,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
                   <div className={`w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-[#f1f5f900] text-[#cd0000]`}>
                     <IconComponent className="text-sm sm:text-base lg:text-lg" />
                   </div>
-                  <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-slate-600 ml-2 sm:ml-2 lg:ml-3 flex-1 text-left">{dimension.title}</h3>
+                  <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-slate-600 ml-2 sm:ml-2 lg:ml-3 flex-1 text-left whitespace-nowrap">{dimension.title}</h3>
                 </div>
               </CardContent>
             </Card>
