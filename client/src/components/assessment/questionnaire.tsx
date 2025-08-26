@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight, Server, Database, Users, Puzzle, DollarSign, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -71,6 +71,19 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const [organizationName, setOrganizationName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [showContactForm, setShowContactForm] = useState(false);
+
+  // Hidden keyboard shortcut for demo sample (Ctrl+Shift+D)
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.shiftKey && event.key === 'D') {
+        event.preventDefault();
+        generateDemoSample();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Reset function to clear all assessment state
   const resetAssessment = () => {
@@ -430,16 +443,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 <span className="text-xs sm:text-sm text-slate-500 order-2 sm:order-1">
                   Question {currentQuestion + 1} of {assessmentQuestions.length}
                 </span>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  onClick={generateDemoSample}
-                  className="text-xs bg-[#cd0000] text-[#f5f5f4] border-[#cd0000] hover:bg-[#b30000] hover:text-[#f5f5f4] order-1 sm:order-2 px-2 py-1"
-                >
-                  <Zap className="mr-1 h-3 w-3" />
-                  <span className="hidden sm:inline">Demo Sample</span>
-                  <span className="sm:hidden">Demo</span>
-                </Button>
+{/* Demo Sample button hidden - use Ctrl+Shift+D shortcut instead */}
               </div>
             </div>
             <Progress value={progress} className="bg-gray-200" />
