@@ -322,7 +322,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         <CardContent className="p-4 sm:p-6 lg:p-8">
           <div className="text-center mb-4 sm:mb-6 animate-fade-in">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 animate-slide-up animate-fade-in">Almost Done!</h2>
-            <p className="text-sm sm:text-base text-slate-600 animate-slide-up animate-fade-in">We'll send your personalized results to your email.</p>
+            <p className="text-sm sm:text-base text-slate-600 animate-slide-up animate-fade-in">Just a couple details to generate your personalized results.</p>
           </div>
 
           <div className="space-y-3 sm:space-y-4 animate-slide-up animate-fade-in">
