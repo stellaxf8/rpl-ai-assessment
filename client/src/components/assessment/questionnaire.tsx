@@ -68,7 +68,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const [showIndustrySelection, setShowIndustrySelection] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [responses, setResponses] = useState<Record<string, number>>({});
-  const [contactName, setContactName] = useState("");
   const [organizationName, setOrganizationName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [showContactForm, setShowContactForm] = useState(false);
@@ -265,7 +264,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     }
 
     submitAssessment.mutate({
-      contactName,
       organizationName,
       contactEmail,
       industry: selectedIndustry,
@@ -310,7 +308,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     setShowIndustrySelection(false);
     setCurrentQuestion(0);
     setResponses({}); // Reset responses when changing industry
-    setContactName("");
     setOrganizationName("");
     setContactEmail("");
     setShowContactForm(false);
@@ -330,16 +327,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
           <div className="space-y-3 sm:space-y-4 animate-slide-up animate-fade-in">
             <div className="animate-slide-in-left animate-fade-in">
-              <Label htmlFor="contactName" className="font-bold">Name</Label>
-              <Input
-                id="contactName"
-                value={contactName}
-                onChange={(e) => setContactName(e.target.value)}
-                placeholder="Enter your name"
-                className="transition-colors"
-              />
-            </div>
-            <div className="animate-slide-in-left animate-fade-in">
               <Label htmlFor="organizationName" className="font-bold">Organization Name</Label>
               <Input
                 id="organizationName"
@@ -350,7 +337,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               />
             </div>
             <div className="animate-slide-in-right animate-fade-in">
-              <Label htmlFor="contactEmail" className="font-bold">Email</Label>
+              <Label htmlFor="contactEmail" className="font-bold">Contact Email</Label>
               <Input
                 id="contactEmail"
                 type="email"
