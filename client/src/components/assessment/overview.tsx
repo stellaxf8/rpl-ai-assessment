@@ -77,7 +77,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <AlertTriangle className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-black">Avoid Costly Mistakes</h4>
             </div>
-            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">52%</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">52%</div>
             <p className="text-sm md:text-base text-slate-700">
               of AI projects fail to reach production due to inadequate planning.
             </p>
@@ -89,7 +89,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <Trophy className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-black">Competitive Advantage</h4>
             </div>
-            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">80%</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">80%</div>
             <p className="text-sm md:text-base text-slate-700">
               more effective at managing uncertainty when combining organizational and AI learning.
             </p>
@@ -101,7 +101,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <Shield className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-black">Security & Compliance</h4>
             </div>
-            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">77%</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">77%</div>
             <p className="text-sm md:text-base text-slate-700">
               of companies experienced security breaches in their AI systems this year.
             </p>
@@ -113,7 +113,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <TrendingUp className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-black">Maximize ROI</h4>
             </div>
-            <div className="text-4xl md:text-5xl font-bold text-[#cd0000] mb-2">23%</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">23%</div>
             <p className="text-sm md:text-base text-slate-700">
               of organizations see significant revenue increases (&gt;5%) from AI investments.
             </p>
