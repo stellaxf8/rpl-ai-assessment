@@ -52,7 +52,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       <div className="text-center mb-8 sm:mb-12 animate-fade-in">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 animate-slide-up animate-fade-in"><span style={{ color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
         <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up animate-fade-in px-4">
-          Want to find out if your organization is ready for AI implementation?
+          Is your organization ready for AI Implementation?
         </p>
       </div>
       
