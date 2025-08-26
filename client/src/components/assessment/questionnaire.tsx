@@ -350,7 +350,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               />
             </div>
             <div className="animate-slide-in-right animate-fade-in">
-              <Label htmlFor="contactEmail" className="font-bold">Contact Email</Label>
+              <Label htmlFor="contactEmail" className="font-bold">Email</Label>
               <Input
                 id="contactEmail"
                 type="email"
