@@ -44,20 +44,7 @@ export default function Home() {
   };
 
   return (
-    <div 
-      className="min-h-screen relative"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      <div 
-        className="absolute inset-0 bg-white" 
-        style={{ opacity: 0.75 }}
-      ></div>
-      <div className="relative z-10">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-lg border-b border-slate-200 relative z-10 animate-slide-up">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,7 +109,6 @@ export default function Home() {
           </div>
         )}
       </main>
-      </div>
     </div>
   );
 }
