@@ -176,7 +176,7 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-sm text-slate-900 leading-tight">{industry.name}</h3>
+                    <h3 className="font-semibold text-sm text-slate-600 leading-tight">{industry.name}</h3>
                     {industry.hasSpecializations && (
                       <Badge variant="secondary" className="text-xs mt-1">
                         Specialized
