@@ -340,17 +340,6 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                         <div style="font-size: 14px; font-weight: bold; color: ${level === 'high' ? '#16a34a' : level === 'medium' ? '#ca8a04' : '#dc2626'}; min-width: 40px;">${scoreValue.toFixed(1)}/5</div>
                       </div>
                     </div>
-                    <div style="margin-bottom: 12px;">
-                      <div style="font-size: 12px; color: #64748b; margin-bottom: 8px; font-weight: 600;">ASSESSMENT:</div>
-                      <p style="font-size: 12px; color: #475569; margin: 0; line-height: 1.4;">
-                        ${level === 'high' 
-                          ? "Strong performance with excellent foundation for AI implementation. This dimension shows readiness for advanced AI initiatives."
-                          : level === 'medium'
-                          ? "Moderate performance with good potential. Some improvements needed to optimize AI implementation success."
-                          : "Significant improvement opportunities identified. Focus on building capabilities in this area before AI implementation."
-                        }
-                      </p>
-                    </div>
                     <div style="padding: 12px; border-radius: 8px; border-left: 4px solid ${
                       level === 'high' ? '#16a34a' : level === 'medium' ? '#ca8a04' : '#dc2626'
                     }; background: ${
