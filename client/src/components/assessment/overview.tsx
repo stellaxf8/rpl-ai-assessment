@@ -123,13 +123,13 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       </div>
       
       {/* 6 Key Evaluation Dimensions Section */}
-      <div className="text-center mb-6 sm:mb-8 animate-fade-in animate-slide-up">
-        <h3 className="text-lg sm:text-xl font-bold text-slate-900">
+      <div className="text-center mb-4 sm:mb-6 animate-fade-in animate-slide-up">
+        <h3 className="text-sm sm:text-base font-medium text-slate-600">
           Key Evaluation Dimensions
         </h3>
       </div>
       
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-12">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-8 sm:mb-12">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
           return (
