@@ -151,7 +151,7 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
       <div className="text-center">
         <h2 className="text-2xl font-bold text-slate-900 mb-3">Select Your <span style={{ color: '#000000', fontFamily: 'Arial Black, Arial, sans-serif', fontWeight: 'bold' }}>Industry</span></h2>
         <p className="text-slate-600 max-w-2xl mx-auto">
-          Choose your primary industry to receive a tailored AI readiness assessment with industry-specific questions and benchmarks.
+          Choose your industry for a tailored assessment with relevant questions.
         </p>
       </div>
       <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 items-start">
