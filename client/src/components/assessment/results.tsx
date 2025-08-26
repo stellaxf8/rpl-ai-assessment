@@ -447,15 +447,15 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           <div className="space-y-4">
             {topActionItems.map((item, index) => (
               <div key={item.title} className={`border rounded-lg p-4 sm:p-6 ${
-                index === 0 ? 'border-red-200 bg-red-50' :
-                index === 1 ? 'border-yellow-200 bg-yellow-50' :
-                'border-blue-200 bg-blue-50'
+                index === 0 ? 'border-slate-300 bg-slate-50' :
+                index === 1 ? 'border-slate-300 bg-slate-50' :
+                'border-slate-300 bg-slate-50'
               } animate-slide-up animate-fade-in`}>
                 <div className="flex items-start space-x-4">
                   <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold ${
-                    index === 0 ? 'bg-red-500' :
-                    index === 1 ? 'bg-yellow-500' :
-                    'bg-blue-500'
+                    index === 0 ? 'bg-slate-700' :
+                    index === 1 ? 'bg-slate-600' :
+                    'bg-slate-500'
                   }`}>
                     {item.priority}
                   </div>
@@ -468,9 +468,9 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                       </div>
                       <div className="flex items-center">
                         <span className={`px-2 py-1 text-xs font-medium rounded ${
-                          item.urgency === 'Critical' ? 'bg-red-100 text-red-800' :
-                          item.urgency === 'High' ? 'bg-yellow-100 text-yellow-800' :
-                          'bg-blue-100 text-blue-800'
+                          item.urgency === 'Critical' ? 'bg-slate-200 text-slate-800' :
+                          item.urgency === 'High' ? 'bg-slate-200 text-slate-800' :
+                          'bg-slate-200 text-slate-800'
                         }`}>
                           {item.urgency} Priority
                         </span>
@@ -524,20 +524,20 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     const scoreValue = score as number;
                     const percentage = (scoreValue / 5) * 100;
 
-                    // Determine bar color based on score value (dynamic)
-                    let barColorClass = 'bg-red-500'; // Default to red for low scores
+                    // Determine bar color based on score value (professional neutral tones)
+                    let barColorClass = 'bg-slate-400'; // Default to neutral for low scores
                     if (scoreValue >= 4.0) {
-                      barColorClass = 'bg-green-600'; // High score: green (4.0+)
+                      barColorClass = 'bg-slate-700'; // High score: dark neutral (4.0+)
                     } else if (scoreValue >= 2.5) {
-                      barColorClass = 'bg-yellow-500'; // Medium score: yellow (2.5-3.9)
+                      barColorClass = 'bg-slate-500'; // Medium score: medium neutral (2.5-3.9)
                     } else {
-                      barColorClass = 'bg-red-500'; // Low score: red (0.0-2.4)
+                      barColorClass = 'bg-slate-400'; // Low score: light neutral (0.0-2.4)
                     }
 
                     return (
                       <div key={dimension} className={`flex items-center justify-between animate-slide-in-left stagger-delay-${Math.min(index + 3, 6)}`}>
                         <div className="flex items-center flex-1">
-                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 ${config?.color || 'bg-gray-100'}`}>
+                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 bg-slate-100`}>
                             {renderIcon(config?.icon || 'Server', "w-4 h-4")}
                           </div>
                           <div className="flex-1">
@@ -588,7 +588,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     <CardContent className="p-4 sm:p-6">
                       <div className="mb-4">
                         <div className="flex items-center mb-3">
-                          <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                          <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mr-3">
                             {renderIcon(config.icon, "w-5 h-5")}
                           </div>
                           <h4 className="text-base sm:text-lg font-semibold text-slate-900">{config.label}</h4>
@@ -613,9 +613,9 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                         }
                       </p>
                       <div className={`p-3 rounded border-l-4 ${
-                        level === 'high' ? 'border-green-500 bg-green-50' :
-                        level === 'medium' ? 'border-yellow-500 bg-yellow-50' :
-                        'border-red-500 bg-red-50'
+                        level === 'high' ? 'border-slate-700 bg-slate-50' :
+                        level === 'medium' ? 'border-slate-500 bg-slate-50' :
+                        'border-slate-400 bg-slate-50'
                       }`}>
                         <div className="font-medium text-slate-900 text-sm sm:text-base">Recommendation:</div>
                         <div className="text-slate-700 text-sm sm:text-base">{config.recommendations[level]}</div>
