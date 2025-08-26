@@ -36,6 +36,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
               <p>• 15 core questions</p>
               <p>• 5-7 minutes to complete</p>
               <p>• General AI readiness overview</p>
+              <p>• Basic recommendations</p>
             </div>
           </CardContent>
         </Card>
