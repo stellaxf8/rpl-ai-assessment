@@ -135,7 +135,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           return (
             <Card 
               key={index} 
-              className={`border-slate-300 animate-slide-up animate-fade-in`}
+              className={`border-none animate-slide-up animate-fade-in`}
             >
               <CardContent className="p-2 sm:p-3 lg:p-4">
                 <div className="flex items-center justify-center text-center">
