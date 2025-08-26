@@ -27,16 +27,12 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
               <Zap style={{ color: '#cd0000' }} className="h-6 w-6 md:h-8 md:w-8" />
             </div>
             <CardTitle className="text-lg md:text-xl">Quick Assessment</CardTitle>
-            <CardDescription className="text-sm md:text-base">
-              Essential evaluation for immediate insights
-            </CardDescription>
           </CardHeader>
           <CardContent className="text-center space-y-2 md:space-y-4">
             <div className="space-y-1 md:space-y-2 text-xs md:text-sm text-slate-600">
               <p>• 15 core questions</p>
               <p>• 5-7 minutes to complete</p>
               <p>• General AI readiness overview</p>
-              <p>• Basic recommendations</p>
             </div>
           </CardContent>
         </Card>
@@ -51,14 +47,12 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
               <Clock style={{ color: '#cd0000' }} className="h-6 w-6 md:h-8 md:w-8" />
             </div>
             <CardTitle className="text-lg md:text-xl">Detailed Assessment</CardTitle>
-            <CardDescription className="text-sm md:text-base">In-depth industry-specific analysis</CardDescription>
           </CardHeader>
           <CardContent className="text-center space-y-2 md:space-y-4">
             <div className="space-y-1 md:space-y-2 text-xs md:text-sm text-slate-600">
               <p>• 30 industry-tailored questions</p>
               <p>• 10-15 minutes to complete</p>
               <p>• Industry-specific insights</p>
-              <p>• Detailed recommendations & benchmarks</p>
             </div>
           </CardContent>
         </Card>
