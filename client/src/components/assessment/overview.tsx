@@ -48,110 +48,135 @@ const dimensions = [
 
 export default function Overview({ onStartAssessment }: OverviewProps) {
   return (
-    <section>
-      <div className="text-center mb-8 sm:mb-12 animate-fade-in">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 animate-slide-up animate-fade-in tracking-tight" style={{ 
-          background: 'linear-gradient(135deg, #0f172a 0%, #374151 30%, #cd0000 70%, #ef4444 100%)', 
+    <section className="relative overflow-hidden">
+      {/* Hero Section with improved spacing and typography */}
+      <div className="text-center mb-12 sm:mb-16 lg:mb-20 animate-fade-in">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 animate-slide-up animate-fade-in tracking-tight leading-tight" style={{ 
+          background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
           WebkitBackgroundClip: 'text', 
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
-          fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif',
-          textShadow: '0 4px 8px rgba(0,0,0,0.1)'
+          fontFamily: '"Inter", system-ui, sans-serif',
+          letterSpacing: '-0.02em'
         }}>
           AI Readiness Assessment
-        </h2>
-        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up animate-fade-in px-4">
-          Is your organization ready for AI Implementation?
+        </h1>
+        <p className="text-xl sm:text-2xl lg:text-3xl text-slate-600 max-w-4xl mx-auto animate-slide-up animate-fade-in px-4 font-light leading-relaxed">
+          Is your organization ready for AI implementation?
         </p>
+        <div className="mt-8 max-w-2xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-slate-500 leading-relaxed">
+            Get actionable insights and strategic recommendations tailored to your industry
+          </p>
+        </div>
       </div>
       
-      {/* Start Assessment Button */}
-      <div className="text-center mb-8 sm:mb-12 animate-fade-in animate-slide-up">
-        <Button 
-          onClick={onStartAssessment}
-          size="lg"
-          className="text-2xl sm:text-3xl px-16 sm:px-24 py-8 sm:py-10 shadow-2xl hover-lift button-press w-full sm:w-auto bg-[#cd0000] hover:bg-[#b30000] font-bold transform hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(205,0,0,0.3)]"
-        >
-          Start Assessment
-          <ArrowRight className="ml-4 h-8 w-8 sm:h-10 sm:w-10" />
-        </Button>
+      {/* Modern CTA Button */}
+      <div className="text-center mb-16 sm:mb-20 animate-fade-in animate-slide-up">
+        <div className="inline-flex flex-col items-center gap-4">
+          <Button 
+            onClick={onStartAssessment}
+            size="lg"
+            className="text-xl sm:text-2xl px-12 sm:px-16 py-6 sm:py-8 bg-gradient-to-r from-[#cd0000] to-[#ef4444] hover:from-[#b30000] hover:to-[#cd0000] text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 border-0 relative overflow-hidden group"
+          >
+            <span className="relative z-10 flex items-center">
+              Start Assessment
+              <ArrowRight className="ml-3 h-6 w-6 sm:h-7 sm:w-7 group-hover:translate-x-1 transition-transform duration-200" />
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </Button>
+          <p className="text-sm text-slate-500 font-medium">
+            Takes 5-15 minutes • Free personalized report
+          </p>
+        </div>
       </div>
       
-      {/* Why AI Readiness Assessment is Crucial */}
-      <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up animate-fade-in border-gray-300">
-        <h3 className="text-xl sm:text-2xl font-extrabold text-gray-600 mb-4 sm:mb-6 text-center" style={{ fontFamily: '"Arial Nova Light", "Arial", sans-serif', fontWeight: '800' }}>Why AI Readiness Assessment is Crucial</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-3">
-              <AlertTriangle className="w-6 h-6 mr-3 text-[#cd0000]" />
-              <h4 className="text-lg font-semibold text-slate-600">Avoid Costly Mistakes</h4>
+      {/* Modern Stats Section */}
+      <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200/60 rounded-3xl p-6 sm:p-8 lg:p-12 mb-16 sm:mb-20 shadow-xl shadow-slate-200/50 animate-slide-up animate-fade-in backdrop-blur-sm">
+        <div className="text-center mb-10 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-4">Why AI Readiness Matters</h2>
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Organizations that assess their AI readiness first are significantly more successful
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <AlertTriangle className="w-8 h-8 text-[#cd0000]" />
             </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">48%</div>
-            <p className="text-sm md:text-base text-slate-700">
+            <h4 className="text-xl font-bold text-slate-800 mb-3">Avoid Costly Mistakes</h4>
+            <div className="text-4xl lg:text-5xl font-bold text-[#cd0000] mb-3">48%</div>
+            <p className="text-base text-slate-600 leading-relaxed mb-2">
               of AI projects fail to make it into production, taking 8+ months from prototype.
             </p>
-            <p className="text-xs text-slate-500 mt-1">Source: Gartner 2025</p>
+            <p className="text-sm text-slate-500 font-medium">Source: Gartner 2025</p>
           </div>
           
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-3">
-              <Trophy className="w-6 h-6 mr-3 text-[#cd0000]" />
-              <h4 className="text-lg font-semibold text-slate-600">Competitive Advantage</h4>
+          <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <Trophy className="w-8 h-8 text-[#cd0000]" />
             </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">78%</div>
-            <p className="text-sm md:text-base text-slate-700">
+            <h4 className="text-xl font-bold text-slate-800 mb-3">Competitive Advantage</h4>
+            <div className="text-4xl lg:text-5xl font-bold text-[#cd0000] mb-3">78%</div>
+            <p className="text-base text-slate-600 leading-relaxed mb-2">
               of companies use AI in at least one function, but only 1% have reached maturity.
             </p>
-            <p className="text-xs text-slate-500 mt-1">Source: McKinsey 2025</p>
+            <p className="text-sm text-slate-500 font-medium">Source: McKinsey 2025</p>
           </div>
           
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-3">
-              <Shield className="w-6 h-6 mr-3 text-[#cd0000]" />
-              <h4 className="text-lg font-semibold text-slate-600">Security & Compliance</h4>
+          <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <Shield className="w-8 h-8 text-[#cd0000]" />
             </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">97%</div>
-            <p className="text-sm md:text-base text-slate-700">
+            <h4 className="text-xl font-bold text-slate-800 mb-3">Security & Compliance</h4>
+            <div className="text-4xl lg:text-5xl font-bold text-[#cd0000] mb-3">97%</div>
+            <p className="text-base text-slate-600 leading-relaxed mb-2">
               of AI-breached organizations lack proper access controls and governance policies.
             </p>
-            <p className="text-xs text-slate-500 mt-1">Source: IBM 2025</p>
+            <p className="text-sm text-slate-500 font-medium">Source: IBM 2025</p>
           </div>
           
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-3">
-              <TrendingUp className="w-6 h-6 mr-3 text-[#cd0000]" />
-              <h4 className="text-lg font-semibold text-slate-600">Maximize ROI</h4>
+          <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <TrendingUp className="w-8 h-8 text-[#cd0000]" />
             </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">51%</div>
-            <p className="text-sm md:text-base text-slate-700">
+            <h4 className="text-xl font-bold text-slate-800 mb-3">Maximize ROI</h4>
+            <div className="text-4xl lg:text-5xl font-bold text-[#cd0000] mb-3">51%</div>
+            <p className="text-base text-slate-600 leading-relaxed mb-2">
               expect revenue growth &gt;5% from AI, but only 19% see that impact today.
             </p>
-            <p className="text-xs text-slate-500 mt-1">Source: McKinsey 2025</p>
+            <p className="text-sm text-slate-500 font-medium">Source: McKinsey 2025</p>
           </div>
         </div>
       </div>
       
-      {/* 6 Key Evaluation Dimensions Section */}
-      <div className="text-center mb-4 sm:mb-6 animate-fade-in animate-slide-up">
-        <h3 className="font-medium text-slate-600" style={{ fontSize: '18px' }}>
-          Key Evaluation Dimensions
-        </h3>
+      {/* Modern Dimensions Section */}
+      <div className="text-center mb-8 sm:mb-12 animate-fade-in animate-slide-up">
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">
+          Assessment Dimensions
+        </h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          We evaluate six critical areas of AI readiness
+        </p>
       </div>
       
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-8 sm:mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 sm:mb-20">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
           return (
             <Card 
               key={index} 
-              className={`border-none animate-slide-up animate-fade-in`}
+              className="border border-slate-200/60 rounded-2xl p-6 bg-white/80 backdrop-blur-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 hover:-translate-y-1 group animate-slide-up animate-fade-in"
             >
-              <CardContent className="p-2 sm:p-3 lg:p-4">
-                <div className="flex items-center text-left">
-                  <div className={`w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center mr-2 sm:mr-2 lg:mr-3 bg-[#f1f5f900] text-black`}>
-                    <IconComponent className="text-sm sm:text-base lg:text-lg" />
+              <CardContent className="p-0">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center group-hover:bg-slate-100 transition-colors duration-300">
+                    <IconComponent className="w-8 h-8 text-slate-700" />
                   </div>
-                  <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-slate-600">{dimension.title}</h3>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-800 mb-2">{dimension.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{dimension.description}</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
