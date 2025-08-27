@@ -11,7 +11,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight" style={{ 
+        <h2 className="text-3xl font-extrabold mb-4 tracking-tight" style={{ 
           background: 'linear-gradient(135deg, #0f172a 0%, #374151 30%, #cd0000 70%, #ef4444 100%)', 
           WebkitBackgroundClip: 'text', 
           WebkitTextFillColor: 'transparent',
