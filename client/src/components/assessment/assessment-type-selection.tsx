@@ -32,7 +32,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
           onClick={() => onSelectType('quick')}
         >
           <CardHeader className="text-center pb-2 md:pb-4">
-            <div className="w-14 h-14 md:w-18 md:h-18 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-sm">
+            <div className="w-14 h-14 md:w-18 md:h-18 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-sm">
               <Zap style={{ color: '#cd0000' }} className="h-6 w-6 md:h-8 md:w-8" />
             </div>
             <CardTitle className="text-xl md:text-2xl font-bold">Quick Assessment</CardTitle>
@@ -52,7 +52,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
           onClick={() => onSelectType('detailed')}
         >
           <CardHeader className="text-center pb-2 md:pb-4">
-            <div className="w-14 h-14 md:w-18 md:h-18 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-sm">
+            <div className="w-14 h-14 md:w-18 md:h-18 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-sm">
               <Clock style={{ color: '#cd0000' }} className="h-6 w-6 md:h-8 md:w-8" />
             </div>
             <CardTitle className="text-xl md:text-2xl font-bold">Detailed Assessment</CardTitle>
