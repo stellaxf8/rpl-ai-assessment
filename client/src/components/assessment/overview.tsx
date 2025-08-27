@@ -158,22 +158,22 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         </p>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 sm:mb-20">
+      <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8 mb-16 sm:mb-20">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
           return (
             <Card 
               key={index} 
-              className="border border-slate-200/60 rounded-2xl p-6 bg-white/80 backdrop-blur-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 hover:-translate-y-1 group animate-slide-up animate-fade-in"
+              className="border border-slate-200/60 rounded-2xl p-3 sm:p-6 bg-white/80 backdrop-blur-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 hover:-translate-y-1 group animate-slide-up animate-fade-in"
             >
               <CardContent className="p-0">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center group-hover:bg-slate-100 transition-colors duration-300">
-                    <IconComponent className="w-8 h-8 text-slate-700" />
+                <div className="flex flex-col items-center text-center space-y-2 sm:space-y-4">
+                  <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-2xl bg-slate-50 flex items-center justify-center group-hover:bg-slate-100 transition-colors duration-300">
+                    <IconComponent className="w-5 h-5 sm:w-8 sm:h-8 text-slate-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-800 mb-2">{dimension.title}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">{dimension.description}</p>
+                    <h3 className="text-sm sm:text-lg font-bold text-slate-800 mb-1 sm:mb-2">{dimension.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{dimension.description}</p>
                   </div>
                 </div>
               </CardContent>
