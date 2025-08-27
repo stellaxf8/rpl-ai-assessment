@@ -50,7 +50,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
   return (
     <section className="relative overflow-hidden">
       {/* Hero Section with improved spacing and typography */}
-      <div className="text-center mb-12 sm:mb-16 lg:mb-20 animate-fade-in">
+      <div className="text-center mb-8 sm:mb-10 lg:mb-12 animate-fade-in">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 animate-slide-up animate-fade-in tracking-tight leading-tight" style={{ 
           background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
           WebkitBackgroundClip: 'text', 
