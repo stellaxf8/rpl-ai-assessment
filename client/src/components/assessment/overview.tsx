@@ -1,4 +1,4 @@
-import { Server, Database, Users, Puzzle, DollarSign, Shield, Brain, ArrowRight, AlertTriangle, Trophy, TrendingUp } from "lucide-react";
+import { Server, Database, Users, Puzzle, DollarSign, Shield, Brain, ArrowRight, AlertTriangle, Trophy, TrendingUp, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import backgroundImage from "@assets/BG_1756165033231.png";
@@ -180,6 +180,18 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </Card>
           );
         })}
+      </div>
+      
+      {/* Back to Top Button */}
+      <div className="text-center mb-8">
+        <Button 
+          variant="outline"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="px-6 py-3 text-slate-600 border-slate-300 hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 rounded-xl"
+        >
+          <ChevronUp className="mr-2 h-4 w-4" />
+          Back to Top
+        </Button>
       </div>
     </section>
   );
