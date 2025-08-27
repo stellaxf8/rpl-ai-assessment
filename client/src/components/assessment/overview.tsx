@@ -86,11 +86,11 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <AlertTriangle className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-slate-600">Avoid Costly Mistakes</h4>
             </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">52%</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">48%</div>
             <p className="text-sm md:text-base text-slate-700">
-              of AI projects fail to reach production due to inadequate planning.
+              of AI projects fail to make it into production, taking 8+ months from prototype.
             </p>
-            <p className="text-xs text-slate-500 mt-1">Source: Gartner 2024</p>
+            <p className="text-xs text-slate-500 mt-1">Source: Gartner 2025</p>
           </div>
           
           <div className="text-center">
@@ -98,11 +98,11 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <Trophy className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-slate-600">Competitive Advantage</h4>
             </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">80%</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">78%</div>
             <p className="text-sm md:text-base text-slate-700">
-              more effective at managing uncertainty when combining organizational and AI learning.
+              of companies use AI in at least one function, but only 1% have reached maturity.
             </p>
-            <p className="text-xs text-slate-500 mt-1">Source: MIT Sloan 2024</p>
+            <p className="text-xs text-slate-500 mt-1">Source: McKinsey 2025</p>
           </div>
           
           <div className="text-center">
@@ -110,11 +110,11 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <Shield className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-slate-600">Security & Compliance</h4>
             </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">77%</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">97%</div>
             <p className="text-sm md:text-base text-slate-700">
-              of companies experienced security breaches in their AI systems this year.
+              of AI-breached organizations lack proper access controls and governance policies.
             </p>
-            <p className="text-xs text-slate-500 mt-1">Source: Cisco 2024</p>
+            <p className="text-xs text-slate-500 mt-1">Source: IBM 2025</p>
           </div>
           
           <div className="text-center">
@@ -122,11 +122,11 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
               <TrendingUp className="w-6 h-6 mr-3 text-[#cd0000]" />
               <h4 className="text-lg font-semibold text-slate-600">Maximize ROI</h4>
             </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">23%</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">51%</div>
             <p className="text-sm md:text-base text-slate-700">
-              of organizations see significant revenue increases (&gt;5%) from AI investments.
+              expect revenue growth &gt;5% from AI, but only 19% see that impact today.
             </p>
-            <p className="text-xs text-slate-500 mt-1">Source: McKinsey 2024</p>
+            <p className="text-xs text-slate-500 mt-1">Source: McKinsey 2025</p>
           </div>
         </div>
       </div>
