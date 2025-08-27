@@ -67,7 +67,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
         </Card>
       </div>
       <div className="text-center">
-        <Button variant="outline" onClick={onBack}>
+        <Button variant="outline" onClick={onBack} className="hover:bg-slate-50 hover:border-slate-400 hover:scale-105 transition-all duration-200">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back
         </Button>
