@@ -430,11 +430,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       <Card className="mb-8 animate-slide-up animate-fade-in">
         <CardContent className="p-4 sm:p-6 lg:p-8">
           <div className="text-center mb-6 sm:mb-8 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-2 tracking-tight" style={{ 
-              background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
-              WebkitBackgroundClip: 'text', 
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+            <h2 className="text-2xl sm:text-3xl font-extrabold mb-2 tracking-tight text-black" style={{ 
               fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
             }}>AI Readiness Score</h2>
             <p className="text-sm sm:text-base text-slate-600 animate-slide-up animate-fade-in">Complete AI readiness assessment for {organizationName}</p>
