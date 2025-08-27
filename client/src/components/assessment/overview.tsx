@@ -51,7 +51,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
     <section>
       <div className="text-center mb-8 sm:mb-12 animate-fade-in">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 animate-slide-up animate-fade-in tracking-tight" style={{ 
-          background: 'linear-gradient(135deg, #1f2937 0%, #4b5563 50%, #cd0000 100%)', 
+          background: 'linear-gradient(135deg, #0f172a 0%, #374151 30%, #cd0000 70%, #ef4444 100%)', 
           WebkitBackgroundClip: 'text', 
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
