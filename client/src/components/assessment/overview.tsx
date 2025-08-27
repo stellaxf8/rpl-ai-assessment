@@ -66,16 +66,12 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         </p>
       </div>
       
-      {/* Subtitle above button */}
-      <div className="text-center mb-8 animate-fade-in animate-slide-up">
-        <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto px-4">
-          Get actionable insights and strategic recommendations for your organization
-        </p>
-      </div>
-      
       {/* Modern CTA Button */}
       <div className="text-center mb-16 sm:mb-20 animate-fade-in animate-slide-up">
         <div className="inline-flex flex-col items-center gap-4">
+          <p className="text-base sm:text-lg text-slate-500 leading-relaxed">
+            Get actionable insights and strategic recommendations for your organization
+          </p>
           <Button 
             onClick={onStartAssessment}
             size="lg"
