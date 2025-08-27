@@ -66,7 +66,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         </p>
         <div className="mt-8 max-w-2xl mx-auto px-4">
           <p className="text-base sm:text-lg text-slate-500 leading-relaxed">
-            Get actionable insights and strategic recommendations tailored to your industry
+            Get actionable insights and strategic recommendations for your organization
           </p>
         </div>
       </div>
