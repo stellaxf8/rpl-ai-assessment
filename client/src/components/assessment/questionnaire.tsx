@@ -30,7 +30,7 @@ const getIconComponent = (iconName: string) => {
     Shield: Shield,
   };
   const IconComponent = iconMap[iconName as keyof typeof iconMap] || Server;
-  return <IconComponent className="text-[#cd0000]" />;
+  return <IconComponent className="text-black" />;
 };
 
 const formatQuestionDescription = (description: string) => {
