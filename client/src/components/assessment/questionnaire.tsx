@@ -70,6 +70,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const [responses, setResponses] = useState<Record<string, number>>({});
   const [organizationName, setOrganizationName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
+  const [showContactForm, setShowContactForm] = useState(false);
 
   // Hidden keyboard shortcut for demo sample (Ctrl+Shift+D)
   useEffect(() => {
@@ -94,6 +95,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     setResponses({});
     setOrganizationName("");
     setContactEmail("");
+    setShowContactForm(false);
   };
 
   // Get questions based on assessment type and industry
@@ -198,13 +200,9 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         }
       }, 100);
     } else {
-      // Complete assessment directly
-      submitAssessment.mutate({
-        organizationName: "Anonymous Organization",
-        contactEmail: "anonymous@example.com",
-        industry: selectedIndustry,
-        responses,
-      });
+      setShowContactForm(true);
+      // Jump to top when showing contact form
+      window.scrollTo(0, 0);
     }
   };
 
@@ -239,6 +237,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     setCurrentQuestion(0);
     setOrganizationName("");
     setContactEmail("");
+    setShowContactForm(false);
     
     setAssessmentType(type);
     setShowAssessmentTypeSelection(false);
@@ -322,9 +321,9 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       <section className="min-h-screen bg-gray-50 py-4 sm:py-8 flex items-start justify-center pt-8 sm:pt-16">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="animate-slide-up animate-fade-in rounded-xl shadow-xl border border-slate-200">
-            <CardContent className="p-4 sm:p-6 lg:p-8">
-          <div className="text-center mb-4 sm:mb-6 animate-fade-in">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 sm:mb-4 tracking-tight" style={{ 
+            <CardContent className="p-6 sm:p-8 lg:p-10">
+          <div className="text-center mb-6 sm:mb-8 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight" style={{ 
               background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
               WebkitBackgroundClip: 'text', 
               WebkitTextFillColor: 'transparent',
@@ -332,10 +331,10 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif',
               textShadow: '0 4px 8px rgba(0,0,0,0.1)'
             }}>Almost Done!</h1>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed animate-slide-up animate-fade-in">Just a couple details to generate your personalized AI readiness results</p>
+            <p className="text-lg sm:text-xl text-slate-600 leading-relaxed animate-slide-up animate-fade-in">Just a couple details to generate your personalized AI readiness results</p>
           </div>
 
-          <div className="space-y-3 sm:space-y-4 lg:space-y-6 animate-slide-up animate-fade-in">
+          <div className="space-y-4 sm:space-y-6 animate-slide-up animate-fade-in">
             <div className="animate-slide-in-left animate-fade-in">
               <Label htmlFor="organizationName" className="text-sm font-semibold text-slate-700 mb-2 block">Organization Name</Label>
               <Input
@@ -343,7 +342,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 value={organizationName}
                 onChange={(e) => setOrganizationName(e.target.value)}
                 placeholder="Enter your organization name"
-                className="h-10 sm:h-12 px-3 sm:px-4 rounded-xl border-2 border-slate-200 focus:border-[#cd0000] focus:ring-2 focus:ring-[#cd0000]/20 transition-all duration-200 text-sm sm:text-base"
+                className="h-12 px-4 rounded-xl border-2 border-slate-200 focus:border-[#cd0000] focus:ring-2 focus:ring-[#cd0000]/20 transition-all duration-200 text-base"
               />
             </div>
             <div className="animate-slide-in-right animate-fade-in">
@@ -354,12 +353,12 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 value={contactEmail}
                 onChange={(e) => setContactEmail(e.target.value)}
                 placeholder="Enter your email address"
-                className="h-10 sm:h-12 px-3 sm:px-4 rounded-xl border-2 border-slate-200 focus:border-[#cd0000] focus:ring-2 focus:ring-[#cd0000]/20 transition-all duration-200 text-sm sm:text-base"
+                className="h-12 px-4 rounded-xl border-2 border-slate-200 focus:border-[#cd0000] focus:ring-2 focus:ring-[#cd0000]/20 transition-all duration-200 text-base"
               />
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 lg:gap-6 mt-6 sm:mt-8 lg:mt-10 animate-fade-in animate-slide-up">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6 mt-8 sm:mt-10 animate-fade-in animate-slide-up">
             <Button 
               variant="outline" 
               onClick={() => {
@@ -367,7 +366,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                 // Jump to top when going back to questions
                 window.scrollTo(0, 0);
               }}
-              className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1 h-10 sm:h-12 px-4 sm:px-6 rounded-xl border-2 border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-all duration-200 text-sm sm:text-base"
+              className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1 h-12 px-6 rounded-xl border-2 border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-all duration-200"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Questions
@@ -375,7 +374,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             <Button 
               onClick={handleSubmit}
               disabled={submitAssessment.isPending}
-              className="hover-lift button-press w-full sm:w-auto order-1 sm:order-2 h-10 sm:h-12 px-6 sm:px-8 rounded-xl bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200 text-sm sm:text-base"
+              className="hover-lift button-press w-full sm:w-auto order-1 sm:order-2 h-12 px-8 rounded-xl bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
             >
               {submitAssessment.isPending ? "Submitting..." : "Generate My Results"}
               <ArrowRight className="ml-2 h-4 w-4" />
