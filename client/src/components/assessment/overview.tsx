@@ -92,7 +92,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       {/* Modern Stats Section */}
       <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200/60 rounded-3xl p-6 sm:p-8 lg:p-12 mb-16 sm:mb-20 shadow-xl shadow-slate-200/50 animate-slide-up animate-fade-in backdrop-blur-sm">
         <div className="text-center mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-4">Why AI Readiness Matters</h2>
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-4">Why AI Readiness Matters</h2>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Organizations that assess their AI readiness first are significantly more successful
           </p>
