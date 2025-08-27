@@ -51,7 +51,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
     <section>
       <div className="text-center mb-8 sm:mb-12 animate-fade-in">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 animate-slide-up animate-fade-in tracking-tight" style={{ 
-          background: 'linear-gradient(315deg, #0f172a 0%, #374151 30%, #cd0000 70%, #ef4444 100%)', 
+          background: 'linear-gradient(135deg, #0f172a 0%, #374151 30%, #cd0000 70%, #ef4444 100%)', 
           WebkitBackgroundClip: 'text', 
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
@@ -79,7 +79,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       
       {/* Why AI Readiness Assessment is Crucial */}
       <div className="bg-transparent border-2 rounded-xl p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 shadow-lg animate-slide-up animate-fade-in border-gray-300">
-        <h3 className="text-xl sm:text-2xl font-extrabold text-slate-600 mb-4 sm:mb-6 text-center" style={{ fontFamily: '"Arial Nova Light", "Arial", sans-serif', fontWeight: '800' }}>Why AI Readiness Assessment is Crucial</h3>
+        <h3 className="text-xl sm:text-2xl font-extrabold text-black mb-4 sm:mb-6 text-center" style={{ fontFamily: '"Arial Nova Light", "Arial", sans-serif', fontWeight: '800' }}>Why AI Readiness Assessment is Crucial</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <div className="text-center">
             <div className="flex items-center justify-center mb-3">
