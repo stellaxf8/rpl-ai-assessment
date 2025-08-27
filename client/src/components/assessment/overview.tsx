@@ -98,52 +98,52 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
-          <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-2">
-              <AlertTriangle className="w-8 h-8 text-[#cd0000]" />
+          <div className="text-center bg-white rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mx-auto mb-2">
+              <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 text-[#cd0000]" />
             </div>
-            <h4 className="text-xl font-bold text-slate-800 mb-3">Avoid Costly Mistakes</h4>
-            <div className="text-4xl lg:text-5xl font-bold text-[#cd0000] mb-3">48%</div>
-            <p className="text-base text-slate-600 leading-relaxed mb-2">
+            <h4 className="text-base sm:text-xl font-bold text-slate-800 mb-2 sm:mb-3">Avoid Costly Mistakes</h4>
+            <div className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#cd0000] mb-2 sm:mb-3">48%</div>
+            <p className="text-xs sm:text-base text-slate-600 leading-relaxed mb-1 sm:mb-2">
               of AI projects fail to make it into production, taking 8+ months from prototype.
             </p>
-            <p className="text-sm text-slate-500 font-medium">Source: Gartner 2025</p>
+            <p className="text-xs sm:text-sm text-slate-500 font-medium">Source: Gartner 2025</p>
           </div>
           
-          <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-2">
-              <Trophy className="w-8 h-8 text-[#cd0000]" />
+          <div className="text-center bg-white rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mx-auto mb-2">
+              <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-[#cd0000]" />
             </div>
-            <h4 className="text-xl font-bold text-slate-800 mb-3">Competitive Advantage</h4>
-            <div className="text-4xl lg:text-5xl font-bold text-[#cd0000] mb-3">78%</div>
-            <p className="text-base text-slate-600 leading-relaxed mb-2">
+            <h4 className="text-base sm:text-xl font-bold text-slate-800 mb-2 sm:mb-3">Competitive Advantage</h4>
+            <div className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#cd0000] mb-2 sm:mb-3">78%</div>
+            <p className="text-xs sm:text-base text-slate-600 leading-relaxed mb-1 sm:mb-2">
               of companies use AI in at least one function, but only 1% have reached maturity.
             </p>
-            <p className="text-sm text-slate-500 font-medium">Source: McKinsey 2025</p>
+            <p className="text-xs sm:text-sm text-slate-500 font-medium">Source: McKinsey 2025</p>
           </div>
           
-          <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-2">
-              <Shield className="w-8 h-8 text-[#cd0000]" />
+          <div className="text-center bg-white rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mx-auto mb-2">
+              <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-[#cd0000]" />
             </div>
-            <h4 className="text-xl font-bold text-slate-800 mb-3">Security & Compliance</h4>
-            <div className="text-4xl lg:text-5xl font-bold text-[#cd0000] mb-3">97%</div>
-            <p className="text-base text-slate-600 leading-relaxed mb-2">
+            <h4 className="text-base sm:text-xl font-bold text-slate-800 mb-2 sm:mb-3">Security & Compliance</h4>
+            <div className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#cd0000] mb-2 sm:mb-3">97%</div>
+            <p className="text-xs sm:text-base text-slate-600 leading-relaxed mb-1 sm:mb-2">
               of AI-breached organizations lack proper access controls and governance policies.
             </p>
-            <p className="text-sm text-slate-500 font-medium">Source: IBM 2025</p>
+            <p className="text-xs sm:text-sm text-slate-500 font-medium">Source: IBM 2025</p>
           </div>
           
-          <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-2">
-              <TrendingUp className="w-8 h-8 text-[#cd0000]" />
+          <div className="text-center bg-white rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mx-auto mb-2">
+              <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-[#cd0000]" />
             </div>
-            <h4 className="text-xl font-bold text-slate-800 mb-3">Maximize ROI</h4>
-            <div className="text-4xl lg:text-5xl font-bold text-[#cd0000] mb-3">51%</div>
-            <p className="text-base text-slate-600 leading-relaxed mb-2">
+            <h4 className="text-base sm:text-xl font-bold text-slate-800 mb-2 sm:mb-3">Maximize ROI</h4>
+            <div className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#cd0000] mb-2 sm:mb-3">51%</div>
+            <p className="text-xs sm:text-base text-slate-600 leading-relaxed mb-1 sm:mb-2">
               expect revenue growth &gt;5% from AI, but only 19% see that impact today.
             </p>
-            <p className="text-sm text-slate-500 font-medium">Source: McKinsey 2025</p>
+            <p className="text-xs sm:text-sm text-slate-500 font-medium">Source: McKinsey 2025</p>
           </div>
         </div>
       </div>
