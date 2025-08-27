@@ -70,7 +70,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const [responses, setResponses] = useState<Record<string, number>>({});
   const [organizationName, setOrganizationName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
-  const [showContactForm, setShowContactForm] = useState(false);
 
   // Hidden keyboard shortcut for demo sample (Ctrl+Shift+D)
   useEffect(() => {
@@ -95,7 +94,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     setResponses({});
     setOrganizationName("");
     setContactEmail("");
-    setShowContactForm(false);
   };
 
   // Get questions based on assessment type and industry
@@ -200,9 +198,13 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         }
       }, 100);
     } else {
-      setShowContactForm(true);
-      // Jump to top when showing contact form
-      window.scrollTo(0, 0);
+      // Complete assessment directly
+      submitAssessment.mutate({
+        organizationName: "Anonymous Organization",
+        contactEmail: "anonymous@example.com",
+        industry: selectedIndustry,
+        responses,
+      });
     }
   };
 
@@ -237,7 +239,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     setCurrentQuestion(0);
     setOrganizationName("");
     setContactEmail("");
-    setShowContactForm(false);
     
     setAssessmentType(type);
     setShowAssessmentTypeSelection(false);
