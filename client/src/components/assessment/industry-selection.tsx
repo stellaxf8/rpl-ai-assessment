@@ -150,7 +150,7 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="text-3xl font-extrabold mb-4 tracking-tight" style={{ 
-          background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 20%, #374151 40%, #cd0000 80%, #ef4444 100%)', 
+          background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #374151 50%, #cd0000 75%, #ef4444 100%)', 
           WebkitBackgroundClip: 'text', 
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
