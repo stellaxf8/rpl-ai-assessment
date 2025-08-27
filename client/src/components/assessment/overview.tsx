@@ -77,7 +77,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           <Button 
             onClick={onStartAssessment}
             size="lg"
-            className="text-xl sm:text-2xl px-12 sm:px-16 py-6 sm:py-8 bg-gradient-to-r from-[#cd0000] to-[#ef4444] hover:from-[#b30000] hover:to-[#cd0000] text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 border-0 relative overflow-hidden group"
+            className="text-2xl sm:text-3xl lg:text-4xl px-16 sm:px-20 lg:px-24 py-8 sm:py-10 lg:py-12 bg-gradient-to-r from-[#cd0000] to-[#ef4444] hover:from-[#b30000] hover:to-[#cd0000] text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 border-0 relative overflow-hidden group"
           >
             <span className="relative z-10 flex items-center">
               Start Assessment
