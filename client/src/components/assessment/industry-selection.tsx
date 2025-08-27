@@ -162,7 +162,7 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
           return (
             <Card
               key={industry.id}
-              className={`cursor-pointer transition-all duration-200 hover:shadow-lg h-20 ${
+              className={`cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-[#cd0000] h-20 ${
                 isSelected 
                   ? 'ring-2 ring-primary bg-primary/5' 
                   : 'hover:bg-slate-50'
