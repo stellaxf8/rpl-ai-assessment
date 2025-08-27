@@ -97,7 +97,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             Organizations that assess their AI readiness first are significantly more successful
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
           <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-2">
               <AlertTriangle className="w-8 h-8 text-[#cd0000]" />
