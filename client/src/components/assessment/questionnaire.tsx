@@ -427,7 +427,14 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
           <div className="flex flex-col gap-2 sm:gap-3 mb-3 sm:mb-4 animate-fade-in">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0">
               <div className="flex flex-col animate-slide-in-left">
-                <h2 className="font-bold text-gray-600" style={{ fontSize: '20px' }}>AI Readiness Assessment</h2>
+                <h2 className="font-extrabold tracking-tight" style={{ 
+                  fontSize: '20px',
+                  background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
+                  WebkitBackgroundClip: 'text', 
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
+                }}>AI Readiness Assessment</h2>
                 {selectedIndustry && hasIndustryVariations(selectedIndustry) && (
                   <p className="text-xs sm:text-sm text-primary font-medium animate-slide-up stagger-delay-1">
                     {selectedIndustry} Industry - Specialized Questions
@@ -491,16 +498,16 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       {/* Question Card */}
       <Card className="animate-slide-up animate-fade-in border-0 mt-0">
         <CardContent className="p-3 sm:p-6 lg:p-8 pt-3 pb-3">
-          <div className="mb-2 sm:mb-3 animate-fade-in" id="question-area">
+          <div className="mb-4 sm:mb-6 animate-fade-in" id="question-area">
             <div className="flex items-center mb-2 sm:mb-3 animate-slide-in-left animate-fade-in">
-              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center mr-2 sm:mr-3 bg-transparent">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center mr-3 sm:mr-4 bg-gradient-to-br from-slate-100 to-slate-200 shadow-sm">
                 {getIconComponent(currentQuestionData.icon)}
               </div>
-              <span className="text-xs font-medium text-white px-2 py-1 rounded-full animate-slide-in-right animate-fade-in" style={{ backgroundColor: '#cd0000' }}>
+              <span className="text-xs sm:text-sm font-semibold text-white px-3 py-1.5 rounded-full animate-slide-in-right animate-fade-in shadow-sm" style={{ backgroundColor: '#cd0000' }}>
                 {currentQuestionData.dimensionLabel}
               </span>
             </div>
-            <h3 className="text-xs sm:text-xl font-semibold text-slate-900 mb-3 sm:mb-4 animate-slide-up animate-fade-in leading-tight">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4 animate-slide-up animate-fade-in leading-tight">
               {currentQuestionData.question}
             </h3>
           </div>
@@ -513,12 +520,12 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             {currentQuestionData.options.map((option, index) => (
               <div 
                 key={index} 
-                className={`flex items-center space-x-2 sm:space-x-4 p-2 sm:p-4 border border-slate-200 rounded-lg hover:bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all duration-200 animate-slide-in-left animate-fade-in`}
+                className={`flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 border border-slate-200 rounded-xl hover:bg-slate-50 hover:shadow-lg hover:border-slate-300 transition-all duration-200 animate-slide-in-left animate-fade-in hover:scale-[1.02]`}
               >
                 <RadioGroupItem value={option.value.toString()} id={`option-${index}`} className="hover-scale flex-shrink-0" />
                 <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">
-                  <div className="text-sm sm:text-base font-medium text-slate-900 leading-tight">{option.text}</div>
-                  <div className="text-xs sm:text-sm text-slate-600 mt-1 leading-snug">{option.description}</div>
+                  <div className="text-sm sm:text-base font-semibold text-slate-900 leading-tight">{option.text}</div>
+                  <div className="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">{option.description}</div>
                 </Label>
               </div>
             ))}

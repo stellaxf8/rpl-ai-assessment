@@ -399,12 +399,44 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
   };
 
   return (
-    <section>
-      {/* Overall Score Card */}
+    <section className="min-h-screen bg-gray-50 py-8 sm:py-12">
+      {/* Header */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="text-center">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight" style={{ 
+            background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
+            WebkitBackgroundClip: 'text', 
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif',
+            textShadow: '0 4px 8px rgba(0,0,0,0.1)'
+          }}>
+            Assessment Results
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-600 mb-6 max-w-3xl mx-auto leading-relaxed">
+            Here's your comprehensive AI readiness analysis with personalized recommendations
+          </p>
+          {organizationName && (
+            <div className="inline-flex items-center px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-200">
+              <span className="text-sm font-medium text-slate-700">Organization: </span>
+              <span className="ml-2 text-sm font-semibold text-slate-900">{organizationName}</span>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Overall Score Card */}
       <Card className="mb-8 animate-slide-up animate-fade-in">
         <CardContent className="p-4 sm:p-6 lg:p-8">
           <div className="text-center mb-6 sm:mb-8 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 animate-slide-up animate-fade-in"><span style={{color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold'}}>AI Readiness</span> Score</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold mb-2 tracking-tight" style={{ 
+              background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
+              WebkitBackgroundClip: 'text', 
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
+            }}>AI Readiness Score</h2>
             <p className="text-sm sm:text-base text-slate-600 animate-slide-up animate-fade-in">Complete AI readiness assessment for {organizationName}</p>
           </div>
           
@@ -427,7 +459,13 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           <div className="text-center mb-6">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center justify-center">
               <CheckCircle className="mr-3 h-6 w-6 text-slate-900" />
-              <span style={{color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold'}}>Top 3 Action Items</span>
+              <span className="font-extrabold tracking-tight" style={{ 
+                background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
+                WebkitBackgroundClip: 'text', 
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
+              }}>Priority Action Items</span>
             </h3>
             <p className="text-sm sm:text-base text-slate-600">Prioritized recommendations to improve your AI readiness</p>
           </div>
@@ -491,7 +529,13 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             {/* Radar Chart */}
             <Card className="animate-slide-in-left animate-fade-in">
               <CardContent className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up animate-fade-in text-center">Readiness Dimensions</h3>
+                <h3 className="text-lg sm:text-xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight" style={{ 
+                  background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
+                  WebkitBackgroundClip: 'text', 
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
+                }}>Readiness Dimensions</h3>
                 <div className="h-60 sm:h-80 animate-fade-in">
                   <RadarChart scores={scores as any} />
                 </div>
@@ -501,7 +545,13 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             {/* Brief Scores Overview */}
             <Card className="animate-slide-in-right animate-fade-in">
               <CardContent className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 animate-slide-up animate-fade-in text-center">Quick Overview</h3>
+                <h3 className="text-lg sm:text-xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight" style={{ 
+                  background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
+                  WebkitBackgroundClip: 'text', 
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
+                }}>Quick Overview</h3>
                 <div className="space-y-4 animate-slide-up stagger-delay-2">
                   {Object.entries(scores as any).map(([dimension, score], index) => {
                     const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
@@ -559,7 +609,13 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
 
           {/* Detailed Dimension Analysis */}
           <div className="mb-6 sm:mb-8 animate-slide-up animate-fade-in">
-            <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 sm:mb-6 text-center animate-slide-up animate-fade-in">Detailed Dimension Analysis</h3>
+            <h3 className="text-lg sm:text-xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight" style={{ 
+              background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
+              WebkitBackgroundClip: 'text', 
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
+            }}>Detailed Dimension Analysis</h3>
             <div className="grid grid-cols-2 md:grid-cols-2 gap-4 sm:gap-6">
               {Object.entries(scores as any).map(([dimension, score], index) => {
                 const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
@@ -626,6 +682,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             Retake Assessment
           </Button>
         )}
+      </div>
       </div>
     </section>
   );
