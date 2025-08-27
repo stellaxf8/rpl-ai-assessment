@@ -173,7 +173,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
                   </div>
                   <div>
                     <h3 className="text-sm sm:text-lg font-bold text-slate-800 mb-1 sm:mb-2">{dimension.title}</h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{dimension.description}</p>
+                    <p className="hidden sm:block text-xs sm:text-sm text-slate-600 leading-relaxed">{dimension.description}</p>
                   </div>
                 </div>
               </CardContent>
