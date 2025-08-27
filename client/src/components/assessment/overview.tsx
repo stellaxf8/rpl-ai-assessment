@@ -64,11 +64,13 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         <p className="text-xl sm:text-2xl lg:text-3xl text-slate-600 max-w-4xl mx-auto animate-slide-up animate-fade-in px-4 font-light leading-relaxed">
           Is your organization ready for AI implementation?
         </p>
-        <div className="mt-8 max-w-2xl mx-auto px-4">
-          <p className="text-base sm:text-lg text-slate-500 leading-relaxed">
-            Get actionable insights and strategic recommendations for your organization
-          </p>
-        </div>
+      </div>
+      
+      {/* Subtitle above button */}
+      <div className="text-center mb-8 animate-fade-in animate-slide-up">
+        <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto px-4">
+          Get actionable insights and strategic recommendations for your organization
+        </p>
       </div>
       
       {/* Modern CTA Button */}
