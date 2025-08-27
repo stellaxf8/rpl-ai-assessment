@@ -31,14 +31,14 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
           className="cursor-pointer border-2 border-slate-300 animate-slide-up animate-fade-in hover:border-[#cd0000] hover:shadow-xl transition-all duration-300 hover-lift rounded-xl"
           onClick={() => onSelectType('quick')}
         >
-          <CardHeader className="text-center pb-2 md:pb-4">
-            <div className="w-14 h-14 md:w-18 md:h-18 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-sm">
-              <Zap style={{ color: '#cd0000' }} className="h-6 w-6 md:h-8 md:w-8" />
+          <CardHeader className="text-center pb-1 sm:pb-2 md:pb-4">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 md:w-18 md:h-18 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 shadow-sm">
+              <Zap style={{ color: '#cd0000' }} className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8" />
             </div>
-            <CardTitle className="text-xl md:text-2xl font-bold">Quick Assessment</CardTitle>
+            <CardTitle className="text-lg sm:text-xl md:text-2xl font-bold">Quick Assessment</CardTitle>
           </CardHeader>
-          <CardContent className="text-center space-y-2 md:space-y-4">
-            <div className="space-y-1.5 md:space-y-2 text-sm md:text-base text-slate-600">
+          <CardContent className="text-center space-y-1 sm:space-y-2 md:space-y-4">
+            <div className="space-y-1 sm:space-y-1.5 md:space-y-2 text-xs sm:text-sm md:text-base text-slate-600">
               <p>• 15 core questions</p>
               <p>• 5-7 minutes to complete</p>
               <p>• General AI readiness overview</p>
@@ -51,14 +51,14 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
           className="cursor-pointer border-2 border-slate-300 animate-slide-up animate-fade-in hover:border-[#cd0000] hover:shadow-xl transition-all duration-300 hover-lift rounded-xl"
           onClick={() => onSelectType('detailed')}
         >
-          <CardHeader className="text-center pb-2 md:pb-4">
-            <div className="w-14 h-14 md:w-18 md:h-18 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-sm">
-              <Clock style={{ color: '#cd0000' }} className="h-6 w-6 md:h-8 md:w-8" />
+          <CardHeader className="text-center pb-1 sm:pb-2 md:pb-4">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 md:w-18 md:h-18 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 shadow-sm">
+              <Clock style={{ color: '#cd0000' }} className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8" />
             </div>
-            <CardTitle className="text-xl md:text-2xl font-bold">Detailed Assessment</CardTitle>
+            <CardTitle className="text-lg sm:text-xl md:text-2xl font-bold">Detailed Assessment</CardTitle>
           </CardHeader>
-          <CardContent className="text-center space-y-2 md:space-y-4">
-            <div className="space-y-1.5 md:space-y-2 text-sm md:text-base text-slate-600">
+          <CardContent className="text-center space-y-1 sm:space-y-2 md:space-y-4">
+            <div className="space-y-1 sm:space-y-1.5 md:space-y-2 text-xs sm:text-sm md:text-base text-slate-600">
               <p>• 30 industry-tailored questions</p>
               <p>• 10-15 minutes to complete</p>
               <p>• Industry-specific insights</p>
