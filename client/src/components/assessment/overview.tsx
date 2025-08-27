@@ -133,7 +133,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       
       {/* 6 Key Evaluation Dimensions Section */}
       <div className="text-center mb-4 sm:mb-6 animate-fade-in animate-slide-up">
-        <h3 className="text-sm sm:text-base font-medium text-slate-600">
+        <h3 className="font-medium text-slate-600" style={{ fontSize: '18px' }}>
           Key Evaluation Dimensions
         </h3>
       </div>
