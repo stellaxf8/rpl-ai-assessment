@@ -75,7 +75,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           <div className="text-center">
             <div className="flex items-center justify-center mb-3">
               <AlertTriangle className="w-6 h-6 mr-3 text-[#cd0000]" />
-              <h4 className="text-lg font-semibold text-black">Avoid Costly Mistakes</h4>
+              <h4 className="text-lg font-semibold text-slate-600">Avoid Costly Mistakes</h4>
             </div>
             <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">52%</div>
             <p className="text-sm md:text-base text-slate-700">
@@ -87,7 +87,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           <div className="text-center">
             <div className="flex items-center justify-center mb-3">
               <Trophy className="w-6 h-6 mr-3 text-[#cd0000]" />
-              <h4 className="text-lg font-semibold text-black">Competitive Advantage</h4>
+              <h4 className="text-lg font-semibold text-slate-600">Competitive Advantage</h4>
             </div>
             <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">80%</div>
             <p className="text-sm md:text-base text-slate-700">
@@ -99,7 +99,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           <div className="text-center">
             <div className="flex items-center justify-center mb-3">
               <Shield className="w-6 h-6 mr-3 text-[#cd0000]" />
-              <h4 className="text-lg font-semibold text-black">Security & Compliance</h4>
+              <h4 className="text-lg font-semibold text-slate-600">Security & Compliance</h4>
             </div>
             <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">77%</div>
             <p className="text-sm md:text-base text-slate-700">
@@ -111,7 +111,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           <div className="text-center">
             <div className="flex items-center justify-center mb-3">
               <TrendingUp className="w-6 h-6 mr-3 text-[#cd0000]" />
-              <h4 className="text-lg font-semibold text-black">Maximize ROI</h4>
+              <h4 className="text-lg font-semibold text-slate-600">Maximize ROI</h4>
             </div>
             <div className="text-3xl md:text-4xl font-bold text-[#cd0000] mb-2">23%</div>
             <p className="text-sm md:text-base text-slate-700">
