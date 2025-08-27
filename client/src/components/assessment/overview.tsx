@@ -99,7 +99,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <AlertTriangle className="w-8 h-8 text-[#cd0000]" />
             </div>
             <h4 className="text-xl font-bold text-slate-800 mb-3">Avoid Costly Mistakes</h4>
@@ -111,7 +111,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           </div>
           
           <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Trophy className="w-8 h-8 text-[#cd0000]" />
             </div>
             <h4 className="text-xl font-bold text-slate-800 mb-3">Competitive Advantage</h4>
@@ -123,7 +123,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           </div>
           
           <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Shield className="w-8 h-8 text-[#cd0000]" />
             </div>
             <h4 className="text-xl font-bold text-slate-800 mb-3">Security & Compliance</h4>
@@ -135,7 +135,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           </div>
           
           <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <TrendingUp className="w-8 h-8 text-[#cd0000]" />
             </div>
             <h4 className="text-xl font-bold text-slate-800 mb-3">Maximize ROI</h4>
