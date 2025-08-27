@@ -427,12 +427,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
           <div className="flex flex-col gap-2 sm:gap-3 mb-3 sm:mb-4 animate-fade-in">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0">
               <div className="flex flex-col animate-slide-in-left">
-                <h2 className="font-extrabold tracking-tight" style={{ 
+                <h2 className="font-extrabold tracking-tight text-gray-600" style={{ 
                   fontSize: '20px',
-                  background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
-                  WebkitBackgroundClip: 'text', 
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
                   fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
                 }}>AI Readiness Assessment</h2>
                 {selectedIndustry && hasIndustryVariations(selectedIndustry) && (
