@@ -459,11 +459,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           <div className="text-center mb-6">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center justify-center">
               <CheckCircle className="mr-3 h-6 w-6 text-slate-900" />
-              <span className="font-extrabold tracking-tight" style={{ 
-                background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
-                WebkitBackgroundClip: 'text', 
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+              <span className="font-extrabold tracking-tight text-black" style={{ 
                 fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
               }}>Priority Action Items</span>
             </h3>
@@ -529,11 +525,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             {/* Radar Chart */}
             <Card className="animate-slide-in-left animate-fade-in">
               <CardContent className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight" style={{ 
-                  background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
-                  WebkitBackgroundClip: 'text', 
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
+                <h3 className="text-lg sm:text-xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight text-black" style={{ 
                   fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
                 }}>Readiness Dimensions</h3>
                 <div className="h-60 sm:h-80 animate-fade-in">
@@ -545,11 +537,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             {/* Brief Scores Overview */}
             <Card className="animate-slide-in-right animate-fade-in">
               <CardContent className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight" style={{ 
-                  background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
-                  WebkitBackgroundClip: 'text', 
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
+                <h3 className="text-lg sm:text-xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight text-black" style={{ 
                   fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
                 }}>Quick Overview</h3>
                 <div className="space-y-4 animate-slide-up stagger-delay-2">
@@ -609,11 +597,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
 
           {/* Detailed Dimension Analysis */}
           <div className="mb-6 sm:mb-8 animate-slide-up animate-fade-in">
-            <h3 className="text-lg sm:text-xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight" style={{ 
-              background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
-              WebkitBackgroundClip: 'text', 
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+            <h3 className="text-lg sm:text-xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight text-black" style={{ 
               fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
             }}>Detailed Dimension Analysis</h3>
             <div className="grid grid-cols-2 md:grid-cols-2 gap-4 sm:gap-6">
