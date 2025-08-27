@@ -50,7 +50,16 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
   return (
     <section>
       <div className="text-center mb-8 sm:mb-12 animate-fade-in">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 animate-slide-up animate-fade-in"><span style={{ color: 'black', fontFamily: 'Arial Black', fontWeight: 'bold' }}>AI Readiness</span> Assessment</h2>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 animate-slide-up animate-fade-in tracking-tight" style={{ 
+          background: 'linear-gradient(135deg, #1f2937 0%, #4b5563 50%, #cd0000 100%)', 
+          WebkitBackgroundClip: 'text', 
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif',
+          textShadow: '0 4px 8px rgba(0,0,0,0.1)'
+        }}>
+          AI Readiness Assessment
+        </h2>
         <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up animate-fade-in px-4">
           Is your organization ready for AI Implementation?
         </p>
