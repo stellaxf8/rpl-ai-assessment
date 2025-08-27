@@ -149,7 +149,16 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-slate-900 mb-3">Select Your <span style={{ color: '#000000', fontFamily: 'Arial Black, Arial, sans-serif', fontWeight: 'bold' }}>Industry</span></h2>
+        <h2 className="text-3xl font-extrabold mb-4 tracking-tight" style={{ 
+          background: 'linear-gradient(135deg, #0f172a 0%, #374151 30%, #cd0000 70%, #ef4444 100%)', 
+          WebkitBackgroundClip: 'text', 
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif',
+          textShadow: '0 4px 8px rgba(0,0,0,0.1)'
+        }}>
+          Select Your Industry
+        </h2>
         <p className="text-slate-600 max-w-2xl mx-auto">
           Choose your industry for a tailored assessment with relevant questions.
         </p>
