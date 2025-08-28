@@ -318,12 +318,12 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
   if (showContactForm) {
     return (
-      <section className="bg-gray-50 min-h-screen flex items-center justify-center py-4">
+      <section className="bg-gray-50 py-1 sm:py-2 flex items-start justify-center">
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="animate-slide-up animate-fade-in rounded-xl shadow-xl border border-slate-200">
-            <CardContent className="p-3 sm:p-5 lg:p-6">
-          <div className="text-center mb-3 sm:mb-4 animate-fade-in">
-            <h1 className="text-2xl sm:text-3xl font-extrabold mb-3 tracking-tight" style={{ 
+            <CardContent className="p-2 sm:p-4 lg:p-5">
+          <div className="text-center mb-2 sm:mb-3 animate-fade-in">
+            <h1 className="text-xl sm:text-2xl font-extrabold mb-2 tracking-tight" style={{ 
               background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
               WebkitBackgroundClip: 'text', 
               WebkitTextFillColor: 'transparent',
@@ -358,7 +358,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 mt-4 sm:mt-6 animate-fade-in animate-slide-up">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 mt-3 sm:mt-4 animate-fade-in animate-slide-up">
             <Button 
               variant="outline" 
               onClick={() => {
