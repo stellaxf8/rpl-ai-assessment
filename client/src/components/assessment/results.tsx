@@ -399,7 +399,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
   };
 
   return (
-    <section className="min-h-screen bg-gray-50 py-2 sm:py-4">
+    <section className="min-h-screen bg-gray-50 py-1 sm:py-2">
       {/* Header */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-3">
         <div className="text-center">
