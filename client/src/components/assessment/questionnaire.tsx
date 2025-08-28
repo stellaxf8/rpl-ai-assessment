@@ -319,7 +319,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   if (showContactForm) {
     return (
       <section className="bg-gray-50 py-2 sm:py-4 flex items-start justify-center pt-2 sm:pt-4">
-        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-xl mx-auto px-2 sm:px-4 lg:px-6">
           <Card className="animate-slide-up animate-fade-in rounded-xl shadow-xl border border-slate-200">
             <CardContent className="p-3 sm:p-5 lg:p-6">
           <div className="text-center mb-4 sm:mb-6 animate-fade-in">
