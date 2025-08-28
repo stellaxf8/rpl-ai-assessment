@@ -318,7 +318,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
   if (showContactForm) {
     return (
-      <section className="bg-gray-50 py-2 sm:py-4 flex items-start justify-center pt-4 sm:pt-8">
+      <section className="bg-gray-50 py-2 sm:py-4 flex items-start justify-center pt-2 sm:pt-4">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="animate-slide-up animate-fade-in rounded-xl shadow-xl border border-slate-200">
             <CardContent className="p-4 sm:p-6 lg:p-8">
