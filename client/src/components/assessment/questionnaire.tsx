@@ -318,11 +318,11 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
   if (showContactForm) {
     return (
-      <section className="bg-gray-50 py-2 sm:py-4 flex items-start justify-center pt-2 sm:pt-4">
+      <section className="bg-gray-50 min-h-screen flex items-center justify-center py-4">
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="animate-slide-up animate-fade-in rounded-xl shadow-xl border border-slate-200">
             <CardContent className="p-3 sm:p-5 lg:p-6">
-          <div className="text-center mb-4 sm:mb-6 animate-fade-in">
+          <div className="text-center mb-3 sm:mb-4 animate-fade-in">
             <h1 className="text-2xl sm:text-3xl font-extrabold mb-3 tracking-tight" style={{ 
               background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
               WebkitBackgroundClip: 'text', 
@@ -334,7 +334,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed animate-slide-up animate-fade-in">Just a couple details to generate your personalized AI readiness results</p>
           </div>
 
-          <div className="space-y-3 sm:space-y-4 animate-slide-up animate-fade-in">
+          <div className="space-y-2 sm:space-y-3 animate-slide-up animate-fade-in">
             <div className="animate-slide-in-left animate-fade-in">
               <Label htmlFor="organizationName" className="text-sm font-semibold text-slate-700 mb-2 block">Organization Name</Label>
               <Input
@@ -358,7 +358,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in animate-slide-up">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 mt-4 sm:mt-6 animate-fade-in animate-slide-up">
             <Button 
               variant="outline" 
               onClick={() => {
