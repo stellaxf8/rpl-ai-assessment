@@ -401,7 +401,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
   return (
     <section className="min-h-screen bg-gray-50 py-1 sm:py-2">
       {/* Header */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-3">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-2">
         <div className="text-center">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-2 tracking-tight" style={{ 
             background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
@@ -430,7 +430,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       <Card className="mb-4 animate-slide-up animate-fade-in">
         <CardContent className="p-3 sm:p-4 lg:p-5">
           <div className="text-center mb-3 sm:mb-4 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-2 tracking-tight text-black" style={{ 
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-1 tracking-tight text-black" style={{ 
               fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
             }}>AI Readiness Score</h2>
             <p className="text-sm sm:text-base text-slate-600 animate-slide-up animate-fade-in">Complete AI readiness assessment for {organizationName}</p>
