@@ -319,11 +319,11 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   if (showContactForm) {
     return (
       <section className="bg-gray-50 py-2 sm:py-4 flex items-start justify-center pt-2 sm:pt-4">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="animate-slide-up animate-fade-in rounded-xl shadow-xl border border-slate-200">
-            <CardContent className="p-4 sm:p-6 lg:p-8">
+            <CardContent className="p-3 sm:p-5 lg:p-6">
           <div className="text-center mb-4 sm:mb-6 animate-fade-in">
-            <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight" style={{ 
+            <h1 className="text-2xl sm:text-3xl font-extrabold mb-3 tracking-tight" style={{ 
               background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
               WebkitBackgroundClip: 'text', 
               WebkitTextFillColor: 'transparent',
@@ -331,7 +331,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
               fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif',
               textShadow: '0 4px 8px rgba(0,0,0,0.1)'
             }}>Almost Done!</h1>
-            <p className="text-lg sm:text-xl text-slate-600 leading-relaxed animate-slide-up animate-fade-in">Just a couple details to generate your personalized AI readiness results</p>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed animate-slide-up animate-fade-in">Just a couple details to generate your personalized AI readiness results</p>
           </div>
 
           <div className="space-y-3 sm:space-y-4 animate-slide-up animate-fade-in">
