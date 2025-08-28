@@ -399,11 +399,11 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
   };
 
   return (
-    <section className="min-h-screen bg-gray-50 py-8 sm:py-12">
+    <section className="min-h-screen bg-gray-50 py-2 sm:py-4">
       {/* Header */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-3">
         <div className="text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight" style={{ 
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-2 tracking-tight" style={{ 
             background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
             WebkitBackgroundClip: 'text', 
             WebkitTextFillColor: 'transparent',
@@ -413,7 +413,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           }}>
             Assessment Results
           </h1>
-          <p className="text-lg sm:text-xl text-slate-600 mb-6 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 mb-3 max-w-3xl mx-auto leading-relaxed">
             Here's your comprehensive AI readiness analysis with personalized recommendations
           </p>
           {organizationName && (
@@ -427,16 +427,16 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Overall Score Card */}
-      <Card className="mb-8 animate-slide-up animate-fade-in">
-        <CardContent className="p-4 sm:p-6 lg:p-8">
-          <div className="text-center mb-6 sm:mb-8 animate-fade-in">
+      <Card className="mb-4 animate-slide-up animate-fade-in">
+        <CardContent className="p-3 sm:p-4 lg:p-5">
+          <div className="text-center mb-3 sm:mb-4 animate-fade-in">
             <h2 className="text-2xl sm:text-3xl font-extrabold mb-2 tracking-tight text-black" style={{ 
               fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
             }}>AI Readiness Score</h2>
             <p className="text-sm sm:text-base text-slate-600 animate-slide-up animate-fade-in">Complete AI readiness assessment for {organizationName}</p>
           </div>
           
-          <div className="flex items-center justify-center mb-8 animate-bounce-subtle animate-fade-in">
+          <div className="flex items-center justify-center mb-3 animate-bounce-subtle animate-fade-in">
             <ScoreChart score={overallScore} />
           </div>
 
