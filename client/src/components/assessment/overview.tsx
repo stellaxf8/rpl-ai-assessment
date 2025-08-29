@@ -150,7 +150,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       
       {/* Modern Dimensions Section */}
       <div className="text-center mb-8 sm:mb-12 animate-fade-in animate-slide-up">
-        <h2 className="text-xl sm:text-2xl font-bold text-slate-800 mb-4" style={{ fontSize: '20px' }}>
+        <h2 className="font-bold text-slate-800 mb-4 sm:text-3xl" style={{ fontSize: '20px' }}>
           Assessment Dimensions
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
