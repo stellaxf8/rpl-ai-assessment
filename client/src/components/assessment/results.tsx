@@ -560,7 +560,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                           </div>
                           <div className="flex-1">
                             <div className="font-medium text-slate-900">{config?.label || dimension}</div>
-                            <div className="text-sm text-slate-600">
+                            <div className="text-sm text-slate-600 hidden sm:block">
                               {scoreValue >= 4.0 
                                 ? "Strong performance" 
                                 : scoreValue >= 3.0 
