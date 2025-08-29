@@ -596,7 +596,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             <h3 className="text-lg sm:text-xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight text-black" style={{ 
               fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
             }}>Detailed Dimension Analysis</h3>
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {Object.entries(scores as any).map(([dimension, score], index) => {
                 const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
                 const scoreValue = score as number;
@@ -605,13 +605,13 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
 
                 return (
                   <Card key={dimension} className={`border border-slate-200 animate-slide-up animate-fade-in`}>
-                    <CardContent className="p-4 sm:p-6">
+                    <CardContent className="p-3 sm:p-6">
                       <div className="mb-4">
                         <div className="flex items-center mb-3">
                           <div className="w-10 h-10 bg-blue-100 text-primary rounded-lg flex items-center justify-center mr-3">
                             {renderIcon(config.icon, "w-5 h-5")}
                           </div>
-                          <h4 className="text-base sm:text-lg font-semibold text-slate-900">{config.label}</h4>
+                          <h4 className="text-sm sm:text-lg font-semibold text-slate-900 leading-tight">{config.label}</h4>
                         </div>
                         <div className="flex items-center">
                           <div className="flex-1 mr-3">
@@ -629,8 +629,8 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                         level === 'medium' ? 'border-yellow-500 bg-yellow-50' :
                         'border-red-500 bg-red-50'
                       }`}>
-                        <div className="font-medium text-slate-900 text-sm sm:text-base">Recommendation:</div>
-                        <div className="text-slate-700 text-sm sm:text-base">{config.recommendations[level]}</div>
+                        <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Recommendation:</div>
+                        <div className="text-slate-700 text-xs sm:text-base leading-relaxed">{config.recommendations[level]}</div>
                       </div>
                     </CardContent>
                   </Card>
