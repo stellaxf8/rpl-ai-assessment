@@ -41,7 +41,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
             <div className="space-y-1 sm:space-y-1.5 md:space-y-2 text-xs sm:text-sm md:text-base text-slate-600">
               <p>• 15 core questions</p>
               <p>• 5-7 minutes to complete</p>
-              <p>• General AI readiness overview</p>
+              <p className="hidden sm:block">• General AI readiness overview</p>
             </div>
           </CardContent>
         </Card>
@@ -61,7 +61,7 @@ export default function AssessmentTypeSelection({ onSelectType, onBack }: Assess
             <div className="space-y-1 sm:space-y-1.5 md:space-y-2 text-xs sm:text-sm md:text-base text-slate-600">
               <p>• 30 industry-tailored questions</p>
               <p>• 10-15 minutes to complete</p>
-              <p>• Industry-specific insights</p>
+              <p className="hidden sm:block">• Industry-specific insights</p>
             </div>
           </CardContent>
         </Card>
