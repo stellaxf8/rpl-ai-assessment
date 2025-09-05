@@ -150,12 +150,8 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="text-3xl font-extrabold mb-4 tracking-tight" style={{ 
-          background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
-          WebkitBackgroundClip: 'text', 
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
-          fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif',
-          textShadow: '0 4px 8px rgba(0,0,0,0.1)'
+          color: '#cd0000',
+          fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
         }}>
           Select Your Industry
         </h2>

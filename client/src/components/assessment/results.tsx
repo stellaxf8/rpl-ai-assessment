@@ -404,12 +404,8 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-2">
         <div className="text-center">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-2 tracking-tight" style={{ 
-            background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
-            WebkitBackgroundClip: 'text', 
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif',
-            textShadow: '0 4px 8px rgba(0,0,0,0.1)'
+            color: '#cd0000',
+            fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
           }}>
             Assessment Results
           </h1>

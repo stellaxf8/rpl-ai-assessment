@@ -324,12 +324,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
             <CardContent className="p-2 sm:p-4 lg:p-5">
           <div className="text-center mb-2 sm:mb-3 animate-fade-in">
             <h1 className="text-xl sm:text-2xl font-extrabold mb-2 tracking-tight" style={{ 
-              background: 'linear-gradient(135deg, #1e293b 0%, #374151 35%, #cd0000 70%, #ef4444 100%)', 
-              WebkitBackgroundClip: 'text', 
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif',
-              textShadow: '0 4px 8px rgba(0,0,0,0.1)'
+              color: '#cd0000',
+              fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
             }}>Almost Done!</h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed animate-slide-up animate-fade-in">Just a couple details to generate your personalized AI readiness results</p>
           </div>
