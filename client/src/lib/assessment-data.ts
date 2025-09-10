@@ -326,32 +326,32 @@ export const questions: Question[] = [
     dimension: "dataQuality",
     dimensionLabel: "Data Quality & Access",
     icon: "Database",
-    question: "How prepared is your data for machine learning and AI use cases?",
+    question: "How ready is your data for automated business insights and decision-making?",
     options: [
       {
         value: 1,
-        text: "Not prepared for AI",
-        description: "Significant preprocessing and cleaning required"
+        text: "Not prepared for automation",
+        description: "Significant organization and cleanup needed"
       },
       {
         value: 2,
         text: "Requires substantial preparation",
-        description: "Data exists but needs significant work for AI use"
+        description: "Data exists but needs significant work for automation"
       },
       {
         value: 3,
         text: "Moderately prepared",
-        description: "Some data is AI-ready with preparation needed"
+        description: "Some data is automation-ready with preparation needed"
       },
       {
         value: 4,
-        text: "Well-prepared for AI",
-        description: "Most data is structured and analysis-ready"
+        text: "Well-prepared for automation",
+        description: "Most data is organized and analysis-ready"
       },
       {
         value: 5,
-        text: "AI-optimized data",
-        description: "Data is specifically prepared and optimized for AI/ML"
+        text: "Business-ready data",
+        description: "Data is specifically organized and ready for automated insights"
       }
     ]
   },
@@ -396,12 +396,12 @@ export const questions: Question[] = [
     dimension: "teamLiteracy",
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
-    question: "How many team members have hands-on experience with AI/ML tools?",
+    question: "How many team members have hands-on experience with automation and data analysis tools?",
     options: [
       {
         value: 1,
         text: "No team members",
-        description: "No one has practical AI/ML experience"
+        description: "No one has practical automation and data analysis experience"
       },
       {
         value: 2,
@@ -421,7 +421,7 @@ export const questions: Question[] = [
       {
         value: 5,
         text: "Most of the team",
-        description: "Majority have hands-on AI/ML experience"
+        description: "Majority have hands-on automation and data analysis experience"
       }
     ]
   },
@@ -498,7 +498,7 @@ export const questions: Question[] = [
     dimension: "teamLiteracy",
     dimensionLabel: "Team AI Literacy",
     icon: "Users",
-    question: "How well does your team understand data science and analytics?",
+    question: "How well does your team understand data analysis and business insights?",
     options: [
       {
         value: 1,
@@ -517,13 +517,13 @@ export const questions: Question[] = [
       },
       {
         value: 4,
-        text: "Strong data science skills",
-        description: "Advanced analytics and statistical knowledge"
+        text: "Strong data analysis skills",
+        description: "Advanced insights and statistical understanding"
       },
       {
         value: 5,
-        text: "Expert data practitioners",
-        description: "Deep expertise in data science and advanced analytics"
+        text: "Expert data analysts",
+        description: "Deep expertise in data analysis and advanced business insights"
       }
     ]
   },
