@@ -60,7 +60,7 @@ Best regards,
 ${assessment.organizationName || 'Organization'} Team`;
 
     // Create mailto link with encoded subject, body, and cc
-    let mailtoLink = `mailto:hello@redpilllabs.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    let mailtoLink = `mailto:info@redpilllabs.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
     
     // Add cc parameter if contact email exists
     if (assessment.contactEmail) {
