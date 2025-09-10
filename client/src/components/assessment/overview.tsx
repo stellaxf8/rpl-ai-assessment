@@ -56,7 +56,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           fontFamily: '"Inter", system-ui, sans-serif',
           letterSpacing: '-0.02em'
         }}>Discover Your AI Readiness in Minutes</h1>
-        <p className="text-xl sm:text-2xl lg:text-3xl text-slate-600 max-w-4xl mx-auto animate-slide-up animate-fade-in px-4 font-light leading-relaxed">Uncover strengths, identify gaps, and get a tailored roadmap for AI success.</p>
+        <p className="sm:text-2xl lg:text-3xl text-slate-600 max-w-4xl mx-auto animate-slide-up animate-fade-in px-4 font-light text-[20px]">Uncover strengths, identify gaps, and get a tailored roadmap for AI success.</p>
       </div>
       {/* Modern CTA Button */}
       <div className="text-center mb-12 sm:mb-14 animate-fade-in animate-slide-up">
