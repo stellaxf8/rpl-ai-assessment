@@ -327,15 +327,7 @@ ${assessment.organizationName || 'Organization'} Team`;
           <div className="mb-8">
             <h3 className="text-xl font-semibold text-slate-900 mb-6">Implementation Planning</h3>
             <div className="space-y-6">
-              <BusinessDevelopment scores={{
-                overallScore: overallScore,
-                technologyInfrastructure: (scores as DimensionScores).technologyInfrastructure,
-                dataQuality: (scores as DimensionScores).dataQuality,
-                teamLiteracy: (scores as DimensionScores).teamLiteracy,
-                systemIntegration: (scores as DimensionScores).systemIntegration,
-                budget: (scores as DimensionScores).budget,
-                dataSecurity: (scores as DimensionScores).dataSecurity
-              }} />
+              <BusinessDevelopment assessment={assessment} />
             </div>
           </div>
 
