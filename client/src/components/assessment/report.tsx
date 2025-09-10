@@ -19,54 +19,108 @@ const dimensionConfig = {
     label: "Technology Infrastructure",
     icon: "🖥️",
     recommendations: {
-      high: "Your infrastructure is AI-ready! Consider GPU-optimized instances (NVIDIA A100/H100), implement auto-scaling for ML workloads, and explore edge computing solutions like AWS Inferentia or Google TPUs for production models. Set up MLOps pipelines with Kubernetes for model deployment.",
-      medium: "Upgrade to cloud instances with GPU support (AWS P4, Azure NC series, or Google Cloud A2). Implement container orchestration with Docker/Kubernetes, set up dedicated ML development environments, and ensure 10+ GB RAM per ML engineer. Consider hybrid cloud for sensitive data processing.",
-      low: "Start with cloud migration (AWS SageMaker, Azure ML, or Google AI Platform). Invest in high-performance computing infrastructure, reliable internet connectivity (1GB+ bandwidth), and backup systems. Budget $50K-200K for initial hardware/cloud resources depending on company size."
+      high: {
+        text: "Your technology setup is ready for advanced AI tools. Consider cloud-based solutions for automation and analytics.",
+        examples: "Automated customer service systems, predictive analytics dashboards"
+      },
+      medium: {
+        text: "Upgrade to cloud computing services and ensure reliable internet connectivity.",
+        examples: "Online data storage systems, automated reporting tools"
+      },
+      low: {
+        text: "Focus on basic technology improvements first.",
+        examples: "Upgrade computers and internet speed, move data storage to secure cloud platforms"
+      }
     }
   },
   dataQuality: {
     label: "Data Quality & Access",
     icon: "🗄️",
     recommendations: {
-      high: "Excellent data foundation! Implement real-time data pipelines with Apache Kafka or AWS Kinesis, automate data quality monitoring with Great Expectations or Apache Griffin, and create feature stores using Feast or AWS SageMaker Feature Store for ML model consistency.",
-      medium: "Establish data cataloging with Apache Atlas or AWS Glue, implement ETL pipelines using Apache Airflow or Azure Data Factory, set up data quality rules (completeness >95%, accuracy >98%), and create centralized data warehouses using Snowflake, BigQuery, or Databricks.",
-      low: "Start with data audit and cleanup - identify all data sources, standardize formats, and remove duplicates. Implement basic ETL tools (Talend, Pentaho, or cloud-native solutions), establish data governance policies, and create master data management systems. Target 80%+ data quality before AI implementation."
+      high: {
+        text: "Your data is well-organized and accessible. Ready for advanced AI applications.",
+        examples: "Trend analysis, customer behavior insights"
+      },
+      medium: {
+        text: "Organize your data better with centralized storage systems.",
+        examples: "Create shared databases, implement automated data backups"
+      },
+      low: {
+        text: "Start by cleaning up and organizing your data.",
+        examples: "Remove duplicate customer records, create standardized filing systems"
+      }
     }
   },
   teamLiteracy: {
     label: "Team AI Literacy",
     icon: "👥",
     recommendations: {
-      high: "Your team has strong AI knowledge! Focus on advanced specializations: MLOps certification (Coursera/Udacity), hands-on workshops with TensorFlow/PyTorch, and cross-functional AI project teams. Consider hiring AI specialists for computer vision, NLP, or robotics based on your industry needs.",
-      medium: "Invest in structured AI training: enroll 5-10 key staff in programs like Stanford AI Certificate, Google AI courses, or Microsoft AI-900 certification. Create internal 'lunch & learn' sessions, subscribe to AI platforms like Pluralsight or DataCamp, and partner with local universities for ongoing education.",
-      low: "Start with AI fundamentals training for all staff. Use free resources like Coursera's AI for Everyone, edX MIT Introduction to Machine Learning, and YouTube channels like 3Blue1Brown. Budget $5K-15K for team training, create AI literacy assessment tests, and establish mentorship programs with AI consultants."
+      high: {
+        text: "Your team has great AI knowledge. Focus on specialized applications for your industry.",
+        examples: "Advanced automation systems, custom AI solutions"
+      },
+      medium: {
+        text: "Provide AI training for key staff members.",
+        examples: "Online courses for managers, workshops on AI business applications"
+      },
+      low: {
+        text: "Start with basic AI education for your team.",
+        examples: "'AI basics for business' courses, lunch-and-learn sessions about AI benefits"
+      }
     }
   },
   systemIntegration: {
     label: "System Integration",
     icon: "🧩",
     recommendations: {
-      high: "Excellent integration capability! Implement AI microservices with REST/GraphQL APIs, use message brokers like RabbitMQ for real-time AI processing, integrate with existing CRM/ERP through webhooks, and deploy containerized ML models with auto-scaling based on demand.",
-      medium: "Develop API-first integration strategy using tools like MuleSoft, Zapier, or Microsoft Logic Apps. Create middleware layers for legacy system connectivity, implement database connectors for real-time data flow, and establish monitoring with tools like New Relic or Datadog for system health.",
-      low: "Start by mapping all existing systems and data flows. Implement basic API development (REST endpoints), upgrade legacy systems for API compatibility, invest in integration platforms like Dell Boomi or IBM Integration Bus, and create system documentation for future AI integrations."
+      high: {
+        text: "Your systems work well together and can easily add AI features.",
+        examples: "Automated workflows, smart data analysis across departments"
+      },
+      medium: {
+        text: "Improve how your business systems connect to each other.",
+        examples: "Link customer management with inventory systems, integrate sales and marketing platforms"
+      },
+      low: {
+        text: "Focus on making your business systems work together better.",
+        examples: "Ensure sales and accounting software can share information, connect different databases"
+      }
     }
   },
   budget: {
     label: "Budget & Resources",
     icon: "💰",
     recommendations: {
-      high: "Strong financial position for AI transformation! Allocate 15-20% of IT budget to AI initiatives, invest in premium cloud AI services (AWS SageMaker, Azure Cognitive Services), hire specialized AI talent ($120K-200K salaries), and establish dedicated innovation labs with $500K+ annual budgets.",
-      medium: "Plan phased AI investment: start with $100K-300K for initial pilot projects, cloud infrastructure costs ($5K-15K monthly), staff training programs ($20K-50K), and consultant partnerships. Consider leasing GPU hardware to reduce upfront costs and explore government AI grants or tax incentives.",
-      low: "Create realistic AI budget starting with $25K-75K for proof-of-concept projects. Focus on cloud-based AI services to minimize infrastructure costs, leverage free/open-source tools (TensorFlow, PyTorch), and consider partnerships with universities for reduced consulting fees. Prioritize high-ROI use cases first."
+      high: {
+        text: "You have good resources for AI projects. Consider comprehensive solutions.",
+        examples: "Automated customer service platforms, business intelligence systems"
+      },
+      medium: {
+        text: "Plan to allocate more resources for AI initiatives.",
+        examples: "Budget for staff training, cloud-based AI tools subscription"
+      },
+      low: {
+        text: "Start with smaller AI investments to prove value first.",
+        examples: "Simple automation tools, basic data analysis software"
+      }
     }
   },
   dataSecurity: {
     label: "Data Security & Privacy",
     icon: "🔒",
     recommendations: {
-      high: "Excellent security posture! Implement AI-specific controls: differential privacy for training data, federated learning for sensitive datasets, homomorphic encryption for cloud AI processing, and AI model security scanning with tools like Adversarial Robustness Toolbox or Microsoft Counterfit.",
-      medium: "Strengthen AI security: implement data anonymization tools (ARX, Amnesia), set up secure ML pipelines with encrypted data storage, deploy AI governance frameworks, obtain SOC 2 compliance, and establish model versioning with audit trails using MLflow or DVC (Data Version Control).",
-      low: "Critical: Establish basic security foundation before AI implementation. Deploy encryption at rest/transit, implement role-based access controls (RBAC), conduct security assessments, achieve basic compliance (GDPR, CCPA), and invest in security tools like CrowdStrike, Okta for identity management, and data loss prevention (DLP) solutions."
+      high: {
+        text: "Your security measures are strong and ready for AI applications.",
+        examples: "Secure AI analytics tools, protected customer data processing"
+      },
+      medium: {
+        text: "Strengthen your data security practices before AI implementation.",
+        examples: "Improve password policies, encrypt sensitive customer information"
+      },
+      low: {
+        text: "Focus on basic security improvements first.",
+        examples: "Implement strong user access controls, ensure regular security updates"
+      }
     }
   },
 };
@@ -315,7 +369,9 @@ ${assessment.organizationName || 'Organization'} Team`;
                       'border-red-500 bg-red-50'
                     }`}>
                       <div className="font-medium text-slate-900">Recommendation:</div>
-                      <div className="text-slate-700">{config.recommendations[level]}</div>
+                      <div className="text-slate-700 mb-2">{config.recommendations[level].text}</div>
+                      <div className="font-medium text-slate-900">Examples:</div>
+                      <div className="text-slate-600 italic">{config.recommendations[level].examples}</div>
                     </div>
                   </div>
                 );

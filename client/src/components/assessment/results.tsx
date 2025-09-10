@@ -400,7 +400,9 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                       level === 'high' ? '#f0fdf4' : level === 'medium' ? '#fefce8' : '#fef2f2'
                     };">
                       <div style="font-weight: 600; color: #1e293b; margin-bottom: 6px; font-size: 11px;">RECOMMENDATION:</div>
-                      <div style="color: #374151; font-size: 11px; line-height: 1.4;">${config.recommendations[level]}</div>
+                      <div style="color: #374151; font-size: 11px; line-height: 1.4; margin-bottom: 8px;">${config.recommendations[level].text}</div>
+                      <div style="font-weight: 600; color: #1e293b; margin-bottom: 4px; font-size: 10px;">EXAMPLES:</div>
+                      <div style="color: #6b7280; font-size: 10px; line-height: 1.4; font-style: italic;">${config.recommendations[level].examples}</div>
                     </div>
                   </div>
                 `;
