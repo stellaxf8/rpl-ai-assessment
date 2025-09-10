@@ -51,13 +51,11 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
     <section className="relative overflow-hidden">
       {/* Hero Section with improved spacing and typography */}
       <div className="text-center mb-8 sm:mb-10 lg:mb-12 animate-fade-in">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 animate-slide-up animate-fade-in tracking-tight leading-tight" style={{ 
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold animate-slide-up animate-fade-in tracking-tight leading-tight text-[#cd0000] mt-[12px] mb-[12px]" style={{ 
           color: '#cd0000',
           fontFamily: '"Inter", system-ui, sans-serif',
           letterSpacing: '-0.02em'
-        }}>
-          AI Readiness Assessment
-        </h1>
+        }}>Discover Your AI Readiness in Minutes</h1>
         <p className="text-xl sm:text-2xl lg:text-3xl text-slate-600 max-w-4xl mx-auto animate-slide-up animate-fade-in px-4 font-light leading-relaxed">Uncover strengths, identify gaps, and get a tailored roadmap for AI success.</p>
       </div>
       {/* Modern CTA Button */}
