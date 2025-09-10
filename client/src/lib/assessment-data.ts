@@ -568,32 +568,32 @@ export const questions: Question[] = [
     dimension: "systemIntegration",
     dimensionLabel: "System Integration",
     icon: "Puzzle",
-    question: "How easily can your current systems work with new automated business tools?",
+    question: "How much does your organization rely on manual processes (like Excel or spreadsheet tools) to move data between different business systems?",
     options: [
       {
         value: 1,
-        text: "Older systems cannot connect",
-        description: "Current systems cannot work with modern automation tools"
+        text: "Heavily rely on manual processes",
+        description: "Most data movement is done through Excel files, email attachments, or manual entry"
       },
       {
         value: 2,
-        text: "Limited ability to connect",
-        description: "Some systems can connect but requires significant work"
+        text: "Often use manual processes",
+        description: "Frequent use of spreadsheets and manual transfers with some basic automation"
       },
       {
         value: 3,
-        text: "Moderate ability to connect",
-        description: "Most systems can connect with some adjustments"
+        text: "Mix of manual and automated processes",
+        description: "Balance between automated data flows and manual Excel-based transfers"
       },
       {
         value: 4,
-        text: "Easy to connect new tools",
-        description: "Systems work well with modern automation solutions"
+        text: "Minimal manual processes",
+        description: "Mostly automated data integration with occasional spreadsheet work"
       },
       {
         value: 5,
-        text: "Built for modern automation",
-        description: "Systems are designed to easily work with any new business tools"
+        text: "Fully automated data movement",
+        description: "Seamless automated data flow between systems with no manual transfers needed"
       }
     ]
   },
