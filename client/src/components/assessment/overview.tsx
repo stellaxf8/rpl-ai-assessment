@@ -50,7 +50,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
   return (
     <section className="relative overflow-hidden">
       {/* Hero Section with improved spacing and typography */}
-      <div className="text-center mb-8 sm:mb-10 lg:mb-12 animate-fade-in">
+      <div className="text-center mb-12 sm:mb-16 lg:mb-20 animate-fade-in">
         <h1 className="sm:text-4xl lg:text-5xl xl:text-6xl font-bold animate-slide-up animate-fade-in tracking-tight text-[#cd0000] mt-[12px] mb-[12px] text-[32px]" style={{ 
           color: '#cd0000',
           fontFamily: '"Inter", system-ui, sans-serif',
