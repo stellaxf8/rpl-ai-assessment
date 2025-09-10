@@ -63,9 +63,6 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
       {/* Modern CTA Button */}
       <div className="text-center mb-12 sm:mb-14 animate-fade-in animate-slide-up">
         <div className="inline-flex flex-col items-center gap-4">
-          <p className="text-base sm:text-lg text-slate-500 leading-relaxed">
-            Get actionable insights and strategic recommendations for your organization
-          </p>
           <Button 
             onClick={onStartAssessment}
             size="lg"
