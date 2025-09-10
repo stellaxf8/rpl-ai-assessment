@@ -438,14 +438,14 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
                   fontSize: '20px',
                   fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
                 }}>AI Readiness Assessment</h2>
-                {selectedIndustry && hasIndustryVariations(selectedIndustry) && (
+                {selectedIndustry && selectedIndustry !== 'Other' && (
                   <p className="text-xs sm:text-sm text-primary font-medium animate-slide-up stagger-delay-1">
-                    {selectedIndustry} Industry - Specialized Questions
+                    {selectedIndustry} - Specialized Assessment
                   </p>
                 )}
-                {selectedIndustry && !hasIndustryVariations(selectedIndustry) && (
+                {selectedIndustry && selectedIndustry === 'Other' && (
                   <p className="text-xs sm:text-sm text-slate-600">
-                    {selectedIndustry} - General Assessment
+                    {selectedIndustry} Industry - General Assessment
                   </p>
                 )}
               </div>
