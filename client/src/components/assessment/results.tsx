@@ -23,9 +23,18 @@ const dimensionConfig = {
     color: "bg-blue-100 text-primary",
     barColor: "bg-blue-500",
     recommendations: {
-      high: "Your technology setup is ready for advanced AI tools. Consider cloud-based solutions like automated customer service or predictive analytics dashboards.",
-      medium: "Upgrade to cloud computing services and ensure reliable internet connectivity. Examples: online data storage systems or automated reporting tools.",
-      low: "Focus on basic technology improvements first. Examples: upgrade computers and internet speed, or move data storage to secure cloud platforms."
+      high: {
+        text: "Your technology setup is ready for advanced AI tools. Consider cloud-based solutions for automation and analytics.",
+        examples: "Automated customer service systems, predictive analytics dashboards"
+      },
+      medium: {
+        text: "Upgrade to cloud computing services and ensure reliable internet connectivity.",
+        examples: "Online data storage systems, automated reporting tools"
+      },
+      low: {
+        text: "Focus on basic technology improvements first.",
+        examples: "Upgrade computers and internet speed, move data storage to secure cloud platforms"
+      }
     }
   },
   dataQuality: {
@@ -34,9 +43,18 @@ const dimensionConfig = {
     color: "bg-green-100 text-success",
     barColor: "bg-success",
     recommendations: {
-      high: "Your data is well-organized and accessible. Ready for advanced AI applications like trend analysis and customer behavior insights.",
-      medium: "Organize your data better with centralized storage systems. Examples: create shared databases or implement automated data backups.",
-      low: "Start by cleaning up and organizing your data. Examples: remove duplicate customer records or create standardized filing systems."
+      high: {
+        text: "Your data is well-organized and accessible. Ready for advanced AI applications.",
+        examples: "Trend analysis, customer behavior insights"
+      },
+      medium: {
+        text: "Organize your data better with centralized storage systems.",
+        examples: "Create shared databases, implement automated data backups"
+      },
+      low: {
+        text: "Start by cleaning up and organizing your data.",
+        examples: "Remove duplicate customer records, create standardized filing systems"
+      }
     }
   },
   teamLiteracy: {
@@ -45,9 +63,18 @@ const dimensionConfig = {
     color: "bg-purple-100 text-secondary",
     barColor: "bg-green-500",
     recommendations: {
-      high: "Your team has great AI knowledge. Focus on specialized applications like advanced automation or custom AI solutions for your industry.",
-      medium: "Provide AI training for key staff members. Examples: online courses for managers or workshops on AI business applications.",
-      low: "Start with basic AI education for your team. Examples: 'AI basics for business' courses or lunch-and-learn sessions about AI benefits."
+      high: {
+        text: "Your team has great AI knowledge. Focus on specialized applications for your industry.",
+        examples: "Advanced automation systems, custom AI solutions"
+      },
+      medium: {
+        text: "Provide AI training for key staff members.",
+        examples: "Online courses for managers, workshops on AI business applications"
+      },
+      low: {
+        text: "Start with basic AI education for your team.",
+        examples: "'AI basics for business' courses, lunch-and-learn sessions about AI benefits"
+      }
     }
   },
   systemIntegration: {
@@ -56,9 +83,18 @@ const dimensionConfig = {
     color: "bg-orange-100 text-warning",
     barColor: "bg-warning",
     recommendations: {
-      high: "Your systems work well together and can easily add AI features. Examples: automated workflows or smart data analysis across departments.",
-      medium: "Improve how your business systems connect to each other. Examples: link your customer management system with your inventory system.",
-      low: "Focus on making your business systems work together better. Examples: ensure your sales and accounting software can share information."
+      high: {
+        text: "Your systems work well together and can easily add AI features.",
+        examples: "Automated workflows, smart data analysis across departments"
+      },
+      medium: {
+        text: "Improve how your business systems connect to each other.",
+        examples: "Link customer management with inventory systems, integrate sales and marketing platforms"
+      },
+      low: {
+        text: "Focus on making your business systems work together better.",
+        examples: "Ensure sales and accounting software can share information, connect different databases"
+      }
     }
   },
   budget: {
@@ -67,9 +103,18 @@ const dimensionConfig = {
     color: "bg-yellow-100 text-yellow-600",
     barColor: "bg-yellow-500",
     recommendations: {
-      high: "You have good resources for AI projects. Consider comprehensive solutions like automated customer service or business intelligence platforms.",
-      medium: "Plan to allocate more resources for AI initiatives. Examples: budget for staff training or cloud-based AI tools subscription.",
-      low: "Start with smaller AI investments to prove value first. Examples: simple automation tools or basic data analysis software."
+      high: {
+        text: "You have good resources for AI projects. Consider comprehensive solutions.",
+        examples: "Automated customer service platforms, business intelligence systems"
+      },
+      medium: {
+        text: "Plan to allocate more resources for AI initiatives.",
+        examples: "Budget for staff training, cloud-based AI tools subscription"
+      },
+      low: {
+        text: "Start with smaller AI investments to prove value first.",
+        examples: "Simple automation tools, basic data analysis software"
+      }
     }
   },
   dataSecurity: {
@@ -78,9 +123,18 @@ const dimensionConfig = {
     color: "bg-red-100 text-error",
     barColor: "bg-error",
     recommendations: {
-      high: "Your security measures are strong and ready for AI applications. Examples: secure AI analytics tools or protected customer data processing.",
-      medium: "Strengthen your data security practices before AI implementation. Examples: improve password policies or encrypt sensitive customer information.",
-      low: "Focus on basic security improvements first. Examples: implement strong user access controls or ensure regular security updates."
+      high: {
+        text: "Your security measures are strong and ready for AI applications.",
+        examples: "Secure AI analytics tools, protected customer data processing"
+      },
+      medium: {
+        text: "Strengthen your data security practices before AI implementation.",
+        examples: "Improve password policies, encrypt sensitive customer information"
+      },
+      low: {
+        text: "Focus on basic security improvements first.",
+        examples: "Implement strong user access controls, ensure regular security updates"
+      }
     }
   },
 };
@@ -626,7 +680,9 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                         'border-red-500 bg-red-50'
                       }`}>
                         <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Recommendation:</div>
-                        <div className="text-slate-700 text-xs sm:text-base leading-relaxed">{config.recommendations[level]}</div>
+                        <div className="text-slate-700 text-xs sm:text-base leading-relaxed mb-2">{config.recommendations[level].text}</div>
+                        <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Examples:</div>
+                        <div className="text-slate-600 text-xs sm:text-base leading-relaxed italic">{config.recommendations[level].examples}</div>
                       </div>
                     </CardContent>
                   </Card>
