@@ -58,11 +58,8 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         }}>
           AI Readiness Assessment
         </h1>
-        <p className="text-xl sm:text-2xl lg:text-3xl text-slate-600 max-w-4xl mx-auto animate-slide-up animate-fade-in px-4 font-light leading-relaxed">
-          Is your organization ready for AI implementation?
-        </p>
+        <p className="text-xl sm:text-2xl lg:text-3xl text-slate-600 max-w-4xl mx-auto animate-slide-up animate-fade-in px-4 font-light leading-relaxed">Uncover strengths, identify gaps, and get a tailored roadmap for AI success.</p>
       </div>
-      
       {/* Modern CTA Button */}
       <div className="text-center mb-12 sm:mb-14 animate-fade-in animate-slide-up">
         <div className="inline-flex flex-col items-center gap-4">
@@ -85,7 +82,6 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           </p>
         </div>
       </div>
-      
       {/* Modern Stats Section */}
       <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200/60 rounded-3xl p-6 sm:p-8 lg:p-12 mb-16 sm:mb-20 shadow-xl shadow-slate-200/50 animate-slide-up animate-fade-in backdrop-blur-sm">
         <div className="text-center mb-10 sm:mb-12">
@@ -144,7 +140,6 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           </div>
         </div>
       </div>
-      
       {/* Modern Dimensions Section */}
       <div className="text-center mb-8 sm:mb-12 animate-fade-in animate-slide-up">
         <h2 className="text-xl sm:text-3xl font-bold text-slate-800 mb-4">
@@ -154,7 +149,6 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           We evaluate six critical areas of AI readiness
         </p>
       </div>
-      
       <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8 mb-16 sm:mb-20">
         {dimensions.map((dimension, index) => {
           const IconComponent = dimension.icon;
@@ -178,7 +172,6 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           );
         })}
       </div>
-      
       {/* Back to Top Button */}
       <div className="text-center mb-8">
         <Button 
