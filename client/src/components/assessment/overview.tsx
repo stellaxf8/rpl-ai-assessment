@@ -72,9 +72,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             </span>
             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </Button>
-          <p className="text-sm text-slate-500 font-medium">
-            Takes 5-15 minutes • Free personalized report
-          </p>
+          <p className="text-sm text-slate-500 font-medium">Takes 5-15 minutes</p>
         </div>
       </div>
       {/* Modern Stats Section */}
