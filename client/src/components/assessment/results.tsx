@@ -23,9 +23,9 @@ const dimensionConfig = {
     color: "bg-blue-100 text-primary",
     barColor: "bg-blue-500",
     recommendations: {
-      high: "Consider upgrading to AI-optimized compute instances for better performance.",
-      medium: "Evaluate current infrastructure capabilities and plan for AI-specific resources.",
-      low: "Significant infrastructure investment needed before AI implementation."
+      high: "Your technology setup is ready for advanced AI tools. Consider cloud-based solutions like automated customer service or predictive analytics dashboards.",
+      medium: "Upgrade to cloud computing services and ensure reliable internet connectivity. Examples: online data storage systems or automated reporting tools.",
+      low: "Focus on basic technology improvements first. Examples: upgrade computers and internet speed, or move data storage to secure cloud platforms."
     }
   },
   dataQuality: {
@@ -34,9 +34,9 @@ const dimensionConfig = {
     color: "bg-green-100 text-success",
     barColor: "bg-success",
     recommendations: {
-      high: "Leverage existing data governance to accelerate AI projects.",
-      medium: "Implement data quality framework and establish clear access protocols.",
-      low: "Priority focus on data governance and quality standards required."
+      high: "Your data is well-organized and accessible. Ready for advanced AI applications like trend analysis and customer behavior insights.",
+      medium: "Organize your data better with centralized storage systems. Examples: create shared databases or implement automated data backups.",
+      low: "Start by cleaning up and organizing your data. Examples: remove duplicate customer records or create standardized filing systems."
     }
   },
   teamLiteracy: {
@@ -45,9 +45,9 @@ const dimensionConfig = {
     color: "bg-purple-100 text-secondary",
     barColor: "bg-green-500",
     recommendations: {
-      high: "Leverage this strong foundation to drive AI initiatives across the organization.",
-      medium: "Invest in targeted AI training programs for key team members.",
-      low: "Comprehensive AI education and training program needed."
+      high: "Your team has great AI knowledge. Focus on specialized applications like advanced automation or custom AI solutions for your industry.",
+      medium: "Provide AI training for key staff members. Examples: online courses for managers or workshops on AI business applications.",
+      low: "Start with basic AI education for your team. Examples: 'AI basics for business' courses or lunch-and-learn sessions about AI benefits."
     }
   },
   systemIntegration: {
@@ -56,9 +56,9 @@ const dimensionConfig = {
     color: "bg-orange-100 text-warning",
     barColor: "bg-warning",
     recommendations: {
-      high: "Ready for complex AI integrations with existing systems.",
-      medium: "Review integration capabilities and plan for AI system compatibility.",
-      low: "System integration strategy and API development required."
+      high: "Your systems work well together and can easily add AI features. Examples: automated workflows or smart data analysis across departments.",
+      medium: "Improve how your business systems connect to each other. Examples: link your customer management system with your inventory system.",
+      low: "Focus on making your business systems work together better. Examples: ensure your sales and accounting software can share information."
     }
   },
   budget: {
@@ -67,9 +67,9 @@ const dimensionConfig = {
     color: "bg-yellow-100 text-yellow-600",
     barColor: "bg-yellow-500",
     recommendations: {
-      high: "Well-positioned to fund comprehensive AI initiatives.",
-      medium: "Allocate additional resources for AI infrastructure and training.",
-      low: "Develop comprehensive budget plan for AI implementation."
+      high: "You have good resources for AI projects. Consider comprehensive solutions like automated customer service or business intelligence platforms.",
+      medium: "Plan to allocate more resources for AI initiatives. Examples: budget for staff training or cloud-based AI tools subscription.",
+      low: "Start with smaller AI investments to prove value first. Examples: simple automation tools or basic data analysis software."
     }
   },
   dataSecurity: {
@@ -78,9 +78,9 @@ const dimensionConfig = {
     color: "bg-red-100 text-error",
     barColor: "bg-error",
     recommendations: {
-      high: "Excellent security posture with strong cybersecurity framework, privacy governance, and data anonymization capabilities for AI.",
-      medium: "Strengthen cybersecurity controls, improve privacy compliance, and implement data anonymization frameworks for AI projects.",
-      low: "Establish comprehensive security framework, privacy compliance program, and data anonymization capabilities for AI datasets."
+      high: "Your security measures are strong and ready for AI applications. Examples: secure AI analytics tools or protected customer data processing.",
+      medium: "Strengthen your data security practices before AI implementation. Examples: improve password policies or encrypt sensitive customer information.",
+      low: "Focus on basic security improvements first. Examples: implement strong user access controls or ensure regular security updates."
     }
   },
 };
