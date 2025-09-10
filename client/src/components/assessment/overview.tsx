@@ -179,17 +179,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
           <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </Button>
       </div>
-      {/* Back to Top Button */}
-      <div className="text-center mb-8">
-        <Button 
-          variant="outline"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="px-6 py-3 text-slate-600 border-slate-300 hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 rounded-xl"
-        >
-          <ChevronUp className="mr-2 h-4 w-4" />
-          Back to Top
-        </Button>
-      </div>
+      
     </section>
   );
 }
