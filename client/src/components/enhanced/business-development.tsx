@@ -6,7 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Assessment, DimensionScores } from "@shared/schema";
 
 interface BusinessDevelopmentProps {
-  assessment: Assessment;
+  assessment?: Assessment;
 }
 
 export default function BusinessDevelopment({ assessment }: BusinessDevelopmentProps) {
@@ -14,6 +14,13 @@ export default function BusinessDevelopment({ assessment }: BusinessDevelopmentP
   const [isConsultationRequested, setIsConsultationRequested] = useState(false);
 
   const handleScheduleConsultation = () => {
+    // Check if assessment exists - fallback to contact page if not
+    if (!assessment) {
+      console.error('Assessment data not available, redirecting to contact page');
+      window.open('https://www.redpilllabs.com/contact-us', '_blank');
+      return;
+    }
+
     // Extract dimension scores for email body with null safety
     const dimensionScores = assessment.scores as DimensionScores || {};
     const getScoreStatus = (score: number) => {

@@ -635,15 +635,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             </div>
           </div>
 
-          <BusinessDevelopment scores={{
-            overallScore: overallScore,
-            technologyInfrastructure: typedScores.technologyInfrastructure,
-            dataQuality: typedScores.dataQuality,
-            teamLiteracy: typedScores.teamLiteracy,
-            systemIntegration: typedScores.systemIntegration,
-            budget: typedScores.budget,
-            dataSecurity: typedScores.dataSecurity
-          }} />
+          <BusinessDevelopment assessment={assessment} />
       </div>
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in animate-slide-up">
