@@ -170,7 +170,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
         <Button 
           onClick={onStartAssessment}
           size="lg"
-          className="text-lg px-8 py-6 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 border-0 relative overflow-hidden group"
+          className="text-base sm:text-lg px-4 sm:px-8 py-3 sm:py-6 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 border-0 relative overflow-hidden group"
         >
           <span className="relative z-10 flex items-center">
             Get Your Free AI Readiness Report
