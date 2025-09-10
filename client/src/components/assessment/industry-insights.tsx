@@ -187,7 +187,7 @@ export default function IndustryInsights({ industry, scores, overallScore }: Ind
           <div className="relative">
             <div className="w-full bg-slate-200 rounded-full h-3">
               <div 
-                className="h-3 rounded-full bg-gradient-to-r from-red-400 via-yellow-400 to-green-400"
+                className="h-3 rounded-full bg-[#cd0000]"
                 style={{ width: `${(overallScore / 100) * 100}%` }}
               />
             </div>

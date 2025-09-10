@@ -503,7 +503,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         <CardContent className="p-3 sm:p-6 lg:p-8 pt-3 pb-3">
           <div className="mb-4 sm:mb-6 animate-fade-in" id="question-area">
             <div className="flex items-center mb-2 sm:mb-3 animate-slide-in-left animate-fade-in">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center mr-3 sm:mr-4 bg-gradient-to-br from-slate-100 to-slate-200 shadow-sm">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center mr-3 sm:mr-4 bg-slate-100 shadow-sm">
                 {getIconComponent(currentQuestionData.icon)}
               </div>
               <span className="text-xs sm:text-sm font-semibold text-white px-3 py-1.5 rounded-full animate-slide-in-right animate-fade-in shadow-sm" style={{ backgroundColor: '#cd0000' }}>
