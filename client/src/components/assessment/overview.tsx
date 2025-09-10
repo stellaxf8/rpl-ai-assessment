@@ -67,7 +67,7 @@ export default function Overview({ onStartAssessment }: OverviewProps) {
             className="text-2xl sm:text-3xl lg:text-4xl px-8 sm:px-16 md:px-20 lg:px-24 py-8 sm:py-10 lg:py-12 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 border-0 relative overflow-hidden group"
           >
             <span className="relative z-10 flex items-center">
-              Start Assessment
+              Get Your Free AI Readiness Report
               <ArrowRight className="ml-3 h-6 w-6 sm:h-7 sm:w-7 group-hover:translate-x-1 transition-transform duration-200" />
             </span>
             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
