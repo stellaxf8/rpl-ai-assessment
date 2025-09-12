@@ -278,7 +278,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                 <p style="margin: 4px 0; opacity: 0.9; font-size: 14px;">Comprehensive analysis and strategic recommendations</p>
                 <p style="margin: 4px 0; opacity: 0.9; font-size: 14px; font-weight: 500;">Organization: ${organizationName}</p>
               </div>
-              <div style="text-align: right; display: flex; flex-direction: column; align-items: flex-end; padding-right: 4px; padding-top: 2px;">
+              <div style="text-align: right; display: flex; flex-direction: column; align-items: flex-end; padding-right: 1px; padding-top: 0px;">
                 <img src="${redPillLabsLogo}" alt="Red Pill Labs Logo" style="height: 60px; margin-bottom: 12px; filter: brightness(0) invert(1);" />
                 <div>
                   <div style="font-size: 18px; font-weight: bold;">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
