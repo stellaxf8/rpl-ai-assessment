@@ -251,6 +251,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
   const topActionItems = getTopActionItems();
 
   const handleDownloadPDF = async () => {
+    console.log('Download PDF button clicked');
     try {
       // Detect if user is on mobile device
       const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -448,13 +449,19 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
       
       // Download the PDF
-      pdf.save(`AI-Readiness-Report-${organizationName.replace(/[^a-zA-Z0-9]/g, '-')}.pdf`);
+      console.log('About to save PDF...');
+      const filename = `AI-Readiness-Report-${organizationName.replace(/[^a-zA-Z0-9]/g, '-')}.pdf`;
+      console.log('PDF filename:', filename);
+      pdf.save(filename);
+      console.log('PDF save command executed');
       
       // Remove temporary element
       document.body.removeChild(reportContent);
+      console.log('PDF generation completed successfully');
       
     } catch (error) {
       console.error('PDF generation error:', error);
+      console.error('Error details:', error.message, error.stack);
     }
   };
 
