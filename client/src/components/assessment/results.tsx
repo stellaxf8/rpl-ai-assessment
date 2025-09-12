@@ -9,6 +9,7 @@ import RadarChart from "@/components/charts/radar-chart";
 import BusinessDevelopment from "@/components/enhanced/business-development";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import redPillLabsLogo from "@assets/LOGO (White - PNG)_1757714833470.png";
 
 interface ResultsProps {
   assessment: Assessment;
@@ -271,10 +272,13 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           <!-- Report Header -->
           <div style="padding: 32px; color: white; background: #cd0000; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div>
-                <h1 style="font-size: 28px; font-weight: bold; margin-bottom: 8px; margin-top: 0; letter-spacing: -0.5px;">AI Readiness Assessment Report</h1>
-                <p style="margin: 4px 0; opacity: 0.9; font-size: 14px;">Comprehensive analysis and strategic recommendations</p>
-                <p style="margin: 4px 0; opacity: 0.9; font-size: 14px; font-weight: 500;">Organization: ${organizationName}</p>
+              <div style="display: flex; align-items: center;">
+                <img src="${redPillLabsLogo}" alt="Red Pill Labs Logo" style="height: 40px; margin-right: 16px; filter: brightness(0) invert(1);" />
+                <div>
+                  <h1 style="font-size: 28px; font-weight: bold; margin-bottom: 8px; margin-top: 0; letter-spacing: -0.5px;">AI Readiness Assessment Report</h1>
+                  <p style="margin: 4px 0; opacity: 0.9; font-size: 14px;">Comprehensive analysis and strategic recommendations</p>
+                  <p style="margin: 4px 0; opacity: 0.9; font-size: 14px; font-weight: 500;">Organization: ${organizationName}</p>
+                </div>
               </div>
               <div style="text-align: right;">
                 <div style="font-size: 18px; font-weight: bold;">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
