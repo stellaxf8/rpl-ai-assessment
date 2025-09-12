@@ -271,7 +271,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       reportContent.innerHTML = `
         <div style="padding: 60px; background: white; font-family: Arial, sans-serif; min-height: 100vh; ${isMobile ? 'width: 100%; box-sizing: border-box;' : ''}">
           <!-- Report Header -->
-          <div style="padding: 20px 32px 32px 32px; color: white; background: #cd0000; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
+          <div style="padding: 16px 32px 32px 32px; color: white; background: #cd0000; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
               <div style="display: flex; flex-direction: column; justify-content: flex-start;">
                 <h1 style="font-size: 28px; font-weight: bold; margin-bottom: 8px; margin-top: 0; letter-spacing: -0.5px;">AI Readiness Assessment Report</h1>
