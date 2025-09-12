@@ -417,7 +417,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           
           <!-- Contact Information -->
           <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; text-align: center;">
-            <p style="color: #cd0000; font-weight: bold; margin: 0; font-size: 12px;">Need help implementing these recommendations? Email us at info@redpilllabs.com or call us Toll Free @ 1-866-745-5733</p>
+            <p style="color: #cd0000; font-weight: bold; margin: 0; font-size: 16px;">Need help implementing these recommendations? Email us at info@redpilllabs.com or call us Toll Free @ 1-866-745-5733</p>
           </div>
         </div>
       `;
