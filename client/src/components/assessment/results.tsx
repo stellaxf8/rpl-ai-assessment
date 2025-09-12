@@ -9,7 +9,7 @@ import RadarChart from "@/components/charts/radar-chart";
 import BusinessDevelopment from "@/components/enhanced/business-development";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import redPillLabsLogo from "@assets/RPL Logo (edited)_1757717536935.png";
+import redPillLabsLogo from "@assets/LOGO (White - PNG)_1757717696589.png";
 
 interface ResultsProps {
   assessment: Assessment;
