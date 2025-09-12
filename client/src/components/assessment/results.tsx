@@ -269,19 +269,23 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       
       reportContent.innerHTML = `
         <div style="padding: 60px; background: white; font-family: Arial, sans-serif; min-height: 100vh; ${isMobile ? 'width: 100%; box-sizing: border-box;' : ''}">
+          <!-- Logo -->
+          <div style="text-align: center; margin-bottom: 24px;">
+            <img src="${logoPath}" alt="Red Pill Labs" style="height: 50px; width: auto;" />
+          </div>
+          
           <!-- Report Header -->
           <div style="padding: 32px; color: white; background: #cd0000; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-              <img src="${logoPath}" alt="Red Pill Labs" style="height: 40px; width: auto;" />
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <h1 style="font-size: 28px; font-weight: bold; margin-bottom: 8px; margin-top: 0; letter-spacing: -0.5px;">AI Readiness Assessment Report</h1>
+                <p style="margin: 4px 0; opacity: 0.9; font-size: 14px;">Comprehensive analysis and strategic recommendations</p>
+                <p style="margin: 4px 0; opacity: 0.9; font-size: 14px; font-weight: 500;">Organization: ${organizationName}</p>
+              </div>
               <div style="text-align: right;">
                 <div style="font-size: 18px; font-weight: bold;">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
                 <div style="opacity: 0.9; font-size: 12px;">Assessment Date</div>
               </div>
-            </div>
-            <div>
-              <h1 style="font-size: 28px; font-weight: bold; margin-bottom: 8px; margin-top: 0; letter-spacing: -0.5px;">AI Readiness Assessment Report</h1>
-              <p style="margin: 4px 0; opacity: 0.9; font-size: 14px;">Comprehensive analysis and strategic recommendations</p>
-              <p style="margin: 4px 0; opacity: 0.9; font-size: 14px; font-weight: 500;">Organization: ${organizationName}</p>
             </div>
           </div>
           
