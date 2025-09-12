@@ -9,7 +9,6 @@ import RadarChart from "@/components/charts/radar-chart";
 import BusinessDevelopment from "@/components/enhanced/business-development";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import logoPath from "@assets/RPL Logo_1754506008197.png";
 
 interface ResultsProps {
   assessment: Assessment;
@@ -269,11 +268,6 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       
       reportContent.innerHTML = `
         <div style="padding: 60px; background: white; font-family: Arial, sans-serif; min-height: 100vh; ${isMobile ? 'width: 100%; box-sizing: border-box;' : ''}">
-          <!-- Logo -->
-          <div style="text-align: center; margin-bottom: 24px;">
-            <img src="${logoPath}" alt="Red Pill Labs" style="height: 50px; width: auto;" />
-          </div>
-          
           <!-- Report Header -->
           <div style="padding: 32px; color: white; background: #cd0000; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(205, 0, 0, 0.3);">
             <div style="display: flex; justify-content: space-between; align-items: center;">
