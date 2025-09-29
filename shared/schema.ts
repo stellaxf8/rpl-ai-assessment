@@ -204,3 +204,22 @@ export const regulatoryComplianceTrackerSchema = z.object({
 });
 
 export type RegulatoryComplianceTracker = z.infer<typeof regulatoryComplianceTrackerSchema>;
+
+// Email requests table
+export const emailRequests = pgTable("email_requests", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  assessmentId: varchar("assessment_id").notNull().references(() => assessments.id),
+  email: text("email").notNull(),
+  contactConsent: text("contact_consent").notNull().default('false'),
+  emailSent: text("email_sent").notNull().default('false'),
+  sentAt: timestamp("sent_at"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const insertEmailRequestSchema = createInsertSchema(emailRequests).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type InsertEmailRequest = z.infer<typeof insertEmailRequestSchema>;
+export type EmailRequest = typeof emailRequests.$inferSelect;
