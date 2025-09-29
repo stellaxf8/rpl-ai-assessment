@@ -68,7 +68,7 @@ export function generateAssessmentEmailHTML(assessment: Assessment, organization
     <div class="content">
       <h2>Thank you for completing the assessment!</h2>
       
-      <p>Your organization has been evaluated across 6 key dimensions of AI readiness. The detailed report is attached to this email as a PDF.</p>
+      <p>Your organization has been evaluated across 6 key dimensions of AI readiness.</p>
       
       <div class="score-box">
         <p style="margin: 0; color: #6c757d; font-size: 14px;">Overall AI Readiness Score</p>
@@ -76,7 +76,7 @@ export function generateAssessmentEmailHTML(assessment: Assessment, organization
         <p style="margin: 0; color: #6c757d;">out of 100</p>
       </div>
       
-      <h3>What's included in your report:</h3>
+      <h3>Your comprehensive report includes:</h3>
       <ul>
         <li>Executive summary with overall readiness assessment</li>
         <li>Priority action items for immediate implementation</li>
@@ -85,7 +85,7 @@ export function generateAssessmentEmailHTML(assessment: Assessment, organization
       </ul>
       
       <p><strong>Next Steps:</strong></p>
-      <p>Review the attached PDF report to understand your organization's AI readiness and the recommended path forward. Our team at Red Pill Labs is here to help you implement these recommendations.</p>
+      <p>Return to the assessment platform to download your full PDF report and explore your results. Our team at Red Pill Labs is here to help you implement these recommendations.</p>
       
       <div style="text-align: center;">
         <a href="mailto:info@redpilllabs.com" class="button">Contact Us for Consultation</a>

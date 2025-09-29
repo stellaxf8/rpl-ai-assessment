@@ -163,11 +163,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
         emailSent: 'false'
       });
 
-      // Generate PDF report
-      const { generateAssessmentPDF } = await import('./services/pdf-generator');
-      const pdfBuffer = await generateAssessmentPDF(assessment);
-      const pdfBase64 = pdfBuffer.toString('base64');
-
       // Generate email HTML (escape HTML in organizationName)
       const { sendEmail, generateAssessmentEmailHTML } = await import('./services/email');
       const safeOrgName = (assessment.organizationName || 'Your Organization')
@@ -178,7 +173,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
         .replace(/'/g, '&#039;');
       const htmlContent = generateAssessmentEmailHTML(assessment, safeOrgName);
 
-      // Send email with PDF attachment
+      // Try to generate PDF report (optional - may fail in some environments)
+      let pdfBase64: string | undefined;
+      try {
+        const { generateAssessmentPDF } = await import('./services/pdf-generator');
+        const pdfBuffer = await generateAssessmentPDF(assessment);
+        pdfBase64 = pdfBuffer.toString('base64');
+        console.log('PDF generated successfully');
+      } catch (pdfError) {
+        console.warn('PDF generation failed, sending email without attachment:', pdfError instanceof Error ? pdfError.message : 'Unknown error');
+      }
+
+      // Send email with or without PDF attachment
       await sendEmail({
         to: email,
         subject: `Your AI Readiness Assessment Report - ${assessment.organizationName || 'Results'}`,
