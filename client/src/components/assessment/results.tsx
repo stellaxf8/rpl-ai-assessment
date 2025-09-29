@@ -196,10 +196,9 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
     },
     onSuccess: () => {
       toast({
-        title: "Email sent successfully!",
-        description: "You will receive your assessment report shortly.",
+        title: "Email submitted successfully!",
+        description: "You can now download your PDF report.",
       });
-      setEmail("");
     },
     onError: (error: Error) => {
       toast({
@@ -711,25 +710,10 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                           </div>
                         </div>
                         
-                        {/* Action description - progressive disclosure */}
-                        {showFullInsights ? (
-                          <p className="text-slate-700 text-sm sm:text-base">
-                            {item.action}
-                          </p>
-                        ) : (
-                          <div className="relative">
-                            <p className="text-slate-700 text-sm sm:text-base filter blur-sm">
-                              {item.action}
-                            </p>
-                            <div className="absolute inset-0 flex items-center justify-center bg-white/90 rounded">
-                              <div className="text-center">
-                                <Mail className="h-4 w-4 text-[#cd0000] mx-auto mb-1" />
-                                <div className="text-sm font-medium text-slate-900">Unlock Your Blueprint</div>
-                                <div className="text-xs text-slate-600">Enter email below to access</div>
-                              </div>
-                            </div>
-                          </div>
-                        )}
+                        {/* Action description - always visible */}
+                        <p className="text-slate-700 text-sm sm:text-base">
+                          {item.action}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -761,7 +745,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                 const percentage = (scoreValue / 5) * 100;
 
                 return (
-                  <Card key={dimension} className={`border border-slate-200 animate-slide-up animate-fade-in ${!showFullInsights ? 'relative overflow-hidden' : ''}`}>
+                  <Card key={dimension} className="border border-slate-200 animate-slide-up animate-fade-in">
                     <CardContent className="p-3 sm:p-6">
                       <div className="mb-4">
                         <div className="flex items-center mb-3">
@@ -792,35 +776,17 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                         }
                       </div>
                       
-                      {/* Detailed recommendations - hidden unless email provided */}
-                      {showFullInsights ? (
-                        <div className={`p-3 rounded border-l-4 ${
-                          level === 'high' ? 'border-green-500 bg-green-50' :
-                          level === 'medium' ? 'border-yellow-500 bg-yellow-50' :
-                          'border-red-500 bg-red-50'
-                        }`}>
-                          <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Recommendation:</div>
-                          <div className="text-slate-700 text-xs sm:text-base leading-relaxed mb-2">{config.recommendations[level].text}</div>
-                          <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Examples:</div>
-                          <div className="text-slate-600 text-xs sm:text-base leading-relaxed italic">{config.recommendations[level].examples}</div>
-                        </div>
-                      ) : (
-                        <div className="p-3 rounded border-l-4 border-slate-300 bg-slate-50 relative">
-                          <div className="filter blur-sm">
-                            <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Recommendation:</div>
-                            <div className="text-slate-700 text-xs sm:text-base leading-relaxed mb-2">Detailed strategic recommendations...</div>
-                            <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Examples:</div>
-                            <div className="text-slate-600 text-xs sm:text-base leading-relaxed italic">Specific implementation examples...</div>
-                          </div>
-                          <div className="absolute inset-0 flex items-center justify-center bg-white/90">
-                            <div className="text-center">
-                              <Mail className="h-6 w-6 text-[#cd0000] mx-auto mb-2" />
-                              <div className="text-sm font-medium text-slate-900">Unlock Your Blueprint</div>
-                              <div className="text-xs text-slate-600">Enter email below to access</div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
+                      {/* Detailed recommendations - always visible */}
+                      <div className={`p-3 rounded border-l-4 ${
+                        level === 'high' ? 'border-green-500 bg-green-50' :
+                        level === 'medium' ? 'border-yellow-500 bg-yellow-50' :
+                        'border-red-500 bg-red-50'
+                      }`}>
+                        <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Recommendation:</div>
+                        <div className="text-slate-700 text-xs sm:text-base leading-relaxed mb-2">{config.recommendations[level].text}</div>
+                        <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Examples:</div>
+                        <div className="text-slate-600 text-xs sm:text-base leading-relaxed italic">{config.recommendations[level].examples}</div>
+                      </div>
                     </CardContent>
                   </Card>
                 );
@@ -828,8 +794,8 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             </div>
           </div>
 
-          {/* Hide BusinessDevelopment until email provided */}
-          {showFullInsights && <BusinessDevelopment assessment={assessment} />}
+          {/* Business Development Section */}
+          <BusinessDevelopment assessment={assessment} />
 
           {/* Email CTA Section - Enhanced for Progressive Disclosure */}
           <div className="mb-8">
@@ -840,13 +806,10 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">
-                    {showFullInsights ? "Get Your Professional Assessment Report" : "Unlock Your Complete AI Strategy Blueprint"}
+                    Download Your PDF Report
                   </h3>
                   <p className="text-slate-600 mb-4">
-                    {showFullInsights 
-                      ? "Enter your business email to receive your comprehensive AI readiness report with actionable next steps."
-                      : "Access your personalized AI implementation roadmap with strategic recommendations and a downloadable PDF report."
-                    }
+                    Enter your business email to download your comprehensive AI readiness assessment report as a PDF.
                   </p>
                 </div>
                 
@@ -881,23 +844,28 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     </div>
                   </div>
                   
-                  <Button
-                    onClick={() => {
-                      emailRequest.mutate({ assessmentId: assessment.id, email, contactConsent });
-                      if (!showFullInsights) {
-                        setShowFullInsights(true);
-                      }
-                    }}
-                    disabled={!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || emailRequest.isPending}
-                    className="w-full h-12 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
-                  >
-                    {emailRequest.isPending 
-                      ? "Generating Report..." 
-                      : showFullInsights 
-                        ? "Send My Professional Report" 
-                        : "Get My AI Strategy Blueprint (Free)"
-                    }
-                  </Button>
+                  {showFullInsights ? (
+                    <Button
+                      onClick={handleDownloadPDF}
+                      className="w-full h-12 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
+                    >
+                      <Download className="mr-2 h-5 w-5" />
+                      Download PDF Report
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={() => {
+                        emailRequest.mutate({ assessmentId: assessment.id, email, contactConsent });
+                        if (!showFullInsights) {
+                          setShowFullInsights(true);
+                        }
+                      }}
+                      disabled={!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || emailRequest.isPending}
+                      className="w-full h-12 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
+                    >
+                      {emailRequest.isPending ? "Submitting..." : "Submit Email"}
+                    </Button>
+                  )}
                   
                   {/* Privacy Disclaimer */}
                   <div className="mt-6 p-4 bg-slate-100 rounded-lg border border-slate-200">
