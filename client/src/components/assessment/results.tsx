@@ -848,27 +848,6 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                       : "Access your personalized AI implementation roadmap with strategic recommendations."
                     }
                   </p>
-                  {!showFullInsights && (
-                    <div className="bg-[#cd0000]/5 border border-[#cd0000]/20 rounded-lg p-4 mb-4">
-                      <h4 className="font-semibold text-slate-900 mb-2">What 5,000+ Organizations Have Received:</h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700">
-                        <div className="flex items-center">✓ Executive-ready strategic roadmap</div>
-                        <div className="flex items-center">✓ Budget & timeline planning tools</div>
-                        <div className="flex items-center">✓ Risk mitigation strategies</div>
-                        <div className="flex items-center">✓ ROI projection frameworks</div>
-                        <div className="flex items-center">✓ Industry benchmark comparisons</div>
-                        <div className="flex items-center">✓ Priority implementation sequence</div>
-                      </div>
-                      <div className="mt-3 pt-3 border-t border-[#cd0000]/20">
-                        <div className="text-xs text-slate-600 font-medium">
-                          💼 Professional PDF Report + Optional AI Strategy Consultation
-                        </div>
-                        <div className="text-xs text-[#cd0000] font-medium mt-1">
-                          ⚡ Limited time: Free consultation worth $300 (normally $300/hour)
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
                 
                 <div className="max-w-md mx-auto space-y-4">
