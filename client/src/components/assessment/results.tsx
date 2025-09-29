@@ -168,13 +168,15 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
   const [email, setEmail] = useState("");
   const [contactConsent, setContactConsent] = useState(false);
   const [showFullInsights, setShowFullInsights] = useState(false);
+  /* Exit Intent Feature - Disabled
   const [showExitIntent, setShowExitIntent] = useState(false);
   const [exitIntentShown, setExitIntentShown] = useState(false);
   const [exitEmail, setExitEmail] = useState("");
   const [exitContactConsent, setExitContactConsent] = useState(false);
+  */
   const { toast } = useToast();
 
-  // Exit intent detection
+  /* Exit intent detection - Disabled
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
       // Trigger exit intent when mouse leaves viewport at the top and user hasn't provided email
@@ -187,6 +189,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
     document.addEventListener('mouseleave', handleMouseLeave);
     return () => document.removeEventListener('mouseleave', handleMouseLeave);
   }, [exitIntentShown, showFullInsights, email]);
+  */
 
   // Email request mutation
   const emailRequest = useMutation({
@@ -209,7 +212,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
     },
   });
 
-  // Exit intent email request mutation
+  /* Exit intent email request mutation - Disabled
   const exitEmailRequest = useMutation({
     mutationFn: async (data: { assessmentId: string; email: string; contactConsent: boolean }) => {
       const response = await apiRequest("POST", "/api/assessment-email-requests", data);
@@ -233,6 +236,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       });
     },
   });
+  */
 
   const { overallScore, scores, organizationName, contactEmail, industry } = assessment;
   const typedScores = scores as DimensionScores;
@@ -890,7 +894,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       </div>
       </div>
       
-      {/* Exit Intent Popup */}
+      {/* Exit Intent Popup - Disabled
       <Dialog open={showExitIntent} onOpenChange={setShowExitIntent}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
@@ -977,6 +981,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           </div>
         </DialogContent>
       </Dialog>
+      */}
     </section>
   );
 }
