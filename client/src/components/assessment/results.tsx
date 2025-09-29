@@ -166,6 +166,7 @@ const renderIcon = (iconName: string, className: string = "w-4 h-4") => {
 export default function Results({ assessment, onRetakeAssessment, showRetakeButton = true }: ResultsProps) {
   const [email, setEmail] = useState("");
   const [contactConsent, setContactConsent] = useState(false);
+  const [showFullInsights, setShowFullInsights] = useState(false);
   const { toast } = useToast();
 
   // Email request mutation
@@ -685,12 +686,13 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             </Card>
           </div>
 
-          {/* Detailed Dimension Analysis */}
-          <div className="mb-6 sm:mb-8 animate-slide-up animate-fade-in">
+          {/* Detailed Dimension Analysis - Progressive Disclosure */}
+          <div className="mb-6 sm:mb-8 animate-slide-up animate-fade-in relative">
             <h3 className="text-lg sm:text-xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight text-black" style={{ 
               fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
             }}>Detailed Dimension Analysis</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 relative">
               {Object.entries(scores as any).map(([dimension, score], index) => {
                 const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
                 const scoreValue = score as number;
@@ -698,7 +700,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                 const percentage = (scoreValue / 5) * 100;
 
                 return (
-                  <Card key={dimension} className={`border border-slate-200 animate-slide-up animate-fade-in`}>
+                  <Card key={dimension} className={`border border-slate-200 animate-slide-up animate-fade-in ${!showFullInsights ? 'relative overflow-hidden' : ''}`}>
                     <CardContent className="p-3 sm:p-6">
                       <div className="mb-4">
                         <div className="flex items-center mb-3">
@@ -718,16 +720,46 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                           <span className="font-bold text-slate-900 text-sm sm:text-base">{scoreValue.toFixed(1)}/5</span>
                         </div>
                       </div>
-                      <div className={`p-3 rounded border-l-4 ${
-                        level === 'high' ? 'border-green-500 bg-green-50' :
-                        level === 'medium' ? 'border-yellow-500 bg-yellow-50' :
-                        'border-red-500 bg-red-50'
-                      }`}>
-                        <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Recommendation:</div>
-                        <div className="text-slate-700 text-xs sm:text-base leading-relaxed mb-2">{config.recommendations[level].text}</div>
-                        <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Examples:</div>
-                        <div className="text-slate-600 text-xs sm:text-base leading-relaxed italic">{config.recommendations[level].examples}</div>
+                      
+                      {/* Basic status always visible */}
+                      <div className="text-slate-600 text-xs sm:text-base mb-3">
+                        {scoreValue >= 4.0 
+                          ? "Strong performance in this area" 
+                          : scoreValue >= 3.0 
+                          ? "Room for improvement" 
+                          : "Needs attention"
+                        }
                       </div>
+                      
+                      {/* Detailed recommendations - hidden unless email provided */}
+                      {showFullInsights ? (
+                        <div className={`p-3 rounded border-l-4 ${
+                          level === 'high' ? 'border-green-500 bg-green-50' :
+                          level === 'medium' ? 'border-yellow-500 bg-yellow-50' :
+                          'border-red-500 bg-red-50'
+                        }`}>
+                          <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Recommendation:</div>
+                          <div className="text-slate-700 text-xs sm:text-base leading-relaxed mb-2">{config.recommendations[level].text}</div>
+                          <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Examples:</div>
+                          <div className="text-slate-600 text-xs sm:text-base leading-relaxed italic">{config.recommendations[level].examples}</div>
+                        </div>
+                      ) : (
+                        <div className="p-3 rounded border-l-4 border-slate-300 bg-slate-50 relative">
+                          <div className="filter blur-sm">
+                            <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Recommendation:</div>
+                            <div className="text-slate-700 text-xs sm:text-base leading-relaxed mb-2">Detailed strategic recommendations...</div>
+                            <div className="font-medium text-slate-900 text-xs sm:text-base mb-1">Examples:</div>
+                            <div className="text-slate-600 text-xs sm:text-base leading-relaxed italic">Specific implementation examples...</div>
+                          </div>
+                          <div className="absolute inset-0 flex items-center justify-center bg-white/90">
+                            <div className="text-center">
+                              <Mail className="h-6 w-6 text-[#cd0000] mx-auto mb-2" />
+                              <div className="text-sm font-medium text-slate-900">Email Required</div>
+                              <div className="text-xs text-slate-600">Get detailed insights</div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 );
@@ -735,9 +767,10 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             </div>
           </div>
 
-          <BusinessDevelopment assessment={assessment} />
+          {/* Hide BusinessDevelopment until email provided */}
+          {showFullInsights && <BusinessDevelopment assessment={assessment} />}
 
-          {/* Email CTA Section */}
+          {/* Email CTA Section - Enhanced for Progressive Disclosure */}
           <div className="mb-8">
             <Card className="border-2 border-[#cd0000]/20 bg-gradient-to-r from-slate-50 to-white">
               <CardContent className="p-6">
@@ -745,8 +778,26 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                   <div className="w-12 h-12 bg-[#cd0000] rounded-full flex items-center justify-center mx-auto mb-4">
                     <Mail className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Get Your Assessment Report via Email</h3>
-                  <p className="text-slate-600 mb-4">Enter your business email to receive a copy of your AI readiness assessment report.</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                    {showFullInsights ? "Get Your Assessment Report via Email" : "Unlock Your Complete AI Readiness Analysis"}
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    {showFullInsights 
+                      ? "Enter your business email to receive a copy of your AI readiness assessment report."
+                      : "Get detailed recommendations, implementation examples, and consultation opportunities tailored to your organization."
+                    }
+                  </p>
+                  {!showFullInsights && (
+                    <div className="bg-[#cd0000]/5 border border-[#cd0000]/20 rounded-lg p-4 mb-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">Your Complete Report Includes:</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700">
+                        <div className="flex items-center">✓ Detailed strategic recommendations</div>
+                        <div className="flex items-center">✓ Implementation examples & timelines</div>
+                        <div className="flex items-center">✓ Industry benchmarking insights</div>
+                        <div className="flex items-center">✓ PDF report download</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="max-w-md mx-auto space-y-4">
@@ -781,11 +832,21 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                   </div>
                   
                   <Button
-                    onClick={() => emailRequest.mutate({ assessmentId: assessment.id, email, contactConsent })}
+                    onClick={() => {
+                      emailRequest.mutate({ assessmentId: assessment.id, email, contactConsent });
+                      if (!showFullInsights) {
+                        setShowFullInsights(true);
+                      }
+                    }}
                     disabled={!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || emailRequest.isPending}
                     className="w-full h-12 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
                   >
-                    {emailRequest.isPending ? "Sending..." : "Send Assessment Report"}
+                    {emailRequest.isPending 
+                      ? "Processing..." 
+                      : showFullInsights 
+                        ? "Send Assessment Report" 
+                        : "Unlock Full Analysis & Get Report"
+                    }
                   </Button>
                   
                   {/* Privacy Disclaimer */}
