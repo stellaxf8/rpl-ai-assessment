@@ -137,9 +137,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const emailRequestSchema = z.object({
         assessmentId: z.string(),
         email: z.string().email(),
+        contactConsent: z.boolean().default(false),
       });
 
-      const { assessmentId, email } = emailRequestSchema.parse(req.body);
+      const { assessmentId, email, contactConsent } = emailRequestSchema.parse(req.body);
       
       // Verify the assessment exists
       const assessment = await storage.getAssessment(assessmentId);
@@ -148,7 +149,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       // Store the email request (for now just log it - future: send actual email)
-      console.log(`Email request stored: ${email} for assessment ${assessmentId}`);
+      console.log(`Email request stored: ${email} for assessment ${assessmentId}, Contact consent: ${contactConsent}`);
+      
+      // In a real implementation, you would store this in a database with contact preferences
+      // For now, we just log the contact consent for demonstration
       
       // Return success
       res.status(200).json({ message: "Email request received successfully" });

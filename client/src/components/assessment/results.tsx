@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Assessment, DimensionScores } from "@shared/schema";
 import ScoreChart from "@/components/charts/score-chart";
 import RadarChart from "@/components/charts/radar-chart";
@@ -164,11 +165,12 @@ const renderIcon = (iconName: string, className: string = "w-4 h-4") => {
 
 export default function Results({ assessment, onRetakeAssessment, showRetakeButton = true }: ResultsProps) {
   const [email, setEmail] = useState("");
+  const [contactConsent, setContactConsent] = useState(false);
   const { toast } = useToast();
 
   // Email request mutation
   const emailRequest = useMutation({
-    mutationFn: async (data: { assessmentId: string; email: string }) => {
+    mutationFn: async (data: { assessmentId: string; email: string; contactConsent: boolean }) => {
       const response = await apiRequest("POST", "/api/assessment-email-requests", data);
       return response.json();
     },
@@ -760,8 +762,26 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     />
                   </div>
                   
+                  {/* Contact Consent Checkbox */}
+                  <div className="flex items-start space-x-3 pt-2">
+                    <Checkbox 
+                      id="contactConsent"
+                      checked={contactConsent}
+                      onCheckedChange={(checked) => setContactConsent(checked as boolean)}
+                      className="mt-0.5 data-[state=checked]:bg-[#cd0000] data-[state=checked]:border-[#cd0000]"
+                    />
+                    <div className="flex-1">
+                      <Label 
+                        htmlFor="contactConsent" 
+                        className="text-sm text-slate-700 leading-relaxed cursor-pointer"
+                      >
+                        Yes, I would like Red Pill Labs to contact me about AI consulting services and solutions that could benefit my organization.
+                      </Label>
+                    </div>
+                  </div>
+                  
                   <Button
-                    onClick={() => emailRequest.mutate({ assessmentId: assessment.id, email })}
+                    onClick={() => emailRequest.mutate({ assessmentId: assessment.id, email, contactConsent })}
                     disabled={!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || emailRequest.isPending}
                     className="w-full h-12 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
                   >
