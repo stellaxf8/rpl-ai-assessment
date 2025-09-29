@@ -824,22 +824,32 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">
-                    {showFullInsights ? "Get Your Assessment Report via Email" : "Unlock Your Complete AI Readiness Analysis"}
+                    {showFullInsights ? "Get Your Professional Assessment Report" : "Unlock Your Complete AI Strategy Blueprint"}
                   </h3>
                   <p className="text-slate-600 mb-4">
                     {showFullInsights 
-                      ? "Enter your business email to receive a copy of your AI readiness assessment report."
-                      : "Get detailed recommendations, implementation examples, and consultation opportunities tailored to your organization."
+                      ? "Enter your business email to receive your comprehensive AI readiness report with actionable next steps."
+                      : "Access your personalized AI implementation roadmap with strategic recommendations, timelines, and investment guidance worth $1,200+ in consulting value."
                     }
                   </p>
                   {!showFullInsights && (
                     <div className="bg-[#cd0000]/5 border border-[#cd0000]/20 rounded-lg p-4 mb-4">
-                      <h4 className="font-semibold text-slate-900 mb-2">Your Complete Report Includes:</h4>
+                      <h4 className="font-semibold text-slate-900 mb-2">What 5,000+ Organizations Have Received:</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700">
-                        <div className="flex items-center">✓ Detailed strategic recommendations</div>
-                        <div className="flex items-center">✓ Implementation examples & timelines</div>
-                        <div className="flex items-center">✓ Industry benchmarking insights</div>
-                        <div className="flex items-center">✓ PDF report download</div>
+                        <div className="flex items-center">✓ Executive-ready strategic roadmap</div>
+                        <div className="flex items-center">✓ Budget & timeline planning tools</div>
+                        <div className="flex items-center">✓ Risk mitigation strategies</div>
+                        <div className="flex items-center">✓ ROI projection frameworks</div>
+                        <div className="flex items-center">✓ Industry benchmark comparisons</div>
+                        <div className="flex items-center">✓ Priority implementation sequence</div>
+                      </div>
+                      <div className="mt-3 pt-3 border-t border-[#cd0000]/20">
+                        <div className="text-xs text-slate-600 font-medium">
+                          💼 Professional PDF Report + Optional AI Strategy Consultation
+                        </div>
+                        <div className="text-xs text-[#cd0000] font-medium mt-1">
+                          ⚡ Limited time: Free consultation worth $300 (normally $300/hour)
+                        </div>
                       </div>
                     </div>
                   )}
@@ -887,10 +897,10 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     className="w-full h-12 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
                   >
                     {emailRequest.isPending 
-                      ? "Processing..." 
+                      ? "Generating Report..." 
                       : showFullInsights 
-                        ? "Send Assessment Report" 
-                        : "Unlock Full Analysis & Get Report"
+                        ? "Send My Professional Report" 
+                        : "Get My AI Strategy Blueprint (Free)"
                     }
                   </Button>
                   
@@ -940,19 +950,19 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             </div>
             
             <div>
-              <h4 className="font-semibold text-slate-900 mb-2">Get Your Complete AI Readiness Report</h4>
+              <h4 className="font-semibold text-slate-900 mb-2">Get Your Complete AI Strategy Blueprint</h4>
               <p className="text-sm text-slate-600 mb-4">
-                You're about to miss out on detailed recommendations and implementation strategies worth $1,000+ in consulting value.
+                Don't leave without your personalized implementation roadmap and executive-ready recommendations worth $1,200+ in consulting value.
               </p>
             </div>
             
             <div className="bg-slate-50 p-4 rounded-lg text-left">
-              <h5 className="font-medium text-slate-900 mb-2">Your free report includes:</h5>
+              <h5 className="font-medium text-slate-900 mb-2">What you get immediately:</h5>
               <div className="space-y-1 text-sm text-slate-700">
-                <div className="flex items-center">✓ Detailed strategic recommendations for each dimension</div>
-                <div className="flex items-center">✓ Specific implementation examples and timelines</div>
-                <div className="flex items-center">✓ Industry benchmarking insights</div>
-                <div className="flex items-center">✓ Downloadable PDF report</div>
+                <div className="flex items-center">✓ Executive-ready strategic roadmap</div>
+                <div className="flex items-center">✓ Budget & timeline planning framework</div>
+                <div className="flex items-center">✓ Risk mitigation strategies</div>
+                <div className="flex items-center">✓ Professional PDF report for stakeholders</div>
               </div>
             </div>
             
@@ -989,7 +999,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                 disabled={!exitEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(exitEmail) || exitEmailRequest.isPending}
                 className="w-full bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold"
               >
-                {exitEmailRequest.isPending ? "Unlocking..." : "Get My Complete Report"}
+                {exitEmailRequest.isPending ? "Generating Blueprint..." : "Get My AI Strategy Blueprint (Free)"}
               </Button>
               
               <Button
