@@ -724,7 +724,8 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                             <div className="absolute inset-0 flex items-center justify-center bg-white/90 rounded">
                               <div className="text-center">
                                 <Mail className="h-4 w-4 text-[#cd0000] mx-auto mb-1" />
-                                <div className="text-xs font-medium text-slate-900">Email Required</div>
+                                <div className="text-sm font-medium text-slate-900">Unlock Your Blueprint</div>
+                                <div className="text-xs text-slate-600">Enter email below to access</div>
                               </div>
                             </div>
                           </div>
@@ -814,8 +815,8 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                           <div className="absolute inset-0 flex items-center justify-center bg-white/90">
                             <div className="text-center">
                               <Mail className="h-6 w-6 text-[#cd0000] mx-auto mb-2" />
-                              <div className="text-sm font-medium text-slate-900">Email Required</div>
-                              <div className="text-xs text-slate-600">Get detailed insights</div>
+                              <div className="text-sm font-medium text-slate-900">Unlock Your Blueprint</div>
+                              <div className="text-xs text-slate-600">Enter email below to access</div>
                             </div>
                           </div>
                         </div>
