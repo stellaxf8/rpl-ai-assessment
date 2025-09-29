@@ -1,11 +1,6 @@
 import puppeteer from 'puppeteer';
 import type { Assessment, DimensionScores } from '@shared/schema';
-import { dimensionConfig } from '../../client/src/lib/assessment-data';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import { dimensionConfig } from '@shared/dimension-config';
 
 interface ActionItem {
   title: string;

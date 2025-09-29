@@ -15,9 +15,11 @@ export interface IStorage {
 
 export class MemStorage implements IStorage {
   private assessments: Map<string, Assessment>;
+  private emailRequests: Map<string, EmailRequest>;
 
   constructor() {
     this.assessments = new Map();
+    this.emailRequests = new Map();
   }
 
   async getAssessment(id: string): Promise<Assessment | undefined> {
@@ -42,24 +44,35 @@ export class MemStorage implements IStorage {
   async createEmailRequest(insertEmailRequest: InsertEmailRequest): Promise<EmailRequest> {
     const id = randomUUID();
     const emailRequest: EmailRequest = {
-      ...insertEmailRequest,
       id,
-      sentAt: null,
+      assessmentId: insertEmailRequest.assessmentId,
+      email: insertEmailRequest.email,
+      contactConsent: insertEmailRequest.contactConsent || 'false',
+      emailSent: insertEmailRequest.emailSent || 'false',
+      sentAt: insertEmailRequest.sentAt || null,
       createdAt: new Date(),
     };
+    this.emailRequests.set(id, emailRequest);
     return emailRequest;
   }
 
   async getEmailRequestsByAssessment(assessmentId: string): Promise<EmailRequest[]> {
-    return [];
+    return Array.from(this.emailRequests.values()).filter(
+      req => req.assessmentId === assessmentId
+    );
   }
 
   async getAllEmailRequests(): Promise<EmailRequest[]> {
-    return [];
+    return Array.from(this.emailRequests.values());
   }
 
   async updateEmailRequestSentStatus(id: string, sentAt: Date): Promise<void> {
-    return;
+    const emailRequest = this.emailRequests.get(id);
+    if (emailRequest) {
+      emailRequest.emailSent = 'true';
+      emailRequest.sentAt = sentAt;
+      this.emailRequests.set(id, emailRequest);
+    }
   }
 }
 
