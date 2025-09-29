@@ -19,7 +19,7 @@ export async function sendEmail(options: SendEmailOptions): Promise<void> {
   sendSmtpEmail.htmlContent = options.htmlContent;
   sendSmtpEmail.sender = { 
     name: 'Red Pill Labs', 
-    email: 'noreply@redpilllabs.com' // You'll need to verify this in Brevo
+    email: 'stellafuentes@redpilllabs.com'
   };
   sendSmtpEmail.to = [{ email: options.to }];
 
