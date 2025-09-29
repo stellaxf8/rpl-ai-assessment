@@ -68,9 +68,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const [showIndustrySelection, setShowIndustrySelection] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [responses, setResponses] = useState<Record<string, number>>({});
-  const [organizationName, setOrganizationName] = useState("");
-  const [contactEmail, setContactEmail] = useState("");
-  const [showContactForm, setShowContactForm] = useState(false);
 
   // Hidden keyboard shortcut for demo sample (Ctrl+Shift+D)
   useEffect(() => {
@@ -93,9 +90,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     setShowIndustrySelection(false);
     setCurrentQuestion(0);
     setResponses({});
-    setOrganizationName("");
-    setContactEmail("");
-    setShowContactForm(false);
   };
 
   // Get questions based on assessment type and industry
@@ -200,9 +194,11 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
         }
       }, 100);
     } else {
-      setShowContactForm(true);
-      // Jump to top when showing contact form
-      window.scrollTo(0, 0);
+      // Submit assessment immediately after final question
+      submitAssessment.mutate({
+        industry: selectedIndustry,
+        responses,
+      });
     }
   };
 
@@ -235,9 +231,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     // Reset previous assessment data when selecting a new type
     setResponses({});
     setCurrentQuestion(0);
-    setOrganizationName("");
-    setContactEmail("");
-    setShowContactForm(false);
     
     setAssessmentType(type);
     setShowAssessmentTypeSelection(false);
@@ -257,19 +250,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const canGoNext = responses[currentQuestionData?.id];
   const canGoPrevious = currentQuestion > 0;
 
-  const handleSubmit = () => {
-    if (!organizationName || !contactEmail) {
-      alert("Please provide your organization name and contact email.");
-      return;
-    }
-
-    submitAssessment.mutate({
-      organizationName,
-      contactEmail,
-      industry: selectedIndustry,
-      responses,
-    });
-  };
 
   const generateDemoSample = () => {
     const demoResponses: Record<string, number> = {};
@@ -290,9 +270,11 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     });
 
     setResponses(demoResponses);
-    setOrganizationName("Technology Solutions, Inc.");
-    setContactEmail("contact@example.com");
-    setShowContactForm(true);
+    // Immediately submit demo assessment
+    submitAssessment.mutate({
+      industry: selectedIndustry,
+      responses: demoResponses,
+    });
     
     // Demo sample generated
   };
@@ -308,80 +290,11 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     setShowIndustrySelection(false);
     setCurrentQuestion(0);
     setResponses({}); // Reset responses when changing industry
-    setOrganizationName("");
-    setContactEmail("");
-    setShowContactForm(false);
     
     // Jump to top when starting questions
     window.scrollTo(0, 0);
   };
 
-  if (showContactForm) {
-    return (
-      <section className="bg-gray-50 py-1 sm:py-2 flex items-start justify-center">
-        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="animate-slide-up animate-fade-in rounded-xl shadow-xl border border-slate-200">
-            <CardContent className="p-2 sm:p-4 lg:p-5">
-          <div className="text-center mb-2 sm:mb-3 animate-fade-in">
-            <h1 className="text-xl sm:text-2xl font-extrabold mb-2 tracking-tight" style={{ 
-              color: '#cd0000',
-              fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
-            }}>Almost Done!</h1>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed animate-slide-up animate-fade-in">Just a couple details to generate your personalized AI readiness results</p>
-          </div>
-
-          <div className="space-y-2 sm:space-y-3 animate-slide-up animate-fade-in">
-            <div className="animate-slide-in-left animate-fade-in">
-              <Label htmlFor="organizationName" className="text-sm font-semibold text-slate-700 mb-2 block">Organization Name</Label>
-              <Input
-                id="organizationName"
-                value={organizationName}
-                onChange={(e) => setOrganizationName(e.target.value)}
-                placeholder="Enter your organization name"
-                className="h-12 px-4 rounded-xl border-2 border-slate-200 focus:border-[#cd0000] focus:ring-2 focus:ring-[#cd0000]/20 transition-all duration-200 text-base"
-              />
-            </div>
-            <div className="animate-slide-in-right animate-fade-in">
-              <Label htmlFor="contactEmail" className="text-sm font-semibold text-slate-700 mb-2 block">Email Address</Label>
-              <Input
-                id="contactEmail"
-                type="email"
-                value={contactEmail}
-                onChange={(e) => setContactEmail(e.target.value)}
-                placeholder="Enter your email address"
-                className="h-12 px-4 rounded-xl border-2 border-slate-200 focus:border-[#cd0000] focus:ring-2 focus:ring-[#cd0000]/20 transition-all duration-200 text-base"
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 mt-3 sm:mt-4 animate-fade-in animate-slide-up">
-            <Button 
-              variant="outline" 
-              onClick={() => {
-                setShowContactForm(false);
-                // Jump to top when going back to questions
-                window.scrollTo(0, 0);
-              }}
-              className="hover-lift button-press w-full sm:w-auto order-2 sm:order-1 h-12 px-6 rounded-xl border-2 border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-all duration-200"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Questions
-            </Button>
-            <Button 
-              onClick={handleSubmit}
-              disabled={submitAssessment.isPending}
-              className="hover-lift button-press w-full sm:w-auto order-1 sm:order-2 h-12 px-8 rounded-xl bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-            >
-              {submitAssessment.isPending ? "Submitting..." : "Generate My Results"}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-    );
-  }
 
   // Show assessment type selection first
   if (showAssessmentTypeSelection) {
