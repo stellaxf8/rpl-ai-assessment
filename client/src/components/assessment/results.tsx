@@ -197,7 +197,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
     onSuccess: () => {
       toast({
         title: "Email submitted successfully!",
-        description: "You can now download your PDF report.",
+        description: "You can now download your report.",
       });
     },
     onError: (error: Error) => {
@@ -806,10 +806,10 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">
-                    Download Your PDF Report
+                    Receive Your Report
                   </h3>
                   <p className="text-slate-600 mb-4">
-                    Enter your business email to download your comprehensive AI readiness assessment report as a PDF.
+                    Enter your business email to receive your comprehensive AI readiness assessment report.
                   </p>
                 </div>
                 
@@ -850,7 +850,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                       className="w-full h-12 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
                     >
                       <Download className="mr-2 h-5 w-5" />
-                      Download PDF Report
+                      Download Report
                     </Button>
                   ) : (
                     <Button
