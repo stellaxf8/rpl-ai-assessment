@@ -634,9 +634,24 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                       </div>
                     </div>
                     
-                    <p className="text-slate-700 text-sm sm:text-base">
-                      {item.action}
-                    </p>
+                    {/* Action description - progressive disclosure */}
+                    {showFullInsights ? (
+                      <p className="text-slate-700 text-sm sm:text-base">
+                        {item.action}
+                      </p>
+                    ) : (
+                      <div className="relative">
+                        <p className="text-slate-700 text-sm sm:text-base filter blur-sm">
+                          {item.action}
+                        </p>
+                        <div className="absolute inset-0 flex items-center justify-center bg-white/90 rounded">
+                          <div className="text-center">
+                            <Mail className="h-4 w-4 text-[#cd0000] mx-auto mb-1" />
+                            <div className="text-xs font-medium text-slate-900">Email Required</div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
