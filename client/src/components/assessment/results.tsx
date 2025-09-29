@@ -589,86 +589,6 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
         </CardContent>
       </Card>
 
-      {/* Top 3 Action Items */}
-      <Card className="mb-8 animate-slide-up animate-fade-in">
-        <CardContent className="p-4 sm:p-6 lg:p-8">
-          <div className="text-center mb-6">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center justify-center">
-              <CheckCircle className="mr-3 h-6 w-6 text-slate-900" />
-              <span className="font-extrabold tracking-tight text-black" style={{ 
-                fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
-              }}>Priority Action Items</span>
-            </h3>
-            <p className="text-sm sm:text-base text-slate-600">Prioritized recommendations to improve your AI readiness</p>
-          </div>
-
-          <div className="space-y-4">
-            {topActionItems.map((item, index) => (
-              <div key={item.title} className={`border rounded-lg p-4 sm:p-6 border-slate-200 bg-slate-50 animate-slide-up animate-fade-in`}>
-                <div className="flex items-start space-x-4">
-                  <div className={`flex-shrink-0 text-2xl font-bold mr-2 ${
-                    index === 0 ? 'text-red-500' :
-                    index === 1 ? 'text-yellow-500' :
-                    'text-blue-500'
-                  }`}>
-                    {item.priority}
-                  </div>
-                  
-                  <div className="flex-1">
-                    <div className="mb-2">
-                      <div className="flex items-center mb-1">
-                        <span className="mr-2">{renderIcon(item.icon, "w-5 h-5")}</span>
-                        <h4 className="font-semibold text-slate-900">{item.title}</h4>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className={`px-2 py-1 text-xs font-medium rounded ${
-                          item.urgency === 'Critical' ? 'bg-red-100 text-red-800' :
-                          item.urgency === 'High' ? 'bg-yellow-100 text-yellow-800' :
-                          'bg-blue-100 text-blue-800'
-                        }`}>
-                          {item.urgency} Priority
-                        </span>
-                        <span className="text-sm text-slate-600">
-                          Score: {item.score.toFixed(1)}/5
-                        </span>
-                      </div>
-                    </div>
-                    
-                    {/* Action description - progressive disclosure */}
-                    {showFullInsights ? (
-                      <p className="text-slate-700 text-sm sm:text-base">
-                        {item.action}
-                      </p>
-                    ) : (
-                      <div className="relative">
-                        <p className="text-slate-700 text-sm sm:text-base filter blur-sm">
-                          {item.action}
-                        </p>
-                        <div className="absolute inset-0 flex items-center justify-center bg-white/90 rounded">
-                          <div className="text-center">
-                            <Mail className="h-4 w-4 text-[#cd0000] mx-auto mb-1" />
-                            <div className="text-xs font-medium text-slate-900">Email Required</div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-6 text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-slate-100 rounded-lg">
-              <AlertTriangle className="mr-2 h-4 w-4 text-slate-600" />
-              <span className="text-sm text-slate-600">
-                Focus on Priority 1 and 2 items for maximum impact on your AI readiness
-              </span>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
       {/* Assessment Results Overview */}
       <div className="space-y-8">
           {/* Dimension Breakdown */}
@@ -745,6 +665,86 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
               </CardContent>
             </Card>
           </div>
+
+          {/* Priority Action Items */}
+          <Card className="mb-8 animate-slide-up animate-fade-in">
+            <CardContent className="p-4 sm:p-6 lg:p-8">
+              <div className="text-center mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center justify-center">
+                  <CheckCircle className="mr-3 h-6 w-6 text-slate-900" />
+                  <span className="font-extrabold tracking-tight text-black" style={{ 
+                    fontFamily: '"Inter", "Arial Nova Light", "Arial", sans-serif'
+                  }}>Priority Action Items</span>
+                </h3>
+                <p className="text-sm sm:text-base text-slate-600">Prioritized recommendations to improve your AI readiness</p>
+              </div>
+
+              <div className="space-y-4">
+                {topActionItems.map((item, index) => (
+                  <div key={item.title} className={`border rounded-lg p-4 sm:p-6 border-slate-200 bg-slate-50 animate-slide-up animate-fade-in`}>
+                    <div className="flex items-start space-x-4">
+                      <div className={`flex-shrink-0 text-2xl font-bold mr-2 ${
+                        index === 0 ? 'text-red-500' :
+                        index === 1 ? 'text-yellow-500' :
+                        'text-blue-500'
+                      }`}>
+                        {item.priority}
+                      </div>
+                      
+                      <div className="flex-1">
+                        <div className="mb-2">
+                          <div className="flex items-center mb-1">
+                            <span className="mr-2">{renderIcon(item.icon, "w-5 h-5")}</span>
+                            <h4 className="font-semibold text-slate-900">{item.title}</h4>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className={`px-2 py-1 text-xs font-medium rounded ${
+                              item.urgency === 'Critical' ? 'bg-red-100 text-red-800' :
+                              item.urgency === 'High' ? 'bg-yellow-100 text-yellow-800' :
+                              'bg-blue-100 text-blue-800'
+                            }`}>
+                              {item.urgency} Priority
+                            </span>
+                            <span className="text-sm text-slate-600">
+                              Score: {item.score.toFixed(1)}/5
+                            </span>
+                          </div>
+                        </div>
+                        
+                        {/* Action description - progressive disclosure */}
+                        {showFullInsights ? (
+                          <p className="text-slate-700 text-sm sm:text-base">
+                            {item.action}
+                          </p>
+                        ) : (
+                          <div className="relative">
+                            <p className="text-slate-700 text-sm sm:text-base filter blur-sm">
+                              {item.action}
+                            </p>
+                            <div className="absolute inset-0 flex items-center justify-center bg-white/90 rounded">
+                              <div className="text-center">
+                                <Mail className="h-4 w-4 text-[#cd0000] mx-auto mb-1" />
+                                <div className="text-xs font-medium text-slate-900">Email Required</div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 text-center">
+                <div className="inline-flex items-center px-4 py-2 bg-slate-100 rounded-lg">
+                  <AlertTriangle className="mr-2 h-4 w-4 text-slate-600" />
+                  <span className="text-sm text-slate-600">
+                    Focus on Priority 1 and 2 items for maximum impact on your AI readiness
+                  </span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Detailed Dimension Analysis - Progressive Disclosure */}
           <div className="mb-6 sm:mb-8 animate-slide-up animate-fade-in relative">
