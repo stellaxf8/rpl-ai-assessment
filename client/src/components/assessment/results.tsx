@@ -782,11 +782,6 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       </div>
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in animate-slide-up">
-        <Button onClick={handleDownloadPDF} size="lg" className="hover-lift button-press w-full sm:w-auto">
-          <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-          Download Report
-        </Button>
-
         {showRetakeButton && onRetakeAssessment && (
           <Button variant="ghost" onClick={onRetakeAssessment} className="hover-lift button-press w-full sm:w-auto">
             <RotateCcw className="mr-2 h-4 w-4" />
