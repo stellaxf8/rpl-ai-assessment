@@ -333,6 +333,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
 
   const handleDownloadPDF = async () => {
     console.log('Download PDF button clicked');
+    alert('Download button clicked!');
     try {
       // Detect if user is on mobile device
       const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -531,7 +532,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       
       // Download the PDF
       console.log('About to save PDF...');
-      const filename = `AI-Readiness-Report-${organizationName.replace(/[^a-zA-Z0-9]/g, '-')}.pdf`;
+      const filename = `AI-Readiness-Report-${(organizationName || 'Organization').replace(/[^a-zA-Z0-9]/g, '-')}.pdf`;
       console.log('PDF filename:', filename);
       pdf.save(filename);
       console.log('PDF save command executed');
@@ -542,7 +543,14 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       
     } catch (error) {
       console.error('PDF generation error:', error);
-      console.error('Error details:', error.message, error.stack);
+      if (error instanceof Error) {
+        console.error('Error details:', error.message, error.stack);
+      }
+      toast({
+        title: "PDF Generation Failed",
+        description: "There was an error generating your report. Please try again.",
+        variant: "destructive",
+      });
     }
   };
 
