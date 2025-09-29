@@ -74,27 +74,27 @@ ${assessment.organizationName || 'Organization'} Team`;
 
 
   return (
-    <Card>
-      <CardContent className="p-6">
-        <h3 className="text-base sm:text-xl font-semibold text-slate-900 mb-6 text-center">Ready to accelerate your AI transformation?</h3>
+    <>
+      {/* Consultation Scheduling Section - Hidden for now, can be re-enabled later */}
+      {/* <Card>
+        <CardContent className="p-6">
+          <h3 className="text-base sm:text-xl font-semibold text-slate-900 mb-6 text-center">Ready to accelerate your AI transformation?</h3>
 
-        {/* Consultation Scheduling */}
-        <div className="flex justify-center">
-          <Button 
-            variant="default" 
-            size="lg"
-            className="h-auto p-6 hover-lift button-press"
-            onClick={handleScheduleConsultation}
-          >
-            <div className="flex items-center">
-              <MessageSquare className="mr-3 h-6 w-6" />
-              <div className="font-semibold text-lg">Schedule a Consultation</div>
-            </div>
-          </Button>
-        </div>
-
-
-      </CardContent>
-    </Card>
+          <div className="flex justify-center">
+            <Button 
+              variant="default" 
+              size="lg"
+              className="h-auto p-6 hover-lift button-press"
+              onClick={handleScheduleConsultation}
+            >
+              <div className="flex items-center">
+                <MessageSquare className="mr-3 h-6 w-6" />
+                <div className="font-semibold text-lg">Schedule a Consultation</div>
+              </div>
+            </Button>
+          </div>
+        </CardContent>
+      </Card> */}
+    </>
   );
 }
