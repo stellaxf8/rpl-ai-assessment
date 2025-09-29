@@ -845,7 +845,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                   <p className="text-slate-600 mb-4">
                     {showFullInsights 
                       ? "Enter your business email to receive your comprehensive AI readiness report with actionable next steps."
-                      : "Access your personalized AI implementation roadmap with strategic recommendations and a downloadable PDF copy."
+                      : "Access your personalized AI implementation roadmap with strategic recommendations and a downloadable PDF report."
                     }
                   </p>
                 </div>
