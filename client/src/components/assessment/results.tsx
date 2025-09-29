@@ -198,6 +198,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       return response.json();
     },
     onSuccess: () => {
+      setShowFullInsights(true);
       toast({
         title: "Email submitted successfully!",
         description: "You can now download your report.",
@@ -860,9 +861,6 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     <Button
                       onClick={() => {
                         emailRequest.mutate({ assessmentId: assessment.id, email, contactConsent });
-                        if (!showFullInsights) {
-                          setShowFullInsights(true);
-                        }
                       }}
                       disabled={!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || emailRequest.isPending}
                       className="w-full h-12 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
