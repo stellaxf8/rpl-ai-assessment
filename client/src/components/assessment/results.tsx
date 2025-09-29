@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { CheckCircle, Download, RotateCcw, Target, AlertTriangle, Server, Database, Users, Network, DollarSign, Shield, Mail } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { CheckCircle, Download, RotateCcw, Target, AlertTriangle, Server, Database, Users, Network, DollarSign, Shield, Mail, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Assessment, DimensionScores } from "@shared/schema";
 import ScoreChart from "@/components/charts/score-chart";
 import RadarChart from "@/components/charts/radar-chart";
@@ -167,7 +168,25 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
   const [email, setEmail] = useState("");
   const [contactConsent, setContactConsent] = useState(false);
   const [showFullInsights, setShowFullInsights] = useState(false);
+  const [showExitIntent, setShowExitIntent] = useState(false);
+  const [exitIntentShown, setExitIntentShown] = useState(false);
+  const [exitEmail, setExitEmail] = useState("");
+  const [exitContactConsent, setExitContactConsent] = useState(false);
   const { toast } = useToast();
+
+  // Exit intent detection
+  useEffect(() => {
+    const handleMouseLeave = (e: MouseEvent) => {
+      // Trigger exit intent when mouse leaves viewport at the top and user hasn't provided email
+      if (e.clientY <= 0 && !exitIntentShown && !showFullInsights && !email) {
+        setShowExitIntent(true);
+        setExitIntentShown(true);
+      }
+    };
+
+    document.addEventListener('mouseleave', handleMouseLeave);
+    return () => document.removeEventListener('mouseleave', handleMouseLeave);
+  }, [exitIntentShown, showFullInsights, email]);
 
   // Email request mutation
   const emailRequest = useMutation({
@@ -190,6 +209,32 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       });
     },
   });
+
+  // Exit intent email request mutation
+  const exitEmailRequest = useMutation({
+    mutationFn: async (data: { assessmentId: string; email: string; contactConsent: boolean }) => {
+      const response = await apiRequest("POST", "/api/assessment-email-requests", data);
+      return response.json();
+    },
+    onSuccess: () => {
+      setShowExitIntent(false);
+      setEmail(exitEmail);
+      setContactConsent(exitContactConsent);
+      setShowFullInsights(true);
+      toast({
+        title: "Success!",
+        description: "Assessment report request received. Your detailed insights are now unlocked!",
+      });
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Error",
+        description: "Failed to send email request. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
   const { overallScore, scores, organizationName, contactEmail, industry } = assessment;
   const typedScores = scores as DimensionScores;
 
@@ -871,6 +916,94 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
         )}
       </div>
       </div>
+      
+      {/* Exit Intent Popup */}
+      <Dialog open={showExitIntent} onOpenChange={setShowExitIntent}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-center text-xl font-bold text-slate-900 mb-2">
+              Wait! Don't Miss Your Complete Analysis
+            </DialogTitle>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="absolute right-4 top-4 h-6 w-6 p-0"
+              onClick={() => setShowExitIntent(false)}
+            >
+              <X className="h-4 w-4" />
+            </Button>
+          </DialogHeader>
+          
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 bg-[#cd0000] rounded-full flex items-center justify-center mx-auto">
+              <Mail className="h-8 w-8 text-white" />
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-slate-900 mb-2">Get Your Complete AI Readiness Report</h4>
+              <p className="text-sm text-slate-600 mb-4">
+                You're about to miss out on detailed recommendations and implementation strategies worth $1,000+ in consulting value.
+              </p>
+            </div>
+            
+            <div className="bg-slate-50 p-4 rounded-lg text-left">
+              <h5 className="font-medium text-slate-900 mb-2">Your free report includes:</h5>
+              <div className="space-y-1 text-sm text-slate-700">
+                <div className="flex items-center">✓ Detailed strategic recommendations for each dimension</div>
+                <div className="flex items-center">✓ Specific implementation examples and timelines</div>
+                <div className="flex items-center">✓ Industry benchmarking insights</div>
+                <div className="flex items-center">✓ Downloadable PDF report</div>
+              </div>
+            </div>
+            
+            <div className="space-y-3">
+              <div>
+                <Label htmlFor="exit-email" className="text-sm font-medium text-slate-700 mb-1 block">Business Email</Label>
+                <Input
+                  id="exit-email"
+                  type="email"
+                  value={exitEmail}
+                  onChange={(e) => setExitEmail(e.target.value)}
+                  placeholder="your.email@company.com"
+                  className="h-10"
+                />
+              </div>
+              
+              <div className="flex items-start space-x-2">
+                <Checkbox 
+                  id="exit-contact-consent"
+                  checked={exitContactConsent}
+                  onCheckedChange={(checked) => setExitContactConsent(checked as boolean)}
+                  className="data-[state=checked]:bg-[#cd0000] data-[state=checked]:border-[#cd0000] mt-0.5"
+                />
+                <Label 
+                  htmlFor="exit-contact-consent" 
+                  className="text-xs text-slate-600 leading-relaxed cursor-pointer"
+                >
+                  Yes, I'd like Red Pill Labs to contact me about AI consulting services.
+                </Label>
+              </div>
+              
+              <Button
+                onClick={() => exitEmailRequest.mutate({ assessmentId: assessment.id, email: exitEmail, contactConsent: exitContactConsent })}
+                disabled={!exitEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(exitEmail) || exitEmailRequest.isPending}
+                className="w-full bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold"
+              >
+                {exitEmailRequest.isPending ? "Unlocking..." : "Get My Complete Report"}
+              </Button>
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setShowExitIntent(false)}
+                className="w-full text-slate-500 hover:text-slate-700"
+              >
+                No thanks, I'll continue without the detailed analysis
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
