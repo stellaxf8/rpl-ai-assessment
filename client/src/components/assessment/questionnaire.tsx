@@ -270,9 +270,9 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
     });
 
     setResponses(demoResponses);
-    // Immediately submit demo assessment
+    // Immediately submit demo assessment with fallback industry
     submitAssessment.mutate({
-      industry: selectedIndustry,
+      industry: selectedIndustry || "Technology", // Fallback to Technology if industry not selected
       responses: demoResponses,
     });
     
