@@ -809,7 +809,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     Receive Your Report
                   </h3>
                   <p className="text-slate-600 mb-4">
-                    Enter your business email to receive your comprehensive AI readiness assessment report.
+                    Enter your business email to download your comprehensive AI readiness assessment report.
                   </p>
                 </div>
                 
