@@ -1,12 +1,17 @@
-import React from "react";
-import { CheckCircle, Download, RotateCcw, Target, AlertTriangle, Server, Database, Users, Network, DollarSign, Shield } from "lucide-react";
+import React, { useState } from "react";
+import { CheckCircle, Download, RotateCcw, Target, AlertTriangle, Server, Database, Users, Network, DollarSign, Shield, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Assessment, DimensionScores } from "@shared/schema";
 import ScoreChart from "@/components/charts/score-chart";
 import RadarChart from "@/components/charts/radar-chart";
 import BusinessDevelopment from "@/components/enhanced/business-development";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import redPillLabsLogo from "@assets/LOGO (White - PNG)_1757717696589.png";
@@ -158,6 +163,30 @@ const renderIcon = (iconName: string, className: string = "w-4 h-4") => {
 };
 
 export default function Results({ assessment, onRetakeAssessment, showRetakeButton = true }: ResultsProps) {
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+
+  // Email request mutation
+  const emailRequest = useMutation({
+    mutationFn: async (data: { assessmentId: string; email: string }) => {
+      const response = await apiRequest("POST", "/api/assessment-email-requests", data);
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Email sent successfully!",
+        description: "You will receive your assessment report shortly.",
+      });
+      setEmail("");
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Failed to send email",
+        description: error.message || "Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
   const { overallScore, scores, organizationName, contactEmail, industry } = assessment;
   const typedScores = scores as DimensionScores;
 
@@ -705,6 +734,51 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
           </div>
 
           <BusinessDevelopment assessment={assessment} />
+
+          {/* Email CTA Section */}
+          <div className="mb-8">
+            <Card className="border-2 border-[#cd0000]/20 bg-gradient-to-r from-slate-50 to-white">
+              <CardContent className="p-6">
+                <div className="text-center mb-6">
+                  <div className="w-12 h-12 bg-[#cd0000] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Get Your Assessment Report via Email</h3>
+                  <p className="text-slate-600 mb-4">Enter your business email to receive a copy of your AI readiness assessment report.</p>
+                </div>
+                
+                <div className="max-w-md mx-auto space-y-4">
+                  <div>
+                    <Label htmlFor="email" className="text-sm font-semibold text-slate-700 mb-2 block">Business Email Address</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="your.email@company.com"
+                      className="h-12 px-4 rounded-xl border-2 border-slate-200 focus:border-[#cd0000] focus:ring-2 focus:ring-[#cd0000]/20 transition-all duration-200 text-base"
+                    />
+                  </div>
+                  
+                  <Button
+                    onClick={() => emailRequest.mutate({ assessmentId: assessment.id, email })}
+                    disabled={!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || emailRequest.isPending}
+                    className="w-full h-12 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
+                  >
+                    {emailRequest.isPending ? "Sending..." : "Send Assessment Report"}
+                  </Button>
+                  
+                  {/* Privacy Disclaimer */}
+                  <div className="mt-6 p-4 bg-slate-100 rounded-lg border border-slate-200">
+                    <h4 className="font-semibold text-slate-800 mb-2 text-sm">Privacy Disclaimer</h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      At Red Pill Labs, we respect your privacy. We will never sell, rent, or share your contact information with any third party without your consent. If you have any questions about how your information is used or protected, please contact us at 1-866-PILL-RED (745-5733).
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
       </div>
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in animate-slide-up">
