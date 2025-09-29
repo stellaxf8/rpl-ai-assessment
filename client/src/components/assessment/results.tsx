@@ -200,8 +200,8 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
     onSuccess: () => {
       setShowFullInsights(true);
       toast({
-        title: "Email submitted successfully!",
-        description: "You can now download your report.",
+        title: "Report sent successfully! ✓",
+        description: `Your AI Readiness Assessment PDF report has been sent to ${email}. Please check your inbox.`,
       });
     },
     onError: (error: Error) => {
