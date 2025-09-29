@@ -71,8 +71,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/assessments", async (req, res) => {
     try {
       const requestSchema = z.object({
-        organizationName: z.string().min(1),
-        contactEmail: z.string().email(),
+        organizationName: z.string().min(1).optional(),
+        contactEmail: z.string().email().optional(),
         industry: z.string().min(1),
         responses: assessmentResponsesSchema,
       });
@@ -128,6 +128,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error fetching assessments:", error);
       res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Email request endpoint - store email requests for sending assessment copies
+  app.post("/api/assessment-email-requests", async (req, res) => {
+    try {
+      const emailRequestSchema = z.object({
+        assessmentId: z.string(),
+        email: z.string().email(),
+      });
+
+      const { assessmentId, email } = emailRequestSchema.parse(req.body);
+      
+      // Verify the assessment exists
+      const assessment = await storage.getAssessment(assessmentId);
+      if (!assessment) {
+        return res.status(404).json({ message: "Assessment not found" });
+      }
+
+      // Store the email request (for now just log it - future: send actual email)
+      console.log(`Email request stored: ${email} for assessment ${assessmentId}`);
+      
+      // Return success
+      res.status(200).json({ message: "Email request received successfully" });
+    } catch (error) {
+      console.error("Error processing email request:", error);
+      res.status(400).json({ 
+        message: error instanceof Error ? error.message : "Invalid request data" 
+      });
     }
   });
 

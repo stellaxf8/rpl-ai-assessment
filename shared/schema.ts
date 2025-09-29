@@ -5,8 +5,8 @@ import { z } from "zod";
 
 export const assessments = pgTable("assessments", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  organizationName: text("organization_name").notNull(),
-  contactEmail: text("contact_email").notNull(),
+  organizationName: text("organization_name"),
+  contactEmail: text("contact_email"),
   industry: text("industry").notNull(),
   responses: jsonb("responses").notNull(),
   scores: jsonb("scores").notNull(),
