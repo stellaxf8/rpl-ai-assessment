@@ -1,4 +1,4 @@
-import { type Assessment, type InsertAssessment, assessments } from "@shared/schema";
+import { type Assessment, type InsertAssessment, assessments, type EmailRequest, type InsertEmailRequest, emailRequests } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
@@ -7,6 +7,10 @@ export interface IStorage {
   getAssessment(id: string): Promise<Assessment | undefined>;
   createAssessment(assessment: InsertAssessment): Promise<Assessment>;
   getAllAssessments(): Promise<Assessment[]>;
+  createEmailRequest(emailRequest: InsertEmailRequest): Promise<EmailRequest>;
+  getEmailRequestsByAssessment(assessmentId: string): Promise<EmailRequest[]>;
+  getAllEmailRequests(): Promise<EmailRequest[]>;
+  updateEmailRequestSentStatus(id: string, sentAt: Date): Promise<void>;
 }
 
 export class MemStorage implements IStorage {
@@ -34,6 +38,29 @@ export class MemStorage implements IStorage {
   async getAllAssessments(): Promise<Assessment[]> {
     return Array.from(this.assessments.values());
   }
+
+  async createEmailRequest(insertEmailRequest: InsertEmailRequest): Promise<EmailRequest> {
+    const id = randomUUID();
+    const emailRequest: EmailRequest = {
+      ...insertEmailRequest,
+      id,
+      sentAt: null,
+      createdAt: new Date(),
+    };
+    return emailRequest;
+  }
+
+  async getEmailRequestsByAssessment(assessmentId: string): Promise<EmailRequest[]> {
+    return [];
+  }
+
+  async getAllEmailRequests(): Promise<EmailRequest[]> {
+    return [];
+  }
+
+  async updateEmailRequestSentStatus(id: string, sentAt: Date): Promise<void> {
+    return;
+  }
 }
 
 export class DatabaseStorage implements IStorage {
@@ -52,6 +79,29 @@ export class DatabaseStorage implements IStorage {
 
   async getAllAssessments(): Promise<Assessment[]> {
     return await db.select().from(assessments);
+  }
+
+  async createEmailRequest(insertEmailRequest: InsertEmailRequest): Promise<EmailRequest> {
+    const [emailRequest] = await db
+      .insert(emailRequests)
+      .values(insertEmailRequest)
+      .returning();
+    return emailRequest;
+  }
+
+  async getEmailRequestsByAssessment(assessmentId: string): Promise<EmailRequest[]> {
+    return await db.select().from(emailRequests).where(eq(emailRequests.assessmentId, assessmentId));
+  }
+
+  async getAllEmailRequests(): Promise<EmailRequest[]> {
+    return await db.select().from(emailRequests);
+  }
+
+  async updateEmailRequestSentStatus(id: string, sentAt: Date): Promise<void> {
+    await db
+      .update(emailRequests)
+      .set({ emailSent: 'true', sentAt })
+      .where(eq(emailRequests.id, id));
   }
 }
 
