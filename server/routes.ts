@@ -131,16 +131,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Email request endpoint - store email requests and send assessment reports via email
+  // Email request endpoint - store email requests for sending assessment copies
   app.post("/api/assessment-email-requests", async (req, res) => {
     try {
-      // Check for Brevo API key
-      if (!process.env.BREVO_API_KEY) {
-        return res.status(503).json({ 
-          message: "Email service not configured. Please add BREVO_API_KEY to environment variables." 
-        });
-      }
-
       const emailRequestSchema = z.object({
         assessmentId: z.string(),
         email: z.string().email(),
@@ -155,55 +148,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(404).json({ message: "Assessment not found" });
       }
 
-      // Store the email request in database
-      const emailRequest = await storage.createEmailRequest({
-        assessmentId,
-        email,
-        contactConsent: contactConsent ? 'true' : 'false',
-        emailSent: 'false'
-      });
-
-      // Generate email HTML (escape HTML in organizationName)
-      const { sendEmail, generateAssessmentEmailHTML } = await import('./services/email');
-      const safeOrgName = (assessment.organizationName || 'Your Organization')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-      const htmlContent = generateAssessmentEmailHTML(assessment, safeOrgName);
-
-      // Try to generate PDF report (optional - may fail in some environments)
-      let pdfBase64: string | undefined;
-      try {
-        const { generateAssessmentPDF } = await import('./services/pdf-generator');
-        const pdfBuffer = await generateAssessmentPDF(assessment);
-        pdfBase64 = pdfBuffer.toString('base64');
-        console.log('PDF generated successfully');
-      } catch (pdfError) {
-        console.warn('PDF generation failed, sending email without attachment:', pdfError instanceof Error ? pdfError.message : 'Unknown error');
-      }
-
-      // Send email with or without PDF attachment
-      await sendEmail({
-        to: email,
-        subject: `Your AI Readiness Assessment Report - ${assessment.organizationName || 'Results'}`,
-        htmlContent,
-        pdfBase64,
-        pdfFilename: `AI-Readiness-Report-${(assessment.organizationName || 'Report').replace(/[^a-zA-Z0-9]/g, '-')}.pdf`
-      });
-
-      // Update email request status
-      await storage.updateEmailRequestSentStatus(emailRequest.id, new Date());
-
-      console.log(`Email sent successfully to ${email} for assessment ${assessmentId}, Contact consent: ${contactConsent}`);
+      // Store the email request (for now just log it - future: send actual email)
+      console.log(`Email request stored: ${email} for assessment ${assessmentId}, Contact consent: ${contactConsent}`);
+      
+      // In a real implementation, you would store this in a database with contact preferences
+      // For now, we just log the contact consent for demonstration
       
       // Return success
-      res.status(200).json({ message: "Email sent successfully with PDF report" });
+      res.status(200).json({ message: "Email request received successfully" });
     } catch (error) {
       console.error("Error processing email request:", error);
-      res.status(500).json({ 
-        message: error instanceof Error ? error.message : "Failed to send email" 
+      res.status(400).json({ 
+        message: error instanceof Error ? error.message : "Invalid request data" 
       });
     }
   });
