@@ -11,6 +11,70 @@ interface IndustrySelectionProps {
 
 const industries = [
   {
+    id: 'Agriculture',
+    name: 'Agriculture & Food',
+    icon: Wheat,
+    description: 'Farming, food production, agricultural technology, and food services',
+    hasSpecializations: false,
+    aiApplications: ['Crop monitoring', 'Yield prediction', 'Supply chain optimization']
+  },
+  {
+    id: 'B2B Sales & Distribution',
+    name: 'B2B Sales & Distribution',
+    icon: Briefcase,
+    description: 'Companies selling products or services to other businesses, wholesalers, and distributors',
+    hasSpecializations: true,
+    aiApplications: ['Lead scoring', 'Sales forecasting', 'Account intelligence']
+  },
+  {
+    id: 'Consulting',
+    name: 'Consulting',
+    icon: Briefcase,
+    description: 'Professional services, consulting firms, and advisory services',
+    hasSpecializations: false,
+    aiApplications: ['Client insights', 'Knowledge management', 'Process improvement']
+  },
+  {
+    id: 'Construction',
+    name: 'Construction',
+    icon: HardHat,
+    description: 'General contractors, builders, trades, and construction management firms',
+    hasSpecializations: true,
+    aiApplications: ['Project scheduling', 'Safety monitoring', 'Cost estimation']
+  },
+  {
+    id: 'Education',
+    name: 'Education',
+    icon: GraduationCap,
+    description: 'Schools, universities, training organizations, and edtech',
+    hasSpecializations: true,
+    aiApplications: ['Personalized learning', 'Student analytics', 'Administrative automation']
+  },
+  {
+    id: 'Energy',
+    name: 'Energy & Utilities',
+    icon: Zap,
+    description: 'Power generation, utilities, renewable energy, and energy services',
+    hasSpecializations: false,
+    aiApplications: ['Grid optimization', 'Predictive maintenance', 'Energy forecasting']
+  },
+  {
+    id: 'Finance',
+    name: 'Financial Services',
+    icon: Banknote,
+    description: 'Banks, insurance, investment firms, and fintech companies',
+    hasSpecializations: true,
+    aiApplications: ['Fraud detection', 'Risk assessment', 'Algorithmic trading']
+  },
+  {
+    id: 'Government',
+    name: 'Government & Public Sector',
+    icon: Building,
+    description: 'Government agencies, municipalities, and public organizations',
+    hasSpecializations: false,
+    aiApplications: ['Citizen services', 'Data analysis', 'Process automation']
+  },
+  {
     id: 'Healthcare',
     name: 'Healthcare',
     icon: Heart,
@@ -27,60 +91,12 @@ const industries = [
     aiApplications: ['Predictive maintenance', 'Quality control', 'Production optimization']
   },
   {
-    id: 'Construction',
-    name: 'Construction',
-    icon: HardHat,
-    description: 'General contractors, builders, trades, and construction management firms',
-    hasSpecializations: true,
-    aiApplications: ['Project scheduling', 'Safety monitoring', 'Cost estimation']
-  },
-  {
-    id: 'Finance',
-    name: 'Financial Services',
-    icon: Banknote,
-    description: 'Banks, insurance, investment firms, and fintech companies',
-    hasSpecializations: true,
-    aiApplications: ['Fraud detection', 'Risk assessment', 'Algorithmic trading']
-  },
-  {
-    id: 'Retail & B2C Sales',
-    name: 'Retail & B2C Sales',
-    icon: Building2,
-    description: 'Online and offline retail, consumer goods, and marketplace platforms selling to end consumers',
-    hasSpecializations: true,
-    aiApplications: ['Personalization', 'Demand forecasting', 'Inventory optimization']
-  },
-  {
-    id: 'B2B Sales & Distribution',
-    name: 'B2B Sales & Distribution',
-    icon: Briefcase,
-    description: 'Companies selling products or services to other businesses, wholesalers, and distributors',
-    hasSpecializations: true,
-    aiApplications: ['Lead scoring', 'Sales forecasting', 'Account intelligence']
-  },
-  {
-    id: 'Technology',
-    name: 'Technology',
-    icon: Code,
-    description: 'Software companies, tech startups, and IT service providers',
+    id: 'Media',
+    name: 'Media & Entertainment',
+    icon: Newspaper,
+    description: 'Publishing, broadcasting, content creation, and entertainment',
     hasSpecializations: false,
-    aiApplications: ['Product enhancement', 'Development automation', 'User experience']
-  },
-  {
-    id: 'Education',
-    name: 'Education',
-    icon: GraduationCap,
-    description: 'Schools, universities, training organizations, and edtech',
-    hasSpecializations: true,
-    aiApplications: ['Personalized learning', 'Student analytics', 'Administrative automation']
-  },
-  {
-    id: 'Government',
-    name: 'Government & Public Sector',
-    icon: Building,
-    description: 'Government agencies, municipalities, and public organizations',
-    hasSpecializations: false,
-    aiApplications: ['Citizen services', 'Data analysis', 'Process automation']
+    aiApplications: ['Content generation', 'Audience analytics', 'Content recommendation']
   },
   {
     id: 'Non-profit',
@@ -91,22 +107,6 @@ const industries = [
     aiApplications: ['Donor analytics', 'Program optimization', 'Impact measurement']
   },
   {
-    id: 'Consulting',
-    name: 'Consulting',
-    icon: Briefcase,
-    description: 'Professional services, consulting firms, and advisory services',
-    hasSpecializations: false,
-    aiApplications: ['Client insights', 'Knowledge management', 'Process improvement']
-  },
-  {
-    id: 'Media',
-    name: 'Media & Entertainment',
-    icon: Newspaper,
-    description: 'Publishing, broadcasting, content creation, and entertainment',
-    hasSpecializations: false,
-    aiApplications: ['Content generation', 'Audience analytics', 'Content recommendation']
-  },
-  {
     id: 'Real Estate',
     name: 'Real Estate',
     icon: Home,
@@ -115,28 +115,28 @@ const industries = [
     aiApplications: ['Property valuation', 'Market analysis', 'Customer matching']
   },
   {
+    id: 'Retail & B2C Sales',
+    name: 'Retail & B2C Sales',
+    icon: Building2,
+    description: 'Online and offline retail, consumer goods, and marketplace platforms selling to end consumers',
+    hasSpecializations: true,
+    aiApplications: ['Personalization', 'Demand forecasting', 'Inventory optimization']
+  },
+  {
+    id: 'Technology',
+    name: 'Technology',
+    icon: Code,
+    description: 'Software companies, tech startups, and IT service providers',
+    hasSpecializations: false,
+    aiApplications: ['Product enhancement', 'Development automation', 'User experience']
+  },
+  {
     id: 'Transportation',
     name: 'Transportation & Logistics',
     icon: Truck,
     description: 'Shipping, logistics, transportation services, and fleet management',
     hasSpecializations: false,
     aiApplications: ['Route optimization', 'Fleet management', 'Demand prediction']
-  },
-  {
-    id: 'Energy',
-    name: 'Energy & Utilities',
-    icon: Zap,
-    description: 'Power generation, utilities, renewable energy, and energy services',
-    hasSpecializations: false,
-    aiApplications: ['Grid optimization', 'Predictive maintenance', 'Energy forecasting']
-  },
-  {
-    id: 'Agriculture',
-    name: 'Agriculture & Food',
-    icon: Wheat,
-    description: 'Farming, food production, agricultural technology, and food services',
-    hasSpecializations: false,
-    aiApplications: ['Crop monitoring', 'Yield prediction', 'Supply chain optimization']
   },
   {
     id: 'Other',
