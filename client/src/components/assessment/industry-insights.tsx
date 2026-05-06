@@ -74,8 +74,8 @@ const industryBenchmarks: Record<string, IndustryBenchmark> = {
       'Automated credit scoring improving approval times by 60%'
     ]
   },
-  'Retail': {
-    industry: 'Retail & E-commerce',
+  'Retail & Sales': {
+    industry: 'Retail & Sales',
     averageScore: 71,
     topPerformerScore: 87,
     criticalAreas: ['Omnichannel Data Integration', 'Real-time Personalization', 'Inventory Optimization'],

@@ -56,7 +56,7 @@ const caseStudies = [
   {
     title: "Inventory Optimization",
     company: "E-commerce Retailer",
-    industry: "Retail",
+    industry: "Retail & Sales",
     challenge: "Frequent stockouts and excess inventory carrying costs",
     solution: "Predictive analytics for demand forecasting and inventory management",
     results: "25% reduction in stockouts, 30% lower inventory costs, 15% revenue increase",

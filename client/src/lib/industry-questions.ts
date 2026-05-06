@@ -453,10 +453,10 @@ export const financeVariations: IndustryQuestionVariation[] = [
   }
 ];
 
-// Retail-specific question variations
+// Retail & Sales-specific question variations
 export const retailVariations: IndustryQuestionVariation[] = [
   {
-    industry: 'Retail',
+    industry: 'Retail & Sales',
     questionId: 'technologyInfrastructure_1',
     question: 'How would you describe your retail technology systems across all sales channels?',
     description: 'Consider your e-commerce platform, POS systems, inventory management, and customer data integration. For Example: When a customer shops both online and in-store, can you see their complete purchase history and preferences across all channels, or are these systems separate and disconnected?',
@@ -489,7 +489,7 @@ export const retailVariations: IndustryQuestionVariation[] = [
     ]
   },
   {
-    industry: 'Retail',
+    industry: 'Retail & Sales',
     questionId: 'teamLiteracy_1',
     question: 'What is the level of retail technology and e-commerce AI knowledge among your teams?',
     description: 'Assess understanding of personalization engines, demand forecasting, and customer analytics. For Example: Do your teams understand how AI could automatically recommend products to customers, predict which items will sell well, or analyze shopping patterns to improve store layouts?',
@@ -522,7 +522,7 @@ export const retailVariations: IndustryQuestionVariation[] = [
     ]
   },
   {
-    industry: 'Retail',
+    industry: 'Retail & Sales',
     questionId: 'dataQuality_5',
     question: 'How prepared is your customer and sales data for AI-driven personalization and demand forecasting?',
     description: 'Consider customer behavior data, inventory data, and sales metrics readiness for AI analysis. For Example: Do you have detailed information about what customers buy, when they shop, and how they browse that could be used to personalize their experience and predict future demand?',
@@ -555,7 +555,7 @@ export const retailVariations: IndustryQuestionVariation[] = [
     ]
   },
   {
-    industry: 'Retail',
+    industry: 'Retail & Sales',
     questionId: 'systemIntegration_1',
     question: 'How well integrated are your e-commerce, inventory, and customer systems for AI implementation?',
     description: 'Assess the integration between online/offline channels, inventory management, and customer data systems. For Example: When inventory changes in one location, does it automatically update across all sales channels, and can you track a customer\'s complete shopping journey from website visits to in-store purchases?',
@@ -1744,7 +1744,7 @@ export const agricultureVariations: IndustryQuestionVariation[] = [
 
 // Function to get all supported industries
 export function getSupportedIndustries(): string[] {
-  return ['Healthcare', 'Manufacturing', 'Finance', 'Retail', 'Education', 'Technology', 'Government', 'Non-profit', 'Consulting', 'Media', 'Real Estate', 'Transportation', 'Energy', 'Agriculture'];
+  return ['Healthcare', 'Manufacturing', 'Finance', 'Retail & Sales', 'Education', 'Technology', 'Government', 'Non-profit', 'Consulting', 'Media', 'Real Estate', 'Transportation', 'Energy', 'Agriculture'];
 }
 
 // Function to check if industry has specific variations

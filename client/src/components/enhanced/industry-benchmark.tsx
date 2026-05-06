@@ -11,7 +11,7 @@ const industryData = {
   "Manufacturing": { avgScore: 58, topPerformer: 85, challenges: ["Legacy systems integration", "Data silos", "Skills gap"] },
   "Healthcare": { avgScore: 62, topPerformer: 88, challenges: ["HIPAA compliance", "Patient data privacy", "System interoperability"] },
   "Financial Services": { avgScore: 71, topPerformer: 92, challenges: ["Regulatory compliance", "Data security", "Real-time processing"] },
-  "Retail": { avgScore: 65, topPerformer: 89, challenges: ["Customer data integration", "Inventory optimization", "Omnichannel consistency"] },
+  "Retail & Sales": { avgScore: 65, topPerformer: 89, challenges: ["Customer data integration", "Inventory optimization", "Omnichannel consistency"] },
   "Technology": { avgScore: 78, topPerformer: 95, challenges: ["Scaling AI infrastructure", "Model governance", "Talent retention"] },
   "Other": { avgScore: 61, topPerformer: 87, challenges: ["Technology infrastructure", "Data quality", "Change management"] }
 };

@@ -87,7 +87,7 @@ export function IndustryQuestions({ onIndustryChange }: IndustryQuestionsProps) 
       ]
     },
     {
-      industry: 'Retail',
+      industry: 'Retail & Sales',
       questions: [
         {
           id: 'retail_1',
@@ -241,7 +241,7 @@ export function IndustryQuestions({ onIndustryChange }: IndustryQuestionsProps) 
       regulations: ['ISO 9001', 'ISO 14001', 'OSHA', 'Industry 4.0 Standards'],
       challenges: ['Legacy Systems', 'Operational Technology Security', 'Workforce Training', 'ROI Measurement']
     },
-    Retail: {
+    'Retail & Sales': {
       keyFocus: ['Customer Experience', 'Inventory Management', 'Pricing Optimization', 'Marketing Automation'],
       commonUseCases: ['Recommendation Engines', 'Demand Forecasting', 'Fraud Detection', 'Chatbots'],
       regulations: ['PCI DSS', 'GDPR', 'CCPA', 'Consumer Protection Laws'],
@@ -471,7 +471,7 @@ export function IndustryQuestions({ onIndustryChange }: IndustryQuestionsProps) 
                             </li>
                           </>
                         )}
-                        {selectedIndustry === 'Retail' && (
+                        {selectedIndustry === 'Retail & Sales' && (
                           <>
                             <li className="flex items-center gap-2">
                               <CheckCircle className="h-4 w-4" />

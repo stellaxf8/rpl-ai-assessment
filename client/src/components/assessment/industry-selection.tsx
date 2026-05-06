@@ -35,8 +35,8 @@ const industries = [
     aiApplications: ['Fraud detection', 'Risk assessment', 'Algorithmic trading']
   },
   {
-    id: 'Retail',
-    name: 'Retail & E-commerce',
+    id: 'Retail & Sales',
+    name: 'Retail & Sales',
     icon: Building2,
     description: 'Online and offline retail, consumer goods, and marketplace platforms',
     hasSpecializations: true,
