@@ -875,8 +875,10 @@ export function getIndustryQuestionVariation(industry: string, questionId: strin
   const allVariations = [
     ...healthcareVariations,
     ...manufacturingVariations,
+    ...constructionVariations,
     ...financeVariations,
     ...retailVariations,
+    ...b2bSalesVariations,
     ...educationVariations,
     ...technologyVariations,
     ...governmentVariations,
