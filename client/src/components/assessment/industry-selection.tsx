@@ -183,28 +183,25 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
           return (
             <Card
               key={industry.id}
-              className={`cursor-pointer transition-all duration-300 hover:shadow-xl hover:border-[#cd0000] hover:scale-105 rounded-xl border-2 ${
+              className={`cursor-pointer transition-all duration-300 hover:shadow-xl hover:border-[#cd0000] hover:scale-105 rounded-xl border-2 h-full ${
                 isSelected 
                   ? 'ring-2 ring-primary bg-primary/5' 
                   : ''
               }`}
               onClick={() => handleIndustryClick(industry.id)}
             >
-              <CardContent className="p-2 h-full min-h-[5rem] sm:min-h-[6rem]">
-                <div className="flex flex-col items-center text-center space-y-1 h-full justify-center">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-[#2a2c3700] text-[#cd0000]">
+              <CardContent className="p-2 h-full min-h-[5.5rem] sm:min-h-[6.5rem] flex flex-col items-center justify-center text-center gap-1">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-[#cd0000]">
                     <Icon className="h-4 w-4" />
                   </div>
-                  
-                  <div>
-                    <h3 className="font-semibold text-sm text-slate-600 leading-tight">{industry.name}</h3>
-                    {industry.hasSpecializations && (
-                      <Badge variant="secondary" className="text-xs mt-1">
+                  <h3 className="font-semibold text-sm text-slate-600 leading-tight">{industry.name}</h3>
+                  <div className="h-5 flex items-center justify-center">
+                    {industry.hasSpecializations ? (
+                      <Badge variant="secondary" className="text-xs">
                         Specialized
                       </Badge>
-                    )}
+                    ) : null}
                   </div>
-                </div>
               </CardContent>
             </Card>
           );
