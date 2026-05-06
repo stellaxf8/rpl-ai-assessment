@@ -175,38 +175,51 @@ export default function IndustrySelection({ onIndustrySelect }: IndustrySelectio
           Choose your industry for a tailored assessment with relevant questions and specialized insights.
         </p>
       </div>
-      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
-        {industries.map((industry) => {
+      {(() => {
+        const mainIndustries = industries.filter(i => i.id !== 'Other');
+        const otherIndustry = industries.find(i => i.id === 'Other');
+
+        const renderCard = (industry: typeof industries[0]) => {
           const Icon = industry.icon;
           const isSelected = localSelectedIndustry === industry.id;
-
           return (
             <Card
               key={industry.id}
               className={`cursor-pointer transition-all duration-300 hover:shadow-xl hover:border-[#cd0000] hover:scale-105 rounded-xl border-2 h-full ${
-                isSelected 
-                  ? 'ring-2 ring-primary bg-primary/5' 
-                  : ''
+                isSelected ? 'ring-2 ring-primary bg-primary/5' : ''
               }`}
               onClick={() => handleIndustryClick(industry.id)}
             >
               <CardContent className="p-2 h-full min-h-[5.5rem] sm:min-h-[6.5rem] flex flex-col items-center justify-center text-center gap-1">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-[#cd0000]">
-                    <Icon className="h-4 w-4" />
-                  </div>
-                  <h3 className="font-semibold text-sm text-slate-600 leading-tight">{industry.name}</h3>
-                  <div className="h-5 flex items-center justify-center">
-                    {industry.hasSpecializations ? (
-                      <Badge variant="secondary" className="text-xs">
-                        Specialized
-                      </Badge>
-                    ) : null}
-                  </div>
+                <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-[#cd0000]">
+                  <Icon className="h-4 w-4" />
+                </div>
+                <h3 className="font-semibold text-sm text-slate-600 leading-tight">{industry.name}</h3>
+                <div className="h-5 flex items-center justify-center">
+                  {industry.hasSpecializations ? (
+                    <Badge variant="secondary" className="text-xs">Specialized</Badge>
+                  ) : null}
+                </div>
               </CardContent>
             </Card>
           );
-        })}
-      </div>
+        };
+
+        return (
+          <>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+              {mainIndustries.map(renderCard)}
+            </div>
+            {otherIndustry && (
+              <div className="flex justify-center">
+                <div className="w-1/4 sm:w-1/4">
+                  {renderCard(otherIndustry)}
+                </div>
+              </div>
+            )}
+          </>
+        );
+      })()}
       {localSelectedIndustry && (
         <div className="text-center">
           <Button 
