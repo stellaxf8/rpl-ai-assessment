@@ -74,6 +74,24 @@ const industryBenchmarks: Record<string, IndustryBenchmark> = {
       'Automated credit scoring improving approval times by 60%'
     ]
   },
+  'Construction': {
+    industry: 'Construction',
+    averageScore: 55,
+    topPerformerScore: 78,
+    criticalAreas: ['Project Data Integration', 'Site Safety Technology', 'Estimating Accuracy'],
+    strengths: ['Operational Discipline', 'Cost Awareness', 'Project-Based Learning'],
+    recommendations: [
+      'Connect estimating, scheduling, and accounting into a unified platform',
+      'Deploy site safety monitoring using cameras and sensors',
+      'Use historical project data to improve bid accuracy and resource planning',
+      'Implement drone and IoT technology for real-time site visibility'
+    ],
+    industryTrends: [
+      'AI-powered scheduling reducing project delays by 20%',
+      'Automated safety monitoring cutting on-site incidents by 30%',
+      'Predictive cost analytics improving bid accuracy by 15%'
+    ]
+  },
   'Retail & Sales': {
     industry: 'Retail & Sales',
     averageScore: 71,

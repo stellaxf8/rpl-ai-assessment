@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Building2, Factory, Heart, Banknote, Code, GraduationCap, Building, Users, Briefcase, Newspaper, Home, Truck, Zap, Wheat, HelpCircle } from "lucide-react";
+import { Building2, Factory, Heart, Banknote, Code, GraduationCap, Building, Users, Briefcase, Newspaper, Home, Truck, Zap, Wheat, HelpCircle, HardHat } from "lucide-react";
 
 interface IndustrySelectionProps {
   onIndustrySelect: (industry: string) => void;
@@ -25,6 +25,14 @@ const industries = [
     description: 'Production facilities, industrial operations, and supply chain',
     hasSpecializations: true,
     aiApplications: ['Predictive maintenance', 'Quality control', 'Production optimization']
+  },
+  {
+    id: 'Construction',
+    name: 'Construction',
+    icon: HardHat,
+    description: 'General contractors, builders, trades, and construction management firms',
+    hasSpecializations: true,
+    aiApplications: ['Project scheduling', 'Safety monitoring', 'Cost estimation']
   },
   {
     id: 'Finance',

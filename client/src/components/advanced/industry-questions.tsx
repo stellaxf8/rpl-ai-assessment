@@ -122,6 +122,41 @@ export function IndustryQuestions({ onIndustryChange }: IndustryQuestionsProps) 
       ]
     },
     {
+      industry: 'Construction',
+      questions: [
+        {
+          id: 'construction_1',
+          question: 'How advanced is your project management and scheduling technology?',
+          dimension: 'technologyInfrastructure',
+          industrySpecific: true
+        },
+        {
+          id: 'construction_2',
+          question: 'How well connected are your estimating, accounting, and field systems?',
+          dimension: 'systemIntegration',
+          industrySpecific: true
+        },
+        {
+          id: 'construction_3',
+          question: 'How well do you capture and use job site data for decision making?',
+          dimension: 'dataQuality',
+          industrySpecific: true
+        },
+        {
+          id: 'construction_4',
+          question: 'What is your current use of safety monitoring technology on job sites?',
+          dimension: 'security',
+          industrySpecific: true
+        },
+        {
+          id: 'construction_5',
+          question: 'How prepared are your project managers and site teams for AI-assisted tools?',
+          dimension: 'teamLiteracy',
+          industrySpecific: true
+        }
+      ]
+    },
+    {
       industry: 'Finance',
       questions: [
         {
@@ -240,6 +275,12 @@ export function IndustryQuestions({ onIndustryChange }: IndustryQuestionsProps) 
       commonUseCases: ['Defect Detection', 'Process Optimization', 'Demand Forecasting', 'Equipment Monitoring'],
       regulations: ['ISO 9001', 'ISO 14001', 'OSHA', 'Industry 4.0 Standards'],
       challenges: ['Legacy Systems', 'Operational Technology Security', 'Workforce Training', 'ROI Measurement']
+    },
+    Construction: {
+      keyFocus: ['Project Scheduling', 'Site Safety', 'Cost Estimation', 'Subcontractor Coordination'],
+      commonUseCases: ['AI-powered scheduling', 'Safety monitoring', 'Predictive cost analytics', 'Drone site surveys'],
+      regulations: ['OSHA', 'Building Codes', 'AIA Contracts', 'LEED Standards'],
+      challenges: ['Fragmented project data', 'Workforce technology adoption', 'Subcontractor coordination', 'Estimating accuracy']
     },
     'Retail & Sales': {
       keyFocus: ['Customer Experience', 'Inventory Management', 'Pricing Optimization', 'Marketing Automation'],
@@ -470,6 +511,9 @@ export function IndustryQuestions({ onIndustryChange }: IndustryQuestionsProps) 
                               Optimize supply chain and demand forecasting
                             </li>
                           </>
+                        )}
+                        {selectedIndustry === 'Construction' && (
+                          <p className="text-sm text-blue-700">Construction AI focus: project scheduling optimization, site safety monitoring, and predictive cost analytics to reduce overruns.</p>
                         )}
                         {selectedIndustry === 'Retail & Sales' && (
                           <>

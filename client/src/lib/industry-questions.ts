@@ -453,6 +453,62 @@ export const financeVariations: IndustryQuestionVariation[] = [
   }
 ];
 
+// Construction-specific question variations
+export const constructionVariations: IndustryQuestionVariation[] = [
+  {
+    industry: 'Construction',
+    questionId: 'technologyInfrastructure_1',
+    question: 'How would you describe your current project management and construction technology systems?',
+    description: 'Consider your project scheduling, Building Information Modeling (BIM), and site management tools. For Example: Can your project managers see real-time progress, costs, and schedules across all active job sites in one place, or do they rely on spreadsheets and phone calls to get updates?',
+    options: [
+      { value: 1, text: 'Basic tools', description: 'Spreadsheets and paper-based project tracking' },
+      { value: 2, text: 'Some digital tools', description: 'Basic software for scheduling and estimating but limited integration' },
+      { value: 3, text: 'Integrated project platform', description: 'Good digital project management with connected scheduling and cost tracking' },
+      { value: 4, text: 'Advanced construction technology', description: 'BIM-enabled workflows with real-time site data and reporting' },
+      { value: 5, text: 'AI-ready digital construction', description: 'Fully integrated platform with IoT sensors, drones, and predictive analytics' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'teamLiteracy_1',
+    question: 'What is the level of technology and AI awareness among your project managers and site teams?',
+    description: 'Assess comfort with digital tools, data-driven decision making, and openness to AI-assisted planning. For Example: Would your site supervisors know how to use an app that flags safety hazards automatically, or flags when a project is trending over budget based on daily data?',
+    options: [
+      { value: 1, text: 'Mostly traditional methods', description: 'Teams prefer established paper and phone-based workflows' },
+      { value: 2, text: 'Basic digital comfort', description: 'Comfortable with email and basic apps but limited adoption of construction software' },
+      { value: 3, text: 'Moderate technology literacy', description: 'Most teams use project management software with growing interest in AI tools' },
+      { value: 4, text: 'Strong digital capability', description: 'Teams actively use construction technology and understand AI use cases' },
+      { value: 5, text: 'Construction tech leaders', description: 'Teams champion digital tools and experiment with AI for scheduling, safety, and cost control' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'dataQuality_5',
+    question: 'How well do you capture and use data from your job sites and projects for decision making?',
+    description: 'Consider project cost data, labor hours, material usage, safety incidents, and schedule performance. For Example: After a project finishes, can you easily look back at what caused cost overruns or delays, and use that to improve estimates on future projects?',
+    options: [
+      { value: 1, text: 'Minimal data capture', description: 'Limited project data collected; decisions made from experience alone' },
+      { value: 2, text: 'Basic record keeping', description: 'Core financials and schedules tracked but data is fragmented across projects' },
+      { value: 3, text: 'Structured project data', description: 'Consistent data collection with some use in planning and estimating' },
+      { value: 4, text: 'Analytics-ready data', description: 'Good historical project data used to improve bids, schedules, and resource planning' },
+      { value: 5, text: 'AI-optimized data pipeline', description: 'Real-time site data feeds into predictive models for cost, safety, and scheduling' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'systemIntegration_1',
+    question: 'How well connected are your estimating, scheduling, accounting, and field management systems?',
+    description: 'Assess whether your core business systems share data or operate in silos. For Example: When a change order is approved in the field, does it automatically update your budget and schedule in the office, or does someone have to manually re-enter it into multiple systems?',
+    options: [
+      { value: 1, text: 'Disconnected systems', description: 'Separate tools for estimating, accounting, and field work with manual data transfer' },
+      { value: 2, text: 'Partial connections', description: 'Some systems share data but significant manual reconciliation still required' },
+      { value: 3, text: 'Moderately integrated', description: 'Key systems connected with automated data flow for most common processes' },
+      { value: 4, text: 'Well-integrated platform', description: 'Estimating, scheduling, accounting, and field data are largely unified' },
+      { value: 5, text: 'Fully connected ecosystem', description: 'All systems share real-time data, enabling AI-driven project insights across the business' }
+    ]
+  }
+];
+
 // Retail & Sales-specific question variations
 export const retailVariations: IndustryQuestionVariation[] = [
   {
@@ -1744,7 +1800,7 @@ export const agricultureVariations: IndustryQuestionVariation[] = [
 
 // Function to get all supported industries
 export function getSupportedIndustries(): string[] {
-  return ['Healthcare', 'Manufacturing', 'Finance', 'Retail & Sales', 'Education', 'Technology', 'Government', 'Non-profit', 'Consulting', 'Media', 'Real Estate', 'Transportation', 'Energy', 'Agriculture'];
+  return ['Healthcare', 'Manufacturing', 'Construction', 'Finance', 'Retail & Sales', 'Education', 'Technology', 'Government', 'Non-profit', 'Consulting', 'Media', 'Real Estate', 'Transportation', 'Energy', 'Agriculture'];
 }
 
 // Function to check if industry has specific variations

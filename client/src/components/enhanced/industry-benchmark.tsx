@@ -9,6 +9,7 @@ interface IndustryBenchmarkProps {
 
 const industryData = {
   "Manufacturing": { avgScore: 58, topPerformer: 85, challenges: ["Legacy systems integration", "Data silos", "Skills gap"] },
+  "Construction": { avgScore: 52, topPerformer: 78, challenges: ["Fragmented project data", "Workforce adoption", "Estimating accuracy"] },
   "Healthcare": { avgScore: 62, topPerformer: 88, challenges: ["HIPAA compliance", "Patient data privacy", "System interoperability"] },
   "Financial Services": { avgScore: 71, topPerformer: 92, challenges: ["Regulatory compliance", "Data security", "Real-time processing"] },
   "Retail & Sales": { avgScore: 65, topPerformer: 89, challenges: ["Customer data integration", "Inventory optimization", "Omnichannel consistency"] },
