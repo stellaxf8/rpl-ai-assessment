@@ -32,7 +32,7 @@ export function RegulatoryComplianceTrackerComponent({ industry, region }: Regul
           'Data governance and quality management systems',
           'Accuracy, robustness, and cybersecurity measures'
         ],
-        relevantIndustries: ['Finance', 'Healthcare', 'Technology', 'Government', 'Education', 'Retail & Sales'],
+        relevantIndustries: ['Finance', 'Healthcare', 'Technology', 'Government', 'Education', 'Retail & B2C Sales'],
         complianceLevel: 'Critical' as const
       },
       {
@@ -86,7 +86,7 @@ export function RegulatoryComplianceTrackerComponent({ industry, region }: Regul
           'Privacy impact assessments for AI systems',
           'Data minimization and purpose limitation'
         ],
-        relevantIndustries: ['Technology', 'Finance', 'Healthcare', 'Retail & Sales', 'Education'],
+        relevantIndustries: ['Technology', 'Finance', 'Healthcare', 'Retail & B2C Sales', 'Education'],
         complianceLevel: 'Critical' as const
       },
       {
@@ -122,7 +122,7 @@ export function RegulatoryComplianceTrackerComponent({ industry, region }: Regul
           'Regular algorithm audits and assessments',
           'User control over algorithmic recommendations'
         ],
-        relevantIndustries: ['Technology', 'Retail & Sales', 'Education'],
+        relevantIndustries: ['Technology', 'Retail & B2C Sales', 'B2B Sales & Distribution', 'Education'],
         complianceLevel: 'Critical' as const
       },
       {
@@ -158,7 +158,7 @@ export function RegulatoryComplianceTrackerComponent({ industry, region }: Regul
           'Data subject rights for AI processing',
           'Impact assessments for AI data processing'
         ],
-        relevantIndustries: ['Finance', 'Healthcare', 'Retail & Sales', 'Technology'],
+        relevantIndustries: ['Finance', 'Healthcare', 'Retail & B2C Sales', 'B2B Sales & Distribution', 'Technology'],
         complianceLevel: 'Critical' as const
       },
       {

@@ -87,7 +87,42 @@ export function IndustryQuestions({ onIndustryChange }: IndustryQuestionsProps) 
       ]
     },
     {
-      industry: 'Retail & Sales',
+      industry: 'B2B Sales & Distribution',
+      questions: [
+        {
+          id: 'b2b_1',
+          question: 'How advanced is your CRM and sales automation technology?',
+          dimension: 'technologyInfrastructure',
+          industrySpecific: true
+        },
+        {
+          id: 'b2b_2',
+          question: 'How well connected are your CRM, ERP, marketing, and quoting systems?',
+          dimension: 'systemIntegration',
+          industrySpecific: true
+        },
+        {
+          id: 'b2b_3',
+          question: 'How complete and reliable is your customer and pipeline data?',
+          dimension: 'dataQuality',
+          industrySpecific: true
+        },
+        {
+          id: 'b2b_4',
+          question: 'What is your current use of lead scoring or sales forecasting tools?',
+          dimension: 'technologyInfrastructure',
+          industrySpecific: true
+        },
+        {
+          id: 'b2b_5',
+          question: 'How comfortable are your sales teams with data-driven and AI-assisted selling?',
+          dimension: 'teamLiteracy',
+          industrySpecific: true
+        }
+      ]
+    },
+    {
+      industry: 'Retail & B2C Sales',
       questions: [
         {
           id: 'retail_1',
@@ -282,11 +317,17 @@ export function IndustryQuestions({ onIndustryChange }: IndustryQuestionsProps) 
       regulations: ['OSHA', 'Building Codes', 'AIA Contracts', 'LEED Standards'],
       challenges: ['Fragmented project data', 'Workforce technology adoption', 'Subcontractor coordination', 'Estimating accuracy']
     },
-    'Retail & Sales': {
+    'Retail & B2C Sales': {
       keyFocus: ['Customer Experience', 'Inventory Management', 'Pricing Optimization', 'Marketing Automation'],
       commonUseCases: ['Recommendation Engines', 'Demand Forecasting', 'Fraud Detection', 'Chatbots'],
       regulations: ['PCI DSS', 'GDPR', 'CCPA', 'Consumer Protection Laws'],
       challenges: ['Data Integration', 'Real-time Processing', 'Seasonality', 'Customer Privacy']
+    },
+    'B2B Sales & Distribution': {
+      keyFocus: ['Lead Intelligence', 'Pipeline Management', 'Account Health Monitoring', 'Sales Forecasting'],
+      commonUseCases: ['Lead Scoring', 'Opportunity Forecasting', 'Churn Prediction', 'Automated Outreach'],
+      regulations: ['GDPR', 'CAN-SPAM', 'CCPA', 'Data Protection Laws'],
+      challenges: ['CRM data quality', 'Long sales cycles', 'Multi-stakeholder buying', 'Territory management']
     },
     Finance: {
       keyFocus: ['Risk Management', 'Fraud Detection', 'Algorithmic Trading', 'Regulatory Compliance'],
@@ -515,7 +556,10 @@ export function IndustryQuestions({ onIndustryChange }: IndustryQuestionsProps) 
                         {selectedIndustry === 'Construction' && (
                           <p className="text-sm text-blue-700">Construction AI focus: project scheduling optimization, site safety monitoring, and predictive cost analytics to reduce overruns.</p>
                         )}
-                        {selectedIndustry === 'Retail & Sales' && (
+                        {selectedIndustry === 'B2B Sales & Distribution' && (
+                          <p className="text-sm text-blue-700">B2B Sales AI focus: lead scoring, sales forecasting, and account intelligence to shorten cycles and improve win rates.</p>
+                        )}
+                        {selectedIndustry === 'Retail & B2C Sales' && (
                           <>
                             <li className="flex items-center gap-2">
                               <CheckCircle className="h-4 w-4" />

@@ -43,12 +43,20 @@ const industries = [
     aiApplications: ['Fraud detection', 'Risk assessment', 'Algorithmic trading']
   },
   {
-    id: 'Retail & Sales',
-    name: 'Retail & Sales',
+    id: 'Retail & B2C Sales',
+    name: 'Retail & B2C Sales',
     icon: Building2,
-    description: 'Online and offline retail, consumer goods, and marketplace platforms',
+    description: 'Online and offline retail, consumer goods, and marketplace platforms selling to end consumers',
     hasSpecializations: true,
     aiApplications: ['Personalization', 'Demand forecasting', 'Inventory optimization']
+  },
+  {
+    id: 'B2B Sales & Distribution',
+    name: 'B2B Sales & Distribution',
+    icon: Briefcase,
+    description: 'Companies selling products or services to other businesses, wholesalers, and distributors',
+    hasSpecializations: true,
+    aiApplications: ['Lead scoring', 'Sales forecasting', 'Account intelligence']
   },
   {
     id: 'Technology',

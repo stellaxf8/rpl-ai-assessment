@@ -12,7 +12,8 @@ const industryData = {
   "Construction": { avgScore: 52, topPerformer: 78, challenges: ["Fragmented project data", "Workforce adoption", "Estimating accuracy"] },
   "Healthcare": { avgScore: 62, topPerformer: 88, challenges: ["HIPAA compliance", "Patient data privacy", "System interoperability"] },
   "Financial Services": { avgScore: 71, topPerformer: 92, challenges: ["Regulatory compliance", "Data security", "Real-time processing"] },
-  "Retail & Sales": { avgScore: 65, topPerformer: 89, challenges: ["Customer data integration", "Inventory optimization", "Omnichannel consistency"] },
+  "Retail & B2C Sales": { avgScore: 65, topPerformer: 89, challenges: ["Customer data integration", "Inventory optimization", "Omnichannel consistency"] },
+  "B2B Sales & Distribution": { avgScore: 61, topPerformer: 83, challenges: ["CRM data quality", "Sales cycle visibility", "Account intelligence"] },
   "Technology": { avgScore: 78, topPerformer: 95, challenges: ["Scaling AI infrastructure", "Model governance", "Talent retention"] },
   "Other": { avgScore: 61, topPerformer: 87, challenges: ["Technology infrastructure", "Data quality", "Change management"] }
 };

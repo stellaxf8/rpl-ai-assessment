@@ -92,8 +92,8 @@ const industryBenchmarks: Record<string, IndustryBenchmark> = {
       'Predictive cost analytics improving bid accuracy by 15%'
     ]
   },
-  'Retail & Sales': {
-    industry: 'Retail & Sales',
+  'Retail & B2C Sales': {
+    industry: 'Retail & B2C Sales',
     averageScore: 71,
     topPerformerScore: 87,
     criticalAreas: ['Omnichannel Data Integration', 'Real-time Personalization', 'Inventory Optimization'],
@@ -108,6 +108,24 @@ const industryBenchmarks: Record<string, IndustryBenchmark> = {
       'AI personalization increasing conversion rates by 25%',
       'Demand forecasting reducing inventory costs by 18%',
       'Dynamic pricing optimization improving margins by 8%'
+    ]
+  },
+  'B2B Sales & Distribution': {
+    industry: 'B2B Sales & Distribution',
+    averageScore: 61,
+    topPerformerScore: 83,
+    criticalAreas: ['CRM Data Quality', 'Sales Pipeline Visibility', 'Customer Account Intelligence'],
+    strengths: ['Relationship Data Richness', 'Process Orientation', 'ROI Focus'],
+    recommendations: [
+      'Implement AI-powered lead scoring to prioritize sales efforts',
+      'Deploy sales forecasting models using CRM and pipeline data',
+      'Use account intelligence tools to identify expansion and churn risk',
+      'Automate quoting and proposal generation to shorten sales cycles'
+    ],
+    industryTrends: [
+      'AI lead scoring increasing sales conversion rates by 30%',
+      'Predictive forecasting improving revenue accuracy by 25%',
+      'Automated outreach tools reducing prospecting time by 40%'
     ]
   },
   'Education': {

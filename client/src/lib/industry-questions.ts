@@ -509,10 +509,66 @@ export const constructionVariations: IndustryQuestionVariation[] = [
   }
 ];
 
-// Retail & Sales-specific question variations
+// B2B Sales & Distribution-specific question variations
+export const b2bSalesVariations: IndustryQuestionVariation[] = [
+  {
+    industry: 'B2B Sales & Distribution',
+    questionId: 'technologyInfrastructure_1',
+    question: 'How would you describe your current CRM and sales technology stack?',
+    description: 'Consider your CRM system, sales automation tools, and analytics platforms. For Example: When a sales rep logs a call, does that automatically update forecasts and alert managers about deals at risk, or does pipeline reporting still rely on manual spreadsheet updates?',
+    options: [
+      { value: 1, text: 'Basic CRM usage', description: 'CRM used mainly as a contact database with limited automation' },
+      { value: 2, text: 'Some sales automation', description: 'Basic pipeline tracking and email automation in place' },
+      { value: 3, text: 'Integrated sales platform', description: 'CRM connected to marketing, quoting, and reporting tools' },
+      { value: 4, text: 'Advanced sales technology', description: 'Full sales stack with forecasting, account intelligence, and automation' },
+      { value: 5, text: 'AI-powered sales ecosystem', description: 'AI-driven lead scoring, predictive forecasting, and automated engagement across the sales cycle' }
+    ]
+  },
+  {
+    industry: 'B2B Sales & Distribution',
+    questionId: 'teamLiteracy_1',
+    question: 'How comfortable are your sales teams with data-driven selling and AI-assisted tools?',
+    description: 'Assess whether your reps and managers rely on data and AI tools or prefer gut-feel approaches. For Example: Would your sales team trust an AI recommendation about which leads to call first, or which accounts are most at risk of churning?',
+    options: [
+      { value: 1, text: 'Relationship-first approach', description: 'Teams rely on experience and relationships with limited data use' },
+      { value: 2, text: 'Basic data awareness', description: 'Reps review pipeline reports but rarely act on data insights' },
+      { value: 3, text: 'Growing data adoption', description: 'Managers use dashboards regularly; some reps open to AI-assisted tools' },
+      { value: 4, text: 'Data-driven sales culture', description: 'Teams actively use analytics and are comfortable with AI recommendations' },
+      { value: 5, text: 'AI-native sales team', description: 'Sales process built around AI insights for prospecting, prioritization, and forecasting' }
+    ]
+  },
+  {
+    industry: 'B2B Sales & Distribution',
+    questionId: 'dataQuality_5',
+    question: 'How complete and reliable is your customer and pipeline data for AI-driven insights?',
+    description: 'Consider the completeness of account records, contact data, deal history, and activity logs in your CRM. For Example: If you wanted to build a model to predict which deals will close this quarter, would your CRM data be clean and complete enough to do that reliably?',
+    options: [
+      { value: 1, text: 'Incomplete CRM data', description: 'Many records missing key fields; data entry is inconsistent' },
+      { value: 2, text: 'Basic data hygiene', description: 'Core account and contact info is maintained but deal history is patchy' },
+      { value: 3, text: 'Structured pipeline data', description: 'Consistent data entry with reasonable history for analysis' },
+      { value: 4, text: 'Analytics-ready data', description: 'Clean, well-structured CRM data with strong historical depth' },
+      { value: 5, text: 'AI-optimized sales data', description: 'Enriched account data, complete activity logs, and integrated market intelligence ready for AI modeling' }
+    ]
+  },
+  {
+    industry: 'B2B Sales & Distribution',
+    questionId: 'systemIntegration_1',
+    question: 'How well connected are your CRM, ERP, marketing, and quoting systems?',
+    description: 'Assess whether your sales, operations, and marketing tools share data automatically. For Example: When a customer places an order, does your sales team automatically see it in the CRM, and does marketing know to adjust their outreach accordingly?',
+    options: [
+      { value: 1, text: 'Disconnected systems', description: 'CRM, ERP, and marketing tools operate in silos with manual handoffs' },
+      { value: 2, text: 'Partial connections', description: 'Some data flows between systems but significant manual work remains' },
+      { value: 3, text: 'Moderate integration', description: 'Key systems connected with automated sync for most common workflows' },
+      { value: 4, text: 'Well-integrated stack', description: 'Sales, marketing, and operations share real-time data across the customer lifecycle' },
+      { value: 5, text: 'Unified revenue platform', description: 'Fully connected systems enabling AI-driven insights from first touch to renewal' }
+    ]
+  }
+];
+
+// Retail & B2C Sales-specific question variations
 export const retailVariations: IndustryQuestionVariation[] = [
   {
-    industry: 'Retail & Sales',
+    industry: 'Retail & B2C Sales',
     questionId: 'technologyInfrastructure_1',
     question: 'How would you describe your retail technology systems across all sales channels?',
     description: 'Consider your e-commerce platform, POS systems, inventory management, and customer data integration. For Example: When a customer shops both online and in-store, can you see their complete purchase history and preferences across all channels, or are these systems separate and disconnected?',
@@ -545,7 +601,7 @@ export const retailVariations: IndustryQuestionVariation[] = [
     ]
   },
   {
-    industry: 'Retail & Sales',
+    industry: 'Retail & B2C Sales',
     questionId: 'teamLiteracy_1',
     question: 'What is the level of retail technology and e-commerce AI knowledge among your teams?',
     description: 'Assess understanding of personalization engines, demand forecasting, and customer analytics. For Example: Do your teams understand how AI could automatically recommend products to customers, predict which items will sell well, or analyze shopping patterns to improve store layouts?',
@@ -578,7 +634,7 @@ export const retailVariations: IndustryQuestionVariation[] = [
     ]
   },
   {
-    industry: 'Retail & Sales',
+    industry: 'Retail & B2C Sales',
     questionId: 'dataQuality_5',
     question: 'How prepared is your customer and sales data for AI-driven personalization and demand forecasting?',
     description: 'Consider customer behavior data, inventory data, and sales metrics readiness for AI analysis. For Example: Do you have detailed information about what customers buy, when they shop, and how they browse that could be used to personalize their experience and predict future demand?',
@@ -611,7 +667,7 @@ export const retailVariations: IndustryQuestionVariation[] = [
     ]
   },
   {
-    industry: 'Retail & Sales',
+    industry: 'Retail & B2C Sales',
     questionId: 'systemIntegration_1',
     question: 'How well integrated are your e-commerce, inventory, and customer systems for AI implementation?',
     description: 'Assess the integration between online/offline channels, inventory management, and customer data systems. For Example: When inventory changes in one location, does it automatically update across all sales channels, and can you track a customer\'s complete shopping journey from website visits to in-store purchases?',
@@ -1800,7 +1856,7 @@ export const agricultureVariations: IndustryQuestionVariation[] = [
 
 // Function to get all supported industries
 export function getSupportedIndustries(): string[] {
-  return ['Healthcare', 'Manufacturing', 'Construction', 'Finance', 'Retail & Sales', 'Education', 'Technology', 'Government', 'Non-profit', 'Consulting', 'Media', 'Real Estate', 'Transportation', 'Energy', 'Agriculture'];
+  return ['Healthcare', 'Manufacturing', 'Construction', 'Finance', 'Retail & B2C Sales', 'B2B Sales & Distribution', 'Education', 'Technology', 'Government', 'Non-profit', 'Consulting', 'Media', 'Real Estate', 'Transportation', 'Energy', 'Agriculture'];
 }
 
 // Function to check if industry has specific variations

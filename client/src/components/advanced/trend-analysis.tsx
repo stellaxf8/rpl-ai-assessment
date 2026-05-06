@@ -24,7 +24,7 @@ export function TrendAnalysisComponent({ industry }: TrendAnalysisProps) {
         timeframe: 'Immediate' as const,
         description: 'Large language models and generative AI tools are being rapidly adopted across enterprises for content creation, code generation, and customer service automation.',
         relevanceScore: 95,
-        industries: ['Technology', 'Finance', 'Healthcare', 'Retail & Sales', 'Manufacturing', 'Education']
+        industries: ['Technology', 'Finance', 'Healthcare', 'Retail & B2C Sales', 'B2B Sales & Distribution', 'Manufacturing', 'Education']
       },
       {
         id: 'ai-governance-frameworks',
@@ -44,7 +44,7 @@ export function TrendAnalysisComponent({ industry }: TrendAnalysisProps) {
         timeframe: '1 year' as const,
         description: 'AI processing is moving closer to data sources with edge computing solutions, reducing latency and improving privacy for real-time applications.',
         relevanceScore: 78,
-        industries: ['Manufacturing', 'Healthcare', 'Retail & Sales', 'Technology']
+        industries: ['Manufacturing', 'Healthcare', 'Retail & B2C Sales', 'Technology']
       },
       {
         id: 'ai-as-a-service',
@@ -54,7 +54,7 @@ export function TrendAnalysisComponent({ industry }: TrendAnalysisProps) {
         timeframe: 'Immediate' as const,
         description: 'Cloud providers and specialized vendors are offering increasingly sophisticated AI services, making advanced AI capabilities accessible to organizations of all sizes.',
         relevanceScore: 92,
-        industries: ['Technology', 'Retail & Sales', 'Finance', 'Education', 'Non-profit']
+        industries: ['Technology', 'Retail & B2C Sales', 'B2B Sales & Distribution', 'Finance', 'Education', 'Non-profit']
       },
       {
         id: 'multimodal-ai',
@@ -64,7 +64,7 @@ export function TrendAnalysisComponent({ industry }: TrendAnalysisProps) {
         timeframe: '1 year' as const,
         description: 'AI systems that can process and understand multiple data types (text, images, audio, video) simultaneously are becoming more sophisticated and commercially viable.',
         relevanceScore: 82,
-        industries: ['Healthcare', 'Retail & Sales', 'Education', 'Technology']
+        industries: ['Healthcare', 'Retail & B2C Sales', 'Education', 'Technology']
       },
       {
         id: 'ai-security-threats',
@@ -94,7 +94,7 @@ export function TrendAnalysisComponent({ industry }: TrendAnalysisProps) {
         timeframe: 'Immediate' as const,
         description: 'Severe shortage of qualified AI professionals is driving up salaries and forcing organizations to invest heavily in training and retention programs.',
         relevanceScore: 93,
-        industries: ['Technology', 'Finance', 'Healthcare', 'Manufacturing', 'Retail & Sales']
+        industries: ['Technology', 'Finance', 'Healthcare', 'Manufacturing', 'Retail & B2C Sales', 'B2B Sales & Distribution']
       },
       {
         id: 'sustainable-ai',
@@ -114,7 +114,7 @@ export function TrendAnalysisComponent({ industry }: TrendAnalysisProps) {
         timeframe: '1 year' as const,
         description: 'Low-code and no-code AI platforms are making AI development accessible to non-technical users, accelerating adoption across all business functions.',
         relevanceScore: 87,
-        industries: ['Retail & Sales', 'Education', 'Non-profit', 'Technology']
+        industries: ['Retail & B2C Sales', 'B2B Sales & Distribution', 'Education', 'Non-profit', 'Technology']
       },
       {
         id: 'quantum-ai',
