@@ -455,30 +455,124 @@ export const financeVariations: IndustryQuestionVariation[] = [
 
 // Construction-specific question variations
 export const constructionVariations: IndustryQuestionVariation[] = [
+  // Technology Infrastructure
   {
     industry: 'Construction',
     questionId: 'technologyInfrastructure_1',
     question: 'How would you describe your current project management and construction technology systems?',
-    description: 'Consider your project scheduling, Building Information Modeling (BIM), and site management tools. For Example: Can your project managers see real-time progress, costs, and schedules across all active job sites in one place, or do they rely on spreadsheets and phone calls to get updates?',
+    description: 'Consider your project scheduling, BIM tools, estimating software, and site management apps. For Example: Can your project managers see real-time progress, costs, and schedules across all active job sites in one place, or do they rely on spreadsheets and phone calls to get updates?',
     options: [
-      { value: 1, text: 'Basic tools', description: 'Spreadsheets and paper-based project tracking' },
-      { value: 2, text: 'Some digital tools', description: 'Basic software for scheduling and estimating but limited integration' },
-      { value: 3, text: 'Integrated project platform', description: 'Good digital project management with connected scheduling and cost tracking' },
-      { value: 4, text: 'Advanced construction technology', description: 'BIM-enabled workflows with real-time site data and reporting' },
-      { value: 5, text: 'AI-ready digital construction', description: 'Fully integrated platform with IoT sensors, drones, and predictive analytics' }
+      { value: 1, text: 'Spreadsheets and paper', description: 'Project tracking done manually with limited digital tools' },
+      { value: 2, text: 'Basic construction software', description: 'Some digital tools for scheduling or estimating but they work independently' },
+      { value: 3, text: 'Integrated project platform', description: 'Connected scheduling, cost tracking, and field reporting in one system' },
+      { value: 4, text: 'Advanced construction technology', description: 'BIM-enabled workflows with real-time site data and automated reporting' },
+      { value: 5, text: 'AI-ready digital construction', description: 'Fully integrated platform with drones, IoT sensors, and predictive analytics across all sites' }
     ]
   },
   {
     industry: 'Construction',
-    questionId: 'teamLiteracy_1',
-    question: 'What is the level of technology and AI awareness among your project managers and site teams?',
-    description: 'Assess comfort with digital tools, data-driven decision making, and openness to AI-assisted planning. For Example: Would your site supervisors know how to use an app that flags safety hazards automatically, or flags when a project is trending over budget based on daily data?',
+    questionId: 'technologyInfrastructure_2',
+    question: 'How well can your systems handle data coming in from multiple active job sites at the same time?',
+    description: 'Think about progress photos, daily reports, equipment logs, and subcontractor updates across all your active projects. For Example: If you have five projects running simultaneously, can your office team see live cost and progress data from all of them without waiting for end-of-week reports?',
     options: [
-      { value: 1, text: 'Mostly traditional methods', description: 'Teams prefer established paper and phone-based workflows' },
-      { value: 2, text: 'Basic digital comfort', description: 'Comfortable with email and basic apps but limited adoption of construction software' },
-      { value: 3, text: 'Moderate technology literacy', description: 'Most teams use project management software with growing interest in AI tools' },
-      { value: 4, text: 'Strong digital capability', description: 'Teams actively use construction technology and understand AI use cases' },
-      { value: 5, text: 'Construction tech leaders', description: 'Teams champion digital tools and experiment with AI for scheduling, safety, and cost control' }
+      { value: 1, text: 'One project at a time', description: 'Difficult to track multiple sites; data arrives late or gets lost' },
+      { value: 2, text: 'Limited multi-site visibility', description: 'Some data from multiple sites but often delayed or incomplete' },
+      { value: 3, text: 'Reasonable multi-site tracking', description: 'Can manage several sites with acceptable reporting lag' },
+      { value: 4, text: 'Strong multi-site oversight', description: 'Good real-time visibility across all active projects' },
+      { value: 5, text: 'Full portfolio visibility', description: 'Live dashboards covering every site with automated alerts for issues' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'technologyInfrastructure_3',
+    question: 'How easily can your construction systems connect with new tools or subcontractor platforms?',
+    description: 'Consider how straightforward it is to link your existing software with a new tool — for example, a subcontractor bid portal, a drone analysis platform, or a safety inspection app. For Example: If a new subcontractor uses a different project platform, can your team receive their updates automatically, or does someone have to manually re-enter everything?',
+    options: [
+      { value: 1, text: 'Very difficult to connect', description: 'Each tool is an island; connecting anything requires major effort' },
+      { value: 2, text: 'Limited connectivity', description: 'Some connections possible but usually custom or manual' },
+      { value: 3, text: 'Moderate integration options', description: 'Most common construction tools can be linked with reasonable effort' },
+      { value: 4, text: 'Good integration capability', description: 'Systems connect well and share data reliably with partners and tools' },
+      { value: 5, text: 'Seamless connectivity', description: 'Open architecture that connects easily with any platform or subcontractor system' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'technologyInfrastructure_4',
+    question: 'How well can you monitor the real-time status of your active projects and equipment?',
+    description: 'Think about tracking schedule progress, equipment utilization, crew productivity, and cost burn rates as work is happening. For Example: If a project is trending over budget mid-way through, would your PM find out this week or at the end of the month when the cost report comes in?',
+    options: [
+      { value: 1, text: 'Mostly after-the-fact reporting', description: 'Issues are discovered through weekly or monthly reports, not in real time' },
+      { value: 2, text: 'Some live tracking', description: 'A few metrics visible in real time but most data is delayed' },
+      { value: 3, text: 'Good project monitoring', description: 'Regular updates on cost, schedule, and field progress with manageable lag' },
+      { value: 4, text: 'Near real-time visibility', description: 'Project dashboards updated daily with key performance indicators' },
+      { value: 5, text: 'Live site intelligence', description: 'Real-time dashboards with automated alerts for schedule slippage, cost overruns, or safety events' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'technologyInfrastructure_5',
+    question: 'How reliable is your internet and mobile connectivity at job sites and remote locations?',
+    description: 'Construction sites often have poor or no connectivity, which limits real-time data capture and communication. For Example: Can your foremen submit daily reports and access project drawings on their phones from the job site, or do they have to wait until they get back to the office trailer?',
+    options: [
+      { value: 1, text: 'Very limited site connectivity', description: 'Most job sites have poor or no reliable internet access' },
+      { value: 2, text: 'Inconsistent connectivity', description: 'Some sites have good connectivity but many rely on cellular with gaps' },
+      { value: 3, text: 'Acceptable field connectivity', description: 'Majority of sites can support mobile apps and basic data uploads' },
+      { value: 4, text: 'Good site connectivity', description: 'Reliable mobile and Wi-Fi at most sites, supporting real-time data capture' },
+      { value: 5, text: 'Full site connectivity infrastructure', description: 'Dedicated site networks and satellite backup ensuring connectivity at all locations' }
+    ]
+  },
+
+  // Data Quality & Access
+  {
+    industry: 'Construction',
+    questionId: 'dataQuality_1',
+    question: 'How consistent and accurate is the project data your teams capture across jobs?',
+    description: 'Think about bid estimates vs. actual costs, daily labor logs, material deliveries, RFIs, and change orders. For Example: If you compare the estimated labor cost for framing on last year\'s projects to what was actually spent, is that data easy to pull up and trust, or do the numbers often not add up?',
+    options: [
+      { value: 1, text: 'Inconsistent and unreliable', description: 'Project data is often missing, inaccurate, or recorded differently across sites' },
+      { value: 2, text: 'Partially reliable', description: 'Some data is tracked consistently but quality varies by project manager or site' },
+      { value: 3, text: 'Generally reliable', description: 'Core project data is captured consistently with some gaps' },
+      { value: 4, text: 'High quality project data', description: 'Consistent, accurate data across most projects with clear ownership' },
+      { value: 5, text: 'Verified, structured data', description: 'Clean, standardized project data validated at capture and ready for analysis' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'dataQuality_2',
+    question: 'How easily can your estimators, project managers, and executives access the project data they need?',
+    description: 'Consider whether key people can pull up job cost reports, subcontractor performance history, or past bid data without having to ask someone else for it. For Example: If your estimator is bidding a similar project to one completed two years ago, can they easily find the actual labor and material costs from that job to inform the new bid?',
+    options: [
+      { value: 1, text: 'Very difficult to access', description: 'Project data is locked in individual files, inboxes, or old systems' },
+      { value: 2, text: 'Limited self-service access', description: 'Some data available but usually requires help from another person to find it' },
+      { value: 3, text: 'Moderate accessibility', description: 'Most project data available with some searching and effort' },
+      { value: 4, text: 'Good data access', description: 'Key project reports and history accessible to the right people without barriers' },
+      { value: 5, text: 'On-demand project intelligence', description: 'Estimators, PMs, and executives can self-serve any project data instantly' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'dataQuality_3',
+    question: 'How standardized is the way your teams record project information across different jobs and site supervisors?',
+    description: 'Think about whether your daily reports, cost codes, change order logs, and safety records follow a consistent format regardless of who fills them in. For Example: If you hire a new project manager, can they immediately understand the records left by the previous PM, or does every PM have their own way of tracking things?',
+    options: [
+      { value: 1, text: 'No standard approach', description: 'Every PM or site supervisor tracks things their own way' },
+      { value: 2, text: 'Some informal standards', description: 'Loose conventions exist but not consistently followed' },
+      { value: 3, text: 'Defined standards, partial adoption', description: 'Standard templates and cost codes exist but compliance is inconsistent' },
+      { value: 4, text: 'Well-standardized processes', description: 'Consistent recording practices across most projects and teams' },
+      { value: 5, text: 'Enforced data standards', description: 'Standardized formats enforced by systems with validation at the point of entry' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'dataQuality_4',
+    question: 'How well documented are your completed projects, including lessons learned, bid accuracy, and subcontractor performance?',
+    description: 'Consider whether your company has a usable record of what went right and wrong on past projects to help future estimating and planning. For Example: Could your team quickly identify which subcontractors have a track record of delays on similar project types, based on data rather than just memory?',
+    options: [
+      { value: 1, text: 'Minimal project documentation', description: 'Completed projects leave little usable record beyond final invoices' },
+      { value: 2, text: 'Basic closeout records', description: 'Final cost summaries exist but lessons learned and performance notes are rare' },
+      { value: 3, text: 'Reasonable project history', description: 'Most projects documented with cost summaries and some notes on variances' },
+      { value: 4, text: 'Detailed project records', description: 'Good documentation of costs, schedules, subcontractor performance, and lessons learned' },
+      { value: 5, text: 'Searchable project knowledge base', description: 'Comprehensive, structured records from every project instantly searchable for future bids and planning' }
     ]
   },
   {
@@ -494,17 +588,272 @@ export const constructionVariations: IndustryQuestionVariation[] = [
       { value: 5, text: 'AI-optimized data pipeline', description: 'Real-time site data feeds into predictive models for cost, safety, and scheduling' }
     ]
   },
+
+  // Team AI Literacy
+  {
+    industry: 'Construction',
+    questionId: 'teamLiteracy_1',
+    question: 'What is the level of technology and AI awareness among your project managers and site teams?',
+    description: 'Assess comfort with digital tools, data-driven decision making, and openness to AI-assisted planning. For Example: Would your site supervisors know how to use an app that flags safety hazards automatically, or alerts them when a project is trending over budget based on daily data?',
+    options: [
+      { value: 1, text: 'Mostly traditional methods', description: 'Teams prefer established paper and phone-based workflows' },
+      { value: 2, text: 'Basic digital comfort', description: 'Comfortable with email and basic apps but limited adoption of construction software' },
+      { value: 3, text: 'Moderate technology literacy', description: 'Most teams use project management software with growing interest in AI tools' },
+      { value: 4, text: 'Strong digital capability', description: 'Teams actively use construction technology and understand AI use cases' },
+      { value: 5, text: 'Construction tech leaders', description: 'Teams champion digital tools and experiment with AI for scheduling, safety, and cost control' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'teamLiteracy_2',
+    question: 'How many of your project managers and estimators regularly use construction software and data tools in their day-to-day work?',
+    description: 'Think about tools like Procore, Buildertrend, PlanGrid, Sage, or similar platforms — not just email and spreadsheets. For Example: When your PMs do a cost-to-complete forecast, do they pull data from your project management system or build their own spreadsheet from scratch each time?',
+    options: [
+      { value: 1, text: 'Almost none', description: 'Most PMs and estimators work primarily from spreadsheets and paper' },
+      { value: 2, text: 'A few individuals', description: '1-2 people use construction software actively; others rarely log in' },
+      { value: 3, text: 'About half the team', description: 'Core project staff use the platform but field teams largely do not' },
+      { value: 4, text: 'Most of the team', description: 'Majority of PMs and estimators use construction software as their primary work tool' },
+      { value: 5, text: 'The entire project team', description: 'Everyone from estimators to foremen actively uses connected construction tools daily' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'teamLiteracy_3',
+    question: 'How open is your field workforce — foremen, superintendents, and trade crews — to using digital tools on the job site?',
+    description: 'Field adoption is often the hardest part of construction technology. For Example: If you rolled out a mobile app for foremen to submit daily reports digitally instead of on paper, would most of them use it willingly, or would you face significant pushback and workarounds?',
+    options: [
+      { value: 1, text: 'Strong resistance', description: 'Field teams strongly prefer paper and verbal communication; digital tools are seen as extra burden' },
+      { value: 2, text: 'Skeptical but tolerant', description: 'Some adoption when required, but workarounds are common and compliance is inconsistent' },
+      { value: 3, text: 'Neutral to cautiously open', description: 'Field teams will use tools if they are simple and they see clear benefits' },
+      { value: 4, text: 'Generally receptive', description: 'Most foremen and superintendents have adopted digital tools and see value in them' },
+      { value: 5, text: 'Tech-forward field culture', description: 'Field teams actively request better tools and quickly adopt new technology' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'teamLiteracy_4',
+    question: 'What training and support does your company provide for new construction technology and digital tools?',
+    description: 'Consider whether you have structured onboarding for software, ongoing support, and champions who help others adopt tools. For Example: When you roll out a new project management platform, do you run structured training sessions and assign someone to help teams through the transition, or does everyone just figure it out on their own?',
+    options: [
+      { value: 1, text: 'No formal training', description: 'People are expected to learn tools on their own with no organizational support' },
+      { value: 2, text: 'Minimal, informal support', description: 'Basic help available but no structured training or adoption program' },
+      { value: 3, text: 'Some training provided', description: 'Initial training offered for major platforms with limited ongoing support' },
+      { value: 4, text: 'Good training program', description: 'Structured onboarding and support for key tools with designated point people for help' },
+      { value: 5, text: 'Continuous learning culture', description: 'Ongoing training, internal champions, and a structured approach to technology adoption across all roles' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'teamLiteracy_5',
+    question: 'How well do your estimators and project managers use historical project data to analyze performance and improve future bids?',
+    description: 'Think about whether your team actively looks at past project results to refine estimates, spot patterns in cost overruns, or identify which project types are most profitable. For Example: At the end of a project, does your team sit down to compare estimated vs. actual costs by trade and use that analysis to sharpen the next bid, or does each project start fresh from gut feel?',
+    options: [
+      { value: 1, text: 'Little to no analysis', description: 'Past project data is rarely reviewed; estimates rely primarily on experience and intuition' },
+      { value: 2, text: 'Occasional review', description: 'Some PMs look back at completed projects but it is not a standard practice' },
+      { value: 3, text: 'Regular but informal analysis', description: 'Project debriefs happen occasionally and some findings feed into future bids' },
+      { value: 4, text: 'Consistent performance review', description: 'Structured post-project analysis is standard and findings are documented and shared' },
+      { value: 5, text: 'Data-driven continuous improvement', description: 'Systematic analysis of every project informs estimating models, risk assessments, and operational planning' }
+    ]
+  },
+
+  // System Integration
   {
     industry: 'Construction',
     questionId: 'systemIntegration_1',
     question: 'How well connected are your estimating, scheduling, accounting, and field management systems?',
-    description: 'Assess whether your core business systems share data or operate in silos. For Example: When a change order is approved in the field, does it automatically update your budget and schedule in the office, or does someone have to manually re-enter it into multiple systems?',
+    description: 'Assess whether your core business systems share data automatically or require manual re-entry. For Example: When a change order is approved in the field, does it automatically update your budget and schedule in the office, or does someone have to manually re-enter it into multiple systems?',
     options: [
-      { value: 1, text: 'Disconnected systems', description: 'Separate tools for estimating, accounting, and field work with manual data transfer' },
-      { value: 2, text: 'Partial connections', description: 'Some systems share data but significant manual reconciliation still required' },
+      { value: 1, text: 'Disconnected systems', description: 'Separate tools for estimating, accounting, and field work with manual data transfer between them' },
+      { value: 2, text: 'Partial connections', description: 'Some systems share data but significant manual reconciliation is still required' },
       { value: 3, text: 'Moderately integrated', description: 'Key systems connected with automated data flow for most common processes' },
-      { value: 4, text: 'Well-integrated platform', description: 'Estimating, scheduling, accounting, and field data are largely unified' },
-      { value: 5, text: 'Fully connected ecosystem', description: 'All systems share real-time data, enabling AI-driven project insights across the business' }
+      { value: 4, text: 'Well-integrated platform', description: 'Estimating, scheduling, accounting, and field data are largely unified with minimal manual handling' },
+      { value: 5, text: 'Fully connected ecosystem', description: 'All systems share real-time data, enabling AI-driven project insights across the entire business' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'systemIntegration_2',
+    question: 'How much do your teams rely on manual re-entry, spreadsheets, or email to move project information between systems?',
+    description: 'Think about how often data has to be copied from one system to another — for example, pulling a schedule from one tool and re-entering it into your accounting system. For Example: When your superintendent updates the project schedule, does that automatically flow to the cost forecast, or does someone in the office have to manually update the budget spreadsheet to match?',
+    options: [
+      { value: 1, text: 'Almost entirely manual', description: 'Project data moves almost exclusively through spreadsheets, email attachments, or manual re-entry' },
+      { value: 2, text: 'Frequent manual transfers', description: 'Manual data movement is common and takes significant staff time each week' },
+      { value: 3, text: 'Mix of manual and automated', description: 'Some data flows automatically but manual steps are still needed for many processes' },
+      { value: 4, text: 'Mostly automated', description: 'Core data flows happen automatically with only occasional manual intervention' },
+      { value: 5, text: 'Fully automated data flow', description: 'No manual re-entry needed; all systems share data in real time' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'systemIntegration_3',
+    question: 'How successfully has your company adopted new construction technology platforms in the past?',
+    description: 'Think about previous rollouts — whether they stuck, whether teams actually used the new systems, and whether the implementation delivered the benefits expected. For Example: The last time you introduced a major software platform, did your teams adopt it fully within a few months, or is there still a mix of people using the old system and the new one two years later?',
+    options: [
+      { value: 1, text: 'Poor track record', description: 'Most technology rollouts have stalled, been abandoned, or seen very low adoption' },
+      { value: 2, text: 'Mixed results', description: 'Some implementations worked well but others struggled to get traction' },
+      { value: 3, text: 'Generally successful', description: 'Most technology projects succeed with acceptable adoption, though some fall short of goals' },
+      { value: 4, text: 'Strong implementation capability', description: 'Technology rollouts are consistently well-managed with high adoption rates' },
+      { value: 5, text: 'Expert technology adoption', description: 'Proven track record of fast, successful implementation with strong ROI from every major technology investment' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'systemIntegration_4',
+    question: 'How well can your current systems accommodate adding new construction technology like drone analysis, IoT site sensors, or AI scheduling tools?',
+    description: 'Think about whether your existing platforms are open enough to connect with emerging tools, or whether adding something new would require replacing everything. For Example: If you wanted to pilot a drone-based progress monitoring tool on one project, could you feed that data into your existing project management system, or would it sit completely separate with no connection to your other data?',
+    options: [
+      { value: 1, text: 'Very difficult to extend', description: 'Adding new tools requires major system changes or complete replacements' },
+      { value: 2, text: 'Limited extensibility', description: 'New tools can be added but usually operate in isolation from existing systems' },
+      { value: 3, text: 'Moderately extensible', description: 'Can integrate new tools with reasonable effort on a case-by-case basis' },
+      { value: 4, text: 'Flexible architecture', description: 'Systems are designed to connect with new tools and field technology with manageable integration work' },
+      { value: 5, text: 'Fully open and modular', description: 'Platform built to plug in any new tool, sensor, or AI capability with minimal friction' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'systemIntegration_5',
+    question: 'How well can your systems act on data from your active job sites as it is being generated?',
+    description: 'Think about whether your team receives timely information to catch problems early, or whether they are always working from last week\'s numbers. For Example: If a project falls a week behind schedule on a Tuesday, would the project executive know by Wednesday, or would it only show up in the monthly progress report two weeks later?',
+    options: [
+      { value: 1, text: 'End-of-period reporting only', description: 'Site data only reviewed in weekly or monthly reports; real-time visibility does not exist' },
+      { value: 2, text: 'Delayed data with some exceptions', description: 'Most data is one to several days old by the time decision makers see it' },
+      { value: 3, text: 'Reasonably timely updates', description: 'Data is generally available within a day or two, enabling reasonable response times' },
+      { value: 4, text: 'Near real-time project data', description: 'Site data updated at least daily with prompt alerts for significant deviations' },
+      { value: 5, text: 'Live site intelligence', description: 'Real-time data streams from sites with automated alerts for cost, schedule, and safety issues as they occur' }
+    ]
+  },
+
+  // Budget & Resources
+  {
+    industry: 'Construction',
+    questionId: 'budget_1',
+    question: 'What budget has your company set aside for construction technology and AI initiatives?',
+    description: 'Think about dedicated spending for software subscriptions, hardware, implementation, and digital transformation projects — separate from day-to-day IT costs. For Example: Does your company have a line item in the annual budget specifically for evaluating and adopting new construction technology, or are these investments approved case-by-case when a specific need arises?',
+    options: [
+      { value: 1, text: 'No dedicated technology budget', description: 'No specific funds set aside for construction technology or AI exploration' },
+      { value: 2, text: 'Limited, case-by-case funding', description: 'Small amounts approved for specific tools when a clear need is demonstrated' },
+      { value: 3, text: 'Moderate technology budget', description: 'Reasonable annual allocation for software and technology improvements' },
+      { value: 4, text: 'Substantial technology investment', description: 'Significant budget committed to construction technology with room for new initiatives' },
+      { value: 5, text: 'Major strategic investment', description: 'Multi-year technology investment plan with executive sponsorship and dedicated resources' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'budget_2',
+    question: 'How willing is your leadership to invest in training project managers, estimators, and field supervisors on new digital tools?',
+    description: 'Consider whether your company treats technology training as a necessary cost of adoption, or as an optional add-on that often gets cut. For Example: When your company rolls out a new platform, does leadership allocate time and money for structured training sessions, or do people learn on the fly while working on live projects?',
+    options: [
+      { value: 1, text: 'No training investment', description: 'Leadership expects people to learn tools on their own time and at their own expense' },
+      { value: 2, text: 'Minimal training budget', description: 'Very limited resources for training; mostly self-directed learning' },
+      { value: 3, text: 'Moderate training commitment', description: 'Some structured training provided for major tools and platforms' },
+      { value: 4, text: 'Strong training investment', description: 'Leadership actively funds training as part of every technology rollout' },
+      { value: 5, text: 'Continuous skills development', description: 'Ongoing training program for all roles with regular upskilling on new construction technology' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'budget_3',
+    question: 'What resources does your company have to bring in construction technology specialists or develop internal expertise?',
+    description: 'Think about whether you can hire dedicated technology staff, engage outside consultants, or develop internal champions who can lead digital initiatives. For Example: If you decided to implement an AI-powered scheduling tool, do you have someone internally who could lead that project, or would you need to hire a consultant and build capability from scratch?',
+    options: [
+      { value: 1, text: 'No capacity for specialists', description: 'Cannot hire or engage technology-focused staff or consultants for digital initiatives' },
+      { value: 2, text: 'Very limited capacity', description: 'Could bring in occasional outside help but no ongoing resources for technology expertise' },
+      { value: 3, text: 'Moderate capacity', description: 'Can build a small internal team or engage consultants for specific projects' },
+      { value: 4, text: 'Good capacity for expertise', description: 'Can hire dedicated technology staff and engage specialists for major initiatives' },
+      { value: 5, text: 'Strong talent and resource base', description: 'Internal technology team in place with budget to bring in top specialists for strategic projects' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'budget_4',
+    question: 'How much can your company invest in construction-specific technology such as BIM software, drone programs, IoT site sensors, or AI planning tools?',
+    description: 'Think beyond basic project management software to more advanced tools that can transform how you build. For Example: Would your leadership approve budget for a drone-based site monitoring program that reduces surveying costs and catches rework early, or would that kind of investment be seen as too experimental?',
+    options: [
+      { value: 1, text: 'Very limited technology investment', description: 'Budget only covers essential software; advanced tools are not currently feasible' },
+      { value: 2, text: 'Basic tools only', description: 'Can afford standard project management software but not specialized or advanced platforms' },
+      { value: 3, text: 'Moderate advanced technology budget', description: 'Open to investing in one or two advanced tools if there is a clear ROI case' },
+      { value: 4, text: 'Strong technology investment appetite', description: 'Can invest in multiple advanced platforms and is actively evaluating new construction technology' },
+      { value: 5, text: 'Major technology investment program', description: 'Committed to being a technology leader in construction with budget to adopt best-in-class tools across the business' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'budget_5',
+    question: 'What return on investment timeline does your leadership expect from construction technology investments?',
+    description: 'Construction technology often takes time to show payback through improved margins, fewer change orders, or reduced rework. For Example: If a new AI scheduling tool could reduce project overruns by 10% but took 18 months to fully implement and show results, would your leadership see that as an acceptable investment?',
+    options: [
+      { value: 1, text: 'Immediate payback required', description: 'Leadership expects technology to pay for itself almost immediately; long-term investments are difficult to approve' },
+      { value: 2, text: 'Short payback period', description: 'Returns expected within a single project or fiscal year' },
+      { value: 3, text: 'Medium-term view', description: 'Willing to wait 1-2 years for technology investments to show clear returns' },
+      { value: 4, text: 'Long-term investment approach', description: 'Leadership understands that significant technology improvements take time and supports multi-year payback horizons' },
+      { value: 5, text: 'Strategic multi-year commitment', description: 'Technology investments evaluated as part of a long-term competitive strategy, not just short-term cost savings' }
+    ]
+  },
+
+  // Data Security & Privacy
+  {
+    industry: 'Construction',
+    questionId: 'dataSecurity_1',
+    question: 'How well does your company protect sensitive project data — including bid documents, contracts, subcontractor agreements, and client information?',
+    description: 'Think about whether your company has clear controls over who can access sensitive files and how project data is stored and shared. For Example: If a project manager left the company, would you be confident that they could no longer access your active bids, contract terms, and client contact information?',
+    options: [
+      { value: 1, text: 'Minimal data protection', description: 'Project files broadly accessible with little control over who can view or copy sensitive documents' },
+      { value: 2, text: 'Basic access controls', description: 'Some restrictions in place but gaps exist, especially for shared drives and email attachments' },
+      { value: 3, text: 'Good data security practices', description: 'Access controls and data handling policies are established and generally followed' },
+      { value: 4, text: 'Strong data protection program', description: 'Comprehensive controls covering project files, bids, and contracts with regular review' },
+      { value: 5, text: 'Enterprise-grade project data security', description: 'Industry-leading controls protecting all project data with role-based access, encryption, and audit logs' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'dataSecurity_2',
+    question: 'How aware is your team of data privacy and security obligations related to client data, government contracts, and worker information?',
+    description: 'Construction companies handling government work, sensitive client projects, or worker personal data may have specific privacy and security requirements. For Example: If your company bids on government or public sector projects, does your team understand what data security standards those contracts require, and are those standards already met?',
+    options: [
+      { value: 1, text: 'Very limited awareness', description: 'Little understanding of data privacy requirements in construction contracts or regulations' },
+      { value: 2, text: 'Basic awareness', description: 'Some understanding of privacy obligations but not consistently applied across the business' },
+      { value: 3, text: 'Good working knowledge', description: 'Team understands key privacy obligations and applies them to most projects' },
+      { value: 4, text: 'Strong compliance awareness', description: 'Well-informed about all relevant privacy and security requirements with clear processes to meet them' },
+      { value: 5, text: 'Leading compliance program', description: 'Comprehensive privacy and security compliance program meeting the most demanding client and regulatory standards' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'dataSecurity_3',
+    question: 'How prepared is your company to respond if project data, financial records, or client information is lost, breached, or held for ransom?',
+    description: 'Ransomware attacks on construction companies are increasingly common, and losing project data mid-build can be extremely costly. For Example: If your project management system was locked by a ransomware attack on a Monday morning, does your company have a tested response plan that would get your teams back to work quickly, or would it be a chaotic scramble to figure out next steps?',
+    options: [
+      { value: 1, text: 'No incident response plan', description: 'No plan or procedures in place for a data breach or ransomware attack' },
+      { value: 2, text: 'Basic awareness only', description: 'Some understanding of what to do but no documented or tested response procedures' },
+      { value: 3, text: 'Basic incident response plan', description: 'A plan exists and key people know their roles, though it has not been tested recently' },
+      { value: 4, text: 'Practiced response capability', description: 'Documented plan that has been tested, with regular backups and clear communication protocols' },
+      { value: 5, text: 'Comprehensive incident response program', description: 'Fully tested response plan with regular drills, robust backups, and cyber insurance in place' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'dataSecurity_4',
+    question: 'What controls does your company have over who can access sensitive bid documents, contract terms, and financial data?',
+    description: 'Think about whether access to critical information is restricted to the right people, especially when working with multiple subcontractors, partners, and client teams. For Example: When you share a detailed bid estimate with a subcontractor for pricing, can you ensure they only see the portions relevant to their scope, or does everyone on the project get access to the full cost breakdown?',
+    options: [
+      { value: 1, text: 'Very limited access controls', description: 'Sensitive documents broadly accessible; little restriction on who can view or share project financials' },
+      { value: 2, text: 'Basic controls', description: 'Some password protection or folder restrictions but not consistently applied' },
+      { value: 3, text: 'Good access management', description: 'Clear policies on who can access what, with role-based restrictions on key documents' },
+      { value: 4, text: 'Strong access controls', description: 'Comprehensive role-based access with logging and review of who accesses sensitive project data' },
+      { value: 5, text: 'Enterprise-grade access governance', description: 'Multi-factor authentication, granular permissions, and full audit trails for all sensitive project data' }
+    ]
+  },
+  {
+    industry: 'Construction',
+    questionId: 'dataSecurity_5',
+    question: 'How does your company handle sensitive worker information — such as payroll data, injury records, and personal details — when it flows across your project systems?',
+    description: 'Construction companies often manage workforce data across multiple systems, subcontractors, and job sites, creating privacy risks if not handled carefully. For Example: When a subcontractor submits certified payroll records for a prevailing wage project, does your company have a secure, controlled process for handling that data, or does it get emailed around and stored inconsistently?',
+    options: [
+      { value: 1, text: 'No formal data handling practices', description: 'Worker data managed informally with no clear standards for storage, access, or sharing' },
+      { value: 2, text: 'Basic data handling', description: 'Some care taken with sensitive worker data but inconsistent practices across projects' },
+      { value: 3, text: 'Defined data handling policies', description: 'Clear guidelines for managing worker data with generally good compliance' },
+      { value: 4, text: 'Strong privacy practices', description: 'Secure processes for worker data across all projects with training and oversight' },
+      { value: 5, text: 'Leading workforce data governance', description: 'Comprehensive, audited data handling for all worker information meeting the highest privacy standards' }
     ]
   }
 ];
