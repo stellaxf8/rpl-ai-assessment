@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowLeft, ArrowRight, Server, Database, Users, Puzzle, DollarSign, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -69,6 +69,8 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [responses, setResponses] = useState<Record<string, number>>({});
 
+  const selectedIndustryRef = useRef(selectedIndustry);
+  useEffect(() => { selectedIndustryRef.current = selectedIndustry; }, [selectedIndustry]);
 
   // Reset function to clear all assessment state
   const resetAssessment = () => {
@@ -238,7 +240,36 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const canGoNext = responses[currentQuestionData?.id];
   const canGoPrevious = currentQuestion > 0;
 
+  const generateDemoSample = () => {
+    const demoResponses: Record<string, number> = {};
+    assessmentQuestions.forEach((question: Question) => {
+      const randomValue = Math.random();
+      let response: number;
+      if (randomValue < 0.1) response = 1;
+      else if (randomValue < 0.25) response = 2;
+      else if (randomValue < 0.5) response = 3;
+      else if (randomValue < 0.8) response = 4;
+      else response = 5;
+      demoResponses[question.id] = response;
+    });
+    setResponses(demoResponses);
+    submitAssessment.mutate({
+      industry: selectedIndustryRef.current || "Technology",
+      responses: demoResponses,
+    });
+  };
 
+  // Hidden keyboard shortcut for demo sample (Ctrl+Shift+F)
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.shiftKey && event.key === 'F') {
+        event.preventDefault();
+        generateDemoSample();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const getDimensionProgress = () => {
     const dimensionQuestions = assessmentQuestions.filter((q: Question) => q.dimension === currentQuestionData.dimension);
