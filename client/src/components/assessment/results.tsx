@@ -293,43 +293,152 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
     // Take the top 3 lowest scoring dimensions
     const top3Lowest = allDimensions.slice(0, 3);
 
+    // Determine industry cluster for tailored recommendations
+    const dataHeavyIndustries = ['Healthcare', 'Finance', 'Government'];
+    const customerFacingIndustries = ['Retail & B2C Sales', 'Media', 'B2B Sales & Distribution'];
+    const operationsHeavyIndustries = ['Manufacturing', 'Construction', 'Transportation', 'Energy', 'Agriculture'];
+    const industryCluster: 'dataHeavy' | 'customerFacing' | 'operationsHeavy' | 'knowledge' =
+      dataHeavyIndustries.includes(industry) ? 'dataHeavy' :
+      customerFacingIndustries.includes(industry) ? 'customerFacing' :
+      operationsHeavyIndustries.includes(industry) ? 'operationsHeavy' :
+      'knowledge';
+
+    const clusterActionItems = {
+      dataHeavy: {
+        technologyInfrastructure: {
+          high: "Upgrade to compliance-ready cloud infrastructure and implement GPU computing for large-scale data processing and clinical or regulatory workloads",
+          medium: "Audit current infrastructure for compliance gaps and plan scalable AI computing resources that meet industry data residency requirements",
+          low: "Establish foundational cloud infrastructure with compliance controls and AI-ready capabilities suited to regulated data environments"
+        },
+        dataQuality: {
+          high: "Implement advanced data governance policies, automated quality monitoring, and audit trails suited to regulatory reporting and compliance requirements",
+          medium: "Create a data quality framework with formal data access protocols that account for patient, citizen, or financial data sensitivity",
+          low: "Start with a basic data inventory across regulated data sources and implement data cleansing processes that preserve compliance requirements"
+        },
+        teamLiteracy: {
+          high: "Develop an AI leadership program focused on responsible AI use in regulated environments and establish centers of excellence around compliance-aware AI applications",
+          medium: "Launch a comprehensive AI training program covering AI tools relevant to clinical, financial, or public sector workflows and their compliance implications",
+          low: "Begin with AI fundamentals training tailored to regulated industries and prioritize hiring personnel with experience in compliant AI deployment"
+        },
+        systemIntegration: {
+          high: "Design a sophisticated AI integration architecture that connects clinical, financial, or government systems while maintaining data segregation and audit requirements",
+          medium: "Evaluate current system APIs and plan an integration roadmap that accounts for legacy health, financial, or government platforms and their interoperability constraints",
+          low: "Modernize legacy systems and establish an API-first architecture that enables compliant data exchange between regulated systems"
+        },
+        budget: {
+          high: "Allocate a dedicated AI transformation budget with multi-year planning that accounts for compliance infrastructure, audit tooling, and specialized talent in regulated domains",
+          medium: "Secure additional budget for AI infrastructure and training, with specific allocation for compliance validation and risk management capabilities",
+          low: "Develop a business case for AI investment that emphasizes risk reduction and efficiency gains in regulated workflows, and seek approval for initial funding"
+        },
+        dataSecurity: {
+          high: "Enhance AI-specific security controls with advanced privacy-preserving techniques suited to sensitive patient, financial, or citizen data",
+          medium: "Strengthen cybersecurity framework and implement privacy compliance with data anonymization protocols aligned to your industry's regulatory requirements",
+          low: "Establish foundational security controls and privacy compliance capabilities specific to your regulatory environment before any AI data processing begins"
+        }
+      },
+      customerFacing: {
+        technologyInfrastructure: {
+          high: "Upgrade to AI-optimized cloud instances capable of handling real-time customer data, high transaction volumes, and personalization at scale",
+          medium: "Audit current infrastructure and plan scalable AI computing resources that can support customer-facing applications and peak demand periods",
+          low: "Establish foundational cloud infrastructure with AI-ready capabilities, prioritizing uptime and scalability for customer-facing systems"
+        },
+        dataQuality: {
+          high: "Implement advanced data governance and automated quality monitoring across customer touchpoints, transaction systems, and behavioral data sources",
+          medium: "Create a data quality framework and establish access protocols that consolidate customer data across channels into a unified view",
+          low: "Start with a basic inventory of customer data sources and implement cleansing processes to remove duplicates and inconsistencies"
+        },
+        teamLiteracy: {
+          high: "Develop an AI leadership program focused on customer experience applications and establish centers of excellence around personalization, demand forecasting, and campaign optimization",
+          medium: "Launch a comprehensive AI training program for marketing, sales, and operations staff covering customer-facing AI tools and use cases",
+          low: "Begin with AI fundamentals training focused on customer-facing applications and hire AI-experienced personnel familiar with retail or media environments"
+        },
+        systemIntegration: {
+          high: "Design a sophisticated AI integration architecture connecting e-commerce, CRM, POS, and marketing platforms for unified customer intelligence and automation",
+          medium: "Evaluate current system APIs and plan an integration roadmap that connects customer data across sales, service, and marketing platforms",
+          low: "Modernize legacy systems and establish an API-first architecture that enables customer data to flow across channels without manual intervention"
+        },
+        budget: {
+          high: "Allocate a dedicated AI transformation budget with multi-year planning focused on customer experience, personalization infrastructure, and revenue-generating AI applications",
+          medium: "Secure additional budget for AI infrastructure and training, prioritizing tools that directly impact customer acquisition, retention, and lifetime value",
+          low: "Develop a business case for AI investment that highlights competitive differentiation and customer experience ROI, and seek approval for initial funding"
+        },
+        dataSecurity: {
+          high: "Enhance AI-specific security controls with advanced privacy-preserving techniques for customer behavioral data, purchase history, and personally identifiable information",
+          medium: "Strengthen cybersecurity framework and implement privacy compliance with data anonymization for customer data, including consent management and breach notification protocols",
+          low: "Establish foundational security controls and privacy compliance capabilities covering customer data collection, storage, and usage before AI implementation"
+        }
+      },
+      operationsHeavy: {
+        technologyInfrastructure: {
+          high: "Upgrade to AI-optimized infrastructure with edge computing capabilities to support real-time operational data from field equipment, sensors, and logistics systems",
+          medium: "Audit current infrastructure and plan AI computing resources that can integrate with operational technology (OT) and field data sources",
+          low: "Establish foundational cloud infrastructure with AI-ready capabilities and basic connectivity to operational systems and equipment"
+        },
+        dataQuality: {
+          high: "Implement advanced data governance and automated quality monitoring across operational data streams including equipment sensors, logistics feeds, and production records",
+          medium: "Create a data quality framework and establish access protocols for operational data sources, including IoT and field-generated data",
+          low: "Start with a basic inventory of operational data sources and implement cleansing processes for high-volume, inconsistently formatted field data"
+        },
+        teamLiteracy: {
+          high: "Develop an AI leadership program for operations and engineering teams, and establish centers of excellence around predictive maintenance, supply chain optimization, and process automation",
+          medium: "Launch a comprehensive AI training program for operations managers and field staff covering AI tools relevant to production, logistics, and asset management",
+          low: "Begin with AI fundamentals training for operations and field teams, focusing on practical tools for process monitoring, scheduling, and reporting"
+        },
+        systemIntegration: {
+          high: "Design a sophisticated AI integration architecture connecting ERP, supply chain, equipment monitoring, and field systems for end-to-end operational visibility",
+          medium: "Evaluate current system APIs and plan an integration roadmap that bridges operational technology (OT) with information technology (IT) systems",
+          low: "Modernize legacy operational systems and establish an API-first architecture that enables data flow between field equipment, planning tools, and reporting systems"
+        },
+        budget: {
+          high: "Allocate a dedicated AI transformation budget with multi-year planning focused on operational efficiency, predictive maintenance, and supply chain optimization",
+          medium: "Secure additional budget for AI infrastructure and training, with priority on tools that reduce downtime, waste, and operational costs",
+          low: "Develop a business case for AI investment centered on measurable operational savings and seek approval for pilot funding in a single operational area"
+        },
+        dataSecurity: {
+          high: "Enhance AI-specific security controls for operational technology environments, including protections for equipment data, supply chain information, and proprietary process data",
+          medium: "Strengthen cybersecurity framework across IT and OT environments and implement data protection controls for sensitive operational and vendor data",
+          low: "Establish foundational security controls covering operational systems and field data sources, with clear protocols for what data can be used in AI models"
+        }
+      },
+      knowledge: {
+        technologyInfrastructure: {
+          high: "Upgrade to AI-optimized cloud instances and implement GPU computing for knowledge management, document processing, and analytical workloads",
+          medium: "Audit current infrastructure and plan scalable AI computing resources aligned to knowledge work and collaboration needs",
+          low: "Establish foundational cloud infrastructure with AI-ready capabilities suitable for document-heavy and research-oriented workflows"
+        },
+        dataQuality: {
+          high: "Implement advanced data governance policies and automated quality monitoring across internal knowledge bases, client records, and project data",
+          medium: "Create a data quality framework and establish data access protocols for unstructured and document-heavy data sources",
+          low: "Start with a basic data inventory and implement cleansing processes for unstructured content and legacy document repositories"
+        },
+        teamLiteracy: {
+          high: "Develop an AI leadership program for senior practitioners and establish centers of excellence around knowledge management, research acceleration, and AI-assisted delivery",
+          medium: "Launch a comprehensive AI training program for consultants, educators, or program staff covering AI tools for knowledge work and client or stakeholder delivery",
+          low: "Begin with AI fundamentals training and hire AI-experienced personnel who can apply AI to research, content, and advisory workflows"
+        },
+        systemIntegration: {
+          high: "Design a sophisticated AI integration architecture connecting knowledge management, project delivery, CRM, and research platforms for intelligent workflow automation",
+          medium: "Evaluate current system APIs and plan an integration roadmap that connects client management, document, and collaboration platforms",
+          low: "Modernize legacy systems and establish an API-first architecture that enables knowledge and project data to flow across tools and teams"
+        },
+        budget: {
+          high: "Allocate a dedicated AI transformation budget with multi-year planning focused on knowledge worker productivity, delivery quality, and competitive differentiation",
+          medium: "Secure additional budget for AI infrastructure and training, prioritizing tools that accelerate research, content production, and client or stakeholder delivery",
+          low: "Develop a business case for AI investment that quantifies time savings and quality improvements in core knowledge work, and seek approval for initial funding"
+        },
+        dataSecurity: {
+          high: "Enhance AI-specific security controls and advanced privacy-preserving techniques for confidential client data, proprietary research, and sensitive organizational knowledge",
+          medium: "Strengthen cybersecurity framework and implement privacy compliance with data anonymization for client records and internal knowledge assets",
+          low: "Establish foundational security controls and privacy compliance capabilities covering client confidentiality and data handling obligations before AI implementation"
+        }
+      }
+    };
+
+    const actionItems = clusterActionItems[industryCluster];
+
     return top3Lowest.map((item, index) => {
       const level = getScoreLevel(item.score);
       const urgency = index === 0 ? "Critical" : index === 1 ? "High" : "Medium";
-      
-      // Generate specific action items based on dimension and score level
-      const actionItems = {
-        technologyInfrastructure: {
-          high: "Upgrade to AI-optimized cloud instances and implement GPU computing",
-          medium: "Audit current infrastructure and plan scalable AI computing resources",
-          low: "Establish foundational cloud infrastructure with AI-ready capabilities"
-        },
-        dataQuality: {
-          high: "Implement advanced data governance policies and automated quality monitoring",
-          medium: "Create data quality framework and establish data access protocols",
-          low: "Start with basic data inventory and implement data cleansing processes"
-        },
-        teamLiteracy: {
-          high: "Develop AI leadership program and establish centers of excellence",
-          medium: "Launch comprehensive AI training program for key staff members",
-          low: "Begin with AI fundamentals training and hire AI-experienced personnel"
-        },
-        systemIntegration: {
-          high: "Design sophisticated AI integration architecture with existing systems",
-          medium: "Evaluate current system APIs and plan integration roadmap",
-          low: "Modernize legacy systems and establish API-first architecture"
-        },
-        budget: {
-          high: "Allocate dedicated AI transformation budget with multi-year planning",
-          medium: "Secure additional budget for AI infrastructure and training",
-          low: "Develop business case and seek approval for AI investment funding"
-        },
-        dataSecurity: {
-          high: "Enhance AI-specific security controls and advanced privacy-preserving techniques",
-          medium: "Strengthen cybersecurity framework and implement privacy compliance with data anonymization",
-          low: "Establish foundational security controls, privacy compliance, and data protection capabilities"
-        }
-      };
 
       const explanation =
         urgency === "Critical"
