@@ -440,11 +440,13 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
     const dataHeavyIndustries = ['Healthcare', 'Finance', 'Government'];
     const customerFacingIndustries = ['Retail & B2C Sales', 'Media', 'B2B Sales & Distribution'];
     const operationsHeavyIndustries = ['Manufacturing', 'Construction', 'Transportation', 'Energy', 'Agriculture'];
+    console.log('[CLUSTER DEBUG] industry value:', JSON.stringify(industry), '| charCodes:', [...(industry||'')].map(c=>c.charCodeAt(0)));
     const industryCluster: 'dataHeavy' | 'customerFacing' | 'operationsHeavy' | 'knowledge' =
       dataHeavyIndustries.includes(industry) ? 'dataHeavy' :
       customerFacingIndustries.includes(industry) ? 'customerFacing' :
       operationsHeavyIndustries.includes(industry) ? 'operationsHeavy' :
       'knowledge';
+    console.log('[CLUSTER DEBUG] resolved cluster:', industryCluster);
 
     const clusterActionItems = {
       dataHeavy: {
