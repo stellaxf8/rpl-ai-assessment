@@ -69,18 +69,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [responses, setResponses] = useState<Record<string, number>>({});
 
-  // Hidden keyboard shortcut for demo sample (Ctrl+Shift+D)
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.ctrlKey && event.shiftKey && event.key === 'D') {
-        event.preventDefault();
-        generateDemoSample();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
 
   // Reset function to clear all assessment state
   const resetAssessment = () => {
@@ -251,33 +239,6 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
   const canGoPrevious = currentQuestion > 0;
 
 
-  const generateDemoSample = () => {
-    const demoResponses: Record<string, number> = {};
-    
-    // Generate realistic demo responses that create a moderate to good readiness score
-    assessmentQuestions.forEach((question: Question) => {
-      // Create a realistic distribution with slight bias toward positive responses
-      const randomValue = Math.random();
-      let response: number;
-      
-      if (randomValue < 0.1) response = 1; // 10% - Poor
-      else if (randomValue < 0.25) response = 2; // 15% - Below Average
-      else if (randomValue < 0.5) response = 3; // 25% - Average
-      else if (randomValue < 0.8) response = 4; // 30% - Good
-      else response = 5; // 20% - Excellent
-      
-      demoResponses[question.id] = response;
-    });
-
-    setResponses(demoResponses);
-    // Immediately submit demo assessment with fallback industry
-    submitAssessment.mutate({
-      industry: selectedIndustry || "Technology", // Fallback to Technology if industry not selected
-      responses: demoResponses,
-    });
-    
-    // Demo sample generated
-  };
 
   const getDimensionProgress = () => {
     const dimensionQuestions = assessmentQuestions.filter((q: Question) => q.dimension === currentQuestionData.dimension);
