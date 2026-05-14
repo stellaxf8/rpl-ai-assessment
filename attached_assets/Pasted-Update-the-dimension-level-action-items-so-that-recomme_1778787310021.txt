@@ -1,0 +1,157 @@
+Update the dimension-level action items so that recommendations vary based on both the user's selected industry and their per-dimension score tier (High = 4.0-5.0, Medium = 2.5-3.9, Low = 0-2.4).
+
+Map industries to clusters as follows:
+- **Data-heavy:** Healthcare, Financial Services, Government & Public Sector
+- **Customer-facing:** Retail & B2C Sales, Media & Entertainment, B2B Sales & Distribution
+- **Operations-heavy:** Manufacturing, Construction, Transportation & Logistics, Energy & Utilities, Agriculture & Food
+- **Knowledge:** Consulting, Education, Non-profit, Technology, Real Estate
+
+Replace the existing static actionItems object with the following cluster-based version. The logic should first determine the user's industry cluster, then look up the correct recommendation by dimension and score tier.
+
+---
+
+### Technology Infrastructure
+
+**Data-heavy**
+- High: "Upgrade to compliance-ready cloud infrastructure and implement GPU computing for large-scale data processing and clinical or regulatory workloads"
+- Medium: "Audit current infrastructure for compliance gaps and plan scalable AI computing resources that meet industry data residency requirements"
+- Low: "Establish foundational cloud infrastructure with compliance controls and AI-ready capabilities suited to regulated data environments"
+
+**Customer-facing**
+- High: "Upgrade to AI-optimized cloud instances capable of handling real-time customer data, high transaction volumes, and personalization at scale"
+- Medium: "Audit current infrastructure and plan scalable AI computing resources that can support customer-facing applications and peak demand periods"
+- Low: "Establish foundational cloud infrastructure with AI-ready capabilities, prioritizing uptime and scalability for customer-facing systems"
+
+**Operations-heavy**
+- High: "Upgrade to AI-optimized infrastructure with edge computing capabilities to support real-time operational data from field equipment, sensors, and logistics systems"
+- Medium: "Audit current infrastructure and plan AI computing resources that can integrate with operational technology (OT) and field data sources"
+- Low: "Establish foundational cloud infrastructure with AI-ready capabilities and basic connectivity to operational systems and equipment"
+
+**Knowledge**
+- High: "Upgrade to AI-optimized cloud instances and implement GPU computing for knowledge management, document processing, and analytical workloads"
+- Medium: "Audit current infrastructure and plan scalable AI computing resources aligned to knowledge work and collaboration needs"
+- Low: "Establish foundational cloud infrastructure with AI-ready capabilities suitable for document-heavy and research-oriented workflows"
+
+---
+
+### Data Quality & Access
+
+**Data-heavy**
+- High: "Implement advanced data governance policies, automated quality monitoring, and audit trails suited to regulatory reporting and compliance requirements"
+- Medium: "Create a data quality framework with formal data access protocols that account for patient, citizen, or financial data sensitivity"
+- Low: "Start with a basic data inventory across regulated data sources and implement data cleansing processes that preserve compliance requirements"
+
+**Customer-facing**
+- High: "Implement advanced data governance and automated quality monitoring across customer touchpoints, transaction systems, and behavioral data sources"
+- Medium: "Create a data quality framework and establish access protocols that consolidate customer data across channels into a unified view"
+- Low: "Start with a basic inventory of customer data sources and implement cleansing processes to remove duplicates and inconsistencies"
+
+**Operations-heavy**
+- High: "Implement advanced data governance and automated quality monitoring across operational data streams including equipment sensors, logistics feeds, and production records"
+- Medium: "Create a data quality framework and establish access protocols for operational data sources, including IoT and field-generated data"
+- Low: "Start with a basic inventory of operational data sources and implement cleansing processes for high-volume, inconsistently formatted field data"
+
+**Knowledge**
+- High: "Implement advanced data governance policies and automated quality monitoring across internal knowledge bases, client records, and project data"
+- Medium: "Create a data quality framework and establish data access protocols for unstructured and document-heavy data sources"
+- Low: "Start with a basic data inventory and implement cleansing processes for unstructured content and legacy document repositories"
+
+---
+
+### Team AI Literacy
+
+**Data-heavy**
+- High: "Develop an AI leadership program focused on responsible AI use in regulated environments and establish centers of excellence around compliance-aware AI applications"
+- Medium: "Launch a comprehensive AI training program covering AI tools relevant to clinical, financial, or public sector workflows and their compliance implications"
+- Low: "Begin with AI fundamentals training tailored to regulated industries and prioritize hiring personnel with experience in compliant AI deployment"
+
+**Customer-facing**
+- High: "Develop an AI leadership program focused on customer experience applications and establish centers of excellence around personalization, demand forecasting, and campaign optimization"
+- Medium: "Launch a comprehensive AI training program for marketing, sales, and operations staff covering customer-facing AI tools and use cases"
+- Low: "Begin with AI fundamentals training focused on customer-facing applications and hire AI-experienced personnel familiar with retail or media environments"
+
+**Operations-heavy**
+- High: "Develop an AI leadership program for operations and engineering teams, and establish centers of excellence around predictive maintenance, supply chain optimization, and process automation"
+- Medium: "Launch a comprehensive AI training program for operations managers and field staff covering AI tools relevant to production, logistics, and asset management"
+- Low: "Begin with AI fundamentals training for operations and field teams, focusing on practical tools for process monitoring, scheduling, and reporting"
+
+**Knowledge**
+- High: "Develop an AI leadership program for senior practitioners and establish centers of excellence around knowledge management, research acceleration, and AI-assisted delivery"
+- Medium: "Launch a comprehensive AI training program for consultants, educators, or program staff covering AI tools for knowledge work and client or stakeholder delivery"
+- Low: "Begin with AI fundamentals training and hire AI-experienced personnel who can apply AI to research, content, and advisory workflows"
+
+---
+
+### System Integration
+
+**Data-heavy**
+- High: "Design a sophisticated AI integration architecture that connects clinical, financial, or government systems while maintaining data segregation and audit requirements"
+- Medium: "Evaluate current system APIs and plan an integration roadmap that accounts for legacy health, financial, or government platforms and their interoperability constraints"
+- Low: "Modernize legacy systems and establish an API-first architecture that enables compliant data exchange between regulated systems"
+
+**Customer-facing**
+- High: "Design a sophisticated AI integration architecture connecting e-commerce, CRM, POS, and marketing platforms for unified customer intelligence and automation"
+- Medium: "Evaluate current system APIs and plan an integration roadmap that connects customer data across sales, service, and marketing platforms"
+- Low: "Modernize legacy systems and establish an API-first architecture that enables customer data to flow across channels without manual intervention"
+
+**Operations-heavy**
+- High: "Design a sophisticated AI integration architecture connecting ERP, supply chain, equipment monitoring, and field systems for end-to-end operational visibility"
+- Medium: "Evaluate current system APIs and plan an integration roadmap that bridges operational technology (OT) with information technology (IT) systems"
+- Low: "Modernize legacy operational systems and establish an API-first architecture that enables data flow between field equipment, planning tools, and reporting systems"
+
+**Knowledge**
+- High: "Design a sophisticated AI integration architecture connecting knowledge management, project delivery, CRM, and research platforms for intelligent workflow automation"
+- Medium: "Evaluate current system APIs and plan an integration roadmap that connects client management, document, and collaboration platforms"
+- Low: "Modernize legacy systems and establish an API-first architecture that enables knowledge and project data to flow across tools and teams"
+
+---
+
+### Budget & Resources
+
+**Data-heavy**
+- High: "Allocate a dedicated AI transformation budget with multi-year planning that accounts for compliance infrastructure, audit tooling, and specialized talent in regulated domains"
+- Medium: "Secure additional budget for AI infrastructure and training, with specific allocation for compliance validation and risk management capabilities"
+- Low: "Develop a business case for AI investment that emphasizes risk reduction and efficiency gains in regulated workflows, and seek approval for initial funding"
+
+**Customer-facing**
+- High: "Allocate a dedicated AI transformation budget with multi-year planning focused on customer experience, personalization infrastructure, and revenue-generating AI applications"
+- Medium: "Secure additional budget for AI infrastructure and training, prioritizing tools that directly impact customer acquisition, retention, and lifetime value"
+- Low: "Develop a business case for AI investment that highlights competitive differentiation and customer experience ROI, and seek approval for initial funding"
+
+**Operations-heavy**
+- High: "Allocate a dedicated AI transformation budget with multi-year planning focused on operational efficiency, predictive maintenance, and supply chain optimization"
+- Medium: "Secure additional budget for AI infrastructure and training, with priority on tools that reduce downtime, waste, and operational costs"
+- Low: "Develop a business case for AI investment centered on measurable operational savings and seek approval for pilot funding in a single operational area"
+
+**Knowledge**
+- High: "Allocate a dedicated AI transformation budget with multi-year planning focused on knowledge worker productivity, delivery quality, and competitive differentiation"
+- Medium: "Secure additional budget for AI infrastructure and training, prioritizing tools that accelerate research, content production, and client or stakeholder delivery"
+- Low: "Develop a business case for AI investment that quantifies time savings and quality improvements in core knowledge work, and seek approval for initial funding"
+
+---
+
+### Data Security & Privacy
+
+**Data-heavy**
+- High: "Enhance AI-specific security controls with advanced privacy-preserving techniques suited to sensitive patient, financial, or citizen data"
+- Medium: "Strengthen cybersecurity framework and implement privacy compliance with data anonymization protocols aligned to your industry's regulatory requirements"
+- Low: "Establish foundational security controls and privacy compliance capabilities specific to your regulatory environment before any AI data processing begins"
+
+**Customer-facing**
+- High: "Enhance AI-specific security controls with advanced privacy-preserving techniques for customer behavioral data, purchase history, and personally identifiable information"
+- Medium: "Strengthen cybersecurity framework and implement privacy compliance with data anonymization for customer data, including consent management and breach notification protocols"
+- Low: "Establish foundational security controls and privacy compliance capabilities covering customer data collection, storage, and usage before AI implementation"
+
+**Operations-heavy**
+- High: "Enhance AI-specific security controls for operational technology environments, including protections for equipment data, supply chain information, and proprietary process data"
+- Medium: "Strengthen cybersecurity framework across IT and OT environments and implement data protection controls for sensitive operational and vendor data"
+- Low: "Establish foundational security controls covering operational systems and field data sources, with clear protocols for what data can be used in AI models"
+
+**Knowledge**
+- High: "Enhance AI-specific security controls and advanced privacy-preserving techniques for confidential client data, proprietary research, and sensitive organizational knowledge"
+- Medium: "Strengthen cybersecurity framework and implement privacy compliance with data anonymization for client records and internal knowledge assets"
+- Low: "Establish foundational security controls and privacy compliance capabilities covering client confidentiality and data handling obligations before AI implementation"
+
+---
+
+Do not change any scoring logic, UI layout, or other recommendation text outside of the actionItems object. Make sure this works for both Quick and Detailed Assessment result flows, and that the industry cluster is correctly passed through from the industry selection screen to the results page.
