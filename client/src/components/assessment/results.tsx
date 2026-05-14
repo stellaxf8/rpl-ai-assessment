@@ -601,7 +601,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       </Card>
 
       {/* Personalized Summary Paragraph */}
-      <div className="border-l-4 border-[#cd0000] bg-slate-50 px-5 py-4 rounded-r-lg animate-fade-in">
+      <div className="border-l-4 border-[#cd0000] bg-red-50 px-5 py-5 rounded-r-lg shadow-sm animate-fade-in">
         <p className="text-base text-slate-700 leading-relaxed">
           {overallScore >= 80
             ? "Your organization has a strong foundation for AI adoption. You have the infrastructure, data practices, and team readiness to move beyond experimentation into real implementation. The opportunity now is making sure your first AI initiatives are targeted at the right problems. A focused conversation about where to start can save months of trial and error."
