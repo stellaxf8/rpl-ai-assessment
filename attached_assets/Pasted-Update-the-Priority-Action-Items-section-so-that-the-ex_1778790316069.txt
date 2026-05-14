@@ -1,0 +1,101 @@
+Update the Priority Action Items section so that the explanatory text (the sentence that appears below each priority item) is tailored to the user's selected industry cluster and the specific dimension being prioritized.
+
+Map industries to clusters as follows:
+- **Data-heavy:** Healthcare, Financial Services, Government & Public Sector
+- **Customer-facing:** Retail & B2C Sales, Media & Entertainment, B2B Sales & Distribution
+- **Operations-heavy:** Manufacturing, Construction, Transportation & Logistics, Energy & Utilities, Agriculture & Food
+- **Knowledge:** Consulting, Education, Non-profit, Technology, Real Estate
+
+Replace the current generic explanatory text with cluster and dimension-specific explanations. The logic should determine the user's industry cluster, identify the three lowest-scoring dimensions, and display the appropriate explanation for each.
+
+---
+
+## Data-heavy Cluster Explanations
+
+**Technology Infrastructure:**
+"Your lowest score in Technology Infrastructure undermines your ability to handle sensitive regulated data at scale. Legacy systems will constrain AI initiatives and create compliance risks."
+
+**Data Quality & Access:**
+"Your lowest score in Data Quality & Access is critical for regulated industries. Poor data governance blocks AI accuracy and creates audit and compliance exposure."
+
+**Team AI Literacy:**
+"Your lowest score in Team AI Literacy is critical in regulated environments. Without staff trained in compliant AI practices, implementation will stall or create risk."
+
+**System Integration:**
+"Your lowest score in System Integration will prevent you from connecting disparate regulated systems safely. This blocks the unified data view required for AI."
+
+**Budget & Resources:**
+"Your lowest score in Budget & Resources reflects insufficient investment in AI infrastructure and compliance capabilities. Without dedicated funding, transformation stalls."
+
+**Data Security & Privacy:**
+"Your lowest score in Data Security & Privacy is the highest risk area. Regulatory penalties and patient or customer trust losses will follow any breach tied to AI."
+
+---
+
+## Customer-facing Cluster Explanations
+
+**Technology Infrastructure:**
+"Your lowest score in Technology Infrastructure will limit your ability to deliver real-time, personalized customer experiences. Legacy systems can't handle the scale or speed AI requires."
+
+**Data Quality & Access:**
+"Your lowest score in Data Quality & Access prevents unified customer understanding. Without consolidated, clean customer data, personalization and targeting fail."
+
+**Team AI Literacy:**
+"Your lowest score in Team AI Literacy means your team can't effectively use AI to drive customer engagement and revenue. Skills gaps will undermine any tool investment."
+
+**System Integration:**
+"Your lowest score in System Integration blocks the connected customer view across sales, marketing, and service. This prevents coordinated, AI-driven customer experiences."
+
+**Budget & Resources:**
+"Your lowest score in Budget & Resources reflects underinvestment in customer experience AI. Competitors with better AI funding will outpace you on acquisition and retention."
+
+**Data Security & Privacy:**
+"Your lowest score in Data Security & Privacy puts customer trust and compliance at risk. Data breaches tied to AI will damage brand reputation and customer relationships."
+
+---
+
+## Operations-heavy Cluster Explanations
+
+**Technology Infrastructure:**
+"Your lowest score in Technology Infrastructure limits your ability to collect and process real-time operational data. Field equipment and sensors can't feed AI systems effectively."
+
+**Data Quality & Access:**
+"Your lowest score in Data Quality & Access prevents unified visibility across operations. Siloed, inconsistent field and equipment data blocks predictive maintenance and optimization."
+
+**Team AI Literacy:**
+"Your lowest score in Team AI Literacy means operations managers and field staff can't use AI tools effectively. Adoption will be slow without proper training and support."
+
+**System Integration:**
+"Your lowest score in System Integration prevents you from connecting ERP, supply chain, and field systems. This blocks end-to-end operational visibility and automation."
+
+**Budget & Resources:**
+"Your lowest score in Budget & Resources reflects underinvestment in operational AI. Competitors with better AI capabilities will outpace you on efficiency and cost."
+
+**Data Security & Privacy:**
+"Your lowest score in Data Security & Privacy puts proprietary operational processes and supply chain data at risk. Breaches can disrupt operations and expose competitive advantages."
+
+---
+
+## Knowledge Cluster Explanations
+
+**Technology Infrastructure:**
+"Your lowest score in Technology Infrastructure limits your ability to process large volumes of documents, research, and client data. This constrains knowledge work acceleration through AI."
+
+**Data Quality & Access:**
+"Your lowest score in Data Quality & Access prevents unified access to client records, research, and internal knowledge. Fragmented data sources limit AI effectiveness."
+
+**Team AI Literacy:**
+"Your lowest score in Team AI Literacy means your knowledge workers can't leverage AI to accelerate research, delivery, or client work. Skills gaps will limit competitive advantage."
+
+**System Integration:**
+"Your lowest score in System Integration prevents knowledge management, CRM, and project systems from sharing data. This blocks AI-powered workflow automation and insights."
+
+**Budget & Resources:**
+"Your lowest score in Budget & Resources reflects underinvestment in knowledge worker productivity tools. Competitors with better AI funding will deliver faster, higher-quality work."
+
+**Data Security & Privacy:**
+"Your lowest score in Data Security & Privacy puts confidential client data, proprietary research, and organizational knowledge at risk. Breaches erode client trust and competitive standing."
+
+---
+
+Do not change the Priority Action Items layout, scoring logic, or priority labels (Critical, High, Medium). Only replace the explanatory text that currently reads "This dimension has your lowest score..." with the cluster and dimension-specific explanations above. Make sure this works for both Quick and Detailed Assessment result flows.

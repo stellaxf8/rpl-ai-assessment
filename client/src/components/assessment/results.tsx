@@ -583,12 +583,47 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
       const level = getScoreLevel(item.score);
       const urgency = index === 0 ? "Critical" : index === 1 ? "High" : "Medium";
 
-      const explanation =
-        urgency === "Critical"
+      const clusterDimensionExplanations: Record<string, Record<string, string>> = {
+        dataHeavy: {
+          technologyInfrastructure: "Your lowest score in Technology Infrastructure undermines your ability to handle sensitive regulated data at scale. Legacy systems will constrain AI initiatives and create compliance risks.",
+          dataQuality: "Your lowest score in Data Quality & Access is critical for regulated industries. Poor data governance blocks AI accuracy and creates audit and compliance exposure.",
+          teamLiteracy: "Your lowest score in Team AI Literacy is critical in regulated environments. Without staff trained in compliant AI practices, implementation will stall or create risk.",
+          systemIntegration: "Your lowest score in System Integration will prevent you from connecting disparate regulated systems safely. This blocks the unified data view required for AI.",
+          budget: "Your lowest score in Budget & Resources reflects insufficient investment in AI infrastructure and compliance capabilities. Without dedicated funding, transformation stalls.",
+          dataSecurity: "Your lowest score in Data Security & Privacy is the highest risk area. Regulatory penalties and patient or customer trust losses will follow any breach tied to AI."
+        },
+        customerFacing: {
+          technologyInfrastructure: "Your lowest score in Technology Infrastructure will limit your ability to deliver real-time, personalized customer experiences. Legacy systems can't handle the scale or speed AI requires.",
+          dataQuality: "Your lowest score in Data Quality & Access prevents unified customer understanding. Without consolidated, clean customer data, personalization and targeting fail.",
+          teamLiteracy: "Your lowest score in Team AI Literacy means your team can't effectively use AI to drive customer engagement and revenue. Skills gaps will undermine any tool investment.",
+          systemIntegration: "Your lowest score in System Integration blocks the connected customer view across sales, marketing, and service. This prevents coordinated, AI-driven customer experiences.",
+          budget: "Your lowest score in Budget & Resources reflects underinvestment in customer experience AI. Competitors with better AI funding will outpace you on acquisition and retention.",
+          dataSecurity: "Your lowest score in Data Security & Privacy puts customer trust and compliance at risk. Data breaches tied to AI will damage brand reputation and customer relationships."
+        },
+        operationsHeavy: {
+          technologyInfrastructure: "Your lowest score in Technology Infrastructure limits your ability to collect and process real-time operational data. Field equipment and sensors can't feed AI systems effectively.",
+          dataQuality: "Your lowest score in Data Quality & Access prevents unified visibility across operations. Siloed, inconsistent field and equipment data blocks predictive maintenance and optimization.",
+          teamLiteracy: "Your lowest score in Team AI Literacy means operations managers and field staff can't use AI tools effectively. Adoption will be slow without proper training and support.",
+          systemIntegration: "Your lowest score in System Integration prevents you from connecting ERP, supply chain, and field systems. This blocks end-to-end operational visibility and automation.",
+          budget: "Your lowest score in Budget & Resources reflects underinvestment in operational AI. Competitors with better AI capabilities will outpace you on efficiency and cost.",
+          dataSecurity: "Your lowest score in Data Security & Privacy puts proprietary operational processes and supply chain data at risk. Breaches can disrupt operations and expose competitive advantages."
+        },
+        knowledge: {
+          technologyInfrastructure: "Your lowest score in Technology Infrastructure limits your ability to process large volumes of documents, research, and client data. This constrains knowledge work acceleration through AI.",
+          dataQuality: "Your lowest score in Data Quality & Access prevents unified access to client records, research, and internal knowledge. Fragmented data sources limit AI effectiveness.",
+          teamLiteracy: "Your lowest score in Team AI Literacy means your knowledge workers can't leverage AI to accelerate research, delivery, or client work. Skills gaps will limit competitive advantage.",
+          systemIntegration: "Your lowest score in System Integration prevents knowledge management, CRM, and project systems from sharing data. This blocks AI-powered workflow automation and insights.",
+          budget: "Your lowest score in Budget & Resources reflects underinvestment in knowledge worker productivity tools. Competitors with better AI funding will deliver faster, higher-quality work.",
+          dataSecurity: "Your lowest score in Data Security & Privacy puts confidential client data, proprietary research, and organizational knowledge at risk. Breaches erode client trust and competitive standing."
+        }
+      };
+
+      const explanation = clusterDimensionExplanations[industryCluster]?.[item.dimension]
+        ?? (urgency === "Critical"
           ? "This dimension has your lowest score and will block progress in other areas if not addressed first."
           : urgency === "High"
           ? "Addressing this second will accelerate the impact of your top priority fix."
-          : "This is important but can be tackled once your top two priorities are underway.";
+          : "This is important but can be tackled once your top two priorities are underway.");
 
       return {
         title: item.config.label,
