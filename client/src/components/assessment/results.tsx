@@ -268,14 +268,27 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
   const { lowScoring, highScoring } = getRecommendations();
 
   const getTopActionItems = () => {
-    // Get all dimensions with their scores and sort by lowest score first
+    const tiebreakerOrder: Record<string, number> = {
+      dataQuality: 0,
+      dataSecurity: 1,
+      technologyInfrastructure: 2,
+      systemIntegration: 3,
+      teamLiteracy: 4,
+      budget: 5,
+    };
+
+    // Get all dimensions with their scores and sort by lowest score first,
+    // using fixed tiebreaker order when scores are equal
     const allDimensions = Object.entries(typedScores)
       .map(([dimension, score]) => ({
         dimension: dimension as keyof typeof dimensionConfig,
         score: score as number,
         config: dimensionConfig[dimension as keyof typeof dimensionConfig]
       }))
-      .sort((a, b) => a.score - b.score);
+      .sort((a, b) => {
+        if (a.score !== b.score) return a.score - b.score;
+        return (tiebreakerOrder[a.dimension] ?? 99) - (tiebreakerOrder[b.dimension] ?? 99);
+      });
 
     // Take the top 3 lowest scoring dimensions
     const top3Lowest = allDimensions.slice(0, 3);
@@ -318,10 +331,18 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
         }
       };
 
+      const explanation =
+        urgency === "Critical"
+          ? "This dimension has your lowest score and will block progress in other areas if not addressed first."
+          : urgency === "High"
+          ? "Addressing this second will accelerate the impact of your top priority fix."
+          : "This is important but can be tackled once your top two priorities are underway.";
+
       return {
         title: item.config.label,
         action: actionItems[item.dimension][level],
         urgency,
+        explanation,
         score: item.score,
         icon: item.config.icon,
         priority: index + 1
@@ -738,6 +759,9 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                         {/* Action description - always visible */}
                         <p className="text-slate-700 text-sm sm:text-base">
                           {item.action}
+                        </p>
+                        <p className="text-slate-500 text-xs sm:text-sm mt-1 italic">
+                          {item.explanation}
                         </p>
                       </div>
                     </div>
