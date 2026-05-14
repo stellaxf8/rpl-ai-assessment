@@ -1058,14 +1058,6 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                 ))}
               </div>
 
-              <div className="mt-6 text-center">
-                <div className="inline-flex items-center px-4 py-2 bg-slate-100 rounded-lg">
-                  <AlertTriangle className="mr-2 h-4 w-4 text-slate-600" />
-                  <span className="text-sm text-slate-600">
-                    Focus on Priority 1 and 2 items for maximum impact on your AI readiness
-                  </span>
-                </div>
-              </div>
             </CardContent>
           </Card>
 
