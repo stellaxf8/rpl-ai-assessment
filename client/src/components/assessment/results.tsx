@@ -600,6 +600,19 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
         </CardContent>
       </Card>
 
+      {/* Personalized Summary Paragraph */}
+      <div className="border-l-4 border-[#cd0000] bg-slate-50 px-5 py-4 rounded-r-lg animate-fade-in">
+        <p className="text-base text-slate-700 leading-relaxed">
+          {overallScore >= 80
+            ? "Your organization has a strong foundation for AI adoption. You have the infrastructure, data practices, and team readiness to move beyond experimentation into real implementation. The opportunity now is making sure your first AI initiatives are targeted at the right problems. A focused conversation about where to start can save months of trial and error."
+            : overallScore >= 65
+            ? "You're closer to AI-ready than most organizations at your stage. A few targeted improvements in your weaker dimensions could meaningfully accelerate what's possible. The gap between where you are and a successful AI pilot is smaller than you might think, but the order in which you address it matters."
+            : overallScore >= 50
+            ? "Your organization has real intent around AI but a few foundational gaps that, if left unaddressed, will limit results even with the right tools in place. The good news is these gaps are common and fixable. Knowing which ones to prioritize first is usually what separates organizations that make progress from those that stall."
+            : "Your results suggest AI adoption would be premature without some groundwork first, and that's actually useful to know now rather than after a costly rollout. Most organizations at this stage have 2 or 3 specific blockers that, once resolved, change the picture quickly. The first step is knowing exactly what those are."}
+        </p>
+      </div>
+
       {/* Assessment Results Overview */}
       <div className="space-y-8">
           {/* Dimension Breakdown */}
