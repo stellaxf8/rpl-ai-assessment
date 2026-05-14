@@ -858,7 +858,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                     Receive Your Report
                   </h3>
                   <p className="text-slate-600 mb-4">
-                    Enter your business email to download your comprehensive AI readiness assessment report.
+                    Get a formatted PDF of your results — ready to share with your team or leadership.
                   </p>
                 </div>
                 
