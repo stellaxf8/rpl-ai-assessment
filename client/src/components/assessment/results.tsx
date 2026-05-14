@@ -147,6 +147,148 @@ const dimensionConfig = {
   },
 };
 
+const getDimensionRecommendations = (industry: string) => {
+  const dataHeavy = ['Healthcare', 'Finance', 'Government'];
+  const customerFacing = ['Retail & B2C Sales', 'Media', 'B2B Sales & Distribution'];
+  const operationsHeavy = ['Manufacturing', 'Construction', 'Transportation', 'Energy', 'Agriculture'];
+  const cluster = dataHeavy.includes(industry) ? 'dataHeavy' :
+    customerFacing.includes(industry) ? 'customerFacing' :
+    operationsHeavy.includes(industry) ? 'operationsHeavy' : 'knowledge';
+
+  const all = {
+    dataHeavy: {
+      technologyInfrastructure: {
+        high: { text: "Your infrastructure is ready for AI. Explore compliant cloud AI tools for clinical decision support, fraud detection, or automated case management.", examples: "Clinical AI diagnostic tools, regulatory reporting automation, fraud detection platforms" },
+        medium: { text: "Upgrade to cloud services with compliance certifications relevant to your industry.", examples: "Compliant cloud storage, encrypted reporting tools, secure document management systems" },
+        low: { text: "Start with foundational IT upgrades that meet your industry's security and compliance requirements.", examples: "Upgrade hardware, establish compliant cloud storage, secure remote access for staff" }
+      },
+      dataQuality: {
+        high: { text: "Your data is well-organized. Use it for predictive analytics and AI-driven insights in your field.", examples: "Patient outcome prediction, financial risk modeling, automated public service reporting" },
+        medium: { text: "Centralize and standardize your data, particularly across regulated record systems.", examples: "Unified patient or client record systems, standardized financial data formats, consolidated case records" },
+        low: { text: "Start by auditing and cleaning up your core records and making them consistently structured.", examples: "Remove duplicate records, establish consistent data entry standards across departments" }
+      },
+      teamLiteracy: {
+        high: { text: "Your team understands AI well. Focus on applying it responsibly within your regulated environment.", examples: "AI-assisted diagnostics, automated compliance monitoring, AI-driven case management tools" },
+        medium: { text: "Train key staff on AI tools relevant to your industry's workflows and compliance requirements.", examples: "AI compliance courses, workshops on responsible AI use in regulated environments" },
+        low: { text: "Start with foundational AI education focused on your industry's applications and obligations.", examples: "AI basics for healthcare, finance, or government staff; compliance-aware AI workshops" }
+      },
+      systemIntegration: {
+        high: { text: "Your systems connect well and can support AI-driven data flows across your operations.", examples: "Integrated clinical, financial, or government platforms; AI-connected reporting and analytics systems" },
+        medium: { text: "Improve connections between your core operational systems to enable reliable data sharing.", examples: "Connect patient records with billing and reporting systems, integrate case management platforms" },
+        low: { text: "Focus on getting your core systems to share information reliably before adding AI.", examples: "Connect case management and payment systems, establish data sharing between departments" }
+      },
+      budget: {
+        high: { text: "Your resources are well-positioned for AI. Consider compliance-focused platforms with strong ROI in your sector.", examples: "Enterprise AI diagnostic tools, regulatory reporting automation, audit management systems" },
+        medium: { text: "Identify AI investments that address compliance efficiency and reduce operational costs.", examples: "Compliance automation tools, AI-assisted audit software, automated reporting platforms" },
+        low: { text: "Start with small, targeted AI investments that reduce compliance costs or administrative burden.", examples: "Simple document processing tools, automated reporting software, low-cost AI form tools" }
+      },
+      dataSecurity: {
+        high: { text: "Your security posture is strong. Focus on AI-specific controls for sensitive data processing.", examples: "Privacy-preserving AI models, compliant AI analytics platforms, audit trail systems" },
+        medium: { text: "Strengthen your data security to meet AI-specific requirements in your regulated environment.", examples: "Data anonymization tools, access control upgrades, encryption for AI data pipelines" },
+        low: { text: "Address foundational security gaps before using AI with sensitive data.", examples: "Implement access controls, apply encryption to sensitive records, conduct a security audit" }
+      }
+    },
+    customerFacing: {
+      technologyInfrastructure: {
+        high: { text: "Your technology is ready for AI-powered customer experiences. Focus on personalization and demand forecasting.", examples: "Personalization engines, AI demand forecasting tools, automated customer service systems" },
+        medium: { text: "Upgrade your customer-facing systems to support AI-driven personalization and automation.", examples: "Cloud-based e-commerce tools, AI chatbot platforms, marketing automation software" },
+        low: { text: "Start with basic technology upgrades to support more consistent customer data and interactions.", examples: "Modernize your website and point-of-sale systems, upgrade to cloud-based CRM" }
+      },
+      dataQuality: {
+        high: { text: "Your customer data is well-structured. Use it to power personalization, churn prediction, and demand planning.", examples: "Customer segmentation models, AI product recommendations, churn prediction tools" },
+        medium: { text: "Unify your customer data across channels to create consistent profiles for AI applications.", examples: "Connect your CRM, e-commerce, and marketing platforms into a unified customer database" },
+        low: { text: "Start by cleaning up and consolidating your customer records across sales, service, and marketing.", examples: "Remove duplicate contacts, standardize purchase history records, centralize customer data" }
+      },
+      teamLiteracy: {
+        high: { text: "Your team is AI-savvy. Focus on advanced customer analytics, campaign optimization, and AI-assisted selling.", examples: "AI-powered sales coaching tools, advanced customer analytics, automated campaign optimization" },
+        medium: { text: "Train marketing, sales, and service teams on AI tools relevant to customer engagement.", examples: "AI marketing tools workshops, training on CRM AI features, AI customer service platforms" },
+        low: { text: "Start with practical AI education focused on customer-facing tools your team can use right away.", examples: "AI product recommendation basics, CRM automation training, AI chatbot setup guides" }
+      },
+      systemIntegration: {
+        high: { text: "Your systems are well-connected. Use that foundation to enable intelligent automation across the customer journey.", examples: "AI-connected CRM and inventory, automated lead scoring, unified customer analytics dashboards" },
+        medium: { text: "Connect your CRM, e-commerce, and marketing platforms so customer data flows consistently.", examples: "Link online and in-store sales data, connect marketing platforms to your CRM" },
+        low: { text: "Focus on getting your core customer systems to share data before implementing AI.", examples: "Connect sales, inventory, and customer service systems; sync online and offline records" }
+      },
+      budget: {
+        high: { text: "Your AI investment capacity is strong. Prioritize tools that drive revenue through better customer experiences.", examples: "AI personalization platforms, predictive analytics for sales, automated marketing tools" },
+        medium: { text: "Focus AI spending on tools with a clear customer acquisition or retention ROI.", examples: "AI-powered CRM features, email marketing automation, AI product recommendation tools" },
+        low: { text: "Start with low-cost AI tools that have a direct impact on sales or customer experience.", examples: "Free-tier AI chatbots, basic email automation, AI-enhanced product search" }
+      },
+      dataSecurity: {
+        high: { text: "Your security is solid. Ensure AI tools comply with customer data privacy regulations and consent requirements.", examples: "Privacy-compliant AI personalization tools, consent management platforms, encrypted data pipelines" },
+        medium: { text: "Strengthen customer data protection before expanding AI use across customer touchpoints.", examples: "Implement consent management, encrypt customer purchase history, tighten CRM access controls" },
+        low: { text: "Address basic customer data security before applying AI to customer interactions.", examples: "Enforce password policies, restrict access to customer records, review data retention practices" }
+      }
+    },
+    operationsHeavy: {
+      technologyInfrastructure: {
+        high: { text: "Your infrastructure is ready for AI in operations. Explore predictive maintenance, route optimization, and process automation.", examples: "Predictive maintenance platforms, AI fleet and route optimization, automated production monitoring" },
+        medium: { text: "Upgrade your operational technology to support AI-driven monitoring and decision support.", examples: "Cloud-connected equipment monitoring, digital work order systems, automated reporting tools" },
+        low: { text: "Start with basic technology upgrades to create a digital foundation for future AI applications.", examples: "Add equipment sensors, upgrade to cloud-based scheduling, digitize paper-based processes" }
+      },
+      dataQuality: {
+        high: { text: "Your operational data is well-structured. Use it for predictive analytics and process optimization.", examples: "Equipment failure prediction models, production efficiency analytics, yield optimization tools" },
+        medium: { text: "Organize and centralize data from equipment, jobs, and logistics to enable AI-driven insights.", examples: "Centralize maintenance logs, standardize production data formats, consolidate dispatch records" },
+        low: { text: "Start by digitizing and organizing your core operational records consistently.", examples: "Move paper logs to digital systems, standardize equipment data entry, audit existing databases" }
+      },
+      teamLiteracy: {
+        high: { text: "Your team understands AI well. Focus on advanced operational applications like predictive maintenance and process automation.", examples: "AI-driven equipment diagnostics, automated route planning tools, AI production optimization" },
+        medium: { text: "Train operations, field, and management staff on practical AI tools for your workflows.", examples: "Workshops on AI scheduling tools, training on equipment monitoring dashboards, AI safety systems" },
+        low: { text: "Start with foundational AI training for field and operations teams using practical, hands-on examples.", examples: "AI basics workshops for operations staff, demonstrations of AI scheduling and monitoring tools" }
+      },
+      systemIntegration: {
+        high: { text: "Your systems are well-connected. Leverage this to create end-to-end operational intelligence across your supply chain.", examples: "AI-integrated ERP and field systems, connected logistics and inventory, real-time production dashboards" },
+        medium: { text: "Connect your operations, scheduling, and logistics systems to enable reliable data sharing for AI.", examples: "Link field equipment data with maintenance systems, connect dispatch and inventory platforms" },
+        low: { text: "Focus on getting your core operational systems to share data before adding AI capabilities.", examples: "Connect scheduling and billing systems, integrate maintenance logs with procurement data" }
+      },
+      budget: {
+        high: { text: "Your resources are well-suited for AI investment. Prioritize tools that reduce downtime, waste, and operational costs.", examples: "Predictive maintenance platforms, AI fleet optimization, automated production scheduling" },
+        medium: { text: "Focus AI spending on tools with measurable efficiency or cost reduction impact in your operations.", examples: "Equipment monitoring software, AI-assisted scheduling tools, route optimization platforms" },
+        low: { text: "Start with a small AI pilot in one operational area to demonstrate ROI before broader investment.", examples: "Simple equipment monitoring tools, basic scheduling automation, AI-assisted dispatch software" }
+      },
+      dataSecurity: {
+        high: { text: "Your security is strong. Ensure AI tools are secured across both IT and operational technology environments.", examples: "Secure AI equipment monitoring platforms, protected supply chain data systems, OT cybersecurity tools" },
+        medium: { text: "Strengthen data protection across your operational and field systems before expanding AI use.", examples: "Secure field device connections, restrict access to operational data, review vendor data sharing agreements" },
+        low: { text: "Start with foundational security controls covering your field and operational systems.", examples: "Implement access controls on operational platforms, secure equipment data connections, train staff on data hygiene" }
+      }
+    },
+    knowledge: {
+      technologyInfrastructure: {
+        high: { text: "Your technology is ready for advanced AI tools. Explore automation, analytics, and AI-assisted delivery.", examples: "Automated workflows, AI research tools, analytics dashboards for client or program insights" },
+        medium: { text: "Upgrade to cloud computing and ensure reliable, scalable infrastructure for knowledge work.", examples: "Cloud collaboration tools, automated reporting systems, scalable document storage" },
+        low: { text: "Start with foundational technology upgrades to support better data management and collaboration.", examples: "Upgrade hardware and internet, move to secure cloud storage, adopt cloud-based productivity tools" }
+      },
+      dataQuality: {
+        high: { text: "Your data is well-organized and accessible. Ready for advanced AI applications and insights.", examples: "Client trend analysis, program outcome modeling, AI-assisted research and reporting" },
+        medium: { text: "Organize your data better with centralized storage and consistent formats.", examples: "Shared knowledge bases, automated data backups, standardized document naming conventions" },
+        low: { text: "Start by cleaning up and organizing your core data and documents.", examples: "Remove duplicate records, create consistent filing systems, audit what data you have and where it lives" }
+      },
+      teamLiteracy: {
+        high: { text: "Your team understands AI well. Focus on specialized applications for your field of work.", examples: "AI-assisted research tools, automated client reporting, intelligent document analysis" },
+        medium: { text: "Train key staff on AI tools relevant to your core workflows.", examples: "AI writing and research tools for staff, workshops on AI business applications, prompt engineering basics" },
+        low: { text: "Start with practical AI education your whole team can apply immediately.", examples: "AI productivity basics, lunch-and-learn on AI writing tools, introductory AI for your industry" }
+      },
+      systemIntegration: {
+        high: { text: "Your systems work well together and can support sophisticated AI-driven workflows.", examples: "AI-connected CRM and project tools, automated client reporting, intelligent knowledge management systems" },
+        medium: { text: "Improve how your business systems connect to enable better data sharing and workflow automation.", examples: "Link your CRM and project management tools, integrate billing and reporting platforms" },
+        low: { text: "Focus on getting your core systems to share information reliably before adding AI.", examples: "Ensure sales and finance software can share data, connect your main operational platforms" }
+      },
+      budget: {
+        high: { text: "Your resources are ready for comprehensive AI investment. Focus on tools that improve delivery quality and efficiency.", examples: "Enterprise AI productivity platforms, AI-powered research tools, intelligent knowledge management" },
+        medium: { text: "Identify AI tools with a clear productivity or quality ROI for your core work.", examples: "AI writing and summarization tools, automated report generation, AI-assisted client communication" },
+        low: { text: "Start with low-cost AI tools that create immediate productivity gains in your day-to-day work.", examples: "Free AI writing assistants, basic automation tools, AI-powered meeting summarizers" }
+      },
+      dataSecurity: {
+        high: { text: "Your security posture is strong. Ensure AI tools meet your client confidentiality and data handling obligations.", examples: "Privacy-compliant AI platforms, secure document AI tools, encrypted client data pipelines" },
+        medium: { text: "Strengthen data protection before expanding AI use with client or sensitive organizational data.", examples: "Implement data anonymization, tighten access controls on client records, review vendor data practices" },
+        low: { text: "Address foundational security gaps before using AI with sensitive client or organizational data.", examples: "Enforce access controls, review data storage practices, ensure staff understand data handling responsibilities" }
+      }
+    }
+  };
+
+  return all[cluster];
+};
+
 const renderIcon = (iconName: string, className: string = "w-4 h-4") => {
   const iconMap: { [key: string]: React.ComponentType<any> } = {
     Server,
@@ -240,6 +382,7 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
   */
 
   const { overallScore, scores, organizationName, contactEmail, industry } = assessment;
+  const dimensionRecommendations = getDimensionRecommendations(industry);
   const typedScores = scores as DimensionScores;
 
   const getReadinessLevel = (score: number) => {
@@ -584,7 +727,8 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             <h2 style="font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 16px; border-bottom: 3px solid #cd0000; padding-bottom: 8px;">Detailed Dimension Analysis</h2>
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
               ${Object.entries(typedScores).map(([dimension, score]) => {
-                const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
+                const baseConfig = dimensionConfig[dimension as keyof typeof dimensionConfig];
+                const config = { ...baseConfig, recommendations: (dimensionRecommendations as any)[dimension] ?? baseConfig.recommendations };
                 const scoreValue = score as number;
                 const level = scoreValue >= 4.0 ? 'high' : scoreValue >= 2.5 ? 'medium' : 'low';
                 const percentage = (scoreValue / 5) * 100;
@@ -767,7 +911,8 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                 }}>Quick Overview</h3>
                 <div className="space-y-4 animate-slide-up stagger-delay-2">
                   {Object.entries(scores as any).map(([dimension, score], index) => {
-                    const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
+                    const baseConfig = dimensionConfig[dimension as keyof typeof dimensionConfig];
+                    const config = { ...baseConfig, recommendations: (dimensionRecommendations as any)[dimension] ?? baseConfig.recommendations };
                     const scoreValue = score as number;
                     const percentage = (scoreValue / 5) * 100;
 
@@ -897,7 +1042,8 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 relative">
               {Object.entries(scores as any).map(([dimension, score], index) => {
-                const config = dimensionConfig[dimension as keyof typeof dimensionConfig];
+                const baseConfig = dimensionConfig[dimension as keyof typeof dimensionConfig];
+                const config = { ...baseConfig, recommendations: (dimensionRecommendations as any)[dimension] ?? baseConfig.recommendations };
                 const scoreValue = score as number;
                 const level = getScoreLevel(scoreValue);
                 const percentage = (scoreValue / 5) * 100;
