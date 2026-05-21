@@ -11,8 +11,6 @@ import { Assessment, DimensionScores } from "@shared/schema";
 import ScoreChart from "@/components/charts/score-chart";
 import RadarChart from "@/components/charts/radar-chart";
 import BusinessDevelopment from "@/components/enhanced/business-development";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -333,53 +331,14 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
   }, [exitIntentShown, showFullInsights, email]);
   */
 
-  // Email request mutation
-  const emailRequest = useMutation({
-    mutationFn: async (data: { assessmentId: string; email: string; contactConsent: boolean }) => {
-      const response = await apiRequest("POST", "/api/assessment-email-requests", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      setShowFullInsights(true);
-      toast({
-        title: "Email submitted successfully!",
-        description: "You can now download your report.",
-      });
-    },
-    onError: (error: Error) => {
-      toast({
-        title: "Failed to send email",
-        description: error.message || "Please try again later.",
-        variant: "destructive",
-      });
-    },
-  });
+  const handleEmailSubmit = () => {
+    setShowFullInsights(true);
+    toast({
+      title: "Email submitted successfully!",
+      description: "You can now download your report.",
+    });
+  };
 
-  /* Exit intent email request mutation - Disabled
-  const exitEmailRequest = useMutation({
-    mutationFn: async (data: { assessmentId: string; email: string; contactConsent: boolean }) => {
-      const response = await apiRequest("POST", "/api/assessment-email-requests", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      setShowExitIntent(false);
-      setEmail(exitEmail);
-      setContactConsent(exitContactConsent);
-      setShowFullInsights(true);
-      toast({
-        title: "Success!",
-        description: "Assessment report request received. Your detailed insights are now unlocked!",
-      });
-    },
-    onError: (error: Error) => {
-      toast({
-        title: "Error",
-        description: "Failed to send email request. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-  */
 
   const { overallScore, scores, organizationName, contactEmail, industry } = assessment;
   const dimensionRecommendations = getDimensionRecommendations(industry);
@@ -1186,12 +1145,12 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
                   ) : (
                     <Button
                       onClick={() => {
-                        emailRequest.mutate({ assessmentId: assessment.id, email, contactConsent });
+                        handleEmailSubmit();
                       }}
-                      disabled={!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || emailRequest.isPending}
+                      disabled={!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)}
                       className="w-full h-12 bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
                     >
-                      {emailRequest.isPending ? "Submitting..." : "Submit Email"}
+                      Submit Email
                     </Button>
                   )}
                   
@@ -1286,11 +1245,11 @@ export default function Results({ assessment, onRetakeAssessment, showRetakeButt
               </div>
               
               <Button
-                onClick={() => exitEmailRequest.mutate({ assessmentId: assessment.id, email: exitEmail, contactConsent: exitContactConsent })}
-                disabled={!exitEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(exitEmail) || exitEmailRequest.isPending}
+                onClick={() => { setShowExitIntent(false); setEmail(exitEmail); setContactConsent(exitContactConsent); setShowFullInsights(true); }}
+                disabled={!exitEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(exitEmail)}
                 className="w-full bg-[#cd0000] hover:bg-[#b30000] text-white font-semibold"
               >
-                {exitEmailRequest.isPending ? "Generating Blueprint..." : "Get My AI Strategy Blueprint (Free)"}
+                Get My AI Strategy Blueprint (Free)
               </Button>
               
               <Button

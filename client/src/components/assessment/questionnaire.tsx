@@ -6,9 +6,8 @@ import { Progress } from "@/components/ui/progress";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { questions, Question } from "@/lib/assessment-data";
+import { calculateDimensionScores, calculateOverallScore } from "@/lib/scoring";
 import { quickQuestions } from "@/lib/quick-assessment-data";
 import { getIndustryQuestionVariation, hasIndustryVariations } from "@/lib/industry-questions";
 import IndustrySelection from "@/components/assessment/industry-selection";
@@ -114,18 +113,21 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
 
   const assessmentQuestions = getQuestionsForAssessment();
 
-  const submitAssessment = useMutation({
-    mutationFn: async (data: any) => {
-      const response = await apiRequest("POST", "/api/assessments", data);
-      return response.json();
-    },
-    onSuccess: (assessment: Assessment) => {
-      onComplete(assessment);
-    },
-    onError: (error: Error) => {
-      console.error('Assessment submission failed:', error.message || "Failed to submit assessment. Please try again.");
-    },
-  });
+  const submitAssessment = (data: { industry: string; responses: Record<string, number> }) => {
+    const scores = calculateDimensionScores(data.responses);
+    const overallScore = calculateOverallScore(scores);
+    const assessment: Assessment = {
+      id: crypto.randomUUID(),
+      organizationName: null,
+      contactEmail: null,
+      industry: data.industry,
+      responses: data.responses,
+      scores,
+      overallScore,
+      createdAt: new Date(),
+    };
+    onComplete(assessment);
+  };
 
   const currentQuestionData = assessmentQuestions[currentQuestion];
   const progress = ((currentQuestion + 1) / assessmentQuestions.length) * 100;
@@ -185,7 +187,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       }, 100);
     } else {
       // Submit assessment immediately after final question
-      submitAssessment.mutate({
+      submitAssessment({
         industry: selectedIndustry,
         responses,
       });
@@ -253,7 +255,7 @@ export default function Questionnaire({ onComplete, onBack }: QuestionnaireProps
       demoResponses[question.id] = response;
     });
     setResponses(demoResponses);
-    submitAssessment.mutate({
+    submitAssessment({
       industry: selectedIndustryRef.current || "Technology",
       responses: demoResponses,
     });
