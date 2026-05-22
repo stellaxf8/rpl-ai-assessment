@@ -2,7 +2,6 @@ import { BookOpen, Brain, Lightbulb, TrendingUp, ExternalLink, Download } from "
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import backgroundImage from "@assets/BG 1_1755624813166.png";
 
 const aiConcepts = [
   // Beginner Level
@@ -184,8 +183,7 @@ const implementationGuides = [
 export default function KnowledgeCenter() {
   return (
     <div 
-      className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      className="min-h-screen bg-gray-50"
     >
       <div className="container mx-auto px-4 py-8 max-w-7xl bg-white/95 backdrop-blur-sm rounded-lg mt-4 mb-4 shadow-lg">
       {/* Header */}

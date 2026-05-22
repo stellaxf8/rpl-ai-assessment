@@ -1,12 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
-import backgroundImage from "@assets/BG 1_1755624813166.png";
-
 export default function NotFound() {
   return (
     <div 
-      className="min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      className="min-h-screen w-full flex items-center justify-center bg-gray-50"
     >
       <Card className="w-full max-w-md mx-4">
         <CardContent className="pt-6">
