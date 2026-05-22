@@ -1,0 +1,162 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K[Storage] Using In-Memory storage
+11:00:39 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 19 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+
+
+
+
+
+
+
+[1;1H[0J[2m11:00:56 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/assessment/questionnaire.tsx, /src/index.css?v=X24V8oXPMD3tBqUJt4xPB[22m
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m11:01:06 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/assessment/questionnaire.tsx, /src/index.css?v=X24V8oXPMD3tBqUJt4xPB[22m [33m(x2)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m11:01:10 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/assessment/results.tsx, /src/index.css?v=X24V8oXPMD3tBqUJt4xPB[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m11:01:17 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/assessment/questionnaire.tsx, /src/index.css?v=X24V8oXPMD3tBqUJt4xPB[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m11:01:21 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/assessment/results.tsx, /src/index.css?v=X24V8oXPMD3tBqUJt4xPB[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m11:01:28 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/assessment/questionnaire.tsx, /src/index.css?v=X24V8oXPMD3tBqUJt4xPB[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m11:01:28 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/assessment/results.tsx, /src/index.css?v=X24V8oXPMD3tBqUJt4xPB[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m11:01:34 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/assessment/results.tsx, /src/index.css?v=X24V8oXPMD3tBqUJt4xPB[22m [33m(x2)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m11:01:39 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/assessment/results.tsx, /src/index.css?v=X24V8oXPMD3tBqUJt4xPB[22m [33m(x3)[39m

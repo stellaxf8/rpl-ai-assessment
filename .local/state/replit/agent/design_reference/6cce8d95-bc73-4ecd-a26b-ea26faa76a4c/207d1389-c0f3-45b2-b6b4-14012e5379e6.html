@@ -1,0 +1,790 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Assessment Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#7C3AED',
+                        success: '#059669',
+                        warning: '#D97706',
+                        error: '#DC2626'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-50 font-sans">
+
+<!-- @COMPONENT: Header -->
+<header class="bg-white shadow-sm border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                    <i class="fas fa-brain text-white text-sm"></i>
+                </div>
+                <h1 class="text-xl font-semibold text-slate-900">AI Readiness Assessment</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#overview" class="text-slate-600 hover:text-primary transition-colors" data-nav="overview">Overview</a>
+                <a href="#assessment" class="text-slate-600 hover:text-primary transition-colors" data-nav="assessment">Assessment</a>
+                <a href="#results" class="text-slate-600 hover:text-primary transition-colors" data-nav="results">Results</a>
+                <a href="#report" class="text-slate-600 hover:text-primary transition-colors" data-nav="report">Report</a>
+            </nav>
+            <button class="md:hidden text-slate-600">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+<!-- @END_COMPONENT: Header -->
+
+<!-- @COMPONENT: MainContent -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+    <!-- @COMPONENT: OverviewSection -->
+    <section id="overview" class="section-content">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-slate-900 mb-4">Assess Your AI Readiness</h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto">Comprehensive evaluation across 6 key dimensions to determine your organization's readiness for AI implementation</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Assessment Dimension Cards -->
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-server text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">Technology Infrastructure</h3>
+                </div>
+                <p class="text-slate-600">Evaluate your current tech stack, cloud readiness, and computational capabilities.</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-database text-success text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">Data Quality & Access</h3>
+                </div>
+                <p class="text-slate-600">Assess data availability, quality, governance, and accessibility for AI projects.</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-users text-secondary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">Team AI Literacy</h3>
+                </div>
+                <p class="text-slate-600">Measure your team's AI knowledge, skills, and readiness for adoption.</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-puzzle-piece text-warning text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">System Integration</h3>
+                </div>
+                <p class="text-slate-600">Review existing software compatibility and integration capabilities.</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-dollar-sign text-yellow-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">Budget & Resources</h3>
+                </div>
+                <p class="text-slate-600">Evaluate financial readiness and resource allocation for AI initiatives.</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-shield-alt text-error text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">Security & Privacy</h3>
+                </div>
+                <p class="text-slate-600">Assess security frameworks, compliance, and privacy protection measures.</p>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button id="startAssessment" class="bg-primary hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors shadow-sm">
+                Start Assessment
+                <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+            <p class="text-slate-500 mt-3">Takes approximately 10-15 minutes</p>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: OverviewSection -->
+
+    <!-- @COMPONENT: AssessmentSection -->
+    <section id="assessment" class="section-content hidden">
+        <!-- Progress Header -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 mb-8">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-bold text-slate-900">AI Readiness Assessment</h2>
+                <span class="text-sm text-slate-500" data-bind="currentStep">Question <span id="currentQ">1</span> of <span id="totalQ">30</span></span>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-200 rounded-full h-2 mb-4">
+                <div id="progressBar" class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 3.33%"></div>
+            </div>
+            
+            <!-- Dimension Progress Pills -->
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Infrastructure (5/5)</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Data Quality (0/5)</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Team Literacy (0/5)</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Integration (0/5)</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Budget (0/5)</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Security (0/5)</span>
+            </div>
+        </div>
+
+        <!-- Question Card -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
+            <div class="mb-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                        <i class="fas fa-server text-primary"></i>
+                    </div>
+                    <span class="text-sm font-medium text-blue-800 bg-blue-100 px-3 py-1 rounded-full">Technology Infrastructure</span>
+                </div>
+                <h3 class="text-xl font-semibold text-slate-900 mb-3" data-bind="question.title">
+                    How would you describe your organization's current cloud infrastructure?
+                </h3>
+                <p class="text-slate-600" data-bind="question.description">
+                    Consider your cloud adoption level, scalability, and computing resources available for AI workloads.
+                </p>
+            </div>
+
+            <!-- Answer Options -->
+            <div class="space-y-3">
+                <label class="flex items-center p-4 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors">
+                    <input type="radio" name="question1" value="1" class="w-4 h-4 text-primary">
+                    <div class="ml-4 flex-1">
+                        <div class="font-medium text-slate-900">Minimal or no cloud infrastructure</div>
+                        <div class="text-sm text-slate-600">Primarily on-premises systems with limited scalability</div>
+                    </div>
+                    <div class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">1 point</div>
+                </label>
+
+                <label class="flex items-center p-4 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors">
+                    <input type="radio" name="question1" value="2" class="w-4 h-4 text-primary">
+                    <div class="ml-4 flex-1">
+                        <div class="font-medium text-slate-900">Basic cloud adoption</div>
+                        <div class="text-sm text-slate-600">Some cloud services in use, but limited AI-ready infrastructure</div>
+                    </div>
+                    <div class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">2 points</div>
+                </label>
+
+                <label class="flex items-center p-4 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors">
+                    <input type="radio" name="question1" value="3" class="w-4 h-4 text-primary">
+                    <div class="ml-4 flex-1">
+                        <div class="font-medium text-slate-900">Moderate cloud infrastructure</div>
+                        <div class="text-sm text-slate-600">Good cloud foundation with some scalable computing resources</div>
+                    </div>
+                    <div class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">3 points</div>
+                </label>
+
+                <label class="flex items-center p-4 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors">
+                    <input type="radio" name="question1" value="4" class="w-4 h-4 text-primary">
+                    <div class="ml-4 flex-1">
+                        <div class="font-medium text-slate-900">Advanced cloud infrastructure</div>
+                        <div class="text-sm text-slate-600">Robust cloud setup with high-performance computing capabilities</div>
+                    </div>
+                    <div class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">4 points</div>
+                </label>
+
+                <label class="flex items-center p-4 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors">
+                    <input type="radio" name="question1" value="5" class="w-4 h-4 text-primary">
+                    <div class="ml-4 flex-1">
+                        <div class="font-medium text-slate-900">Enterprise-grade AI-ready infrastructure</div>
+                        <div class="text-sm text-slate-600">Fully optimized cloud infrastructure with AI/ML specific resources</div>
+                    </div>
+                    <div class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">5 points</div>
+                </label>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex justify-between items-center mt-8">
+                <button class="text-slate-600 hover:text-slate-900 font-medium" disabled>
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Previous
+                </button>
+                <button id="nextQuestion" class="bg-primary hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
+                    Next Question
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AssessmentSection -->
+
+    <!-- @COMPONENT: ResultsSection -->
+    <section id="results" class="section-content hidden">
+        <!-- Overall Score Card -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-200 mb-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Your AI Readiness Score</h2>
+                <p class="text-slate-600">Based on your responses across 6 key dimensions</p>
+            </div>
+            
+            <div class="flex items-center justify-center mb-8">
+                <div class="relative w-48 h-48">
+                    <canvas id="overallScoreChart" width="192" height="192"></canvas>
+                    <div class="absolute inset-0 flex items-center justify-center flex-col">
+                        <span class="text-4xl font-bold text-slate-900" data-bind="overallScore">73</span>
+                        <span class="text-slate-600 font-medium">out of 100</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <div class="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full font-medium">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Good AI Readiness Level
+                </div>
+                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">
+                    Your organization shows strong potential for AI implementation with some areas for improvement. 
+                    Focus on the lower-scoring dimensions to maximize your AI success.
+                </p>
+            </div>
+        </div>
+
+        <!-- Dimension Breakdown -->
+        <div class="grid lg:grid-cols-2 gap-8 mb-8">
+            <!-- Radar Chart -->
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+                <h3 class="text-xl font-semibold text-slate-900 mb-6">Readiness Dimensions</h3>
+                <div class="relative h-80 flex items-center justify-center">
+                    <canvas id="radarChart" width="300" height="300"></canvas>
+                </div>
+            </div>
+
+            <!-- Scores Breakdown -->
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+                <h3 class="text-xl font-semibold text-slate-900 mb-6">Detailed Scores</h3>
+                <div class="space-y-4">
+                    <!-- @MAP: dimensions.map(dimension => ( -->
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-server text-primary text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-slate-900">Technology Infrastructure</div>
+                                <div class="text-sm text-slate-600">Strong foundation for AI implementation</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-16 h-2 bg-slate-200 rounded-full mr-3">
+                                <div class="w-4/5 h-2 bg-primary rounded-full"></div>
+                            </div>
+                            <span class="font-semibold text-slate-900 min-w-[2rem]">4.2</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-database text-success text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-slate-900">Data Quality & Access</div>
+                                <div class="text-sm text-slate-600">Room for improvement in data governance</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-16 h-2 bg-slate-200 rounded-full mr-3">
+                                <div class="w-3/5 h-2 bg-success rounded-full"></div>
+                            </div>
+                            <span class="font-semibold text-slate-900 min-w-[2rem]">3.1</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-users text-secondary text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-slate-900">Team AI Literacy</div>
+                                <div class="text-sm text-slate-600">Excellent team readiness and skills</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-16 h-2 bg-slate-200 rounded-full mr-3">
+                                <div class="w-full h-2 bg-secondary rounded-full"></div>
+                            </div>
+                            <span class="font-semibold text-slate-900 min-w-[2rem]">4.8</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-puzzle-piece text-warning text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-slate-900">System Integration</div>
+                                <div class="text-sm text-slate-600">Good integration capabilities</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-16 h-2 bg-slate-200 rounded-full mr-3">
+                                <div class="w-4/5 h-2 bg-warning rounded-full"></div>
+                            </div>
+                            <span class="font-semibold text-slate-900 min-w-[2rem]">3.9</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-dollar-sign text-yellow-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-slate-900">Budget & Resources</div>
+                                <div class="text-sm text-slate-600">Adequate budget allocation</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-16 h-2 bg-slate-200 rounded-full mr-3">
+                                <div class="w-3/5 h-2 bg-yellow-600 rounded-full"></div>
+                            </div>
+                            <span class="font-semibold text-slate-900 min-w-[2rem]">3.4</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-shield-alt text-error text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-slate-900">Security & Privacy</div>
+                                <div class="text-sm text-slate-600">Strong security framework in place</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-16 h-2 bg-slate-200 rounded-full mr-3">
+                                <div class="w-4/5 h-2 bg-error rounded-full"></div>
+                            </div>
+                            <span class="font-semibold text-slate-900 min-w-[2rem]">4.1</span>
+                        </div>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-200 mb-8">
+            <h3 class="text-xl font-semibold text-slate-900 mb-6">Recommendations</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Priority Recommendations -->
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4 flex items-center">
+                        <i class="fas fa-exclamation-circle text-warning mr-2"></i>
+                        Priority Actions
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="border-l-4 border-warning bg-orange-50 p-3 rounded-r">
+                            <div class="font-medium text-slate-900">Improve Data Governance</div>
+                            <div class="text-sm text-slate-600">Implement data quality standards and access controls</div>
+                        </div>
+                        <div class="border-l-4 border-warning bg-orange-50 p-3 rounded-r">
+                            <div class="font-medium text-slate-900">Expand Budget Planning</div>
+                            <div class="text-sm text-slate-600">Allocate additional resources for AI infrastructure</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strengths to Leverage -->
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4 flex items-center">
+                        <i class="fas fa-check-circle text-success mr-2"></i>
+                        Strengths to Leverage
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="border-l-4 border-success bg-green-50 p-3 rounded-r">
+                            <div class="font-medium text-slate-900">Exceptional Team Skills</div>
+                            <div class="text-sm text-slate-600">Your team is well-prepared for AI adoption</div>
+                        </div>
+                        <div class="border-l-4 border-success bg-green-50 p-3 rounded-r">
+                            <div class="font-medium text-slate-900">Solid Infrastructure</div>
+                            <div class="text-sm text-slate-600">Strong technical foundation for AI projects</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="text-center space-x-4">
+            <button id="generateReport" class="bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                <i class="fas fa-file-pdf mr-2"></i>
+                Generate Full Report
+            </button>
+            <button id="shareResults" class="border border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold py-3 px-6 rounded-lg transition-colors">
+                <i class="fas fa-share mr-2"></i>
+                Share Results
+            </button>
+            <button id="retakeAssessment" class="text-slate-600 hover:text-slate-900 font-medium">
+                <i class="fas fa-redo mr-2"></i>
+                Retake Assessment
+            </button>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ResultsSection -->
+
+    <!-- @COMPONENT: ReportSection -->
+    <section id="report" class="section-content hidden">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <!-- Report Header -->
+            <div class="bg-gradient-to-r from-primary to-secondary p-8 text-white">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-2">AI Readiness Assessment Report</h2>
+                        <p class="text-blue-100">Comprehensive analysis and recommendations</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-bold" data-bind="reportDate">March 15, 2024</div>
+                        <div class="text-blue-100">Assessment Date</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Report Content -->
+            <div class="p-8">
+                <!-- Executive Summary -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Executive Summary</h3>
+                    <div class="bg-slate-50 p-6 rounded-lg">
+                        <div class="grid md:grid-cols-3 gap-6 mb-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-1">73/100</div>
+                                <div class="text-sm text-slate-600">Overall Score</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-success mb-1">Good</div>
+                                <div class="text-sm text-slate-600">Readiness Level</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-warning mb-1">2-3</div>
+                                <div class="text-sm text-slate-600">Areas to Improve</div>
+                            </div>
+                        </div>
+                        <p class="text-slate-700 leading-relaxed">
+                            Your organization demonstrates good AI readiness with strong technical infrastructure and exceptional team capabilities. 
+                            Focus areas include data governance and budget allocation to maximize AI implementation success.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Detailed Analysis -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-6">Detailed Dimension Analysis</h3>
+                    <div class="space-y-6">
+                        <!-- Technology Infrastructure -->
+                        <div class="border border-slate-200 rounded-lg p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                                        <i class="fas fa-server text-primary"></i>
+                                    </div>
+                                    <h4 class="text-lg font-semibold text-slate-900">Technology Infrastructure</h4>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-20 h-3 bg-slate-200 rounded-full mr-3">
+                                        <div class="w-4/5 h-3 bg-primary rounded-full"></div>
+                                    </div>
+                                    <span class="font-bold text-slate-900">4.2/5</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 mb-3">
+                                Strong cloud infrastructure with good scalability. Ready for AI workloads with minor optimizations needed.
+                            </p>
+                            <div class="bg-blue-50 p-3 rounded border-l-4 border-primary">
+                                <div class="font-medium text-slate-900">Recommendation:</div>
+                                <div class="text-slate-700">Consider upgrading to AI-optimized compute instances for better performance.</div>
+                            </div>
+                        </div>
+
+                        <!-- Data Quality -->
+                        <div class="border border-slate-200 rounded-lg p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                                        <i class="fas fa-database text-success"></i>
+                                    </div>
+                                    <h4 class="text-lg font-semibold text-slate-900">Data Quality & Access</h4>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-20 h-3 bg-slate-200 rounded-full mr-3">
+                                        <div class="w-3/5 h-3 bg-success rounded-full"></div>
+                                    </div>
+                                    <span class="font-bold text-slate-900">3.1/5</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 mb-3">
+                                Data is available but lacks proper governance and quality controls. Accessibility needs improvement.
+                            </p>
+                            <div class="bg-orange-50 p-3 rounded border-l-4 border-warning">
+                                <div class="font-medium text-slate-900">Priority Action:</div>
+                                <div class="text-slate-700">Implement data quality framework and establish clear data access protocols.</div>
+                            </div>
+                        </div>
+
+                        <!-- Team AI Literacy -->
+                        <div class="border border-slate-200 rounded-lg p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                                        <i class="fas fa-users text-secondary"></i>
+                                    </div>
+                                    <h4 class="text-lg font-semibold text-slate-900">Team AI Literacy</h4>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-20 h-3 bg-slate-200 rounded-full mr-3">
+                                        <div class="w-full h-3 bg-secondary rounded-full"></div>
+                                    </div>
+                                    <span class="font-bold text-slate-900">4.8/5</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 mb-3">
+                                Exceptional team readiness with strong AI knowledge and enthusiasm for adoption.
+                            </p>
+                            <div class="bg-green-50 p-3 rounded border-l-4 border-success">
+                                <div class="font-medium text-slate-900">Strength:</div>
+                                <div class="text-slate-700">Leverage this strong foundation to drive AI initiatives across the organization.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Implementation Roadmap -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-6">Recommended Implementation Roadmap</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-sm mr-4 mt-1">1</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-slate-900">Phase 1: Foundation (0-3 months)</h4>
+                                <p class="text-slate-600">Implement data governance framework and quality controls</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-sm mr-4 mt-1">2</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-slate-900">Phase 2: Infrastructure (3-6 months)</h4>
+                                <p class="text-slate-600">Optimize cloud infrastructure and implement AI-ready compute resources</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-sm mr-4 mt-1">3</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-slate-900">Phase 3: Pilot Projects (6-9 months)</h4>
+                                <p class="text-slate-600">Launch pilot AI projects leveraging existing team expertise</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-sm mr-4 mt-1">4</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-slate-900">Phase 4: Scale (9-12 months)</h4>
+                                <p class="text-slate-600">Expand successful AI implementations across the organization</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="border-t border-slate-200 pt-6">
+                    <div class="text-center">
+                        <p class="text-slate-600 mb-4">Need help implementing these recommendations?</p>
+                        <button class="bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                            Schedule a Consultation
+                            <i class="fas fa-calendar ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Report Actions -->
+        <div class="mt-8 text-center space-x-4">
+            <button id="downloadPDF" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                <i class="fas fa-download mr-2"></i>
+                Download PDF
+            </button>
+            <button id="emailReport" class="border border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold py-3 px-6 rounded-lg transition-colors">
+                <i class="fas fa-envelope mr-2"></i>
+                Email Report
+            </button>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ReportSection -->
+
+</main>
+<!-- @END_COMPONENT: MainContent -->
+
+<script>
+(function() {
+    // Navigation functionality
+    const navLinks = document.querySelectorAll('[data-nav]');
+    const sections = document.querySelectorAll('.section-content');
+    
+    function showSection(sectionId) {
+        sections.forEach(section => {
+            section.classList.add('hidden');
+        });
+        document.getElementById(sectionId).classList.remove('hidden');
+        
+        // Update nav active state
+        navLinks.forEach(link => {
+            link.classList.remove('text-primary', 'font-semibold');
+            link.classList.add('text-slate-600');
+        });
+        document.querySelector(`[data-nav="${sectionId}"]`).classList.add('text-primary', 'font-semibold');
+    }
+
+    // Navigation event listeners
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = link.getAttribute('data-nav');
+            showSection(sectionId);
+        });
+    });
+
+    // Start assessment button
+    document.getElementById('startAssessment').addEventListener('click', () => {
+        showSection('assessment');
+    });
+
+    // Next question button (demo functionality)
+    document.getElementById('nextQuestion').addEventListener('click', () => {
+        // TODO: Implement assessment logic and progression
+        showSection('results');
+        initializeCharts();
+    });
+
+    // Results action buttons
+    document.getElementById('generateReport').addEventListener('click', () => {
+        showSection('report');
+    });
+
+    document.getElementById('shareResults').addEventListener('click', () => {
+        // TODO: Implement sharing functionality
+        alert('Sharing functionality would be implemented here');
+    });
+
+    document.getElementById('retakeAssessment').addEventListener('click', () => {
+        showSection('overview');
+    });
+
+    // Report action buttons
+    document.getElementById('downloadPDF').addEventListener('click', () => {
+        // TODO: Implement PDF generation
+        alert('PDF download would be implemented here');
+    });
+
+    document.getElementById('emailReport').addEventListener('click', () => {
+        // TODO: Implement email functionality
+        alert('Email functionality would be implemented here');
+    });
+
+    // Chart initialization
+    function initializeCharts() {
+        // Overall Score Doughnut Chart
+        const overallCtx = document.getElementById('overallScoreChart').getContext('2d');
+        new Chart(overallCtx, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [73, 27],
+                    backgroundColor: ['#2563EB', '#E2E8F0'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '75%',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                }
+            }
+        });
+
+        // Radar Chart
+        const radarCtx = document.getElementById('radarChart').getContext('2d');
+        new Chart(radarCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Technology', 'Data Quality', 'Team Literacy', 'Integration', 'Budget', 'Security'],
+                datasets: [{
+                    label: 'Your Scores',
+                    data: [4.2, 3.1, 4.8, 3.9, 3.4, 4.1],
+                    backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                    borderColor: '#2563EB',
+                    pointBackgroundColor: '#2563EB',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#2563EB'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { display: true },
+                        suggestedMin: 0,
+                        suggestedMax: 5,
+                        ticks: { stepSize: 1 }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    }
+
+    // Assessment progress simulation
+    function updateProgress(current, total) {
+        const percentage = (current / total) * 100;
+        document.getElementById('progressBar').style.width = `${percentage}%`;
+        document.getElementById('currentQ').textContent = current;
+        document.getElementById('totalQ').textContent = total;
+    }
+
+    // Initialize with overview section
+    showSection('overview');
+})();
+</script>
+
+</body>
+</html>

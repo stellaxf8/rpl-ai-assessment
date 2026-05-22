@@ -1,0 +1,144 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K[Storage] Using In-Memory storage
+6:46:38 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 19 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/assessment/industry-insights.tsx[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/assessment/report.tsx[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/assessment/questionnaire.tsx, /src/index.css?v=AcsRH9w6Tt_gM6CEvN5Il[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/assessment/results.tsx, /src/index.css?v=AcsRH9w6Tt_gM6CEvN5Il[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/enhanced/business-development.tsx, /src/index.css?v=AcsRH9w6Tt_gM6CEvN5Il[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/advanced/ai-maturity-roadmap.tsx[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/advanced/ai-readiness-simulator.tsx[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/advanced/smart-recommendations.tsx[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/advanced/learning-path.tsx[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/advanced/implementation-timeline.tsx[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/advanced/regulatory-compliance.tsx[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/advanced/trend-analysis.tsx[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/advanced/industry-questions.tsx[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/dashboard/dashboard.tsx[22m
+
+
+
+
+
+
+
+
+[1;1H[0J[2m6:47:40 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/home.tsx, /src/index.css?v=AcsRH9w6Tt_gM6CEvN5Il[22m
