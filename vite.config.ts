@@ -4,6 +4,7 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  base: '/rpl-ai-assessment/',
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -27,8 +28,7 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
-},
-base: '/rpl-ai-assessment/',
+  },
   server: {
     fs: {
       strict: true,
