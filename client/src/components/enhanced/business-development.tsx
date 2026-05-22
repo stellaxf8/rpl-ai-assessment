@@ -3,7 +3,7 @@ import { MessageSquare } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Assessment, DimensionScores } from "@shared/schema";
+import { Assessment, DimensionScores } from "@/lib/types";
 
 interface BusinessDevelopmentProps {
   assessment?: Assessment;

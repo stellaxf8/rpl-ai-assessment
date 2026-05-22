@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Target, AlertTriangle, CheckCircle, Lightbulb } from "lucide-react";
-import { DimensionScores } from "@shared/schema";
+import { DimensionScores } from "@/lib/types";
 
 interface IndustryInsightsProps {
   industry: string;

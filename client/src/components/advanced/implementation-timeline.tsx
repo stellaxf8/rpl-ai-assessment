@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Calendar, Users, DollarSign, Clock, AlertCircle, CheckCircle, BarChart3 } from "lucide-react";
-import type { DimensionScores } from "@shared/schema";
+import type { DimensionScores } from "@/lib/types";
 
 interface ImplementationTimelineProps {
   scores: DimensionScores;

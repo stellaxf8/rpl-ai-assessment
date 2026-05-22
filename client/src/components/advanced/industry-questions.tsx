@@ -5,7 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FileText, AlertCircle, CheckCircle, Building2, Building } from "lucide-react";
-import type { IndustryQuestionSet } from "@shared/schema";
+import type { IndustryQuestionSet } from "@/lib/types";
 
 interface IndustryQuestionsProps {
   onIndustryChange?: (industry: string) => void;

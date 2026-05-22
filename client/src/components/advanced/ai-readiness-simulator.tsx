@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { Calculator, TrendingUp, Zap, AlertTriangle } from "lucide-react";
-import type { DimensionScores } from "@shared/schema";
+import type { DimensionScores } from "@/lib/types";
 
 interface AIReadinessSimulatorProps {
   currentScores: DimensionScores;

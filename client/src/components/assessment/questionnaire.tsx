@@ -12,7 +12,7 @@ import { quickQuestions } from "@/lib/quick-assessment-data";
 import { getIndustryQuestionVariation, hasIndustryVariations } from "@/lib/industry-questions";
 import IndustrySelection from "@/components/assessment/industry-selection";
 import AssessmentTypeSelection from "@/components/assessment/assessment-type-selection";
-import { Assessment } from "@shared/schema";
+import { Assessment } from "@/lib/types";
 
 interface QuestionnaireProps {
   onComplete: (assessment: Assessment) => void;

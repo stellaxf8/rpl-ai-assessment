@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, CheckCircle, Clock, Play, Star, TrendingUp, User, Award } from "lucide-react";
-import type { DimensionScores, LearningPath } from "@shared/schema";
+import type { DimensionScores, LearningPath } from "@/lib/types";
 
 interface LearningPathProps {
   scores: DimensionScores;

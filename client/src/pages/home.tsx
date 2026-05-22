@@ -5,7 +5,7 @@ import Overview from "@/components/assessment/overview";
 import Questionnaire from "@/components/assessment/questionnaire";
 import Results from "@/components/assessment/results";
 import Contact from "@/components/contact/contact";
-import { Assessment } from "@shared/schema";
+import { Assessment } from "@/lib/types";
 
 type Section = 'overview' | 'assessment' | 'results' | 'contact';
 

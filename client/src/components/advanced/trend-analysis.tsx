@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { TrendingUp, AlertCircle, Clock, Zap, Globe, Filter } from "lucide-react";
-import type { TrendAnalysis } from "@shared/schema";
+import type { TrendAnalysis } from "@/lib/types";
 import { useState } from "react";
 
 interface TrendAnalysisProps {

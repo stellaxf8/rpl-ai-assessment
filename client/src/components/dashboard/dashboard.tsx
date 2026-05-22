@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Results from "@/components/assessment/results";
-import { Assessment } from "@shared/schema";
+import { Assessment } from "@/lib/types";
 
 interface DashboardProps {
   completedAssessment: Assessment | null;

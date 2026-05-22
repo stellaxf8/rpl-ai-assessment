@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Calendar, Clock, DollarSign, Target, CheckCircle } from "lucide-react";
-import type { AIMaturityRoadmap } from "@shared/schema";
+import type { AIMaturityRoadmap } from "@/lib/types";
 
 interface AIMaturityRoadmapProps {
   overallScore: number;

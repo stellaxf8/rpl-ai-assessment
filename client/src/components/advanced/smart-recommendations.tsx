@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Brain, Target, Clock, DollarSign, TrendingUp, AlertTriangle, CheckCircle } from "lucide-react";
-import type { DimensionScores, SmartRecommendations } from "@shared/schema";
+import type { DimensionScores, SmartRecommendations } from "@/lib/types";
 import { useState } from "react";
 
 interface SmartRecommendationsProps {

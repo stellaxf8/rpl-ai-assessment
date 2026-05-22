@@ -3,7 +3,7 @@ import { Download, Calendar, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Assessment, DimensionScores } from "@shared/schema";
+import { Assessment, DimensionScores } from "@/lib/types";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import BusinessDevelopment from "@/components/enhanced/business-development";
