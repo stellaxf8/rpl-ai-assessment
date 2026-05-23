@@ -8,7 +8,7 @@ import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <Switch>
+    <Switch base="/rpl-ai-assessment">
       <Route path="/" component={Home} />
       <Route path="/knowledge-center" component={KnowledgeCenter} />
       <Route component={NotFound} />
